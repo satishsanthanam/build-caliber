@@ -13,20 +13,22 @@
     .topic-box { margin-bottom: 15px; border: 1px solid #ddd; padding: 15px; border-radius: 8px; background-color: #fafafa; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
     .topic-title { font-size: 1.3em; font-weight: bold; cursor: pointer; padding: 5px 0; color: #2c3e50; }
     .class-title { font-size: 1.1em; font-weight: 600; cursor: pointer; margin-top: 10px; padding: 5px 0; color: #34495e; }
-    details > summary { list-style: none; outline: none; transition: color 0.2s; }
+    
+    /* Clean, break-proof collapsible arrows */
+    details > summary { list-style: none; outline: none; transition: color 0.2s; position: relative; padding-left: 20px;}
     details > summary::-webkit-details-marker { display: none; }
     details > summary:hover { color: #0056b3; }
-    details > summary::before { content: '▶ '; font-size: 0.8em; color: #888; display: inline-block; width: 25px; transition: transform 0.2s; }
-    details[open] > summary::before { content: '▼ '; color: #0056b3; }
+    details > summary::before { content: '+'; position: absolute; left: 0; font-weight: bold; color: #888; font-size: 1.2em; line-height: 1.2;}
+    details[open] > summary::before { content: '-'; color: #0056b3; font-size: 1.4em; line-height: 1;}
   </style>
 </head>
 <body>
   <div class="nav-bar" style="margin-bottom: 30px; border-bottom: 2px solid #eee; padding-bottom: 10px;">
-    <h2>🔮 Study Alchemist Curriculum Database</h2>
+    <h2>Study Alchemist Curriculum Database</h2>
   </div>
   <div class="topic-box">
     <details>
-      <summary class="topic-title">📚 Subject: Science</summary>
+      <summary class="topic-title">Subject: Science</summary>
       <div class="sub-topic" style="margin-left: 20px;">
         <details>
           <summary class="class-title">Class 10</summary>
@@ -131,7 +133,7 @@
   </div>
   <div class="topic-box">
     <details>
-      <summary class="topic-title">📚 Subject: Mathematics</summary>
+      <summary class="topic-title">Subject: Mathematics</summary>
       <div class="sub-topic" style="margin-left: 20px;">
         <details>
           <summary class="class-title">Class 10</summary>
@@ -154,7 +156,7 @@
   </div>
   <div class="topic-box">
     <details>
-      <summary class="topic-title">📚 Subject: Biology</summary>
+      <summary class="topic-title">Subject: Biology</summary>
       <div class="sub-topic" style="margin-left: 20px;">
         <details>
           <summary class="class-title">Class 9</summary>
