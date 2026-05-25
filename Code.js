@@ -1,5 +1,5 @@
 // =====================================================================
-// 🔮 THE ALCHEMIST CORE: MASTER PIPELINE AUTOMATION (V7 - MULTI-MODE AUTOMATION)
+// 🔮 THE ALCHEMIST CORE: MASTER PRODUCTION ENGINE (V7.6 - FORTIFIED)
 // =====================================================================
 
 let logBuffer = [];
@@ -11,10 +11,10 @@ function log(msg) {
 
 /**
  * MAIN EXECUTION ENGINE
- * Orchestrates Sheet reading, Native Drive PDF fetching, Gemini 3.5 processing, and Bitbucket pushes.
+ * Orchestrates Sheet reading, Native Drive PDF fetching, Gemini processing, and Bitbucket pushes.
  */
 function runAlchemistAutomatedFactory() {
-  log("🏁 Factory Ignition: Google Sheet Automation & 3.5 Flash Active.");
+  log("🏁 Factory Ignition: Checking workspace structural boundaries...");
 
   const props = PropertiesService.getScriptProperties();
   const INVENTORY_SHEET_ID = props.getProperty("INVENTORY_SHEET_ID");
@@ -22,7 +22,7 @@ function runAlchemistAutomatedFactory() {
   const GEMINI_API_KEY = props.getProperty("GEMINI_API_KEY");
 
   if (!INVENTORY_SHEET_ID || !OUTPUT_FOLDER_ID || !GEMINI_API_KEY) {
-    log("❌ CRITICAL ERROR: Core script properties missing. Exiting pipeline.");
+    log("❌ CRITICAL ERROR: Core script properties missing from Script Properties. Exiting.");
     return;
   }
 
@@ -48,8 +48,16 @@ function runAlchemistAutomatedFactory() {
     path: headers.indexOf("Bitbucket Path (Auto)")
   };
 
-  if (colIndex.driveLink === -1) {
-    log("❌ CRITICAL SHEET FAULT: Could not find a column named 'Drive Link' in headers.");
+  // 🛡️ FACTORY GUARD BLOCK: Prevents undefined crashes if columns are shifted or renamed
+  let missingHeaders = [];
+  for (const [key, idx] of Object.entries(colIndex)) {
+    if (idx === -1) {
+      missingHeaders.push(key);
+    }
+  }
+  if (missingHeaders.length > 0) {
+    log("❌ CRITICAL SHEET FAULT: The following headers are missing or misspelled in your spreadsheet: " + JSON.stringify(missingHeaders));
+    log("👉 Please verify your sheet columns match exactly: 'Subject', 'Class Level', 'Chapter No.', 'Chapter Title', 'Drive Link', 'Status', 'Bitbucket Path (Auto)'");
     flushLogsToDrive();
     return;
   }
@@ -67,7 +75,7 @@ function runAlchemistAutomatedFactory() {
   log("📊 Spreadsheet Scan Complete. Found " + taskQueue.length + " chapters queued for compilation.");
 
   if (taskQueue.length === 0) {
-    log("🎉 All assets verified green. Factory pipeline standing down.");
+    log("🎉 All assets verified green. No 'Pending' rows found. Factory pipeline standing down.");
     flushLogsToDrive();
     return;
   }
@@ -123,10 +131,34 @@ function runAlchemistAutomatedFactory() {
       
       if (!cleanHtmlPayload) throw new Error("html_content string parsed empty.");
     } catch (parseError) {
-      log("❌ PARSE FAULT: AI structure truncated. Error: " + parseError.toString());
+      log("❌ PARSE FAULT: AI execution stalled or truncated. Error: " + parseError.toString());
       sheet.getRange(task.rowNum, colIndex.status + 1).setValue("⚠️ Output Truncated");
       continue;
     }
+
+    // 🧮 MATHJAX INJECTION
+    let completeWebPageContent = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>${chapterTitle}</title>
+  <link rel="stylesheet" href="../../style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+        displayMath: [['$$', '$$']]
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    ${cleanHtmlPayload}
+  </div>
+</body>
+</html>`;
 
     const sanitizedSubject = subject.toLowerCase().replace(/[^a-z0-9]/g, "-");
     const sanitizedClass = classLevel.toLowerCase().replace(/[^a-z0-9]/g, "-");
@@ -134,7 +166,7 @@ function runAlchemistAutomatedFactory() {
     const finalPath = sanitizedSubject + "/" + sanitizedClass + "/" + sanitizedTitle + ".html";
 
     const stagingBranchName = "factory-builds";
-    const commitSuccess = pushFileToBitbucketWithJira(finalPath, cleanHtmlPayload, stagingBranchName);
+    const commitSuccess = pushFileToBitbucketWithJira(finalPath, completeWebPageContent, stagingBranchName);
 
     if (commitSuccess) {
       const prStatus = raiseBitbucketPullRequest(stagingBranchName, finalPath);
@@ -245,7 +277,7 @@ function raiseBitbucketPullRequest(branchName, filePath) {
 
   const url = "https://api.bitbucket.org/2.0/repositories/" + workspace + "/" + repoSlug + "/pullrequests";
   const prPayload = {
-    "title": "🔮 [Alchemist Build] Merge Staging to Main",
+    "title": "🔮 [Build Calibre] Merge Staging to Main",
     "description": "Unified pipeline curriculum compilation staging.",
     "source": { "branch": { "name": branchName } },
     "destination": { "branch": { "name": "main" } },
@@ -280,7 +312,7 @@ function flushLogsToDrive() {
     const folderId = PropertiesService.getScriptProperties().getProperty("OUTPUT_FOLDER_ID");
     if (!folderId || logBuffer.length === 0) return;
     const folder = DriveApp.getFolderById(folderId);
-    const title = "alchemist-log-" + new Date().toISOString().slice(0, 10) + ".txt";
+    const title = "build-calibre-log-" + new Date().toISOString().slice(0, 10) + ".txt";
     const files = folder.getFilesByName(title);
     let file = files.hasNext() ? files.next() : folder.createFile(title, "", MimeType.PLAIN_TEXT);
     file.setContent(file.getBlob().getDataAsString() + logBuffer.join("\n") + "\n");
@@ -293,9 +325,10 @@ function flushLogsToDrive() {
 // =====================================================================
 
 /**
- * DYNAMIC COLLAPSIBLE NAVIGATION BUILDING ENGINE
+ * DYNAMIC COLLAPSIBLE NAVIGATION BUILDING ENGINE (v3 - DIAGNOSTIC OVERRIDE)
  */
-function buildDynamicIndex() {
+function buildDynamicIndexv3() {
+  Logger.log("🏁 Index Engine v3 Ignition: Scanning for completed content...");
   const props = PropertiesService.getScriptProperties();
   const INVENTORY_SHEET_ID = props.getProperty("INVENTORY_SHEET_ID");
   
@@ -317,12 +350,22 @@ function buildDynamicIndex() {
     path: headers.indexOf("Bitbucket Path (Auto)")
   };
 
+  // 🛡️ INDEX GUARD BLOCK
+  for (const [key, idx] of Object.entries(col)) {
+    if (idx === -1) {
+      Logger.log("❌ CRITICAL INDEX FAULT: Header column matching '" + key + "' was not found in the spreadsheet row.");
+      return;
+    }
+  }
+
   const curriculumMap = {};
   let completedCount = 0;
 
   for (let r = 1; r < data.length; r++) {
     const row = data[r];
-    if (row[col.status] === "✅ Completed") {
+    const currentStatus = row[col.status].toString().trim();
+    
+    if (currentStatus === "✅ Completed") {
       const subj = row[col.subject].toString().trim();
       const cls = row[col.classLevel].toString().trim();
       const chapNo = parseInt(row[col.chapterNo], 10);
@@ -338,8 +381,10 @@ function buildDynamicIndex() {
     }
   }
 
+  Logger.log("📊 Index scan found " + completedCount + " successfully verified chapters.");
+
   if (completedCount === 0) {
-    Logger.log("⚠️ No completed chapters found in the sheet. Index generation halted.");
+    Logger.log("⚠️ WARNING: 0 verified '✅ Completed' chapters detected. Halting push to prevent blanking the home file.");
     return;
   }
 
@@ -348,7 +393,7 @@ function buildDynamicIndex() {
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="style.css">
-  <title>Study Alchemist - Curriculum Home</title>
+  <title>Build Calibre - Curriculum Home</title>
   <style>
     body { font-family: sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px;}
     .clean-list { list-style-type: none; padding-left: 10px; border-left: 2px solid #eee; margin-left: 10px; margin-bottom: 10px; }
@@ -356,19 +401,45 @@ function buildDynamicIndex() {
     .keyword a:hover { text-decoration: underline; color: #003d82; }
     .chapter-row { margin-bottom: 12px; }
     .topic-box { margin-bottom: 15px; border: 1px solid #ddd; padding: 15px; border-radius: 8px; background-color: #fafafa; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-    .topic-title { font-size: 1.3em; font-weight: bold; cursor: pointer; padding: 5px 0; color: #2c3e50; }
-    .class-title { font-size: 1.1em; font-weight: 600; cursor: pointer; margin-top: 10px; padding: 5px 0; color: #34495e; }
     
-    details > summary { list-style: none; outline: none; transition: color 0.2s; position: relative; padding-left: 20px;}
-    details > summary::-webkit-details-marker { display: none; }
-    details > summary:hover { color: #0056b3; }
-    details > summary::before { content: '[+] '; position: absolute; left: 0; font-weight: bold; color: #888; font-size: 1em; }
-    details[open] > summary::before { content: '[-] '; color: #0056b3; }
+    .topic-title, .class-title { 
+      display: block !important;
+      position: relative !important; 
+      padding: 6px 10px 6px 45px !important;
+      cursor: pointer;
+      box-sizing: border-box;
+      outline: none !important;
+      list-style: none !important;
+    }
+    
+    .topic-title { font-size: 1.3em; font-weight: bold; color: #2c3e50; }
+    .class-title { font-size: 1.1em; font-weight: 600; color: #34495e; margin-top: 10px; }
+    
+    summary::-webkit-details-marker { display: none !important; }
+    summary::marker { display: none !important; content: "" !important; }
+    summary:hover { color: #0056b3; }
+    
+    .topic-title::before, .class-title::before { 
+      content: '[+]' !important; 
+      position: absolute !important; 
+      left: 12px !important; 
+      top: 50% !important;
+      transform: translateY(-50%) !important;
+      font-weight: bold !important; 
+      color: #0056b3 !important;
+      font-size: 1em !important; 
+      font-family: monospace !important;
+    }
+    details[open] > .topic-title::before,
+    details[open] > .class-title::before { 
+      content: '[-]' !important; 
+      color: #e67e22 !important;
+    }
   </style>
 </head>
 <body>
   <div class="nav-bar" style="margin-bottom: 30px; border-bottom: 2px solid #eee; padding-bottom: 10px;">
-    <h2>Study Alchemist Curriculum Database</h2>
+    <h2>Build Calibre Curriculum Database</h2>
   </div>\n`;
 
   for (const subj in curriculumMap) {
@@ -392,6 +463,6 @@ function buildDynamicIndex() {
 
   const success = pushFileToBitbucketWithJira("index.html", html, "factory-builds");
   if (success) {
-    Logger.log("✅ SUCCESS: Immaculate, safe index.html successfully generated and pushed!");
+    Logger.log("✅ SUCCESS: Immaculate index layout compiled and pushed via v3!");
   }
 }

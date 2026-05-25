@@ -1,9 +1,10 @@
 /**
- * DYNAMIC COLLAPSIBLE NAVIGATION BUILDING ENGINE
+ * DYNAMIC COLLAPSIBLE NAVIGATION BUILDING ENGINE (v2 - CACHE OVERRIDE)
  * Sweeps through completed components and builds a clean interface.
- * FIX: Enforces strict layout overrides on summary blocks to permanently eliminate state-change overlap.
+ * REBRAND: Updated to Build Calibre identity.
+ * FIX: Enforces direct class-level safety buffers to eliminate icon layout overlap.
  */
-function buildDynamicIndex() {
+function buildDynamicIndexv2() {
   const props = PropertiesService.getScriptProperties();
   const INVENTORY_SHEET_ID = props.getProperty("INVENTORY_SHEET_ID");
   
@@ -56,7 +57,7 @@ function buildDynamicIndex() {
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="style.css">
-  <title>Study Alchemist - Curriculum Home</title>
+  <title>Build Calibre - Curriculum Home</title>
   <style>
     body { font-family: sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px;}
     .clean-list { list-style-type: none; padding-left: 10px; border-left: 2px solid #eee; margin-left: 10px; margin-bottom: 10px; }
@@ -65,27 +66,27 @@ function buildDynamicIndex() {
     .chapter-row { margin-bottom: 12px; }
     .topic-box { margin-bottom: 15px; border: 1px solid #ddd; padding: 15px; border-radius: 8px; background-color: #fafafa; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
     
-    /* 🌟 CLEAN TEXT CLASSES: Strictly handles font styling, no spacing logic */
+    /* 🧱 UNBREAKABLE BUFFER ZONE: Forces structural padding onto the target elements to prevent icon collision */
+    .topic-title, .class-title { 
+      display: block !important;
+      position: relative !important; 
+      padding: 6px 10px 6px 45px !important; /* 📦 45px left gutter safety barrier */
+      cursor: pointer;
+      box-sizing: border-box;
+      outline: none !important;
+      list-style: none !important;
+    }
+    
     .topic-title { font-size: 1.3em; font-weight: bold; color: #2c3e50; }
     .class-title { font-size: 1.1em; font-weight: 600; color: #34495e; margin-top: 10px; }
     
-    /* 🧱 UNBREAKABLE BUFFER ZONE: Forces structural padding onto the base element regardless of open/closed states */
-    details > summary { 
-      list-style: none !important; 
-      outline: none !important; 
-      position: relative !important; 
-      padding: 6px 10px 6px 45px !important; /* Locks a 45px clear margin space on the left */
-      display: block !important;             /* Eliminates display: inline-block collapse issues */
-      cursor: pointer;
-      box-sizing: border-box;
-    }
-    details > summary::-webkit-details-marker { display: none !important; }
-    details > summary::marker { display: none !important; content: ""; }
-    details > summary:hover { color: #0056b3; }
+    summary::-webkit-details-marker { display: none !important; }
+    summary::marker { display: none !important; content: "" !important; }
+    summary:hover { color: #0056b3; }
     
-    /* 🎨 PINPOINT INDICATOR POSITIONING: Centers markers vertically inside the left buffer area */
-    details > summary::before { 
-      content: '[+]'; 
+    /* 🎨 PINPOINT INDICATOR POSITIONING: Anchors and aligns elements perfectly to the center line */
+    .topic-title::before, .class-title::before { 
+      content: '[+]' !important; 
       position: absolute !important; 
       left: 12px !important; 
       top: 50% !important;
@@ -95,15 +96,16 @@ function buildDynamicIndex() {
       font-size: 1em !important; 
       font-family: monospace !important;
     }
-    details[open] > summary::before { 
-      content: '[-]'; 
+    details[open] > .topic-title::before,
+    details[open] > .class-title::before { 
+      content: '[-]' !important; 
       color: #e67e22 !important; /* 🟠 Theme Orange */
     }
   </style>
 </head>
 <body>
   <div class="nav-bar" style="margin-bottom: 30px; border-bottom: 2px solid #eee; padding-bottom: 10px;">
-    <h2>Study Alchemist Curriculum Database</h2>
+    <h2>Build Calibre Curriculum Database</h2>
   </div>\n`;
 
   for (const subj in curriculumMap) {
@@ -127,6 +129,6 @@ function buildDynamicIndex() {
 
   const success = pushFileToBitbucketWithJira("index.html", html, "factory-builds");
   if (success) {
-    Logger.log("✅ SUCCESS: Overlap fixed permanently! Clean index layout generated.");
+    Logger.log("✅ SUCCESS: Immaculate Build Calibre index layout compiled and pushed via v2!");
   }
 }
