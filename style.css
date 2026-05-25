@@ -53,9 +53,6 @@ ul {
 
 li {
   margin-bottom: 10px;
-  display: inline;
-  margin: 0;
-  padding-left: 6px; /* Gives the text a clean, breathing distance from the arrow */
 }
 
 strong {
