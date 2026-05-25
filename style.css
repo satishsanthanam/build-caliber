@@ -89,3 +89,15 @@ strong {
   border-color: #047857;
   box-shadow: 0 2px 4px rgba(4, 120, 87, 0.15);
 }
+
+/* 🌟 FIX: Force summary headings to stay inline with their dropdown arrows */
+summary h1,
+summary h2,
+summary h3,
+summary h4,
+summary h5,
+summary h6 {
+    display: inline;
+    margin: 0;
+    padding-left: 6px; /* Gives the text a clean, breathing distance from the arrow */
+}
