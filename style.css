@@ -17,11 +17,11 @@ h1 {
   padding-bottom: 10px;
 }
 
-details {
+details, .topic-box {
   margin-bottom: 12px;
 }
 
-summary {
+summary, .topic-title {
   font-weight: 700;
   cursor: pointer;
   transition: background-color 0.2s ease;
@@ -31,16 +31,17 @@ summary {
   background-color: #f8fafc;
 }
 
-summary:hover {
+summary:hover, .topic-title:hover {
   background-color: #f1f5f9;
 }
 
-details details {
+/* Nested collapsible sub-topics */
+details details, .sub-topic {
   margin-left: 20px;
   margin-top: 12px;
 }
 
-details details summary {
+details details summary, .sub-topic summary {
   font-size: 0.95em;
   border-left: 2px solid #047857;
   padding: 4px 15px;
@@ -55,7 +56,8 @@ li {
   margin-bottom: 10px;
 }
 
-strong {
+/* 🌟 CLASS FIX: Map both standard strong tags AND the AI's keyword span tags to your emerald green */
+strong, .keyword {
   color: #047857;
   font-weight: 700;
 }
@@ -90,7 +92,7 @@ strong {
   box-shadow: 0 2px 4px rgba(4, 120, 87, 0.15);
 }
 
-/* 🌟 FIX: Force summary headings to stay inline with their dropdown arrows */
+/* 🌟 ARROW FIX: Force summary headings to stay inline with their dropdown arrows */
 summary h1,
 summary h2,
 summary h3,
