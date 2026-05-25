@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../../style.css">
+  <title>The Baudhāyana-Pythagoras Theorem</title>
+</head>
+<body>
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+    <a href="../../index.html" class="btn-nav">🏠 Home</a>
+  </div>
+  
+  <h1>Chapter 2: The Baudhāyana-Pythagoras Theorem</h1>
+
+  <details class="topic-box" open>
+    <summary class="topic-title">2.1 Doubling a Square</summary>
+    <details class="sub-topic">
+      <summary><h3>Concept & Historical Context</h3></summary>
+      <ul>
+        <li><span class="keyword">Baudhāyana’s Śulba-Sūtra</span> (c. 800 BCE) poses the fundamental question: <em>How can one construct a square having double the area of a given square?</em></li>
+        <li>Simply doubling the side length of a square does not double its area; it quadruples it (Area = $2 \times 2 = 4$ times the original area).</li>
+        <li><span class="keyword">Baudhāyana's Rule (Verse 1.9):</span> "The diagonal of a square produces a square of double the area of the original square."</li>
+        <li><span class="keyword">Geometric Proof:</span> An original square of side $1$ can be divided into $2$ congruent right isosceles triangles. A square constructed on its diagonal is composed of $4$ such congruent triangles, thus having exactly double the area.</li>
+      </ul>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">2.2 Halving a Square</summary>
+    <details class="sub-topic">
+      <summary><h3>Concept & Construction</h3></summary>
+      <ul>
+        <li>To construct a square with half the area of a given square, the process of doubling is reversed.</li>
+        <li>By connecting the midpoints of the sides of a square, a tilted inner square (<span class="keyword">PQRS</span>) is formed.</li>
+        <li>The area of this inner square is exactly half of the outer square because the outer square is composed of 8 congruent triangles, while the inner square contains 4 of them.</li>
+      </ul>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">2.3 Hypotenuse of an Isosceles Right Triangle</summary>
+    <details class="sub-topic">
+      <summary><h3>Mathematical Derivation</h3></summary>
+      <ul>
+        <li>In a right-angled triangle, the side opposite to the right angle is the <span class="keyword">hypotenuse</span>.</li>
+        <li>For an isosceles right triangle with equal sides of $1$ unit:</li>
+        <li>The square constructed on the hypotenuse has an area equal to $2$ square units.</li>
+        <li>If $c$ is the length of the hypotenuse, then: 
+          <br><code>c² = 2</code> 
+          <br><code>c = √2</code> units.
+        </li>
+      </ul>
+    </details>
+    <details class="sub-topic">
+      <summary><h3>Decimal Representation of √2</h3></summary>
+      <ul>
+        <li><span class="keyword">Bounds of √2:</span>
+          <ul>
+            <li>$1 < \sqrt{2} < 2$ (since $1^2 = 1$ and $2^2 = 4$)</li>
+            <li>$1.4 < \sqrt{2} < 1.5$ (since $1.4^2 = 1.96$ and $1.5^2 = 2.25$)</li>
+            <li>$1.41 < \sqrt{2} < 1.42$ (since $1.41^2 = 1.9881$ and $1.42^2 = 2.0164$)</li>
+            <li>$1.414 < \sqrt{2} < 1.415$ (since $1.414^2 = 1.999396$ and $1.415^2 = 2.002225$)</li>
+          </ul>
+        </li>
+        <li><span class="keyword">Irrationality:</span> $\sqrt{2}$ cannot be expressed as a terminating decimal or a fraction $m/n$ where $m$ and $n$ are counting numbers. It is a non-terminating, non-recurring decimal: $\sqrt{2} \approx 1.41421356...$</li>
+      </ul>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">2.4 Combining Two Different Squares</summary>
+    <details class="sub-topic">
+      <summary><h3>Baudhāyana’s Theorem</h3></summary>
+      <ul>
+        <li><span class="keyword">Śulba-Sūtra (Verse 1.12):</span> "The area of the square produced by the diagonal is the sum of the areas of the squares produced by the two sides."</li>
+        <li>To combine two squares of different areas (sides $a$ and $b$), construct a right-angled triangle with perpendicular sides $a$ and $b$. The square on the hypotenuse $c$ will have an area equal to the sum of the areas of the two original squares: 
+          <br><code>a² + b² = c²</code>
+        </li>
+        <li>This is the fundamental statement of the <span class="keyword">Baudhāyana-Pythagoras Theorem</span>.</li>
+      </ul>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">2.5 Right-Triangles Having Integer Sidelengths</summary>
+    <details class="sub-topic">
+      <summary><h3>Baudhāyana Triples</h3></summary>
+      <ul>
+        <li>Integer triples $(a, b, c)$ that satisfy $a^2 + b^2 = c^2$ are called <span class="keyword">Baudhāyana triples</span> (or Pythagorean triples).</li>
+        <li>Common examples: $(3, 4, 5)$, $(5, 12, 13)$, $(8, 15, 17)$, $(7, 24, 25)$, $(12, 35, 37)$, $(15, 36, 39)$.</li>
+        <li><span class="keyword">Scaling Property:</span> If $(a, b, c)$ is a triple, then $(ka, kb, kc)$ is also a triple for any positive integer $k$.</li>
+        <li><span class="keyword">Primitive Triple:</span> A triple with no common factor greater than $1$ (e.g., $(3, 4, 5)$ is primitive, while $(6, 8, 10)$ is a scaled version).</li>
+        <li><span class="keyword">Generation Method:</span> Triples can be generated using the sum of consecutive odd numbers: 
+          <br><code>1 + 3 + 5 + ... + (2n - 1) = n²</code>
+        </li>
+      </ul>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">2.6 A Long-Standing Open Problem</summary>
+    <details class="sub-topic">
+      <summary><h3>Fermat's Last Theorem</h3></summary>
+      <ul>
+        <li>Inspired by Baudhāyana triples, Pierre de Fermat conjectured that the equation <code>xⁿ + yⁿ = zⁿ</code> has no positive integer solutions for <code>n > 2</code>.</li>
+        <li>This famous conjecture, known as <span class="keyword">Fermat's Last Theorem</span>, remained unsolved for over 300 years until it was proven by Andrew Wiles in 1994.</li>
+      </ul>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">2.7 Applications of the Theorem</summary>
+    <details class="sub-topic">
+      <summary><h3>Historical Problem: Bhāskarāchārya’s Līlāvatī</h3></summary>
+      <ul>
+        <li><span class="keyword">The Lotus Problem:</span> A lotus stem in a lake is $1$ unit above the water. When swayed by the wind, it touches the water surface $3$ units away from its original vertical position. Find the depth of the lake.</li>
+        <li><span class="keyword">Solution:</span> Let $x$ be the depth of the lake. The total length of the stem is $x + 1$. Applying the theorem:
+          <br><code>3² + x² = (x + 1)²</code>
+          <br><code>9 + x² = x² + 2x + 1</code>
+          <br><code>9 = 2x + 1</code>
+          <br><code>x = 4</code> units.
+        </li>
+        <li>The depth of the lake is $4$ units.</li>
+      </ul>
+    </details>
+  </details>
+</body>
+</html>
