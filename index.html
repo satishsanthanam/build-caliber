@@ -5,101 +5,136 @@
   <link rel="stylesheet" href="style.css">
   <title>Study Alchemist - Curriculum Home</title>
   <style>
-    .keyword a { color: inherit; text-decoration: none; }
-    .keyword a:hover { text-decoration: underline; }
+    body { font-family: sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px;}
+    .clean-list { list-style-type: none; padding-left: 10px; border-left: 2px solid #eee; margin-left: 10px; }
+    .keyword a { color: #0056b3; text-decoration: none; font-size: 1.05em; }
+    .keyword a:hover { text-decoration: underline; color: #003d82; }
+    .chapter-row { margin-bottom: 12px; }
+    
+    /* Collapsible Box Styling */
+    .topic-box { margin-bottom: 15px; border: 1px solid #ddd; padding: 15px; border-radius: 8px; background-color: #fafafa; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+    .topic-title { font-size: 1.3em; font-weight: bold; cursor: pointer; padding: 5px 0; color: #2c3e50; }
+    .class-title { font-size: 1.1em; font-weight: 600; cursor: pointer; margin-top: 10px; padding: 5px 0; color: #34495e; }
+    
+    /* Clean Custom Arrows for Collapsibles */
+    details > summary { list-style: none; outline: none; transition: color 0.2s; }
+    details > summary::-webkit-details-marker { display: none; }
+    details > summary:hover { color: #0056b3; }
+    details > summary::before { content: '▶ '; font-size: 0.8em; color: #888; display: inline-block; width: 25px; transition: transform 0.2s; }
+    details[open] > summary::before { content: '▼ '; color: #0056b3; }
   </style>
 </head>
 <body>
-  <div class="nav-bar">
+  <div class="nav-bar" style="margin-bottom: 30px; border-bottom: 2px solid #eee; padding-bottom: 10px;">
     <h2>🔮 Study Alchemist Curriculum Database</h2>
   </div>
   <div class="topic-box">
-    <div class="topic-title">📚 Subject: Science</div>
-    <div class="sub-topic">
-      <h3>Class 10</h3>
-      <ul>
-        <li><span class="keyword"><a href="science/class-10/heredity.html">Heredity</a></span></li>
-        <li><span class="keyword"><a href="science/class-10/acids-bases-and-salts.html">Acids Bases And Salts</a></span></li>
-        <li><span class="keyword"><a href="science/class-10/metals-and-non-metals.html">Metals And Non Metals</a></span></li>
-        <li><span class="keyword"><a href="science/class-10/electricity.html">Electricity</a></span></li>
-        <li><span class="keyword"><a href="science/class-10/light-reflection-and-refraction.html">Light Reflection And Refraction</a></span></li>
-        <li><span class="keyword"><a href="science/class-10/carbon-and-its-compounds.html">Carbon And Its Compounds</a></span></li>
-        <li><span class="keyword"><a href="science/class-10/the-human-eye-and-the-colourful-world.html">The Human Eye And The Colourful World</a></span></li>
-        <li><span class="keyword"><a href="science/class-10/how-do-organisms-reproduce.html">How Do Organisms Reproduce</a></span></li>
-        <li><span class="keyword"><a href="science/class-10/control-and-coordination.html">Control And Coordination</a></span></li>
-        <li><span class="keyword"><a href="science/class-10/life-processes.html">Life Processes</a></span></li>
-        <li><span class="keyword"><a href="science/class-10/chemical-reactions-and-equations.html">Chemical Reactions And Equations</a></span></li>
-        <li><span class="keyword"><a href="science/class-10/magnetic-effects-of-electric-current.html">Magnetic Effects Of Electric Current</a></span></li>
-        <li><span class="keyword"><a href="science/class-10/our-environment.html">Our Environment</a></span></li>
-        <li><span class="keyword"><a href="science/class-10/microorganisms-friend-and-foe.html">Microorganisms Friend And Foe</a></span></li>
-      </ul>
-    </div>
-    <div class="sub-topic">
-      <h3>Class 8</h3>
-      <ul>
-        <li><span class="keyword"><a href="science/class-8/sound.html">Sound</a></span></li>
-        <li><span class="keyword"><a href="science/class-8/conservation-of-plants-and-animals.html">Conservation Of Plants And Animals</a></span></li>
-        <li><span class="keyword"><a href="science/class-8/force-and-pressure.html">Force And Pressure</a></span></li>
-        <li><span class="keyword"><a href="science/class-8/coal-and-petroleum.html">Coal And Petroleum</a></span></li>
-        <li><span class="keyword"><a href="science/class-8/reaching-the-age-of-adolescence.html">Reaching The Age Of Adolescence</a></span></li>
-        <li><span class="keyword"><a href="science/class-8/microorganisms-friend-and-foe.html">Microorganisms Friend And Foe</a></span></li>
-        <li><span class="keyword"><a href="science/class-8/reproduction-in-animals.html">Reproduction In Animals</a></span></li>
-        <li><span class="keyword"><a href="science/class-8/crop-production-and-management.html">Crop Production And Management</a></span></li>
-        <li><span class="keyword"><a href="science/class-8/chemical-effects-of-electric-current.html">Chemical Effects Of Electric Current</a></span></li>
-        <li><span class="keyword"><a href="science/class-8/combustion-and-flame.html">Combustion And Flame</a></span></li>
-        <li><span class="keyword"><a href="science/class-8/friction.html">Friction</a></span></li>
-      </ul>
-    </div>
-    <div class="sub-topic">
-      <h3>Class 9</h3>
-      <ul>
-        <li><span class="keyword"><a href="science/class-9/force-and-laws-of-motion.html">Force And Laws Of Motion</a></span></li>
-        <li><span class="keyword"><a href="science/class-9/exploration-entering-the-world-of-secondary-science.html">Exploration Entering The World Of Secondary Science</a></span></li>
-        <li><span class="keyword"><a href="science/class-9/sound.html">Sound</a></span></li>
-        <li><span class="keyword"><a href="science/class-9/matter-in-our-surroundings.html">Matter In Our Surroundings</a></span></li>
-        <li><span class="keyword"><a href="science/class-9/is-matter-around-us-pure.html">Is Matter Around Us Pure</a></span></li>
-        <li><span class="keyword"><a href="science/class-9/structure-of-the-atom.html">Structure Of The Atom</a></span></li>
-        <li><span class="keyword"><a href="science/class-9/the-fundamental-unit-of-life.html">The Fundamental Unit Of Life</a></span></li>
-        <li><span class="keyword"><a href="science/class-9/atoms-and-molecules.html">Atoms And Molecules</a></span></li>
-        <li><span class="keyword"><a href="science/class-9/work-and-energy.html">Work And Energy</a></span></li>
-        <li><span class="keyword"><a href="science/class-9/improvement-in-food-resources.html">Improvement In Food Resources</a></span></li>
-        <li><span class="keyword"><a href="science/class-9/gravitation.html">Gravitation</a></span></li>
-        <li><span class="keyword"><a href="science/class-9/tissues.html">Tissues</a></span></li>
-        <li><span class="keyword"><a href="science/class-9/motion.html">Motion</a></span></li>
-      </ul>
-    </div>
-    <div class="sub-topic">
-      <h3>Class 7</h3>
-      <ul>
-        <li><span class="keyword"><a href="science/class-7/force-and-pressure.html">Force And Pressure</a></span></li>
-      </ul>
-    </div>
+    <details>
+      <summary class="topic-title">📚 Subject: Science</summary>
+      <div class="sub-topic" style="margin-left: 20px;">
+        <details>
+          <summary class="class-title">Class 10</summary>
+          <ul class="clean-list">
+            <li class="chapter-row"><span class="keyword"><a href="science/class-10/chemical-reactions-and-equations.html"><strong>Chapter 1:</strong> Chemical Reactions And Equations</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-10/acids-bases-and-salts.html"><strong>Chapter 2:</strong> Acids Bases And Salts</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-10/metals-and-non-metals.html"><strong>Chapter 3:</strong> Metals And Non Metals</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-10/carbon-and-its-compounds.html"><strong>Chapter 4:</strong> Carbon And Its Compounds</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-10/life-processes.html"><strong>Chapter 5:</strong> Life Processes</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-10/control-and-coordination.html"><strong>Chapter 6:</strong> Control And Coordination</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-10/how-do-organisms-reproduce.html"><strong>Chapter 7:</strong> How Do Organisms Reproduce</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-10/heredity.html"><strong>Chapter 8:</strong> Heredity</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-10/light-reflection-and-refraction.html"><strong>Chapter 9:</strong> Light Reflection And Refraction</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-10/the-human-eye-and-the-colourful-world.html"><strong>Chapter 10:</strong> The Human Eye And The Colourful World</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-10/electricity.html"><strong>Chapter 11:</strong> Electricity</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-10/magnetic-effects-of-electric-current.html"><strong>Chapter 12:</strong> Magnetic Effects Of Electric Current</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-10/our-environment.html"><strong>Chapter 13:</strong> Our Environment</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-10/microorganisms-friend-and-foe.html">Microorganisms Friend And Foe</a></span></li>
+          </ul>
+        </details>
+      </div>
+      <div class="sub-topic" style="margin-left: 20px;">
+        <details>
+          <summary class="class-title">Class 8</summary>
+          <ul class="clean-list">
+            <li class="chapter-row"><span class="keyword"><a href="science/class-8/crop-production-and-management.html"><strong>Chapter 1:</strong> Crop Production And Management</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-8/microorganisms-friend-and-foe.html"><strong>Chapter 2:</strong> Microorganisms Friend And Foe</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-8/coal-and-petroleum.html"><strong>Chapter 3:</strong> Coal And Petroleum</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-8/combustion-and-flame.html"><strong>Chapter 4:</strong> Combustion And Flame</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-8/conservation-of-plants-and-animals.html"><strong>Chapter 5:</strong> Conservation Of Plants And Animals</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-8/reproduction-in-animals.html"><strong>Chapter 6:</strong> Reproduction In Animals</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-8/reaching-the-age-of-adolescence.html"><strong>Chapter 7:</strong> Reaching The Age Of Adolescence</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-8/force-and-pressure.html"><strong>Chapter 8:</strong> Force And Pressure</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-8/friction.html"><strong>Chapter 9:</strong> Friction</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-8/sound.html"><strong>Chapter 10:</strong> Sound</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-8/chemical-effects-of-electric-current.html"><strong>Chapter 11:</strong> Chemical Effects Of Electric Current</a></span></li>
+          </ul>
+        </details>
+      </div>
+      <div class="sub-topic" style="margin-left: 20px;">
+        <details>
+          <summary class="class-title">Class 9</summary>
+          <ul class="clean-list">
+            <li class="chapter-row"><span class="keyword"><a href="science/class-9/matter-in-our-surroundings.html"><strong>Chapter 1:</strong> Matter In Our Surroundings</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-9/is-matter-around-us-pure.html"><strong>Chapter 2:</strong> Is Matter Around Us Pure</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-9/atoms-and-molecules.html"><strong>Chapter 3:</strong> Atoms And Molecules</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-9/structure-of-the-atom.html"><strong>Chapter 4:</strong> Structure Of The Atom</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-9/the-fundamental-unit-of-life.html"><strong>Chapter 5:</strong> The Fundamental Unit Of Life</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-9/tissues.html"><strong>Chapter 6:</strong> Tissues</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-9/motion.html"><strong>Chapter 7:</strong> Motion</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-9/force-and-laws-of-motion.html"><strong>Chapter 8:</strong> Force And Laws Of Motion</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-9/gravitation.html"><strong>Chapter 9:</strong> Gravitation</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-9/work-and-energy.html"><strong>Chapter 10:</strong> Work And Energy</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-9/sound.html"><strong>Chapter 11:</strong> Sound</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-9/improvement-in-food-resources.html"><strong>Chapter 12:</strong> Improvement In Food Resources</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-9/exploration-entering-the-world-of-secondary-science.html">Exploration Entering The World Of Secondary Science</a></span></li>
+          </ul>
+        </details>
+      </div>
+      <div class="sub-topic" style="margin-left: 20px;">
+        <details>
+          <summary class="class-title">Class 7</summary>
+          <ul class="clean-list">
+            <li class="chapter-row"><span class="keyword"><a href="science/class-7/force-and-pressure.html">Force And Pressure</a></span></li>
+          </ul>
+        </details>
+      </div>
+    </details>
   </div>
   <div class="topic-box">
-    <div class="topic-title">📚 Subject: Mathematics</div>
-    <div class="sub-topic">
-      <h3>Class 10</h3>
-      <ul>
-        <li><span class="keyword"><a href="mathematics/class-10/polynomials.html">Polynomials</a></span></li>
-      </ul>
-    </div>
-    <div class="sub-topic">
-      <h3>Class 9</h3>
-      <ul>
-        <li><span class="keyword"><a href="mathematics/class-9/introduction-to-linear-polynomials.html">Introduction To Linear Polynomials</a></span></li>
-        <li><span class="keyword"><a href="mathematics/class-9/real-numbers.html">Real Numbers</a></span></li>
-        <li><span class="keyword"><a href="mathematics/class-9/orienting-yourself-the-use-of-coordinates.html">Orienting Yourself The Use Of Coordinates</a></span></li>
-      </ul>
-    </div>
+    <details>
+      <summary class="topic-title">📚 Subject: Mathematics</summary>
+      <div class="sub-topic" style="margin-left: 20px;">
+        <details>
+          <summary class="class-title">Class 10</summary>
+          <ul class="clean-list">
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-10/polynomials.html"><strong>Chapter 2:</strong> Polynomials</a></span></li>
+          </ul>
+        </details>
+      </div>
+      <div class="sub-topic" style="margin-left: 20px;">
+        <details>
+          <summary class="class-title">Class 9</summary>
+          <ul class="clean-list">
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-9/real-numbers.html"><strong>Chapter 1:</strong> Real Numbers</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-9/orienting-yourself-the-use-of-coordinates.html"><strong>Chapter 3:</strong> Orienting Yourself The Use Of Coordinates</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-9/introduction-to-linear-polynomials.html"><strong>Chapter 4:</strong> Introduction To Linear Polynomials</a></span></li>
+          </ul>
+        </details>
+      </div>
+    </details>
   </div>
   <div class="topic-box">
-    <div class="topic-title">📚 Subject: Biology</div>
-    <div class="sub-topic">
-      <h3>Class 9</h3>
-      <ul>
-        <li><span class="keyword"><a href="biology/class-9/cell-the-building-block-of-life.html">Cell The Building Block Of Life</a></span></li>
-      </ul>
-    </div>
+    <details>
+      <summary class="topic-title">📚 Subject: Biology</summary>
+      <div class="sub-topic" style="margin-left: 20px;">
+        <details>
+          <summary class="class-title">Class 9</summary>
+          <ul class="clean-list">
+            <li class="chapter-row"><span class="keyword"><a href="biology/class-9/cell-the-building-block-of-life.html"><strong>Chapter 5:</strong> Cell The Building Block Of Life</a></span></li>
+          </ul>
+        </details>
+      </div>
+    </details>
   </div>
 </body>
 </html>
