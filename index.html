@@ -11,41 +11,14 @@
     .keyword a:hover { text-decoration: underline; color: #003d82; }
     .chapter-row { margin-bottom: 12px; }
     .topic-box { margin-bottom: 15px; border: 1px solid #ddd; padding: 15px; border-radius: 8px; background-color: #fafafa; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+    .topic-title { font-size: 1.3em; font-weight: bold; cursor: pointer; padding: 5px 0; color: #2c3e50; }
+    .class-title { font-size: 1.1em; font-weight: 600; cursor: pointer; margin-top: 10px; padding: 5px 0; color: #34495e; }
     
-    /* 🌟 CLEAN TEXT CLASSES: Strictly handles font styling, no spacing logic */
-    .topic-title { font-size: 1.3em; font-weight: bold; color: #2c3e50; }
-    .class-title { font-size: 1.1em; font-weight: 600; color: #34495e; margin-top: 10px; }
-    
-    /* 🧱 UNBREAKABLE BUFFER ZONE: Forces structural padding onto the base element regardless of open/closed states */
-    details > summary { 
-      list-style: none !important; 
-      outline: none !important; 
-      position: relative !important; 
-      padding: 6px 10px 6px 45px !important; /* Locks a 45px clear margin space on the left */
-      display: block !important;             /* Eliminates display: inline-block collapse issues */
-      cursor: pointer;
-      box-sizing: border-box;
-    }
-    details > summary::-webkit-details-marker { display: none !important; }
-    details > summary::marker { display: none !important; content: ""; }
+    details > summary { list-style: none; outline: none; transition: color 0.2s; position: relative; padding-left: 20px;}
+    details > summary::-webkit-details-marker { display: none; }
     details > summary:hover { color: #0056b3; }
-    
-    /* 🎨 PINPOINT INDICATOR POSITIONING: Centers markers vertically inside the left buffer area */
-    details > summary::before { 
-      content: '[+]'; 
-      position: absolute !important; 
-      left: 12px !important; 
-      top: 50% !important;
-      transform: translateY(-50%) !important; /* Perfect vertical alignment center */
-      font-weight: bold !important; 
-      color: #0056b3 !important; /* 🔵 Theme Blue */
-      font-size: 1em !important; 
-      font-family: monospace !important;
-    }
-    details[open] > summary::before { 
-      content: '[-]'; 
-      color: #e67e22 !important; /* 🟠 Theme Orange */
-    }
+    details > summary::before { content: '[+] '; position: absolute; left: 0; font-weight: bold; color: #888; font-size: 1em; }
+    details[open] > summary::before { content: '[-] '; color: #0056b3; }
   </style>
 </head>
 <body>
@@ -142,18 +115,18 @@
         <details>
           <summary class="class-title">Class 6</summary>
           <ul class="clean-list">
-            <li class="chapter-row"><span class="keyword"><a href="science/class-6/the-wonderful-world-of-science.html"><strong>Chapter 1:</strong> The Wonderful World of Science</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-6/diversity-in-the-living-world.html"><strong>Chapter 2:</strong> Diversity in the Living World</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-6/mindful-eating-a-path-to-a-healthy-body.html"><strong>Chapter 3:</strong> Mindful Eating: A Path to a Healthy Body</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-6/exploring-magnets.html"><strong>Chapter 4:</strong> Exploring Magnets</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-6/measurement-of-length-and-motion.html"><strong>Chapter 5:</strong> Measurement of Length and Motion</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-6/materials-around-us.html"><strong>Chapter 6:</strong> Materials Around Us</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-6/temperature-and-its-measurement.html"><strong>Chapter 7:</strong> Temperature and its Measurement</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-6/a-journey-through-states-of-water.html"><strong>Chapter 8:</strong> A Journey through States of Water</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-6/methods-of-separation-in-everyday-life.html"><strong>Chapter 9:</strong> Methods of Separation in Everyday Life</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-6/living-creatures-exploring-their-characteristics.html"><strong>Chapter 10:</strong> Living Creatures: Exploring their Characteristics</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-6/nature-s-treasures.html"><strong>Chapter 11:</strong> Nature's Treasures</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-6/beyond-earth.html"><strong>Chapter 12:</strong> Beyond Earth</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href=""><strong>Chapter 1:</strong> The Wonderful World of Science</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href=""><strong>Chapter 2:</strong> Diversity in the Living World</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href=""><strong>Chapter 3:</strong> Mindful Eating: A Path to a Healthy Body</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href=""><strong>Chapter 4:</strong> Exploring Magnets</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href=""><strong>Chapter 5:</strong> Measurement of Length and Motion</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href=""><strong>Chapter 6:</strong> Materials Around Us</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href=""><strong>Chapter 7:</strong> Temperature and its Measurement</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href=""><strong>Chapter 8:</strong> A Journey through States of Water</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href=""><strong>Chapter 9:</strong> Methods of Separation in Everyday Life</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href=""><strong>Chapter 10:</strong> Living Creatures: Exploring their Characteristics</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href=""><strong>Chapter 11:</strong> Nature's Treasures</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href=""><strong>Chapter 12:</strong> Beyond Earth</a></span></li>
           </ul>
         </details>
       </div>
@@ -166,7 +139,19 @@
         <details>
           <summary class="class-title">Class 10</summary>
           <ul class="clean-list">
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-10/real-numbers.html"><strong>Chapter 1:</strong> Real Numbers</a></span></li>
             <li class="chapter-row"><span class="keyword"><a href="mathematics/class-10/polynomials.html"><strong>Chapter 2:</strong> Polynomials</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-10/polynomials.html"><strong>Chapter 2:</strong> Polynomials</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-10/pair-of-linear-equations-in-two-variables.html"><strong>Chapter 3:</strong> Pair of Linear Equations in Two Variables</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-10/quadratic-equations.html"><strong>Chapter 4:</strong> Quadratic Equations</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-10/arithmetic-progressions.html"><strong>Chapter 5:</strong> Arithmetic Progressions</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-10/triangles.html"><strong>Chapter 6:</strong> Triangles</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-10/introduction-to-trigonometry.html"><strong>Chapter 8:</strong> Introduction to Trigonometry</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-10/some-applications-of-trigonometry.html"><strong>Chapter 9:</strong> Some Applications of Trigonometry</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-10/circles.html"><strong>Chapter 10:</strong> Circles</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-10/surface-areas-and-volumes.html"><strong>Chapter 12:</strong> Surface Areas and Volumes</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-10/statistics.html"><strong>Chapter 13:</strong> Statistics</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-10/probability.html"><strong>Chapter 14:</strong> Probability</a></span></li>
           </ul>
         </details>
       </div>
@@ -175,8 +160,42 @@
           <summary class="class-title">Class 9</summary>
           <ul class="clean-list">
             <li class="chapter-row"><span class="keyword"><a href="mathematics/class-9/real-numbers.html"><strong>Chapter 1:</strong> Real Numbers</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-9/number-systems.html"><strong>Chapter 1:</strong> Number Systems</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-9/polynomials.html"><strong>Chapter 2:</strong> Polynomials</a></span></li>
             <li class="chapter-row"><span class="keyword"><a href="mathematics/class-9/orienting-yourself-the-use-of-coordinates.html"><strong>Chapter 3:</strong> Orienting Yourself The Use Of Coordinates</a></span></li>
             <li class="chapter-row"><span class="keyword"><a href="mathematics/class-9/introduction-to-linear-polynomials.html"><strong>Chapter 4:</strong> Introduction To Linear Polynomials</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-9/linear-equations-in-two-variables.html"><strong>Chapter 4:</strong> Linear Equations in Two Variables</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-9/introduction-to-euclid-geometry.html"><strong>Chapter 5:</strong> Introduction to Euclid Geometry</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-9/lines-and-angles.html"><strong>Chapter 6:</strong> Lines and Angles</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-9/triangles.html"><strong>Chapter 7:</strong> Triangles</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-9/quadrilaterals.html"><strong>Chapter 8:</strong> Quadrilaterals</a></span></li>
+          </ul>
+        </details>
+      </div>
+      <div class="sub-topic" style="margin-left: 20px;">
+        <details>
+          <summary class="class-title">Class 8-1</summary>
+          <ul class="clean-list">
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-8-1/rational-numbers.html"><strong>Chapter 1:</strong> Rational Numbers</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-8-1/linear-equations-in-one-variable.html"><strong>Chapter 2:</strong> Linear Equations in One Variable</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-8-1/understanding-quadrilaterals.html"><strong>Chapter 3:</strong> Understanding Quadrilaterals</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-8-1/data-handling.html"><strong>Chapter 4:</strong> Data Handling</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-8-1/chapter-5.html"><strong>Chapter 5:</strong> Chapter 5</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-8-1/chapter-6.html"><strong>Chapter 6:</strong> Chapter 6</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-8-1/chapter-7.html"><strong>Chapter 7:</strong> Chapter 7</a></span></li>
+          </ul>
+        </details>
+      </div>
+      <div class="sub-topic" style="margin-left: 20px;">
+        <details>
+          <summary class="class-title">Class 8-2</summary>
+          <ul class="clean-list">
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-8-2/chapter-1.html"><strong>Chapter 1:</strong> Chapter 1</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-8-2/chapter-2.html"><strong>Chapter 2:</strong> Chapter 2</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-8-2/chapter-3.html"><strong>Chapter 3:</strong> Chapter 3</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-8-2/chapter-4.html"><strong>Chapter 4:</strong> Chapter 4</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-8-2/squares-and-square-roots.html"><strong>Chapter 5:</strong> Squares and Square Roots</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-8-2/comparing-quantities.html"><strong>Chapter 7:</strong> Comparing Quantities</a></span></li>
           </ul>
         </details>
       </div>
