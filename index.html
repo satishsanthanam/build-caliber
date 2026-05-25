@@ -12,39 +12,40 @@
     .chapter-row { margin-bottom: 12px; }
     .topic-box { margin-bottom: 15px; border: 1px solid #ddd; padding: 15px; border-radius: 8px; background-color: #fafafa; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
     
-    /* 🌟 CLEAN TEXT CLASSES: Strictly handles font styling, no spacing logic */
+    /* 🧱 UNBREAKABLE BUFFER ZONE: Forces padding directly onto the custom class layout */
+    .topic-title, .class-title { 
+      display: block !important;
+      position: relative !important; 
+      padding: 6px 10px 6px 45px !important; /* Safety clearance zone */
+      cursor: pointer;
+      box-sizing: border-box;
+      outline: none !important;
+      list-style: none !important;
+    }
+    
     .topic-title { font-size: 1.3em; font-weight: bold; color: #2c3e50; }
     .class-title { font-size: 1.1em; font-weight: 600; color: #34495e; margin-top: 10px; }
     
-    /* 🧱 UNBREAKABLE BUFFER ZONE: Forces structural padding onto the base element regardless of open/closed states */
-    details > summary { 
-      list-style: none !important; 
-      outline: none !important; 
-      position: relative !important; 
-      padding: 6px 10px 6px 45px !important; /* Locks a 45px clear margin space on the left */
-      display: block !important;             /* Eliminates display: inline-block collapse issues */
-      cursor: pointer;
-      box-sizing: border-box;
-    }
-    details > summary::-webkit-details-marker { display: none !important; }
-    details > summary::marker { display: none !important; content: ""; }
-    details > summary:hover { color: #0056b3; }
+    summary::-webkit-details-marker { display: none !important; }
+    summary::marker { display: none !important; content: "" !important; }
+    summary:hover { color: #0056b3; }
     
-    /* 🎨 PINPOINT INDICATOR POSITIONING: Centers markers vertically inside the left buffer area */
-    details > summary::before { 
-      content: '[+]'; 
+    /* 🎨 PINPOINT POSITIONING FOR ICONS */
+    .topic-title::before, .class-title::before { 
+      content: '[+]' !important; 
       position: absolute !important; 
       left: 12px !important; 
       top: 50% !important;
-      transform: translateY(-50%) !important; /* Perfect vertical alignment center */
+      transform: translateY(-50%) !important;
       font-weight: bold !important; 
-      color: #0056b3 !important; /* 🔵 Theme Blue */
+      color: #0056b3 !important;
       font-size: 1em !important; 
       font-family: monospace !important;
     }
-    details[open] > summary::before { 
-      content: '[-]'; 
-      color: #e67e22 !important; /* 🟠 Theme Orange */
+    details[open] > .topic-title::before,
+    details[open] > .class-title::before { 
+      content: '[-]' !important; 
+      color: #e67e22 !important;
     }
   </style>
 </head>
@@ -190,6 +191,7 @@
             <li class="chapter-row"><span class="keyword"><a href="mathematics/class-9/number-systems.html"><strong>Chapter 1:</strong> Number Systems</a></span></li>
             <li class="chapter-row"><span class="keyword"><a href="mathematics/class-9/polynomials.html"><strong>Chapter 2:</strong> Polynomials</a></span></li>
             <li class="chapter-row"><span class="keyword"><a href="mathematics/class-9/orienting-yourself-the-use-of-coordinates.html"><strong>Chapter 3:</strong> Orienting Yourself The Use Of Coordinates</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-9/coordinate-geometry.html"><strong>Chapter 3:</strong> Coordinate Geometry</a></span></li>
             <li class="chapter-row"><span class="keyword"><a href="mathematics/class-9/introduction-to-linear-polynomials.html"><strong>Chapter 4:</strong> Introduction To Linear Polynomials</a></span></li>
             <li class="chapter-row"><span class="keyword"><a href="mathematics/class-9/linear-equations-in-two-variables.html"><strong>Chapter 4:</strong> Linear Equations in Two Variables</a></span></li>
             <li class="chapter-row"><span class="keyword"><a href="mathematics/class-9/introduction-to-euclid-geometry.html"><strong>Chapter 5:</strong> Introduction to Euclid Geometry</a></span></li>
@@ -207,9 +209,6 @@
             <li class="chapter-row"><span class="keyword"><a href="mathematics/class-8-1/linear-equations-in-one-variable.html"><strong>Chapter 2:</strong> Linear Equations in One Variable</a></span></li>
             <li class="chapter-row"><span class="keyword"><a href="mathematics/class-8-1/understanding-quadrilaterals.html"><strong>Chapter 3:</strong> Understanding Quadrilaterals</a></span></li>
             <li class="chapter-row"><span class="keyword"><a href="mathematics/class-8-1/data-handling.html"><strong>Chapter 4:</strong> Data Handling</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-8-1/chapter-5.html"><strong>Chapter 5:</strong> Chapter 5</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-8-1/chapter-6.html"><strong>Chapter 6:</strong> Chapter 6</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-8-1/chapter-7.html"><strong>Chapter 7:</strong> Chapter 7</a></span></li>
           </ul>
         </details>
       </div>
@@ -217,10 +216,8 @@
         <details>
           <summary class="class-title">Class 8-2</summary>
           <ul class="clean-list">
-            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-8-2/chapter-1.html"><strong>Chapter 1:</strong> Chapter 1</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-8-2/chapter-2.html"><strong>Chapter 2:</strong> Chapter 2</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-8-2/chapter-3.html"><strong>Chapter 3:</strong> Chapter 3</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-8-2/chapter-4.html"><strong>Chapter 4:</strong> Chapter 4</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-8-2/the-baudhayana-pythagoras-theorem.html"><strong>Chapter 2:</strong> The Baudhayana-Pythagoras Theorem</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-8-2/proportional-reasoning-2.html"><strong>Chapter 3:</strong> Proportional Reasoning-2</a></span></li>
             <li class="chapter-row"><span class="keyword"><a href="mathematics/class-8-2/squares-and-square-roots.html"><strong>Chapter 5:</strong> Squares and Square Roots</a></span></li>
             <li class="chapter-row"><span class="keyword"><a href="mathematics/class-8-2/comparing-quantities.html"><strong>Chapter 7:</strong> Comparing Quantities</a></span></li>
           </ul>
