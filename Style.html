@@ -1,0 +1,103 @@
+/* ========================================================
+   🔮 THE STUDY ALCHEMIST - ROOT CSS MASTER SOURCE
+   ======================================================== */
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  color: #2d3748;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  color: #334155;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 10px;
+}
+
+details {
+  margin-bottom: 12px;
+}
+
+summary {
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-left: 4px solid #047857;
+  padding: 8px 20px;
+  margin-bottom: 8px;
+  background-color: #f8fafc;
+}
+
+summary:hover {
+  background-color: #f1f5f9;
+}
+
+details details {
+  margin-left: 20px;
+  margin-top: 12px;
+}
+
+details details summary {
+  font-size: 0.95em;
+  border-left: 2px solid #047857;
+  padding: 4px 15px;
+  background-color: transparent;
+}
+
+ul {
+  padding-left: 30px;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+strong {
+  color: #047857;
+  font-weight: 700;
+}
+
+.nav-bar {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+.btn-nav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 14px;
+  background-color: #f8fafc;
+  color: #475569;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.88em;
+  font-weight: 500;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-nav:hover {
+  background-color: #047857;
+  color: #ffffff;
+  border-color: #047857;
+  box-shadow: 0 2px 4px rgba(4, 120, 87, 0.15);
+}
+
+/* 🌟 FIX: Force summary headings to stay inline with their dropdown arrows */
+summary h1,
+summary h2,
+summary h3,
+summary h4,
+summary h5,
+summary h6 {
+    display: inline;
+    margin: 0;
+    padding-left: 6px; /* Gives the text a clean, breathing distance from the arrow */
+}
