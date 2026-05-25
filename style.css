@@ -21,6 +21,7 @@ details, .topic-box {
   margin-bottom: 12px;
 }
 
+/* Main Top-Level Topic Style Box */
 summary, .topic-title {
   font-weight: 700;
   cursor: pointer;
@@ -29,13 +30,14 @@ summary, .topic-title {
   padding: 8px 20px;
   margin-bottom: 8px;
   background-color: #f8fafc;
+  color: #047857; /* 🌟 FIX: Automatically turns top-level headings green */
 }
 
 summary:hover, .topic-title:hover {
   background-color: #f1f5f9;
 }
 
-/* Nested collapsible sub-topics */
+/* Nested Collapsible Sub-Topics Layout */
 details details, .sub-topic {
   margin-left: 20px;
   margin-top: 12px;
@@ -56,12 +58,13 @@ li {
   margin-bottom: 10px;
 }
 
-/* 🌟 CLASS FIX: Map both standard strong tags AND the AI's keyword span tags to your emerald green */
+/* 🌟 KEYWORD FIX: Maps bold text and AI keyword spans to theme green */
 strong, .keyword {
   color: #047857;
   font-weight: 700;
 }
 
+/* Navigation System Styles */
 .nav-bar {
   display: flex;
   gap: 10px;
@@ -92,14 +95,15 @@ strong, .keyword {
   box-shadow: 0 2px 4px rgba(4, 120, 87, 0.15);
 }
 
-/* 🌟 ARROW FIX: Force summary headings to stay inline with their dropdown arrows */
+/* 🌟 ARROW & COLOR HARMONY FIX: Keeps headings right next to their arrows and turns them green */
 summary h1,
 summary h2,
 summary h3,
 summary h4,
 summary h5,
 summary h6 {
-    display: inline;
-    margin: 0;
-    padding-left: 6px; /* Gives the text a clean, breathing distance from the arrow */
+  display: inline;
+  margin: 0;
+  padding-left: 6px;
+  color: #047857; 
 }
