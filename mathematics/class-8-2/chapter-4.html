@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../../style.css">
+  <title>Exploring Some Geometric Themes</title>
+</head>
+<body>
+  <div class="nav-bar">
+    <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+    <a href="../../index.html" class="btn-nav">🏠 Home</a>
+  </div>
+  
+  <h1>Chapter 4: Exploring Some Geometric Themes</h1>
+
+  <details class="topic-box" open>
+    <summary class="topic-title">4.1 Fractals</summary>
+    
+    <details class="sub-topic">
+      <summary><h3>Introduction to Fractals</h3></summary>
+      <ul>
+        <li><span class="keyword">Fractals</span> are self-similar geometric shapes that exhibit the same or similar patterns over and over again at smaller and smaller scales.</li>
+        <li><span class="keyword">Self-similarity</span> occurs widely in nature, such as in ferns, trees, clouds, coastlines, mountains, and lightning.</li>
+      </ul>
+    </details>
+
+    <details class="sub-topic">
+      <summary><h3>Mathematical Fractals</h3></summary>
+      <ul>
+        <li>
+          <span class="keyword">Sierpinski Carpet:</span> Created by dividing a square into 9 smaller squares and removing the central square. This process is repeated recursively on the remaining 8 squares.
+          <ul>
+            <li>Number of remaining squares at step $n$: $R_n = 8^n$</li>
+            <li>Number of holes at step $n$: $H_n$ where $H_{n+1} = H_n + R_n$</li>
+          </ul>
+        </li>
+        <li>
+          <span class="keyword">Sierpinski Gasket (Triangle):</span> Created by dividing an equilateral triangle into 4 identical equilateral triangles by joining the midpoints, and removing the central triangle recursively.
+        </li>
+        <li>
+          <span class="keyword">Koch Snowflake:</span> Formed by starting with an equilateral triangle, dividing each side into 3 equal parts, raising an equilateral triangle over the middle part, and removing its base recursively.
+        </li>
+      </ul>
+    </details>
+
+    <details class="sub-topic">
+      <summary><h3>Fractals in Art</h3></summary>
+      <ul>
+        <li>Fractal patterns are found in historical architecture, such as the Kandariya Mahadev Temple in Khajuraho, India.</li>
+        <li>They also appear in traditional African art, such as Nigerian Fulani wedding blankets, and in the works of Dutch artist M.C. Escher (e.g., 'Smaller and Smaller').</li>
+      </ul>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">4.2 Visualising Solids</summary>
+    
+    <details class="sub-topic">
+      <summary><h3>Elements of 3D Solids</h3></summary>
+      <ul>
+        <li><span class="keyword">Faces:</span> The flat plane surfaces that form the boundary of a solid.</li>
+        <li><span class="keyword">Edges:</span> The line segments where two faces meet.</li>
+        <li><span class="keyword">Vertices:</span> The corner points where edges meet.</li>
+        <li>For example, a standard cube or cuboid has 6 faces, 12 edges, and 8 vertices.</li>
+      </ul>
+    </details>
+
+    <details class="sub-topic">
+      <summary><h3>Prisms vs. Pyramids</h3></summary>
+      <ul>
+        <li><span class="keyword">Prism:</span> A solid with two congruent polygonal bases as opposite faces, with all other faces being parallelograms. Named after the shape of its base (e.g., triangular prism, pentagonal prism).</li>
+        <li><span class="keyword">Pyramid:</span> A solid with a polygonal base and a single apex point outside the base, with triangular faces connecting the apex to the base vertices (e.g., triangular pyramid or tetrahedron, square pyramid).</li>
+      </ul>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">4.3 Nets of Solids</summary>
+    
+    <details class="sub-topic">
+      <summary><h3>Nets and Folding</h3></summary>
+      <ul>
+        <li>A <span class="keyword">Net</span> is a 2D flat shape that can be folded to form a 3D solid.</li>
+        <li>A standard cube has exactly 11 unique net structures (excluding rotations and reflections).</li>
+        <li>A regular tetrahedron has only 2 possible nets.</li>
+        <li>An octahedron has 11 different nets, while a dodecahedron has 43,380 unique nets.</li>
+      </ul>
+    </details>
+
+    <details class="sub-topic">
+      <summary><h3>Shortest Paths on a Solid</h3></summary>
+      <ul>
+        <li>To find the shortest path between two points on the surface of a 3D solid (like a cuboid), unfold the solid into its 2D net.</li>
+        <li>The straight line connecting the two points on the flat net represents the shortest path on the 3D surface.</li>
+        <li>The way a cuboid is unfolded matters, as different net configurations yield different straight-line distances.</li>
+      </ul>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">4.4 Projections and Views</summary>
+    
+    <details class="sub-topic">
+      <summary><h3>Projections</h3></summary>
+      <ul>
+        <li>A <span class="keyword">Projection</span> is the representation of a 3D object's points mapped perpendicularly onto a 2D plane.</li>
+        <li>The projection of a pair of parallel lines will always remain parallel.</li>
+      </ul>
+    </details>
+
+    <details class="sub-topic">
+      <summary><h3>Three-View Projections</h3></summary>
+      <p>To fully represent a 3D object on a 2D surface, three mutually perpendicular views are typically used:</p>
+      <ul>
+        <li><span class="keyword">Front View:</span> Projection onto the vertical plane.</li>
+        <li><span class="keyword">Top View:</span> Projection onto the horizontal plane.</li>
+        <li><span class="keyword">Side View:</span> Projection onto the side plane.</li>
+      </ul>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">4.5 Isometric Projections</summary>
+    
+    <details class="sub-topic">
+      <summary><h3>Isometric Drawing</h3></summary>
+      <ul>
+        <li>An <span class="keyword">Isometric Projection</span> is a 2D representation of a 3D object where the projections of all three primary axes (length, depth, and height) are scaled equally.</li>
+        <li>The isometric projection of a cube forms a regular hexagon.</li>
+        <li>An <span class="keyword">Isometric Grid</span> is constructed by tiling a plane with hexagons, allowing easy measurement and drawing of 3D solids along three primary directions.</li>
+      </ul>
+    </details>
+  </details>
+</body>
+</html>
