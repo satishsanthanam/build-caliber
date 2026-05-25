@@ -1,5 +1,5 @@
 // =====================================================================
-// 🔮 THE ALCHEMIST CORE: MASTER PIPELINE AUTOMATION (V8 - LIBERAL & TEST MODE)
+// 🔮 THE ALCHEMIST CORE: MASTER PIPELINE AUTOMATION (V7 - MULTI-MODE AUTOMATION)
 // =====================================================================
 
 let logBuffer = [];
@@ -11,17 +11,10 @@ function log(msg) {
 
 /**
  * MAIN EXECUTION ENGINE
- * Orchestrates Sheet reading, Native Drive PDF fetching, Gemini processing, and Bitbucket pushes.
+ * Orchestrates Sheet reading, Native Drive PDF fetching, Gemini 3.5 processing, and Bitbucket pushes.
  */
 function runAlchemistAutomatedFactory() {
-  log("🏁 Factory Ignition: Google Sheet Automation & Flash Active.");
-
-  // 🧪 SAFETY SWITCH: Set to false when you are ready to deploy real files!
-  const IS_TEST_MODE = true; 
-  
-  if (IS_TEST_MODE) {
-    log("⚠️ TEST MODE IS ENABLED. No API tokens will be spent. No code will be pushed.");
-  }
+  log("🏁 Factory Ignition: Google Sheet Automation & 3.5 Flash Active.");
 
   const props = PropertiesService.getScriptProperties();
   const INVENTORY_SHEET_ID = props.getProperty("INVENTORY_SHEET_ID");
@@ -66,7 +59,7 @@ function runAlchemistAutomatedFactory() {
 
   for (let r = 1; r < data.length; r++) {
     const currentStatus = data[r][colIndex.status].toString().trim();
-    if (currentStatus.includes("Pending") || currentStatus.includes("Discovered")) {
+    if (currentStatus.includes("Pending")) {
       taskQueue.push({ rowNum: r + 1, data: data[r] });
     }
   }
@@ -79,18 +72,14 @@ function runAlchemistAutomatedFactory() {
     return;
   }
 
-  // 📝 NEW LIBERAL PROMPT: Encourages full narrative depth instead of aggressive truncation
-  const liberalPrompt = `
-You are an expert curriculum developer creating web-based textbooks. Extract the content from this document and convert it into rich, semantic HTML.
-
-CRITICAL RULES FOR CHAPTER EXTRACTION:
-1. YOU MUST USE THE EXACT JSON STRUCTURE DESIGNED FOR THE FACTORY: {"html_content": "<your_html_here>"}.
-2. PRESERVE THE EDUCATIONAL NARRATIVE: Do not aggressively summarize. Keep detailed explanations, step-by-step mathematical examples, and historical context intact.
-3. SEMANTIC HTML: Rely entirely on clean elements (<h1>, <h3>, <p>, <ul>, <li>, <details>, <summary>). Avoid repetitive inline CSS.
-4. RICH TABLES & DATA: Preserve all tables and formulas accurately. Ensure full context is carried over.
-5. KEYWORDS: Every important concept, scientific term, or mathematical definition MUST be wrapped in a <span class="keyword"> tag.
-6. DELIVER FULL CONTEXT: Do not truncate or drop narrative filler. The web platform can handle massive files, so prioritize a complete, comprehensive, and engaging read.
-  `;
+  // Read prompt template
+  let promptTemplate = "";
+  try {
+    promptTemplate = HtmlService.createHtmlOutputFromFile("Prompt").getContent();
+  } catch (err) {
+    log("静态 Prompt Template asset not found. Using safe layout strings.");
+    promptTemplate = "Format the output cleanly inside structured HTML divs.";
+  }
 
   // Process Execution Loop
   for (let t = 0; t < taskQueue.length; t++) {
@@ -107,7 +96,7 @@ CRITICAL RULES FOR CHAPTER EXTRACTION:
     let pdfBlob = null;
 
     if (!driveUrl || !driveUrl.includes("drive.google.com")) {
-      log("❌ STORAGE FAULT: Missing or invalid Google Drive URL.");
+      log("❌ STORAGE FAULT: Missing or invalid Google Drive URL in row " + task.rowNum);
       sheet.getRange(task.rowNum, colIndex.status + 1).setValue("❌ MISSING LINK");
       flushLogsToDrive();
       continue;
@@ -117,6 +106,7 @@ CRITICAL RULES FOR CHAPTER EXTRACTION:
       const fileIdMatch = driveUrl.match(/[-\w]{25,}(?!.*[-\w]{25,})/);
       if (!fileIdMatch) throw new Error("Could not parse File ID.");
       pdfBlob = DriveApp.getFileById(fileIdMatch[0]).getBlob();
+      log("📝 Extracted PDF layout streams straight from internal Drive space.");
     } catch (driveErr) {
       log("❌ DRIVE ACCESS FAULT: " + driveErr.toString());
       sheet.getRange(task.rowNum, colIndex.status + 1).setValue("❌ DRIVE BLOB FAULT");
@@ -124,34 +114,24 @@ CRITICAL RULES FOR CHAPTER EXTRACTION:
       continue;
     }
 
-    const sanitizedSubject = subject.toLowerCase().replace(/[^a-z0-9]/g, "-");
-    const sanitizedClass = classLevel.toLowerCase().replace(/[^a-z0-9]/g, "-");
-    const sanitizedTitle = chapterTitle.toLowerCase().replace(/[^a-z0-9]/g, "-").replace(/-+/g, "-");
-    const finalPath = sanitizedSubject + "/" + sanitizedClass + "/" + sanitizedTitle + ".html";
-
-    // 🛑 TEST MODE INTERCEPT
-    if (IS_TEST_MODE) {
-      log("🧪 [DRY-RUN] Verified PDF Blob size: " + pdfBlob.getBytes().length + " bytes.");
-      log("🧪 [DRY-RUN] Calculated Git path: " + finalPath);
-      sheet.getRange(task.rowNum, colIndex.status + 1).setValue("🧪 Test Passed");
-      sheet.getRange(task.rowNum, colIndex.path + 1).setValue(finalPath);
-      continue; // Skips real Gemini API and Git pushes!
-    }
-
-    // --- REAL PRODUCTION BLOCKS ---
     let cleanHtmlPayload = "";
     try {
-      const optimalModel = "gemini-1.5-flash"; // Upgraded to 1.5 Flash for better large-context handling
-      let apiResponseRaw = callGeminiAPI(pdfBlob, liberalPrompt, optimalModel, GEMINI_API_KEY);
+      const optimalModel = "gemini-3.5-flash";
+      let apiResponseRaw = callGeminiAPI(pdfBlob, promptTemplate, optimalModel, GEMINI_API_KEY);
       let parsedJson = JSON.parse(apiResponseRaw);
       cleanHtmlPayload = parsedJson.html_content;
       
       if (!cleanHtmlPayload) throw new Error("html_content string parsed empty.");
     } catch (parseError) {
-      log("❌ PARSE FAULT: AI structure failed. Error: " + parseError.toString());
-      sheet.getRange(task.rowNum, colIndex.status + 1).setValue("⚠️ Output Fault");
+      log("❌ PARSE FAULT: AI structure truncated. Error: " + parseError.toString());
+      sheet.getRange(task.rowNum, colIndex.status + 1).setValue("⚠️ Output Truncated");
       continue;
     }
+
+    const sanitizedSubject = subject.toLowerCase().replace(/[^a-z0-9]/g, "-");
+    const sanitizedClass = classLevel.toLowerCase().replace(/[^a-z0-9]/g, "-");
+    const sanitizedTitle = chapterTitle.toLowerCase().replace(/[^a-z0-9]/g, "-").replace(/-+/g, "-");
+    const finalPath = sanitizedSubject + "/" + sanitizedClass + "/" + sanitizedTitle + ".html";
 
     const stagingBranchName = "factory-builds";
     const commitSuccess = pushFileToBitbucketWithJira(finalPath, cleanHtmlPayload, stagingBranchName);
@@ -174,13 +154,13 @@ CRITICAL RULES FOR CHAPTER EXTRACTION:
 
     SpreadsheetApp.flush();
     flushLogsToDrive();
-    Utilities.sleep(4000); // Breathe API
+    Utilities.sleep(4000);
   }
   flushLogsToDrive();
 }
 
 /**
- * API DRIVER
+ * Connects directly to Google AI Studio Gemini API endpoints
  */
 function callGeminiAPI(pdfBlob, promptText, modelName, apiKey) {
   const url = "https://generativelanguage.googleapis.com/v1beta/models/" + modelName + ":generateContent?key=" + apiKey;
@@ -198,7 +178,8 @@ function callGeminiAPI(pdfBlob, promptText, modelName, apiKey) {
         "properties": { "html_content": { "type": "STRING" } },
         "required": ["html_content"]
       },
-      "temperature": 0.2
+      "temperature": 0.2,
+      "maxOutputTokens": 8192
     }
   };
 
@@ -218,7 +199,7 @@ function callGeminiAPI(pdfBlob, promptText, modelName, apiKey) {
 }
 
 /**
- * GIT DEPLOYMENT ENGINES
+ * Git Multi-part File Deployer
  */
 function pushFileToBitbucketWithJira(filePath, fileContent, branchName) {
   const props = PropertiesService.getScriptProperties();
@@ -305,4 +286,112 @@ function flushLogsToDrive() {
     file.setContent(file.getBlob().getDataAsString() + logBuffer.join("\n") + "\n");
     logBuffer = [];
   } catch (e) {}
+}
+
+// =====================================================================
+// 🌐 SYNCHRONIZERS & UTILITIES
+// =====================================================================
+
+/**
+ * DYNAMIC COLLAPSIBLE NAVIGATION BUILDING ENGINE
+ */
+function buildDynamicIndex() {
+  const props = PropertiesService.getScriptProperties();
+  const INVENTORY_SHEET_ID = props.getProperty("INVENTORY_SHEET_ID");
+  
+  if (!INVENTORY_SHEET_ID) {
+    Logger.log("❌ ERROR: INVENTORY_SHEET_ID missing.");
+    return;
+  }
+
+  const sheet = SpreadsheetApp.openById(INVENTORY_SHEET_ID).getActiveSheet();
+  const data = sheet.getDataRange().getValues();
+  const headers = data[0];
+
+  const col = {
+    subject: headers.indexOf("Subject"),
+    classLevel: headers.indexOf("Class Level"),
+    chapterNo: headers.indexOf("Chapter No."),
+    title: headers.indexOf("Chapter Title"),
+    status: headers.indexOf("Status"),
+    path: headers.indexOf("Bitbucket Path (Auto)")
+  };
+
+  const curriculumMap = {};
+  let completedCount = 0;
+
+  for (let r = 1; r < data.length; r++) {
+    const row = data[r];
+    if (row[col.status] === "✅ Completed") {
+      const subj = row[col.subject].toString().trim();
+      const cls = row[col.classLevel].toString().trim();
+      const chapNo = parseInt(row[col.chapterNo], 10);
+      const title = row[col.title].toString().trim();
+      const path = row[col.path].toString().trim();
+
+      if (!curriculumMap[subj]) curriculumMap[subj] = {};
+      if (!curriculumMap[subj][cls]) curriculumMap[subj][cls] = [];
+
+      const stableChapNo = isNaN(chapNo) ? 999 : chapNo;
+      curriculumMap[subj][cls].push({ no: stableChapNo, title: title, path: path });
+      completedCount++;
+    }
+  }
+
+  if (completedCount === 0) {
+    Logger.log("⚠️ No completed chapters found in the sheet. Index generation halted.");
+    return;
+  }
+
+  let html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <title>Study Alchemist - Curriculum Home</title>
+  <style>
+    body { font-family: sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px;}
+    .clean-list { list-style-type: none; padding-left: 10px; border-left: 2px solid #eee; margin-left: 10px; margin-bottom: 10px; }
+    .keyword a { color: #0056b3; text-decoration: none; font-size: 1.05em; }
+    .keyword a:hover { text-decoration: underline; color: #003d82; }
+    .chapter-row { margin-bottom: 12px; }
+    .topic-box { margin-bottom: 15px; border: 1px solid #ddd; padding: 15px; border-radius: 8px; background-color: #fafafa; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+    .topic-title { font-size: 1.3em; font-weight: bold; cursor: pointer; padding: 5px 0; color: #2c3e50; }
+    .class-title { font-size: 1.1em; font-weight: 600; cursor: pointer; margin-top: 10px; padding: 5px 0; color: #34495e; }
+    
+    details > summary { list-style: none; outline: none; transition: color 0.2s; position: relative; padding-left: 20px;}
+    details > summary::-webkit-details-marker { display: none; }
+    details > summary:hover { color: #0056b3; }
+    details > summary::before { content: '[+] '; position: absolute; left: 0; font-weight: bold; color: #888; font-size: 1em; }
+    details[open] > summary::before { content: '[-] '; color: #0056b3; }
+  </style>
+</head>
+<body>
+  <div class="nav-bar" style="margin-bottom: 30px; border-bottom: 2px solid #eee; padding-bottom: 10px;">
+    <h2>Study Alchemist Curriculum Database</h2>
+  </div>\n`;
+
+  for (const subj in curriculumMap) {
+    html += `  <div class="topic-box">\n    <details>\n      <summary class="topic-title">Subject: ${subj}</summary>\n`;
+    for (const cls in curriculumMap[subj]) {
+      html += `      <div class="sub-topic" style="margin-left: 20px;">\n        <details>\n          <summary class="class-title">${cls}</summary>\n          <ul class="clean-list">\n`;
+      
+      curriculumMap[subj][cls].sort((a, b) => a.no - b.no);
+
+      curriculumMap[subj][cls].forEach(chapter => {
+        let displayTitle = (chapter.no === 999) ? chapter.title : `<strong>Chapter ${chapter.no}:</strong> ${chapter.title}`;
+        html += `            <li class="chapter-row"><span class="keyword"><a href="${chapter.path}">${displayTitle}</a></span></li>\n`;
+      });
+      
+      html += `          </ul>\n        </details>\n      </div>\n`;
+    }
+    html += `    </details>\n  </div>\n`;
+  }
+
+  html += `</body>\n</html>`;
+
+  const success = pushFileToBitbucketWithJira("index.html", html, "factory-builds");
+  if (success) {
+    Logger.log("✅ SUCCESS: Immaculate, safe index.html successfully generated and pushed!");
+  }
 }

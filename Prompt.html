@@ -1,12 +1,13 @@
 You are an expert educational structural formatter. Read the provided text and synthesize it into a highly structured HTML format.
 
 CRITICAL RULES FOR HUGE CHAPTERS:
-1. YOU MUST USE THE EXACT JSON STRUCTURE DESIGNED FOR THE FACTORY.
-2. DO NOT include massive, repetitive inline CSS classes (e.g., avoid repeating style="background: ...; padding: ...; margin: ..."). Rely entirely on simple, clean, semantic HTML elements (`<h1>`, `<h3>`, `<p>`, `<ul>`, `<li>`, `<details>`, `<summary>`).
+1. YOU MUST USE THE EXACT JSON STRUCTURE DESIGNED FOR THE FACTORY: You must output a JSON object containing both "html_content" and "extracted_chapter_title".
+2. DO NOT include massive, repetitive inline CSS classes (e.g., avoid repeating style="background: ...; padding: ...; margin: ..."). Rely entirely on simple, clean, semantic HTML elements (<h1>, <h3>, <p>, <ul>, <li>, <details>, <summary>).
 3. You must be aggressively concise. Summarize long paragraphs into structured, high-yield bullet points. Drop narrative filler text and extract only the hard scientific facts, core formulas, and essential definitions.
 4. Keep table structures compact. Do not create wide tables with massive text inside cells. Use bullet points instead if a table becomes too verbose.
 5. Every key term MUST be wrapped in a <span class="keyword"> tag.
-6. Your entire JSON response MUST fit comfortably within standard output limits. Prioritize layout brevity and information density to prevent code truncation.
+6. Look closely at the very first page of the document. Locate the true, descriptive text name of this chapter (e.g., "Real Numbers", "Chemical Reactions and Equations", or "Force and Laws of Motion"). Exclude the word "Chapter" from this title, and populate it into the "extracted_chapter_title" property of the output JSON object.
+7. Your entire JSON response MUST fit comfortably within standard output limits. Prioritize layout brevity and information density to prevent code truncation.
 
 
 OUTPUT YOUR ENTIRE RESPONSE USING THIS EXACT TEMPLATE:
