@@ -12,29 +12,36 @@
     .chapter-row { margin-bottom: 12px; }
     .topic-box { margin-bottom: 15px; border: 1px solid #ddd; padding: 15px; border-radius: 8px; background-color: #fafafa; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
     
-    /* 🌟 FIX: Native text block styles with clear margins to prevent any text overlap */
-    .topic-title { font-size: 1.3em; font-weight: bold; cursor: pointer; padding: 5px 0 5px 30px; color: #2c3e50; display: inline-block; }
-    .class-title { font-size: 1.1em; font-weight: 600; cursor: pointer; margin-top: 10px; padding: 5px 0 5px 30px; color: #34495e; display: inline-block; }
+    .topic-title { font-size: 1.3em; font-weight: bold; color: #2c3e50; }
+    .class-title { font-size: 1.1em; font-weight: 600; color: #34495e; }
     
-    /* Pure native pseudo selectors for your indicator markers */
-    details > summary { list-style: none; outline: none; transition: color 0.2s; position: relative; }
+    /* 🌟 FLEXBOX SPACING FIX: Forces natural layout flow without absolute positioning */
+    details > summary { 
+      list-style: none; 
+      outline: none; 
+      transition: color 0.2s; 
+      cursor: pointer;
+      user-select: none;
+      display: flex !important;       /* Forces flexbox alignment */
+      align-items: center !important;  /* Vertically aligns icon with text center */
+      gap: 12px !important;            /* 🧱 PERMANENT SPACING GAP: Explicitly separates icon from text */
+      padding: 6px 0;
+    }
     details > summary::-webkit-details-marker { display: none; }
     details > summary:hover { color: #0056b3; }
     
-    /* 🎨 ADJUSTMENT: Setting crisp colored indicator markers */
+    /* 🎨 ADJUSTMENT: Consistent layout icons and text color assignments */
     details > summary::before { 
       content: '[+]'; 
-      position: absolute; 
-      left: 0; 
-      top: 5px;
       font-weight: bold; 
-      color: #0056b3; /* 🔵 Clean theme blue */
-      font-size: 1em; 
+      color: #0056b3;                 /* Blue indicator icon for closed boxes */
+      font-size: 1.05em; 
       font-family: monospace;
+      flex-shrink: 0;                 /* Prevents browser from shrinking text indicator */
     }
     details[open] > summary::before { 
       content: '[-]'; 
-      color: #e67e22; /* 🟠 Distinct theme orange for opened state */
+      color: #e67e22;                 /* Orange indicator icon for expanded boxes */
     }
   </style>
 </head>
