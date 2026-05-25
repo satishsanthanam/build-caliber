@@ -7,42 +7,44 @@
   <style>
     .keyword a { color: inherit; text-decoration: none; }
     .keyword a:hover { text-decoration: underline; }
+    /* Ensures summary markers behave nicely with topic titles */
+    summary { cursor: pointer; outline: none; }
   </style>
 </head>
 <body>
   <div class="nav-bar">
     <h2>🔮 Study Alchemist Curriculum Database</h2>
   </div>
-  <div class="topic-box">
-    <div class="topic-title">📚 Subject: Biology</div>
-    <div class="sub-topic">
-      <h3>Class 9</h3>
+  <details class="topic-box" open>
+    <summary class="topic-title">📚 Subject: Biology</summary>
+    <details class="sub-topic" style="margin-bottom: 10px;">
+      <summary style="font-weight: bold;"><h3>Class 9</h3></summary>
       <ul>
         <li><span class="keyword"><a href="biology/class-9/cell-the-building-block-of-life.html">Cell The Building Block Of Life</a></span></li>
       </ul>
-    </div>
-  </div>
-  <div class="topic-box">
-    <div class="topic-title">📚 Subject: Mathematics</div>
-    <div class="sub-topic">
-      <h3>Class 10</h3>
+    </details>
+  </details>
+  <details class="topic-box" open>
+    <summary class="topic-title">📚 Subject: Mathematics</summary>
+    <details class="sub-topic" style="margin-bottom: 10px;">
+      <summary style="font-weight: bold;"><h3>Class 10</h3></summary>
       <ul>
         <li><span class="keyword"><a href="mathematics/class-10/polynomials.html">Polynomials</a></span></li>
       </ul>
-    </div>
-    <div class="sub-topic">
-      <h3>Class 9</h3>
+    </details>
+    <details class="sub-topic" style="margin-bottom: 10px;">
+      <summary style="font-weight: bold;"><h3>Class 9</h3></summary>
       <ul>
         <li><span class="keyword"><a href="mathematics/class-9/introduction-to-linear-polynomials.html">Introduction To Linear Polynomials</a></span></li>
         <li><span class="keyword"><a href="mathematics/class-9/orienting-yourself-the-use-of-coordinates.html">Orienting Yourself The Use Of Coordinates</a></span></li>
         <li><span class="keyword"><a href="mathematics/class-9/real-numbers.html">Real Numbers</a></span></li>
       </ul>
-    </div>
-  </div>
-  <div class="topic-box">
-    <div class="topic-title">📚 Subject: Science</div>
-    <div class="sub-topic">
-      <h3>Class 10</h3>
+    </details>
+  </details>
+  <details class="topic-box" open>
+    <summary class="topic-title">📚 Subject: Science</summary>
+    <details class="sub-topic" style="margin-bottom: 10px;">
+      <summary style="font-weight: bold;"><h3>Class 10</h3></summary>
       <ul>
         <li><span class="keyword"><a href="science/class-10/acids-bases-and-salts.html">Acids Bases And Salts</a></span></li>
         <li><span class="keyword"><a href="science/class-10/carbon-and-its-compounds.html">Carbon And Its Compounds</a></span></li>
@@ -53,15 +55,15 @@
         <li><span class="keyword"><a href="science/class-10/metals-and-non-metals.html">Metals And Non Metals</a></span></li>
         <li><span class="keyword"><a href="science/class-10/microorganisms-friend-and-foe.html">Microorganisms Friend And Foe</a></span></li>
       </ul>
-    </div>
-    <div class="sub-topic">
-      <h3>Class 7</h3>
+    </details>
+    <details class="sub-topic" style="margin-bottom: 10px;">
+      <summary style="font-weight: bold;"><h3>Class 7</h3></summary>
       <ul>
         <li><span class="keyword"><a href="science/class-7/force-and-pressure.html">Force And Pressure</a></span></li>
       </ul>
-    </div>
-    <div class="sub-topic">
-      <h3>Class 8</h3>
+    </details>
+    <details class="sub-topic" style="margin-bottom: 10px;">
+      <summary style="font-weight: bold;"><h3>Class 8</h3></summary>
       <ul>
         <li><span class="keyword"><a href="science/class-8/chemical-effects-of-electric-current.html">Chemical Effects Of Electric Current</a></span></li>
         <li><span class="keyword"><a href="science/class-8/coal-and-petroleum.html">Coal And Petroleum</a></span></li>
@@ -74,9 +76,9 @@
         <li><span class="keyword"><a href="science/class-8/reproduction-in-animals.html">Reproduction In Animals</a></span></li>
         <li><span class="keyword"><a href="science/class-8/sound.html">Sound</a></span></li>
       </ul>
-    </div>
-    <div class="sub-topic">
-      <h3>Class 9</h3>
+    </details>
+    <details class="sub-topic" style="margin-bottom: 10px;">
+      <summary style="font-weight: bold;"><h3>Class 9</h3></summary>
       <ul>
         <li><span class="keyword"><a href="science/class-9/atoms-and-molecules.html">Atoms And Molecules</a></span></li>
         <li><span class="keyword"><a href="science/class-9/exploration-entering-the-world-of-secondary-science.html">Exploration Entering The World Of Secondary Science</a></span></li>
@@ -92,7 +94,7 @@
         <li><span class="keyword"><a href="science/class-9/tissues.html">Tissues</a></span></li>
         <li><span class="keyword"><a href="science/class-9/work-and-energy.html">Work And Energy</a></span></li>
       </ul>
-    </div>
-  </div>
+    </details>
+  </details>
 </body>
 </html>
