@@ -15,34 +15,38 @@
     .topic-title { font-size: 1.3em; font-weight: bold; color: #2c3e50; }
     .class-title { font-size: 1.1em; font-weight: 600; color: #34495e; }
     
-    /* 🌟 FLEXBOX SPACING FIX: Forces natural layout flow without absolute positioning */
+    /* 🌟 STRIPS NATIVE BROWSER MARKERS */
     details > summary { 
-      list-style: none; 
       outline: none; 
-      transition: color 0.2s; 
       cursor: pointer;
       user-select: none;
-      display: flex !important;       /* Forces flexbox alignment */
-      align-items: center !important;  /* Vertically aligns icon with text center */
-      gap: 12px !important;            /* 🧱 PERMANENT SPACING GAP: Explicitly separates icon from text */
+      display: flex !important;       /* Forces modern flexbox arrangement */
+      align-items: center !important;  /* Centers elements vertically */
       padding: 6px 0;
     }
-    details > summary::-webkit-details-marker { display: none; }
-    details > summary:hover { color: #0056b3; }
+    details > summary::-webkit-details-marker { display: none !important; }
+    details > summary::marker { display: none !important; content: ""; }
     
-    /* 🎨 ADJUSTMENT: Consistent layout icons and text color assignments */
-    details > summary::before { 
-      content: '[+]'; 
+    /* 🎨 CUSTOMIZED ICON CONTAINER */
+    .icon-indicator {
       font-weight: bold; 
-      color: #0056b3;                 /* Blue indicator icon for closed boxes */
+      color: #0056b3;                 /* Theme Blue closed color */
       font-size: 1.05em; 
       font-family: monospace;
-      flex-shrink: 0;                 /* Prevents browser from shrinking text indicator */
+      margin-right: 14px;             /* 🧱 PHYSICAL SPACING WALL: Forces gap between elements */
+      display: inline-block;
+      width: 25px;                    /* Sets fixed width layout constraint */
+      flex-shrink: 0;
     }
-    details[open] > summary::before { 
-      content: '[-]'; 
-      color: #e67e22;                 /* Orange indicator icon for expanded boxes */
+    details[open] > summary .icon-indicator { 
+      color: #e67e22;                 /* Theme Orange expanded color */
     }
+    
+    .summary-text {
+      display: inline-block;
+    }
+    
+    details > summary:hover .summary-text { color: #0056b3; }
   </style>
 </head>
 <body>
@@ -51,10 +55,10 @@
   </div>
   <div class="topic-box">
     <details>
-      <summary class="topic-title">Subject: Science</summary>
+      <summary><span class="icon-indicator">[+]</span><span class="summary-text topic-title">Subject: Science</span></summary>
       <div class="sub-topic" style="margin-left: 20px;">
         <details>
-          <summary class="class-title">Class 10</summary>
+          <summary><span class="icon-indicator">[+]</span><span class="summary-text class-title">Class 10</span></summary>
           <ul class="clean-list">
             <li class="chapter-row"><span class="keyword"><a href="science/class-10/chemical-reactions-and-equations.html"><strong>Chapter 1:</strong> Chemical Reactions And Equations</a></span></li>
             <li class="chapter-row"><span class="keyword"><a href="science/class-10/acids-bases-and-salts.html"><strong>Chapter 2:</strong> Acids Bases And Salts</a></span></li>
@@ -75,7 +79,7 @@
       </div>
       <div class="sub-topic" style="margin-left: 20px;">
         <details>
-          <summary class="class-title">Class 8</summary>
+          <summary><span class="icon-indicator">[+]</span><span class="summary-text class-title">Class 8</span></summary>
           <ul class="clean-list">
             <li class="chapter-row"><span class="keyword"><a href="science/class-8/crop-production-and-management.html"><strong>Chapter 1:</strong> Crop Production And Management</a></span></li>
             <li class="chapter-row"><span class="keyword"><a href="science/class-8/microorganisms-friend-and-foe.html"><strong>Chapter 2:</strong> Microorganisms Friend And Foe</a></span></li>
@@ -95,7 +99,7 @@
       </div>
       <div class="sub-topic" style="margin-left: 20px;">
         <details>
-          <summary class="class-title">Class 9</summary>
+          <summary><span class="icon-indicator">[+]</span><span class="summary-text class-title">Class 9</span></summary>
           <ul class="clean-list">
             <li class="chapter-row"><span class="keyword"><a href="science/class-9/exploration-entering-the-world-of-secondary-science.html"><strong>Chapter 0:</strong> Exploration Entering The World Of Secondary Science</a></span></li>
             <li class="chapter-row"><span class="keyword"><a href="science/class-9/matter-in-our-surroundings.html"><strong>Chapter 1:</strong> Matter In Our Surroundings</a></span></li>
@@ -116,7 +120,7 @@
       </div>
       <div class="sub-topic" style="margin-left: 20px;">
         <details>
-          <summary class="class-title">Class 7</summary>
+          <summary><span class="icon-indicator">[+]</span><span class="summary-text class-title">Class 7</span></summary>
           <ul class="clean-list">
             <li class="chapter-row"><span class="keyword"><a href="science/class-7/nutrition-in-plants.html"><strong>Chapter 1:</strong> Nutrition In Plants</a></span></li>
             <li class="chapter-row"><span class="keyword"><a href="science/class-7/nutrition-in-animals.html"><strong>Chapter 2:</strong> Nutrition In Animals</a></span></li>
@@ -137,7 +141,7 @@
       </div>
       <div class="sub-topic" style="margin-left: 20px;">
         <details>
-          <summary class="class-title">Class 6</summary>
+          <summary><span class="icon-indicator">[+]</span><span class="summary-text class-title">Class 6</span></summary>
           <ul class="clean-list">
             <li class="chapter-row"><span class="keyword"><a href="science/class-6/the-wonderful-world-of-science.html"><strong>Chapter 1:</strong> The Wonderful World of Science</a></span></li>
             <li class="chapter-row"><span class="keyword"><a href="science/class-6/diversity-in-the-living-world.html"><strong>Chapter 2:</strong> Diversity in the Living World</a></span></li>
@@ -158,10 +162,10 @@
   </div>
   <div class="topic-box">
     <details>
-      <summary class="topic-title">Subject: Mathematics</summary>
+      <summary><span class="icon-indicator">[+]</span><span class="summary-text topic-title">Subject: Mathematics</span></summary>
       <div class="sub-topic" style="margin-left: 20px;">
         <details>
-          <summary class="class-title">Class 10</summary>
+          <summary><span class="icon-indicator">[+]</span><span class="summary-text class-title">Class 10</span></summary>
           <ul class="clean-list">
             <li class="chapter-row"><span class="keyword"><a href="mathematics/class-10/polynomials.html"><strong>Chapter 2:</strong> Polynomials</a></span></li>
           </ul>
@@ -169,7 +173,7 @@
       </div>
       <div class="sub-topic" style="margin-left: 20px;">
         <details>
-          <summary class="class-title">Class 9</summary>
+          <summary><span class="icon-indicator">[+]</span><span class="summary-text class-title">Class 9</span></summary>
           <ul class="clean-list">
             <li class="chapter-row"><span class="keyword"><a href="mathematics/class-9/real-numbers.html"><strong>Chapter 1:</strong> Real Numbers</a></span></li>
             <li class="chapter-row"><span class="keyword"><a href="mathematics/class-9/orienting-yourself-the-use-of-coordinates.html"><strong>Chapter 3:</strong> Orienting Yourself The Use Of Coordinates</a></span></li>
@@ -181,10 +185,10 @@
   </div>
   <div class="topic-box">
     <details>
-      <summary class="topic-title">Subject: Biology</summary>
+      <summary><span class="icon-indicator">[+]</span><span class="summary-text topic-title">Subject: Biology</span></summary>
       <div class="sub-topic" style="margin-left: 20px;">
         <details>
-          <summary class="class-title">Class 9</summary>
+          <summary><span class="icon-indicator">[+]</span><span class="summary-text class-title">Class 9</span></summary>
           <ul class="clean-list">
             <li class="chapter-row"><span class="keyword"><a href="biology/class-9/cell-the-building-block-of-life.html"><strong>Chapter 5:</strong> Cell The Building Block Of Life</a></span></li>
           </ul>
@@ -192,5 +196,16 @@
       </div>
     </details>
   </div>
+
+  <script>
+    document.querySelectorAll('details').forEach(el => {
+      el.addEventListener('toggle', () => {
+        const icon = el.querySelector('summary .icon-indicator');
+        if (icon) {
+          icon.textContent = el.open ? '[-]' : '[+]';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
