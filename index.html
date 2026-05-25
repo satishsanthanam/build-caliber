@@ -12,36 +12,39 @@
     .chapter-row { margin-bottom: 12px; }
     .topic-box { margin-bottom: 15px; border: 1px solid #ddd; padding: 15px; border-radius: 8px; background-color: #fafafa; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
     
-    /* Text styling classes - 🌟 FIX: Removed display: inline-block and left padding */
-    .topic-title { font-size: 1.3em; font-weight: bold; cursor: pointer; color: #2c3e50; padding: 5px 0; }
-    .class-title { font-size: 1.1em; font-weight: 600; cursor: pointer; color: #34495e; padding: 5px 0; margin-top: 10px; }
+    /* 🌟 CLEAN TEXT CLASSES: Strictly handles font styling, no spacing logic */
+    .topic-title { font-size: 1.3em; font-weight: bold; color: #2c3e50; }
+    .class-title { font-size: 1.1em; font-weight: 600; color: #34495e; margin-top: 10px; }
     
-    /* 🌟 THE CODESPACE FIX: Unified layout padding rule on the base summary element */
+    /* 🧱 UNBREAKABLE BUFFER ZONE: Forces structural padding onto the base element regardless of open/closed states */
     details > summary { 
-      list-style: none; 
-      outline: none; 
-      transition: color 0.2s; 
-      position: relative; 
-      padding-left: 40px !important; /* 🧱 UNBREAKABLE BUFFER: Safely pushes all header text 40px to the right */
+      list-style: none !important; 
+      outline: none !important; 
+      position: relative !important; 
+      padding: 6px 10px 6px 45px !important; /* Locks a 45px clear margin space on the left */
+      display: block !important;             /* Eliminates display: inline-block collapse issues */
+      cursor: pointer;
+      box-sizing: border-box;
     }
-    details > summary::-webkit-details-marker { display: none; }
+    details > summary::-webkit-details-marker { display: none !important; }
+    details > summary::marker { display: none !important; content: ""; }
     details > summary:hover { color: #0056b3; }
     
-    /* Custom indicator styles position cleanly within the 40px buffer zone */
+    /* 🎨 PINPOINT INDICATOR POSITIONING: Centers markers vertically inside the left buffer area */
     details > summary::before { 
       content: '[+]'; 
-      position: absolute; 
-      left: 5px; 
-      top: 50%;
-      transform: translateY(-50%); /* Vertically centers the icon perfectly on the text line */
-      font-weight: bold; 
-      color: #0056b3; /* 🔵 Theme Blue */
-      font-size: 1em; 
-      font-family: monospace;
+      position: absolute !important; 
+      left: 12px !important; 
+      top: 50% !important;
+      transform: translateY(-50%) !important; /* Perfect vertical alignment center */
+      font-weight: bold !important; 
+      color: #0056b3 !important; /* 🔵 Theme Blue */
+      font-size: 1em !important; 
+      font-family: monospace !important;
     }
     details[open] > summary::before { 
       content: '[-]'; 
-      color: #e67e22; /* 🟠 Theme Orange */
+      color: #e67e22 !important; /* 🟠 Theme Orange */
     }
   </style>
 </head>
