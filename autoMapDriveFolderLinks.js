@@ -1,151 +1,111 @@
-// =====================================================================
-// 📁 BUILD CALIBRE SCANNER: ZERO-TOKEN DRIVE-TO-SHEET MAPPER (V3)
-// =====================================================================
-
+/**
+ * AUTOMATED FOLDER & PATH MAPPING ENGINE
+ * Sweeps through the active inventory sheet, reads current curriculum metadata,
+ * and automatically pre-calculates uniform Bitbucket target paths using the strict 48-char format.
+ */
 function autoMapDriveFolderLinks() {
-  const props = PropertiesService.getScriptProperties();
-  var parentFolderId = props.getProperty("MASTER_FOLDER_ID"); 
+  Logger.log("🏁 Starting automated spreadsheet path mapping alignment...");
   
-  if (!parentFolderId) {
-    Logger.log("❌ ERROR: 'MASTER_FOLDER_ID' is missing from Script Properties.");
+  const props = PropertiesService.getScriptProperties();
+  const INVENTORY_SHEET_ID = props.getProperty("INVENTORY_SHEET_ID");
+  
+  if (!INVENTORY_SHEET_ID) {
+    Logger.log("❌ ERROR: Script property INVENTORY_SHEET_ID is missing.");
     return;
   }
-  
-  var parentFolder = DriveApp.getFolderById(parentFolderId);
-  var subFolders = parentFolder.getFolders();
-  
-  // 🎯 THE SECRET SAUCE: Static structural maps of exact NCERT Math chapters
-  // This replaces the AI entirely—running instantly for $0.00.
-  var mathMasterIndex = {
-    "Class 8-1": {
-      1: "Rational Numbers",
-      2: "Linear Equations in One Variable",
-      3: "Understanding Quadrilaterals",
-      4: "Data Handling"
-    },
-    "Class 8-2": {
-      5: "Squares and Square Roots",
-      6: "Cubes and Cube Roots",
-      7: "Comparing Quantities",
-      8: "Algebraic Expressions and Identities",
-      9: "Mensuration",
-      10: "Exponents and Powers",
-      11: "Direct and Inverse Proportions",
-      12: "Factorisation",
-      13: "Introduction to Graphs"
-    },
-    "Class 9": {
-      1: "Number Systems",
-      2: "Polynomials",
-      3: "Coordinate Geometry",
-      4: "Linear Equations in Two Variables",
-      5: "Introduction to Euclid Geometry",
-      6: "Lines and Angles",
-      7: "Triangles",
-      8: "Quadrilaterals",
-      9: "Circles",
-      10: "Herons Formula",
-      11: "Surface Areas and Volumes",
-      12: "Statistics"
-    },
-    "Class 10": {
-      1: "Real Numbers",
-      2: "Polynomials",
-      3: "Pair of Linear Equations in Two Variables",
-      4: "Quadratic Equations",
-      5: "Arithmetic Progressions",
-      6: "Triangles",
-      7: "Coordinate Geometry",
-      8: "Introduction to Trigonometry",
-      9: "Some Applications of Trigonometry",
-      10: "Circles",
-      11: "Area Related to Circles",
-      12: "Surface Areas and Volumes",
-      13: "Statistics",
-      14: "Probability"
-    }
+
+  const sheet = SpreadsheetApp.openById(INVENTORY_SHEET_ID).getActiveSheet();
+  const data = sheet.getDataRange().getValues();
+  const headers = data[0];
+
+  // Map header column integer tracking arrays
+  const col = {
+    subject: headers.indexOf("Subject"),
+    classLevel: headers.indexOf("Class Level"),
+    chapterNo: headers.indexOf("Chapter No."),
+    title: headers.indexOf("Chapter Title"),
+    path: headers.indexOf("Bitbucket Path (Auto)")
   };
 
-  var ncertDecoder = {
-    "hegp1dd": { subject: "Mathematics", classLevel: "Class 8-1" },
-    "hegp2dd": { subject: "Mathematics", classLevel: "Class 8-2" },
-    "iemh1dd": { subject: "Mathematics", classLevel: "Class 9" },
-    "jemh1dd": { subject: "Mathematics", classLevel: "Class 10" }
-  };
-  
-  var rowsToAppend = [];
-  Logger.log("🔄 Starting lightning-fast local index compilation...");
-  
-  while (subFolders.hasNext()) {
-    var folder = subFolders.next();
-    var folderName = folder.getName().trim().toLowerCase(); 
+  if (col.subject === -1 || col.classLevel === -1 || col.chapterNo === -1 || col.title === -1 || col.path === -1) {
+    Logger.log("❌ CRITICAL ERROR: Mandatory headers are missing or renamed inside the tracking worksheet.");
+    return;
+  }
+
+  let updateCount = 0;
+
+  // Process rows sequentially
+  for (let r = 1; r < data.length; r++) {
+    const row = data[r];
+    const subjectRaw = row[col.subject].toString().trim();
+    const classRaw = row[col.classLevel].toString().trim();
+    const chapRaw = row[col.chapterNo].toString().trim();
+    const titleRaw = row[col.title].toString().trim();
+
+    // Skip empty configuration slots
+    if (!subjectRaw || !classRaw || !titleRaw) continue;
+
+    // ==========================================
+    // 1. EXTRACT & ZERO-PAD CLASS LEVEL (mm)
+    // ==========================================
+    let mm = "00";
+    const classDigits = classRaw.match(/\d+/);
+    if (classDigits) {
+      mm = parseInt(classDigits[0], 10).toString();
+      if (mm.length < 2) mm = "0" + mm; // Dynamic zero-padding formatting
+    }
+
+    // ==========================================
+    // 2. EXTRACT & ZERO-PAD CHAPTER NO. (nn)
+    // ==========================================
+    let nn = "00";
+    const chapDigits = chapRaw.match(/\d+/);
+    if (chapDigits) {
+      nn = parseInt(chapDigits[0], 10).toString();
+      if (nn.length < 2) nn = "0" + nn;
+    }
+
+    // ==========================================
+    // 3. GENERATE SANITIZED SLUG TOPIC TEXT
+    // ==========================================
+    let topicSlug = titleRaw.toLowerCase()
+                            .replace(/[^a-z0-9\s-_]/g, "") // Strip punctuation
+                            .replace(/[\s-_]+/g, "-")       // Standardize spacings to singular hyphens
+                            .trim();
+    if (topicSlug.startsWith("-")) topicSlug = topicSlug.substring(1);
+    if (topicSlug.endsWith("-")) topicSlug = topicSlug.substring(0, topicSlug.length - 1);
+
+    // ==========================================
+    // 4. COMPUTE STABLE SUBFOLDER STRINGS (Volumetric Checks)
+    // ==========================================
+    const subjectSubfolder = subjectRaw.toLowerCase().replace(/[^a-z0-9]/g, "-");
+    let classSubfolder = "class-" + parseInt(mm, 10); // Base fallback: class-8, class-9
     
-    if (ncertDecoder.hasOwnProperty(folderName)) {
-      var meta = ncertDecoder[folderName];
-      var files = folder.getFiles();
-      
-      while (files.hasNext()) {
-        var file = files.next();
-        var fileName = file.getName().trim();
-        
-        if (fileName.toLowerCase().endsWith(".pdf")) {
-          var rawName = fileName.replace(/\.pdf$/i, "").trim();
-          
-          // Parse out the chapter code index (e.g., jemh104 -> 04 -> Chapter 4)
-          var chapterNo = 0;
-          var ncertCodeMatch = rawName.match(/[a-z]{4}\d(\d{2})/i);
-          if (ncertCodeMatch) {
-            chapterNo = parseInt(ncertCodeMatch[1], 10);
-          }
-          
-          // Match the parsed number directly against our local index map
-          var chapterTitle = "Chapter " + chapterNo; // Default Fallback
-          if (mathMasterIndex[meta.classLevel] && mathMasterIndex[meta.classLevel][chapterNo]) {
-            chapterTitle = mathMasterIndex[meta.classLevel][chapterNo];
-          }
-          
-          // Generate clean, deterministic web slugs
-          var slugifiedTitle = chapterTitle.toLowerCase()
-            .replace(/\s+/g, '-')
-            .replace(/[^\w\-]+/g, '')
-            .replace(/\-\-+/g, '-');
-          var classSlug = meta.classLevel.toLowerCase().replace(/\s+/g, '-');
-          var bitbucketPath = meta.subject.toLowerCase() + "/" + classSlug + "/" + slugifiedTitle + ".html";
-          
-          rowsToAppend.push([
-            meta.subject,       // A: Subject
-            meta.classLevel,    // B: Class Level
-            chapterNo,          // C: Chapter No.
-            chapterTitle,       // D: Chapter Title
-            "Pending",          // E: Status (Freshly prepped for the main factory pipeline)
-            bitbucketPath,      // F: Bitbucket Path (Auto)
-            file.getUrl()       // G: Individual PDF Drive Link
-          ]);
-        }
-      }
+    // Dynamic Volumetric Mapping Check (e.g., "Class 8 Part 1" or "Class 8-2")
+    const partDigits = classRaw.match(/(?:part|volume|term)[-_\s]*(\d+)/i) || classRaw.match(/class[-_\s]*\d+[-_\s]*(\d+)/i);
+    if (partDigits) {
+      classSubfolder = classSubfolder + "-" + partDigits[1]; // Evaluates cleanly to: class-8-1, class-8-2
+    }
+
+    // ==========================================
+    // 5. ENFORCE 48-CHARACTER CRITICAL LENGTH LIMIT
+    // ==========================================
+    // Base layout: 'mm-chapter-nn-' is exactly 14 characters.
+    // 48 max total characters - 14 prefix budget = 34 characters remaining for the topic slug.
+    let truncatedSlug = topicSlug.substring(0, 34);
+    if (truncatedSlug.endsWith("-")) {
+      truncatedSlug = truncatedSlug.substring(0, truncatedSlug.length - 1);
+    }
+
+    const computedFileName = mm + "-chapter-" + nn + "-" + truncatedSlug + ".html";
+    const deterministicPath = subjectSubfolder + "/" + classSubfolder + "/" + computedFileName;
+
+    // Update spreadsheet tracking cell only if formatting differs
+    if (row[col.path].toString().trim() !== deterministicPath) {
+      sheet.getRange(r + 1, col.path + 1).setValue(deterministicPath);
+      updateCount++;
     }
   }
-  
-  writeMapToSheet(rowsToAppend);
-}
 
-function writeMapToSheet(rowsData) {
-  const props = PropertiesService.getScriptProperties();
-  var inventorySheetId = props.getProperty("INVENTORY_SHEET_ID");
-  
-  var ss = SpreadsheetApp.openById(inventorySheetId);
-  var sheet = ss.getSheetByName("Mathematics Mapping");
-  if (!sheet) sheet = ss.insertSheet("Mathematics Mapping");
-  
-  sheet.clearContents();
-  sheet.appendRow(["Subject", "Class Level", "Chapter No.", "Chapter Title", "Status", "Bitbucket Path (Auto)", "Drive Link"]);
-  
-  if (rowsData.length > 0) {
-    rowsData.sort(function(a, b) {
-      if (a[1] !== b[1]) return a[1].localeCompare(b[1]);
-      return (a[2] || 0) - (b[2] || 0);
-    });
-    sheet.getRange(2, 1, rowsData.length, 7).setValues(rowsData);
-  }
-  Logger.log("🚀 Mapping complete! " + rowsData.length + " rows mapped flawlessly for zero tokens.");
+  Logger.log("✅ COMPLETED: Path configuration sync run finalized. Updated " + updateCount + " file mappings.");
 }

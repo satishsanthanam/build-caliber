@@ -169,10 +169,6 @@ function runAlchemistAutomatedFactory() {
 </body>
 </html>`;
 
-    // Directory construction logic mapping
-    const sanitizedSubject = subject.toLowerCase().replace(/[^a-z0-9]/g, "-");
-    const sanitizedClass = classLevel.toLowerCase().replace(/[^a-z0-9]/g, "-");
-    
     // Natively targets the model's exact calculated output contract string
     // 🛡️ APPS SCRIPT DEFENSIVE SANITIZATION LAYER
     let computedFileName = parsedJson.output_filename.trim();
@@ -196,7 +192,7 @@ function runAlchemistAutomatedFactory() {
     const sanitizedSubject = subject.toLowerCase().replace(/[^a-z0-9]/g, "-");
     const sanitizedClass = classLevel.toLowerCase().replace(/[^a-z0-9]/g, "-");
     const finalPath = sanitizedSubject + "/" + sanitizedClass + "/" + computedFileName;
-    
+
     const stagingBranchName = "factory-builds";
     const commitSuccess = pushFileToBitbucketWithJira(finalPath, completeWebPageContent, stagingBranchName);
 
