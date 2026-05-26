@@ -71,47 +71,135 @@ def generate_html_file(tree):
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Build Calibre - Curriculum Home</title>
   <style>
-    body { font-family: sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px;}
-    .clean-list { list-style-type: none; padding-left: 10px; border-left: 2px solid #eee; margin-left: 10px; margin-bottom: 10px; }
-    .keyword a { color: #0056b3; text-decoration: none; font-size: 1.05em; }
-    .keyword a:hover { text-decoration: underline; color: #003d82; }
-    .chapter-row { margin-bottom: 12px; }
-    .topic-box { margin-bottom: 15px; border: 1px solid #ddd; padding: 15px; border-radius: 8px; background-color: #fafafa; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-    .topic-title { font-size: 1.3em; font-weight: bold; color: #2c3e50; }
-    .class-title { font-size: 1.1em; font-weight: 600; color: #34495e; margin-top: 10px; }
-    details > summary { list-style: none !important; outline: none !important; position: relative !important; padding: 6px 10px 6px 45px !important; display: block !important; cursor: pointer; box-sizing: border-box;}
+    /* 🛠️ GLOBAL MOBILE CORE RESET */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+      line-height: 1.6; 
+      color: #2d3748; 
+      background-color: #f7fafc;
+      padding: 16px;
+    }
+    .index-wrapper {
+      width: 100%;
+      max-width: 768px; /* Fluid scaling bounds for text blocks */
+      margin: 0 auto;
+    }
+    @media (min-width: 600px) {
+      body { padding: 32px; }
+    }
+    .clean-list { 
+      list-style-type: none; 
+      padding-left: 0; 
+      margin-top: 8px;
+    }
+    .chapter-row { 
+      margin-bottom: 10px; 
+    }
+    /* 🎯 ACCESSIBLE INTERACTIVE TOUCH TARGETS FOR CHAPTER LINKS */
+    .keyword a { 
+      display: flex;
+      align-items: center;
+      min-height: 44px; /* Standard fingertip boundary size to prevent misclicks */
+      padding: 10px 14px;
+      color: #2b6cb0; 
+      text-decoration: none; 
+      background-color: #ffffff;
+      border: 1px solid #edf2f7;
+      border-radius: 6px;
+      font-size: 15px; 
+      box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+      transition: all 0.2s ease;
+      word-wrap: break-word;
+      word-break: break-word;
+    }
+    .keyword a:hover {
+      background-color: #ebf8ff;
+      border-color: #bee3f8;
+    }
+    .keyword a:active { 
+      background-color: #ebf8ff; 
+      transform: scale(0.99); 
+    }
+    .topic-box { 
+      margin-bottom: 16px; 
+      border: 1px solid #e2e8f0; 
+      border-radius: 10px; 
+      background-color: #ffffff; 
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02); 
+      overflow: hidden;
+    }
+    .sub-topic {
+      margin: 10px 12px;
+    }
+    /* 🧱 SOLID UNIFORM ACCORDION CLICK TARGETS */
+    details > summary { 
+      display: flex !important;
+      align-items: center !important;
+      min-height: 48px;
+      padding: 12px 16px 12px 40px !important; 
+      cursor: pointer; 
+      user-select: none;
+      outline: none !important;
+      position: relative !important;
+      box-sizing: border-box;
+    }
     details > summary::-webkit-details-marker { display: none !important; }
     details > summary::marker { display: none !important; content: ""; }
-    details > summary:hover { color: #0056b3; }
-    details > summary::before { content: '[+]'; position: absolute !important; left: 12px !important; top: 50% !important; transform: translateY(-50%) !important; font-weight: bold !important; color: #0056b3 !important; font-size: 1em !important; font-family: monospace !important;}
-    details[open] > summary::before { content: '[-]'; color: #e67e22 !important; }
+    
+    .topic-title { font-size: 1.25em; font-weight: bold; color: #2b6cb0; background-color: #ebf8ff; }
+    .class-title { font-size: 1.05em; font-weight: 600; color: #4a5568; background-color: #f7fafc; border: 1px solid #edf2f7; border-radius: 6px; }
+    
+    /* 📐 PLUMB-LINE VERTICAL ACCORDION INDICATORS */
+    details > summary::before { 
+      content: "▶"; 
+      position: absolute !important; 
+      left: 16px !important; 
+      top: 50% !important; 
+      transform: translateY(-50%) translateY(1px) !important; /* Micro-translated 1px downward to center font glyph */
+      font-size: 10px !important;
+      transition: transform 0.2s ease;
+      color: #4a5568;
+    }
+    .topic-title::before { color: #3182ce !important; }
+    details[open] > summary::before { transform: translateY(-50%) rotate(90deg) !important; color: #e67e22 !important; }
+    
+    .inner-content {
+      padding: 12px 16px;
+    }
   </style>
 </head>
 <body>
-  <div class="nav-bar" style="margin-bottom: 30px; border-bottom: 2px solid #eee; padding-bottom: 10px;">
-    <h2>Build Calibre Curriculum Database</h2>
-  </div>\n"""
+  <div class="index-wrapper">
+    <div class="nav-bar" style="margin-bottom: 24px; border-bottom: 2px solid #e2e8f0; padding-bottom: 12px;">
+      <h2 style="font-size: 22px; color: #1a202c;">Build Calibre Curriculum Database</h2>
+    </div>\n"""
 
     for subject in sorted(tree.keys()):
-        html_out += f'  <div class="topic-box">\n    <details>\n      <summary class="topic-title">Subject: {html.escape(subject)}</summary>\n'
+        html_out += f'  <div class="topic-box">\n    <details>\n      <summary class="topic-title">Subject: {html.escape(subject)}</summary>\n      <div class="inner-content">\n'
         
         # Natural alpha-numeric sorting sequence layout (Class 8 Part 1 -> Class 8 Part 2 -> Class 9)
         sorted_classes = sorted(tree[subject].keys(), key=lambda x: [int(s) if s.isdigit() else s for s in re.split(r'(\d+)', x)])
         for class_level in sorted_classes:
-            html_out += f'      <div class="sub-topic" style="margin-left: 20px;">\n        <details>\n          <summary class="class-title">{html.escape(class_level)}</summary>\n          <ul class="clean-list">\n'
+            html_out += f'        <div class="sub-topic">\n          <details>\n            <summary class="class-title">{html.escape(class_level)}</summary>\n            <div class="inner-content">\n              <ul class="clean-list">\n'
             
             # Sort individual chapters numerically
             tree[subject][class_level].sort(key=lambda x: x['num'])
             for chap in tree[subject][class_level]:
-                html_out += f'            <li class="chapter-row"><span class="keyword"><a href="{html.escape(chap["url"])}"><strong>Chapter {chap["num"]}:</strong> {html.escape(chap["title"])}</a></span></li>\n'
+                html_out += f'                <li class="chapter-row"><span class="keyword"><a href="{html.escape(chap["url"])}"><strong>Chapter {chap["num"]}:</strong> {html.escape(chap["title"])}</a></span></li>\n'
                 
-            html_out += "          </ul>\n        </details>\n      </div>\n"
-        html_out += "    </details>\n  </div>\n"
+            html_out += "              </ul>\n            </div>\n          </details>\n        </div>\n"
+        html_out += "      </div>\n    </details>\n  </div>\n"
 
-    html_out += "</body>\n</html>"
+    html_out += "  </div>\n</body>\n</html>"
     with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
         f.write(html_out)
 
