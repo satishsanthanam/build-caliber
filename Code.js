@@ -93,6 +93,7 @@ function runAlchemistAutomatedFactory() {
   // Process Execution Loop
   for (let t = 0; t < taskQueue.length; t++) {
     const task = taskQueue[t];
+    const chapterNo = task.data[colIndex.chapterNo].toString().trim();
     const subject = task.data[colIndex.subject].toString().trim();
     const classLevel = task.data[colIndex.classLevel].toString().trim();
     const chapterTitle = task.data[colIndex.title].toString().trim();
@@ -138,7 +139,7 @@ function runAlchemistAutomatedFactory() {
       continue;
     }
 
-    // 📄 BASE HTML PAGE ASSEMBLY (Hardcoded navigation layer handles layout uniformity perfectly)
+    // 📄 BASE HTML PAGE ASSEMBLY (Hardcoded uniform navigation and title injection layer)
     let completeWebPageContent = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -162,6 +163,8 @@ function runAlchemistAutomatedFactory() {
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
+
+    <h1>Chapter ${chapterNo}: ${parsedJson.extracted_chapter_title || chapterTitle}</h1>
 
     ${parsedJson.html_content}
 
