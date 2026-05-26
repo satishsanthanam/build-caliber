@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Constructions and Tilings</title>
+  <link rel="stylesheet" href="../../style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+        displayMath: [['$$', '$$']]
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Chapter 6: Constructions and Tilings</h1>
+
+    <details class="topic-box">
+  <summary class="topic-title">6.1 Geometric Constructions</summary>
+  
+  <details class="sub-topic">
+    <summary><h3>The 'Eyes' Construction &amp; Perpendicular Bisector</h3></summary>
+    <p>The symmetrical 'Eyes' construction relies on finding two centers, $A$ and $B$, from which the lower and upper arcs of an eye are drawn respectively. These arcs define a supporting line segment $XY$.</p>
+    <ul>
+      <li>For the eye to be symmetrical, the upper and lower arcs must have the same radius: $AX = BX$ and $AY = BY$.</li>
+      <li>Since the radii are equal, we have: $$AX = AY = BX = BY$$</li>
+      <li>The line segment $AB$ connecting the two centers is the <span class="keyword">perpendicular bisector</span> of the supporting line segment $XY$.</li>
+      <li><span class="keyword">Bisection</span> is the division of a geometrical object into two identical parts. A line that bisects a given line segment and is perpendicular to it is called its perpendicular bisector.</li>
+    </ul>
+    <p><strong>Proof of Perpendicular Bisecting Property via Congruence:</strong></p>
+    <ul>
+      <li>Let $O$ be the intersection of $AB$ and $XY$.</li>
+      <li>In $\Delta ABX$ and $\Delta ABY$:
+        <ul>
+          <li>$AX = AY$ (given equal radii)</li>
+          <li>$BX = BY$ (given equal radii)</li>
+          <li>$AB$ is common to both triangles</li>
+          <li>Therefore, $\Delta ABX \cong \Delta ABY$ by <span class="keyword">SSS congruence</span>.</li>
+          <li>This implies $\angle XAB = \angle YAB$ (or $\angle XAO = \angle YAO$) as corresponding parts of congruent triangles (CPCT).</li>
+        </ul>
+      </li>
+      <li>In $\Delta AOX$ and $\Delta AOY$:
+        <ul>
+          <li>$AX = AY$</li>
+          <li>$AO$ is common</li>
+          <li>$\angle XAO = \angle YAO$</li>
+          <li>Therefore, $\Delta AOX \cong \Delta AOY$ by <span class="keyword">SAS congruence</span>.</li>
+          <li>This implies $OX = OY$ (so $O$ is the midpoint of $XY$) and $\angle AOX = \angle AOY$.</li>
+          <li>Since $\angle AOX + \angle AOY = 180^\circ$ (straight angle), $\angle AOX = \angle AOY = 90^\circ$. Thus, $AB \perp XY$.</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Construction of a Perpendicular Bisector</h3></summary>
+    <p>To construct the perpendicular bisector of a line segment $XY$ using an unmarked ruler and a compass:</p>
+    <ol>
+      <li>Using a fixed radius greater than half the length of $XY$, draw arcs from center $X$ and then from center $Y$ above the segment $XY$. Let these arcs intersect at point $A$.</li>
+      <li>Using the same radius, draw arcs from $X$ and $Y$ below the segment $XY$. Let these arcs intersect at point $B$.</li>
+      <li>Draw a straight line passing through $A$ and $B$. The line $AB$ is the required perpendicular bisector of $XY$.</li>
+    </ol>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Construction of a 90° Angle at a Given Point</h3></summary>
+    <p>To construct a perpendicular ($90^\circ$ angle) at a specific point $O$ on a given line:</p>
+    <ol>
+      <li>Using a compass with $O$ as the center, mark two points $X$ and $Y$ on the line at equal distances on either side of $O$, making $O$ the midpoint of $XY$.</li>
+      <li>Using a radius larger than $OX$, draw two intersecting arcs above the line with centers $X$ and $Y$. Let the intersection point be $A$.</li>
+      <li>Join $A$ and $O$. The line $AO$ is perpendicular to the given line at $O$, forming a $90^\circ$ angle.</li>
+    </ol>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Historical Context: Śulba-Sūtras</h3></summary>
+    <p>Ancient Indian mathematicians used exact geometric procedures to construct perpendiculars and altars. These methods are recorded in the <span class="keyword">Śulba-Sūtras</span> (Vedic geometric texts, part of the Vedāṅgas).</p>
+    <ul>
+      <li>Instead of a modern compass, they utilized a <strong>rope</strong> to draw circles, arcs, and straight lines.</li>
+      <li><strong>Rope Method for Perpendicular Bisector (Kātyāyana-Śulbasūtra 1.2):</strong>
+        <ol>
+          <li>Fix pegs at the endpoints $X$ and $Y$ of a line segment on the ground.</li>
+          <li>Take a rope, fold it in half to find and mark its midpoint.</li>
+          <li>Fasten the ends of the rope to the pegs at $X$ and $Y$.</li>
+          <li>Pull the midpoint of the rope taut above $XY$ and mark this point as $A$.</li>
+          <li>Pull the midpoint of the rope taut below $XY$ and mark this point as $B$.</li>
+          <li>The line $AB$ forms the perpendicular bisector.</li>
+        </ol>
+      </li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Angle Bisection</h3></summary>
+    <p>To bisect any given angle $\angle XOY$:</p>
+    <ol>
+      <li>With $O$ as the center and any convenient radius, draw an arc intersecting the arms $OX$ and $OY$ at points $B$ and $A$ respectively, such that $OA = OB$.</li>
+      <li>With $A$ and $B$ as centers and a sufficiently large equal radius, draw arcs that intersect each other at point $C$.</li>
+      <li>Join $O$ and $C$. The ray $OC$ is the angle bisector of $\angle XOY$, meaning $\angle BOC = \angle AOC$.</li>
+    </ol>
+    <p>This construction works because $\Delta OBC \cong \Delta OAC$ by SSS congruence ($OA = OB$, $BC = AC$, and $OC$ is common).</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Copying an Angle</h3></summary>
+    <p>To construct an exact copy of a given angle $\angle A$ at a new vertex $X$:</p>
+    <ol>
+      <li>Draw an arc with center $A$ intersecting the arms of the angle at points $B$ and $C$. This forms an isosceles triangle $\Delta ABC$.</li>
+      <li>With the same radius, draw an arc from the new vertex $X$ intersecting the base line at point $Z$.</li>
+      <li>Measure the distance $BC$ using a compass.</li>
+      <li>With $Z$ as the center and radius equal to $BC$, draw an arc intersecting the previous arc at point $Y$.</li>
+      <li>Draw a ray from $X$ through $Y$. The angle $\angle YXZ$ is equal to $\angle BAC$ (by SSS congruence, $\Delta ABC \cong \Delta XYZ$).</li>
+    </ol>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Construction of a Parallel Line</h3></summary>
+    <p>To construct a line parallel to a given line $m$ through a point $B$ not on $m$:</p>
+    <ol>
+      <li>Draw a transversal line $l$ passing through $B$ and intersecting line $m$ at point $A$.</li>
+      <li>At point $B$, construct an angle equal to the corresponding angle (or alternate interior angle) formed at $A$ by copying the angle.</li>
+      <li>Draw a line $n$ through $B$ along the copied angle. Since the corresponding angles are equal, line $n$ is parallel to line $m$ ($m \parallel n$).</li>
+    </ol>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Regular Hexagons &amp; 60° Angles</h3></summary>
+    <ul>
+      <li>A regular hexagon can be decomposed into six congruent <span class="keyword">equilateral triangles</span> meeting at a central point.</li>
+      <li>Since the sum of angles around a point is $360^\circ$, six $60^\circ$ angles fit perfectly around the center without gaps or overlaps ($6 \times 60^\circ = 360^\circ$).</li>
+      <li>The interior angle of a regular hexagon is $60^\circ + 60^\circ = 120^\circ$.</li>
+      <li><strong>Constructing a 60° Angle:</strong>
+        <ol>
+          <li>Draw a line segment $AX$.</li>
+          <li>With $A$ as the center, draw an arc intersecting $AX$ at $B$.</li>
+          <li>With the same radius and $B$ as the center, draw an arc intersecting the first arc at $C$.</li>
+          <li>Join $AC$. The angle $\angle CAX = 60^\circ$ because $\Delta ABC$ is an equilateral triangle ($AB = AC = BC$).</li>
+        </ol>
+      </li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">6.2 Tiling</summary>
+  
+  <details class="sub-topic">
+    <summary><h3>Introduction to Tiling &amp; Tangrams</h3></summary>
+    <ul>
+      <li><span class="keyword">Tiling</span> (or tessellation) is the covering of a flat region using a set of shapes without any gaps or overlaps.</li>
+      <li><strong>Tangrams:</strong> A traditional Chinese puzzle consisting of 7 geometric pieces obtained by dividing a square: 5 triangles (of various sizes), 1 square, and 1 parallelogram. These pieces can be rearranged to form diverse shapes (e.g., animals, figures, letters).</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Grid Tiling &amp; Parity Proofs</h3></summary>
+    <p>Analyzing whether a grid of size $m \times n$ can be tiled using $2 \times 1$ domino tiles:</p>
+    <ul>
+      <li>A $2 \times 1$ tile covers exactly 2 unit squares. Therefore, any grid tileable by $2 \times 1$ tiles must contain an <strong>even</strong> total number of unit squares.</li>
+      <li>If both $m$ and $n$ are even, or if one is even and the other is odd, the total area $m \times n$ is even, and a tiling strategy exists (e.g., laying tiles systematically along columns or rows).</li>
+      <li>If both $m$ and $n$ are odd, the total area $m \times n$ is odd, making tiling impossible.</li>
+      <li><strong>The Black-and-White Coloring Proof (Parity):</strong>
+        <ul>
+          <li>Color the grid like a chessboard so that adjacent squares have different colors.</li>
+          <li>Every $2 \times 1$ tile must cover exactly <strong>one black square</strong> and <strong>one white square</strong>.</li>
+          <li>Therefore, any region that can be tiled with $2 \times 1$ tiles must contain an <strong>equal number</strong> of black and white squares.</li>
+          <li>For example, if a $5 \times 3$ grid (15 squares) has one corner square removed, it leaves 14 squares. However, depending on which square is removed, the remaining grid may have 8 white and 6 black squares. Because the counts are unequal, this modified grid <strong>cannot</strong> be tiled, even though its total area (14) is even.</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Tiling the Entire Plane</h3></summary>
+    <p>A plane can be tiled infinitely using regular polygons if the interior angles of the polygons meeting at any vertex add up to exactly $360^\circ$:</p>
+    <ul>
+      <li><strong>Squares:</strong> Four squares meet at each vertex ($4 \times 90^\circ = 360^\circ$).</li>
+      <li><strong>Equilateral Triangles:</strong> Six triangles meet at each vertex ($6 \times 60^\circ = 360^\circ$).</li>
+      <li><strong>Regular Hexagons:</strong> Three hexagons meet at each vertex ($3 \times 120^\circ = 360^\circ$).</li>
+      <li>A plane can also be tiled using combinations of multiple shapes, non-regular polygons, or artistic organic shapes (such as those created by the artist M.C. Escher).</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Summary of Key Concepts</summary>
+  <ul>
+    <li><strong>Bisection:</strong> Dividing a geometric figure into two identical parts.</li>
+    <li><strong>Perpendicular Bisector:</strong> Any point equidistant from the endpoints of a segment lies on its perpendicular bisector.</li>
+    <li><strong>Angle Bisector:</strong> A ray dividing an angle into two equal adjacent angles, constructed using triangle congruence properties.</li>
+    <li><strong>60° Angle Construction:</strong> Achieved by constructing an equilateral triangle using a compass and straightedge.</li>
+    <li><strong>Tiling:</strong> Covering a plane region with shapes without gaps or overlaps. Parity and coloring arguments are powerful tools to determine tileability.</li>
+  </ul>
+</details>
+
+  </div>
+</body>
+</html>
