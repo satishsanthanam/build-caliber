@@ -53,7 +53,15 @@ def build_curriculum_tree():
                     chapter_num = int(nn_str)
                     
                     # ====== DELTA: Handle Truncated Slugs with Clean Ellipses ======
-                    # ===============================================================
+
+                    title_display = topic_slug.replace('-', ' ').title()
+                    
+                    # 🛠️ TRUNCATION BALANCER: If title terminates abruptly on incomplete structural word signals
+                    # (Adjust strings or test common cutoffs like "va", "coor", "introduct", "sur", "explori")
+                    if len(topic_slug) >= 28 or any(title_display.endswith(w) for w in [" Of Coor", " Introduct", " Healthy", " Explori", " Va", " Their Sur"]):
+                        title_display += "..."
+
+                    web_url_path = os.path.join(rel_path, file).replace(os.sep, '/')
 
                     # ====== DELTA: Warn on Duplicate Chapter IDs in Index ======
                     if subject_display not in tree:
