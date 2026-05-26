@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Predicting what comes next exploring</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    body { margin: 0; padding: 10px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    .chapter-container { max-width: 900px; margin: 0 auto; }
+    img { max-width: 100%; height: auto; }
+    table { width: 100%; border-collapse: collapse; overflow-x: auto; }
+    table, th, td { border: 1px solid #ddd; padding: 8px; }
+    @media (max-width: 768px) {
+      body { padding: 8px; font-size: 14px; }
+      .chapter-container { padding: 0; }
+      table { font-size: 12px; }
+      table, th, td { padding: 6px; }
+    }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+        displayMath: [['$$', '$$']]
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    <h1>
+  Chapter 8: Predicting What Comes Next: Exploring Sequences and Progressions
+</h1>
+<details>
+  <summary>
+    8.1 Introduction to Sequences
+  </summary>
+  <ul>
+    <li>
+      A
+      <span>
+        sequence
+      </span>
+      is an ordered list of numbers where each number is a
+      <span>
+        term
+      </span>
+      .
+    </li>
+    <li>
+      Sequences can be finite (having a specific number of terms) or infinite (continuing indefinitely).
+    </li>
+    <li>
+      Examples include natural numbers, odd numbers, triangular numbers, and square numbers.
+    </li>
+  </ul>
+</details>
+<details>
+  <summary>
+    8.2 Explicit Rule for a Sequence
+  </summary>
+  <ul>
+    <li>
+      An
+      <span>
+        explicit formula
+      </span>
+      uses a term's position number, n, to calculate its value directly.
+    </li>
+    <li>
+      Notation typically uses subscripts matching the term numbers, such as tn, sn, or un for the nth term.
+    </li>
+    <li>
+      Allows finding the value of any term without knowing previous terms.
+    </li>
+  </ul>
+</details>
+<details>
+  <summary>
+    8.3 Recursive Rule for a Sequence
+  </summary>
+  <ul>
+    <li>
+      A
+      <span>
+        recursive rule
+      </span>
+      (or recursive formula) describes a sequence by relating terms to one or more previous terms.
+    </li>
+    <li>
+      Requires knowing earlier terms to find subsequent terms.
+    </li>
+    <li>
+      The
+      <span>
+        Virahanka-Fibonacci sequence
+      </span>
+      is a famous recursive sequence where each term is the sum of the previous two: V1 = 1, V2 = 2, and Vn = Vn-1 + Vn-2 for n >= 3.
+    </li>
+  </ul>
+</details>
+<details>
+  <summary>
+    8.4 Arithmetic Progressions
+  </summary>
+  <ul>
+    <li>
+      An
+      <span>
+        arithmetic progression
+      </span>
+      (AP) is a sequence in which the difference between consecutive terms is a constant value.
+    </li>
+    <li>
+      This constant value is called the
+      <span>
+        common difference
+      </span>
+      (d).
+    </li>
+    <li>
+      The
+      <span>
+        first term
+      </span>
+      is denoted as a.
+    </li>
+    <li>
+      General form of an AP: a, a + d, a + 2d, a + 3d, ..., a + (n - 1)d.
+    </li>
+    <li>
+      Explicit formula for the nth term: tn = a + (n - 1)d.
+    </li>
+    <li>
+      Recursive rule for an AP: t1 = a, tn = tn-1 + d for n >= 2.
+    </li>
+    <li>
+      Plotting the terms of an AP against their position numbers results in points that lie on a straight line.
+    </li>
+  </ul>
+</details>
+<details>
+  <summary>
+    8.5 Sum of the First n Natural Numbers
+  </summary>
+  <ul>
+    <li>
+      The sum of the first n natural numbers is given by the formula: Sn = n(n + 1) / 2.
+    </li>
+    <li>
+      This formula can also be used to find the nth term of the triangular number sequence.
+    </li>
+    <li>
+      The first known written mention of this result is found in Aryabhata's Aryabhatiya.
+    </li>
+  </ul>
+</details>
+<details>
+  <summary>
+    8.6 Geometric Progressions
+  </summary>
+  <ul>
+    <li>
+      A
+      <span>
+        geometric progression
+      </span>
+      (GP) is a sequence where each term after the first is obtained by multiplying the previous term by a constant multiplier.
+    </li>
+    <li>
+      This constant multiplier is known as the
+      <span>
+        common ratio
+      </span>
+      (r).
+    </li>
+    <li>
+      General form of a GP: a, ar, ar^2, ar^3, ..., ar^(n-1).
+    </li>
+    <li>
+      Explicit formula for the nth term: tn = a * r^(n-1).
+    </li>
+    <li>
+      Recursive rule for a GP: t1 = a, tn = r * tn-1 for n >= 2.
+    </li>
+    <li>
+      <span>
+        Fractals
+      </span>
+      , such as the Sierpinski triangle and Sierpinski square carpet, are shapes that repeat themselves at different scales and often generate geometric progressions in their properties.
+    </li>
+    <li>
+      Points emerging from a GP do not lie on a straight line when plotted against their stage numbers.
+    </li>
+  </ul>
+</details>
+<details>
+  <summary>
+    Chapter Summary
+  </summary>
+  <ul>
+    <li>
+      A sequence is an ordered list of numbers called terms.
+    </li>
+    <li>
+      An explicit formula generates each term using its position number, n.
+    </li>
+    <li>
+      A recursive formula gives the value of a term using previous terms.
+    </li>
+    <li>
+      The triangular number sequence nth term is tn = n(n + 1) / 2.
+    </li>
+    <li>
+      An AP has a common difference d, with nth term tn = a + (n - 1)d.
+    </li>
+    <li>
+      A GP has a common ratio r, with nth term tn = a * r^(n-1).
+    </li>
+  </ul>
+</details>
+  </div>
+</body>
+</html>
