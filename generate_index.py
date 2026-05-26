@@ -37,13 +37,19 @@ def build_curriculum_tree():
         if rel_path == ".":
             continue
             
+        # ====== DELTA: Optimize Tree Initialization in build_curriculum_tree() ======
+
         path_parts = rel_path.split(os.sep)
         if len(path_parts) >= 2:
             subject_display = path_parts[0].replace('-', ' ').title()
             raw_class_folder = path_parts[1]
-            
-            # Compute structural parent menus using folder metrics
             class_display = parse_class_display(raw_class_folder)
+            
+            # 🚀 OPTIMIZATION: Initialize the tree structure once per directory pass instead of per file
+            if subject_display not in tree:
+                tree[subject_display] = {}
+            if class_display not in tree[subject_display]:
+                tree[subject_display][class_display] = []
             
             for file in files:
                 match = pattern.match(file)
@@ -51,25 +57,15 @@ def build_curriculum_tree():
                     _, nn_str, topic_slug = match.groups()
                     
                     chapter_num = int(nn_str)
-                    
-                    # ====== DELTA: Handle Truncated Slugs with Clean Ellipses ======
-
                     title_display = topic_slug.replace('-', ' ').title()
                     
-                    # 🛠️ TRUNCATION BALANCER: If title terminates abruptly on incomplete structural word signals
-                    # (Adjust strings or test common cutoffs like "va", "coor", "introduct", "sur", "explori")
+                    # 🛠️ TRUNCATION BALANCER
                     if len(topic_slug) >= 28 or any(title_display.endswith(w) for w in [" Of Coor", " Introduct", " Healthy", " Explori", " Va", " Their Sur"]):
                         title_display += "..."
 
                     web_url_path = os.path.join(rel_path, file).replace(os.sep, '/')
 
-                    # ====== DELTA: Warn on Duplicate Chapter IDs in Index ======
-                    if subject_display not in tree:
-                        tree[subject_display] = {}
-                    if class_display not in tree[subject_display]:
-                        tree[subject_display][class_display] = []
-                        
-                    # Check if chapter number already exists in this specific class array
+                    # 🔍 CHECK FOR DUPLICATES (Now safely runs against pre-initialized array structure)
                     is_duplicate = any(item['num'] == chapter_num for item in tree[subject_display][class_display])
                     final_title = f"{title_display} (Alternate Version)" if is_duplicate else title_display
 
@@ -78,7 +74,7 @@ def build_curriculum_tree():
                         "title": final_title,
                         "url": web_url_path
                     })
-                    # ==========================================================
+        # ============================================================================
     return tree
 
 def generate_html_file(tree):
