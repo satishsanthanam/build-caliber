@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Number Play</title>
+  <link rel="stylesheet" href="../../style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+        displayMath: [['$$', '$$']]
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Chapter 6: Number Play</h1>
+
+    <details class="topic-box">
+  <summary class="topic-title">6.1 Numbers Tell us Things</summary>
+  <p>This section introduces how sequences of numbers can represent relative arrangements (such as heights) without knowing the actual values.</p>
+  <details class="sub-topic">
+    <summary><h3>The Height Arrangement Rule</h3></summary>
+    <p>Children stand in a line and call out a number based on their relative heights:</p>
+    <ul>
+      <li><strong>Rule:</strong> Each child calls out the number of children standing in front of them who are taller than they are.</li>
+      <li>The first person in line always says <span class="keyword">0</span> because there is no one in front of them.</li>
+      <li>If a person is the tallest in the group, their number is always <span class="keyword">0</span>.</li>
+      <li>The largest possible number in a group of $n$ people is $n - 1$.</li>
+    </ul>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>Figure it Out Exercises</h3></summary>
+    <p><strong>1. Height Sequences:</strong> Arrange stick figures to match given sequences:</p>
+    <ul>
+      <li>Sequence (a): $0, 1, 1, 2, 4, 1, 5$ corresponds to the height order (from tallest to shortest represented by letters) $\rightarrow F, C, B, G, A, D, E$.</li>
+    </ul>
+    <p><strong>2. Truth Value of Statements:</strong></p>
+    <ul>
+      <li><em>"If a person says '0', then they are the tallest in the group."</em> &mdash; <span class="keyword">Only Sometimes True</span> (They could just be the first person in line, or taller than everyone in front of them but not everyone behind them).</li>
+      <li><em>"If a person is the tallest, then their number is '0'."</em> &mdash; <span class="keyword">Always True</span>.</li>
+      <li><em>"The first person's number is '0'."</em> &mdash; <span class="keyword">Always True</span>.</li>
+      <li><em>"If a person is not first or last in line, then they cannot say '0'."</em> &mdash; <span class="keyword">Only Sometimes True</span>.</li>
+      <li><em>"The person who calls out the largest number is the shortest."</em> &mdash; <span class="keyword">Only Sometimes True</span>.</li>
+      <li><em>"What is the largest number possible in a group of 8 people?"</em> &mdash; <span class="keyword">7</span>.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">6.2 Picking Parity</summary>
+  <p>This section explores the concept of <span class="keyword">parity</span> (the property of being even or odd) and how it behaves under arithmetic operations.</p>
+  <details class="sub-topic">
+    <summary><h3>The Concept of Parity</h3></summary>
+    <ul>
+      <li><strong>Even Numbers:</strong> Can be arranged in pairs without any leftovers.</li>
+      <li><strong>Odd Numbers:</strong> Cannot be arranged in pairs; they are always one more (or one less) than a collection of pairs.</li>
+    </ul>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>Arithmetic Rules of Parity</h3></summary>
+    <p>The sum or difference of numbers follows strict parity rules:</p>
+    <ul>
+      <li>$\text{Even} \pm \text{Even} = \text{Even}$</li>
+      <li>$\text{Odd} \pm \text{Odd} = \text{Even}$</li>
+      <li>$\text{Even} \pm \text{Odd} = \text{Odd}$</li>
+      <li>$\text{Odd} \pm \text{Even} = \text{Odd}$</li>
+    </ul>
+    <p><strong>Generalizations:</strong></p>
+    <ul>
+      <li>The sum of any number of even numbers is always <span class="keyword">Even</span>.</li>
+      <li>The sum of an even number of odd numbers is <span class="keyword">Even</span>.</li>
+      <li>The sum of an odd number of odd numbers is <span class="keyword">Odd</span>.</li>
+    </ul>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>Grid Parity</h3></summary>
+    <p>For an $m \times n$ grid, the parity of the total number of small squares is:</p>
+    <ul>
+      <li><strong>Even</strong> if at least one of the dimensions ($m$ or $n$) is even.</li>
+      <li><strong>Odd</strong> if both dimensions ($m$ and $n$) are odd.</li>
+    </ul>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>Parity of Expressions</h3></summary>
+    <ul>
+      <li><strong>Always Even Parity:</strong> Expressions like $2n$, $100p$, and $48w - 2$.</li>
+      <li><strong>Always Odd Parity:</strong> Expressions like $2n - 1$, $2m + 1$, and $8a + 3$.</li>
+      <li><strong>Variable Parity:</strong> Expressions like $3n + 4$, which can be even or odd depending on the value of $n$.</li>
+      <li>The $n$-th even number is given by the formula: $\mathbf{2n}$</li>
+      <li>The $n$-th odd number is given by the formula: $\mathbf{2n - 1}$</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">6.3 Some Explorations in Grids &amp; Magic Squares</summary>
+  <p>This section covers grid puzzles and the systematic construction of magic squares.</p>
+  <details class="sub-topic">
+    <summary><h3>Row and Column Sums in Grids</h3></summary>
+    <ul>
+      <li>In a $3 \times 3$ grid filled with numbers $1$ to $9$ without repetition, the sum of all numbers in the grid is: $$1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 = 45$$</li>
+      <li>The sum of all row sums (or all column sums) must always equal $45$.</li>
+    </ul>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>Magic Squares</h3></summary>
+    <p>A <span class="keyword">magic square</span> is a square grid of numbers where each row, each column, and both main diagonals add up to the same constant, called the <span class="keyword">magic sum</span>.</p>
+    <p><strong>Properties of a $3 \times 3$ Magic Square (using numbers 1&ndash;9):</strong></p>
+    <ul>
+      <li>The magic sum must be $\mathbf{15}$ (since $45 \div 3 = 15$).</li>
+      <li>The central number must be $\mathbf{5}$.</li>
+      <li>The numbers $1$ and $9$ cannot occur in any corner; they must occupy middle boundary positions.</li>
+      <li>There is exactly one unique magic square with numbers $1$ to $9$ (ignoring rotations and reflections):</li>
+    </ul>
+    <table border="1" style="margin: 10px auto; text-align: center; border-collapse: collapse;">
+      <tr><td style="width:30px; height:30px;">8</td><td style="width:30px;">1</td><td style="width:30px;">6</td></tr>
+      <tr><td style="height:30px;">3</td><td>5</td><td>7</td></tr>
+      <tr><td style="height:30px;">4</td><td>9</td><td>2</td></tr>
+    </table>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>Generalising a $3 \times 3$ Magic Square</h3></summary>
+    <p>If $m$ is the number in the center of a $3 \times 3$ magic square of consecutive numbers, the grid can be algebraically represented as:</p>
+    <table border="1" style="margin: 10px auto; text-align: center; border-collapse: collapse;">
+      <tr><td style="width:60px; height:30px;">$m + 3$</td><td style="width:60px;">$m - 4$</td><td style="width:60px;">$m + 1$</td></tr>
+      <tr><td style="height:30px;">$m - 2$</td><td>$m$</td><td>$m + 2$</td></tr>
+      <tr><td style="height:30px;">$m - 1$</td><td>$m + 4$</td><td>$m - 3$</td></tr>
+    </table>
+    <ul>
+      <li>The magic sum is always $\mathbf{3m}$.</li>
+    </ul>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>Historical Magic Squares</h3></summary>
+    <ul>
+      <li><strong>Chautīsā Yantra:</strong> A $4 \times 4$ magic square found in a 10th-century inscription at the Pārśhvanath Jain temple in Khajuraho, India. Its magic sum is $\mathbf{34}$.</li>
+      <li><strong>Lo Shu Square:</strong> The oldest recorded magic square (over 2000 years old from ancient China), depicted on the back of a mythical turtle.</li>
+      <li><strong>Navagraha Yantra &amp; Kubera Yantra:</strong> Traditional Indian grids associated with planetary and cultural significance.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">6.4 Nature's Favourite Sequence: The Virahāṅka&ndash;Fibonacci Numbers</summary>
+  <p>This section explores the origin and properties of the famous sequence: $1, 2, 3, 5, 8, 13, 21, 34, 55, 89, \dots$</p>
+  <details class="sub-topic">
+    <summary><h3>Discovery in Poetry</h3></summary>
+    <ul>
+      <li>The sequence was first discovered by Sanskrit and Prakrit linguists (such as <span class="keyword">Virahāṅka</span>, c. 700 CE) while studying poetic meters.</li>
+      <li>Syllables in Indian poetry are classified as <strong>short</strong> (1 beat) or <strong>long</strong> (2 beats).</li>
+      <li>The number of distinct rhythmic patterns of $n$ beats is given by the $(n)$-th term of the Virahāṅka sequence.</li>
+      <li>The rule of formation is that each term is the sum of the two preceding terms: $$F_n = F_{n-1} + F_{n-2}$$</li>
+    </ul>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>Parity Pattern of the Sequence</h3></summary>
+    <p>The parities of the terms in the Virahāṅka sequence follow a repeating three-step cycle:</p>
+    <p style="text-align: center;"><strong>Odd, Even, Odd, Odd, Even, Odd, Odd, Even, ...</strong></p>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">6.5 Digits in Disguise (Cryptarithms)</summary>
+  <p>This section introduces <span class="keyword">cryptarithms</span> (or alphametics), which are mathematical puzzles where digits are replaced by letters.</p>
+  <details class="sub-topic">
+    <summary><h3>Rules of Cryptarithms</h3></summary>
+    <ul>
+      <li>Each letter stands for a unique digit from $0$ to $9$.</li>
+      <li>The leading digit of a multi-digit number cannot be $0$.</li>
+    </ul>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>Example Puzzle</h3></summary>
+    <p>Solve the cryptarithm:</p>
+    <pre style="text-align: center;">
+  U T
++ T A
+-----
+T A T
+    </pre>
+    <p><strong>Solution:</strong> $U = 9$, $T = 1$, and $A = 0$.</p>
+  </details>
+</details>
+
+  </div>
+</body>
+</html>
