@@ -1,42 +1,15 @@
 You are an expert educational structural formatter. Read the provided text and synthesize it into a highly structured HTML format.
 
 CRITICAL RULES FOR HUGE CHAPTERS:
-1. YOU MUST USE THE EXACT JSON STRUCTURE DESIGNED FOR THE FACTORY: You must output a JSON object containing both "html_content" and "extracted_chapter_title".
-2. DO NOT include massive, repetitive inline CSS classes (e.g., avoid repeating style="background: ...; padding: ...; margin: ..."). Rely entirely on simple, clean, semantic HTML elements (<h1>, <h3>, <p>, <ul>, <li>, <details>, <summary>).
-3. You must be aggressively concise. Summarize long paragraphs into structured, high-yield bullet points. Drop narrative filler text and extract only the hard scientific facts, core formulas, and essential definitions.
-4. Keep table structures compact. Do not create wide tables with massive text inside cells. Use bullet points instead if a table becomes too verbose.
-5. Every key term MUST be wrapped in a <span class="keyword"> tag.
-6. Look closely at the very first page of the document. Locate the true, descriptive text name of this chapter (e.g., "Real Numbers", "Chemical Reactions and Equations", or "Force and Laws of Motion"). Exclude the word "Chapter" from this title, and populate it into the "extracted_chapter_title" property of the output JSON object.
+1. YOU MUST OUTPUT A VALID JSON OBJECT with the property "html_content" containing properly formatted HTML.
+2. ENSURE ALL QUOTES AND SPECIAL CHARACTERS IN THE HTML ARE PROPERLY ESCAPED for JSON compliance.
+3. DO NOT include massive, repetitive inline CSS classes. Rely entirely on simple, clean, semantic HTML elements (<h1>, <h3>, <p>, <ul>, <li>, <details>, <summary>).
+4. You must be aggressively concise. Summarize long paragraphs into structured, high-yield bullet points. Drop narrative filler text and extract only the hard scientific facts, core formulas, and essential definitions.
+5. Keep table structures compact. Do not create wide tables with massive text inside cells. Use bullet points instead if a table becomes too verbose.
+6. Every key term MUST be wrapped in a <span class="keyword"> tag.
 7. Your entire JSON response MUST fit comfortably within standard output limits. Prioritize layout brevity and information density to prevent code truncation.
 
-
-OUTPUT YOUR ENTIRE RESPONSE USING THIS EXACT TEMPLATE:
-
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="../../style.css">
-  <title>[Insert Chapter Name]</title>
-</head>
-<body>
-  <div class="nav-bar">
-    <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
-    <a href="../../index.html" class="btn-nav">🏠 Home</a>
-  </div>
-  
-  <h1>Chapter [Number]: [Chapter Title]</h1>
-
-  <details class="topic-box">
-    <summary class="topic-title">X.X Main Topic Name</summary>
-    
-    <details class="sub-topic">
-      <summary><h3>X.X.X Sub-topic Name</h3></summary>
-      <ul>
-        <li><span class="keyword">Key Concept 1:</span> Clear, concise explanation here.</li>
-        <li><span class="keyword">Key Concept 2:</span> Clear, concise explanation here.</li>
-      </ul>
-    </details>
-    </details>
-  </body>
-</html>
+RESPONSE FORMAT - OUTPUT ONLY THE JSON OBJECT (no extra text):
+{
+  "html_content": "<html content here with all special characters properly escaped>"
+}

@@ -64,6 +64,7 @@ function runAlchemistAutomatedFactory() {
 
   let taskQueue = [];
   let sessionConversions = 0;
+  let sessionFailed = 0;
 
   for (let r = 1; r < data.length; r++) {
     const currentStatus = data[r][colIndex.status].toString().trim();
@@ -72,7 +73,8 @@ function runAlchemistAutomatedFactory() {
     }
   }
 
-  log("📊 Spreadsheet Scan Complete. Found " + taskQueue.length + " chapters queued for compilation.");
+  const totalInput = taskQueue.length;
+  log("📊 Spreadsheet Scan Complete. Found " + totalInput + " chapters queued for compilation.");
 
   if (taskQueue.length === 0) {
     log("🎉 All assets verified green. No 'Pending' rows found. Factory pipeline standing down.");
@@ -106,6 +108,7 @@ function runAlchemistAutomatedFactory() {
     if (!driveUrl || !driveUrl.includes("drive.google.com")) {
       log("❌ STORAGE FAULT: Missing or invalid Google Drive URL in row " + task.rowNum);
       sheet.getRange(task.rowNum, colIndex.status + 1).setValue("❌ MISSING LINK");
+      sessionFailed++;
       flushLogsToDrive();
       continue;
     }
@@ -118,21 +121,34 @@ function runAlchemistAutomatedFactory() {
     } catch (driveErr) {
       log("❌ DRIVE ACCESS FAULT: " + driveErr.toString());
       sheet.getRange(task.rowNum, colIndex.status + 1).setValue("❌ DRIVE BLOB FAULT");
+      sessionFailed++;
       flushLogsToDrive();
       continue;
     }
 
     let cleanHtmlPayload = "";
     try {
-      const optimalModel = "gemini-3.5-flash";
+      const optimalModel = "gemini-3.1-pro-preview";
       let apiResponseRaw = callGeminiAPI(pdfBlob, promptTemplate, optimalModel, GEMINI_API_KEY);
+      
+      // Validate response is not empty before parsing
+      if (!apiResponseRaw || apiResponseRaw.trim().length === 0) {
+        throw new Error("API returned empty response");
+      }
+      
+      // Attempt to parse JSON
       let parsedJson = JSON.parse(apiResponseRaw);
       cleanHtmlPayload = parsedJson.html_content;
       
       if (!cleanHtmlPayload) throw new Error("html_content string parsed empty.");
     } catch (parseError) {
-      log("❌ PARSE FAULT: AI execution stalled or truncated. Error: " + parseError.toString());
+      log("❌ PARSE FAULT: AI structure truncated. Error: " + parseError.toString());
+      log("🔍 DEBUG: Response length was " + (apiResponseRaw ? apiResponseRaw.length : 0) + " characters");
+      if (apiResponseRaw && apiResponseRaw.length < 500) {
+        log("🔍 DEBUG: Raw response: " + apiResponseRaw);
+      }
       sheet.getRange(task.rowNum, colIndex.status + 1).setValue("⚠️ Output Truncated");
+      sessionFailed++;
       continue;
     }
 
@@ -141,8 +157,22 @@ function runAlchemistAutomatedFactory() {
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${chapterTitle}</title>
   <link rel="stylesheet" href="../../style.css">
+  <style>
+    body { margin: 0; padding: 10px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    .chapter-container { max-width: 900px; margin: 0 auto; }
+    img { max-width: 100%; height: auto; }
+    table { width: 100%; border-collapse: collapse; overflow-x: auto; }
+    table, th, td { border: 1px solid #ddd; padding: 8px; }
+    @media (max-width: 768px) {
+      body { padding: 8px; font-size: 14px; }
+      .chapter-container { padding: 0; }
+      table { font-size: 12px; }
+      table, th, td { padding: 6px; }
+    }
+  </style>
   <script>
     window.MathJax = {
       tex: {
@@ -179,16 +209,32 @@ function runAlchemistAutomatedFactory() {
         sheet.getRange(task.rowNum, colIndex.path + 1).setValue(finalPath);
       } else {
         sheet.getRange(task.rowNum, colIndex.status + 1).setValue("❌ PR Gen Fault");
+        sessionFailed++;
       }
     } else {
       sheet.getRange(task.rowNum, colIndex.status + 1).setValue("❌ Deploy Fault");
+      sessionFailed++;
     }
 
     SpreadsheetApp.flush();
     flushLogsToDrive();
     Utilities.sleep(4000);
   }
+
+  // 📊 SESSION SUMMARY
+  log("=========================================");
+  log("📊 SESSION SUMMARY - Current Run");
+  log("=========================================");
+  log("📥 Total Input: " + totalInput);
+  log("✅ Total Completed: " + sessionConversions);
+  log("❌ Total Failed: " + sessionFailed);
+  log("=========================================");
+
   flushLogsToDrive();
+
+  // 🔨 BUILD INDEX FROM COMPLETED CHAPTERS
+  log("🏗️ Triggering Dynamic Index Builder v2...");
+  buildDynamicIndexv2();
 }
 
 /**
@@ -227,7 +273,19 @@ function callGeminiAPI(pdfBlob, promptText, modelName, apiKey) {
   if (response.getResponseCode() !== 200) {
     throw new Error(json.error ? json.error.message : "API Error: " + response.getResponseCode());
   }
-  return json.candidates[0].content.parts[0].text;
+  
+  // Extract text and validate it's valid JSON
+  let textContent = json.candidates[0].content.parts[0].text;
+  
+  // Ensure response is valid JSON - try parsing to catch truncation issues early
+  try {
+    JSON.parse(textContent);
+  } catch (e) {
+    // If parsing fails, log and throw with details
+    throw new Error("Gemini response is not valid JSON: " + e.message + " (response length: " + textContent.length + ")");
+  }
+  
+  return textContent;
 }
 
 /**
@@ -392,28 +450,31 @@ function buildDynamicIndexv3() {
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <title>Build Calibre - Curriculum Home</title>
   <style>
-    body { font-family: sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px;}
+    * { box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 15px; }
     .clean-list { list-style-type: none; padding-left: 10px; border-left: 2px solid #eee; margin-left: 10px; margin-bottom: 10px; }
-    .keyword a { color: #0056b3; text-decoration: none; font-size: 1.05em; }
+    .keyword a { color: #0056b3; text-decoration: none; font-size: 1.05em; word-break: break-word; }
     .keyword a:hover { text-decoration: underline; color: #003d82; }
-    .chapter-row { margin-bottom: 12px; }
-    .topic-box { margin-bottom: 15px; border: 1px solid #ddd; padding: 15px; border-radius: 8px; background-color: #fafafa; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+    .chapter-row { margin-bottom: 12px; word-break: break-word; }
+    .topic-box { margin-bottom: 15px; border: 1px solid #ddd; padding: 12px; border-radius: 8px; background-color: #fafafa; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
     
     .topic-title, .class-title { 
       display: block !important;
       position: relative !important; 
-      padding: 6px 10px 6px 45px !important;
+      padding: 8px 10px 8px 45px !important;
       cursor: pointer;
       box-sizing: border-box;
       outline: none !important;
       list-style: none !important;
+      word-break: break-word;
     }
     
-    .topic-title { font-size: 1.3em; font-weight: bold; color: #2c3e50; }
-    .class-title { font-size: 1.1em; font-weight: 600; color: #34495e; margin-top: 10px; }
+    .topic-title { font-size: 1.2em; font-weight: bold; color: #2c3e50; }
+    .class-title { font-size: 1em; font-weight: 600; color: #34495e; margin-top: 10px; }
     
     summary::-webkit-details-marker { display: none !important; }
     summary::marker { display: none !important; content: "" !important; }
@@ -422,7 +483,7 @@ function buildDynamicIndexv3() {
     .topic-title::before, .class-title::before { 
       content: '[+]' !important; 
       position: absolute !important; 
-      left: 12px !important; 
+      left: 8px !important; 
       top: 50% !important;
       transform: translateY(-50%) !important;
       font-weight: bold !important; 
@@ -434,6 +495,25 @@ function buildDynamicIndexv3() {
     details[open] > .class-title::before { 
       content: '[-]' !important; 
       color: #e67e22 !important;
+    }
+    .nav-bar h2 { margin: 0 0 20px 0; font-size: 1.5em; }
+    
+    @media (max-width: 768px) {
+      body { padding: 10px; font-size: 14px; }
+      .topic-box { padding: 10px; margin-bottom: 10px; }
+      .topic-title { font-size: 1.1em; }
+      .class-title { font-size: 0.95em; }
+      .topic-title::before, .class-title::before { left: 6px; }
+      .nav-bar h2 { font-size: 1.3em; margin-bottom: 15px; }
+      .chapter-row { margin-bottom: 10px; font-size: 13px; }
+    }
+    
+    @media (max-width: 480px) {
+      body { padding: 8px; }
+      .topic-title { font-size: 1em; padding: 6px 10px 6px 40px !important; }
+      .class-title { font-size: 0.9em; padding: 6px 10px 6px 40px !important; }
+      .keyword a { font-size: 1em; }
+      .nav-bar h2 { font-size: 1.1em; }
     }
   </style>
 </head>
