@@ -42,8 +42,13 @@ function buildDynamicIndexv2() {
       if (!curriculumMap[subj][cls]) curriculumMap[subj][cls] = [];
 
       const stableChapNo = isNaN(chapNo) ? 999 : chapNo;
-      curriculumMap[subj][cls].push({ no: stableChapNo, title: title, path: path });
-      completedCount++;
+      
+      // Check for duplicates - prevent adding same chapter twice
+      const isDuplicate = curriculumMap[subj][cls].some(ch => ch.path === path);
+      if (!isDuplicate) {
+        curriculumMap[subj][cls].push({ no: stableChapNo, title: title, path: path });
+        completedCount++;
+      }
     }
   }
 

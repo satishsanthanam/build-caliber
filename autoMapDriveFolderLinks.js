@@ -1,5 +1,5 @@
 // =====================================================================
-// 📁 THE ALCHEMIST SCANNER: ZERO-TOKEN DRIVE-TO-SHEET MAPPER (V3)
+// 📁 BUILD CALIBRE SCANNER: ZERO-TOKEN DRIVE-TO-SHEET MAPPER (V3)
 // =====================================================================
 
 function autoMapDriveFolderLinks() {

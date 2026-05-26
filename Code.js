@@ -1,5 +1,5 @@
 // =====================================================================
-// 🔮 THE ALCHEMIST CORE: MASTER PRODUCTION ENGINE (V7.6 - FORTIFIED)
+// 🔮 THE BUILD CALIBRE CORE: MASTER PRODUCTION ENGINE (V8.5 - FULL HARDENED)
 // =====================================================================
 
 let logBuffer = [];
@@ -12,6 +12,7 @@ function log(msg) {
 /**
  * MAIN EXECUTION ENGINE
  * Orchestrates Sheet reading, Native Drive PDF fetching, Gemini processing, and Bitbucket pushes.
+ * Upgraded to wrap your enriched prompt requirements cleanly with uniform structural navigation controls.
  */
 function runAlchemistAutomatedFactory() {
   log("🏁 Factory Ignition: Checking workspace structural boundaries...");
@@ -63,8 +64,6 @@ function runAlchemistAutomatedFactory() {
   }
 
   let taskQueue = [];
-  let sessionConversions = 0;
-  let sessionFailed = 0;
 
   for (let r = 1; r < data.length; r++) {
     const currentStatus = data[r][colIndex.status].toString().trim();
@@ -73,8 +72,7 @@ function runAlchemistAutomatedFactory() {
     }
   }
 
-  const totalInput = taskQueue.length;
-  log("📊 Spreadsheet Scan Complete. Found " + totalInput + " chapters queued for compilation.");
+  log("📊 Spreadsheet Scan Complete. Found " + taskQueue.length + " chapters queued for compilation.");
 
   if (taskQueue.length === 0) {
     log("🎉 All assets verified green. No 'Pending' rows found. Factory pipeline standing down.");
@@ -82,25 +80,25 @@ function runAlchemistAutomatedFactory() {
     return;
   }
 
-  // Read prompt template
+  // Read prompt template (Loads your Coach-enriched msprompt content from your local configuration)
   let promptTemplate = "";
   try {
     promptTemplate = HtmlService.createHtmlOutputFromFile("Prompt").getContent();
   } catch (err) {
-    log("静态 Prompt Template asset not found. Using safe layout strings.");
-    promptTemplate = "Format the output cleanly inside structured HTML divs.";
+    log("❌ CRITICAL ASSET FAULT: Prompt.html file containing your enriched instructions was not found.");
+    flushLogsToDrive();
+    return;
   }
 
   // Process Execution Loop
   for (let t = 0; t < taskQueue.length; t++) {
     const task = taskQueue[t];
-    const subject = task.data[colIndex.subject].toString().trim().toLowerCase();
+    const subject = task.data[colIndex.subject].toString().trim();
     const classLevel = task.data[colIndex.classLevel].toString().trim();
-    const chapterNo = parseInt(task.data[colIndex.chapterNo], 10);
     const chapterTitle = task.data[colIndex.title].toString().trim();
 
     log("=========================================");
-    log("🌐 Row [" + task.rowNum + "] Processing: Chapter " + chapterNo + " - " + chapterTitle + " (" + classLevel + ")");
+    log("🌐 Row [" + task.rowNum + "] Processing: " + chapterTitle + " (" + classLevel + ")");
 
     const driveUrl = task.data[colIndex.driveLink].toString().trim();
     let pdfBlob = null;
@@ -108,7 +106,6 @@ function runAlchemistAutomatedFactory() {
     if (!driveUrl || !driveUrl.includes("drive.google.com")) {
       log("❌ STORAGE FAULT: Missing or invalid Google Drive URL in row " + task.rowNum);
       sheet.getRange(task.rowNum, colIndex.status + 1).setValue("❌ MISSING LINK");
-      sessionFailed++;
       flushLogsToDrive();
       continue;
     }
@@ -121,58 +118,33 @@ function runAlchemistAutomatedFactory() {
     } catch (driveErr) {
       log("❌ DRIVE ACCESS FAULT: " + driveErr.toString());
       sheet.getRange(task.rowNum, colIndex.status + 1).setValue("❌ DRIVE BLOB FAULT");
-      sessionFailed++;
       flushLogsToDrive();
       continue;
     }
 
-    let cleanHtmlPayload = "";
+    let parsedJson = null;
     try {
-      const optimalModel = "gemini-3.1-pro-preview";
+      // Leveraging stable High-Speed performance for heavy layout Extractions
+      const optimalModel = "gemini-3.5-flash";
       let apiResponseRaw = callGeminiAPI(pdfBlob, promptTemplate, optimalModel, GEMINI_API_KEY);
+      parsedJson = JSON.parse(apiResponseRaw);
       
-      // Validate response is not empty before parsing
-      if (!apiResponseRaw || apiResponseRaw.trim().length === 0) {
-        throw new Error("API returned empty response");
+      if (!parsedJson.html_content || !parsedJson.output_filename) {
+        throw new Error("Crucial JSON fields returned empty from the model.");
       }
-      
-      // Attempt to parse JSON
-      let parsedJson = JSON.parse(apiResponseRaw);
-      cleanHtmlPayload = parsedJson.html_content;
-      
-      if (!cleanHtmlPayload) throw new Error("html_content string parsed empty.");
     } catch (parseError) {
-      log("❌ PARSE FAULT: AI structure truncated. Error: " + parseError.toString());
-      log("🔍 DEBUG: Response length was " + (apiResponseRaw ? apiResponseRaw.length : 0) + " characters");
-      if (apiResponseRaw && apiResponseRaw.length < 500) {
-        log("🔍 DEBUG: Raw response: " + apiResponseRaw);
-      }
+      log("❌ PARSE FAULT: AI execution stalled or truncated. Error: " + parseError.toString());
       sheet.getRange(task.rowNum, colIndex.status + 1).setValue("⚠️ Output Truncated");
-      sessionFailed++;
       continue;
     }
 
-    // 🧮 MATHJAX INJECTION
+    // 📄 BASE HTML PAGE ASSEMBLY (Hardcoded navigation layer handles layout uniformity perfectly)
     let completeWebPageContent = `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${chapterTitle}</title>
+  <title>${parsedJson.extracted_chapter_title || chapterTitle}</title>
   <link rel="stylesheet" href="../../style.css">
-  <style>
-    body { margin: 0; padding: 10px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
-    .chapter-container { max-width: 900px; margin: 0 auto; }
-    img { max-width: 100%; height: auto; }
-    table { width: 100%; border-collapse: collapse; overflow-x: auto; }
-    table, th, td { border: 1px solid #ddd; padding: 8px; }
-    @media (max-width: 768px) {
-      body { padding: 8px; font-size: 14px; }
-      .chapter-container { padding: 0; }
-      table { font-size: 12px; }
-      table, th, td { padding: 6px; }
-    }
-  </style>
   <script>
     window.MathJax = {
       tex: {
@@ -185,16 +157,46 @@ function runAlchemistAutomatedFactory() {
 </head>
 <body>
   <div class="chapter-container">
-    ${cleanHtmlPayload}
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    ${parsedJson.html_content}
+
   </div>
 </body>
 </html>`;
 
+    // Directory construction logic mapping
     const sanitizedSubject = subject.toLowerCase().replace(/[^a-z0-9]/g, "-");
     const sanitizedClass = classLevel.toLowerCase().replace(/[^a-z0-9]/g, "-");
-    const sanitizedTitle = chapterTitle.toLowerCase().replace(/[^a-z0-9]/g, "-").replace(/-+/g, "-");
-    const finalPath = sanitizedSubject + "/" + sanitizedClass + "/" + sanitizedTitle + ".html";
+    
+    // Natively targets the model's exact calculated output contract string
+    // 🛡️ APPS SCRIPT DEFENSIVE SANITIZATION LAYER
+    let computedFileName = parsedJson.output_filename.trim();
+    
+    // Fallback logic in case the AI skips padding or constraints
+    if (computedFileName.endsWith(".html")) {
+      computedFileName = computedFileName.substring(0, computedFileName.length - 5);
+    }
+    
+    // Enforce 48-character length limit safely before appending extension
+    if (computedFileName.length > 48) {
+      computedFileName = computedFileName.substring(0, 48);
+      // Clean up any loose hyphens caused by truncation
+      if (computedFileName.endsWith("-")) {
+        computedFileName = computedFileName.substring(0, computedFileName.length - 1);
+      }
+    }
+    computedFileName = computedFileName + ".html";
 
+    // Build subfolder route locations
+    const sanitizedSubject = subject.toLowerCase().replace(/[^a-z0-9]/g, "-");
+    const sanitizedClass = classLevel.toLowerCase().replace(/[^a-z0-9]/g, "-");
+    const finalPath = sanitizedSubject + "/" + sanitizedClass + "/" + computedFileName;
+    
     const stagingBranchName = "factory-builds";
     const commitSuccess = pushFileToBitbucketWithJira(finalPath, completeWebPageContent, stagingBranchName);
 
@@ -202,46 +204,33 @@ function runAlchemistAutomatedFactory() {
       const prStatus = raiseBitbucketPullRequest(stagingBranchName, finalPath);
       if (prStatus) {
         log("🚀 PIPELINE SUCCESS: File safely deployed -> " + finalPath);
-        appendToCompletedLog(finalPath);
-        sessionConversions++;
+        
+        // Track the structured index update snippets into your completed log file
+        appendToCompletedLog(finalPath, parsedJson.index_update);
 
         sheet.getRange(task.rowNum, colIndex.status + 1).setValue("✅ Completed");
         sheet.getRange(task.rowNum, colIndex.path + 1).setValue(finalPath);
       } else {
         sheet.getRange(task.rowNum, colIndex.status + 1).setValue("❌ PR Gen Fault");
-        sessionFailed++;
       }
     } else {
       sheet.getRange(task.rowNum, colIndex.status + 1).setValue("❌ Deploy Fault");
-      sessionFailed++;
     }
 
     SpreadsheetApp.flush();
     flushLogsToDrive();
-    Utilities.sleep(4000);
+    Utilities.sleep(4000); // Guard rails to manage standard transaction flow pacing
   }
-
-  // 📊 SESSION SUMMARY
-  log("=========================================");
-  log("📊 SESSION SUMMARY - Current Run");
-  log("=========================================");
-  log("📥 Total Input: " + totalInput);
-  log("✅ Total Completed: " + sessionConversions);
-  log("❌ Total Failed: " + sessionFailed);
-  log("=========================================");
-
   flushLogsToDrive();
-
-  // 🔨 BUILD INDEX FROM COMPLETED CHAPTERS
-  log("🏗️ Triggering Dynamic Index Builder v2...");
-  buildDynamicIndexv2();
 }
 
 /**
  * Connects directly to Google AI Studio Gemini API endpoints
+ * ENFORCED: Strict Type constraints for your Coach prompt variables
  */
 function callGeminiAPI(pdfBlob, promptText, modelName, apiKey) {
   const url = "https://generativelanguage.googleapis.com/v1beta/models/" + modelName + ":generateContent?key=" + apiKey;
+  
   const payload = {
     "contents": [{
       "parts": [
@@ -253,10 +242,15 @@ function callGeminiAPI(pdfBlob, promptText, modelName, apiKey) {
       "responseMimeType": "application/json",
       "responseSchema": {
         "type": "OBJECT",
-        "properties": { "html_content": { "type": "STRING" } },
-        "required": ["html_content"]
+        "properties": {
+          "extracted_chapter_title": { "type": "STRING" },
+          "output_filename": { "type": "STRING" },
+          "html_content": { "type": "STRING" },
+          "index_update": { "type": "STRING" }
+        },
+        "required": ["extracted_chapter_title", "output_filename", "html_content", "index_update"]
       },
-      "temperature": 0.2,
+      "temperature": 0.1,
       "maxOutputTokens": 8192
     }
   };
@@ -273,19 +267,7 @@ function callGeminiAPI(pdfBlob, promptText, modelName, apiKey) {
   if (response.getResponseCode() !== 200) {
     throw new Error(json.error ? json.error.message : "API Error: " + response.getResponseCode());
   }
-  
-  // Extract text and validate it's valid JSON
-  let textContent = json.candidates[0].content.parts[0].text;
-  
-  // Ensure response is valid JSON - try parsing to catch truncation issues early
-  try {
-    JSON.parse(textContent);
-  } catch (e) {
-    // If parsing fails, log and throw with details
-    throw new Error("Gemini response is not valid JSON: " + e.message + " (response length: " + textContent.length + ")");
-  }
-  
-  return textContent;
+  return json.candidates[0].content.parts[0].text;
 }
 
 /**
@@ -353,7 +335,7 @@ function raiseBitbucketPullRequest(branchName, filePath) {
   return res.getResponseCode() === 201 || res.getResponseCode() === 200 || res.getResponseCode() === 409;
 }
 
-function appendToCompletedLog(bitbucketPath) {
+function appendToCompletedLog(bitbucketPath, indexSnippet) {
   try {
     const folderId = PropertiesService.getScriptProperties().getProperty("OUTPUT_FOLDER_ID");
     if (!folderId) return;
@@ -361,7 +343,13 @@ function appendToCompletedLog(bitbucketPath) {
     const files = folder.getFilesByName("completed.txt");
     let file = files.hasNext() ? files.next() : folder.createFile("completed.txt", "", MimeType.PLAIN_TEXT);
     const cur = file.getBlob().getDataAsString();
-    file.setContent(cur ? cur + "\n" + bitbucketPath : bitbucketPath);
+    
+    let logEntry = "File: " + bitbucketPath;
+    if (indexSnippet) {
+      logEntry += "\nSnippet:\n" + indexSnippet + "\n--------------------";
+    }
+    
+    file.setContent(cur ? cur + "\n" + logEntry : logEntry);
   } catch (e) {}
 }
 
@@ -411,7 +399,7 @@ function buildDynamicIndexv3() {
   // 🛡️ INDEX GUARD BLOCK
   for (const [key, idx] of Object.entries(col)) {
     if (idx === -1) {
-      Logger.log("❌ CRITICAL INDEX FAULT: Header column matching '" + key + "' was not found in the spreadsheet row.");
+      Logger.log("❌ CRITICAL INDEX FAULT: Header column matching '" + key + "' was not found.");
       return;
     }
   }
@@ -442,7 +430,7 @@ function buildDynamicIndexv3() {
   Logger.log("📊 Index scan found " + completedCount + " successfully verified chapters.");
 
   if (completedCount === 0) {
-    Logger.log("⚠️ WARNING: 0 verified '✅ Completed' chapters detected. Halting push to prevent blanking the home file.");
+    Logger.log("⚠️ WARNING: 0 verified '✅ Completed' chapters detected.");
     return;
   }
 
@@ -450,31 +438,28 @@ function buildDynamicIndexv3() {
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <title>Build Calibre - Curriculum Home</title>
   <style>
-    * { box-sizing: border-box; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 15px; }
+    body { font-family: sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px;}
     .clean-list { list-style-type: none; padding-left: 10px; border-left: 2px solid #eee; margin-left: 10px; margin-bottom: 10px; }
-    .keyword a { color: #0056b3; text-decoration: none; font-size: 1.05em; word-break: break-word; }
+    .keyword a { color: #0056b3; text-decoration: none; font-size: 1.05em; }
     .keyword a:hover { text-decoration: underline; color: #003d82; }
-    .chapter-row { margin-bottom: 12px; word-break: break-word; }
-    .topic-box { margin-bottom: 15px; border: 1px solid #ddd; padding: 12px; border-radius: 8px; background-color: #fafafa; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+    .chapter-row { margin-bottom: 12px; }
+    .topic-box { margin-bottom: 15px; border: 1px solid #ddd; padding: 15px; border-radius: 8px; background-color: #fafafa; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
     
     .topic-title, .class-title { 
       display: block !important;
       position: relative !important; 
-      padding: 8px 10px 8px 45px !important;
+      padding: 6px 10px 6px 45px !important;
       cursor: pointer;
       box-sizing: border-box;
       outline: none !important;
       list-style: none !important;
-      word-break: break-word;
     }
     
-    .topic-title { font-size: 1.2em; font-weight: bold; color: #2c3e50; }
-    .class-title { font-size: 1em; font-weight: 600; color: #34495e; margin-top: 10px; }
+    .topic-title { font-size: 1.3em; font-weight: bold; color: #2c3e50; }
+    .class-title { font-size: 1.1em; font-weight: 600; color: #34495e; margin-top: 10px; }
     
     summary::-webkit-details-marker { display: none !important; }
     summary::marker { display: none !important; content: "" !important; }
@@ -483,7 +468,7 @@ function buildDynamicIndexv3() {
     .topic-title::before, .class-title::before { 
       content: '[+]' !important; 
       position: absolute !important; 
-      left: 8px !important; 
+      left: 12px !important; 
       top: 50% !important;
       transform: translateY(-50%) !important;
       font-weight: bold !important; 
@@ -495,25 +480,6 @@ function buildDynamicIndexv3() {
     details[open] > .class-title::before { 
       content: '[-]' !important; 
       color: #e67e22 !important;
-    }
-    .nav-bar h2 { margin: 0 0 20px 0; font-size: 1.5em; }
-    
-    @media (max-width: 768px) {
-      body { padding: 10px; font-size: 14px; }
-      .topic-box { padding: 10px; margin-bottom: 10px; }
-      .topic-title { font-size: 1.1em; }
-      .class-title { font-size: 0.95em; }
-      .topic-title::before, .class-title::before { left: 6px; }
-      .nav-bar h2 { font-size: 1.3em; margin-bottom: 15px; }
-      .chapter-row { margin-bottom: 10px; font-size: 13px; }
-    }
-    
-    @media (max-width: 480px) {
-      body { padding: 8px; }
-      .topic-title { font-size: 1em; padding: 6px 10px 6px 40px !important; }
-      .class-title { font-size: 0.9em; padding: 6px 10px 6px 40px !important; }
-      .keyword a { font-size: 1em; }
-      .nav-bar h2 { font-size: 1.1em; }
     }
   </style>
 </head>
