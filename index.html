@@ -12,10 +12,11 @@
     .chapter-row { margin-bottom: 12px; }
     .topic-box { margin-bottom: 15px; border: 1px solid #ddd; padding: 15px; border-radius: 8px; background-color: #fafafa; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
     
+    /* 🧱 UNBREAKABLE BUFFER ZONE: Forces structural padding onto the target elements to prevent icon collision */
     .topic-title, .class-title { 
       display: block !important;
       position: relative !important; 
-      padding: 6px 10px 6px 45px !important;
+      padding: 6px 10px 6px 45px !important; /* 📦 45px left gutter safety barrier */
       cursor: pointer;
       box-sizing: border-box;
       outline: none !important;
@@ -29,21 +30,22 @@
     summary::marker { display: none !important; content: "" !important; }
     summary:hover { color: #0056b3; }
     
+    /* 🎨 PINPOINT INDICATOR POSITIONING: Anchors and aligns elements perfectly to the center line */
     .topic-title::before, .class-title::before { 
       content: '[+]' !important; 
       position: absolute !important; 
       left: 12px !important; 
       top: 50% !important;
-      transform: translateY(-50%) !important;
+      transform: translateY(-50%) !important; /* Perfect vertical alignment center */
       font-weight: bold !important; 
-      color: #0056b3 !important;
+      color: #0056b3 !important; /* 🔵 Theme Blue */
       font-size: 1em !important; 
       font-family: monospace !important;
     }
     details[open] > .topic-title::before,
     details[open] > .class-title::before { 
       content: '[-]' !important; 
-      color: #e67e22 !important;
+      color: #e67e22 !important; /* 🟠 Theme Orange */
     }
   </style>
 </head>
@@ -172,6 +174,7 @@
             <li class="chapter-row"><span class="keyword"><a href="mathematics/class-10/quadratic-equations.html"><strong>Chapter 4:</strong> Quadratic Equations</a></span></li>
             <li class="chapter-row"><span class="keyword"><a href="mathematics/class-10/arithmetic-progressions.html"><strong>Chapter 5:</strong> Arithmetic Progressions</a></span></li>
             <li class="chapter-row"><span class="keyword"><a href="mathematics/class-10/triangles.html"><strong>Chapter 6:</strong> Triangles</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-10/coordinate-geometry.html"><strong>Chapter 7:</strong> Coordinate Geometry</a></span></li>
             <li class="chapter-row"><span class="keyword"><a href="mathematics/class-10/introduction-to-trigonometry.html"><strong>Chapter 8:</strong> Introduction to Trigonometry</a></span></li>
             <li class="chapter-row"><span class="keyword"><a href="mathematics/class-10/some-applications-of-trigonometry.html"><strong>Chapter 9:</strong> Some Applications of Trigonometry</a></span></li>
             <li class="chapter-row"><span class="keyword"><a href="mathematics/class-10/circles.html"><strong>Chapter 10:</strong> Circles</a></span></li>
