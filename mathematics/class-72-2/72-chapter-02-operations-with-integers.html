@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Operations with Integers</title>
+  <link rel="stylesheet" href="../../style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+        displayMath: [['$$', '$$']]
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Chapter 2: Operations with Integers</h1>
+
+    <details class="topic-box">
+  <summary class="topic-title">2.1 A Quick Recap of Integers</summary>
+  <p>Integers can be represented on a number line and used to solve puzzles involving sums and differences.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Rakesh's Puzzle: A Number Game</h3></summary>
+    <p>A method to find two numbers given their sum and difference without using formulas is to try different pairs of numbers and check:</p>
+    <ul>
+      <li>Do the two numbers add up to the given sum?</li>
+      <li>Is the difference between them (first number $-$ second number) equal to the given difference?</li>
+    </ul>
+    <p>For example, if the sum is $25$ and the difference is $11$, the numbers are $18$ and $7$ because:</p>
+    <ul>
+      <li>$18 + 7 = 25$</li>
+      <li>$18 - 7 = 11$</li>
+    </ul>
+    <p>If the sum is $25$ and the difference is $-11$, swapping the numbers gives the correct pair: $7$ and $18$.</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Carrom Coin Integers</h3></summary>
+    <p>Movement on a line can be modeled using integers:</p>
+    <ul>
+      <li>Rightward movement is considered <span class="keyword">positive</span>.</li>
+      <li>Leftward movement is considered <span class="keyword">negative</span>.</li>
+    </ul>
+    <p>If a coin starts at $0$, and the first strike moves it by $a$ units and the second strike moves it by $b$ units, the final position $P$ is given by the formula:</p>
+    <p>$$P = a + b$$</p>
+    <p>The <span class="keyword">magnitude</span> represents the distance traveled, while the sign represents the direction (rightwards or leftwards).</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Token Model for Addition and Subtraction</h3></summary>
+    <p>The token model uses colored tokens to represent integers:</p>
+    <ul>
+      <li>A green token represents $+1$.</li>
+      <li>A red token represents $-1$.</li>
+      <li>A green and a red token together form a <span class="keyword">zero pair</span> and cancel each other out.</li>
+    </ul>
+    <p>Subtracting a number is equivalent to adding its <span class="keyword">additive inverse</span>:</p>
+    <p>$$a - b = a + (-b)$$</p>
+    <p>For example, $7 - 18 = 7 + (-18) = -11$.</p>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">2.2 Multiplication of Integers</summary>
+  <p>Multiplication of integers can be modeled using tokens and patterns.</p>
+
+  <details class="sub-topic">
+    <summary><h3>Token Model for Multiplication</h3></summary>
+    <p>We can interpret multiplication $m \times n$ using a bag of tokens:</p>
+    <ul>
+      <li>When the multiplier $m$ is positive, we <strong>add</strong> tokens to the bag $m$ times.</li>
+      <li>When the multiplier $m$ is negative, we <strong>remove</strong> tokens from the bag $|m|$ times.</li>
+    </ul>
+    <p>Examples:</p>
+    <ul>
+      <li>$4 \times (-2)$: Place $2$ negative (red) tokens into an empty bag $4$ times. Total = $8$ negative tokens ($-8$).</li>
+      <li>$(-4) \times 2$: Remove $2$ positive (green) tokens from an empty bag $4$ times. This requires adding zero pairs first. After removing $8$ positive tokens, $8$ negative tokens remain ($-8$).</li>
+      <li>$(-4) \times (-2)$: Remove $2$ negative (red) tokens $4$ times. After removing $8$ negative tokens from zero pairs, $8$ positive tokens remain ($+8$).</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Patterns in Integer Multiplication</h3></summary>
+    <p>Observing multiplication sequences reveals the rules of signs:</p>
+    <ul>
+      <li>When the multiplicand is positive, for every unit decrease in the multiplier, the product decreases by the multiplicand.</li>
+      <li>When the multiplicand is negative, for every unit decrease in the multiplier, the product increases by the magnitude of the multiplicand.</li>
+    </ul>
+    <p>This establishes the following rules:</p>
+    <ul>
+      <li>$\text{Positive} \times \text{Positive} = \text{Positive}$</li>
+      <li>$\text{Positive} \times \text{Negative} = \text{Negative}$</li>
+      <li>$\text{Negative} \times \text{Positive} = \text{Negative}$</li>
+      <li>$\text{Negative} \times \text{Negative} = \text{Positive}$</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Properties of Multiplication</h3></summary>
+    <ul>
+      <li><strong>Multiplicative Identity:</strong> For any integer $a$, $1 \times a = a$.</li>
+      <li><strong>Commutative Property:</strong> For any two integers $a$ and $b$, multiplication is commutative:
+        <p>$$a \times b = b \times a$$</p>
+      </li>
+      <li><strong>Brahmagupta's Rules (628 CE):</strong> Explicit rules using "fortune" ($dhana$, positive) and "debt" ($ṛṇa$, negative):
+        <ul>
+          <li>The product or quotient of two fortunes is a fortune.</li>
+          <li>The product or quotient of two debts is a fortune.</li>
+          <li>The product or quotient of a debt and a fortune is a debt.</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">2.3 Division of Integers</summary>
+  <p>Division is the inverse operation of multiplication.</p>
+  <ul>
+    <li>Since $25 \times (-4) = -100$, it follows that $(-100) \div 25 = -4$ and $(-100) \div (-4) = 25$.</li>
+  </ul>
+  <p>In general, for any two positive integers $a$ and $b$ (where $b \neq 0$):</p>
+  <ul>
+    <li>$$a \div (-b) = -(a \div b)$$</li>
+    <li>$$(-a) \div b = -(a \div b)$$</li>
+    <li>$$(-a) \div (-b) = a \div b$$</li>
+  </ul>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">2.4 Expressions Using Integers</summary>
+  <p>Properties that simplify calculations with multiple integers.</p>
+
+  <details class="sub-topic">
+    <summary><h3>Associative Property of Multiplication</h3></summary>
+    <p>For any three integers $a$, $b$, and $c$, the grouping of multiplication does not affect the product:</p>
+    <p>$$a \times (b \times c) = (a \times b) \times c$$</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Sign of Product of Multiple Integers</h3></summary>
+    <ul>
+      <li>If a negative number is multiplied an <strong>even</strong> number of times, the product is <span class="keyword">positive</span>.</li>
+      <li>If a negative number is multiplied an <strong>odd</strong> number of times, the product is <span class="keyword">negative</span>.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Distributive Property</h3></summary>
+    <p>Multiplication distributes over addition. For any integers $a$, $b$, and $c$:</p>
+    <p>$$a \times (b + c) = (a \times b) + (a \times c)$$</p>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Summary & Games</summary>
+  <ul>
+    <li><strong>Terhüchü:</strong> A traditional board game played in Assam and Nagaland on a 16-square board with diagonals, involving capturing opponent coins by jumping over them.</li>
+  </ul>
+</details>
+
+  </div>
+</body>
+</html>
