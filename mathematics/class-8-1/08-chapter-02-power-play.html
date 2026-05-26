@@ -1,21 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  
-  <link rel="stylesheet" href="../../style.css">
   <title>Power Play</title>
+  <link rel="stylesheet" href="../../style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+        displayMath: [['$$', '$$']]
+      },
+      chtml: {
+        displayAlign: 'left',
+        displayIndent: '1em'
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
 <body>
-  <div class="nav-bar">
-    <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
-    <a href="../../index.html" class="btn-nav">🏠 Home</a>
-  </div>
-  
-  <h1>Chapter 2: Power Play</h1>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
 
-  <details class="topic-box" open>
+    <h1>Chapter 2: Power Play</h1>
+
+    <details class="topic-box" open>
     <summary class="topic-title">2.1 Experiencing the Power Play</summary>
     <details class="sub-topic">
       <summary><h3>Exponential vs. Linear Growth</h3></summary>
@@ -106,5 +120,7 @@
       </ul>
     </details>
   </details>
+
+  </div>
 </body>
 </html>

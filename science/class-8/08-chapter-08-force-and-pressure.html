@@ -1,21 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  
-  <link rel="stylesheet" href="../../style.css">
   <title>Force and Pressure</title>
+  <link rel="stylesheet" href="../../style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+        displayMath: [['$$', '$$']]
+      },
+      chtml: {
+        displayAlign: 'left',
+        displayIndent: '1em'
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
 <body>
-  <div class="nav-bar">
-    <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
-    <a href="../../index.html" class="btn-nav">🏠 Home</a>
-  </div>
-  
-  <h1>Chapter 8: Force and Pressure</h1>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
 
-  <details class="topic-box">
+    <h1>Chapter 8: Force and Pressure</h1>
+
+    <details class="topic-box">
     <summary class="topic-title">8.1 Force – A Push or a Pull</summary>
     <details class="sub-topic">
       <summary><h3>8.1.1 Action of Forces</h3></summary>
@@ -138,5 +152,7 @@
       </ul>
     </details>
   </details>
+
+  </div>
 </body>
 </html>
