@@ -54,16 +54,22 @@ def build_curriculum_tree():
                     title_display = topic_slug.replace('-', ' ').title()
                     web_url_path = os.path.join(rel_path, file).replace(os.sep, '/')
                     
+                    # ====== DELTA: Warn on Duplicate Chapter IDs in Index ======
                     if subject_display not in tree:
                         tree[subject_display] = {}
                     if class_display not in tree[subject_display]:
                         tree[subject_display][class_display] = []
                         
+                    # Check if chapter number already exists in this specific class array
+                    is_duplicate = any(item['num'] == chapter_num for item in tree[subject_display][class_display])
+                    final_title = f"{title_display} (Alternate Version)" if is_duplicate else title_display
+
                     tree[subject_display][class_display].append({
                         "num": chapter_num,
-                        "title": title_display,
+                        "title": final_title,
                         "url": web_url_path
                     })
+# ==========================================================
     return tree
 
 def generate_html_file(tree):
