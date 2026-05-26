@@ -138,10 +138,16 @@ function runBuildCaliberFactory() {
     }
 
     // 📄 BASE HTML PAGE ASSEMBLY (Hardcoded navigation controls and uniform global headings)
+    // 📄 MOBILE-RESPONSIVE BASE HTML PAGE ASSEMBLY 
+// ====== DELTA: Update HTML Generation Template for Mobile ======
+// Locate the variable assignment for 'completeWebPageContent' inside your loop 
+// (typically around line 130-160 depending on your exact version) and replace it with:
+
     let completeWebPageContent = `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>${parsedJson.extracted_chapter_title || chapterTitle}</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
@@ -149,6 +155,10 @@ function runBuildCaliberFactory() {
       tex: {
         inlineMath: [['$', '$']],
         displayMath: [['$$', '$$']]
+      },
+      chtml: {
+        displayAlign: 'left', // Left-aligns equations on tight screens
+        displayIndent: '1em'  // Clean indentation padding for blocks
       }
     };
   </script>
@@ -169,6 +179,7 @@ function runBuildCaliberFactory() {
   </div>
 </body>
 </html>`;
+// ===============================================================
 
     // =====================================================================
     // 🛡️ APPS SCRIPT DEFENSIVE SANITIZATION LAYER FOR FILE PATHS

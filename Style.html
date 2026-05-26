@@ -1,103 +1,211 @@
-/* ========================================================
-   � BUILD CALIBRE - ROOT CSS MASTER SOURCE
-   ======================================================== */
+/* =====================================================================
+ * 🎨 THE BUILD CALIBRE MASTER RESPONSIVE CORE STYLESHEET
+ * ===================================================================== */
+
+/* 🛠️ GLOBAL MOBILE CORE RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent; /* Smooth mobile tap feedback */
+}
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.6;
   color: #2d3748;
-  max-width: 800px;
+  background-color: #f7fafc;
+  padding: 0;
+}
+
+/* 📦 FLUID STRUCTURAL CONTAINER */
+.chapter-container {
+  width: 100%;
+  max-width: 768px; /* Perfect line length for optimal reading readability */
   margin: 0 auto;
-  padding: 20px;
+  padding: 16px; /* Fluid padding for compact smartphone screens */
 }
 
-h1 {
-  color: #334155;
-  border-bottom: 2px solid #e2e8f0;
-  padding-bottom: 10px;
+@media (min-width: 600px) {
+  .chapter-container {
+    padding: 32px; /* Smooth padding expansion for desktop/tablets */
+  }
 }
 
-details {
-  margin-bottom: 12px;
-}
-
-summary {
-  font-weight: 700;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-  border-left: 4px solid #047857;
-  padding: 8px 20px;
-  margin-bottom: 8px;
-  background-color: #f8fafc;
-}
-
-summary:hover {
-  background-color: #f1f5f9;
-}
-
-details details {
-  margin-left: 20px;
-  margin-top: 12px;
-}
-
-details details summary {
-  font-size: 0.95em;
-  border-left: 2px solid #047857;
-  padding: 4px 15px;
-  background-color: transparent;
-}
-
-ul {
-  padding-left: 30px;
-}
-
-li {
-  margin-bottom: 10px;
-}
-
-strong {
-  color: #047857;
-  font-weight: 700;
-}
-
+/* 🧭 ACCESSIBLE TOUCH NAVIGATION CONTROLS */
 .nav-bar {
   display: flex;
-  gap: 10px;
-  margin-top: 10px;
-  margin-bottom: 25px;
+  gap: 12px;
+  margin-bottom: 24px;
 }
 
 .btn-nav {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 6px 14px;
-  background-color: #f8fafc;
-  color: #475569;
+  min-height: 44px; /* Standard fingertip tap target bounds */
+  padding: 0 16px;
+  background-color: #ffffff;
+  color: #4a5568;
   text-decoration: none;
-  border-radius: 6px;
-  font-size: 0.88em;
-  font-weight: 500;
   border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
   transition: all 0.2s ease;
+}
+
+.btn-nav:active {
+  background-color: #edf2f7;
+  transform: scale(0.98);
+}
+
+/* 🏷️ SYSTEM HEADINGS */
+h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+@media (min-width: 600px) {
+  h1 { font-size: 32px; }
+}
+
+/* 🧱 ACCORDION COMPONENTS (<details> & <summary>) */
+details {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  margin-bottom: 14px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
+}
+
+details[open] {
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+/* 🎯 COGNITIVE TOUCH ACCORDION INTERFACES */
+summary {
+  display: flex;
+  align-items: center;
+  min-height: 48px; /* Large safe interactive tap target boundary */
+  padding: 14px 16px;
+  font-weight: 600;
+  font-size: 15px;
+  color: #2b6cb0;
+  background-color: #ebf8ff;
   cursor: pointer;
+  user-select: none;
+  outline: none;
+  list-style: none; /* Strip out native browser layout arrows */
 }
 
-.btn-nav:hover {
-  background-color: #047857;
-  color: #ffffff;
-  border-color: #047857;
-  box-shadow: 0 2px 4px rgba(4, 120, 87, 0.15);
+summary::-webkit-details-marker {
+  display: none; /* Webkit browser custom marker arrow fallback overrides */
 }
 
-/* 🌟 FIX: Force summary headings to stay inline with their dropdown arrows */
-summary h1,
-summary h2,
-summary h3,
-summary h4,
-summary h5,
-summary h6 {
-    display: inline;
-    margin: 0;
-    padding-left: 6px; /* Gives the text a clean, breathing distance from the arrow */
+/* 📐 PLUMB-LINE VERTICAL DISCLOSURE TRIANGLE FIX */
+summary::before {
+  content: "▶";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  margin-right: 12px;
+  color: #3182ce;
+  transition: transform 0.2s ease;
+  
+  /* 🛠️ GLYPH ADJUSTMENT: Micro-translates character box down to center the font baseline */
+  transform: translateY(1px); 
+}
+
+/* Rotates indicator arrow smoothly downwards while preserving alignment vectors */
+details[open] > summary::before {
+  transform: rotate(90deg) translateX(1px); 
+}
+
+/* 🔏 SUMMARY INNER HEADER MARGIN RESET */
+summary h1, 
+summary h2, 
+summary h3, 
+summary h4 {
+  margin: 0 !important;
+  padding: 0 !important;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* 📂 MULTI-NESTED ACCORDION INNER SHIFTS */
+details details {
+  margin: 10px 12px;
+  border-color: #edf2f7;
+}
+
+details details summary {
+  background-color: #f7fafc;
+  color: #4a5568;
+  font-size: 14px;
+}
+
+/* 📝 INTERNAL BODY CONTAINER LAYOUTS */
+details > *:not(summary) {
+  padding: 16px;
+}
+
+p {
+  margin-bottom: 14px;
+  font-size: 15px;
+  color: #4a5568;
+}
+
+ul, ol {
+  padding-left: 24px;
+  margin-bottom: 12px;
+}
+
+li {
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+/* 🛡️ ABSOLUTE MOBILE WIDTH PROTECTION LAYER */
+p, li, span, h1, h2, h3, h4, summary {
+  word-wrap: break-word;
+  word-break: break-word; /* Stops long strings or variables from pushing outer walls */
+}
+
+/* 🧮 MATHJAX HORIZONTAL OVERFLOW & BASELINE BALANCING RULES */
+.MathJax_Display, 
+mjx-container[display="true"], 
+.mjx-chtml[display="true"] {
+  overflow-x: auto !important; /* Grants an isolated horizontal swipe viewport to complex math models */
+  overflow-y: hidden !important;
+  max-width: 100% !important;
+  padding: 8px 0;
+  margin: 12px 0 !important;
+  -webkit-overflow-scrolling: touch; /* Kinetic layout swipe inertia tracking on Apple iOS devices */
+}
+
+/* 📏 FIXES INLINE MATH EXPRESSIONS FROM SITTING TOO HIGH RELATIVE TO TEXT */
+mjx-container:not([display="true"]) {
+  display: inline-block !important;
+  vertical-align: -0.12em !important; /* Locks math baselines to the lowercase text path line */
+  line-height: 0;
+}
+
+/* 🏷️ HIGHLIGHT KEYWORD STYLING BOXES */
+.keyword {
+  font-weight: 600;
+  background-color: #fefcbf;
+  color: #744210;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 14px;
 }
