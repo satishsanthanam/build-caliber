@@ -51,9 +51,10 @@ def build_curriculum_tree():
                     _, nn_str, topic_slug = match.groups()
                     
                     chapter_num = int(nn_str)
-                    title_display = topic_slug.replace('-', ' ').title()
-                    web_url_path = os.path.join(rel_path, file).replace(os.sep, '/')
                     
+                    # ====== DELTA: Handle Truncated Slugs with Clean Ellipses ======
+                    # ===============================================================
+
                     # ====== DELTA: Warn on Duplicate Chapter IDs in Index ======
                     if subject_display not in tree:
                         tree[subject_display] = {}
@@ -69,7 +70,7 @@ def build_curriculum_tree():
                         "title": final_title,
                         "url": web_url_path
                     })
-# ==========================================================
+                    # ==========================================================
     return tree
 
 def generate_html_file(tree):
