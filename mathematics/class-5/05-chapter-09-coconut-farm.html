@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Coconut Farm</title>
+  <link rel="stylesheet" href="../../style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+        displayMath: [['$$', '$$']]
+      },
+      chtml: {
+        displayAlign: 'left', // Left-aligns equations on tight screens
+        displayIndent: '1em'  // Clean indentation padding for blocks
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Chapter 9: Coconut Farm</h1>
+
+    <details class="topic-box">
+  <summary class="topic-title">9.1 Introduction to Division and Multiplication Facts</summary>
+  <p>Division and multiplication are closely related operations. Every multiplication fact can lead to related division facts.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>The Relationship Between Multiplication and Division</h3></summary>
+    <p>Consider an array of $35$ coconuts arranged in $5$ rows and $7$ columns:</p>
+    <ul>
+      <li><strong>Multiplication Fact:</strong> $5 \times 7 = 35$</li>
+      <li><strong>Division Fact 1:</strong> $35 \div 7 = 5$ ($35$ split into $7$ groups has $5$ in each group)</li>
+      <li><strong>Division Fact 2:</strong> $35 \div 5 = 7$ ($35$ split into $5$ groups has $7$ in each group)</li>
+    </ul>
+    <p>The core components of a division statement are defined as:</p>
+    <ul>
+      <li><span class="keyword">Dividend (N)</span>: The number to be divided.</li>
+      <li><span class="keyword">Divisor (D)</span>: The number by which the dividend is divided.</li>
+      <li><span class="keyword">Quotient (Q)</span>: The result obtained from division.</li>
+    </ul>
+    <p>This relationship is expressed as:</p>
+    <p>$$\text{Dividend (N)} = \text{Divisor (D)} \times \text{Quotient (Q)}$$</p>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">9.2 Patterns in Division and Place Value</summary>
+  <p>Observing patterns when dividing by multiples of $10$, $100$, or when the dividend and divisor share common factors simplifies calculations.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Division Patterns with Multiples of 10</h3></summary>
+    <p>Observe the following patterns in division:</p>
+    <ul>
+      <li>$150 \div 3 = 50$ (since $50 \times 3 = 150$)</li>
+      <li>$1000 \div 10 = 100$ (since $10 \times 100 = 1000$)</li>
+      <li>$2000 \div 20 = 100$</li>
+      <li>$440 \div 44 = 10$ (since $44 \times 10 = 440$)</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Place Value Chart in Division</h3></summary>
+    <p>When dividing numbers by $10$ or its multiples, the digits shift place values:</p>
+    <ul>
+      <li>$40 \div 10 = 4$ (Ones place)</li>
+      <li>$400 \div 10 = 40$ (Tens place)</li>
+      <li>$4000 \div 10 = 400$ (Hundreds place)</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">9.3 Mental Strategies for Division</summary>
+  <p>Different mental strategies can be used to perform division quickly without standard long division.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Strategy 1: Splitting the Number into Convenient Parts</h3></summary>
+    <p>A large dividend can be split into parts that are easily divisible by the divisor.</p>
+    <p><strong>Example:</strong> Solve $1248 \div 6$</p>
+    <ul>
+      <li>Split $1248$ into $1200 + 48$.</li>
+      <li>We know $1200 \div 6 = 200$.</li>
+      <li>And $48 \div 6 = 8$.</li>
+      <li>So, $1248 \div 6 = 200 + 8 = 208$.</li>
+    </ul>
+    <p><strong>Example (Subtraction):</strong> Solve $1992 \div 4$</p>
+    <ul>
+      <li>Express $1992$ as $2000 - 8$.</li>
+      <li>We know $2000 \div 4 = 500$.</li>
+      <li>And $8 \div 4 = 2$.</li>
+      <li>So, $1992 \div 4 = 500 - 2 = 498$.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Strategy 2: Repeated Halving</h3></summary>
+    <p>To divide a number by $4$, you can halve the number twice. To divide by $8$, you can halve it three times.</p>
+    <p><strong>Example:</strong> Solve $128 \div 4$</p>
+    <ul>
+      <li>First half: Half of $128$ is $64$.</li>
+      <li>Second half: Half of $64$ is $32$.</li>
+      <li>Therefore, $128 \div 4 = 32$.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">9.4 Division with Remainders</summary>
+  <p>When a divisor does not completely divide the dividend, it leaves a leftover value called the remainder.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>The General Division Formula</h3></summary>
+    <p>For any division, the relationship between the components is given by:</p>
+    <p>$$\text{Dividend (N)} = \text{Divisor (D)} \times \text{Quotient (Q)} + \text{Remainder (R)}$$</p>
+    <p>Where the <span class="keyword">Remainder (R)</span> must always be less than the <span class="keyword">Divisor (D)</span>.</p>
+    <p><strong>Example:</strong> $726 \div 4$</p>
+    <ul>
+      <li>$726 = 4 \times 181 + 2$</li>
+      <li>Here, Dividend $N = 726$, Divisor $D = 4$, Quotient $Q = 181$, and Remainder $R = 2$.</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Partial Quotients Method</h3></summary>
+    <p>This method involves taking away easy multiples of the divisor from the dividend step-by-step.</p>
+    <p><strong>Example:</strong> Solve $535 \div 25$</p>
+    <ul>
+      <li>Take away $20$ groups of $25$: $535 - 500 = 35$.</li>
+      <li>Take away $1$ group of $25$: $35 - 25 = 10$.</li>
+      <li>Total Quotient = $20 + 1 = 21$.</li>
+      <li>Remainder = $10$.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">9.5 Division Using Place Value Columns</summary>
+  <p>Standard long division can be systematically performed by dividing and regrouping through place value columns: Thousands (Th), Hundreds (H), Tens (T), and Ones (O).</p>
+  
+  <details class="sub-topic">
+    <summary><h3>Regrouping Example</h3></summary>
+    <p><strong>Example:</strong> Solve $324 \div 3$</p>
+    <ul>
+      <li><strong>Hundreds:</strong> $3\text{ Hundreds} \div 3 = 1\text{ Hundred}$.</li>
+      <li><strong>Tens:</strong> $2\text{ Tens} \div 3$ is not possible without regrouping. Write $0$ in the Tens place of the quotient.</li>
+      <li><strong>Regrouping:</strong> Regroup $2\text{ Tens}$ into $20\text{ Ones}$. Total ones = $20 + 4 = 24\text{ Ones}$.</li>
+      <li><strong>Ones:</strong> $24\text{ Ones} \div 3 = 8\text{ Ones}$.</li>
+      <li><strong>Final Quotient:</strong> $108$.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">9.6 Mathematical Statements and Logic</summary>
+  <p>Analyzing mathematical statements helps build logical reasoning about operations and number properties.</p>
+  
+  <details class="sub-topic">
+    <summary><h3>True or False Statements</h3></summary>
+    <p>A mathematical statement is true if both sides of the '=' sign have the same value.</p>
+    <ul>
+      <li>$8 \times 9 = 70 + 2$ is <strong>True</strong> ($72 = 72$).</li>
+      <li>$20 - 6 = 7 \times 3$ is <strong>False</strong> ($14 \neq 21$).</li>
+      <li>$48 \div 3 = 4 \times 4$ is <strong>True</strong> ($16 = 16$).</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>General Rules of Numbers</h3></summary>
+    <ul>
+      <li><strong>Odd Numbers:</strong> When two odd numbers are added, the sum is always even (e.g., $3 + 5 = 8$).</li>
+      <li><strong>Halving:</strong> Halving an even number can sometimes lead to an odd number (e.g., half of $10$ is $5$) and sometimes to an even number (e.g., half of $12$ is $6$).</li>
+      <li><strong>Multiplication by 5:</strong> Multiplying an even number by $5$ always leads to a number with '0' in the Ones place (e.g., $4 \times 5 = 20$).</li>
+    </ul>
+  </details>
+</details>
+
+  </div>
+</body>
+</html>
