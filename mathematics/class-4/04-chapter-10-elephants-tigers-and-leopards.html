@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Elephants, Tigers, and Leopards</title>
+  <link rel="stylesheet" href="../../style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+        displayMath: [['$$', '$$']]
+      },
+      chtml: {
+        displayAlign: 'left', // Left-aligns equations on tight screens
+        displayIndent: '1em'  // Clean indentation padding for blocks
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Chapter 10: Elephants, Tigers, and Leopards</h1>
+
+    <details class="topic-box">
+  <summary class="topic-title">10.1 NIM Game (2 Player Game)</summary>
+  <p>A mathematical game of strategy where two players take turns adding numbers to reach a target sum.</p>
+  <details class="sub-topic">
+    <summary><h3>Rules of the Game</h3></summary>
+    <ul>
+      <li><strong>Target Number:</strong> The goal is to reach exactly $10$.</li>
+      <li><strong>Allowed Moves:</strong> Each player can choose to add either $1$ or $2$ to the running total.</li>
+      <li><strong>Starting:</strong> Player 1 starts by choosing either $1$ or $2$.</li>
+      <li><strong>Turns:</strong> Player 2 adds $1$ or $2$ to the previous total. Play continues alternately.</li>
+      <li><strong>Winning Condition:</strong> The player who reaches exactly $10$ first wins.</li>
+    </ul>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>Winning Strategies</h3></summary>
+    <p>Analyze the game backwards to find winning positions:</p>
+    <ul>
+      <li>If the other player has reached $8$, you can choose $2$ to reach $10$ and win.</li>
+      <li>If the other player has reached $7$, you can choose $1$ (reaches $8$) or $2$ (reaches $9$). In either case, the opponent can win on their next turn.</li>
+      <li>If the other player has reached $6$, you can choose $1$ to reach $7$, forcing them into a losing position.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">10.2 Addition Chart and Patterns</summary>
+  <p>Exploring patterns in a standard $13 \times 13$ addition grid (numbers $0$ to $12$).</p>
+  <details class="sub-topic">
+    <summary><h3>Grid Observations</h3></summary>
+    <ul>
+      <li><strong>Diagonals:</strong> Identical numbers appear along the diagonals running from bottom-left to top-right.</li>
+      <li><strong>Symmetry:</strong> The table is symmetric across the main diagonal (top-left to bottom-right).</li>
+      <li><strong>Even and Odd Rows:</strong> Rows starting with an even number alternate even and odd numbers, while rows starting with an odd number alternate odd and even numbers. No row or column contains only even or only odd numbers.</li>
+    </ul>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>Window Frame Patterns</h3></summary>
+    <ul>
+      <li><strong>Red Window Frame ($2 \times 2$ grid):</strong>
+        <ul>
+          <li>Sum of numbers in each row: The sum of the second row is $2$ more than the sum of the first row.</li>
+          <li>Sum of numbers in each column: The sum of the second column is $2$ more than the sum of the first column.</li>
+          <li>Sum of diagonals: The sum of both diagonals in any $2 \times 2$ window is equal (e.g., $10 + 12 = 11 + 11 = 22$).</li>
+        </ul>
+      </li>
+      <li><strong>Blue Window Frame ($3 \times 3$ grid):</strong> Similar constant difference patterns exist for rows, columns, and diagonals.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">10.3 Reverse and Add</summary>
+  <p>An arithmetic exploration involving reversing the digits of a number and adding them together.</p>
+  <details class="sub-topic">
+    <summary><h3>The Reversal Process</h3></summary>
+    <p>Take any $2$-digit number, reverse its digits, and find their sum:</p>
+    <ul>
+      <li>Example: $27 \rightarrow \text{Reverse is } 72 \rightarrow 27 + 72 = 99$</li>
+      <li>Example: $48 \rightarrow \text{Reverse is } 84 \rightarrow 48 + 84 = 132$</li>
+    </ul>
+    <p><strong>Key Observation:</strong> The sum of any $2$-digit number and its reverse is always a multiple of $11$.</p>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>Finding Specific Sums</h3></summary>
+    <ul>
+      <li>To get a sum of $55$, the digits must add up to $5$. Possible numbers: $14, 23, 32, 41, 50$.</li>
+      <li>To get a sum of $88$, the digits must add up to $8$. Possible numbers: $17, 26, 35, 44, 53, 62, 71, 80$.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">10.4 How Many Animals? (Addition with Regrouping)</summary>
+  <p>Applying multi-digit addition to wildlife population data in India.</p>
+  <details class="sub-topic">
+    <summary><h3>Wildlife Statistics</h3></summary>
+    <ul>
+      <li>India is home to $\frac{3}{4}$ of the world's tiger population.</li>
+      <li>India is home to $\frac{3}{5}$ of the Asiatic elephant population.</li>
+    </ul>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>Addition with Place Value Regrouping</h3></summary>
+    <p>To find the total elephant population in Karnataka ($6049$) and Kerala ($3054$):</p>
+    <p>$$\begin{array}{r@{\quad}c@{\quad}c@{\quad}c@{\quad}c} & \mathbf{Th} & \mathbf{H} & \mathbf{T} & \mathbf{O} \\ & 6 & 0 & 4 & 9 \\ + & 3 & 0 & 5 & 4 \\ \hline & 9 & 1 & 0 & 3 \\ \hline \end{array}$$</p>
+    <p><strong>Regrouping Rules:</strong></p>
+    <ul>
+      <li>$10 \text{ Ones (O)} = 1 \text{ Ten (T)}$</li>
+      <li>$10 \text{ Tens (T)} = 1 \text{ Hundred (H)}$</li>
+      <li>$10 \text{ Hundreds (H)} = 1 \text{ Thousand (Th)}$</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">10.5 More or Less? (Subtraction with Regrouping)</summary>
+  <p>Using subtraction to compare populations and find differences.</p>
+  <details class="sub-topic">
+    <summary><h3>Subtraction Example</h3></summary>
+    <p>Assam has $5719$ elephants, which is $3965$ more than Meghalaya. To find Meghalaya's elephant population, subtract $3965$ from $5719$:</p>
+    <p>$$\begin{array}{r@{\quad}c@{\quad}c@{\quad}c@{\quad}c} & \mathbf{Th} & \mathbf{H} & \mathbf{T} & \mathbf{O} \\ & 5 & 7 & 1 & 9 \\ - & 3 & 9 & 6 & 5 \\ \hline & 1 & 7 & 5 & 4 \\ \hline \end{array}$$</p>
+    <p><strong>Regrouping in Subtraction:</strong></p>
+    <ul>
+      <li>Borrow $1 \text{ Ten}$ to make $10 \text{ Ones}$ if needed.</li>
+      <li>Borrow $1 \text{ Hundred}$ to make $10 \text{ Tens}$ (e.g., $1 \text{ Ten}$ becomes $11 \text{ Tens}$ after borrowing from $7 \text{ Hundreds}$).</li>
+      <li>Borrow $1 \text{ Thousand}$ to make $10 \text{ Hundreds}$.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">10.6 Let Us Solve (Mental Math & Strategies)</summary>
+  <p>Methods to simplify addition and subtraction without standard column algorithms.</p>
+  <details class="sub-topic">
+    <summary><h3>Easy Ways to Solve</h3></summary>
+    <ul>
+      <li><strong>Subtracting $99$:</strong> Subtract $100$, then add $1$.
+        <br>$$8787 - 99 = 8787 - 100 + 1 = 8687 + 1 = 8688$$</li>
+      <li><strong>Adding Near-Hundreds:</strong> To add $104$, add $100$ then add $4$.
+        <br>$$4596 + 104 = 4596 + 100 + 4 = 4696 + 4 = 4700$$</li>
+      <li><strong>Using Known Relations:</strong> If $139 + 175 = 314$, then:
+        <ul>
+          <li>$$314 - 175 = 139$$</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+</details>
+
+  </div>
+</body>
+</html>
