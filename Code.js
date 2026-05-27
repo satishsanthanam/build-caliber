@@ -125,10 +125,53 @@ function runBuildCaliberFactory() {
     let parsedJson = null;
     try {
       const optimalModel = "gemini-3.5-flash";
-      let apiResponseRaw = callGeminiAPI(pdfBlob, promptTemplate, optimalModel, GEMINI_API_KEY);
-      parsedJson = JSON.parse(apiResponseRaw);
-      
-      if (!parsedJson.html_content || !parsedJson.output_filename) {
+
+      // ====== EXTRA TELEMETRY: Enhanced JSON Parse & Retry Logger ======
+      let rawResponse = "";
+      let attempts = 0;
+      const maxAttempts = 3;
+
+      while (attempts < maxAttempts) {
+        try {
+          attempts++;
+          
+          // 🟢 FIXED: Call your actual Gemini function with your real parameters
+          rawResponse = callGeminiAPI(pdfBlob, promptTemplate, optimalModel, GEMINI_API_KEY);
+
+          // 🟢 FIXED: Parse directly into your original script's destination variable
+          parsedJson = JSON.parse(rawResponse);
+
+          // If successful on a retry, log the victory metric
+          if (attempts > 1) {
+            Logger.log(`🎉 RETRY SUCCESS: Pass #${attempts} resolved cleanly. Response Length: ${rawResponse.length} chars.`);
+          }
+          break; // Break retry loop on successful parse
+
+        } catch (jsonError) {
+          Logger.log(`⚠️ PARSE FAULT: Attempt #${attempts} failed to parse.`);
+          Logger.log(`📊 Metrics: Total Character Length received: ${rawResponse ? rawResponse.length : 0}`);
+
+          if (rawResponse) {
+            // Cleanly extract the last 150 characters for immediate structural review
+            const tailSnapshot = rawResponse.length > 150
+              ? "..." + rawResponse.substring(rawResponse.length - 150)
+              : rawResponse;
+
+            Logger.log(`🔍 Raw Tail Snapshot:\n${tailSnapshot}`);
+          }
+
+          if (attempts >= maxAttempts) {
+            Logger.log(`❌ CRITICAL PIPELINE FAILURE: Maximum retry threshold reached for this file.`);
+            throw jsonError; // Re-throw to hit the main catch block below
+          }
+
+          Logger.log(`🔄 Retrying pipeline pass... [Attempt ${attempts + 1}/${maxAttempts}]`);
+          Utilities.sleep(2000); // Back-off delay to let API buffers clear
+        }
+      }
+      // =================================================================
+
+      if (!parsedJson || !parsedJson.html_content || !parsedJson.output_filename) {
         throw new Error("Crucial JSON fields returned empty from the model.");
       }
     } catch (parseError) {
@@ -139,9 +182,9 @@ function runBuildCaliberFactory() {
 
     // 📄 BASE HTML PAGE ASSEMBLY (Hardcoded navigation controls and uniform global headings)
     // 📄 MOBILE-RESPONSIVE BASE HTML PAGE ASSEMBLY 
-// ====== DELTA: Update HTML Generation Template for Mobile ======
-// Locate the variable assignment for 'completeWebPageContent' inside your loop 
-// (typically around line 130-160 depending on your exact version) and replace it with:
+    // ====== DELTA: Update HTML Generation Template for Mobile ======
+    // Locate the variable assignment for 'completeWebPageContent' inside your loop 
+    // (typically around line 130-160 depending on your exact version) and replace it with:
 
     let completeWebPageContent = `<!DOCTYPE html>
 <html lang="en">
@@ -179,16 +222,16 @@ function runBuildCaliberFactory() {
   </div>
 </body>
 </html>`;
-// ===============================================================
+    // ===============================================================
 
     // =====================================================================
     // 🛡️ APPS SCRIPT DEFENSIVE SANITIZATION LAYER FOR FILE PATHS
     // =====================================================================
-    
+
     // Extract base class index number
     let baseClassNum = parseInt(classLevel.replace(/[^0-9]/g, ""), 10);
     let sanitizedClass = "class-" + baseClassNum;
-    
+
     // Parse Part variables dynamically to match Unix configurations ("class-8-1", "class-8-2")
     const partDigits = classLevel.match(/(?:part|volume|term)[-_\s]*(\d+)/i) || classLevel.match(/class[-_\s]*\d+[-_\s]*(\d+)/i);
     if (partDigits) {
@@ -247,7 +290,7 @@ function runBuildCaliberFactory() {
  */
 function callGeminiAPI(pdfBlob, promptText, modelName, apiKey) {
   const url = "https://generativelanguage.googleapis.com/v1beta/models/" + modelName + ":generateContent?key=" + apiKey;
-  
+
   const payload = {
     "contents": [{
       "parts": [
@@ -281,7 +324,7 @@ function callGeminiAPI(pdfBlob, promptText, modelName, apiKey) {
 
   const response = UrlFetchApp.fetch(url, options);
   const json = JSON.parse(response.getContentText());
-  
+
   if (response.getResponseCode() !== 200) {
     throw new Error("HTTP " + response.getResponseCode() + ": " + (json.error ? json.error.message : "Unknown API Exception"));
   }
@@ -361,14 +404,14 @@ function appendToCompletedLog(bitbucketPath, indexSnippet) {
     const files = folder.getFilesByName("completed.txt");
     let file = files.hasNext() ? files.next() : folder.createFile("completed.txt", "", MimeType.PLAIN_TEXT);
     const cur = file.getBlob().getDataAsString();
-    
+
     let logEntry = "File: " + bitbucketPath;
     if (indexSnippet) {
       logEntry += "\nSnippet:\n" + indexSnippet + "\n--------------------";
     }
-    
+
     file.setContent(cur ? cur + "\n" + logEntry : logEntry);
-  } catch (e) {}
+  } catch (e) { }
 }
 
 function flushLogsToDrive() {
@@ -381,5 +424,5 @@ function flushLogsToDrive() {
     let file = files.hasNext() ? files.next() : folder.createFile(title, "", MimeType.PLAIN_TEXT);
     file.setContent(file.getBlob().getDataAsString() + logBuffer.join("\n") + "\n");
     logBuffer = [];
-  } catch (e) {}
+  } catch (e) { }
 }
