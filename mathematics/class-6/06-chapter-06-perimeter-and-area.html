@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Perimeter and Area</title>
+  <link rel="stylesheet" href="../../style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+        displayMath: [['$$', '$$']]
+      },
+      chtml: {
+        displayAlign: 'left',
+        displayIndent: '1em'
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Chapter 6: Perimeter and Area</h1>
+
+    <details class="topic-box">
+  <summary class="topic-title">6.1 Perimeter</summary>
+  <p>The <span class="keyword">perimeter</span> of any closed plane figure is the distance covered along its boundary when you go around it once. For a <span class="keyword">polygon</span> (a closed plane figure made up of line segments), the perimeter is the sum of the lengths of all its sides.</p>
+  <p class="formula">$$\text{Perimeter of a polygon} = \text{Sum of the lengths of all its sides}$$</p>
+
+  <details class="sub-topic">
+    <summary><h3>Perimeter of a Rectangle</h3></summary>
+    <p>Opposite sides of a rectangle are always equal in length. Therefore, the perimeter of a rectangle is twice the sum of its length and breadth:</p>
+    <p class="formula">$$\text{Perimeter of a rectangle} = 2 \times (\text{length} + \text{breadth})$$</p>
+    <p><strong>Example:</strong> Consider a rectangle with length $12\text{ cm}$ and breadth $8\text{ cm}$:</p>
+    <p>$$\text{Perimeter} = 2 \times (12\text{ cm} + 8\text{ cm}) = 2 \times 20\text{ cm} = 40\text{ cm}$$</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Perimeter of a Square</h3></summary>
+    <p>Since all four sides of a square are equal in length, the perimeter is four times the length of one side:</p>
+    <p class="formula">$$\text{Perimeter of a square} = 4 \times \text{length of a side}$$</p>
+    <p><strong>Example:</strong> For a square photo frame of side $1\text{ m}$:</p>
+    <p>$$\text{Perimeter} = 4 \times 1\text{ m} = 4\text{ m}$$</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Perimeter of a Triangle</h3></summary>
+    <p>The perimeter of a triangle is the sum of the lengths of its three sides:</p>
+    <p class="formula">$$\text{Perimeter of a triangle} = a + b + c$$</p>
+    <p><strong>Example:</strong> For a triangle with sides $4\text{ cm}$, $5\text{ cm}$, and $7\text{ cm}$:</p>
+    <p>$$\text{Perimeter} = 4\text{ cm} + 5\text{ cm} + 7\text{ cm} = 16\text{ cm}$$</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Perimeter of a Regular Polygon</h3></summary>
+    <p>Closed figures that have all sides and all angles equal are called <span class="keyword">regular polygons</span>.</p>
+    <ul>
+      <li><strong>Equilateral Triangle:</strong> A regular polygon with 3 equal sides.
+        <p class="formula">$$\text{Perimeter of an equilateral triangle} = 3 \times \text{length of a side}$$</p>
+      </li>
+      <li><strong>General Regular Polygon:</strong>
+        <p class="formula">$$\text{Perimeter of a regular polygon} = \text{Number of sides} \times \text{Length of a side}$$</p>
+      </li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Straight and Diagonal Units</h3></summary>
+    <p>When measuring perimeters on a grid, we can distinguish between two types of unit lengths:</p>
+    <ul>
+      <li><strong>Straight units ($s$):</strong> The length of the side of a grid square.</li>
+      <li><strong>Diagonal units ($d$):</strong> The diagonal length across a grid square.</li>
+    </ul>
+    <p>The perimeter of a figure can be expressed in terms of these units, such as $6s + 3d$ units.</p>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Split and Rejoin</h3></summary>
+    <p>When a shape is cut and its pieces are rearranged to form new shapes, the <span class="keyword">perimeter</span> can change even though the <span class="keyword">area</span> remains the same.</p>
+    <p>For example, a rectangular paper of $6\text{ cm} \times 4\text{ cm}$ cut into two equal pieces can be joined to form different shapes with perimeters like $28\text{ cm}$ or $22\text{ cm}$.</p>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">6.2 Area</summary>
+  <p>The amount of region enclosed by a closed figure is called its <span class="keyword">area</span>.</p>
+
+  <details class="sub-topic">
+    <summary><h3>Area of a Square and Rectangle</h3></summary>
+    <ul>
+      <li><strong>Area of a Square:</strong>
+        <p class="formula">$$\text{Area of a square} = \text{side} \times \text{side}$$</p>
+      </li>
+      <li><strong>Area of a Rectangle:</strong>
+        <p class="formula">$$\text{Area of a rectangle} = \text{length} \times \text{breadth}$$</p>
+      </li>
+    </ul>
+    <p><strong>Example:</strong> A floor is $5\text{ m}$ long and $4\text{ m}$ wide. A square carpet of side $3\text{ m}$ is laid on the floor. Find the area of the floor that is not carpeted.</p>
+    <ul>
+      <li>$$\text{Area of the floor} = 5\text{ m} \times 4\text{ m} = 20\text{ sq m}$$</li>
+      <li>$$\text{Area of the carpet} = 3\text{ m} \times 3\text{ m} = 9\text{ sq m}$$</li>
+      <li>$$\text{Uncarpeted Area} = 20\text{ sq m} - 9\text{ sq m} = 11\text{ sq m}$$</li>
+    </ul>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Estimating Area using Grid Paper</h3></summary>
+    <p>To estimate the area of any simple closed shape on a squared or graph paper (where each square is $1\text{ unit} \times 1\text{ unit}$), follow these conventions:</p>
+    <ol>
+      <li>The area of one full small square is taken as $1\text{ sq unit}$.</li>
+      <li>Ignore portions of the area that are less than half a square.</li>
+      <li>If more than half of a square is in a region, count it as $1\text{ sq unit}$.</li>
+      <li>If exactly half the square is counted, take its area as $\frac{1}{2}\text{ sq unit}$.</li>
+    </ol>
+  </details>
+
+  <details class="sub-topic">
+    <summary><h3>Why Squares are Used to Measure Area</h3></summary>
+    <p>Squares are the standard unit for measuring area because they can be packed tightly together without leaving any gaps or overlaps. Other shapes, like circles, leave gaps when packed together, making them unsuitable for accurate area measurement.</p>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">6.3 Area of a Triangle</summary>
+  <p>The relationship between the area of a rectangle and a triangle can be understood by drawing a diagonal:</p>
+  <ul>
+    <li>A diagonal of a rectangle divides it into two triangles of equal area.</li>
+    <li>Therefore, the area of each triangle is exactly half the area of the rectangle.</li>
+  </ul>
+  <p class="formula">$$\text{Area of each triangle} = \frac{1}{2} \times \text{Area of the rectangle} = \frac{1}{2} \times (\text{length} \times \text{breadth})$$</p>
+  <p>This principle also applies when dividing a rectangle into multiple parts, where the sum of the areas of the triangles equals half the sum of the areas of the corresponding rectangles.</p>
+</details>
+
+  </div>
+</body>
+</html>

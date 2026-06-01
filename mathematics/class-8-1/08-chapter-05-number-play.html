@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Number Play</title>
+  <link rel="stylesheet" href="../../style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+        displayMath: [['$$', '$$']]
+      },
+      chtml: {
+        displayAlign: 'left',
+        displayIndent: '1em'
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Chapter 5: Number Play</h1>
+
+    <details class="topic-box" open>
+    <summary class="topic-title">5.1 Is This a Multiple Of?</summary>
+    
+    <details class="sub-topic">
+      <summary><h3>Sum of Consecutive Numbers & Parity</h3></summary>
+      <ul>
+        <li><span class="keyword">Consecutive Sums:</span> Any odd number can be written as the sum of two consecutive natural numbers (e.g., $7 = 3 + 4$).</li>
+        <li><span class="keyword">Parity of Expressions:</span> For any four numbers $a, b, c, d$, all combinations of $a \pm b \pm c \pm d$ share the same parity (either all are even or all are odd).</li>
+        <li><span class="keyword">Parity Rules:</span>
+          <ul>
+            <li>$\text{Odd} \pm \text{Odd} = \text{Even}$</li>
+            <li>$\text{Even} \pm \text{Even} = \text{Even}$</li>
+            <li>$\text{Odd} \pm \text{Even} = \text{Odd}$</li>
+          </ul>
+        </li>
+      </ul>
+    </details>
+
+    <details class="sub-topic">
+      <summary><h3>Pairs to Make Fours (Divisibility by 4)</h3></summary>
+      <ul>
+        <li>Even numbers can be classified into two types based on their remainder when divided by 4:
+          <ul>
+            <li><span class="keyword">Multiples of 4:</span> Expressed as $4p$ (remainder 0).</li>
+            <li><span class="keyword">Non-multiples of 4:</span> Expressed as $4p + 2$ (remainder 2).</li>
+          </ul>
+        </li>
+        <li><span class="keyword">Sum of Two Even Numbers:</span>
+          <ul>
+            <li>Divisible by 4 if both are multiples of 4: $4p + 4q = 4(p+q)$.</li>
+            <li>Divisible by 4 if both are non-multiples of 4: $(4p+2) + (4q+2) = 4(p+q+1)$.</li>
+            <li>Not divisible by 4 if one is a multiple of 4 and the other is not: $4p + (4q+2) = 4(p+q) + 2$.</li>
+          </ul>
+        </li>
+      </ul>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">5.2 Checking Divisibility Quickly</summary>
+    
+    <details class="sub-topic">
+      <summary><h3>Standard Divisibility Rules</h3></summary>
+      <ul>
+        <li><span class="keyword">Divisibility by 10:</span> The units digit must be $0$.</li>
+        <li><span class="keyword">Divisibility by 5:</span> The units digit must be $0$ or $5$.</li>
+        <li><span class="keyword">Divisibility by 2:</span> The units digit must be even ($0, 2, 4, 6, 8$).</li>
+        <li><span class="keyword">Divisibility by 9:</span> The sum of the digits must be divisible by $9$.</li>
+        <li><span class="keyword">Divisibility by 3:</span> The sum of the digits must be divisible by $3$.</li>
+        <li><span class="keyword">Divisibility by 11:</span> The difference between the sum of digits at odd places and the sum of digits at even places must be $0$ or a multiple of $11$.</li>
+      </ul>
+    </details>
+
+    <details class="sub-topic">
+      <summary><h3>Digital Roots</h3></summary>
+      <ul>
+        <li><span class="keyword">Digital Root:</span> The single-digit value obtained by repeatedly adding the digits of a number (e.g., for $489710$: $4+8+9+7+1+0 = 29 \rightarrow 2+9 = 11 \rightarrow 1+1 = 2$).</li>
+        <li>The digital root of any multiple of $9$ is always $9$.</li>
+      </ul>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">5.3 Digits in Disguise (Cryptarithms)</summary>
+    
+    <details class="sub-topic">
+      <summary><h3>Rules & Solving Cryptarithms</h3></summary>
+      <ul>
+        <li><span class="keyword">Cryptarithm:</span> A mathematical puzzle where letters stand for unique digits ($0-9$).</li>
+        <li>The leading digit of any number cannot be $0$.</li>
+        <li><span class="keyword">Example Puzzle:</span> $AB + 37 = 6A$
+          <ul>
+            <li>Since $B + 7$ ends in $A$, and $A + 3 (+ \text{carry}) = 6$, we find $A = 2$ and $B = 5$ ($25 + 37 = 62$).</li>
+          </ul>
+        </li>
+      </ul>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">Summary & Key Properties</summary>
+    <ul>
+      <li>If $a$ divides $b$, then all multiples of $a$ are divisible by $b$.</li>
+      <li>If $a$ is divisible by $b$, then $a$ is divisible by all factors of $b$.</li>
+      <li>If $a$ divides $m$ and $n$, then $a$ divides $m \pm n$.</li>
+      <li>If $a$ is divisible by $b$ and $c$ (where $b, c$ are co-prime), then $a$ is divisible by $b \times c$ (or the LCM of $b$ and $c$).</li>
+    </ul>
+  </details>
+
+  </div>
+</body>
+</html>

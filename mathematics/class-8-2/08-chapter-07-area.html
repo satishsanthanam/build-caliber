@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Area</title>
+  <link rel="stylesheet" href="../../style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+        displayMath: [['$$', '$$']]
+      },
+      chtml: {
+        displayAlign: 'left',
+        displayIndent: '1em'
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Chapter 7: Area</h1>
+
+    <details class="topic-box" open>
+    <summary class="topic-title">7.1 Rectangles and Squares</summary>
+    
+    <details class="sub-topic">
+      <summary><h3>Core Concepts &amp; Formulas</h3></summary>
+      <ul>
+        <li><span class="keyword">Area of a Rectangle:</span> Calculated as the product of its length and width.
+          <br>$$\text{Area} = \text{length} \times \text{width}$$
+        </li>
+        <li><span class="keyword">Unit Squares:</span> Area is measured by finding the number of non-overlapping unit squares (e.g., $1\text{ cm}^2$) that can pack a region.</li>
+        <li><span class="keyword">Perimeter vs. Area:</span> Perimeter (boundary length) is not a measure of area. Two regions can have the same perimeter but different areas, or a larger perimeter but smaller area.</li>
+        <li><span class="keyword">Dissection:</span> The process of cutting a geometric figure into pieces and rearranging them to form a different figure of equal area.</li>
+      </ul>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">7.2 Triangles</summary>
+    
+    <details class="sub-topic">
+      <summary><h3>Formulas &amp; Geometric Properties</h3></summary>
+      <ul>
+        <li><span class="keyword">Area of a Triangle:</span> Derived from half the area of an enclosing rectangle.
+          <br>$$\text{Area} = \frac{1}{2} \times \text{base} \times \text{height}$$
+        </li>
+        <li><span class="keyword">Median Property:</span> In any triangle, the line joining a vertex to the midpoint of its opposite side (the median) divides the triangle into two triangles of equal area.</li>
+        <li><span class="keyword">Triangles between Parallel Lines:</span> Triangles with a common base and vertices lying on a line parallel to the base have equal areas (since they share the same base and height).</li>
+        <li><span class="keyword">Minimum Perimeter:</span> Among all triangles with a common base and vertices on a parallel line, the isosceles triangle (where the vertex lies on the perpendicular bisector of the base) has the minimum perimeter.</li>
+      </ul>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">7.3 Polygons, Parallelograms, and Rhombuses</summary>
+    
+    <details class="sub-topic">
+      <summary><h3>Area of Polygons &amp; Parallelograms</h3></summary>
+      <ul>
+        <li><span class="keyword">Area of any Polygon:</span> Can be evaluated by dividing (triangulating) the polygon into non-overlapping triangles and summing their areas.</li>
+        <li><span class="keyword">Area of a Parallelogram:</span> Formulated by dissecting a right triangle from one side and moving it to the other to form a rectangle.
+          <br>$$\text{Area} = \text{base} \times \text{height}$$
+        </li>
+      </ul>
+    </details>
+
+    <details class="sub-topic">
+      <summary><h3>Area of a Rhombus</h3></summary>
+      <ul>
+        <li><span class="keyword">Area of a Rhombus:</span> Since diagonals of a rhombus are perpendicular bisectors of each other, it can be dissected into a rectangle of equal area.
+          <br>$$\text{Area} = \frac{1}{2} \times \text{product of diagonals} = \frac{1}{2} \times d_1 \times d_2$$
+        </li>
+      </ul>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">7.4 Trapeziums</summary>
+    
+    <details class="sub-topic">
+      <summary><h3>Area of a Trapezium</h3></summary>
+      <ul>
+        <li><span class="keyword">Area Formula:</span> Derived by splitting the trapezium into a rectangle and two triangles, or by joining two identical copies to form a larger parallelogram.
+          <br>$$\text{Area} = \frac{1}{2} \times \text{height} \times \text{sum of parallel sides} = \frac{1}{2} \times h \times (a + b)$$
+        </li>
+      </ul>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">7.5 Practical Applications &amp; Unit Conversions</summary>
+    
+    <details class="sub-topic">
+      <summary><h3>Key Conversions &amp; Units</h3></summary>
+      <ul>
+        <li><span class="keyword">Linear Conversions:</span>
+          <ul>
+            <li>$1\text{ inch (in)} = 2.54\text{ cm}$</li>
+            <li>$1\text{ foot (ft)} = 12\text{ inches}$</li>
+          </ul>
+        </li>
+        <li><span class="keyword">Area Conversions:</span>
+          <ul>
+            <li>$1\text{ in}^2 = (2.54)^2\text{ cm}^2 = 6.4516\text{ cm}^2$</li>
+            <li>$1\text{ acre} = 43,560\text{ ft}^2$</li>
+          </ul>
+        </li>
+        <li><span class="keyword">Local Indian Units:</span> Traditional units of land area measurement include <span class="keyword">bigha</span>, <span class="keyword">gaj</span>, <span class="keyword">katha</span>, <span class="keyword">dhur</span>, <span class="keyword">cent</span>, and <span class="keyword">ankanam</span>.</li>
+      </ul>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">Chapter Summary</summary>
+    <div class="summary-box">
+      <ul>
+        <li><strong>Triangle Area:</strong> $\frac{1}{2} \times \text{base} \times \text{height}$</li>
+        <li><strong>Parallelogram Area:</strong> $\text{base} \times \text{height}$</li>
+        <li><strong>Rhombus Area:</strong> $\frac{1}{2} \times \text{product of diagonals}$</li>
+        <li><strong>Trapezium Area:</strong> $\frac{1}{2} \times \text{height} \times \text{sum of parallel sides}$</li>
+        <li><strong>General Polygons:</strong> Solved by breaking down the shape into constituent triangles.</li>
+      </ul>
+    </div>
+  </details>
+
+  </div>
+</body>
+</html>

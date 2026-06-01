@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Tales by Dots and Lines</title>
+  <link rel="stylesheet" href="../../style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+        displayMath: [['$$', '$$']]
+      },
+      chtml: {
+        displayAlign: 'left',
+        displayIndent: '1em'
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Chapter 5: Tales by Dots and Lines</h1>
+
+    <details class="topic-box" open>
+    <summary class="topic-title">5.1 The Balancing Act</summary>
+    
+    <details class="sub-topic">
+      <summary><h3>Mean and Median as Central Tendencies</h3></summary>
+      <ul>
+        <li><span class="keyword">Arithmetic Mean:</span> The sum of all values divided by the total number of values. It represents the "centre of gravity" or balance point of the data.</li>
+        <li><span class="keyword">Median:</span> The middle value when the data is sorted in ascending or descending order.</li>
+        <li><span class="keyword">Balancing Property of Mean:</span> The sum of the distances of all data points to the left of the mean is exactly equal to the sum of the distances of all data points to the right of the mean (LHS Distance = RHS Distance).</li>
+      </ul>
+    </details>
+
+    <details class="sub-topic">
+      <summary><h3>Impact of Data Changes on Mean and Median</h3></summary>
+      <ul>
+        <li><span class="keyword">Adding/Removing Values:</span>
+          <ul>
+            <li>Including a value <em>greater</em> than the mean increases the mean.</li>
+            <li>Including a value <em>less</em> than the mean decreases the mean.</li>
+            <li>Including a value <em>equal</em> to the mean leaves the mean unchanged.</li>
+          </ul>
+        </li>
+        <li><span class="keyword">Shifting Data (Addition/Subtraction):</span> If a constant $k$ is added to (or subtracted from) every value in a dataset, the new mean increases (or decreases) by $k$.</li>
+        <li><span class="keyword">Scaling Data (Multiplication/Division):</span> If every value in a dataset is multiplied by a constant $k$, the new mean is also multiplied by $k$.</li>
+      </ul>
+    </details>
+
+    <details class="sub-topic">
+      <summary><h3>Mean and Median with Frequencies</h3></summary>
+      <ul>
+        <li><span class="keyword">Weighted Mean:</span> When values have frequencies, the mean is calculated as:
+          <br>$$\text{Mean} = \frac{\sum (x_i \times f_i)}{\sum f_i}$$
+          where $x_i$ represents the values and $f_i$ represents their respective frequencies.
+        </li>
+        <li><span class="keyword">Cumulative Frequency for Median:</span> To find the median from a frequency table without listing all numbers, successively add frequencies from the smallest value until reaching the middle position(s).</li>
+      </ul>
+    </details>
+
+    <details class="sub-topic">
+      <summary><h3>Spreadsheets for Data Analysis</h3></summary>
+      <ul>
+        <li><span class="keyword">Cells:</span> Individual boxes in a spreadsheet identified by column letters and row numbers (e.g., <code>E5</code>).</li>
+        <li><span class="keyword">Formulas:</span> Used to perform quick calculations over a range of cells:
+          <ul>
+            <li><code>=SUM(Start:End)</code>: Calculates the total sum of the specified range.</li>
+            <li><code>=AVERAGE(Start:End)</code>: Calculates the arithmetic mean of the specified range.</li>
+          </ul>
+        </li>
+      </ul>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">5.2 Visualising and Interpreting Data</summary>
+    
+    <details class="sub-topic">
+      <summary><h3>Line Graphs</h3></summary>
+      <ul>
+        <li><span class="keyword">Line Graph:</span> A visual representation consisting of data points connected by straight line segments. It is primarily used to display and track changes over time.</li>
+        <li><span class="keyword">Interpretation:</span> The steepness of a line segment indicates the rate of change; steeper lines represent more rapid increases or decreases.</li>
+      </ul>
+    </details>
+
+    <details class="sub-topic">
+      <summary><h3>Infographics and Activity Strips</h3></summary>
+      <ul>
+        <li><span class="keyword">Infographics:</span> Visual representations of information, data, or knowledge designed to communicate complex patterns quickly and clearly (e.g., geographic preference maps).</li>
+        <li><span class="keyword">Activity Strips:</span> A method of tracking daily time allocation by dividing a strip into proportional, color-coded blocks representing different activities over 24 hours.</li>
+      </ul>
+    </details>
+  </details>
+
+  </div>
+</body>
+</html>

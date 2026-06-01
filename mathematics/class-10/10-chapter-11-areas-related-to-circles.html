@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Areas Related to Circles</title>
+  <link rel="stylesheet" href="../../style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+        displayMath: [['$$', '$$']]
+      },
+      chtml: {
+        displayAlign: 'left',
+        displayIndent: '1em'
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Chapter 11: Areas Related to Circles</h1>
+
+    <h2>1. Core Definitions</h2><ul><li><span class="keyword">Sector of a circle</span>: The portion of the circular region enclosed by two radii and the corresponding arc.<ul><li><span class="keyword">Minor Sector</span>: Sector with angle &lt; 180&deg;.</li><li><span class="keyword">Major Sector</span>: Sector with angle 360&deg; - &theta;.</li></ul></li><li><span class="keyword">Segment of a circle</span>: The portion of the circular region enclosed between a chord and the corresponding arc.<ul><li><span class="keyword">Minor Segment</span>: Formed by the minor arc.</li><li><span class="keyword">Major Segment</span>: Formed by the major arc.</li></ul></li><li><em>Remark:</em> Unless stated otherwise, segment and sector refer to the minor segment and minor sector.</li></ul><h2>2. Essential Formulas</h2><ul><li><strong>Length of an arc of a sector</strong> (angle &theta;, radius <em>r</em>): <code>(&theta; / 360) &times; 2&pi;r</code></li><li><strong>Area of a sector</strong> (angle &theta;, radius <em>r</em>): <code>(&theta; / 360) &times; &pi;r&sup2;</code></li><li><strong>Area of a segment</strong>: <code>Area of the corresponding sector - Area of the corresponding triangle</code></li></ul><h2>3. Key Examples</h2><details><summary>Example 1: Area of Sector</summary><p><strong>Given:</strong> Radius <em>r</em> = 4 cm, angle &theta; = 30&deg;, &pi; = 3.14.</p><ul><li><strong>Area of minor sector:</strong> (30/360) &times; 3.14 &times; 4&sup2; &approx; 4.19 cm&sup2;</li><li><strong>Area of major sector:</strong> &pi;r&sup2; - Area of minor sector = (3.14 &times; 16) - 4.19 &approx; 46.1 cm&sup2;</li></ul></details><details><summary>Example 2: Area of Segment</summary><p><strong>Given:</strong> Radius <em>r</em> = 21 cm, angle &theta; = 120&deg;, &pi; = 22/7.</p><ul><li><strong>Area of sector:</strong> (120/360) &times; (22/7) &times; 21&sup2; = 462 cm&sup2;</li><li><strong>Area of triangle:</strong> Uses trigonometry to find base and height. Area = (441/4)&radic;3 cm&sup2;</li><li><strong>Area of segment:</strong> 462 - (441/4)&radic;3 cm&sup2;</li></ul></details><h2>4. Exercise 11.1 Applications</h2><p>Common problem types involving sector and segment areas:</p><ul><li>Calculating area swept by a clock's minute hand over a specific time.</li><li>Finding grazing area for tethered animals (e.g., horse tied to a square field corner).</li><li>Calculating material areas for symmetrical objects (e.g., brooches, umbrellas, round table covers).</li><li>Determining coverage area for sweeping mechanisms (e.g., car wipers, lighthouse beams).</li></ul>
+
+  </div>
+</body>
+</html>

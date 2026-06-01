@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Surface Areas and Volumes</title>
+  <link rel="stylesheet" href="../../style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+        displayMath: [['$$', '$$']]
+      },
+      chtml: {
+        displayAlign: 'left',
+        displayIndent: '1em'
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Chapter 12: Surface Areas and Volumes</h1>
+
+    <details class="topic-box" open> <summary class="topic-title">12.1 Introduction</summary> <div class="topic-content"> <p>In day-to-day life, we frequently encounter solids that are combinations of basic three-dimensional shapes such as <span class="keyword">cuboids</span>, <span class="keyword">cones</span>, <span class="keyword">cylinders</span>, <span class="keyword">spheres</span>, and <span class="keyword">hemispheres</span>.</p> </div> </details> <details class="topic-box"> <summary class="topic-title">12.2 Surface Area of a Combination of Solids</summary> <div class="topic-content"> <p>To find the total surface area (TSA) of a combined solid, we sum the visible curved surface areas (CSA) of the individual constituent solids. Surface areas that are joined together and hidden inside the solid are excluded.</p> <details class="sub-topic"> <summary><h3>Key Formula Configurations</h3></summary> <ul> <li><span class="keyword">Capsule / Oil Tanker</span> (Cylinder with two hemispherical ends):<br> <code>TSA = CSA of cylinder + 2 × CSA of hemisphere</code><br> <code>TSA = 2πrh + 2(2πr²) = 2πr(h + 2r)</code> </li> <li><span class="keyword">Toy / Lattu</span> (Cone surmounted on a hemisphere):<br> <code>TSA = CSA of cone + CSA of hemisphere</code><br> <code>TSA = πrl + 2πr² = πr(l + 2r)</code> <br><em>Note: Slant height of cone <code>l = √(r² + h²)</code></em> </li> <li><span class="keyword">Decorative Block</span> (Cube surmounted by a hemisphere):<br> <code>TSA = TSA of cube - Base area of hemisphere + CSA of hemisphere</code><br> <code>TSA = 6a² - πr² + 2πr² = 6a² + πr²</code> </li> </ul> </details> <details class="sub-topic"> <summary><h3>Worked Examples</h3></summary> <ul> <li><strong>Example 1 (Toy):</strong> A playing top of total height 5 cm and diameter 3.5 cm (radius r = 1.75 cm) consists of a cone on a hemisphere. Height of cone h = 5 - 1.75 = 3.25 cm. Slant height l = √(1.75² + 3.25²) ≈ 3.7 cm. Total area to colour ≈ 39.6 cm².</li> <li><strong>Example 2 (Decorative Block):</strong> A cube of edge 5 cm is surmounted by a hemisphere of diameter 4.2 cm (r = 2.1 cm). Total surface area = 6(5)² + π(2.1)² = 150 + 13.86 = 163.86 cm².</li> </ul> </details> </div> </details> <details class="topic-box"> <summary class="topic-title">12.3 Volume of a Combination of Solids</summary> <div class="topic-content"> <p>Unlike surface area, the volume of a combined solid is straightforward: it is simply the sum of the volumes of its constituent parts.</p> <details class="sub-topic"> <summary><h3>Key Volume Formulas</h3></summary> <ul> <li><span class="keyword">Volume of Combined Solid</span> = Volume of Solid 1 + Volume of Solid 2</li> <li><span class="keyword">Cylinder:</span> <code>V = πr²h</code></li> <li><span class="keyword">Cone:</span> <code>V = (1/3)πr²h</code></li> <li><span class="keyword">Sphere:</span> <code>V = (4/3)πr³</code></li> <li><span class="keyword">Hemisphere:</span> <code>V = (2/3)πr³</code></li> </ul> </details> <details class="sub-topic"> <summary><h3>Worked Examples</h3></summary> <ul> <li><strong>Example 5 (Shed):</strong> A cuboidal shed (15 m × 7 m × 8 m) surmounted by a half-cylinder of diameter 7 m and length 15 m. Total volume = Volume of cuboid + 1/2 (Volume of cylinder) = (15 × 7 × 8) + 1/2 (π × 3.5² × 15) = 1128.75 m³.</li> <li><strong>Example 6 (Glass with Hemispherical Raised Bottom):</strong> A cylindrical glass of inner diameter 5 cm and height 10 cm has a hemispherical raised bottom. Apparent capacity = πr²h = 196.25 cm³. Actual capacity = Apparent capacity - Volume of hemisphere = 196.25 - (2/3)πr³ = 196.25 - 32.71 = 163.54 cm³.</li> </ul> </details> </div> </details> <details class="topic-box"> <summary class="topic-title">12.4 Summary</summary> <div class="topic-content"> <ul> <li>To determine the <span class="keyword">surface area</span> of a combined solid, identify the exposed surfaces of the individual shapes and sum their areas.</li> <li>To find the <span class="keyword">volume</span> of a combined solid, sum the individual volumes of the constituent shapes.</li> </ul> </div> </details>
+
+  </div>
+</body>
+</html>

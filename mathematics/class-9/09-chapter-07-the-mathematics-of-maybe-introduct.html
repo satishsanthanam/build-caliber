@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>The Mathematics of Maybe: Introduction to Probability</title>
+  <link rel="stylesheet" href="../../style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+        displayMath: [['$$', '$$']]
+      },
+      chtml: {
+        displayAlign: 'left',
+        displayIndent: '1em'
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Chapter 7: The Mathematics of Maybe: Introduction to Probability</h1>
+
+    <details class="topic-box" open>
+    <summary class="topic-title">7.1 What is Probability?</summary>
+    <p><span class="keyword">Probability</span> is a measurement used to quantify the likelihood of <span class="keyword">events</span> or how certain we are that a particular event will occur.</p>
+    <ul>
+      <li><span class="keyword">Subjective Probability</span>: Estimating likelihood based on personal judgment, intuition, or interpretation of current conditions (e.g., predicting rain based on feeling hot).</li>
+    </ul>
+
+    <details class="sub-topic">
+      <summary><h3>7.1.1 What is Randomness?</h3></summary>
+      <ul>
+        <li><span class="keyword">Randomness</span>: A situation or action where you cannot predict exactly what will happen, even if all possible outcomes are known.</li>
+        <li><span class="keyword">Random Experiment</span> (or <span class="keyword">Trial</span>): An action that can be repeated where the result might be different each time, and the exact outcome cannot be known in advance (e.g., tossing a coin, rolling a die).</li>
+      </ul>
+    </details>
+
+    <details class="sub-topic">
+      <summary><h3>7.1.2 The Probability Scale</h3></summary>
+      <p>Probability is measured on a scale from <strong>0 to 1</strong> (or 0% to 100%):</p>
+      <ul>
+        <li><strong>0 (Impossible)</strong>: The event cannot happen.</li>
+        <li><strong>0.25 (Less likely)</strong>: Low chance of occurrence.</li>
+        <li><strong>0.5 (Equally likely / Even chance)</strong>: 50/50 chance (e.g., flipping a fair coin).</li>
+        <li><strong>0.75 (More likely)</strong>: High chance of occurrence.</li>
+        <li><strong>1 (Certain)</strong>: The event is guaranteed to happen.</li>
+      </ul>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">7.2 Measuring Probability Objectively</summary>
+    <p>There are two primary objective methods to estimate probability:</p>
+
+    <details class="sub-topic">
+      <summary><h3>7.2.1 Experimental Probability</h3></summary>
+      <ul>
+        <li>Based on actual data collected from trials or experiments.</li>
+        <li><span class="keyword">Formula</span>: <br><strong>Experimental Probability = (Number of times the event occurred) / (Total number of trials)</strong></li>
+        <li><span class="keyword">Relative Frequency</span>: The ratio of the number of times an event occurs to the total number of trials.</li>
+      </ul>
+    </details>
+
+    <details class="sub-topic">
+      <summary><h3>7.2.2 Theoretical Probability</h3></summary>
+      <ul>
+        <li>Calculated under ideal, perfectly fair situations where all outcomes are assumed to be <span class="keyword">equally likely</span>. No physical experiment is required.</li>
+        <li><span class="keyword">Formula</span>: <br><strong>Theoretical Probability P(E) = (Number of favourable outcomes) / (Total number of possible outcomes)</strong></li>
+        <li><span class="keyword">Law of Large Numbers</span>: As the number of trials in an experiment increases, the experimental probability tends to get closer to the theoretical probability.</li>
+        <li><span class="keyword">Gambler's Fallacy</span>: The mistaken belief that past random trials affect future independent trials (e.g., thinking tails is "due" after rolling heads 6 times). Coins and dice have no memory.</li>
+        <li><span class="keyword">Fair and Unbiased</span>: An object (like a coin or die) is unbiased if it is symmetrical and has an equal chance of landing on any of its faces.</li>
+      </ul>
+    </details>
+
+    <details class="sub-topic">
+      <summary><h3>7.2.3 Analysing Statistical Data Using Probability</h3></summary>
+      <ul>
+        <li><span class="keyword">Population</span>: The entire group under study (e.g., all 1500 students in a school).</li>
+        <li><span class="keyword">Sample</span>: A smaller, representative subset of the population used to gather evidence (e.g., 50 students from one class).</li>
+        <li><span class="keyword">Sampling</span>: The process of selecting a representative group to make predictions about the larger population.</li>
+      </ul>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">7.3 Elements of Probability: Sample Spaces and Events</summary>
+
+    <details class="sub-topic">
+      <summary><h3>7.3.1 Sample Space</h3></summary>
+      <ul>
+        <li><span class="keyword">Sample Space (S)</span>: The set of all possible outcomes of a random experiment.
+          <ul>
+            <li>Must include every possible outcome.</li>
+            <li>No outcome should be listed more than once.</li>
+          </ul>
+        </li>
+        <li><span class="keyword">Sample Size (n(S))</span>: The total number of elements in the sample space.</li>
+        <li><strong>Examples</strong>:
+          <ul>
+            <li>Tossing a coin: S = {H, T}, n(S) = 2</li>
+            <li>Rolling a die: S = {1, 2, 3, 4, 5, 6}, n(S) = 6</li>
+            <li>Tossing two coins: S = {HH, HT, TH, TT}, n(S) = 4</li>
+          </ul>
+        </li>
+      </ul>
+    </details>
+
+    <details class="sub-topic">
+      <summary><h3>7.3.2 Events</h3></summary>
+      <ul>
+        <li><span class="keyword">Event (E)</span>: Any single possible result or combination of results; a subset of the sample space.</li>
+        <li><strong>Examples</strong>:
+          <ul>
+            <li>Rolling a die and getting a number > 4: E = {5, 6}</li>
+            <li>Tossing two coins and getting at least one head: E = {HH, HT, TH}</li>
+          </ul>
+        </li>
+      </ul>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">7.4 Tree Diagrams</summary>
+    <ul>
+      <li><span class="keyword">Tree Diagram</span>: A visual representation used to list all possible outcomes of a <span class="keyword">multi-step experiment</span> (an experiment involving a series of independent trials).</li>
+      <li>Each branch represents a possible outcome, and branches split to show subsequent events.</li>
+      <li>Useful for visualising multi-step experiments and listing all outcomes of a sample space.</li>
+    </ul>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">🎯 High-Yield Practice &amp; Concepts</summary>
+    <ul>
+      <li><strong>Calculating Probability of Even Numbers on a Die</strong>:
+        <ul>
+          <li>Sample Space S = {1, 2, 3, 4, 5, 6}, n(S) = 6</li>
+          <li>Favourable Event (Even numbers) E = {2, 4, 6}, n(E) = 3</li>
+          <li>P(Even) = 3/6 = 0.5</li>
+        </ul>
+      </li>
+      <li><strong>Two-Coin Toss Probability (At least one Head)</strong>:
+        <ul>
+          <li>S = {HH, HT, TH, TT}, n(S) = 4</li>
+          <li>E = {HH, HT, TH}, n(E) = 3</li>
+          <li>P(at least one Head) = 3/4 = 0.75</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+
+  </div>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="style.css">
-  <title>Study Alchemist - Curriculum Home</title>
+  <title>Build Calibre - Curriculum Home</title>
   <style>
     body { font-family: sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px;}
     .clean-list { list-style-type: none; padding-left: 10px; border-left: 2px solid #eee; margin-left: 10px; margin-bottom: 10px; }
@@ -11,130 +11,122 @@
     .keyword a:hover { text-decoration: underline; color: #003d82; }
     .chapter-row { margin-bottom: 12px; }
     .topic-box { margin-bottom: 15px; border: 1px solid #ddd; padding: 15px; border-radius: 8px; background-color: #fafafa; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-    
-    /* 🌟 CLEAN TEXT CLASSES: Strictly handles font styling, no spacing logic */
     .topic-title { font-size: 1.3em; font-weight: bold; color: #2c3e50; }
     .class-title { font-size: 1.1em; font-weight: 600; color: #34495e; margin-top: 10px; }
-    
-    /* 🧱 UNBREAKABLE BUFFER ZONE: Forces structural padding onto the base element regardless of open/closed states */
-    details > summary { 
-      list-style: none !important; 
-      outline: none !important; 
-      position: relative !important; 
-      padding: 6px 10px 6px 45px !important; /* Locks a 45px clear margin space on the left */
-      display: block !important;             /* Eliminates display: inline-block collapse issues */
-      cursor: pointer;
-      box-sizing: border-box;
-    }
+    details > summary { list-style: none !important; outline: none !important; position: relative !important; padding: 6px 10px 6px 45px !important; display: block !important; cursor: pointer; box-sizing: border-box;}
     details > summary::-webkit-details-marker { display: none !important; }
     details > summary::marker { display: none !important; content: ""; }
     details > summary:hover { color: #0056b3; }
-    
-    /* 🎨 PINPOINT INDICATOR POSITIONING: Centers markers vertically inside the left buffer area */
-    details > summary::before { 
-      content: '[+]'; 
-      position: absolute !important; 
-      left: 12px !important; 
-      top: 50% !important;
-      transform: translateY(-50%) !important; /* Perfect vertical alignment center */
-      font-weight: bold !important; 
-      color: #0056b3 !important; /* 🔵 Theme Blue */
-      font-size: 1em !important; 
-      font-family: monospace !important;
-    }
-    details[open] > summary::before { 
-      content: '[-]'; 
-      color: #e67e22 !important; /* 🟠 Theme Orange */
-    }
+    details > summary::before { content: '[+]'; position: absolute !important; left: 12px !important; top: 50% !important; transform: translateY(-50%) !important; font-weight: bold !important; color: #0056b3 !important; font-size: 1em !important; font-family: monospace !important;}
+    details[open] > summary::before { content: '[-]'; color: #e67e22 !important; }
   </style>
 </head>
 <body>
   <div class="nav-bar" style="margin-bottom: 30px; border-bottom: 2px solid #eee; padding-bottom: 10px;">
-    <h2>Study Alchemist Curriculum Database</h2>
+    <h2>Build Calibre Curriculum Database</h2>
   </div>
   <div class="topic-box">
     <details>
-      <summary class="topic-title">Subject: Science</summary>
+      <summary class="topic-title">Subject: Mathematics</summary>
       <div class="sub-topic" style="margin-left: 20px;">
         <details>
-          <summary class="class-title">Class 10</summary>
+          <summary class="class-title">Class 1</summary>
           <ul class="clean-list">
-            <li class="chapter-row"><span class="keyword"><a href="science/class-10/chemical-reactions-and-equations.html"><strong>Chapter 1:</strong> Chemical Reactions And Equations</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-10/acids-bases-and-salts.html"><strong>Chapter 2:</strong> Acids Bases And Salts</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-10/metals-and-non-metals.html"><strong>Chapter 3:</strong> Metals And Non Metals</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-10/carbon-and-its-compounds.html"><strong>Chapter 4:</strong> Carbon And Its Compounds</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-10/life-processes.html"><strong>Chapter 5:</strong> Life Processes</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-10/control-and-coordination.html"><strong>Chapter 6:</strong> Control And Coordination</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-10/how-do-organisms-reproduce.html"><strong>Chapter 7:</strong> How Do Organisms Reproduce</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-10/heredity.html"><strong>Chapter 8:</strong> Heredity</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-10/light-reflection-and-refraction.html"><strong>Chapter 9:</strong> Light Reflection And Refraction</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-10/the-human-eye-and-the-colourful-world.html"><strong>Chapter 10:</strong> The Human Eye And The Colourful World</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-10/electricity.html"><strong>Chapter 11:</strong> Electricity</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-10/magnetic-effects-of-electric-current.html"><strong>Chapter 12:</strong> Magnetic Effects Of Electric Current</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-10/our-environment.html"><strong>Chapter 13:</strong> Our Environment</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-10/microorganisms-friend-and-foe.html"><strong>Chapter 99:</strong> Microorganisms Friend And Foe</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-1/01-chapter-01-finding-the-furry-cat.html"><strong>Chapter 1:</strong> Finding The Furry Cat</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-1/01-chapter-02-what-is-long-what-is-round.html"><strong>Chapter 2:</strong> What Is Long What Is Round</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-1/01-chapter-03-mango-treat.html"><strong>Chapter 3:</strong> Mango Treat</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-1/01-chapter-04-making-10.html"><strong>Chapter 4:</strong> Making 10</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-1/01-chapter-05-how-many.html"><strong>Chapter 5:</strong> How Many</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-1/01-chapter-06-vegetable-farm.html"><strong>Chapter 6:</strong> Vegetable Farm</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-1/01-chapter-07-linas-family.html"><strong>Chapter 7:</strong> Linas Family</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-1/01-chapter-08-fun-with-numbers.html"><strong>Chapter 8:</strong> Fun With Numbers</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-1/01-chapter-09-utsav.html"><strong>Chapter 9:</strong> Utsav</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-1/01-chapter-10-how-do-i-spend-my-day.html"><strong>Chapter 10:</strong> How Do I Spend My Day</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-1/01-chapter-11-how-many-times.html"><strong>Chapter 11:</strong> How Many Times</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-1/01-chapter-12-how-much-can-we-spend.html"><strong>Chapter 12:</strong> How Much Can We Spend</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-1/01-chapter-13-so-many-toys.html"><strong>Chapter 13:</strong> So Many Toys</a></span></li>
           </ul>
         </details>
       </div>
       <div class="sub-topic" style="margin-left: 20px;">
         <details>
-          <summary class="class-title">Class 8</summary>
+          <summary class="class-title">Class 2</summary>
           <ul class="clean-list">
-            <li class="chapter-row"><span class="keyword"><a href="science/class-8/crop-production-and-management.html"><strong>Chapter 1:</strong> Crop Production And Management</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-8/microorganisms-friend-and-foe.html"><strong>Chapter 2:</strong> Microorganisms Friend And Foe</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-8/coal-and-petroleum.html"><strong>Chapter 3:</strong> Coal And Petroleum</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-8/combustion-and-flame.html"><strong>Chapter 4:</strong> Combustion And Flame</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-8/conservation-of-plants-and-animals.html"><strong>Chapter 5:</strong> Conservation Of Plants And Animals</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-8/reproduction-in-animals.html"><strong>Chapter 6:</strong> Reproduction In Animals</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-8/reaching-the-age-of-adolescence.html"><strong>Chapter 7:</strong> Reaching The Age Of Adolescence</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-8/force-and-pressure.html"><strong>Chapter 8:</strong> Force And Pressure</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-8/friction.html"><strong>Chapter 9:</strong> Friction</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-8/sound.html"><strong>Chapter 10:</strong> Sound</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-8/chemical-effects-of-electric-current.html"><strong>Chapter 11:</strong> Chemical Effects Of Electric Current</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-8/some-natural-phenomena.html"><strong>Chapter 12:</strong> Some Natural Phenomena</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-8/light.html"><strong>Chapter 13:</strong> Light</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-2/02-chapter-01-a-day-at-the-beach-counting-in-gro.html"><strong>Chapter 1:</strong> A Day At The Beach Counting In Gro...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-2/02-chapter-02-shapes-around-us-3d-shapes.html"><strong>Chapter 2:</strong> Shapes Around Us 3D Shapes</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-2/02-chapter-03-fun-with-numbers-numbers-1-to-100.html"><strong>Chapter 3:</strong> Fun With Numbers Numbers 1 To 100...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-2/02-chapter-04-shadow-story-togalu-2d-shapes.html"><strong>Chapter 4:</strong> Shadow Story Togalu 2D Shapes...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-2/02-chapter-05-playing-with-lines-orientations-of.html"><strong>Chapter 5:</strong> Playing With Lines Orientations Of...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-2/02-chapter-06-decoration-for-festival-addition-a.html"><strong>Chapter 6:</strong> Decoration For Festival Addition A...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-2/02-chapter-07-ranis-gift-measurement.html"><strong>Chapter 7:</strong> Ranis Gift Measurement</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-2/02-chapter-08-grouping-and-sharingmultiplicati-o.html"><strong>Chapter 8:</strong> Grouping And Sharingmultiplicati O...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-2/02-chapter-09-which-season-is-it-measurement-of.html"><strong>Chapter 9:</strong> Which Season Is It Measurement Of...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-2/02-chapter-10-fun-at-the-fair-money.html"><strong>Chapter 10:</strong> Fun At The Fair Money</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-2/02-chapter-11-data-handling.html"><strong>Chapter 11:</strong> Data Handling</a></span></li>
           </ul>
         </details>
       </div>
       <div class="sub-topic" style="margin-left: 20px;">
         <details>
-          <summary class="class-title">Class 9</summary>
+          <summary class="class-title">Class 3</summary>
           <ul class="clean-list">
-            <li class="chapter-row"><span class="keyword"><a href="science/class-9/exploration-entering-the-world-of-secondary-science.html"><strong>Chapter 0:</strong> Exploration Entering The World Of Secondary Science</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-9/matter-in-our-surroundings.html"><strong>Chapter 1:</strong> Matter In Our Surroundings</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-9/is-matter-around-us-pure.html"><strong>Chapter 2:</strong> Is Matter Around Us Pure</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-9/atoms-and-molecules.html"><strong>Chapter 3:</strong> Atoms And Molecules</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-9/structure-of-the-atom.html"><strong>Chapter 4:</strong> Structure Of The Atom</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-9/the-fundamental-unit-of-life.html"><strong>Chapter 5:</strong> The Fundamental Unit Of Life</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-9/tissues.html"><strong>Chapter 6:</strong> Tissues</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-9/motion.html"><strong>Chapter 7:</strong> Motion</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-9/force-and-laws-of-motion.html"><strong>Chapter 8:</strong> Force And Laws Of Motion</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-9/gravitation.html"><strong>Chapter 9:</strong> Gravitation</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-9/work-and-energy.html"><strong>Chapter 10:</strong> Work And Energy</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-9/sound.html"><strong>Chapter 11:</strong> Sound</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-9/improvement-in-food-resources.html"><strong>Chapter 12:</strong> Improvement In Food Resources</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-9/auto-discovered-chapter-13.html"><strong>Chapter 13:</strong> Auto-Discovered Chapter 13</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-3/03-chapter-01-whats-in-a-name.html"><strong>Chapter 1:</strong> Whats In A Name</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-3/03-chapter-02-toy-joy.html"><strong>Chapter 2:</strong> Toy Joy</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-3/03-chapter-03-double-century.html"><strong>Chapter 3:</strong> Double Century</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-3/03-chapter-04-vacation-with-my-nani-maa.html"><strong>Chapter 4:</strong> Vacation With My Nani Maa</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-3/03-chapter-05-fun-with-shapes.html"><strong>Chapter 5:</strong> Fun With Shapes</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-3/03-chapter-06-house-of-hundreds-1.html"><strong>Chapter 6:</strong> House Of Hundreds 1</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-3/03-chapter-07-raksha-bandhan.html"><strong>Chapter 7:</strong> Raksha Bandhan</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-3/03-chapter-08-fair-share.html"><strong>Chapter 8:</strong> Fair Share</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-3/03-chapter-09-house-of-hundreds-il.html"><strong>Chapter 9:</strong> House Of Hundreds Il</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-3/03-chapter-10-fun-at-class-party.html"><strong>Chapter 10:</strong> Fun At Class Party</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-3/03-chapter-11-filling-and-lifting.html"><strong>Chapter 11:</strong> Filling And Lifting</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-3/03-chapter-12-give-and-take.html"><strong>Chapter 12:</strong> Give And Take</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-3/03-chapter-13-time-goes-on.html"><strong>Chapter 13:</strong> Time Goes On</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-3/03-chapter-14-the-surajkund-fair.html"><strong>Chapter 14:</strong> The Surajkund Fair</a></span></li>
           </ul>
         </details>
       </div>
       <div class="sub-topic" style="margin-left: 20px;">
         <details>
-          <summary class="class-title">Class 7</summary>
+          <summary class="class-title">Class 4</summary>
           <ul class="clean-list">
-            <li class="chapter-row"><span class="keyword"><a href="science/class-7/nutrition-in-plants.html"><strong>Chapter 1:</strong> Nutrition In Plants</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-7/nutrition-in-animals.html"><strong>Chapter 2:</strong> Nutrition In Animals</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-7/heat.html"><strong>Chapter 3:</strong> Heat</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-7/acids-bases-and-salts.html"><strong>Chapter 4:</strong> Acids Bases And Salts</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-7/physical-and-chemical-changes.html"><strong>Chapter 5:</strong> Physical And Chemical Changes</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-7/respiration-in-organisms.html"><strong>Chapter 6:</strong> Respiration In Organisms</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-7/transportation-in-animals-and-plants.html"><strong>Chapter 7:</strong> Transportation In Animals And Plants</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-7/reproduction-in-plants.html"><strong>Chapter 8:</strong> Reproduction In Plants</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-7/motion-and-time.html"><strong>Chapter 9:</strong> Motion And Time</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-7/electric-current-and-its-effects.html"><strong>Chapter 10:</strong> Electric Current And Its Effects</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-7/light.html"><strong>Chapter 11:</strong> Light</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-7/forests-our-lifeline.html"><strong>Chapter 12:</strong> Forests Our Lifeline</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-7/wastewater-story.html"><strong>Chapter 13:</strong> Wastewater Story</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-7/force-and-pressure.html"><strong>Chapter 99:</strong> Force And Pressure</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-4/04-chapter-01-shapes-around-us.html"><strong>Chapter 1:</strong> Shapes Around Us</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-4/04-chapter-02-hide-and-seek.html"><strong>Chapter 2:</strong> Hide And Seek</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-4/04-chapter-03-pattern-around-us.html"><strong>Chapter 3:</strong> Pattern Around Us</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-4/04-chapter-04-thousands-around-us.html"><strong>Chapter 4:</strong> Thousands Around Us</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-4/04-chapter-05-sharing-and-measuring.html"><strong>Chapter 5:</strong> Sharing And Measuring</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-4/04-chapter-06-measuring-length.html"><strong>Chapter 6:</strong> Measuring Length</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-4/04-chapter-07-the-cleanest-village.html"><strong>Chapter 7:</strong> The Cleanest Village</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-4/04-chapter-08-weigh-it-pour-it.html"><strong>Chapter 8:</strong> Weigh It Pour It</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-4/04-chapter-09-equal-groups.html"><strong>Chapter 9:</strong> Equal Groups</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-4/04-chapter-10-elephants-tigers-and-leopards.html"><strong>Chapter 10:</strong> Elephants Tigers And Leopards...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-4/04-chapter-11-fun-with-symmetry.html"><strong>Chapter 11:</strong> Fun With Symmetry</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-4/04-chapter-12-ticking-clocks-and-turning-calenda.html"><strong>Chapter 12:</strong> Ticking Clocks And Turning Calenda...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-4/04-chapter-13-the-transport-museum.html"><strong>Chapter 13:</strong> The Transport Museum</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-4/04-chapter-14-data-handling.html"><strong>Chapter 14:</strong> Data Handling</a></span></li>
+          </ul>
+        </details>
+      </div>
+      <div class="sub-topic" style="margin-left: 20px;">
+        <details>
+          <summary class="class-title">Class 5</summary>
+          <ul class="clean-list">
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-5/05-chapter-01-we-the-travellers-i.html"><strong>Chapter 1:</strong> We The Travellers I</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-5/05-chapter-02-fractions.html"><strong>Chapter 2:</strong> Fractions</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-5/05-chapter-03-angles-as-turns.html"><strong>Chapter 3:</strong> Angles As Turns</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-5/05-chapter-04-we-the-travellersii.html"><strong>Chapter 4:</strong> We The Travellersii</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-5/05-chapter-05-far-and-near.html"><strong>Chapter 5:</strong> Far And Near</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-5/05-chapter-06-the-dairy-farm.html"><strong>Chapter 6:</strong> The Dairy Farm</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-5/05-chapter-07-shapes-and-patterns.html"><strong>Chapter 7:</strong> Shapes And Patterns</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-5/05-chapter-08-weight-and-capacity.html"><strong>Chapter 8:</strong> Weight And Capacity</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-5/05-chapter-09-coconut-farm.html"><strong>Chapter 9:</strong> Coconut Farm</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-5/05-chapter-10-symmetrical-designs.html"><strong>Chapter 10:</strong> Symmetrical Designs</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-5/05-chapter-11-grandmothers-quilt.html"><strong>Chapter 11:</strong> Grandmothers Quilt</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-5/05-chapter-12-racing-seconds.html"><strong>Chapter 12:</strong> Racing Seconds</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-5/05-chapter-13-animal-jumps.html"><strong>Chapter 13:</strong> Animal Jumps</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-5/05-chapter-14-maps-and-locations.html"><strong>Chapter 14:</strong> Maps And Locations</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-5/05-chapter-15-data-through-pictures.html"><strong>Chapter 15:</strong> Data Through Pictures</a></span></li>
           </ul>
         </details>
       </div>
@@ -142,41 +134,111 @@
         <details>
           <summary class="class-title">Class 6</summary>
           <ul class="clean-list">
-            <li class="chapter-row"><span class="keyword"><a href="science/class-6/the-wonderful-world-of-science.html"><strong>Chapter 1:</strong> The Wonderful World of Science</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-6/diversity-in-the-living-world.html"><strong>Chapter 2:</strong> Diversity in the Living World</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-6/mindful-eating-a-path-to-a-healthy-body.html"><strong>Chapter 3:</strong> Mindful Eating: A Path to a Healthy Body</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-6/exploring-magnets.html"><strong>Chapter 4:</strong> Exploring Magnets</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-6/measurement-of-length-and-motion.html"><strong>Chapter 5:</strong> Measurement of Length and Motion</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-6/materials-around-us.html"><strong>Chapter 6:</strong> Materials Around Us</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-6/temperature-and-its-measurement.html"><strong>Chapter 7:</strong> Temperature and its Measurement</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-6/a-journey-through-states-of-water.html"><strong>Chapter 8:</strong> A Journey through States of Water</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-6/methods-of-separation-in-everyday-life.html"><strong>Chapter 9:</strong> Methods of Separation in Everyday Life</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-6/living-creatures-exploring-their-characteristics.html"><strong>Chapter 10:</strong> Living Creatures: Exploring their Characteristics</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-6/nature-s-treasures.html"><strong>Chapter 11:</strong> Nature's Treasures</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="science/class-6/beyond-earth.html"><strong>Chapter 12:</strong> Beyond Earth</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-6/06-chapter-01-patterns-in-mathematics.html"><strong>Chapter 1:</strong> Patterns In Mathematics</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-6/06-chapter-02-lines-and-angles.html"><strong>Chapter 2:</strong> Lines And Angles</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-6/06-chapter-03-number-play.html"><strong>Chapter 3:</strong> Number Play</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-6/06-chapter-04-data-handling-and-presentation.html"><strong>Chapter 4:</strong> Data Handling And Presentation...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-6/06-chapter-05-prime-time.html"><strong>Chapter 5:</strong> Prime Time</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-6/06-chapter-06-perimeter-and-area.html"><strong>Chapter 6:</strong> Perimeter And Area</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-6/06-chapter-07-fractions.html"><strong>Chapter 7:</strong> Fractions</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-6/06-chapter-08-playing-with-constructions.html"><strong>Chapter 8:</strong> Playing With Constructions</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-6/06-chapter-09-symmetry.html"><strong>Chapter 9:</strong> Symmetry</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-6/06-chapter-10-the-other-side-of-zero.html"><strong>Chapter 10:</strong> The Other Side Of Zero</a></span></li>
           </ul>
         </details>
       </div>
-    </details>
-  </div>
-  <div class="topic-box">
-    <details>
-      <summary class="topic-title">Subject: Mathematics</summary>
+      <div class="sub-topic" style="margin-left: 20px;">
+        <details>
+          <summary class="class-title">Class 7 (Part 1)</summary>
+          <ul class="clean-list">
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-7-1/07-chapter-01-large-numbers-around-us.html"><strong>Chapter 1:</strong> Large Numbers Around Us</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-7-1/07-chapter-02-arithmetic-expressions.html"><strong>Chapter 2:</strong> Arithmetic Expressions</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-7-1/07-chapter-03-a-peek-beyond-the-point.html"><strong>Chapter 3:</strong> A Peek Beyond The Point</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-7-1/07-chapter-04-expressions-using-letter-numbers.html"><strong>Chapter 4:</strong> Expressions Using Letter Numbers...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-7-1/07-chapter-05-parallel-and-intersecting-lines.html"><strong>Chapter 5:</strong> Parallel And Intersecting Lines...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-7-1/07-chapter-06-number-play.html"><strong>Chapter 6:</strong> Number Play</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-7-1/07-chapter-07-a-tale-of-three-intersecting-lines.html"><strong>Chapter 7:</strong> A Tale Of Three Intersecting Lines...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-7-1/07-chapter-08-working-with-fractions.html"><strong>Chapter 8:</strong> Working With Fractions</a></span></li>
+          </ul>
+        </details>
+      </div>
+      <div class="sub-topic" style="margin-left: 20px;">
+        <details>
+          <summary class="class-title">Class 7 (Part 2)</summary>
+          <ul class="clean-list">
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-7-2/07-chapter-01-geometric-twins.html"><strong>Chapter 1:</strong> Geometric Twins</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-7-2/07-chapter-02-operations-with-integers.html"><strong>Chapter 2:</strong> Operations With Integers</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-7-2/07-chapter-03-finding-common-ground.html"><strong>Chapter 3:</strong> Finding Common Ground</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-7-2/07-chapter-04-another-peek-beyond-the-point.html"><strong>Chapter 4:</strong> Another Peek Beyond The Point...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-7-2/07-chapter-05-connecting-the-dots.html"><strong>Chapter 5:</strong> Connecting The Dots</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-7-2/07-chapter-06-constructions-and-tilings.html"><strong>Chapter 6:</strong> Constructions And Tilings</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-7-2/07-chapter-07-finding-the-unknown.html"><strong>Chapter 7:</strong> Finding The Unknown</a></span></li>
+          </ul>
+        </details>
+      </div>
+      <div class="sub-topic" style="margin-left: 20px;">
+        <details>
+          <summary class="class-title">Class 8 (Part 1)</summary>
+          <ul class="clean-list">
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-8-1/08-chapter-01-a-square-and-a-cube.html"><strong>Chapter 1:</strong> A Square And A Cube</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-8-1/08-chapter-02-power-play.html"><strong>Chapter 2:</strong> Power Play</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-8-1/08-chapter-03-a-story-of-numbers.html"><strong>Chapter 3:</strong> A Story Of Numbers</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-8-1/08-chapter-04-quadrilaterals.html"><strong>Chapter 4:</strong> Quadrilaterals</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-8-1/08-chapter-05-number-play.html"><strong>Chapter 5:</strong> Number Play</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-8-1/08-chapter-06-we-distribute-yet-things-multiply.html"><strong>Chapter 6:</strong> We Distribute Yet Things Multiply...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-8-1/08-chapter-07-proportional-reasoning-1.html"><strong>Chapter 7:</strong> Proportional Reasoning 1</a></span></li>
+          </ul>
+        </details>
+      </div>
+      <div class="sub-topic" style="margin-left: 20px;">
+        <details>
+          <summary class="class-title">Class 8 (Part 2)</summary>
+          <ul class="clean-list">
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-8-2/08-chapter-01-fractions-in-disguise.html"><strong>Chapter 1:</strong> Fractions In Disguise</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-8-2/08-chapter-02-the-baudhyana-pythagoras-theorem.html"><strong>Chapter 2:</strong> The Baudhyana Pythagoras Theorem...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-8-2/08-chapter-03-proportional-reasoning-2.html"><strong>Chapter 3:</strong> Proportional Reasoning 2</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-8-2/08-chapter-04-exploring-some-geometric-themes.html"><strong>Chapter 4:</strong> Exploring Some Geometric Themes...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-8-2/08-chapter-05-tales-by-dots-and-lines.html"><strong>Chapter 5:</strong> Tales By Dots And Lines</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-8-2/08-chapter-06-algebra-play.html"><strong>Chapter 6:</strong> Algebra Play</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-8-2/08-chapter-07-area.html"><strong>Chapter 7:</strong> Area</a></span></li>
+          </ul>
+        </details>
+      </div>
+      <div class="sub-topic" style="margin-left: 20px;">
+        <details>
+          <summary class="class-title">Class 9</summary>
+          <ul class="clean-list">
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-9/09-chapter-01-orienting-yourself-the-use-of-coor.html"><strong>Chapter 1:</strong> Orienting Yourself The Use Of Coor...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-9/09-chapter-01-real-numbers.html"><strong>Chapter 1:</strong> Real Numbers (Alternate Version)</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-9/09-chapter-02-introduction-to-linear-polynomials.html"><strong>Chapter 2:</strong> Introduction To Linear Polynomials...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-9/09-chapter-03-the-world-of-numbers.html"><strong>Chapter 3:</strong> The World Of Numbers</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-9/09-chapter-04-exploring-algebraic-identities.html"><strong>Chapter 4:</strong> Exploring Algebraic Identities...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-9/09-chapter-05-im-up-and-down-and-round-and-round.html"><strong>Chapter 5:</strong> Im Up And Down And Round And Round...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-9/09-chapter-06-measuring-space-perimeter-and-area.html"><strong>Chapter 6:</strong> Measuring Space Perimeter And Area...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-9/09-chapter-07-the-mathematics-of-maybe-introduct.html"><strong>Chapter 7:</strong> The Mathematics Of Maybe Introduct...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-9/09-chapter-08-predicting-what-comes-next-explori.html"><strong>Chapter 8:</strong> Predicting What Comes Next Explori...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-9/09-chapter-08-sequences-and-progressions.html"><strong>Chapter 8:</strong> Sequences And Progressions (Alternate Version)</a></span></li>
+          </ul>
+        </details>
+      </div>
       <div class="sub-topic" style="margin-left: 20px;">
         <details>
           <summary class="class-title">Class 10</summary>
           <ul class="clean-list">
-            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-10/polynomials.html"><strong>Chapter 2:</strong> Polynomials</a></span></li>
-          </ul>
-        </details>
-      </div>
-      <div class="sub-topic" style="margin-left: 20px;">
-        <details>
-          <summary class="class-title">Class 9</summary>
-          <ul class="clean-list">
-            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-9/real-numbers.html"><strong>Chapter 1:</strong> Real Numbers</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-9/orienting-yourself-the-use-of-coordinates.html"><strong>Chapter 3:</strong> Orienting Yourself The Use Of Coordinates</a></span></li>
-            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-9/introduction-to-linear-polynomials.html"><strong>Chapter 4:</strong> Introduction To Linear Polynomials</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-10/10-chapter-01-real-numbers.html"><strong>Chapter 1:</strong> Real Numbers</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-10/10-chapter-02-polynomials.html"><strong>Chapter 2:</strong> Polynomials</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-10/10-chapter-03-pair-of-linear-equations-in-two-va.html"><strong>Chapter 3:</strong> Pair Of Linear Equations In Two Va...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-10/10-chapter-04-quadratic-equations.html"><strong>Chapter 4:</strong> Quadratic Equations</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-10/10-chapter-05-arithmetic-progressions.html"><strong>Chapter 5:</strong> Arithmetic Progressions</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-10/10-chapter-06-triangles.html"><strong>Chapter 6:</strong> Triangles</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-10/10-chapter-07-coordinate-geometry.html"><strong>Chapter 7:</strong> Coordinate Geometry</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-10/10-chapter-08-introduction-to-trigonometry.html"><strong>Chapter 8:</strong> Introduction To Trigonometry...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-10/10-chapter-09-some-applications-of-trigonometry.html"><strong>Chapter 9:</strong> Some Applications Of Trigonometry...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-10/10-chapter-10-circles.html"><strong>Chapter 10:</strong> Circles</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-10/10-chapter-11-areas-related-to-circles.html"><strong>Chapter 11:</strong> Areas Related To Circles</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-10/10-chapter-12-surface-areas-and-volumes.html"><strong>Chapter 12:</strong> Surface Areas And Volumes</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-10/10-chapter-13-statistics.html"><strong>Chapter 13:</strong> Statistics</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="mathematics/class-10/10-chapter-14-probability.html"><strong>Chapter 14:</strong> Probability</a></span></li>
           </ul>
         </details>
       </div>
@@ -184,12 +246,273 @@
   </div>
   <div class="topic-box">
     <details>
-      <summary class="topic-title">Subject: Biology</summary>
+      <summary class="topic-title">Subject: Science</summary>
+      <div class="sub-topic" style="margin-left: 20px;">
+        <details>
+          <summary class="class-title">Class 6</summary>
+          <ul class="clean-list">
+            <li class="chapter-row"><span class="keyword"><a href="science/class-6/06-chapter-01-the-wonderful-world-of-science.html"><strong>Chapter 1:</strong> The Wonderful World Of Science...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-6/06-chapter-02-diversity-in-the-living-world.html"><strong>Chapter 2:</strong> Diversity In The Living World...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-6/06-chapter-03-mindful-eating-a-path-to-a-healthy.html"><strong>Chapter 3:</strong> Mindful Eating A Path To A Healthy...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-6/06-chapter-03-separation-of-substances.html"><strong>Chapter 3:</strong> Separation Of Substances (Alternate Version)</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-6/06-chapter-04-getting-to-know-plants.html"><strong>Chapter 4:</strong> Getting To Know Plants</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-6/06-chapter-04-exploring-magnets.html"><strong>Chapter 4:</strong> Exploring Magnets (Alternate Version)</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-6/06-chapter-05-measurement-of-length-and-motion.html"><strong>Chapter 5:</strong> Measurement Of Length And Motion...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-6/06-chapter-06-materials-around-us.html"><strong>Chapter 6:</strong> Materials Around Us</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-6/06-chapter-06-the-living-organisms-and-their-sur.html"><strong>Chapter 6:</strong> The Living Organisms And Their Sur... (Alternate Version)</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-6/06-chapter-07-temperature-and-its-measurement.html"><strong>Chapter 7:</strong> Temperature And Its Measurement...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-6/06-chapter-08-light-shadows-and-reflections.html"><strong>Chapter 8:</strong> Light Shadows And Reflections...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-6/06-chapter-08-a-journey-through-states-of-water.html"><strong>Chapter 8:</strong> A Journey Through States Of Water... (Alternate Version)</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-6/06-chapter-09-methods-of-separation-in-everyday.html"><strong>Chapter 9:</strong> Methods Of Separation In Everyday...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-6/06-chapter-10-living-creatures-exploring-their-c.html"><strong>Chapter 10:</strong> Living Creatures Exploring Their C...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-6/06-chapter-11-natures-treasures.html"><strong>Chapter 11:</strong> Natures Treasures</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-6/06-chapter-12-beyond-earth.html"><strong>Chapter 12:</strong> Beyond Earth</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-6/06-chapter-12-sorting-materials-into-groups.html"><strong>Chapter 12:</strong> Sorting Materials Into Groups... (Alternate Version)</a></span></li>
+          </ul>
+        </details>
+      </div>
+      <div class="sub-topic" style="margin-left: 20px;">
+        <details>
+          <summary class="class-title">Class 7</summary>
+          <ul class="clean-list">
+            <li class="chapter-row"><span class="keyword"><a href="science/class-7/07-chapter-01-nutrition-in-plants.html"><strong>Chapter 1:</strong> Nutrition In Plants</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-7/07-chapter-02-nutrition-in-animals.html"><strong>Chapter 2:</strong> Nutrition In Animals</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-7/07-chapter-03-electricity-circuits-and-their-com.html"><strong>Chapter 3:</strong> Electricity Circuits And Their Com...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-7/07-chapter-04-acids-bases-and-salts.html"><strong>Chapter 4:</strong> Acids Bases And Salts</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-7/07-chapter-05-physical-and-chemical-changes.html"><strong>Chapter 5:</strong> Physical And Chemical Changes...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-7/07-chapter-06-respiration-in-organisms.html"><strong>Chapter 6:</strong> Respiration In Organisms</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-7/07-chapter-07-transportation-in-animals-and-plan.html"><strong>Chapter 7:</strong> Transportation In Animals And Plan...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-7/07-chapter-08-force-and-pressure.html"><strong>Chapter 8:</strong> Force And Pressure</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-7/07-chapter-08-measurement-of-time-and-motion.html"><strong>Chapter 8:</strong> Measurement Of Time And Motion... (Alternate Version)</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-7/07-chapter-08-reproduction-in-plants.html"><strong>Chapter 8:</strong> Reproduction In Plants (Alternate Version)</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-7/07-chapter-09-motion-and-time.html"><strong>Chapter 9:</strong> Motion And Time</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-7/07-chapter-11-light.html"><strong>Chapter 11:</strong> Light</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-7/07-chapter-12-earth-moon-and-the-sun.html"><strong>Chapter 12:</strong> Earth Moon And The Sun</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-7/07-chapter-13-wastewater-story.html"><strong>Chapter 13:</strong> Wastewater Story</a></span></li>
+          </ul>
+        </details>
+      </div>
+      <div class="sub-topic" style="margin-left: 20px;">
+        <details>
+          <summary class="class-title">Class 8</summary>
+          <ul class="clean-list">
+            <li class="chapter-row"><span class="keyword"><a href="science/class-8/08-chapter-01-crop-production-and-management.html"><strong>Chapter 1:</strong> Crop Production And Management...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-8/08-chapter-02-microorganisms-friend-and-foe.html"><strong>Chapter 2:</strong> Microorganisms Friend And Foe...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-8/08-chapter-03-coal-and-petroleum.html"><strong>Chapter 3:</strong> Coal And Petroleum</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-8/08-chapter-04-combustion-and-flame.html"><strong>Chapter 4:</strong> Combustion And Flame</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-8/08-chapter-05-conservation-of-plants-and-animals.html"><strong>Chapter 5:</strong> Conservation Of Plants And Animals...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-8/08-chapter-06-reproduction-in-animals.html"><strong>Chapter 6:</strong> Reproduction In Animals</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-8/08-chapter-07-reaching-the-age-of-adolescence.html"><strong>Chapter 7:</strong> Reaching The Age Of Adolescence...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-8/08-chapter-08-force-and-pressure.html"><strong>Chapter 8:</strong> Force And Pressure</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-8/08-chapter-09-friction.html"><strong>Chapter 9:</strong> Friction</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-8/08-chapter-10-sound.html"><strong>Chapter 10:</strong> Sound</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-8/08-chapter-11-chemical-effects-of-electric-curre.html"><strong>Chapter 11:</strong> Chemical Effects Of Electric Curre...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-8/08-chapter-12-how-nature-works-in-harmony.html"><strong>Chapter 12:</strong> How Nature Works In Harmony</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-8/08-chapter-13-light.html"><strong>Chapter 13:</strong> Light</a></span></li>
+          </ul>
+        </details>
+      </div>
       <div class="sub-topic" style="margin-left: 20px;">
         <details>
           <summary class="class-title">Class 9</summary>
           <ul class="clean-list">
-            <li class="chapter-row"><span class="keyword"><a href="biology/class-9/cell-the-building-block-of-life.html"><strong>Chapter 5:</strong> Cell The Building Block Of Life</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-9/09-chapter-01-matter-in-our-surroundings.html"><strong>Chapter 1:</strong> Matter In Our Surroundings</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-9/09-chapter-01-exploration-entering-the-world-of.html"><strong>Chapter 1:</strong> Exploration Entering The World Of... (Alternate Version)</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-9/09-chapter-02-cell-the-building-block-of-life.html"><strong>Chapter 2:</strong> Cell The Building Block Of Life...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-9/09-chapter-03-tissues-in-action.html"><strong>Chapter 3:</strong> Tissues In Action</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-9/09-chapter-04-describing-motion-around-us.html"><strong>Chapter 4:</strong> Describing Motion Around Us</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-9/09-chapter-05-exploring-mixtures-and-their-separ.html"><strong>Chapter 5:</strong> Exploring Mixtures And Their Separ...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-9/09-chapter-06-how-forces-affect-motion.html"><strong>Chapter 6:</strong> How Forces Affect Motion</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-9/09-chapter-07-work-energy-and-simple-machines.html"><strong>Chapter 7:</strong> Work Energy And Simple Machines...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-9/09-chapter-08-journey-inside-the-atom.html"><strong>Chapter 8:</strong> Journey Inside The Atom</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-9/09-chapter-09-atomic-foundations-of-matter.html"><strong>Chapter 9:</strong> Atomic Foundations Of Matter...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-9/09-chapter-10-sound-waves-characteristics-and-ap.html"><strong>Chapter 10:</strong> Sound Waves Characteristics And Ap...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-9/09-chapter-11-reproduction-how-life-continues.html"><strong>Chapter 11:</strong> Reproduction How Life Continues...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-9/09-chapter-12-patterns-in-life-diversity-and-cla.html"><strong>Chapter 12:</strong> Patterns In Life Diversity And Cla...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-9/09-chapter-13-earth-as-a-system-energy-matter-an.html"><strong>Chapter 13:</strong> Earth As A System Energy Matter An...</a></span></li>
+          </ul>
+        </details>
+      </div>
+      <div class="sub-topic" style="margin-left: 20px;">
+        <details>
+          <summary class="class-title">Class 10</summary>
+          <ul class="clean-list">
+            <li class="chapter-row"><span class="keyword"><a href="science/class-10/10-chapter-01-chemical-reactions-and-equations.html"><strong>Chapter 1:</strong> Chemical Reactions And Equations...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-10/10-chapter-02-microorganisms-friend-and-foe.html"><strong>Chapter 2:</strong> Microorganisms Friend And Foe...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-10/10-chapter-02-acids-bases-and-salts.html"><strong>Chapter 2:</strong> Acids Bases And Salts (Alternate Version)</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-10/10-chapter-03-metals-and-non-metals.html"><strong>Chapter 3:</strong> Metals And Non Metals</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-10/10-chapter-04-carbon-and-its-compounds.html"><strong>Chapter 4:</strong> Carbon And Its Compounds</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-10/10-chapter-05-life-processes.html"><strong>Chapter 5:</strong> Life Processes</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-10/10-chapter-06-control-and-coordination.html"><strong>Chapter 6:</strong> Control And Coordination</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-10/10-chapter-07-how-do-organisms-reproduce.html"><strong>Chapter 7:</strong> How Do Organisms Reproduce</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-10/10-chapter-08-heredity.html"><strong>Chapter 8:</strong> Heredity</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-10/10-chapter-09-light-reflection-and-refraction.html"><strong>Chapter 9:</strong> Light Reflection And Refraction...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-10/10-chapter-10-the-human-eye-and-the-colourful-wo.html"><strong>Chapter 10:</strong> The Human Eye And The Colourful Wo...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-10/10-chapter-11-electricity.html"><strong>Chapter 11:</strong> Electricity</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-10/10-chapter-12-magnetic-effects-of-electric-curre.html"><strong>Chapter 12:</strong> Magnetic Effects Of Electric Curre...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="science/class-10/10-chapter-13-our-environment.html"><strong>Chapter 13:</strong> Our Environment</a></span></li>
+          </ul>
+        </details>
+      </div>
+    </details>
+  </div>
+  <div class="topic-box">
+    <details>
+      <summary class="topic-title">Subject: Social Sciences</summary>
+      <div class="sub-topic" style="margin-left: 20px;">
+        <details>
+          <summary class="class-title">Class 3</summary>
+          <ul class="clean-list">
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-3/03-chapter-01-family-and-friends.html"><strong>Chapter 1:</strong> Family And Friends</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-3/03-chapter-02-going-to-the-mela.html"><strong>Chapter 2:</strong> Going To The Mela</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-3/03-chapter-03-celebrating-festivals.html"><strong>Chapter 3:</strong> Celebrating Festivals</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-3/03-chapter-04-getting-to-know-plants.html"><strong>Chapter 4:</strong> Getting To Know Plants</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-3/03-chapter-05-plants-and-animals-live-togethe.html"><strong>Chapter 5:</strong> Plants And Animals Live Togethe...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-3/03-chapter-06-living-in-harmony.html"><strong>Chapter 6:</strong> Living In Harmony</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-3/03-chapter-07-water-a-precious-gift.html"><strong>Chapter 7:</strong> Water A Precious Gift</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-3/03-chapter-08-food-we-eat.html"><strong>Chapter 8:</strong> Food We Eat</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-3/03-chapter-09-staying-healthy-and-happy.html"><strong>Chapter 9:</strong> Staying Healthy And Happy</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-3/03-chapter-10-this-world-of-things.html"><strong>Chapter 10:</strong> This World Of Things</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-3/03-chapter-11-making-things.html"><strong>Chapter 11:</strong> Making Things</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-3/03-chapter-12-taking-charge-of-waste.html"><strong>Chapter 12:</strong> Taking Charge Of Waste</a></span></li>
+          </ul>
+        </details>
+      </div>
+      <div class="sub-topic" style="margin-left: 20px;">
+        <details>
+          <summary class="class-title">Class 4</summary>
+          <ul class="clean-list">
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-4/04-chapter-01-living-together.html"><strong>Chapter 1:</strong> Living Together</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-4/04-chapter-02-exploring-our-neighbourhood.html"><strong>Chapter 2:</strong> Exploring Our Neighbourhood</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-4/04-chapter-03-nature-trails.html"><strong>Chapter 3:</strong> Nature Trails</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-4/04-chapter-04-growing-up-with-nature.html"><strong>Chapter 4:</strong> Growing Up With Nature</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-4/04-chapter-05-food-for-health.html"><strong>Chapter 5:</strong> Food For Health</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-4/04-chapter-06-happy-and-healthy-living.html"><strong>Chapter 6:</strong> Happy And Healthy Living</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-4/04-chapter-07-how-things-work.html"><strong>Chapter 7:</strong> How Things Work</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-4/04-chapter-08-how-things-are-made.html"><strong>Chapter 8:</strong> How Things Are Made</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-4/04-chapter-09-different-lands-different-lives.html"><strong>Chapter 9:</strong> Different Lands Different Lives...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-4/04-chapter-10-our-sky.html"><strong>Chapter 10:</strong> Our Sky</a></span></li>
+          </ul>
+        </details>
+      </div>
+      <div class="sub-topic" style="margin-left: 20px;">
+        <details>
+          <summary class="class-title">Class 5</summary>
+          <ul class="clean-list">
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-5/05-chapter-01-waterthe-essence-of-life.html"><strong>Chapter 1:</strong> Waterthe Essence Of Life</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-5/05-chapter-02-journey-of-a-river.html"><strong>Chapter 2:</strong> Journey Of A River</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-5/05-chapter-03-the-mystery-of-food.html"><strong>Chapter 3:</strong> The Mystery Of Food</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-5/05-chapter-04-our-schoola-happy-place.html"><strong>Chapter 4:</strong> Our Schoola Happy Place</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-5/05-chapter-05-our-vibrant-country.html"><strong>Chapter 5:</strong> Our Vibrant Country</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-5/05-chapter-06-some-unique-places.html"><strong>Chapter 6:</strong> Some Unique Places</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-5/05-chapter-07-energyhow-things-work.html"><strong>Chapter 7:</strong> Energyhow Things Work</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-5/05-chapter-08-clothes-how-things-are-made.html"><strong>Chapter 8:</strong> Clothes How Things Are Made</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-5/05-chapter-09-rhythms-of-nature.html"><strong>Chapter 9:</strong> Rhythms Of Nature</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-5/05-chapter-10-earthour-shared-home.html"><strong>Chapter 10:</strong> Earthour Shared Home</a></span></li>
+          </ul>
+        </details>
+      </div>
+      <div class="sub-topic" style="margin-left: 20px;">
+        <details>
+          <summary class="class-title">Class 6</summary>
+          <ul class="clean-list">
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-6/06-chapter-01-locating-places-on-the-earth.html"><strong>Chapter 1:</strong> Locating Places On The Earth...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-6/06-chapter-02-oceans-and-continents.html"><strong>Chapter 2:</strong> Oceans And Continents</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-6/06-chapter-03-landforms-and-life.html"><strong>Chapter 3:</strong> Landforms And Life</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-6/06-chapter-04-timeline-and-sources-of-history.html"><strong>Chapter 4:</strong> Timeline And Sources Of History...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-6/06-chapter-05-india-that-is-bharat.html"><strong>Chapter 5:</strong> India That Is Bharat</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-6/06-chapter-06-the-beginnings-of-indian-civilisat.html"><strong>Chapter 6:</strong> The Beginnings Of Indian Civilisat...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-6/06-chapter-07-indias-cultural-roots.html"><strong>Chapter 7:</strong> Indias Cultural Roots</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-6/06-chapter-08-unity-in-diversity-or-many-in-the.html"><strong>Chapter 8:</strong> Unity In Diversity Or Many In The...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-6/06-chapter-09-family-and-community.html"><strong>Chapter 9:</strong> Family And Community</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-6/06-chapter-10-grassroots-democracy-part-1-govern.html"><strong>Chapter 10:</strong> Grassroots Democracy Part 1 Govern...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-6/06-chapter-11-grassroots-democracy-part-2-local.html"><strong>Chapter 11:</strong> Grassroots Democracy Part 2 Local...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-6/06-chapter-12-grassroots-democracy-part-3-local.html"><strong>Chapter 12:</strong> Grassroots Democracy Part 3 Local...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-6/06-chapter-13-the-value-of-work.html"><strong>Chapter 13:</strong> The Value Of Work</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-6/06-chapter-14-economic-activities-around-us.html"><strong>Chapter 14:</strong> Economic Activities Around Us...</a></span></li>
+          </ul>
+        </details>
+      </div>
+      <div class="sub-topic" style="margin-left: 20px;">
+        <details>
+          <summary class="class-title">Class 7</summary>
+          <ul class="clean-list">
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-7/07-chapter-01-geographical-diversity-of-india.html"><strong>Chapter 1:</strong> Geographical Diversity Of India...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-7/07-chapter-02-understanding-the-weather.html"><strong>Chapter 2:</strong> Understanding The Weather</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-7/07-chapter-03-climates-of-india.html"><strong>Chapter 3:</strong> Climates Of India</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-7/07-chapter-04-new-beginnings-cities-and-states.html"><strong>Chapter 4:</strong> New Beginnings Cities And States...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-7/07-chapter-05-the-rise-of-empires.html"><strong>Chapter 5:</strong> The Rise Of Empires</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-7/07-chapter-06-the-age-of-reorganisation.html"><strong>Chapter 6:</strong> The Age Of Reorganisation</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-7/07-chapter-07-the-gupta-era-an-age-of-tireless-c.html"><strong>Chapter 7:</strong> The Gupta Era An Age Of Tireless C...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-7/07-chapter-08-how-the-land-becomes-sacred.html"><strong>Chapter 8:</strong> How The Land Becomes Sacred</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-7/07-chapter-09-from-the-rulers-to-the-ruled-types.html"><strong>Chapter 9:</strong> From The Rulers To The Ruled Types...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-7/07-chapter-10-the-constitution-of-india-an-intro.html"><strong>Chapter 10:</strong> The Constitution Of India An Intro...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-7/07-chapter-11-from-barter-to-money.html"><strong>Chapter 11:</strong> From Barter To Money</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-7/07-chapter-12-understanding-markets.html"><strong>Chapter 12:</strong> Understanding Markets</a></span></li>
+          </ul>
+        </details>
+      </div>
+      <div class="sub-topic" style="margin-left: 20px;">
+        <details>
+          <summary class="class-title">Class 8</summary>
+          <ul class="clean-list">
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-8/08-chapter-01-natural-resources-and-their-use.html"><strong>Chapter 1:</strong> Natural Resources And Their Use...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-8/08-chapter-02-reshaping-indias-political-map.html"><strong>Chapter 2:</strong> Reshaping Indias Political Map...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-8/08-chapter-03-the-rise-of-the-marathas.html"><strong>Chapter 3:</strong> The Rise Of The Marathas</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-8/08-chapter-04-the-colonial-era-in-india.html"><strong>Chapter 4:</strong> The Colonial Era In India</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-8/08-chapter-05-universal-franchise-and-indias-ele.html"><strong>Chapter 5:</strong> Universal Franchise And Indias Ele...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-8/08-chapter-06-the-parliamentary-system.html"><strong>Chapter 6:</strong> The Parliamentary System</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-8/08-chapter-07-factors-of-production.html"><strong>Chapter 7:</strong> Factors Of Production</a></span></li>
+          </ul>
+        </details>
+      </div>
+      <div class="sub-topic" style="margin-left: 20px;">
+        <details>
+          <summary class="class-title">Class 10 (Part 1)</summary>
+          <ul class="clean-list">
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-10-1/10-chapter-01-resources-and-development.html"><strong>Chapter 1:</strong> Resources And Development</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-10-1/10-chapter-02-forest-and-wildlife-resources.html"><strong>Chapter 2:</strong> Forest And Wildlife Resources...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-10-1/10-chapter-03-water-resources.html"><strong>Chapter 3:</strong> Water Resources</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-10-1/10-chapter-04-agriculture.html"><strong>Chapter 4:</strong> Agriculture</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-10-1/10-chapter-06-manufacturing-industries.html"><strong>Chapter 6:</strong> Manufacturing Industries</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-10-1/10-chapter-07-lifelines-of-national-economy.html"><strong>Chapter 7:</strong> Lifelines Of National Economy...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-10-1/10-chapter-07-minerals-and-energy-resources.html"><strong>Chapter 7:</strong> Minerals And Energy Resources... (Alternate Version)</a></span></li>
+          </ul>
+        </details>
+      </div>
+      <div class="sub-topic" style="margin-left: 20px;">
+        <details>
+          <summary class="class-title">Class 10 (Part 2)</summary>
+          <ul class="clean-list">
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-10-2/10-chapter-01-evelopment.html"><strong>Chapter 1:</strong> Evelopment</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-10-2/10-chapter-02-sectors-of-the-indian-econo.html"><strong>Chapter 2:</strong> Sectors Of The Indian Econo</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-10-2/10-chapter-03-money-and-credit.html"><strong>Chapter 3:</strong> Money And Credit</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-10-2/10-chapter-04-globalisation-and-the-indian.html"><strong>Chapter 4:</strong> Globalisation And The Indian...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-10-2/10-chapter-05-consumer-rights.html"><strong>Chapter 5:</strong> Consumer Rights</a></span></li>
+          </ul>
+        </details>
+      </div>
+      <div class="sub-topic" style="margin-left: 20px;">
+        <details>
+          <summary class="class-title">Class 10 (Part 3)</summary>
+          <ul class="clean-list">
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-10-3/10-chapter-01-the-rise-of-nationalism-in-europe.html"><strong>Chapter 1:</strong> The Rise Of Nationalism In Europe...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-10-3/10-chapter-02-nationalism-in-india.html"><strong>Chapter 2:</strong> Nationalism In India</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-10-3/10-chapter-03-the-making-of-a-global-world.html"><strong>Chapter 3:</strong> The Making Of A Global World...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-10-3/10-chapter-04-the-age-of-industrialisation.html"><strong>Chapter 4:</strong> The Age Of Industrialisation...</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-10-3/10-chapter-05-print-culture-and-the-modern-world.html"><strong>Chapter 5:</strong> Print Culture And The Modern World...</a></span></li>
+          </ul>
+        </details>
+      </div>
+      <div class="sub-topic" style="margin-left: 20px;">
+        <details>
+          <summary class="class-title">Class 10 (Part 4)</summary>
+          <ul class="clean-list">
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-10-4/10-chapter-01-ower-sharing.html"><strong>Chapter 1:</strong> Ower Sharing</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-10-4/10-chapter-02-federalism.html"><strong>Chapter 2:</strong> Federalism</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-10-4/10-chapter-03-gender-religion-and-caste.html"><strong>Chapter 3:</strong> Gender Religion And Caste</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-10-4/10-chapter-04-political-parties.html"><strong>Chapter 4:</strong> Political Parties</a></span></li>
+            <li class="chapter-row"><span class="keyword"><a href="social-sciences/class-10-4/10-chapter-05-outcomes-of-democracy.html"><strong>Chapter 5:</strong> Outcomes Of Democracy</a></span></li>
           </ul>
         </details>
       </div>

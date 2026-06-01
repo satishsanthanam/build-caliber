@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Equal Groups</title>
+  <link rel="stylesheet" href="../../style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+        displayMath: [['$$', '$$']]
+      },
+      chtml: {
+        displayAlign: 'left', // Left-aligns equations on tight screens
+        displayIndent: '1em'  // Clean indentation padding for blocks
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Chapter 9: Equal Groups</h1>
+
+    <details class="topic-box">
+  <summary class="topic-title">9.1 Animal Jumps and Multiples</summary>
+  <p>Understanding multiplication through skip counting and jumps of different animals on a number line.</p>
+  <details class="sub-topic">
+    <summary><h3>9.1.1 Multiples of 3 (Frog Jumps)</h3></summary>
+    <p>The frog jumps 3 steps at a time starting from 0.</p>
+    <ul>
+      <li>The numbers touched by the frog are: <span class="keyword">multiples of 3</span> ($3, 6, 9, 12, 15, 18, 21, 24, \dots$).</li>
+      <li>To check if the frog will touch 67, we determine if 67 is a multiple of 3. Since $67 = 3 \times 22 + 1$, it is not a multiple of 3, so the frog will not touch 67.</li>
+    </ul>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>9.1.2 Multiples of 4 (Squirrel Jumps)</h3></summary>
+    <p>The squirrel jumps 4 steps at a time starting from 0.</p>
+    <ul>
+      <li>The numbers touched by the squirrel are: <span class="keyword">multiples of 4</span> ($4, 8, 12, 16, 20, 24, \dots$).</li>
+      <li>To reach 60, the number of jumps needed is: $$60 \div 4 = 15\text{ jumps}$$</li>
+    </ul>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>9.1.3 Multiples of 6 (Rabbit Jumps)</h3></summary>
+    <p>The rabbit jumps 6 steps at a time starting from 0.</p>
+    <ul>
+      <li>The numbers touched by the rabbit are: <span class="keyword">multiples of 6</span> ($6, 12, 18, 24, 30, \dots$).</li>
+      <li>The smallest 3-digit number is 100. The smallest 3-digit multiple of 6 is: $$102\text{ (since } 102 = 6 \times 17\text{)}$$</li>
+      <li>The number of jumps to reach 102 is $17$ jumps.</li>
+    </ul>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>9.1.4 Multiples of 8 (Kangaroo Jumps)</h3></summary>
+    <p>The kangaroo jumps 8 steps at a time starting from 0.</p>
+    <ul>
+      <li>The numbers touched by the kangaroo are: <span class="keyword">multiples of 8</span> ($8, 16, 24, 32, 40, 48, \dots$).</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">9.2 Common Multiples</summary>
+  <p>When two or more sequences of jumps land on the same numbers, those numbers are called <span class="keyword">common multiples</span>.</p>
+  <ul>
+    <li><strong>Common Multiples of 3 and 4:</strong> Numbers touched by both the frog and the squirrel: $12, 24, 36, 48, 60, \dots$</li>
+    <li><strong>Common Multiples of 6 and 8:</strong> Numbers touched by both the rabbit and the kangaroo: $24, 48, 72, 96, \dots$</li>
+    <li>To reach 48:
+      <ul>
+        <li>The rabbit (jumping 6 steps) takes: $48 \div 6 = 8$ jumps.</li>
+        <li>The kangaroo (jumping 8 steps) takes: $48 \div 8 = 6$ jumps.</li>
+      </ul>
+    </li>
+  </ul>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">9.3 Gulabo's Garden: Multiplication and Division Concepts</summary>
+  <p>Using real-world scenarios to understand the components of multiplication and division statements.</p>
+  <details class="sub-topic">
+    <summary><h3>9.3.1 Multiplication Statement Components</h3></summary>
+    <p>In a multiplication statement:</p>
+    <p>$$\text{Multiplier (No. of groups)} \times \text{Multiplicand (Group size)} = \text{Product}$$</p>
+    <p>Example: Gulabo has 12 lily flowers, each with 3 petals. Total petals:</p>
+    <ul>
+      <li>Petals in 10 lilies: $10 \times 3 = 30$ petals</li>
+      <li>Petals in 2 lilies: $2 \times 3 = 6$ petals</li>
+      <li>Petals in 12 lilies: $30 + 6 = 36$ petals ($12 \times 3 = 36$)</li>
+    </ul>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>9.3.2 Division Statement Components</h3></summary>
+    <p>Gulabo counted 80 petals of hibiscus flowers (each flower has 5 petals). To find the number of flowers:</p>
+    <p>$$80 \div 5 = 16\text{ flowers}$$</p>
+    <ul>
+      <li>$5$ petals = $1$ flower</li>
+      <li>$10$ petals = $2$ flowers</li>
+      <li>$50$ petals = $10$ flowers</li>
+      <li>Remaining $30$ petals = $6$ flowers</li>
+      <li>Total: $10 + 6 = 16$ flowers</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">9.4 The Doubling Magic</summary>
+  <p>Exploring the mathematical properties of doubling numbers.</p>
+  <ul>
+    <li><strong>Doubling Examples:</strong>
+      <ul>
+        <li>Double of $32 = 64$</li>
+        <li>Double of $14 = 28$</li>
+        <li>Double of $26 = 52$</li>
+        <li>Double of $17 = 34$</li>
+        <li>Double of $39 = 78$</li>
+        <li>Double of $45 = 90$</li>
+      </ul>
+    </li>
+    <li><strong>Ones Digit Rule of Doubled Numbers:</strong> When any whole number is doubled, the ones digit of the result is always an <span class="keyword">even number</span> ($0, 2, 4, 6, 8$).</li>
+    <li>It is <strong>impossible</strong> to get $3, 5, 7, 9$ as the ones digit after doubling a whole number.</li>
+  </ul>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">9.5 Multiplication Grid and Patterns</summary>
+  <p>Analyzing patterns in a $10 \times 10$ multiplication chart.</p>
+  <ul>
+    <li><strong>Symmetry:</strong> The numbers in row $7$ are identical to the numbers in column $7$ because multiplication is commutative ($a \times b = b \times a$).</li>
+    <li><strong>Even Rows:</strong> In rows of even numbers (2, 4, 6, 8, 10), all products are even numbers.</li>
+    <li><strong>Ones Digit Patterns:</strong>
+      <ul>
+        <li>In row 5, the ones digits alternate between $5$ and $0$ ($5, 0, 5, 0, \dots$).</li>
+        <li>In row 8, the ones digits repeat in the pattern: $8, 6, 4, 2, 0, 8, 6, 4, 2, 0$.</li>
+      </ul>
+    </li>
+  </ul>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">9.6 Multiples of Tens and Hundreds</summary>
+  <p>Simplifying multiplication by breaking down numbers into tens and hundreds.</p>
+  <details class="sub-topic">
+    <summary><h3>9.6.1 Multiples of 10</h3></summary>
+    <p>To multiply a number by a multiple of 10, multiply the non-zero digits and append a zero:</p>
+    <ul>
+      <li>$10 \times 3 = 30$</li>
+      <li>$20 \times 3 = 60$</li>
+      <li>$40 \times 6 = 240$</li>
+      <li>$60 \times 8 = 480$</li>
+    </ul>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>9.6.2 Multiplying Using 10s (Distributive Property)</h3></summary>
+    <p>To multiply a two-digit number, split it into tens and ones:</p>
+    <p><strong>Example: $18 \times 4$</strong></p>
+    <ul>
+      <li>Split $18$ into $10 + 8$.</li>
+      <li>$10 \times 4 = 40$</li>
+      <li>$8 \times 4 = 32$</li>
+      <li>Total: $40 + 32 = 72$</li>
+    </ul>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>9.6.3 Multiples of 100</h3></summary>
+    <p>To multiply by hundreds, multiply the single digits and append two zeros:</p>
+    <ul>
+      <li>$100 \times 2 = 200$</li>
+      <li>$200 \times 2 = 400$</li>
+      <li>$500 \times 4 = 2000$</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">9.7 More Multiplication (Three-Digit Numbers)</summary>
+  <p>Using the grid method to multiply three-digit numbers by single-digit numbers.</p>
+  <p><strong>Example: $125 \times 8$</strong></p>
+  <ul>
+    <li>Split $125$ into $100 + 20 + 5$.</li>
+    <li>Multiply each part by $8$:</li>
+  </ul>
+  <table border="1" style="border-collapse: collapse; text-align: center; width: 100%; max-width: 400px; margin: 10px 0;">
+    <tr>
+      <th>$\times$</th>
+      <th>$8$</th>
+    </tr>
+    <tr>
+      <td>$100$</td>
+      <td>$100 \times 8 = 800$</td>
+    </tr>
+    <tr>
+      <td>$20$</td>
+      <td>$20 \times 8 = 160$</td>
+    </tr>
+    <tr>
+      <td>$5$</td>
+      <td>$5 \times 8 = 40$</td>
+    </tr>
+  </table>
+  <p>$$\text{Total} = 800 + 160 + 40 = 1000$$</p>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">9.8 Division and Partial Quotients</summary>
+  <p>Division can be performed by systematically subtracting known multiples of the divisor (the <span class="keyword">partial quotient method</span>).</p>
+  <p><strong>Example: $58 \div 3$</strong></p>
+  <ul>
+    <li>Subtract $10$ groups of $3$ ($30$): $58 - 30 = 28$ (Quotient so far: $10$)</li>
+    <li>Subtract $5$ groups of $3$ ($15$): $28 - 15 = 13$ (Quotient so far: $10 + 5 = 15$)</li>
+    <li>Subtract $3$ groups of $3$ ($9$): $13 - 9 = 4$ (Quotient so far: $15 + 3 = 18$)</li>
+    <li>Subtract $1$ group of $3$ ($3$): $4 - 3 = 1$ (Quotient so far: $18 + 1 = 19$)</li>
+    <li>Remaining: $1$ (which is less than the divisor $3$).</li>
+    <li><strong>Result:</strong> Quotient = $19$, Remainder = $1$.</li>
+  </ul>
+</details>
+
+  </div>
+</body>
+</html>

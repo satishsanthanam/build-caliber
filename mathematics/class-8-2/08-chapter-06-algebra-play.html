@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Algebra Play</title>
+  <link rel="stylesheet" href="../../style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+        displayMath: [['$$', '$$']]
+      },
+      chtml: {
+        displayAlign: 'left',
+        displayIndent: '1em'
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Chapter 6: Algebra Play</h1>
+
+    <p>Algebra is an indispensable tool for modeling numerical scenarios, justifying mathematical statements, and analyzing puzzles.</p>
+
+<h3>6.2 'Think of a Number' Tricks</h3>
+<ul>
+  <li><strong>Basic Trick:</strong> Think of a number (<span class="keyword">x</span>), double it (<span class="keyword">2x</span>), add 4 (<span class="keyword">2x + 4</span>), divide by 2 (<span class="keyword">x + 2</span>), subtract original. Result is always <strong>2</strong>.</li>
+  <li><strong>Date Trick:</strong> Let Month = <span class="keyword">M</span>, Day = <span class="keyword">D</span>. Formula: <code>(((M &times; 5) + 6) &times; 4 + 9) &times; 5 + D = 100M + 165 + D</code>. Subtract 165 from the final answer to reveal the date.</li>
+</ul>
+
+<h3>6.3 Number Pyramids</h3>
+<p>In a <span class="keyword">number pyramid</span>, each number is the sum of the two directly below it.</p>
+<ul>
+  <li><strong>3-Row Algebraic Model:</strong> Bottom row: <code>a, b, c</code> &rarr; Middle: <code>a+b, b+c</code> &rarr; Top: <code>a + 2b + c</code>.</li>
+  <li>Connects to the <span class="keyword">Virah&amacr;&ncaron;ka-Fibonacci sequence</span> where each number is the sum of the two preceding ones.</li>
+</ul>
+
+<h3>6.4 Fun with Grids (Calendar Magic)</h3>
+<ul>
+  <li><strong>2&times;2 Calendar Grid:</strong> Let top-left be <span class="keyword">a</span>. Grid values: <code>a, a+1, a+7, a+8</code>.</li>
+  <li><strong>Sum Formula:</strong> <code>4a + 16</code>. Given the sum, solve for <span class="keyword">a</span> to find all dates.</li>
+</ul>
+
+<h3>6.5 The Largest Product</h3>
+<p>To maximize the product of a 2-digit and 1-digit number using three given digits (<span class="keyword">p &lt; q &lt; r</span>):</p>
+<ul>
+  <li>The largest digit (<span class="keyword">r</span>) must be the multiplier.</li>
+  <li>The remaining digits form the multiplicand in decreasing order (<span class="keyword">qp</span>).</li>
+  <li><strong>Optimal Formula:</strong> <code>qp &times; r</code>.</li>
+</ul>
+
+<h3>6.6 Decoding Divisibility Tricks</h3>
+<ul>
+  <li><strong>Difference of Reversed 2-Digit Numbers:</strong> <code>(10a + b) - (10b + a) = 9(a - b)</code>. Always divisible by <span class="keyword">9</span>.</li>
+  <li><strong>Sum of Reversed 2-Digit Numbers:</strong> <code>(10a + b) + (10b + a) = 11(a + b)</code>. Always divisible by <span class="keyword">11</span>.</li>
+  <li><strong>3-Digit Cycling Sum:</strong> <code>abc + bca + cab</code> is always divisible by <span class="keyword">37</span> and <span class="keyword">3</span>.</li>
+  <li><strong>Repeating 3-Digit Number:</strong> <code>abcabc</code> is divisible by <span class="keyword">7, 11, and 13</span> (since 7 &times; 11 &times; 13 = 1001).</li>
+</ul>
+
+<details>
+  <summary><strong>Key Word Problems &amp; Puzzles</strong></summary>
+  <ul>
+    <li><strong>Karim and the Genie:</strong> Models exponential growth and constant subtraction. Coins double, then 8 are subtracted per round.</li>
+    <li><strong>Heads and Legs:</strong> Classic simultaneous equation model (e.g., horses with 4 legs, hens with 2 legs).</li>
+  </ul>
+</details>
+
+  </div>
+</body>
+</html>

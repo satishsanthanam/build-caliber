@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Quadratic Equations</title>
+  <link rel="stylesheet" href="../../style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+        displayMath: [['$$', '$$']]
+      },
+      chtml: {
+        displayAlign: 'left',
+        displayIndent: '1em'
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Chapter 4: Quadratic Equations</h1>
+
+    <details class="topic-box" open>
+    <summary class="topic-title">4.1 Introduction &amp; History</summary>
+    <ul>
+      <li><span class="keyword">Quadratic Equation:</span> Arises when a quadratic polynomial of the form <em>ax² + bx + c</em> (where <em>a ≠ 0</em>) is equated to zero.</li>
+      <li><span class="keyword">Historical Contributions:</span>
+        <ul>
+          <li><strong>Babylonians:</strong> First to solve problems equivalent to solving quadratic equations of the form <em>x² - px + q = 0</em>.</li>
+          <li><strong>Euclid:</strong> Developed a geometrical approach for finding lengths representing solutions.</li>
+          <li><strong>Brahmagupta (C.E. 598–665):</strong> Gave an explicit formula to solve <em>ax² + bx = c</em>.</li>
+          <li><strong>Sridharacharya (C.E. 1025):</strong> Derived the <span class="keyword">quadratic formula</span> using the method of completing the square.</li>
+          <li><strong>Al-Khwarizmi (C.E. 800):</strong> Studied different types of quadratic equations.</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">4.2 Quadratic Equations Definition</summary>
+    <details class="sub-topic">
+      <summary><h3>Standard Form</h3></summary>
+      <ul>
+        <li>A <span class="keyword">quadratic equation</span> in the variable <em>x</em> is of the form: <br><strong>ax² + bx + c = 0</strong>, where <em>a, b, c</em> are real numbers and <em>a ≠ 0</em>.</li>
+        <li>The <span class="keyword">standard form</span> requires terms to be written in descending order of their degrees.</li>
+      </ul>
+    </details>
+    <details class="sub-topic">
+      <summary><h3>Identifying Quadratic Equations</h3></summary>
+      <ul>
+        <li>An equation must simplify to a polynomial equation of degree 2.</li>
+        <li><em>Example:</em> <em>(x - 2)² + 1 = 2x - 3</em> simplifies to <em>x² - 6x + 8 = 0</em> (Quadratic).</li>
+        <li><em>Example:</em> <em>x(x + 1) + 8 = (x + 2)(x - 2)</em> simplifies to <em>x + 12 = 0</em> (Not Quadratic).</li>
+      </ul>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">4.3 Solution by Factorisation</summary>
+    <details class="sub-topic">
+      <summary><h3>Roots of a Quadratic Equation</h3></summary>
+      <ul>
+        <li>A real number <em>α</em> is called a <span class="keyword">root</span> of the quadratic equation <em>ax² + bx + c = 0</em> if <em>aα² + bα + c = 0</em>.</li>
+        <li>The roots of the quadratic equation are identical to the zeroes of the corresponding quadratic polynomial.</li>
+        <li>A quadratic equation can have at most <strong>two real roots</strong>.</li>
+      </ul>
+    </details>
+    <details class="sub-topic">
+      <summary><h3>Method of Splitting the Middle Term</h3></summary>
+      <ul>
+        <li>To solve <em>ax² + bx + c = 0</em>, split the middle term <em>bx</em> into two terms such that their product equals <em>ac · x²</em>.</li>
+        <li>Factorise the expression into two linear factors and equate each factor to zero.</li>
+        <li><em>Example:</em> For <em>2x² - 5x + 3 = 0</em>, split <em>-5x</em> into <em>-2x - 3x</em>.<br><em>(2x - 3)(x - 1) = 0</em> &rarr; Roots are <em>x = 3/2</em> and <em>x = 1</em>.</li>
+      </ul>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">4.4 Nature of Roots</summary>
+    <details class="sub-topic">
+      <summary><h3>The Quadratic Formula</h3></summary>
+      <ul>
+        <li>The roots of <em>ax² + bx + c = 0</em> are given by:<br><strong>x = [-b &plusmn; &radic;(b² - 4ac)] / 2a</strong></li>
+        <li>The term <strong>b² - 4ac</strong> is called the <span class="keyword">discriminant (D)</span> of the quadratic equation.</li>
+      </ul>
+    </details>
+    <details class="sub-topic">
+      <summary><h3>Nature of Roots Based on Discriminant (D = b² - 4ac)</h3></summary>
+      <ul>
+        <li>If <strong>b² - 4ac &gt; 0</strong>: Two distinct real roots.</li>
+        <li>If <strong>b² - 4ac = 0</strong>: Two equal real roots (coincident roots), both equal to <strong>-b / 2a</strong>.</li>
+        <li>If <strong>b² - 4ac &lt; 0</strong>: No real roots.</li>
+      </ul>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">4.5 Summary of Key Concepts</summary>
+    <ul>
+      <li><strong>Quadratic Equation:</strong> <em>ax² + bx + c = 0</em>, <em>a ≠ 0</em>.</li>
+      <li><strong>Roots:</strong> Values of <em>x</em> satisfying the equation; found via factorisation or the quadratic formula.</li>
+      <li><strong>Discriminant:</strong> Determines the existence and nature of real roots.</li>
+    </ul>
+  </details>
+
+  </div>
+</body>
+</html>

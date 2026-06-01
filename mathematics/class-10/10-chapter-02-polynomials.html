@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Polynomials</title>
+  <link rel="stylesheet" href="../../style.css">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+        displayMath: [['$$', '$$']]
+      },
+      chtml: {
+        displayAlign: 'left',
+        displayIndent: '1em'
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Chapter 2: Polynomials</h1>
+
+    <details class="topic-box" open>
+    <summary class="topic-title">2.1 Introduction</summary>
+    
+    <details class="sub-topic">
+      <summary><h3>Basic Definitions & Types</h3></summary>
+      <ul>
+        <li><span class="keyword">Polynomial:</span> An algebraic expression in one or more variables with non-negative integer exponents.</li>
+        <li><span class="keyword">Degree of a Polynomial:</span> The highest power of the variable <i>x</i> in the polynomial <i>p(x)</i>.</li>
+        <li><span class="keyword">Linear Polynomial:</span> A polynomial of degree 1. General form: <i>ax + b</i> (where <i>a &ne; 0</i>).</li>
+        <li><span class="keyword">Quadratic Polynomial:</span> A polynomial of degree 2. General form: <i>ax<sup>2</sup> + bx + c</i> (where <i>a &ne; 0</i>). Derived from "quadrate" meaning square.</li>
+        <li><span class="keyword">Cubic Polynomial:</span> A polynomial of degree 3. General form: <i>ax<sup>3</sup> + bx<sup>2</sup> + cx + d</i> (where <i>a &ne; 0</i>).</li>
+      </ul>
+    </details>
+
+    <details class="sub-topic">
+      <summary><h3>Value and Zeroes of a Polynomial</h3></summary>
+      <ul>
+        <li><span class="keyword">Value of p(x) at x = k:</span> Obtained by replacing <i>x</i> with a real number <i>k</i>, denoted as <i>p(k)</i>.</li>
+        <li><span class="keyword">Zero of a Polynomial:</span> A real number <i>k</i> is a zero of a polynomial <i>p(x)</i> if <i>p(k) = 0</i>.</li>
+        <li><span class="keyword">Linear Zero Formula:</span> For <i>p(x) = ax + b</i>, the zero is <i>k = -b/a</i>, which is equal to: <br><strong>- (Constant term) / (Coefficient of x)</strong></li>
+      </ul>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">2.2 Geometrical Meaning of the Zeroes of a Polynomial</summary>
+    
+    <details class="sub-topic">
+      <summary><h3>Graphical Representation</h3></summary>
+      <ul>
+        <li>The zeroes of a polynomial <i>p(x)</i> are precisely the <strong>x-coordinates</strong> of the points where the graph of <i>y = p(x)</i> intersects the x-axis.</li>
+        <li><span class="keyword">Linear Polynomial Graph:</span> A straight line that intersects the x-axis at exactly one point: <i>(-b/a, 0)</i>.</li>
+        <li><span class="keyword">Quadratic Polynomial Graph:</span> A curve called a <span class="keyword">parabola</span>. It opens upwards (∪) if <i>a &gt; 0</i> and downwards (∩) if <i>a &lt; 0</i>.</li>
+        <li><span class="keyword">Quadratic Zeroes Cases:</span>
+          <ul>
+            <li><strong>Case (i):</strong> Intersects x-axis at two distinct points (2 zeroes).</li>
+            <li><strong>Case (ii):</strong> Touches x-axis at exactly one point (1 zero / coincident points).</li>
+            <li><strong>Case (iii):</strong> Completely above or below the x-axis (no real zeroes).</li>
+          </ul>
+        </li>
+        <li><span class="keyword">General Rule:</span> A polynomial of degree <i>n</i> can intersect the x-axis at at most <i>n</i> points. Therefore, a polynomial of degree <i>n</i> has <strong>at most n zeroes</strong>.</li>
+      </ul>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">2.3 Relationship between Zeroes and Coefficients</summary>
+    
+    <details class="sub-topic">
+      <summary><h3>Quadratic Polynomials</h3></summary>
+      <p>If &alpha; and &beta; are the zeroes of the quadratic polynomial <i>ax<sup>2</sup> + bx + c</i> (<i>a &ne; 0</i>):</p>
+      <ul>
+        <li><span class="keyword">Sum of Zeroes (&alpha; + &beta;):</span> <br> <i>&alpha; + &beta; = -b/a = - (Coefficient of x) / (Coefficient of x<sup>2</sup>)</i></li>
+        <li><span class="keyword">Product of Zeroes (&alpha;&beta;):</span> <br> <i>&alpha;&beta; = c/a = (Constant term) / (Coefficient of x<sup>2</sup>)</i></li>
+      </ul>
+    </details>
+
+    <details class="sub-topic">
+      <summary><h3>Cubic Polynomials</h3></summary>
+      <p>If &alpha;, &beta;, and &gamma; are the zeroes of the cubic polynomial <i>ax<sup>3</sup> + bx<sup>2</sup> + cx + d</i> (<i>a &ne; 0</i>):</p>
+      <ul>
+        <li><span class="keyword">Sum of Zeroes:</span> <br> <i>&alpha; + &beta; + &gamma; = -b/a</i></li>
+        <li><span class="keyword">Sum of Products taken two at a time:</span> <br> <i>&alpha;&beta; + &beta;&gamma; + &gamma;&alpha; = c/a</i></li>
+        <li><span class="keyword">Product of Zeroes:</span> <br> <i>&alpha;&beta;&gamma; = -d/a</i></li>
+      </ul>
+    </details>
+  </details>
+
+  <details class="topic-box">
+    <summary class="topic-title">Chapter Summary</summary>
+    <ul>
+      <li>Linear polynomial has at most 1 zero.</li>
+      <li>Quadratic polynomial has at most 2 zeroes.</li>
+      <li>Cubic polynomial has at most 3 zeroes.</li>
+      <li>A quadratic polynomial whose sum and product of zeroes are <i>S</i> and <i>P</i> respectively is given by: <br> <strong>k[x<sup>2</sup> - Sx + P]</strong>, where <i>k</i> is a constant.</li>
+    </ul>
+  </details>
+
+  </div>
+</body>
+</html>
