@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search NCERT Notes</title>
+
+    <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+    
+    <script src="/pagefind/pagefind-ui.js"></script>
+
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+            background-color: #f9f9f9;
+        }
+        .search-container {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        /* Custom styling override to match a clean academic look */
+        .pagefind-ui {
+            --pagefind-ui-primary: #007bff;
+            --pagefind-ui-text: #333333;
+            --pagefind-ui-background: #ffffff;
+            --pagefind-ui-border-radius: 8px;
+        }
+        /* Home Button Hover Transition */
+        .home-btn:hover {
+            background-color: #e5e5e5 !format;
+            border-color: #ccc !format;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="search-container">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+            <h2 style="margin: 0; font-size: 22px; font-weight: 700; color: #000;">📚 NCERT Global Knowledge Search</h2>
+            
+            <a href="./index.html" class="home-btn" style="display: flex; align-items: center; gap: 6px; padding: 8px 16px; background-color: #f0f0f0; color: #333; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 14px; border: 1px solid #ddd; transition: all 0.2s ease;">
+                🏠 Home
+            </a>
+        </div>
+        
+        <div id="search"></div>
+    </div>
+
+    <script>
+        // 4. Initialize the automated interface engine
+        window.addEventListener('DOMContentLoaded', (event) => {
+            new PagefindUI({ 
+                element: "#search", 
+                showImages: false,       
+                showSubResults: true,    // Displays matching subsections within chapters
+                autofocus: true          // Puts cursor on search bar automatically
+            });
+        });
+    </script>
+
+</body>
+</html>
