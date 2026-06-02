@@ -2,14 +2,14 @@
 import os
 import re
 import html
-import subprocess
 
 TARGET_DIR = "."
 OUTPUT_FILE = "index.html"
-
-# FIXED: Added 'pagefind' here to prevent the script from treating search index folders as subjects
-EXCLUDE_DIRS = {'.git', '.github', 'node_modules', 'factory-builds', 'pagefind'}
+EXCLUDE_DIRS = {'.git', '.github', 'node_modules', 'factory-builds'}
 EXCLUDE_FILES = {'index.html', 'style.css', 'completed.txt', 'server.log', 'generate_index.py', 'rename_existing.py'}
+
+import os
+import subprocess
 
 def rebuild_search_index():
     print("\n🚀 All HTML files generated. Rebuilding Pagefind search index...")
@@ -37,10 +37,12 @@ def parse_class_display(folder_name):
     e.g., "class-8-1" -> "Class 8 (Part 1)"
           "class-9"   -> "Class 9"
     """
+    # Check for multi-part tracking signatures (class-X-Y)
     part_match = re.match(r'^class-(\d+)-(\d+)$', folder_name, re.IGNORECASE)
     if part_match:
         return f"Class {part_match.group(1)} (Part {part_match.group(2)})"
         
+    # Standard fallback tracking (class-X)
     single_match = re.match(r'^class-(\d+)$', folder_name, re.IGNORECASE)
     if single_match:
         return f"Class {single_match.group(1)}"
@@ -49,6 +51,7 @@ def parse_class_display(folder_name):
 
 def build_curriculum_tree():
     tree = {}
+    # Natively maps: mm-chapter-nn-topic.html
     pattern = re.compile(r'^(\d{2})-chapter-(\d{2})-(.+)\.html$')
     
     for root, dirs, files in os.walk(TARGET_DIR):
@@ -57,12 +60,15 @@ def build_curriculum_tree():
         if rel_path == ".":
             continue
             
+        # ====== DELTA: Optimize Tree Initialization in build_curriculum_tree() ======
+
         path_parts = rel_path.split(os.sep)
         if len(path_parts) >= 2:
             subject_display = path_parts[0].replace('-', ' ').title()
             raw_class_folder = path_parts[1]
             class_display = parse_class_display(raw_class_folder)
             
+            # 🚀 OPTIMIZATION: Initialize the tree structure once per directory pass instead of per file
             if subject_display not in tree:
                 tree[subject_display] = {}
             if class_display not in tree[subject_display]:
@@ -76,11 +82,13 @@ def build_curriculum_tree():
                     chapter_num = int(nn_str)
                     title_display = topic_slug.replace('-', ' ').title()
                     
+                    # 🛠️ TRUNCATION BALANCER
                     if len(topic_slug) >= 28 or any(title_display.endswith(w) for w in [" Of Coor", " Introduct", " Healthy", " Explori", " Va", " Their Sur"]):
                         title_display += "..."
 
                     web_url_path = os.path.join(rel_path, file).replace(os.sep, '/')
 
+                    # 🔍 CHECK FOR DUPLICATES (Now safely runs against pre-initialized array structure)
                     is_duplicate = any(item['num'] == chapter_num for item in tree[subject_display][class_display])
                     final_title = f"{title_display} (Alternate Version)" if is_duplicate else title_display
 
@@ -89,10 +97,10 @@ def build_curriculum_tree():
                         "title": final_title,
                         "url": web_url_path
                     })
+        # ============================================================================
     return tree
 
 def generate_html_file(tree):
-    # FIXED: Restored your clean, modern inline flex nav-bar structure with the right-aligned search box
     html_out = """<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -117,20 +125,19 @@ def generate_html_file(tree):
   </style>
 </head>
 <body>
-  <div class="nav-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; border-bottom: 2px solid #eee; padding-bottom: 15px;">
-      <h2 style="margin: 0; font-size: 26px; color: #333; font-weight: 700;">Build Calibre Curriculum Database</h2>
-      <a href="./search.html" style="display: flex; align-items: center; gap: 6px; color: #007bff; text-decoration: none; font-weight: 600; font-size: 15px; padding: 8px 16px; border-radius: 6px; background-color: rgba(0,123,255,0.06); border: 1px solid rgba(0,123,255,0.12); transition: background 0.2s;">
-          <span>🔍</span> Search
-      </a>
+  <div class="nav-bar" style="margin-bottom: 30px; border-bottom: 2px solid #eee; padding-bottom: 10px;">
+    <h2>Build Calibre Curriculum Database</h2>
   </div>\n"""
 
     for subject in sorted(tree.keys()):
         html_out += f'  <div class="topic-box">\n    <details>\n      <summary class="topic-title">Subject: {html.escape(subject)}</summary>\n'
         
+        # Natural alpha-numeric sorting sequence layout (Class 8 Part 1 -> Class 8 Part 2 -> Class 9)
         sorted_classes = sorted(tree[subject].keys(), key=lambda x: [int(s) if s.isdigit() else s for s in re.split(r'(\d+)', x)])
         for class_level in sorted_classes:
             html_out += f'      <div class="sub-topic" style="margin-left: 20px;">\n        <details>\n          <summary class="class-title">{html.escape(class_level)}</summary>\n          <ul class="clean-list">\n'
             
+            # Sort individual chapters numerically
             tree[subject][class_level].sort(key=lambda x: x['num'])
             for chap in tree[subject][class_level]:
                 html_out += f'            <li class="chapter-row"><span class="keyword"><a href="{html.escape(chap["url"])}"><strong>Chapter {chap["num"]}:</strong> {html.escape(chap["title"])}</a></span></li>\n'
@@ -148,5 +155,5 @@ if __name__ == "__main__":
     generate_html_file(data_tree)
     print(f"🚀 SUCCESS: Local split volume index '{OUTPUT_FILE}' compiled perfectly.")
 
-    # Trigger Pagefind search engine index automation
+    # 2. Trigger Pagefind search engine index automation
     rebuild_search_index()
