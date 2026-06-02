@@ -3,12 +3,15 @@ name: Deploy Pagefind to GitHub Pages
 on:
   push:
     branches:
-      - main  # Fires automatically whenever code hits your production branch
+      - main
 
 permissions:
   contents: read
   pages: write
   id-token: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true  # Instructs GitHub to safely execute on the updated Node 24 engine
 
 jobs:
   build-and-deploy:
