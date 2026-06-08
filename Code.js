@@ -1,9 +1,8 @@
 // =====================================================================
-// 🔮 THE BUILD CALIBRE CORE: MASTER PRODUCTION ENGINE (V9.6 - FINAL HARMONIZED)
+// 🔮 THE BUILD CALIBRE CORE: MASTER PRODUCTION ENGINE (V11.0 - FULLY HARMONIZED)
 // =====================================================================
 
 let logBuffer = [];
-
 function log(msg) {
   Logger.log(msg);
   logBuffer.push(new Date().toLocaleTimeString() + " - " + msg);
@@ -11,17 +10,16 @@ function log(msg) {
 
 /**
  * MAIN EXECUTION ENGINE
- * Orchestrates Sheet reading, Native Drive PDF fetching, Gemini processing, and Bitbucket pushes.
- * Compliant single-key implementation featuring absolute filesystem path alignment.
+ * Orchestrates Sheet reading, Native Drive PDF fetching, Gemini processing, and GitHub pushes.
+ * Features bi-directional dynamic sequence mapping and bulletproof path sanitization.
  */
 function runBuildCaliberFactory() {
   log("🏁 Factory Ignition: Checking workspace structural boundaries...");
-
   const props = PropertiesService.getScriptProperties();
   const INVENTORY_SHEET_ID = props.getProperty("INVENTORY_SHEET_ID");
   const OUTPUT_FOLDER_ID = props.getProperty("OUTPUT_FOLDER_ID");
   const GEMINI_API_KEY = props.getProperty("GEMINI_API_KEY");
-
+  
   if (!INVENTORY_SHEET_ID || !OUTPUT_FOLDER_ID || !GEMINI_API_KEY) {
     log("❌ CRITICAL ERROR: Core script properties missing from Script Properties. Exiting.");
     return;
@@ -38,7 +36,6 @@ function runBuildCaliberFactory() {
 
   const data = sheet.getDataRange().getValues();
   const headers = data[0];
-
   const colIndex = {
     subject: headers.indexOf("Subject"),
     classLevel: headers.indexOf("Class Level"),
@@ -46,7 +43,7 @@ function runBuildCaliberFactory() {
     title: headers.indexOf("Chapter Title"),
     driveLink: headers.indexOf("Drive Link"),
     status: headers.indexOf("Status"),
-    path: headers.indexOf("Bitbucket Path (Auto)")
+    path: headers.indexOf("GitHub Path (Auto)") 
   };
 
   // 🛡️ FACTORY GUARD BLOCK: Prevents undefined crashes if columns are shifted or renamed
@@ -63,7 +60,6 @@ function runBuildCaliberFactory() {
   }
 
   let taskQueue = [];
-
   for (let r = 1; r < data.length; r++) {
     const currentStatus = data[r][colIndex.status].toString().trim();
     if (currentStatus.includes("Pending")) {
@@ -72,7 +68,6 @@ function runBuildCaliberFactory() {
   }
 
   log("📊 Spreadsheet Scan Complete. Found " + taskQueue.length + " chapters queued for compilation.");
-
   if (taskQueue.length === 0) {
     log("🎉 All assets verified green. No 'Pending' rows found. Factory pipeline standing down.");
     flushLogsToDrive();
@@ -99,7 +94,6 @@ function runBuildCaliberFactory() {
 
     log("=========================================");
     log("🌐 Row [" + task.rowNum + "] Processing: Chapter " + chapterNo + " - " + chapterTitle + " (" + classLevel + ")");
-
     const driveUrl = task.data[colIndex.driveLink].toString().trim();
     let pdfBlob = null;
 
@@ -125,8 +119,6 @@ function runBuildCaliberFactory() {
     let parsedJson = null;
     try {
       const optimalModel = "gemini-3.5-flash";
-
-      // ====== EXTRA TELEMETRY: Enhanced JSON Parse & Retry Logger ======
       let rawResponse = "";
       let attempts = 0;
       const maxAttempts = 3;
@@ -134,42 +126,27 @@ function runBuildCaliberFactory() {
       while (attempts < maxAttempts) {
         try {
           attempts++;
-          
-          // 🟢 FIXED: Call your actual Gemini function with your real parameters
           rawResponse = callGeminiAPI(pdfBlob, promptTemplate, optimalModel, GEMINI_API_KEY);
-
-          // 🟢 FIXED: Parse directly into your original script's destination variable
           parsedJson = JSON.parse(rawResponse);
-
-          // If successful on a retry, log the victory metric
           if (attempts > 1) {
             Logger.log(`🎉 RETRY SUCCESS: Pass #${attempts} resolved cleanly. Response Length: ${rawResponse.length} chars.`);
           }
-          break; // Break retry loop on successful parse
-
+          break;
         } catch (jsonError) {
           Logger.log(`⚠️ PARSE FAULT: Attempt #${attempts} failed to parse.`);
           Logger.log(`📊 Metrics: Total Character Length received: ${rawResponse ? rawResponse.length : 0}`);
-
           if (rawResponse) {
-            // Cleanly extract the last 150 characters for immediate structural review
-            const tailSnapshot = rawResponse.length > 150
-              ? "..." + rawResponse.substring(rawResponse.length - 150)
-              : rawResponse;
-
+            const tailSnapshot = rawResponse.length > 150 ? "..." + rawResponse.substring(rawResponse.length - 150) : rawResponse;
             Logger.log(`🔍 Raw Tail Snapshot:\n${tailSnapshot}`);
           }
-
           if (attempts >= maxAttempts) {
             Logger.log(`❌ CRITICAL PIPELINE FAILURE: Maximum retry threshold reached for this file.`);
-            throw jsonError; // Re-throw to hit the main catch block below
+            throw jsonError;
           }
-
           Logger.log(`🔄 Retrying pipeline pass... [Attempt ${attempts + 1}/${maxAttempts}]`);
-          Utilities.sleep(2000); // Back-off delay to let API buffers clear
+          Utilities.sleep(2000);
         }
       }
-      // =================================================================
 
       if (!parsedJson || !parsedJson.html_content || !parsedJson.output_filename) {
         throw new Error("Crucial JSON fields returned empty from the model.");
@@ -180,76 +157,27 @@ function runBuildCaliberFactory() {
       continue;
     }
 
-    // 📄 BASE HTML PAGE ASSEMBLY (Hardcoded navigation controls and uniform global headings)
-    // 📄 MOBILE-RESPONSIVE BASE HTML PAGE ASSEMBLY 
-    // ====== DELTA: Update HTML Generation Template for Mobile ======
-    // Locate the variable assignment for 'completeWebPageContent' inside your loop 
-    // (typically around line 130-160 depending on your exact version) and replace it with:
-
-    let completeWebPageContent = `<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>${parsedJson.extracted_chapter_title || chapterTitle}</title>
-  <link rel="stylesheet" href="../../style.css">
-  <script>
-    window.MathJax = {
-      tex: {
-        inlineMath: [['$', '$']],
-        displayMath: [['$$', '$$']]
-      },
-      chtml: {
-        displayAlign: 'left', // Left-aligns equations on tight screens
-        displayIndent: '1em'  // Clean indentation padding for blocks
-      }
-    };
-  </script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-</head>
-<body>
-  <div class="chapter-container">
-    
-    <div class="nav-bar">
-      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
-      <a href="../../index.html" class="btn-nav">🏠 Home</a>
-    </div>
-
-    <h1>Chapter ${chapterNo}: ${parsedJson.extracted_chapter_title || chapterTitle}</h1>
-
-    ${parsedJson.html_content}
-
-  </div>
-</body>
-</html>`;
-    // ===============================================================
-
     // =====================================================================
     // 🛡️ APPS SCRIPT DEFENSIVE SANITIZATION LAYER FOR FILE PATHS
     // =====================================================================
-
-    // Extract base class index number
     let baseClassNum = parseInt(classLevel.replace(/[^0-9]/g, ""), 10);
     let sanitizedClass = "class-" + baseClassNum;
 
-    // Parse Part variables dynamically to match Unix configurations ("class-8-1", "class-8-2")
     const partDigits = classLevel.match(/(?:part|volume|term)[-_\s]*(\d+)/i) || classLevel.match(/class[-_\s]*\d+[-_\s]*(\d+)/i);
     if (partDigits) {
       sanitizedClass = sanitizedClass + "-" + partDigits[1];
     }
 
-    // Formulate zero-padded tracking strings (mm and nn)
-    const mmStr = String(baseClassNum).padStart(2, '0');
-    const nnStr = chapterNo !== "999" ? String(chapterNo).padStart(2, '0') : '00';
-
-    // Generate topic slug elements
+    // 🛡️ BULLETPROOF ZERO-PADDING ENGINE (Bypasses engine compatibility & float bugs)
+    let cleanClassNum = parseInt(baseClassNum, 10);
+    let cleanChapNum = parseInt(chapterNo, 10);
+    const mmStr = !isNaN(cleanClassNum) ? ("0" + cleanClassNum).slice(-2) : "00";
+    const nnStr = chapterNo !== "999" && !isNaN(cleanChapNum) ? ("0" + cleanChapNum).slice(-2) : "00";
+    
     let topicSlug = chapterTitle.toLowerCase().replace(/[^a-z0-9\s-_]/g, "").replace(/[\s-_]+/g, "-").trim();
     if (topicSlug.startsWith("-")) topicSlug = topicSlug.substring(1);
     if (topicSlug.endsWith("-")) topicSlug = topicSlug.substring(0, topicSlug.length - 1);
 
-    // Strict 48-Character total file length budget check
-    // 'mm-chapter-nn-' consumes exactly 14 characters.
-    // Allowed budget remaining for the topic text string = 48 - 14 = 34 characters.
     let truncatedSlug = topicSlug.substring(0, 34);
     if (truncatedSlug.endsWith("-")) {
       truncatedSlug = truncatedSlug.substring(0, truncatedSlug.length - 1);
@@ -259,38 +187,217 @@ function runBuildCaliberFactory() {
     const sanitizedSubject = subject.toLowerCase().replace(/[^a-z0-9]/g, "-");
     const finalPath = sanitizedSubject + "/" + sanitizedClass + "/" + computedFileName;
 
-    // Push asset payload to Bitbucket staging repository
-    const stagingBranchName = "factory-builds";
-    const commitSuccess = pushFileToBitbucketWithJira(finalPath, completeWebPageContent, stagingBranchName);
+    // =====================================================================
+    // 🔍 DUAL-DIRECTION BI-DIRECTIONAL SEQUENCE SCANNER
+    // =====================================================================
+    let cleanDisplayChapter = parseInt(chapterNo, 10);
+    let prevFileName = "../../index.html"; // Default fallback if Chapter 1
+    let nextFileName = "../../index.html"; // Default fallback if last chapter
+    
+    let prevTargetChap = cleanDisplayChapter - 1;
+    let nextTargetChap = cleanDisplayChapter + 1;
+
+    for (let checkR = 1; checkR < data.length; checkR++) {
+      let checkSub = data[checkR][colIndex.subject].toString().trim();
+      let checkClass = data[checkR][colIndex.classLevel].toString().trim();
+      let checkChap = parseInt(data[checkR][colIndex.chapterNo], 10);
+
+      if (checkSub === subject && checkClass === classLevel) {
+        
+        // ⏪ Look-Behind Dynamic Filename Predictor
+        if (checkChap === prevTargetChap) {
+          let prevTitle = data[checkR][colIndex.title].toString().trim();
+          let prevSlug = prevTitle.toLowerCase().replace(/[^a-z0-9\s-_]/g, "").replace(/[\s-_]+/g, "-").trim();
+          if (prevSlug.startsWith("-")) prevSlug = prevSlug.substring(1);
+          if (prevSlug.endsWith("-")) prevSlug = prevSlug.substring(0, prevSlug.length - 1);
+          
+          let prevTruncated = prevSlug.substring(0, 34);
+          if (prevTruncated.endsWith("-")) prevTruncated = prevTruncated.substring(0, prevTruncated.length - 1);
+          
+          prevFileName = mmStr + "-chapter-" + ("0" + prevTargetChap).slice(-2) + "-" + prevTruncated + ".html";
+        }
+
+        // ⏩ Look-Ahead Dynamic Filename Predictor
+        if (checkChap === nextTargetChap) {
+          let nextTitle = data[checkR][colIndex.title].toString().trim();
+          let nextSlug = nextTitle.toLowerCase().replace(/[^a-z0-9\s-_]/g, "").replace(/[\s-_]+/g, "-").trim();
+          if (nextSlug.startsWith("-")) nextSlug = nextSlug.substring(1);
+          if (nextSlug.endsWith("-")) nextSlug = nextSlug.substring(0, nextSlug.length - 1);
+          
+          let nextTruncated = nextSlug.substring(0, 34);
+          if (nextTruncated.endsWith("-")) nextTruncated = nextTruncated.substring(0, nextTruncated.length - 1);
+          
+          nextFileName = mmStr + "-chapter-" + ("0" + nextTargetChap).slice(-2) + "-" + nextTruncated + ".html";
+        }
+      }
+    }
+
+    // =====================================================================
+    // 🧭 STANDARDIZED SEARCH HEADING & ACCESSIBILITY MODAL TEMPLATE
+    // =====================================================================
+    let masterSearchHeaderTitle = `Class ${baseClassNum} — Chapter ${cleanDisplayChapter}: ${parsedJson.extracted_chapter_title || chapterTitle}`;
+
+    let completeWebPageContent = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>${masterSearchHeaderTitle}</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>${masterSearchHeaderTitle}</h1>
+
+    ${parsedJson.html_content}
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter ${cleanDisplayChapter}</strong> of the Class ${baseClassNum} curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "${prevFileName}";
+      } else {
+        window.location.href = "${nextFileName}";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>`;
+
+    // 🚀 ROUTE ASSETS TO GITHUB STAGING ENVIRONMENT
+    const stagingBranchName = "develop"; 
+    const commitSuccess = pushFileToGitHub(finalPath, completeWebPageContent, stagingBranchName);
 
     if (commitSuccess) {
-      const prStatus = raiseBitbucketPullRequest(stagingBranchName, finalPath);
-      if (prStatus) {
-        log("🚀 PIPELINE SUCCESS: File safely deployed -> " + finalPath);
-        appendToCompletedLog(finalPath, parsedJson.index_update);
-        sheet.getRange(task.rowNum, colIndex.status + 1).setValue("✅ Completed");
-        sheet.getRange(task.rowNum, colIndex.path + 1).setValue(finalPath);
-      } else {
-        sheet.getRange(task.rowNum, colIndex.status + 1).setValue("❌ PR Gen Fault");
-      }
+      log("🚀 PIPELINE SUCCESS: File safely deployed directly to GitHub staging -> " + finalPath);
+      appendToCompletedLog(finalPath, parsedJson.index_update);
+      sheet.getRange(task.rowNum, colIndex.status + 1).setValue("✅ Completed");
+      sheet.getRange(task.rowNum, colIndex.path + 1).setValue(finalPath);
     } else {
-      sheet.getRange(task.rowNum, colIndex.status + 1).setValue("❌ Deploy Fault");
+      sheet.getRange(task.rowNum, colIndex.status + 1).setValue("❌ GitHub Deploy Fault");
     }
 
     SpreadsheetApp.flush();
     flushLogsToDrive();
-    Utilities.sleep(4000); // Transaction pacing boundary limits
+    Utilities.sleep(4000);
   }
   flushLogsToDrive();
 }
 
 /**
  * CONNECTS DIRECTLY TO GOOGLE AI STUDIO ENDPOINTS
- * Compliant single-credential interface executing content transformations against JSON criteria schemas.
  */
 function callGeminiAPI(pdfBlob, promptText, modelName, apiKey) {
   const url = "https://generativelanguage.googleapis.com/v1beta/models/" + modelName + ":generateContent?key=" + apiKey;
-
   const payload = {
     "contents": [{
       "parts": [
@@ -314,14 +421,12 @@ function callGeminiAPI(pdfBlob, promptText, modelName, apiKey) {
       "maxOutputTokens": 8192
     }
   };
-
   const options = {
     "method": "post",
     "contentType": "application/json",
     "payload": JSON.stringify(payload),
     "muteHttpExceptions": true
   };
-
   const response = UrlFetchApp.fetch(url, options);
   const json = JSON.parse(response.getContentText());
 
@@ -332,71 +437,66 @@ function callGeminiAPI(pdfBlob, promptText, modelName, apiKey) {
 }
 
 /**
- * Git Multi-part File Deployer
+ * PUSHES RAW COMPILED ASSETS DIRECTLY TO GITHUB REPOSITORY VIA CONTENTS API
+ * Handles file creations and updates gracefully by pre-fetching system file signatures (SHAs).
  */
-function pushFileToBitbucketWithJira(filePath, fileContent, branchName) {
+function pushFileToGitHub(filePath, fileContent, branchName) {
   const props = PropertiesService.getScriptProperties();
-  const username = props.getProperty("BITBUCKET_USER");
-  const appPassword = props.getProperty("BITBUCKET_APP_PASSWORD");
-  const workspace = props.getProperty("BITBUCKET_WORKSPACE");
-  const repoSlug = props.getProperty("BITBUCKET_REPO_SLUG");
-  const jiraTicket = props.getProperty("JIRA_TICKET_ID") || "ALC-SYNC";
-
-  if (!username || !appPassword || !workspace || !repoSlug) return false;
-
-  const url = "https://api.bitbucket.org/2.0/repositories/" + workspace + "/" + repoSlug + "/src";
-  const boundary = "zzXXzzYYzzFFF";
-  const payload =
-    "--" + boundary + "\r\n" +
-    "Content-Disposition: form-data; name=\"message\"\r\n\r\n" +
-    "[" + jiraTicket + "] sync: compiled " + filePath + "\r\n" +
-    "--" + boundary + "\r\n" +
-    "Content-Disposition: form-data; name=\"branch\"\r\n\r\n" +
-    branchName + "\r\n" +
-    "--" + boundary + "\r\n" +
-    "Content-Disposition: form-data; name=\"" + filePath + "\"\r\n\r\n" +
-    fileContent + "\r\n" +
-    "--" + boundary + "--\r\n";
-
-  const options = {
-    "method": "post",
-    "contentType": "multipart/form-data; boundary=" + boundary,
-    "headers": { "Authorization": "Basic " + Utilities.base64Encode(username + ":" + appPassword) },
-    "payload": Utilities.newBlob(payload).getBytes(),
+  const token = props.getProperty("GITHUB_PAT");         
+  const username = props.getProperty("GITHUB_USERNAME");   
+  const repo = props.getProperty("GITHUB_REPO");         
+  
+  if (!token || !username || !repo) {
+    Logger.log("⚠️ GITHUB CONFIGURATION FAULT: Configuration property definitions are blank.");
+    return false;
+  }
+  
+  const url = "https://api.github.com/repos/" + username + "/" + repo + "/contents/" + filePath;
+  
+  // Phase 1: Scan for pre-existing system signatures to manage updates seamlessly
+  let fileSha = null;
+  const checkOptions = {
+    "method": "get",
+    "headers": {
+      "Authorization": "token " + token,
+      "Accept": "application/vnd.github.v3+json"
+    },
     "muteHttpExceptions": true
   };
-  const res = UrlFetchApp.fetch(url, options);
-  return res.getResponseCode() === 201 || res.getResponseCode() === 200;
-}
-
-function raiseBitbucketPullRequest(branchName, filePath) {
-  const props = PropertiesService.getScriptProperties();
-  const username = props.getProperty("BITBUCKET_USER");
-  const appPassword = props.getProperty("BITBUCKET_APP_PASSWORD");
-  const workspace = props.getProperty("BITBUCKET_WORKSPACE");
-  const repoSlug = props.getProperty("BITBUCKET_REPO_SLUG");
-
-  const url = "https://api.bitbucket.org/2.0/repositories/" + workspace + "/" + repoSlug + "/pullrequests";
-  const prPayload = {
-    "title": "🔮 [Build Calibre] Merge Staging to Main",
-    "description": "Unified pipeline curriculum compilation staging.",
-    "source": { "branch": { "name": branchName } },
-    "destination": { "branch": { "name": "main" } },
-    "close_source_branch": true
+  
+  const checkResponse = UrlFetchApp.fetch(url, checkOptions);
+  if (checkResponse.getResponseCode() === 200) {
+    const existingFileMetadata = JSON.parse(checkResponse.getContentText());
+    fileSha = existingFileMetadata.sha;
+  }
+  
+  // Phase 2: Frame the commit payload configurations
+  const commitPayload = {
+    "message": "pipeline automation: compile layout structure for " + filePath,
+    "content": Utilities.base64Encode(Utilities.newBlob(fileContent).getBytes()),
+    "branch": branchName
   };
-
-  const options = {
-    "method": "post",
+  
+  if (fileSha) {
+    commitPayload["sha"] = fileSha; 
+  }
+  
+  const pushOptions = {
+    "method": "put",
     "contentType": "application/json",
-    "headers": { "Authorization": "Basic " + Utilities.base64Encode(username + ":" + appPassword) },
-    "payload": JSON.stringify(prPayload),
+    "headers": {
+      "Authorization": "token " + token,
+      "Accept": "application/vnd.github.v3+json"
+    },
+    "payload": JSON.stringify(commitPayload),
     "muteHttpExceptions": true
   };
-  const res = UrlFetchApp.fetch(url, options);
-  return res.getResponseCode() === 201 || res.getResponseCode() === 200 || res.getResponseCode() === 409;
+  
+  const pushResponse = UrlFetchApp.fetch(url, pushOptions);
+  return pushResponse.getResponseCode() === 200 || pushResponse.getResponseCode() === 201;
 }
 
-function appendToCompletedLog(bitbucketPath, indexSnippet) {
+function appendToCompletedLog(githubPath, indexSnippet) {
   try {
     const folderId = PropertiesService.getScriptProperties().getProperty("OUTPUT_FOLDER_ID");
     if (!folderId) return;
@@ -405,7 +505,7 @@ function appendToCompletedLog(bitbucketPath, indexSnippet) {
     let file = files.hasNext() ? files.next() : folder.createFile("completed.txt", "", MimeType.PLAIN_TEXT);
     const cur = file.getBlob().getDataAsString();
 
-    let logEntry = "File: " + bitbucketPath;
+    let logEntry = "File: " + githubPath;
     if (indexSnippet) {
       logEntry += "\nSnippet:\n" + indexSnippet + "\n--------------------";
     }
