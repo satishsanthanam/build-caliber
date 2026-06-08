@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Circles</title>
+  <title>Class 10 — Chapter 10: Circles</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class="topic-box" open><summary class="topic-title">10.1 Introduction</summary><details class="sub-topic"><summary><h3>Line and Circle Relationships</h3></summary><ul><li><span class="keyword">Circle</span>: A collection of all points in a plane at a constant distance (radius) from a fixed point (centre).</li><li><span class="keyword">Non-intersecting line</span>: A line that has no common points with the circle.</li><li><span class="keyword">Secant</span>: A line that intersects a circle at exactly two points.</li><li><span class="keyword">Tangent</span>: A line that intersects a circle at only one point.</li></ul></details></details><details class="topic-box" open><summary class="topic-title">10.2 Tangent to a Circle</summary><details class="sub-topic"><summary><h3>Properties of Tangents</h3></summary><ul><li>A tangent is a limiting case of a secant when the two endpoints of its corresponding chord coincide.</li><li>There can be at most <span class="keyword">two tangents parallel</span> to a given secant.</li><li><span class="keyword">Point of Contact</span>: The common point where the tangent touches the circle.</li></ul></details><details class="sub-topic"><summary><h3>Theorem 10.1</h3></summary><ul><li><span class="keyword">Theorem 10.1</span>: The tangent at any point of a circle is perpendicular to the radius through the point of contact.</li><li><span class="keyword">Normal</span>: The line containing the radius through the point of contact.</li></ul></details></details><details class="topic-box" open><summary class="topic-title">10.3 Number of Tangents from a Point on a Circle</summary><details class="sub-topic"><summary><h3>Position-Based Tangents</h3></summary><ul><li><span class="keyword">Case 1 (Inside)</span>: Zero tangents can be drawn from a point lying inside a circle.</li><li><span class="keyword">Case 2 (On)</span>: Exactly one tangent can be drawn from a point lying on the circle.</li><li><span class="keyword">Case 3 (Outside)</span>: Exactly two tangents can be drawn from a point lying outside the circle.</li><li><span class="keyword">Length of Tangent</span>: The length of the segment of the tangent from the external point to the point of contact.</li></ul></details><details class="sub-topic"><summary><h3>Theorem 10.2</h3></summary><ul><li><span class="keyword">Theorem 10.2</span>: The lengths of tangents drawn from an external point to a circle are equal.</li><li><span class="keyword">Proof Summary</span>: For external point P and tangent points Q and R, triangles &Delta;OQP and &Delta;ORP are congruent by RHS rule (OQ = OR as radii, OP is common, and &ang;OQP = &ang;ORP = 90&deg;). Thus, PQ = PR.</li></ul></details></details><details class="topic-box" open><summary class="topic-title">10.4 Summary of Key Concepts</summary><details class="sub-topic"><summary><h3>Core Takeaways</h3></summary><ul><li>The tangent is perpendicular to the radius at the point of contact.</li><li>Tangents from an external point to a circle are equal in length.</li><li>The centre of the circle lies on the angle bisector of the angle between two external tangents.</li></ul></details></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 10</strong> of the Class 10 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "10-chapter-09-some-applications-of-trigonometry.html";
+      } else {
+        window.location.href = "10-chapter-11-areas-related-to-circles.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

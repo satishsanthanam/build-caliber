@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Combustion and Flame</title>
+  <title>Class 8 — Chapter 4: Combustion and Flame</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details><summary><strong>4.0 Introduction to Combustion and Fuels</strong></summary><ul><li><strong>Fuels</strong>: Various substances like cowdung, wood, coal, petrol, diesel, and Compressed Natural Gas (CNG) are used for different purposes at home, in industry, and for automobiles.</li><li><strong>Burning Characteristics</strong>: Fuels can burn either with a flame (e.g., a candle) or without a flame (e.g., coal).</li><li><strong>Chapter Focus</strong>: To explore the chemical process of burning (combustion) and the various types of flames produced during this process.</li></ul></details><details><summary><strong>4.1 What is Combustion?</strong></summary><details><summary><strong>4.1.1 Definition and Combustible Substances</strong></summary><ul><li><strong>Combustion</strong>: A chemical process where a substance reacts with oxygen to produce heat.</li><li><strong>Combustible Substance (Fuel)</strong>: Any substance that undergoes combustion. Fuels can exist as solids, liquids, or gases.</li><li><strong>Energy Release</strong>: During combustion, heat is always produced, and sometimes light is also emitted, either as a flame or a glow.</li><li><strong>Examples</strong>: Magnesium and charcoal are combustible; food is also considered a fuel for our body as it reacts with oxygen to produce heat.</li></ul></details><details><summary><strong>4.1.2 Conditions Essential for Combustion (Role of Air)</strong></summary><ul><li><strong>Air (Oxygen)</strong>: Essential for combustion. Experiments show that a flame requires a continuous supply of air to burn.</li><li><strong>Observation</strong>: A candle flame dies out if its air supply is cut off, demonstrating that air is necessary for burning.</li><li><strong>Extinguishing Fire by Cutting Air</strong>: Covering burning materials (like charcoal or a person whose clothes catch fire with a blanket) extinguishes the fire by blocking the supply of oxygen.</li><li><strong>Sun's Heat and Light</strong>: Produced by nuclear reactions, not combustion, a process studied in higher classes.</li></ul></details><details><summary><strong>4.1.3 Ignition Temperature</strong></summary><ul><li><strong>Ignition Temperature</strong>: The lowest temperature at which a combustible substance will catch fire.</li><li><strong>Condition for Burning</strong>: A substance cannot catch fire or burn unless its temperature reaches its ignition temperature.</li><li><strong>Matchstick Principle</strong>: A matchstick does not burn at room temperature but ignites when rubbed, as friction generates enough heat to reach its ignition temperature.</li><li><strong>Paper Cup Experiment</strong>: Heating a paper cup with water prevents the paper from burning because the heat supplied is transferred to the water by conduction, keeping the paper below its ignition temperature.</li></ul></details><details><summary><strong>4.1.4 Inflammable Substances</strong></summary><ul><li><strong>Inflammable Substances</strong>: Substances that possess a very low ignition temperature and can easily catch fire with a flame.</li><li><strong>Examples</strong>: Petrol, alcohol, and Liquified Petroleum Gas (LPG).</li><li><strong>Storage Caution</strong>: These substances require special care during storage due to their low ignition temperatures and high flammability.</li></ul></details></details><details><summary><strong>4.2 How Do We Control Fire?</strong></summary><details><summary><strong>4.2.1 Requirements for Fire and Control Principles</strong></summary><ul><li><strong>Three Essential Requirements for Fire</strong>: Fuel, air (oxygen supply), and heat (to raise fuel temperature above ignition point).</li><li><strong>Fire Control Strategy</strong>: Fire can be controlled by removing one or more of these essential requirements.</li><li><strong>Fire Extinguisher's Role</strong>: To cut off the supply of air, reduce the temperature of the fuel, or perform both actions simultaneously.</li><li><strong>Fuel Management</strong>: In many cases, the fuel (e.g., a burning building) cannot be easily eliminated.</li></ul></details><details><summary><strong>4.2.2 Types of Fire Extinguishers</strong></summary><ul><li><strong>Water</strong>: The most common fire extinguisher, effective for fires involving materials like wood and paper.</li><li><strong>How Water Works</strong>: Cools the combustible material below its ignition temperature and generates water vapour, which surrounds the material to cut off air supply.</li><li><strong>Limitations of Water</strong>: Not suitable for electrical equipment fires (conducts electricity) or fires involving oil and petrol (water is heavier and sinks, allowing oil to continue burning on top).</li><li><strong>Carbon Dioxide (CO<sub>2</sub>)</strong>: The best extinguisher for fires involving electrical equipment and inflammable materials like petrol.</li><li><strong>How CO<sub>2</sub> Works</strong>: Being heavier than oxygen, CO<sub>2</sub> forms a blanket over the fire, cutting off the fuel's contact with oxygen.</li><li><strong>Cooling Effect of CO<sub>2</sub></strong>: When released from cylinders (where it's stored as liquid under high pressure), CO<sub>2</sub> expands greatly and cools down, further helping to reduce the fuel's temperature.</li><li><strong>Sources of CO<sub>2</sub></strong>: Can be stored in high-pressure cylinders or generated by releasing dry powders of chemicals like sodium bicarbonate (baking soda) or potassium bicarbonate near the fire.</li></ul></details></details><details><summary><strong>4.3 Types of Combustion</strong></summary><ul><li><strong>Rapid Combustion</strong>: A type of combustion where a substance burns quickly and produces heat and light (e.g., the burning of cooking gas in a stove).</li><li><strong>Spontaneous Combustion</strong>: Combustion where a material suddenly bursts into flames without any apparent external cause or heat application (e.g., phosphorus burning in air at room temperature, coal dust fires in mines, or some forest fires caused by heat of the sun or lightning).</li><li><strong>Explosion</strong>: A sudden reaction accompanied by the rapid evolution of heat, light, and sound, and the liberation of a large amount of gas (e.g., ignited fireworks). Explosions can also occur if pressure is applied to a cracker.</li></ul></details><details><summary><strong>4.4 Flame</strong></summary><ul><li><strong>Flame Production</strong>: Substances that vapourise during burning produce a flame (e.g., kerosene oil and molten wax rise through a wick and vapourise).</li><li><strong>Non-Flame Burning</strong>: Substances that do not vapourise during burning do not produce a flame (e.g., charcoal).</li><li><strong>Flame Appearance</strong>: Different substances produce flames of varying colours (e.g., LPG flame, candle flame).</li></ul></details><details><summary><strong>4.5 Structure of a Flame</strong></summary><ul><li><strong>Vapour Source</strong>: Experiments using a glass tube inserted into a candle flame demonstrate that the vapours from molten wax are what produce the flame.</li><li><strong>Luminous Zone</strong>: When a glass plate is held in the luminous (yellow) zone of a candle flame, a blackish ring forms, indicating the presence of unburnt carbon particles.</li><li><strong>Hottest Zone Identification</strong>: A thin copper wire held just inside the non-luminous (outermost) zone of a flame turns red hot, signifying that this is the hottest part.</li><li><strong>Zones of a Candle Flame</strong>: A candle flame consists of three distinct zones:<ul><li><strong>Outer Zone</strong>: The hottest part, characterized by complete combustion and a blue colour.</li><li><strong>Middle Zone</strong>: Moderately hot, where partial combustion occurs, producing a yellow and luminous flame.</li><li><strong>Innermost Zone</strong>: The least hot part, consisting of unburnt wax vapours and appearing black.</li></ul></li><li><strong>Goldsmiths' Application</strong>: Goldsmiths use a metallic blow-pipe to direct the outermost (hottest) zone of the flame for melting gold and silver due to its high temperature.</li></ul></details><details><summary><strong>4.6 What is a Fuel?</strong></summary><ul><li><strong>Definition</strong>: Substances like wood, charcoal, petrol, and kerosene that serve as sources of heat energy for domestic and industrial purposes.</li><li><strong>Characteristics of a Good Fuel (Ideal Fuel)</strong>:<ul><li>Readily available and inexpensive.</li><li>Burns easily in air at a moderate rate.</li><li>Produces a large amount of heat.</li><li>Does not leave behind any undesirable or polluting substances.</li></ul></li><li><strong>Ideal Fuel Concept</strong>: No fuel is perfectly ideal; the choice depends on specific requirements and applications.</li><li><strong>Classification of Fuels</strong>: Fuels can be grouped based on their physical state:<ul><li><strong>Solid Fuels</strong>: Coal, wood, charcoal, cow dung cake.</li><li><strong>Liquid Fuels</strong>: Kerosene oil, petrol, diesel.</li><li><strong>Gaseous Fuels</strong>: Natural gas, CNG (Compressed Natural Gas), LPG (Liquified Petroleum Gas), biogas, hydrogen.</li></ul></li></li></ul></details><details><summary><strong>4.7 Fuel Efficiency</strong></summary><ul><li><strong>Calorific Value</strong>: The measure of heat energy produced upon the complete combustion of 1 kg of a fuel.</li><li><strong>Unit of Calorific Value</strong>: Expressed in kilojoule per kg (kJ/kg).</li><li><strong>Examples of Calorific Values (approx. kJ/kg)</strong>:<ul><li><strong>Cow dung cake</strong>: 6000-8000</li><li><strong>Wood</strong>: 17000-22000</li><li><strong>Coal</strong>: 25000-33000</li><li><strong>Petrol, Kerosene, Diesel</strong>: 45000</li><li><strong>Methane, CNG</strong>: 50000</li><li><strong>LPG</strong>: 55000</li><li><strong>Biogas</strong>: 35000-40000</li><li><strong>Hydrogen</strong>: 150000 (highest among common fuels)</li></ul></li></ul></details><details><summary><strong>4.8 Harmful Products of Burning Fuels</strong></summary><ul><li><strong>Environmental Impact</strong>: Increasing fuel consumption leads to various harmful effects on the environment.</li><li><strong>Unburnt Carbon Particles</strong>: Released by carbon fuels (wood, coal, petroleum), these fine particles are dangerous pollutants that cause respiratory diseases like asthma.</li><li><strong>Carbon Monoxide (CO)</strong>: Produced by the incomplete combustion of fuels; it is a very poisonous gas. Burning coal in a closed room is extremely hazardous and can be fatal.</li><li><strong>Carbon Dioxide (CO<sub>2</sub>)</strong>: Released by the combustion of most fuels. An increased concentration of CO<sub>2</sub> in the atmosphere is linked to <strong>Global Warming</strong>.</li><li><strong>Global Warming Effects</strong>: Leads to a rise in Earth's atmospheric temperature, causing polar glaciers to melt, sea levels to rise, and increased flooding in coastal areas.</li><li><strong>Acid Rain Precursors</strong>:<ul><li><strong>Sulphur Dioxide (SO<sub>2</sub>)</strong>: A suffocating and corrosive gas released by burning coal and diesel.</li><li><strong>Oxides of Nitrogen (NO<sub>x</sub>)</strong>: Released by petrol engines.</li></ul></li><li><strong>Acid Rain Formation</strong>: These oxides dissolve in rainwater to form acids, resulting in <strong>Acid Rain</strong>, which is highly detrimental to crops, buildings, and soil.</li><li><strong>Cleaner Fuels</strong>: CNG (Compressed Natural Gas) is being adopted in automobiles as it produces significantly smaller amounts of harmful pollutants, making it a cleaner fuel.</li></ul></details><details><summary><strong>4.9 Key Concepts and Summary</strong></summary><ul><li><strong>Combustible Substances</strong>: Materials that burn in air.</li><li><strong>Oxygen (in Air)</strong>: Essential for the process of combustion.</li><li><strong>Energy Release</strong>: Heat and light are typically given out during combustion.</li><li><strong>Ignition Temperature</strong>: The minimum temperature required for a combustible substance to catch fire.</li><li><strong>Inflammable Substances</strong>: Characterized by a very low ignition temperature.</li><li><strong>Fire Control</strong>: Achieved by eliminating one or more of the requirements necessary for producing fire (fuel, air, heat).</li><li><strong>Water as Extinguisher</strong>: Commonly used for fires involving wood and paper.</li><li><strong>Water Limitations</strong>: Cannot be used for fires involving electrical equipment or oils due to conductivity and density differences.</li><li><strong>Types of Combustion</strong>: Includes rapid combustion, spontaneous combustion, and explosions.</li><li><strong>Flame Zones</strong>: A flame consists of dark, luminous, and non-luminous zones.</li><li><strong>Ideal Fuel Characteristics</strong>: Cheap, readily available, easily combustible, transportable, possesses a high calorific value, and produces minimal pollution.</li><li><strong>Fuel Efficiency</strong>: Quantified by its calorific value, measured in kilojoule per kg.</li><li><strong>Pollutants from Fuels</strong>:<ul><li><strong>Unburnt Carbon Particles</strong>: Cause respiratory problems.</li><li><strong>Carbon Monoxide</strong>: A poisonous gas from incomplete combustion.</li><li><strong>Carbon Dioxide</strong>: Contributes to global warming.</li><li><strong>Oxides of Sulphur and Nitrogen</strong>: Lead to acid rain.</li></ul></li></ul></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 4</strong> of the Class 8 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "08-chapter-03-coal-and-petroleum.html";
+      } else {
+        window.location.href = "08-chapter-05-conservation-of-plants-and-animals.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

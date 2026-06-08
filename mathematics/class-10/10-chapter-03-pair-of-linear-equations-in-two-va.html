@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Pair of Linear Equations in Two Variables</title>
+  <title>Class 10 — Chapter 3: Pair of Linear Equations in Two Variables</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class="topic-box"><summary class="topic-title">3.1 Introduction</summary><ul><li>A <span class="keyword">linear equation in two variables</span> is of the form <em>ax + by + c = 0</em>, where <em>a</em>, <em>b</em>, and <em>c</em> are real numbers, and <em>a</em> and <em>b</em> are not both zero.</li><li>A pair of such equations is called a <span class="keyword">pair of linear equations in two variables</span>.</li></ul></details><details class="topic-box"><summary class="topic-title">3.2 Graphical Method of Solution</summary><ul><li><span class="keyword">Consistent Pair:</span> A pair of linear equations that has at least one solution.</li><li><span class="keyword">Inconsistent Pair:</span> A pair of linear equations that has no solution.</li><li><span class="keyword">Dependent Pair:</span> A pair of linear equations that are equivalent and have infinitely many solutions (always consistent).</li></ul><details class="sub-topic"><summary><h3>Algebraic and Graphical Relationships</h3></summary><p>For a pair of linear equations: <em>a₁x + b₁y + c₁ = 0</em> and <em>a₂x + b₂y + c₂ = 0</em>:</p><ul><li><strong>Intersecting Lines:</strong> If <em>a₁/a₂ ≠ b₁/b₂</em>, the lines intersect at a single point. There is <span class="keyword">exactly one unique solution</span> (Consistent).</li><li><strong>Coincident Lines:</strong> If <em>a₁/a₂ = b₁/b₂ = c₁/c₂</em>, the lines coincide. There are <span class="keyword">infinitely many solutions</span> (Dependent/Consistent).</li><li><strong>Parallel Lines:</strong> If <em>a₁/a₂ = b₁/b₂ ≠ c₁/c₂</em>, the lines are parallel. There is <span class="keyword">no solution</span> (Inconsistent).</li></ul></details></details><details class="topic-box"><summary class="topic-title">3.3 Algebraic Methods of Solving a Pair of Linear Equations</summary><details class="sub-topic"><summary><h3>3.3.1 Substitution Method</h3></summary><ul><li><span class="keyword">Step 1:</span> Express one variable (say <em>y</em>) in terms of the other variable (say <em>x</em>) from any one of the equations.</li><li><span class="keyword">Step 2:</span> Substitute this value of <em>y</em> in the other equation to reduce it to a linear equation in one variable <em>x</em>, and solve it.</li><li><span class="keyword">Step 3:</span> Substitute the value of <em>x</em> obtained in Step 2 into the equation from Step 1 to get the value of <em>y</em>.</li></ul></details><details class="sub-topic"><summary><h3>3.3.2 Elimination Method</h3></summary><ul><li><span class="keyword">Step 1:</span> Multiply both equations by suitable non-zero constants to make the coefficients of one variable (either <em>x</em> or <em>y</em>) numerically equal.</li><li><span class="keyword">Step 2:</span> Add or subtract one equation from the other so that one variable gets eliminated, leaving an equation in one variable.</li><li><span class="keyword">Step 3:</span> Solve this equation to find the value of the remaining variable.</li><li><span class="keyword">Step 4:</span> Substitute this value in either of the original equations to find the value of the other variable.</li></ul></details></details><details class="topic-box"><summary class="topic-title">3.4 Summary</summary><ul><li>A pair of linear equations can be solved graphically or algebraically.</li><li>Algebraic methods include the <span class="keyword">Substitution Method</span> and the <span class="keyword">Elimination Method</span>.</li><li>The ratio comparison of coefficients determines the nature of solutions directly without plotting.</li></ul></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 3</strong> of the Class 10 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "10-chapter-02-polynomials.html";
+      } else {
+        window.location.href = "10-chapter-04-quadratic-equations.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

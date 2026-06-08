@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>The Value of Work</title>
+  <title>Class 6 — Chapter 13: The Value of Work</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class="topic-box"><summary class="topic-title">13.1 Introduction to Work and Activities</summary><p>Every day, people around us engage in various types of activities to run their households, serve the community, or earn a livelihood.</p><details class="sub-topic"><summary><h3>The Big Questions</h3></summary><ul><li>What are the different types of activities that people engage in?</li><li>What is their contribution to our everyday lives?</li></ul></details><details class="sub-topic"><summary><h3>A Story of Everyday Work</h3></summary><p>Through the story of Anu and Kabir, we observe different individuals performing diverse roles:</p><ul><li><strong>Geeta Aunty:</strong> A pilot in the <span class="keyword">Indian Air Force</span> who serves the nation.</li><li><strong>Kabir's Grandfather:</strong> A retired Border Security Force officer who voluntarily teaches free Geography classes to neighbourhood kids, tends to a vegetable garden, and runs household errands.</li><li><strong>Anu's Parents:</strong> Run a shop selling uniforms and ready-made garments.</li><li><strong>Anu's Maa:</strong> Helps in the shop and also volunteers to teach knitting to women in the community.</li><li><strong>Rohan (Anu's Brother):</strong> A software engineer who also volunteers on weekends to teach computer skills at a nearby college.</li></ul></details></details><details class="topic-box"><summary class="topic-title">13.2 Economic vs. Non-Economic Activities</summary><p>Human activities are broadly classified into two major categories based on their purpose and monetary involvement.</p><details class="sub-topic"><summary><h3>Economic Activities</h3></summary><p><span class="keyword">Economic activities</span> are those that involve money or are performed in exchange for money or money's worth.</p><ul><li><strong>Examples:</strong> A business person selling school bags, a farmer selling produce, a lawyer arguing a case for a fee, a truck driver transporting goods, or factory workers.</li><li><strong><span class="keyword">Market</span>:</strong> A place where people engage in the exchange of goods and services, usually for money.</li><li><strong><span class="keyword">Fee</span>:</strong> A payment made to a person or organisation in exchange for professional advice or services (e.g., paid to a doctor or lawyer).</li><li><strong><span class="keyword">Money's worth</span>:</strong> The monetary value that a person places on an object based on the benefit they derive from it.</li></ul></details><details class="sub-topic"><summary><h3>Non-Economic Activities</h3></summary><p><span class="keyword">Non-economic activities</span> are those that do not generate income or wealth but are done out of feelings like gratitude, love, care, and respect.</p><ul><li><strong>Examples:</strong> Parents cooking food for the family, helping children with schoolwork, youth taking care of grandparents, or family members helping in home renovation.</li></ul></details></details><details class="topic-box"><summary class="topic-title">13.3 Types of Economic Activities and Compensation</summary><p>Economic activities differ in how individuals are compensated for their labor and skills.</p><details class="sub-topic"><summary><h3>Modes of Compensation</h3></summary><ul><li><strong><span class="keyword">Salary</span>:</strong> A fixed regular payment, generally paid monthly by an employer to an employee (e.g., pilots, software engineers, post office employees).</li><li><strong><span class="keyword">Wage</span>:</strong> A payment made by the employer to the worker for a specific period of time, often on a daily basis (e.g., farm labourers).</li><li><strong><span class="keyword">Payment in kind</span>:</strong> A non-cash payment received for the work performed (e.g., receiving a portion of wages in the form of agricultural produce like mangoes).</li></ul></details><details class="sub-topic"><summary><h3>Value Addition</h3></summary><p><span class="keyword">Value addition</span> is the process of adding value at each stage of transforming a raw material into a finished product.</p><p><strong>Example of Rajesh the Carpenter:</strong></p><ul><li>Cost of raw wood: $₹600$</li><li>Selling price of the finished chair: $₹1,000$</li><li>Value added by Rajesh's skill, time, and effort: $$₹1,000 - ₹600 = ₹400$$</li></ul></details></details><details class="topic-box"><summary class="topic-title">13.4 The Importance of Non-Economic Activities</summary><p>Even though non-economic activities do not involve monetary transactions, they generate immense social and personal value.</p><details class="sub-topic"><summary><h3>Sevā (Selfless Service)</h3></summary><p><span class="keyword">Sevā</span> fosters a sense of satisfaction, community bonding, and gratitude.</p><ul><li><strong>Example:</strong> <span class="keyword">Langars</span> or community kitchens at Gurudwaras that serve free food to all visitors.</li></ul></details><details class="sub-topic"><summary><h3>Community Participation</h3></summary><p>Collective efforts of citizens contribute to the welfare of society and the nation.</p><ul><li><strong><span class="keyword">Swachh Bharat Abhiyan</span>:</strong> A collective national effort to keep surroundings, streets, parks, and public places clean.</li><li><strong><span class="keyword">Van Mahotsav</span>:</strong> The festival of forests in India, bringing communities together for tree plantation drives to promote environmental conservation.</li></ul></details></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 13</strong> of the Class 6 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "06-chapter-12-grassroots-democracy-part-3-local.html";
+      } else {
+        window.location.href = "06-chapter-14-economic-activities-around-us.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

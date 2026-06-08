@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Data Handling and Presentation</title>
+  <title>Class 6 — Chapter 4: Data Handling and Presentation</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class="topic-box"><summary class="topic-title">4.1 Collecting and Organising Data</summary><p>Any collection of facts, numbers, measures, observations or other descriptions of things that convey information about those things is called <span class="keyword">data</span>.</p><details class="sub-topic"><summary><h3>Tally Marks and Frequency</h3></summary><p>To organise data systematically, we can use tally marks. A tally mark $|$ represents one occurrence. When the count reaches $5$, a diagonal line is drawn through the previous four marks to represent a group of five: $\cancel{||||}$.</p><p>The number of times a particular value or preference occurs is called its <span class="keyword">frequency</span>.</p></details></details><details class="topic-box"><summary class="topic-title">4.2 Pictographs</summary><p>A <span class="keyword">pictograph</span> represents data through pictures or symbols of objects. It helps in understanding and interpreting data at a quick glance.</p><details class="sub-topic"><summary><h3>Scale or Key in Pictographs</h3></summary><p>A <span class="keyword">scale</span> or <span class="keyword">key</span> is essential to define what each symbol represents. For example:</p><ul><li>$\odot = 1\text{ student}$</li><li>$\odot = 10\text{ students}$</li><li>$\triangle = 10\text{ children}$, where a half triangle represents $5$ children.</li></ul><p>Preparing a pictograph can be challenging when the data is large or when frequencies are not exact multiples of the scale.</p></details></details><details class="topic-box"><summary class="topic-title">4.3 Bar Graphs</summary><p>A <span class="keyword">bar graph</span> (or column graph) is a visual representation of data using bars of uniform width, drawn horizontally or vertically with equal spacing between them.</p><ul><li>The length or height of each bar represents the frequency of the corresponding category.</li><li>A suitable scale must be chosen to represent large frequencies.</li></ul></details><details class="topic-box"><summary class="topic-title">4.4 Drawing a Bar Graph</summary><p>To draw a bar graph, follow these steps:</p><ol><li>Draw two perpendicular lines: a horizontal axis and a vertical axis.</li><li>Along one axis (usually horizontal), mark the categories with equal spacing.</li><li>Along the other axis (usually vertical), mark the frequencies using a chosen scale (e.g., $1\text{ unit length} = 10\text{ units}$).</li><li>Draw rectangular bars of uniform width whose heights correspond to the respective frequencies.</li></ol></details><details class="topic-box"><summary class="topic-title">4.5 Artistic and Aesthetic Considerations</summary><p>Visual presentations should be appealing, easy to understand, and fit the intended space. Choosing the correct scale and orientation is crucial.</p><ul><li><strong>Vertical Bars (Column Graphs):</strong> Best suited for representing heights or quantities measured upwards from the ground.</li><li><strong>Horizontal Bars:</strong> Best suited for representing lengths parallel to the ground (e.g., river lengths, distances).</li></ul><details class="sub-topic"><summary><h3>Infographics</h3></summary><p><span class="keyword">Infographics</span> (information graphics) are data visualisations beautified with extensive artistic and visual imagery to attract attention and communicate information quickly.</p><p><strong>Caution:</strong> While infographics are visually appealing, they can sometimes be misleading if the proportions (such as width and height) are not maintained accurately.</p></details></details><details class="topic-box"><summary class="topic-title">Summary</summary><ul><li><span class="keyword">Data</span> is a collection of facts, numbers, measures, or observations.</li><li>Data can be organised in tabular form using <span class="keyword">tally marks</span>.</li><li><span class="keyword">Frequencies</span> are the counts of occurrences of values.</li><li><span class="keyword">Pictographs</span> represent data using pictures, with a specified scale.</li><li><span class="keyword">Bar graphs</span> use bars of uniform width, where height/length represents frequency.</li><li>Markings of unit lengths on a bar graph scale must always start from zero.</li></ul></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 4</strong> of the Class 6 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "06-chapter-03-number-play.html";
+      } else {
+        window.location.href = "06-chapter-05-prime-time.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

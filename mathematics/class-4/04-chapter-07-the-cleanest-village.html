@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>The Cleanest Village</title>
+  <title>Class 4 — Chapter 7: The Cleanest Village</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class="topic-box"><summary class="topic-title">7.1 My School Trip</summary><p>Daisy and Lou study in Grade 4 in Shillong, Meghalaya. Their school has organized a field trip to <span class="keyword">Mawlynnong</span>, known as Asia's Cleanest Village.</p><ul><li><strong>Trip Date:</strong> December 30, 2025</li><li><strong>Cost:</strong> $\text{‑ } 500$ per child</li><li><strong>Key Attractions:</strong> Jingmaham Living Root Bridge, Church of the Epiphany, Mawlynnong Waterfall</li><li><strong>Location:</strong> East Khasi Hills, $79\text{ km}$ from Shillong</li><li><strong>Population:</strong> Khasi Tribe ($77$ families, $414$ people)</li><li><strong>Activities:</strong> Sightseeing, Rich Culture, Nature</li></ul></details><details class="topic-box"><summary class="topic-title">7.2 Daisy and Lou Go Shopping</summary><p>Before the trip, Daisy and Lou join their mother for weekly shopping to buy fruits, vegetables, and field trip items.</p><details class="sub-topic"><summary><h3>Price List (Cost per $1\text{ kg}$)</h3></summary><ul><li>Custard apple: $\text{‑ } 45$</li><li>Beans: $\text{‑ } 95$</li><li>Radish: $\text{‑ } 23$</li><li>Onion: $\text{‑ } 32$</li><li>Potato: $\text{‑ } 37$</li><li>Yam: $\text{‑ } 45$</li><li>Sapota: $\text{‑ } 70$</li><li>Papaya: $\text{‑ } 65$</li><li>Banana: $\text{‑ } 55$</li></ul></details><details class="sub-topic"><summary><h3>Shopping Calculations</h3></summary><p>Calculate the costs for different quantities:</p><ul><li><strong>$2\text{ kg}$ of beans:</strong> $2 \times 95 = \text{‑ } 190$</li><li><strong>$1\text{ kg}$ of custard apple and $1\text{ kg}$ of sapota:</strong> $45 + 70 = \text{‑ } 115$</li><li><strong>$1\text{ kg}$ of onion and $1\text{ kg}$ of potato:</strong> $32 + 37 = \text{‑ } 69$</li><li><strong>$1\text{ kg}$ of radish and $1\text{ kg}$ of yam:</strong> $23 + 45 = \text{‑ } 68$</li><li><strong>$2\text{ kg}$ of radish and $2\text{ kg}$ of papaya:</strong> $2 \times 23 + 2 \times 65 = 46 + 130 = \text{‑ } 176$</li><li><strong>$2\text{ kg}$ of onion and $2\text{ kg}$ of potato:</strong> $2 \times 32 + 2 \times 37 = 64 + 74 = \text{‑ } 138$</li></ul></details></details><details class="topic-box"><summary class="topic-title">7.3 A Strange Puzzle!</summary><p>Four kids on a walk buy $2$ oranges each from a farmer. Each orange costs $\text{‑ } 21$. The total cost for each kid is $2 \times 21 = \text{‑ } 42$.</p><p>Calculate the balance each kid receives based on the note they paid with:</p><ul><li><strong>Krishna:</strong> Paid $\text{‑ } 50$ $\rightarrow$ Balance: $50 - 42 = \text{‑ } 8$</li><li><strong>Sudama:</strong> Paid $\text{‑ } 100$ $\rightarrow$ Balance: $100 - 42 = \text{‑ } 58$</li><li><strong>Mala:</strong> Paid $\text{‑ } 200$ $\rightarrow$ Balance: $200 - 42 = \text{‑ } 158$</li><li><strong>Neela:</strong> Paid $\text{‑ } 500$ $\rightarrow$ Balance: $500 - 42 = \text{‑ } 458$</li></ul></details><details class="topic-box"><summary class="topic-title">7.4 Let Us Play: Triangle Number Puzzle</summary><p>Place the numbers $1\text{--}6$ in the circles of a triangle such that the sum of the numbers on each side is equal.</p><ul><li><strong>To get a sum of $9$ on each side:</strong> Place the smaller numbers $1$, $2$, and $3$ at the corners of the triangle.</li><li><strong>To get a sum of $10$ on each side:</strong> Place the numbers $4$, $5$, and $6$ at the corners of the triangle.</li></ul></details><details class="topic-box"><summary class="topic-title">7.5 Addition with Regrouping</summary><p>Learn how to add multi-digit numbers by regrouping ones into tens, and tens into hundreds.</p><details class="sub-topic"><summary><h3>Example 1: Teachers Accompanying Children</h3></summary><p>Add $24$ teachers from one school and $28$ teachers from another school:</p><p>$$24 + 28 = 52$$</p><p><strong>Regrouping Process:</strong> $4\text{ Ones} + 8\text{ Ones} = 12\text{ Ones} = 1\text{ Ten} + 2\text{ Ones}$.</p></details><details class="sub-topic"><summary><h3>Example 2: Total Children on the Trip</h3></summary><p>Add $438$ children from one school and $476$ children from another school:</p><p>$$438 + 476 = 914$$</p><p><strong>Regrouping Process:</strong> $8\text{ Ones} + 6\text{ Ones} = 14\text{ Ones} = 1\text{ Ten} + 4\text{ Ones}$. Then, $1\text{ Ten} + 3\text{ Tens} + 7\text{ Tens} = 11\text{ Tens} = 1\text{ Hundred} + 1\text{ Ten}$.</p></details></details><details class="topic-box"><summary class="topic-title">7.6 Subtraction with Regrouping</summary><p>Learn how to subtract multi-digit numbers by regrouping hundreds into tens, and tens into ones.</p><details class="sub-topic"><summary><h3>Example 1: Comparing Snack Choices</h3></summary><p>$83$ children bought <span class="keyword">Pusaw</span> (a traditional Khasi snack made of red rice) and $46$ children bought fruit plates. How many more children bought Pusaw?</p><p>$$83 - 46 = 37$$</p><p><strong>Regrouping Process:</strong> Since $3 < 6$, regroup $1\text{ Ten}$ from $8\text{ Tens}$ to make $13\text{ Ones}$. Then, $13 - 6 = 7\text{ Ones}$ and $7\text{ Tens} - 4\text{ Tens} = 3\text{ Tens}$.</p></details><details class="sub-topic"><summary><h3>Example 2: Money Spent on Food and Gifts</h3></summary><p>Lou and Daisy brought $\text{‑ } 310$ in total. They are left with $\text{‑ } 179$. How much money did they spend?</p><p>$$310 - 179 = 131$$</p></details></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 7</strong> of the Class 4 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "04-chapter-06-measuring-length.html";
+      } else {
+        window.location.href = "04-chapter-08-weigh-it-pour-it.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

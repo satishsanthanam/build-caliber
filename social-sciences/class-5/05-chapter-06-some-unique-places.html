@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Some Unique Places</title>
+  <title>Class 5 — Chapter 6: Some Unique Places</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class="topic-box"><summary class="topic-title">6.1 Introduction to India's Unique Places</summary><p>Shanti and her parents plan a summer vacation starting from the southernmost tip of India to explore the diverse and unique geographical regions of the country.</p></details><details class="topic-box"><summary class="topic-title">6.2 Islands of India</summary><details class="sub-topic"><summary><h3>6.2.1 Andaman and Nicobar Islands</h3></summary><p>The southernmost tip of India is <span class="keyword">Indira Point</span>, located in the <span class="keyword">Andaman and Nicobar Islands</span>, which is a long chain of islands in the Bay of Bengal.</p><ul><li>An <span class="keyword">island</span> is a land surrounded by water on all sides. There are over a thousand islands in the seas around India.</li><li>The capital city of the Andaman and Nicobar Islands is <span class="keyword">Sri Vijaya Puram</span>.</li></ul></details><details class="sub-topic"><summary><h3>6.2.2 Unique Flora and Fauna</h3></summary><p>The tropical forests of these islands are home to unique species found nowhere else:</p><ul><li>Trees with large, wide-spreading roots at the bottom that act as supports to keep them standing upright in wet soil.</li><li>Endemic birds such as the <span class="keyword">Andaman wood pigeon</span> and the <span class="keyword">Andaman hornbill</span>.</li></ul></details><details class="sub-topic"><summary><h3>6.2.3 Marine Life and Corals</h3></summary><p>The <span class="keyword">Marine Interpretation Centre</span> showcases the rich underwater ecosystem:</p><ul><li><span class="keyword">Corals</span> are tiny sea animals that form colorful reefs, providing shelter and homes to many marine creatures.</li><li>Marine life is crucial for the ecological balance of the entire Earth.</li></ul></details><details class="sub-topic"><summary><h3>6.2.4 North Sentinel Island</h3></summary><p>An isolated island where the indigenous Sentinelese people live as ancient hunter-gatherers. They choose to remain isolated from the modern world. During the 2004 tsunami, their deep connection and observation of nature (changes in wind, sea, and animal behavior) helped them survive safely.</p></details></details><details class="topic-box"><summary class="topic-title">6.3 Sundarbans: Home of the Mangroves</summary><p>Located where the river Ganga meets the sea, the <span class="keyword">Sundarbans</span> is the largest <span class="keyword">mangrove forest</span> in the world. The land here is muddy and salty.</p><details class="sub-topic"><summary><h3>6.3.1 Mangrove Trees and Breathing Roots</h3></summary><ul><li>Mangroves have special roots that grow upwards out of the water and muddy soil to help them breathe in the oxygen-depleted salt water.</li><li>These roots hold the soil together, preventing waves from washing the land away.</li></ul></details><details class="sub-topic"><summary><h3>6.3.2 Human-Wildlife Coexistence</h3></summary><p>The Sundarbans is famous for the Royal Bengal Tiger. Local fishermen and honey-gatherers wear masks on the back of their heads because tigers usually attack their prey from behind; the masks confuse the tigers into thinking they are being watched.</p></details></details><details class="topic-box"><summary class="topic-title">6.4 Northeast India: Green Hills and Great Traditions</summary><p>Northeast India consists of the <span class="keyword">Seven Sisters</span> states along with <span class="keyword">Sikkim</span>. It is a region where culture and nature grow closely together.</p><details class="sub-topic"><summary><h3>6.4.1 Biodiversity and Culture</h3></summary><ul><li><span class="keyword">Bhut Jolokia</span> (ghost pepper), grown in this region, is one of the hottest chillies in the world and is used in food and to keep wild elephants away from crops.</li><li>The local communities actively protect the <span class="keyword">Hargila bird</span> (Greater Adjutant Stork) by safeguarding their nesting trees.</li><li><span class="keyword">Living root bridges</span> are created by training the roots of rubber trees across streams. Over time, these roots grow strong enough to serve as sturdy pedestrian bridges.</li></ul></details></details><details class="topic-box"><summary class="topic-title">6.5 The Western Ghats</summary><p>The <span class="keyword">Western Ghats</span> is a long mountain range and forested hill chain running parallel to the western coast of India, known as a global biodiversity <span class="keyword">hotspot</span>.</p><details class="sub-topic"><summary><h3>6.5.1 Endemic Species and Rivers</h3></summary><ul><li>Home to rare animals like the <span class="keyword">Indian Giant Squirrel</span> and the <span class="keyword">lion-tailed macaque</span>.</li><li>It is the source of several major peninsular rivers of India.</li><li>Rich in plants used in traditional medicine.</li></ul></details><details class="sub-topic"><summary><h3>6.5.2 Silent Valley National Park</h3></summary><p>A unique rainforest in Kerala known for being exceptionally quiet because it lacks the typical buzzing sound of cicada insects. It was saved from being flooded by a planned dam through the historic <span class="keyword">Save Silent Valley Movement</span> led by local citizens, students, and scientists.</p></details><details class="sub-topic"><summary><h3>6.5.3 Protected Areas</h3></summary><p><span class="keyword">Protected areas</span> are special regions like national parks, wildlife sanctuaries, and tiger reserves kept safe by the government to protect wildlife and habitats. The Western Ghats contain over 50 such protected areas.</p></details></details><details class="topic-box"><summary class="topic-title">6.6 Let Us Reflect: Aquatic Animals and Their Features</summary><ul><li><strong>Dolphin:</strong> Smart mammals that breathe air and live in groups.</li><li><strong>Sea Turtle:</strong> Animals with hard shells that return to the beach where they were born to lay eggs.</li><li><strong>Coral:</strong> Tiny sea animals that form colorful reefs and homes for fish.</li><li><strong>Seahorse:</strong> Fish that swims upright, with a face resembling a horse.</li><li><strong>Clownfish:</strong> Lives safely among stinging sea anemones.</li><li><strong>Starfish:</strong> Has no brain but can regrow its arms if lost.</li><li><strong>Jellyfish:</strong> Has a soft, transparent body and stings with its tentacles.</li><li><strong>Octopus:</strong> Has eight arms and can change its color to hide.</li></ul></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 6</strong> of the Class 5 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "05-chapter-05-our-vibrant-country.html";
+      } else {
+        window.location.href = "05-chapter-07-energyhow-things-work.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Going to the Mela</title>
+  <title>Class 3 — Chapter 2: Going to the Mela</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class="topic-box"><summary class="topic-title">Chapter 2: Going to the Mela</summary><p>This chapter follows Nita, Radha, and their family and friends as they prepare for and visit a local <span class="keyword">mela</span> (fair), highlighting family bonding, community, travel safety, and local geography.</p><details class="sub-topic"><summary><h3>1. Preparing for the Mela</h3></summary><p>The excitement builds as the family gets ready to visit the mela, which is located a little far from their home.</p><ul><li><strong>Family & Friends:</strong> Nita, Radha, their mother, father, and grandmother (<span class="keyword">Dadiji</span>) are joined by their neighbors (Sneha and Rohit) and <span class="keyword">Mohan Chacha</span> (paternal uncle) with his family.</li><li><strong>Caring for Elders:</strong> Although Dadiji's legs hurt, the family encourages her to come along, promising to take care of her.</li><li><strong>Travel Planning:</strong> Mohan Chacha's family arrives by train and plans to take a city bus and an autorickshaw to meet everyone directly at the mela ground.</li></ul><p><strong>Discussion Question:</strong> How do you prepare yourself for a trip?</p></details><details class="sub-topic"><summary><h3>2. On the Way to the Mela</h3></summary><p>The journey to the mela involves walking safely and using public transport.</p><ul><li><strong>Walking Safely:</strong> Nita holds Dadiji's hand and leads her slowly to the bus stop, walking carefully while keeping an eye on vehicles in both directions.</li><li><strong>Bus Journey:</strong> They board Bus number 401. Dadiji sits in a seat reserved for older people.</li><li><strong>Travel Safety Rules:</strong><ul><li>Sit properly on seats and do not jump around.</li><li>Do not put hands or heads out of the window.</li></ul></li></ul><p><strong>Questions:</strong></p><ul><li>What transport do you take to travel within your city/town/village?</li><li>Describe briefly any trip that you have taken with your friends, neighbours, or family.</li></ul></details><details class="sub-topic"><summary><h3>3. At the Mela</h3></summary><p>The families arrive at the big parade ground where the mela is being held.</p><ul><li><strong>Safety & Support Services:</strong> At the entrance, there is a map of the mela ground, an ambulance, a police jeep, a fire engine, and a <span class="keyword">Lost and Found</span> booth with volunteers.</li><li><strong>Accessibility:</strong> Mohan Chacha and Rohit get a wheelchair for Dadiji so she can enjoy the fair comfortably.</li><li><strong>Attractions & Stalls:</strong><ul><li><strong>Shopping:</strong> Stalls selling toys, games, spinning tops, puppets, <span class="keyword">phirkis</span>, dolls, bangles, and other trinkets.</li><li><strong>Rides & Entertainment:</strong> The merry-go-round, giant wheel, and a magic show.</li><li><strong>Food & Hygiene:</strong> Before eating, the children wash their hands at a water point. They enjoy gol gappas, chaat, chhole kulche, hot jalebis with rabri, and kulfi. All waste is responsibly thrown into the dustbin.</li><li><strong>Security:</strong> A police officer accompanied by a <span class="keyword">police dog</span> patrols the mela.</li></ul></li></ul><p><strong>Do you know?</strong> <span class="keyword">Kumbh Mela</span> is the world's biggest festival and the largest gathering of mankind. It is held once every 12 years on the banks of rivers Ganga, Yamuna, Godavari, and Shipra in Haridwar, Prayagraj, Nashik, and Ujjain.</p></details><details class="sub-topic"><summary><h3>4. Exercises and Activities</h3></summary><ul><li><strong>Questions to Write:</strong><ul><li>What is the purpose of the 'Lost and Found' booth?</li><li>What is the role of the police dog?</li><li>Have you ever been to a mela? What are the things you liked most in the mela?</li></ul></li><li><strong>Activity 1: Reading a Sketch</strong><p>Students study a neighborhood map/sketch showing the locations of Sneha and Rohit's house, Nita and Radha's house, the library, bank, school, post office, police station, and the parade ground to answer spatial and routing questions.</p></li><li><strong>Drawing Exercise:</strong> Sketch the route from your home to school that you follow every day.</li><li><strong>Let us reflect:</strong><ol><li>How can we care for our elders?</li><li>What kinds of vehicles do we see around us?</li><li>How can we ensure safety during travel?</li></ol></li><li><strong>Role Play:</strong> Organise a mock mela in the classroom using local materials like toys, puppets, play money, and clay models.</li></ul></details></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 2</strong> of the Class 3 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "03-chapter-01-family-and-friends.html";
+      } else {
+        window.location.href = "03-chapter-03-celebrating-festivals.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Decoration for Festival</title>
+  <title>Class 2 — Chapter 6: Decoration for Festival</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class="topic-box"><summary class="topic-title">6.1 Decoration for Celebration (Introduction to 2-Digit Addition)</summary><p>Rohan and his friends are preparing garlands to decorate their homes for a celebration. Each <span class="keyword">garland</span> is made of exactly $10$ flowers.</p><details class="sub-topic"><summary><h3>Garland and Flower Count Table</h3></summary><p>Based on the number of garlands and loose flowers each child has, we can find the total number of flowers:</p><ul><li><strong>Rohan:</strong> $1$ garland and $2$ loose flowers $\rightarrow 10 + 2 = 12$ flowers</li><li><strong>Simran:</strong> $3$ garlands and $7$ loose flowers $\rightarrow 30 + 7 = 37$ flowers</li><li><strong>Akash:</strong> $4$ garlands and $8$ loose flowers $\rightarrow 40 + 8 = 48$ flowers</li><li><strong>Suwali:</strong> $5$ garlands and $3$ loose flowers $\rightarrow 50 + 3 = 53$ flowers</li><li><strong>Javed:</strong> $4$ garlands and $3$ loose flowers $\rightarrow 40 + 3 = 43$ flowers</li><li><strong>Zoha:</strong> $2$ garlands and $0$ loose flowers $\rightarrow 20 + 0 = 20$ flowers</li></ul></details><details class="sub-topic"><summary><h3>Combining Flowers (Basic Addition)</h3></summary><p>To find the total flowers used by two friends together, we add their individual counts:</p><ul><li><strong>Rohan and Suwali:</strong> $12 + 53 = 65$ flowers. <br>Using column addition: <br>$$\begin{array}{r@{\quad}l} \text{T} & \text{O} \\ 1 & 2 \\ + \; 5 & 3 \\ \hline 6 & 5 \end{array}$$</li><li><strong>Zoha and Javed:</strong> $20 + 43 = 63$ flowers.</li><li><strong>Zoha and Akash:</strong> $20 + 48 = 68$ flowers.</li></ul></details></details><details class="topic-box"><summary class="topic-title">6.2 Addition using Ginladi and Number Line</summary><p>We can perform addition visually using a bead string called a <span class="keyword">ginladi</span> or by jumping forward on a <span class="keyword">number line</span>.</p><details class="sub-topic"><summary><h3>Using Ginladi</h3></summary><ul><li>To solve $25 + 12$, start at $25$ and count $12$ beads ahead to reach $37$.</li><li>To solve $57 + 34$, break it down: $57 + 30 + 4 = 87 + 4 = 91$.</li><li>To solve $24 + 43$, break it down: $24 + 40 + 3 = 64 + 3 = 67$.</li></ul></details><details class="sub-topic"><summary><h3>Using Number Line</h3></summary><p>Jumping on a number line makes addition easier without counting individual beads:</p><ul><li><strong>$23 + 14 = 37$:</strong> Start at $23$, take a big jump of $+10$ to reach $33$, then $4$ small steps of $+1$ to reach $37$.</li><li><strong>$24 + 16 = 40$:</strong> Start at $24$, jump $+10$ to $34$, then $+6$ to reach $40$.</li><li><strong>$11 + 22 = 33$:</strong> Start at $11$, jump $+20$ to $31$, then $+2$ to reach $33$.</li></ul></details></details><details class="topic-box"><summary class="topic-title">6.3 Playing with Blocks (Addition with Regrouping)</summary><p>When adding two-digit numbers, we sometimes get more than $9$ ones. We must <span class="keyword">regroup</span> $10$ ones into $1$ ten.</p><details class="sub-topic"><summary><h3>Regrouping Example</h3></summary><p>Mahi has $2$ tens and $3$ ones ($23$ blocks). Isha has $3$ tens and $8$ ones ($38$ blocks).</p><ul><li>Total ones: $3 + 8 = 11$ ones.</li><li>Regroup $11$ ones into $1$ ten and $1$ one.</li><li>Total tens: $2 + 3 + 1 \text{ (carried over)} = 6$ tens.</li><li>Total blocks: $6$ tens and $1$ one = $61$ blocks.</li></ul></details><details class="sub-topic"><summary><h3>Column Addition with Carrying</h3></summary><p>To add $36 + 47$:</p><ol><li>Add the ones: $6 + 7 = 13$ ones. Write $3$ in the ones column and carry over $1$ to the tens column.</li><li>Add the tens: $3 + 4 + 1 \text{ (carry)} = 8$ tens.</li><li>Total sum: $83$.</li></ol></details><details class="sub-topic"><summary><h3>Practice Problems</h3></summary><ul><li>$46 + 39 = 85$</li><li>$56 + 19 = 75$</li><li>$36 + 8 = 44$</li><li>$30 + 58 = 88$</li><li>$45 + 35 = 80$</li></ul></details></details><details class="topic-box"><summary class="topic-title">6.4 Subtraction Concepts (Taking Away)</summary><p>Subtraction is the process of taking away a number of items from a group to find how many are left.</p><details class="sub-topic"><summary><h3>Using Ginladi and Number Line for Subtraction</h3></summary><ul><li><strong>Ginladi:</strong> To solve $75 - 35$, locate $75$ and count backward $35$ steps to reach $40$.</li><li><strong>Number Line:</strong> To solve $19 - 15$, start at $19$, jump backward $10$ steps to $9$, then $5$ steps backward to reach $4$.</li></ul></details><details class="sub-topic"><summary><h3>Practice Subtraction</h3></summary><ul><li>$18 - 9 = 9$</li><li>$12 - 8 = 4$</li><li>$30 - 18 = 12$</li><li>$23 - 14 = 9$</li><li>$26 - 17 = 9$</li><li>$38 - 11 = 27$</li><li>$22 - 22 = 0$ (Subtracting a number from itself results in zero)</li><li>$14 - 0 = 14$ (Subtracting zero leaves the number unchanged)</li></ul></details></details><details class="topic-box"><summary class="topic-title">6.5 Subtraction with Regrouping (Borrowing)</summary><p>When the ones digit of the number being subtracted is larger than the ones digit of the starting number, we must open a ten (borrow) and convert it into $10$ ones.</p><details class="sub-topic"><summary><h3>Garland Example</h3></summary><p>Jyoti has $46$ flowers ($4$ garlands of $10$ and $6$ loose flowers). She wants to give $18$ flowers to her mother.</p><ul><li>She cannot give $8$ loose flowers from $6$.</li><li>She opens $1$ garland, leaving her with $3$ garlands and $16$ loose flowers.</li><li>Now she subtracts: $16 - 8 = 8$ loose flowers, and $3 - 1 = 2$ garlands.</li><li>Flowers left: $28$.</li></ul></details><details class="sub-topic"><summary><h3>Practice Problems</h3></summary><ul><li>$45 - 18 = 27$</li><li>$84 - 37 = 47$</li><li>$65 - 45 = 20$</li><li>$93 - 48 = 45$</li></ul></details></details><details class="topic-box"><summary class="topic-title">6.6 Addition and Subtraction Facts & Pyramids</summary><p>Numbers share relationships that can be represented using fact families and mathematical pyramids.</p><details class="sub-topic"><summary><h3>Fact Families</h3></summary><p>A <span class="keyword">fact family</span> shows how three numbers are related through addition and subtraction:</p><ul><li><strong>Family of $20, 30, 50$:</strong><br>$20 + 30 = 50$<br>$30 + 20 = 50$<br>$50 - 30 = 20$<br>$50 - 20 = 30$</li></ul></details><details class="sub-topic"><summary><h3>Addition and Subtraction Pyramids</h3></summary><ul><li><strong>Addition Pyramid:</strong> The number in each block is the sum of the two blocks directly below it.</li><li><strong>Subtraction Pyramid:</strong> The number in each block is the difference of the blocks below it.</li></ul></details></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 6</strong> of the Class 2 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "02-chapter-05-playing-with-lines-orientations-of.html";
+      } else {
+        window.location.href = "02-chapter-07-ranis-gift-measurement.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

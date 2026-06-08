@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Acids, Bases and Salts</title>
+  <title>Class 10 — Chapter 2: Acids, Bases and Salts</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class="topic-box"><summary class="topic-title">2.1 Understanding the Chemical Properties of Acids and Bases</summary><details class="sub-topic"><summary><h3>2.1.1 Acids and Bases in the Laboratory</h3></summary><ul><li><span class="keyword">Acids</span> taste sour and turn blue litmus paper red, whereas <span class="keyword">bases</span> taste bitter and turn red litmus paper blue.</li><li><span class="keyword">Litmus</span> is a natural indicator extracted from lichen. Other natural indicators include turmeric, red cabbage leaves, and colored petals of Hydrangea, Petunia, and Geranium.</li><li><span class="keyword">Synthetic indicators</span> like <span class="keyword">methyl orange</span> and <span class="keyword">phenolphthalein</span> can also be used to test for acids and bases.</li><li><span class="keyword">Olfactory indicators</span> are substances whose odor changes in acidic or basic media, such as onion, vanilla, and clove oil.</li></ul></details><details class="sub-topic"><summary><h3>2.1.2 How do Acids and Bases React with Metals?</h3></summary><ul><li>An <span class="keyword">acid</span> reacts with a metal to form a <span class="keyword">salt</span> and release <span class="keyword">hydrogen gas</span> (Acid + Metal &rarr; Salt + Hydrogen gas).</li><li>Bases can also react with certain metals to form salts and hydrogen gas. For example, sodium hydroxide reacts with zinc to form <span class="keyword">sodium zincate</span> (Na<sub>2</sub>ZnO<sub>2</sub>).</li></ul></details><details class="sub-topic"><summary><h3>2.1.3 How do Metal Carbonates and Metal Hydrogencarbonates React with Acids?</h3></summary><ul><li>Both metal carbonates and metal hydrogencarbonates react with acids to form a corresponding <span class="keyword">salt</span>, <span class="keyword">carbon dioxide</span>, and water.</li><li>The evolved CO<sub>2</sub> gas turns <span class="keyword">lime water</span> (calcium hydroxide solution) milky due to the formation of a white precipitate of <span class="keyword">calcium carbonate</span> (CaCO<sub>3</sub>).</li></ul></details><details class="sub-topic"><summary><h3>2.1.4 How do Acids and Bases React with each other?</h3></summary><ul><li>The reaction between an acid and a base to produce salt and water is known as a <span class="keyword">neutralisation reaction</span> (Base + Acid &rarr; Salt + Water).</li></ul></details><details class="sub-topic"><summary><h3>2.1.5 Reaction of Metallic Oxides with Acids</h3></summary><ul><li>Metallic oxides react with acids to form salt and water, meaning <span class="keyword">metallic oxides</span> are basic in nature (<span class="keyword">basic oxides</span>).</li></ul></details><details class="sub-topic"><summary><h3>2.1.6 Reaction of a Non-metallic Oxide with Base</h3></summary><ul><li>Non-metallic oxides react with bases to produce salt and water, showing that <span class="keyword">non-metallic oxides</span> are acidic in nature.</li></ul></details></details><details class="topic-box"><summary class="topic-title">2.2 What do All Acids and All Bases Have in Common?</summary><details class="sub-topic"><summary><h3>2.2.1 What Happens to an Acid or a Base in a Water Solution?</h3></summary><ul><li>Acids generate <span class="keyword">hydrogen ions</span> (H<sup>+</sup> or hydronium ions, H<sub>3</sub>O+) in the presence of water, which conduct electricity in solution.</li><li>Bases generate <span class="keyword">hydroxide ions</span> (OH<sup>-</sup>) in water. Water-soluble bases are called <span class="keyword">alkalis</span>.</li><li>The process of dissolving an acid or a base in water is highly <span class="keyword">exothermic</span>. <span class="keyword">Dilution</span> involves adding acid slowly to water with constant stirring to decrease ion concentration per unit volume.</li></ul></details></details><details class="topic-box"><summary class="topic-title">2.3 How Strong are Acid or Base Solutions?</summary><details class="sub-topic"><summary><h3>2.3.0 The pH Scale</h3></summary><ul><li>The strength of acids and bases can be measured using the <span class="keyword">pH scale</span>, which ranges from 0 (highly acidic) to 14 (highly alkaline), with 7 being neutral.</li><li>A <span class="keyword">universal indicator</span>, a mixture of several indicators, displays different colors at different H<sup>+</sup> ion concentrations.</li><li><span class="keyword">Strong acids</span> produce more H<sup>+</sup> ions, whereas <span class="keyword">weak acids</span> produce fewer H<sup>+</sup> ions.</li></ul></details><details class="sub-topic"><summary><h3>2.3.1 Importance of pH in Everyday Life</h3></summary><ul><li>Our body functions within a narrow range of pH 7.0 to 7.8. Rainwater with a pH below 5.6 is called <span class="keyword">acid rain</span>.</li><li>Stomach pH is regulated by <span class="keyword">hydrochloric acid</span>. Excess acid causes indigestion, which is neutralized using <span class="keyword">antacids</span> like magnesium hydroxide (Milk of magnesia).</li><li>Tooth decay begins when mouth pH falls below 5.5, causing corrosion of <span class="keyword">calcium hydroxyapatite</span> (tooth enamel).</li><li>Plants and animals use chemical self-defence, such as bee stings releasing acid or nettle leaves injecting <span class="keyword">methanoic acid</span>.</li></ul></details></details><details class="topic-box"><summary class="topic-title">2.4 More About Salts</summary><details class="sub-topic"><summary><h3>2.4.1 and 2.4.2 Family and pH of Salts</h3></summary><ul><li>Salts sharing common positive or negative radicals belong to the same <span class="keyword">family of salts</span>.</li><li>Salts of a strong acid and a strong base are neutral (pH 7). Salts of a strong acid and weak base are acidic (pH &lt; 7), while salts of a strong base and weak acid are basic (pH &gt; 7).</li></ul></details><details class="sub-topic"><summary><h3>2.4.3 Chemicals from Common Salt</h3></summary><ul><li><span class="keyword">Common salt</span> (sodium chloride, NaCl) is an important raw material for producing daily-use chemicals.</li><li><span class="keyword">Sodium hydroxide</span> (NaOH) is produced via the <span class="keyword">chlor-alkali process</span> by electrolyzing brine.</li><li><span class="keyword">Bleaching powder</span> (Ca(ClO)<sub>2</sub>) is manufactured by reacting chlorine gas with dry slaked lime.</li><li><span class="keyword">Baking soda</span> (<span class="keyword">sodium hydrogencarbonate</span>, NaHCO<sub>3</sub>) is a mild non-corrosive base used in baking, antacids, and fire extinguishers.</li><li><span class="keyword">Washing soda</span> (Na<sub>2</sub>CO<sub>3</sub>·10H<sub>2</sub>O) is obtained by recrystallizing sodium carbonate and is used as a domestic cleaning agent and for water softening.</li></ul></details><details class="sub-topic"><summary><h3>2.4.4 Are the Crystals of Salts really Dry?</h3></summary><ul><li>Salts like copper sulphate contain <span class="keyword">water of crystallisation</span>, which is a fixed number of water molecules in one formula unit (e.g., CuSO<sub>4</sub>·5H<sub>2</sub>O).</li><li><span class="keyword">Gypsum</span> (CaSO<sub>4</sub>·2H<sub>2</sub>O) loses water when heated to 373 K to become <span class="keyword">Plaster of Paris</span> (calcium sulphate hemihydrate, CaSO<sub>4</sub>·&frac12;H<sub>2</sub>O), used for casting fractured bones and making decorations.</li></ul></details></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 2</strong> of the Class 10 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "10-chapter-01-chemical-reactions-and-equations.html";
+      } else {
+        window.location.href = "10-chapter-03-metals-and-non-metals.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

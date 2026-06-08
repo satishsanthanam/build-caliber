@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Fun at Class Party!</title>
+  <title>Class 3 — Chapter 10: Fun at Class Party!</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class="topic-box"><summary class="topic-title">10.1 Introduction to Measurement and Informal Tools</summary><p>Children of Class 3 use informal methods to measure lengths while preparing for a class celebration. These informal tools help in understanding the concept of length before moving to standard units.</p><details class="sub-topic"><summary><h3>10.1.1 Informal Measurement Activities</h3></summary><p>Based on classroom observations, children can measure and compare lengths using various body parts and objects:</p><ul><li><span class="keyword">Hand span</span>: Used to measure the length of tables or desks. Note that different children may have different hand span sizes, leading to different measurements for the same object.</li><li><span class="keyword">Footstep</span>: Used to measure larger distances, such as the distance between two walls of a classroom.</li><li><span class="keyword">Paper strings</span>: Used to measure heights (like windows or doors) and decorate boards.</li></ul></details><details class="sub-topic"><summary><h3>10.1.2 Comparing and Ordering Lengths</h3></summary><p>Comparing lengths directly helps identify which object is longer or shorter:</p><ul><li><strong>Shortest and Longest:</strong> Identifying the shortest paper string (to be colored red) and the longest paper string (to be colored green) by visual comparison or direct alignment.</li><li><strong>Estimating Quantity:</strong> Determining how many paper strings or decorative patterns are needed to cover a specific boundary or border.</li></ul></details></details><details class="topic-box"><summary class="topic-title">10.2 Indirect Comparison and Problem Solving</summary><p>Sometimes, direct comparison of two lengths is not possible because the objects cannot be brought next to each other. In such cases, we use an intermediate tool for measurement.</p><details class="sub-topic"><summary><h3>10.2.1 Measuring with a Thread</h3></summary><p>To find out if a heavy table can pass through a classroom door without lifting it:</p><ul><li>Use a piece of thread to measure the length and breadth of the table.</li><li>Compare the length of this thread with the width of the door.</li><li>If the thread (representing the table's width or breadth) is shorter than the door's width, the table can pass through.</li></ul><p>This is an example of <span class="keyword">indirect measurement</span> using a common unit (the thread).</p></details><details class="sub-topic"><summary><h3>10.2.2 Let us Play: Bridge Challenge</h3></summary><p>Build a bridge using boxes or bags and guess which classroom objects can pass through the bridge. This helps develop spatial awareness and estimation skills.</p></details></details><details class="topic-box"><summary class="topic-title">10.3 Body Parts as Measuring Units</summary><p>Exploring whether body proportions are consistent across different individuals.</p><details class="sub-topic"><summary><h3>10.3.1 Body Proportion Hypotheses</h3></summary><p>Students can test the following common statements to see if they are true for everyone:</p><ul><li>Is your head roundness equal to $3$ handspans?</li><li>Is the length of your forearm equal to the length of your foot?</li><li>Is your height equal to the length of your arms wide open?</li></ul></details><details class="sub-topic"><summary><h3>10.3.2 Scaling Up Informal Units</h3></summary><p>When measuring large objects like a saree or a wall, small units like pencils take too long. We can create longer informal units:</p><ul><li>A paper strip that is double the size of a pencil.</li><li>Sticking two paper strips together to double the length.</li><li>Using a paper strip that is exactly <span class="keyword">one arm long</span>.</li></ul></details></details><details class="topic-box"><summary class="topic-title">10.4 Standard Unit of Length: The Metre</summary><p>To ensure everyone gets the same measurement, we use standard units. The standard unit of length introduced here is the <span class="keyword">metre</span> ($m$).</p><details class="sub-topic"><summary><h3>10.4.1 Making a Metre Rope</h3></summary><p>Steps to create a standard measuring tool:</p><ol><li>Take a standard metre rod or an inch tape, along with a rope or thread.</li><li>Make a knot at one end of the rope.</li><li>Align the metre rod along the rope starting from the first knot.</li><li>Mark the point where the rod ends and tie a second knot there.</li><li>The distance between the two knots is exactly <span class="keyword">one metre</span> ($1\text{ m}$).</li></ol></details><details class="sub-topic"><summary><h3>10.4.2 Estimating and Categorizing with Metre</h3></summary><p>Using the metre rope, objects and heights can be classified into three categories:</p><ul><li><strong>More than one metre:</strong> Heights of taller classmates, length of the blackboard, height of the classroom door.</li><li><strong>Less than one metre:</strong> Length of a notebook, height of a school bag, length of a pencil box.</li><li><strong>Equal to one metre:</strong> Specific objects or heights that align perfectly with the metre rope.</li></ul></details><details class="sub-topic"><summary><h3>10.4.3 Fractions of a Metre</h3></summary><p>By folding the standard metre rope, we can derive smaller standard measurements:</p><ul><li><span class="keyword">Half metre</span>: Obtained by folding the one-metre rope exactly in half ($1/2\text{ m}$).</li><li><span class="keyword">Quarter metre</span>: Obtained by folding the half-metre rope in half again ($1/4\text{ m}$).</li></ul></details></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 10</strong> of the Class 3 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "03-chapter-09-house-of-hundreds-il.html";
+      } else {
+        window.location.href = "03-chapter-11-filling-and-lifting.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

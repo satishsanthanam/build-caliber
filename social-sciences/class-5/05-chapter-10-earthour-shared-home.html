@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Earth—Our Shared Home</title>
+  <title>Class 5 — Chapter 10: Earth—Our Shared Home</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class="topic-box"><summary class="topic-title">10.1 The Blue Planet</summary><p>From space, the Earth looks completely one, with no visible borders, states, or countries. It is our shared home, often referred to as the <span class="keyword">Blue Planet</span> due to the vast oceans covering its surface.</p><details class="sub-topic"><summary><h3>Inspirational Perspectives from Space</h3></summary><ul><li><strong>Group Captain Shubhanshu Shukla</strong> (the first Indian to reach the International Space Station) shared: <em>"After seeing the Earth from outside... the Earth looks completely one, no border is visible... We all are part of humanity and the Earth is our one home."</em></li><li><strong>Wing Commander Rakesh Sharma</strong> (the first Indian in space), when asked how India looked from above, famously replied: <span class="keyword">"Saare Jahaan Se Achcha"</span> (the best in the entire world).</li></ul></details><details class="sub-topic"><summary><h3>Understanding Our Address</h3></summary><p>While we have local addresses (house number, street, city, district, state, country), our ultimate global address is the planet <span class="keyword">Earth</span>. To help locate places digitally, India uses <span class="keyword">DIGIPIN</span>, a 10-character digital code that acts as a unique name tag for every small location, helping emergency services and postal delivery find addresses faster.</p></details></details><details class="topic-box"><summary class="topic-title">10.2 Nature Has No Boundaries</summary><p>When viewed from above, nature shows no political boundaries. Elements like air, water, clouds, seeds, and animals move freely across the globe. Humanity is deeply connected through nature, trade, travel, and shared culture.</p><details class="sub-topic"><summary><h3>Story 1: The Travelling Birds (Migration)</h3></summary><p>Every winter, <span class="keyword">Rosy Starlings</span> (pink and black birds) fly thousands of kilometres from the southern parts of Russia, Mongolia, and neighbouring regions to India. They benefit Indian ecosystems by:</p><ul><li>Enjoying the warm winter weather of India.</li><li>Feeding on locusts and grasshoppers, thereby acting as natural pest control for farmers' crops.</li></ul></details></details><details class="topic-box"><summary class="topic-title">10.3 Global Exchange of Culture, Food, and Practices</summary><p>Many elements of our daily lives—from the food we eat to the practices we follow—have crossed borders and connected different cultures over centuries.</p><details class="sub-topic"><summary><h3>Story 2: Yoga — India's Gift to the World</h3></summary><p>Practised in India for more than 3,000 years to keep the body healthy and mind peaceful, <span class="keyword">Yoga</span> was shared globally by travellers, scholars, and teachers. In 2014, the United Nations declared <strong>21 June</strong> as the <span class="keyword">International Day of Yoga</span>, celebrated by millions worldwide.</p></details><details class="sub-topic"><summary><h3>Story 3: Chilli — A Spice from South America</h3></summary><p>Chilli plants were originally native only to South America. Around 400 to 500 years ago, Portuguese travellers brought chillies to India. Before their arrival, Indians used <span class="keyword">black pepper</span> to add spice to their food. Today, chillies are an indispensable part of Indian cuisine.</p></details><details class="sub-topic"><summary><h3>Story 4: The Sweet Story of Sugar</h3></summary><p>While chillies came to India, sugar travelled from India to the rest of the world. Ancient populations used honey for sweetness until India discovered the method of making <span class="keyword">jaggery</span> and refining it into sugar from sugarcane juice. Other Indian agricultural gifts to the world include rice, mangoes, and bananas.</p></details><details class="sub-topic"><summary><h3>Story 5: The Mexican Marigold</h3></summary><p>The vibrant orange and yellow <span class="keyword">marigold</span> flower originated in Mexico, where it is used in traditional festivals. It travelled to India, finding a new home in Indian temples, weddings, and major festivals like Diwali.</p></details><details class="sub-topic"><summary><h3>Story 6: Indian Cows in Brazil</h3></summary><p>Portuguese traders took Indian cow breeds to Brazil because they were strong, produced high-quality milk, and easily adapted to the tropical climate. Today, more than three-fourths of Brazil's milk comes from three Indian breeds: <span class="keyword">Gir</span>, <span class="keyword">Kankrej</span>, and <span class="keyword">Ongole</span>. These cows are so highly valued that they feature on Brazilian stamps and coins.</p></details></details><details class="topic-box"><summary class="topic-title">10.4 One Earth, One Family</summary><p>An ancient Indian philosophy encapsulates global unity: <span class="keyword">'Vasudhaiva Kutumbakam'</span>, which translates to <strong>'the world is one family.'</strong></p><ul><li>This family includes all humans, animals, trees, rivers, air, and sky.</li><li>Earth is the only known planet that supports life, making it a unique gift that we must protect for future generations.</li><li>The logo of India's <span class="keyword">Ministry of Environment, Forest and Climate Change (MoEFCC)</span> features the Sanskrit phrase <em>"Prakriti Rakshati Rakshita"</em> (<span class="keyword">Nature Protects if She is Protected</span>), emphasizing that caring for the environment is equivalent to caring for ourselves.</li></ul></details><details class="topic-box"><summary class="topic-title">10.5 Seasons' Journal: Observing Nature</summary><p>To understand the interconnectedness of our shared home, students are encouraged to maintain a seasonal journal across four terms (April–June, July–September, October–December, January–March) tracking five core themes:</p><ul><li><strong>Plant Life:</strong> Flowering, fruiting, leaf shedding, and color changes.</li><li><strong>Birds and Animals:</strong> Animal behaviors, nesting, insect populations, and group movements.</li><li><strong>Air, Heat and Light:</strong> Weather conditions, temperature, humidity, sunrise/sunset times, and sky colors.</li><li><strong>Water and Water Bodies:</strong> Water cleanliness, flow, puddles, rainfall, and water availability.</li><li><strong>Human Activities:</strong> Seasonal clothing, indoor/outdoor preferences, seasonal foods, festivals, and agricultural cycles.</li></ul></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 10</strong> of the Class 5 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "05-chapter-09-rhythms-of-nature.html";
+      } else {
+        window.location.href = "../../index.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

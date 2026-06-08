@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Patterns Around Us</title>
+  <title>Class 4 — Chapter 3: Patterns Around Us</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class="topic-box"><summary class="topic-title">3.1 Let Us Count</summary><p>Counting objects in structured arrangements helps us find patterns and count quickly.</p><ul><li><strong>Coconut Trees:</strong> Counting trees arranged in a grid pattern (top view). If there are multiple rows and columns, we can multiply or skip-count to find the total.</li><li><strong>Plucking Coconuts:</strong> If Gundappa plucks $5$ coconuts from each tree, the total number of coconuts is the number of trees multiplied by $5$.</li><li><strong>Muniamma's Cups and Plates:</strong> Counting cups arranged in groups.</li><li><strong>Laddoo and Peda Trays:</strong> Trays stacked on top of each other with identical arrangements of <span class="keyword">coconut laddoos</span> and <span class="keyword">milk pedas</span>.</li></ul></details><details class="topic-box"><summary class="topic-title">3.2 Patterns with Money</summary><p>Arranging play money in symmetrical patterns helps in counting and understanding place value.</p><details class="sub-topic"><summary><h3>Representing Amounts</h3></summary><p>Using play money of denominations $1$, $2$, $5$, and $10$ to represent different amounts such as:</p><ul><li>$₹36$</li><li>$₹125$</li><li>$₹183$</li></ul></details><details class="sub-topic"><summary><h3>Grouping Coins (Two Ways)</h3></summary><p>Shirley and Shiv arrange their coins in different grouping patterns:</p><ul><li><strong>Shirley's Way:</strong> Grouping coins in odd numbers (e.g., $3$, $5$, etc.).</li><li><strong>Shiv's Way:</strong> Grouping coins in even numbers (e.g., $4$, etc.).</li></ul></details></details><details class="topic-box"><summary class="topic-title">3.3 Even and Odd Numbers</summary><p>Numbers can be classified based on whether they can be fully paired.</p><ul><li><span class="keyword">Even Numbers</span>: Numbers that can be arranged perfectly in pairs (e.g., Shiv's numbers). All numbers in the times-2 table are even.</li><li><span class="keyword">Odd Numbers</span>: Numbers that cannot be fully paired, leaving one leftover (e.g., Shirley's numbers).</li></ul><details class="sub-topic"><summary><h3>Identifying Even and Odd (1 to 20)</h3></summary><p>Classifying numbers between $1$ and $20$:</p><ul><li><strong>Odd:</strong> $1, 3, 5, 7, 9, 11, 13, 15, 17, 19$</li><li><strong>Even:</strong> $2, 4, 6, 8, 10, 12, 14, 16, 18, 20$</li></ul></details></details><details class="topic-box"><summary class="topic-title">3.4 Crayons Arrangement & Number Patterns</summary><p>Using visual aids like a numbered crayon box to identify patterns in numbers up to $50$.</p><ul><li><strong>Page Numbers Pattern:</strong> Observing the alternating pattern of even and odd numbers on consecutive pages of a textbook. Left-side and right-side pages follow a consistent even-odd rule.</li></ul></details><details class="topic-box"><summary class="topic-title">3.5 Properties of Even and Odd Numbers</summary><p>Understanding rules and patterns for larger numbers.</p><details class="sub-topic"><summary><h3>Identifying Larger Numbers</h3></summary><p>Classifying numbers like $30$, $46$, $78$, $154$, $300$ as <span class="keyword">even</span>, and $67$, $99$, $415$ as <span class="keyword">odd</span> based on their ending digit.</p></details><details class="sub-topic"><summary><h3>Making 2-Digit Numbers</h3></summary><p>Using digits $1$ and $6$ without repetition:</p><ul><li>$16$ (Even)</li><li>$61$ (Odd)</li></ul></details><details class="sub-topic"><summary><h3>Consecutive Numbers Pattern</h3></summary><p>When writing consecutive numbers (e.g., $20, 21, 22, 23, \dots$):</p><ul><li>The numbers alternate between even and odd.</li><li>The numbers immediately before and after an odd number are always <span class="keyword">even</span>.</li><li>The numbers immediately before and after an even number are always <span class="keyword">odd</span>.</li></ul></details></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 3</strong> of the Class 4 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "04-chapter-02-hide-and-seek.html";
+      } else {
+        window.location.href = "04-chapter-04-thousands-around-us.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

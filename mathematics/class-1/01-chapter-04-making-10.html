@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Making 10</title>
+  <title>Class 1 — Chapter 4: Making 10</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class="topic-box"><summary class="topic-title">4.1 Dotty Bug and her Designs</summary><p>Introduction to counting and number recognition using visual dot patterns.</p><ul><li><strong>Counting Dots:</strong> Identifying and writing the number of dots on ladybugs.</li><li><strong>Subitization:</strong> <span class="keyword">Subitization</span> is the instant recognition of a number of objects in a pattern without counting them one by one (e.g., recognizing dot patterns from $1$ to $9$).</li></ul></details><details class="topic-box"><summary class="topic-title">4.2 Vanishing Buttons & The Concept of Zero</summary><p>Understanding the concept of the number zero through a story of a monkey losing buttons.</p><ul><li><strong>Story of Gola Monkey:</strong> Starts with $4$ buttons, loses them one by one ($4 \rightarrow 3 \rightarrow 2 \rightarrow 1 \rightarrow 0$).</li><li><strong>Concept of Zero:</strong> <span class="keyword">Zero</span> ($0$) is a number that represents the complete absence of objects.</li><li><strong>Think and Tell:</strong> Real-world examples of zero (e.g., number of suns visible at night, number of moons visible at noon).</li></ul></details><details class="topic-box"><summary class="topic-title">4.3 Tenth Birthday & Making 10</summary><p>Learning how the number $10$ is formed and counting up to $10$.</p><ul><li><strong>Making 10:</strong> $9$ and $1$ more makes $10$ ($9 + 1 = 10$).</li><li><strong>Counting Objects:</strong> Practice counting various objects up to $10$ (diyas, beads, laddoos, crayons, bananas, leaves).</li><li><strong>Ten Frames:</strong> Using a <span class="keyword">Ten Frame</span> grid to represent numbers up to $10$ visually using buttons or beads.</li></ul></details><details class="topic-box"><summary class="topic-title">4.4 Number Pairs of 5 and 10</summary><p>Exploring combinations of numbers that add up to $5$ and $10$.</p><details class="sub-topic"><summary><h3>4.4.1 The Handy Five</h3></summary><p>Identifying pairs of numbers separated by a stick that make $5$:</p><ul><li>$1$ and $4$</li><li>$2$ and $3$</li><li>$3$ and $2$</li><li>$4$ and $1$</li><li>$5$ and $0$</li></ul></details><details class="sub-topic"><summary><h3>4.4.2 Number Pairs of 10</h3></summary><p>Using fingers on both hands to find pairs that sum to $10$ (<span class="keyword">Number Partitions of 10</span>):</p><ul><li>$1$ and $9$ ($1 + 9 = 10$)</li><li>$2$ and $8$ ($2 + 8 = 10$)</li><li>$3$ and $7$ ($3 + 7 = 10$)</li><li>$4$ and $6$ ($4 + 6 = 10$)</li><li>$5$ and $5$ ($5 + 5 = 10$)</li></ul></details></details><details class="topic-box"><summary class="topic-title">4.5 Counting up to 20</summary><p>Extending counting skills from $11$ to $20$ using groups of ten and additional units.</p><ul><li><strong>Base Ten Grouping:</strong> A box holds $10$ oranges. Adding single units to a group of $10$ forms numbers from $11$ to $20$:<ul><li>$10$ and $1$ is $11$ (Eleven)</li><li>$10$ and $2$ is $12$ (Twelve)</li><li>$10$ and $3$ is $13$ (Thirteen)</li><li>$10$ and $4$ is $14$ (Fourteen)</li><li>$10$ and $5$ is $15$ (Fifteen)</li><li>$10$ and $6$ is $16$ (Sixteen)</li><li>$10$ and $7$ is $17$ (Seventeen)</li><li>$10$ and $8$ is $18$ (Eighteen)</li><li>$10$ and $9$ is $19$ (Nineteen)</li><li>$10$ and $10$ is $20$ (Twenty)</li></ul></li><li><strong>Number Sequencing:</strong> Writing and completing sequences of numbers from $11$ to $20$.</li></ul></details><details class="topic-box"><summary class="topic-title">4.6 Comparing and Ordering Numbers</summary><p>Developing number sense by comparing quantities and ordering numbers up to $20$.</p><ul><li><strong>Smallest and Biggest:</strong> Identifying the smallest or biggest number in a given set (e.g., in $\{8, 12, 6\}$, $6$ is the smallest; in $\{16, 19, 11\}$, $19$ is the biggest).</li><li><strong>Ordering:</strong> Arranging numbers from the biggest to the smallest (descending order).</li><li><strong>Group of Ten:</strong> Encircling groups of $10$ within a larger collection to make counting beyond $10$ easier.</li></ul></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 4</strong> of the Class 1 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "01-chapter-03-mango-treat.html";
+      } else {
+        window.location.href = "01-chapter-05-how-many.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

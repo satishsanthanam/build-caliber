@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Utsav</title>
+  <title>Class 1 — Chapter 9: Utsav</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class="topic-box"><summary class="topic-title">9.1 Introduction to Utsav and Festivals</summary><p>The festival of <span class="keyword">Uttarayan</span> (which includes local celebrations like <span class="keyword">Makar Sankranti</span>, <span class="keyword">Pongal</span>, <span class="keyword">Bihu</span>, and <span class="keyword">Lohri</span>) marks the transition from winter to summer in the Indian calendar. This festive period signifies the return of sunny days and the beginning of the harvest season.</p><p>These celebrations are rich with cultural elements, including traditional decorations, music, dance, and food, which highlight various geometric <span class="keyword">shapes</span> and repeating <span class="keyword">patterns</span>.</p></details><details class="topic-box"><summary class="topic-title">9.2 Visual and Creative Patterns</summary><details class="sub-topic"><summary><h3>9.2.1 Extending Visual Patterns</h3></summary><p>Patterns can be created and extended by repeating sequences of everyday objects and drawings:</p><ul><li><strong>Stones and Sticks:</strong> Alternating linear arrangements (e.g., stone, stick, stone, stick).</li><li><strong>Festive Garlands (Toran):</strong> Alternating patterns of leaves, flowers, and hanging decorations.</li><li><strong>Diyas and Candles:</strong> Alternating light sources (e.g., diya, candle, diya, candle).</li><li><strong>Geometric Shapes:</strong> Repeating sequences of circles, triangles, squares, arrows, stars, and hexagons.</li></ul></details><details class="sub-topic"><summary><h3>9.2.2 Fingerprint and Vegetable Printing</h3></summary><p>Creative patterns can be made using body impressions and natural objects:</p><ul><li><strong>Fingerprint Art:</strong> Using thumb and finger impressions to create animal shapes (cats, cows, chicks, frogs) and repeating color sequences (e.g., alternating pink and grey prints).</li><li><strong>Vegetable Printing:</strong> Using sliced vegetables (such as ladyfinger, carrot, or capsicum) dipped in color to stamp repeating designs.</li></ul></details></details><details class="topic-box"><summary class="topic-title">9.3 Number Patterns</summary><p>Patterns can also be found in numbers by identifying the rule of sequence:</p><ul><li><strong>Odd Numbers:</strong> $1, 3, 5, 7, \underline{9}, 11, \underline{13}$ (adding $2$ each time).</li><li><strong>Backward Counting:</strong> $22, 21, 20, \underline{19}, \underline{18}, 17, 16$ (subtracting $1$ each time).</li><li><strong>Skip Counting by 10s:</strong> $10, 20, 30, \underline{40}, 50, \underline{60}$ (adding $10$ each time).</li><li><strong>Repeating Digits / Skip Counting by 11s:</strong> $11, 22, 33, \underline{44}, \underline{55}, 66, \underline{77}$ (adding $11$ each time).</li><li><strong>Skip Counting by 5s:</strong> $5, 10, \underline{15}, 20, \underline{25}$ (adding $5$ each time).</li><li><strong>Growing Sequences:</strong> $2, 5, 8, 11, \underline{14}, \underline{17}, \underline{20}$ (adding $3$ each time).</li></ul></details><details class="topic-box"><summary class="topic-title">9.4 Kolam, Rangoli, and Project Work</summary><details class="sub-topic"><summary><h3>9.4.1 Kolam and Rangoli</h3></summary><p><span class="keyword">Kolam</span> or <span class="keyword">Rangoli</span> is a traditional decorative art made using patterns of dots and lines, showcasing symmetry and geometric design.</p></details><details class="sub-topic"><summary><h3>9.4.2 Project Work & Activities</h3></summary><ul><li><strong>Pattern Collection:</strong> Collect pebbles, flowers, leaves, sticks, bangles, coins, and caps to arrange them in creative patterns.</li><li><strong>Patterns in Nature:</strong> Observe patterns on leaves, butterflies, animal skins (zebra, tiger, cat), and beehives.</li><li><strong>Action Patterns:</strong> Create rhythmic patterns using physical actions like clapping, snapping fingers, and stamping feet.</li><li><strong>Heritage Exploration:</strong> Explore and appreciate beautiful patterns in historical monuments, temples, mosques, churches, and gurudwaras.</li></ul></details></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 9</strong> of the Class 1 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "01-chapter-08-fun-with-numbers.html";
+      } else {
+        window.location.href = "01-chapter-10-how-do-i-spend-my-day.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

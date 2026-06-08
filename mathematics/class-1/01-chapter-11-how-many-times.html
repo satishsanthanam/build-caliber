@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>How Many Times?</title>
+  <title>Class 1 — Chapter 11: How Many Times?</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class="topic-box"><summary class="topic-title">11.1 A Visit to an Amusement Park</summary><p>A group of children visited an amusement park and explored different rides to understand the concept of <span class="keyword">repeated addition</span> as a foundation for multiplication.</p><details class="sub-topic"><summary><h3>11.1.1 The Horse Swing</h3></summary><p>On the horse swing, $2$ children can sit on each horse. There are $4$ horses in total.</p><ul><li><strong>Addition representation:</strong> $2 + 2 + 2 + 2 = 8$</li><li><strong>Total children:</strong> <span class="keyword">$8$</span> of us can sit on the horse swing altogether.</li></ul></details><details class="sub-topic"><summary><h3>11.1.2 The Toy Train</h3></summary><p>In the toy train, $3$ children can sit in each bogie. There are $3$ bogies in total.</p><ul><li><strong>Addition representation:</strong> $3 + 3 + 3 = 9$</li><li><strong>Total children:</strong> <span class="keyword">$9$</span> children can sit in $3$ bogies.</li></ul></details><details class="sub-topic"><summary><h3>11.1.3 The Big Wheel</h3></summary><p>On the big wheel, $4$ children can sit together in each compartment. There are $5$ compartments in total.</p><ul><li><strong>Addition representation:</strong> $4 + 4 + 4 + 4 + 4 = 20$</li><li><strong>Total children:</strong> <span class="keyword">$20$</span> children can sit in the swing.</li></ul></details></details><details class="topic-box"><summary class="topic-title">11.2 Eating Jalebis</summary><p>After riding on the swings, the children planned to eat jalebis. Each plate of jalebi has $3$ pieces. They ordered $6$ plates of jalebis.</p><ul><li><strong>Addition representation:</strong> $3 + 3 + 3 + 3 + 3 + 3 = 18$</li><li><strong>Multiplication representation:</strong> $6 \text{ times } 3 \text{ is } 18$</li></ul></details><details class="topic-box"><summary class="topic-title">11.3 Travelling in the Bus</summary><p>The children travel back in a bus, observing groups of people and objects inside the bus.</p><details class="sub-topic"><summary><h3>11.3.1 People in the Bus</h3></summary><p>There are $9$ groups of $2$ people sitting by the windows of the bus.</p><ul><li><strong>Addition representation:</strong> $2 + 2 + 2 + 2 + 2 + 2 + 2 + 2 + 2 = 18$</li><li><strong>Multiplication representation:</strong> $9 \text{ times } 2 = 18$</li><li><strong>Total number of people in the bus:</strong> <span class="keyword">$18$</span></li></ul></details><details class="sub-topic"><summary><h3>11.3.2 Crates of Water Bottles</h3></summary><p>Some crates of water bottles are kept in the bus. There are $4$ crates, and each crate contains $5$ bottles.</p><ul><li><strong>Addition representation:</strong> $5 + 5 + 5 + 5 = 20$</li><li><strong>Multiplication representation:</strong> $4 \text{ times } 5 = 20$</li><li><strong>Total number of bottles in the bus:</strong> <span class="keyword">$20$</span></li></ul></details></details><details class="topic-box"><summary class="topic-title">11.4 Finding Totals of Items Bought</summary><p>Cheenu bought some packs of erasers, pencils, and apples from the shop. Let's find the total of each item.</p><details class="sub-topic"><summary><h3>A. Erasers</h3></summary><p>There are $4$ packs of erasers, with each pack containing $2$ erasers.</p><ul><li><strong>Addition representation:</strong> $2 + 2 + 2 + 2 = 8$ erasers</li><li><strong>Multiplication representation:</strong> $4 \text{ times } 2 = 8$</li><li><strong>Total number of erasers:</strong> <span class="keyword">$8$</span></li></ul></details><details class="sub-topic"><summary><h3>B. Pencils</h3></summary><p>There are $5$ packets of pencils, with each packet containing $3$ pencils.</p><ul><li><strong>Addition representation:</strong> $3 + 3 + 3 + 3 + 3 = 15$ pencils</li><li><strong>Multiplication representation:</strong> $5 \text{ times } 3 = 15$</li><li><strong>Total number of pencils:</strong> <span class="keyword">$15$</span></li></ul></details><details class="sub-topic"><summary><h3>C. Apples</h3></summary><p>There are $3$ baskets of apples, with each basket containing $3$ apples.</p><ul><li><strong>Addition representation:</strong> $3 + 3 + 3 = 9$ apples</li><li><strong>Multiplication representation:</strong> $3 \text{ times } 3 = 9$</li><li><strong>Total number of apples:</strong> <span class="keyword">$9$</span></li></ul></details></details><details class="topic-box"><summary class="topic-title">11.5 Project Work</summary><p>Draw a cycle wheel. Ask your friends or find out how many cycles you have at home. Find out the total number of wheels in all the cycles.</p></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 11</strong> of the Class 1 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "01-chapter-10-how-do-i-spend-my-day.html";
+      } else {
+        window.location.href = "01-chapter-12-how-much-can-we-spend.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

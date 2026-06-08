@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Motion and Time</title>
+  <title>Class 7 — Chapter 9: Motion and Time</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class='topic-box' open><summary class='topic-title'>9.1 Slow or Fast</summary><details class='sub-topic' open><summary><h3>Types of Motion</h3></summary><ul><li><span class='keyword'>Straight line motion</span>: Motion along a straight path (e.g., soldiers in a march past).</li><li><span class='keyword'>Circular motion</span>: Motion along a circular path (e.g., Earth orbiting the Sun).</li><li><span class='keyword'>Periodic motion</span>: Motion that repeats itself after regular intervals (e.g., motion of a swing or pendulum).</li></ul></details></details><details class='topic-box' open><summary class='topic-title'>9.2 Speed</summary><details class='sub-topic' open><summary><h3>Understanding Speed</h3></summary><ul><li><span class='keyword'>Speed</span>: The distance covered by an object in a unit time.</li><li><span class='keyword'>Formula</span>: Speed = Total distance covered / Total time taken.</li><li><span class='keyword'>Non-uniform motion</span>: When the speed of an object moving along a straight line keeps changing.</li><li><span class='keyword'>Uniform motion</span>: When an object moves along a straight line with a constant speed.</li></ul></details></details><details class='topic-box' open><summary class='topic-title'>9.3 Measurement of Time</summary><details class='sub-topic' open><summary><h3>Clocks and Pendulums</h3></summary><ul><li><span class='keyword'>Periodic events</span>: Natural events repeating at regular intervals (e.g., sunrise to sunrise is a day).</li><li><span class='keyword'>Simple pendulum</span>: Consists of a small metallic ball called a <span class='keyword'>bob</span> suspended from a rigid stand by a thread.</li><li><span class='keyword'>Oscillation</span>: The to-and-fro motion of a pendulum from one extreme position to another and back.</li><li><span class='keyword'>Time period</span>: The time taken by the pendulum to complete one full oscillation.</li><li><span class='keyword'>Units</span>: Basic unit of time is <span class='keyword'>second (s)</span>. Basic unit of speed is <span class='keyword'>m/s</span> (meters per second).</li></ul></details></details><details class='topic-box' open><summary class='topic-title'>9.4 Measuring Speed</summary><details class='sub-topic' open><summary><h3>Calculations and Devices</h3></summary><ul><li><span class='keyword'>Distance formula</span>: Distance = Speed × Time.</li><li><span class='keyword'>Time formula</span>: Time = Distance / Speed.</li><li><span class='keyword'>Speedometer</span>: An instrument on vehicles that records speed directly in km/h.</li><li><span class='keyword'>Odometer</span>: An instrument that measures the total distance travelled by a vehicle.</li></ul></details></details><details class='topic-box' open><summary class='topic-title'>9.5 Distance-Time Graph</summary><details class='sub-topic' open><summary><h3>Graphical Representation</h3></summary><ul><li><span class='keyword'>Bar graph</span>: Represents data using rectangular bars.</li><li><span class='keyword'>Pie chart</span>: Represents data in a circular, proportional format.</li><li><span class='keyword'>Line graph</span>: Represents continuous data over time; a <span class='keyword'>distance-time graph</span> is a line graph.</li><li><span class='keyword'>Constant speed</span>: Represented by a straight line on a distance-time graph.</li></ul></details></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 9</strong> of the Class 7 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "07-chapter-08-force-and-pressure.html";
+      } else {
+        window.location.href = "../../index.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

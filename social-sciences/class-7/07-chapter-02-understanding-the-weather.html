@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Understanding the Weather</title>
+  <title>Class 7 — Chapter 2: Understanding the Weather</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class="topic-box"><summary class="topic-title">2.1 Weather and its Elements</summary><p>Our bodies constantly sense and respond to the weather, whether shivering on a cold winter morning or seeking light clothing in the summer. But what exactly is weather?</p><details class="sub-topic"><summary><h3>What is Weather?</h3></summary><p><span class="keyword">Weather</span> is the state of the Earth's atmosphere at a particular time and place. The <span class="keyword">atmosphere</span> is the layer of gases (commonly called 'air') that surrounds the Earth.</p><p>The atmosphere can be compared to a layered cake. The layer closest to the Earth's surface is the <span class="keyword">troposphere</span>. This is where all land-based plants and animals live, and where almost all weather phenomena take place. The troposphere extends to a height of $6$ to $18\text{ km}$ from the ground; it is thinner at the poles (where cold air contracts) and thicker in the tropical zone (where warm air expands).</p></details><details class="sub-topic"><summary><h3>The Five Elements of Weather</h3></summary><p>We experience weather through its core elements:</p><ul><li><strong><span class="keyword">Temperature</span>:</strong> How hot or cold the atmosphere is.</li><li><strong><span class="keyword">Precipitation</span>:</strong> Any form of water that falls from the sky, such as rain, snow, <span class="keyword">sleet</span> (frozen or partly frozen rain), or <span class="keyword">hail</span> (small, hard balls of ice).</li><li><strong><span class="keyword">Atmospheric Pressure</span>:</strong> The weight of the air above us, felt on the Earth's surface.</li><li><strong><span class="keyword">Wind</span>:</strong> The movement of air, characterized by its speed and direction.</li><li><strong><span class="keyword">Humidity</span>:</strong> The amount of <span class="keyword">water vapour</span> (water in gaseous form) present in the air.</li></ul></details></details><details class="topic-box"><summary class="topic-title">2.2 Observing Nature's Clues</summary><p>Before modern instruments, humans relied on observing nature to <span class="keyword">forecast</span> (predict in advance) the weather. Traditional indicators include:</p><ul><li>Ants shifting their eggs to higher ground, indicating expected heavy rain.</li><li>Frogs croaking loudly in expectation of rain.</li><li>Pine cones closing in humid conditions to protect their seeds, and opening in dry conditions to release them.</li></ul><p>Today, the systematic study of weather and its evolution is known as <span class="keyword">meteorology</span>, and the scientists who study and predict it are called <span class="keyword">meteorologists</span>.</p></details><details class="topic-box"><summary class="topic-title">2.3 Weather Instruments</summary><p>To measure and monitor weather elements with precision, meteorologists use specialized instruments.</p><details class="sub-topic"><summary><h3>a) Temperature</h3></summary><p>Temperature is measured using thermometers on scales like Celsius ($^\circ\text{C}$) or Fahrenheit ($^\circ\text{F}$). For example, a cool temperature of $15^\circ\text{C}$ is equivalent to $59^\circ\text{F}$.</p><p>Key temperature statistics include:</p><ul><li><strong><span class="keyword">Ambient temperature</span>:</strong> The temperature of the immediate surroundings.</li><li><strong><span class="keyword">Range of temperature</span>:</strong> The maximum temperature minus the minimum temperature during a specific period (usually 24 hours).</li><li><strong><span class="keyword">Mean daily temperature</span>:</strong> The average of the maximum and minimum temperatures of the day: $$\text{Mean Daily Temperature} = \frac{\text{Maximum Temp} + \text{Minimum Temp}}{2}$$</li></ul><p><em>Note:</em> The India Meteorological Department (IMD), established in 1875, uses the motto <em>"ādityāt jāyate vriṣhti"</em>, meaning "From the sun arises rain."</p></details><details class="sub-topic"><summary><h3>b) Precipitation</h3></summary><p>Rainfall is measured using an instrument called a <span class="keyword">rain gauge</span>. When it rains, water falls into a collecting funnel and accumulates in a measuring tube. A scale measures the depth of the collected water in millimetres (mm).</p></details><details class="sub-topic"><summary><h3>c) Atmospheric Pressure</h3></summary><p>Atmospheric pressure is the force exerted by the weight of the air above us. It is measured using a <span class="keyword">barometer</span>, typically in <span class="keyword">millibars (mb)</span>.</p><ul><li>Normal atmospheric pressure at sea level is around $1013\text{ mb}$.</li><li>A pressure reading below $1000\text{ mb}$ indicates a low-pressure system or "depression," which can develop into storms or cyclones.</li><li>Pressure decreases with altitude. At high altitudes, the air is thinner, containing less oxygen, requiring travelers to pause and <span class="keyword">acclimatise</span> (adjust to the new climate/conditions). For example, at Khardung La in Ladakh ($5600\text{ m}$ above sea level), the pressure is only about $650\text{ mb}$.</li></ul></details><details class="sub-topic"><summary><h3>d) Wind</h3></summary><p>Wind is the movement of air from areas of high pressure to areas of low pressure.</p><ul><li><strong>Direction:</strong> Measured using a <span class="keyword">wind vane</span> (or weather vane) or a <span class="keyword">wind sock</span> (commonly used on airport tarmacs to assist pilots during take-off and landing).</li><li><strong>Speed:</strong> Measured using an <span class="keyword">anemometer</span>, which features rotating metal cups that spin faster as wind speed increases, calculating speed in kilometres per hour (km/h).</li></ul></details><details class="sub-topic"><summary><h3>e) Humidity</h3></summary><p>Humidity is measured as <span class="keyword">relative humidity</span>, expressed as a percentage:</p><ul><li>$0\%$ represents air with absolutely no water vapour.</li><li>$100\%$ represents air completely saturated with water vapour.</li><li>Dry weather typically ranges between $20\%$ and $40\%$, while humid weather falls between $60\%$ and $80\%$.</li><li>Relative humidity is measured using a <span class="keyword">hygrometer</span>.</li></ul></details></details><details class="topic-box"><summary class="topic-title">2.4 Weather Stations and Predictions</summary><details class="sub-topic"><summary><h3>Weather Stations</h3></summary><p>A weather station brings together multiple instruments to measure and track weather elements simultaneously at regular intervals.</p><p>An <span class="keyword">Automated Weather Station (AWS)</span> is a self-operating system that uses electronic sensors to record and transmit weather data without requiring human intervention. These are crucial for agriculture, aviation, and disaster management.</p></details><details class="sub-topic"><summary><h3>Predicting the Weather</h3></summary><p>Meteorologists analyze long-term data to predict weather patterns. Accurate predictions are vital for preparing for extreme events like droughts, floods, heat waves, and cyclones.</p><p>The IMD issues color-coded alerts to help the public and local governments prepare:</p><ul><li><strong>Green:</strong> No Warning</li><li><strong>Yellow:</strong> Watch (Be Updated)</li><li><strong>Orange:</strong> Alert (Be Prepared)</li><li><strong>Red:</strong> Warning (Take Action)</li></ul></details></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 2</strong> of the Class 7 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "07-chapter-01-geographical-diversity-of-india.html";
+      } else {
+        window.location.href = "07-chapter-03-climates-of-india.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Natural Resources and Their Use</title>
+  <title>Class 8 — Chapter 1: Natural Resources and Their Use</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class="topic-box"><summary class="topic-title">Introduction & The Big Questions</summary><p>Concerned social scientists emphasize the need to move toward a <span class="keyword">regenerative economy</span>—an economy that operates in harmony with nature, repurposing used resources, minimizing waste, and replenishing depleted resources.</p><h4>The Big Questions:</h4><ul><li>How do we categorise natural resources?</li><li>What is the connection between the distribution of natural resources and different aspects of life?</li><li>What are the implications of unsustainable use / overexploitation of natural resources?</li></ul></details><details class="topic-box"><summary class="topic-title">1. When does Nature become a Resource?</summary><p><span class="keyword">Nature</span> refers to the totality of life and non-life forms that are part of our environment but have not been created by humans. These elements become <span class="keyword">resources</span> when humans use them for sustenance or create new things from them for consumption.</p><p>For an entity to be called a resource, it must meet three criteria:</p><ul><li><strong>Technologically accessible:</strong> We must possess the technology to access and extract it.</li><li><strong>Economically feasible:</strong> The cost of extraction and utilization must not be prohibitively high.</li><li><strong>Culturally acceptable:</strong> Its use must not violate cultural norms (e.g., cutting trees in sacred groves is culturally unacceptable).</li></ul><p>In this context, <span class="keyword">exploitation</span> refers to the extraction, utilisation, and consumption of natural resources.</p></details><details class="topic-box"><summary class="topic-title">2. Categories of Natural Resources</summary><details class="sub-topic"><summary><h3>2.1 Categorisation by Use</h3></summary><ul><li><strong>Resources essential for life:</strong> Air, water, and soil. These are fundamental to existence and cannot be artificially manufactured.</li><li><strong>Resources for materials:</strong> Natural gifts transformed by humans for utility or beauty (e.g., wood into furniture, marble, coal, gold).</li><li><strong>Resources for energy:</strong> Sources that power modern living, such as coal, water, petroleum, natural gas, sunlight, and wind.</li></ul></details><details class="sub-topic"><summary><h3>2.2 Renewable and Non-renewable Resources</h3></summary><p>This classification is based on whether resources can replenish themselves over time.</p><ul><li><span class="keyword">Renewable resources</span>: Resources that can regenerate through natural cycles, provided their natural rhythm of restoration is not disturbed (e.g., solar energy, wind energy, flowing water, timber).</li><li><span class="keyword">Non-renewable resources</span>: Resources created over extremely long geological periods that cannot be replenished at the rate they are consumed (e.g., fossil fuels like coal and petroleum, and metals like iron, copper, and gold).</li></ul><p><strong>Ecosystem Functions vs. Ecosystem Services:</strong> <span class="keyword">Ecosystem functions</span> are natural processes (e.g., a forest filtering water or preventing soil erosion). When these processes directly benefit humans, they are called <span class="keyword">ecosystem services</span>.</p></details></details><details class="topic-box"><summary class="topic-title">3. Distribution of Natural Resources and its Implications</summary><p>Natural resources are unevenly distributed across the planet. This uneven distribution shapes human settlements, trade patterns, international relations, and conflicts.</p><details class="sub-topic"><summary><h3>3.1 The 'Natural Resource Curse'</h3></summary><p>The <span class="keyword">natural resource curse</span> (or <span class="keyword">paradox of plenty</span>) is a phenomenon where regions rich in natural resources experience slower economic growth and development. This often happens because these economies fail to develop industries that convert raw resources into higher-value products.</p></details><details class="sub-topic"><summary><h3>3.2 Resource Sharing and Conflicts</h3></summary><p>Because nature does not respect political boundaries, sharing resources often leads to geopolitical tensions. An example is the sharing of the Kaveri River water among Karnataka, Tamil Nadu, Kerala, and Puducherry, which requires careful negotiation and management.</p></details></details><details class="topic-box"><summary class="topic-title">4. Responsible and Wise Use of Natural Resources: Stewardship</summary><p>Sustaining life requires <span class="keyword">stewardship</span>—respecting nature and using resources in a way that enables the restoration of renewables and the judicious use of non-renewables to prevent <span class="keyword">biodiversity loss</span>, pollution, and climate change.</p><details class="sub-topic"><summary><h3>4.1 Overexploitation of Groundwater: Punjab Case Study</h3></summary><p>During the Green Revolution in the 1960s, Punjab shifted to high-yielding varieties of wheat and paddy, which required intensive watering and chemical inputs. This led to:</p><ul><li>Severe depletion of groundwater, with water tables falling below 30 metres in many areas.</li><li>Health hazards due to pesticides and fertilizers dissolving into the remaining groundwater.</li><li>Nearly 80% of Punjab's area being classified as 'over-exploited'.</li></ul></details><details class="sub-topic"><summary><h3>4.2 Traditional and Sustainable Alternatives</h3></summary><ul><li><span class="keyword">Vrikshayurveda</span>: An ancient Indian botanical science (formalised around the 10th century CE by Surapala) focusing on plant care, soil health, crop rotation, and natural pest repellents.</li><li><strong>Organic Farming in Sikkim:</strong> In 2016, Sikkim became India's first 100% organic state. By transitioning to compost and natural pest repellents (neem, garlic), local biodiversity flourished, tourism increased, and farmers' incomes rose by 20% on average.</li><li><strong>Alternative Materials:</strong> Reducing the use of highly polluting materials like cement by reviving traditional materials (mud, stone) and using recycled plastics.</li></ul></details><details class="sub-topic"><summary><h3>4.3 Renewable Energy Leadership</h3></summary><p>The <span class="keyword">International Solar Alliance (ISA)</span>, launched by India and France in 2015, is a coalition of sunshine-rich countries committed to harnessing solar power. Projects like the Bhadla Solar Park in Rajasthan exemplify this transition.</p></details></details><details class="topic-box"><summary class="topic-title">5. Summary & Philosophical Outlook</summary><p>We must act as stewards of natural resources. The Bhagavad Gita refers to <span class="keyword">lokasangraha</span>—the idea that everyone must transcend personal desires and act for the wellbeing of all.</p></details><details class="topic-box"><summary class="topic-title">Note: History's Darker Periods</summary><p>Studying history's darker periods (such as wars, Nazism, and brutality) with "detachment and sensitivity" is essential. It allows us to understand what made such ideologies possible so we can prevent their recurrence, without blaming current generations for past actions.</p></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 1</strong> of the Class 8 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "../../index.html";
+      } else {
+        window.location.href = "08-chapter-02-reshaping-indias-political-map.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

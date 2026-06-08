@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Areas Related to Circles</title>
+  <title>Class 10 — Chapter 11: Areas Related to Circles</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <h2>1. Core Definitions</h2><ul><li><span class="keyword">Sector of a circle</span>: The portion of the circular region enclosed by two radii and the corresponding arc.<ul><li><span class="keyword">Minor Sector</span>: Sector with angle &lt; 180&deg;.</li><li><span class="keyword">Major Sector</span>: Sector with angle 360&deg; - &theta;.</li></ul></li><li><span class="keyword">Segment of a circle</span>: The portion of the circular region enclosed between a chord and the corresponding arc.<ul><li><span class="keyword">Minor Segment</span>: Formed by the minor arc.</li><li><span class="keyword">Major Segment</span>: Formed by the major arc.</li></ul></li><li><em>Remark:</em> Unless stated otherwise, segment and sector refer to the minor segment and minor sector.</li></ul><h2>2. Essential Formulas</h2><ul><li><strong>Length of an arc of a sector</strong> (angle &theta;, radius <em>r</em>): <code>(&theta; / 360) &times; 2&pi;r</code></li><li><strong>Area of a sector</strong> (angle &theta;, radius <em>r</em>): <code>(&theta; / 360) &times; &pi;r&sup2;</code></li><li><strong>Area of a segment</strong>: <code>Area of the corresponding sector - Area of the corresponding triangle</code></li></ul><h2>3. Key Examples</h2><details><summary>Example 1: Area of Sector</summary><p><strong>Given:</strong> Radius <em>r</em> = 4 cm, angle &theta; = 30&deg;, &pi; = 3.14.</p><ul><li><strong>Area of minor sector:</strong> (30/360) &times; 3.14 &times; 4&sup2; &approx; 4.19 cm&sup2;</li><li><strong>Area of major sector:</strong> &pi;r&sup2; - Area of minor sector = (3.14 &times; 16) - 4.19 &approx; 46.1 cm&sup2;</li></ul></details><details><summary>Example 2: Area of Segment</summary><p><strong>Given:</strong> Radius <em>r</em> = 21 cm, angle &theta; = 120&deg;, &pi; = 22/7.</p><ul><li><strong>Area of sector:</strong> (120/360) &times; (22/7) &times; 21&sup2; = 462 cm&sup2;</li><li><strong>Area of triangle:</strong> Uses trigonometry to find base and height. Area = (441/4)&radic;3 cm&sup2;</li><li><strong>Area of segment:</strong> 462 - (441/4)&radic;3 cm&sup2;</li></ul></details><h2>4. Exercise 11.1 Applications</h2><p>Common problem types involving sector and segment areas:</p><ul><li>Calculating area swept by a clock's minute hand over a specific time.</li><li>Finding grazing area for tethered animals (e.g., horse tied to a square field corner).</li><li>Calculating material areas for symmetrical objects (e.g., brooches, umbrellas, round table covers).</li><li>Determining coverage area for sweeping mechanisms (e.g., car wipers, lighthouse beams).</li></ul>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 11</strong> of the Class 10 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "10-chapter-10-circles.html";
+      } else {
+        window.location.href = "10-chapter-12-surface-areas-and-volumes.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

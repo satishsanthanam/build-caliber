@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Reproduction in Plants</title>
+  <title>Class 7 — Chapter 8: Reproduction in Plants</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class="topic-box"><summary class="topic-title">8.1 Modes of Reproduction</summary><p>The production of new individuals from their parents is known as <span class="keyword">reproduction</span>. Plants have two main modes of reproduction:</p><ul><li><span class="keyword">Asexual reproduction:</span> New plants are obtained without the production of seeds.</li><li><span class="keyword">Sexual reproduction:</span> New plants are obtained from seeds.</li></ul><details class="sub-topic"><summary><h3>Vegetative Propagation</h3></summary><ul><li>A type of asexual reproduction where new plants are produced from vegetative parts: roots, stems, leaves, and buds.</li><li><span class="keyword">Node:</span> The part of a stem or branch where a leaf arises. Stem cuttings (e.g., rose, champa) can grow into new plants when buried in soil.</li><li><span class="keyword">Vegetative buds:</span> Buds in the axil (point of attachment of leaf at the node) that develop into shoots.</li><li><span class="keyword">Eyes:</span> Scars on a potato containing buds that can sprout into new plants.</li><li>Other examples: Ginger and turmeric grow from underground stems; <span class="keyword">Bryophyllum</span> reproduces via buds on leaf margins; sweet potato and dahlia reproduce via roots; cacti reproduce when detached parts fall on soil.</li><li><strong>Advantages:</strong> Takes less time to grow, bears flowers and fruits earlier, and produces exact genetic copies (clones) of the parent plant.</li></ul></details><details class="sub-topic"><summary><h3>Other Asexual Methods</h3></summary><ul><li><span class="keyword">Budding:</span> Observed in yeast (single-celled organism). A small bulb-like projection called a <span class="keyword">bud</span> grows from the parent cell, matures, detaches, and forms a new cell. Can form chains of buds rapidly.</li><li><span class="keyword">Fragmentation:</span> Observed in algae like Spirogyra. The organism breaks into two or more fragments, each growing into a new individual.</li><li><span class="keyword">Spore formation:</span> Observed in fungi (bread mould), mosses, and ferns. <span class="keyword">Spores</span> are asexual bodies covered by a hard protective coat to withstand unfavorable conditions (high temperature, low humidity). They germinate under favorable conditions.</li></ul></details></details><details class="topic-box"><summary class="topic-title">8.2 Sexual Reproduction</summary><p>Sexual reproduction involves the fusion of male and female gametes. Flowers are the reproductive parts of a plant.</p><ul><li><span class="keyword">Stamens:</span> The male reproductive parts. Consist of an <span class="keyword">anther</span> (which produces pollen grains containing <span class="keyword">male gametes</span>) and a <span class="keyword">filament</span>.</li><li><span class="keyword">Pistil:</span> The female reproductive part. Consists of a <span class="keyword">stigma</span>, <span class="keyword">style</span>, and <span class="keyword">ovary</span>. The ovary contains <span class="keyword">ovules</span>, where the <span class="keyword">female gamete</span> (egg) is formed.</li><li><span class="keyword">Unisexual flowers:</span> Contain either only pistil or only stamens (e.g., corn, papaya, cucumber).</li><li><span class="keyword">Bisexual flowers:</span> Contain both stamens and pistil (e.g., mustard, rose, petunia).</li></ul><details class="sub-topic"><summary><h3>Pollination</h3></summary><ul><li>The transfer of pollen grains from the anther to the stigma of a flower.</li><li><span class="keyword">Self-pollination:</span> Pollen lands on the stigma of the same flower or another flower of the same plant.</li><li><span class="keyword">Cross-pollination:</span> Pollen lands on the stigma of a flower of a different plant of the same kind.</li><li>Pollen is carried by agents like wind, water, and insects.</li></ul></details><details class="sub-topic"><summary><h3>Fertilisation</h3></summary><ul><li>The fusion of male and female gametes to form a cell called a <span class="keyword">zygote</span> is called <span class="keyword">fertilisation</span>.</li><li>The zygote develops into an <span class="keyword">embryo</span>.</li></ul></details></details><details class="topic-box"><summary class="topic-title">8.3 Fruits and Seed Formation</summary><ul><li>After fertilisation, the ovary grows into a <span class="keyword">fruit</span> (ripened ovary), and other parts of the flower fall off.</li><li>The ovules develop into <span class="keyword">seeds</span>, which contain the embryo enclosed in a protective seed coat.</li><li>Fruits can be fleshy and juicy (e.g., mango, orange) or hard (e.g., almonds, walnuts).</li></ul></details><details class="topic-box"><summary class="topic-title">8.4 Seed Dispersal</summary><p>Seed dispersal prevents competition among seedlings for sunlight, water, minerals, and space, and helps plants invade new habitats.</p><ul><li><strong>Dispersal by Wind:</strong> Winged seeds (drumstick, maple), light seeds (grasses), or hairy seeds/fruits (aak, sunflower).</li><li><strong>Dispersal by Water:</strong> Spongy or fibrous outer coats that float (e.g., coconut).</li><li><strong>Dispersal by Animals:</strong> Spiny seeds with hooks that cling to animal bodies (e.g., Xanthium, Urena).</li><li><strong>Dispersal by Sudden Jerks:</strong> Fruits burst open, scattering seeds far from the parent plant (e.g., castor, balsam).</li></ul></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 8</strong> of the Class 7 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "07-chapter-07-transportation-in-animals-and-plan.html";
+      } else {
+        window.location.href = "07-chapter-09-motion-and-time.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

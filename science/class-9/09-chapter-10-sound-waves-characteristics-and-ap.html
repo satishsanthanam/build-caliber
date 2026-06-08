@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Sound Waves: Characteristics and Applications</title>
+  <title>Class 9 — Chapter 10: Sound Waves: Characteristics and Applications</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class='topic-box'><summary class='topic-title'>10.1 Production of Sound</summary><details class='sub-topic'><summary><h3>10.1.1 Mechanics of Vibration</h3></summary><ul><li><span class='keyword'>Vibration:</span> Sound is produced by vibrations, which are the periodic to-and-fro motion (oscillations) of an object.</li><li><span class='keyword'>Source:</span> The object that produces sound is called the source of the sound, which involves vibrating strings, membranes, air columns, or other parts.</li></ul></details><details class='sub-topic'><summary><h3>10.1.2 Voice Production in Humans and Animals</h3></summary><ul><li><span class='keyword'>Vocal cords:</span> Tightly stretched muscular flaps located inside the throat that vibrate to produce human voice.</li><li><span class='keyword'>Larynx:</span> The human voice box containing vocal cords that convert lung airflow into audible speech or music.</li></ul></details><details class='sub-topic'><summary><h3>10.1.3 Tuning Fork</h3></summary><ul><li><span class='keyword'>Tuning fork:</span> A U-shaped steel or aluminum bar with two prongs and a stem, designed to vibrate at a precise frequency when struck against a rubber pad.</li><li><span class='keyword'>Prongs:</span> The two parallel tines of a tuning fork whose vibrations can produce visible wave disturbances when dipped in water.</li></ul></details></details><details class='topic-box'><summary class='topic-title'>10.2 Propagation of Sound</summary><details class='sub-topic'><summary><h3>10.2.1 Media and Transmission</h3></summary><ul><li><span class='keyword'>Medium:</span> The material (solid, liquid, or gas) through which sound travels. Sound travels fastest in solids, slower in liquids, and slowest in gases.</li></ul></details><details class='sub-topic'><summary><h3>10.2.2 Propagation in Vacuum</h3></summary><ul><li><span class='keyword'>Vacuum:</span> A space devoid of any matter (medium), through which sound waves cannot travel.</li><li><span class='keyword'>Vacuum bell jar experiment:</span> An experiment showing that an electric bell inside a jar becomes completely silent once the air is pumped out, demonstrating that sound needs a medium to propagate.</li></ul></details></details><details class='topic-box'><summary class='topic-title'>10.3 Sound Waves</summary><details class='sub-topic'><summary><h3>10.3.1 Wave Structure</h3></summary><ul><li><span class='keyword'>Sound wave:</span> A longitudinal mechanical wave consisting of alternating compressions and rarefactions propagating through a medium.</li><li><span class='keyword'>Compression:</span> A region in a sound wave where the density of the medium is higher than the average density.</li><li><span class='keyword'>Rarefaction:</span> A region in a sound wave where the density of the medium is lower than the average density.</li></ul></details><details class='sub-topic'><summary><h3>10.3.2 Classification of Waves</h3></summary><ul><li><span class='keyword'>Longitudinal waves:</span> Waves in which the particles of the medium vibrate back and forth parallel to the direction of wave propagation.</li><li><span class='keyword'>Transverse waves:</span> Waves in which the particles of the medium vibrate perpendicular to the direction of wave propagation (e.g., light waves).</li><li><span class='keyword'>Mechanical waves:</span> Waves that strictly require a material medium (solid, liquid, or gas) for their propagation (e.g., sound waves).</li></ul></details></details><details class='topic-box'><summary class='topic-title'>10.4 Energy of Sound Waves</summary><details class='sub-topic'><summary><h3>10.4.1 Energy Transfer Mechanism</h3></summary><ul><li><span class='keyword'>Sound energy:</span> A form of energy transferred via particle-to-particle collisions without the actual forward transport of physical particles of the medium.</li></ul></details><details class='sub-topic'><summary><h3>10.4.2 Electroacoustic Devices</h3></summary><ul><li><span class='keyword'>Microphone:</span> A device that converts sound energy into electrical energy when sound waves make its diaphragm vibrate.</li><li><span class='keyword'>Diaphragm:</span> A thin membrane inside a microphone or speaker that vibrates in response to or to produce sound waves.</li><li><span class='keyword'>Speaker:</span> A device that converts electrical signals into mechanical vibrations of a diaphragm to produce sound.</li></ul></details></details><details class='topic-box'><summary class='topic-title'>10.5 Graphical Representation of a Sound Wave</summary><details class='sub-topic'><summary><h3>10.5.1 Wave Anatomy</h3></summary><ul><li><span class='keyword'>Crest:</span> The peak on a density-distance graph representing the region of maximum density (compression).</li><li><span class='keyword'>Trough:</span> The valley on a density-distance graph representing the region of minimum density (rarefaction).</li></ul></details></details><details class='topic-box'><summary class='topic-title'>10.6 Characteristics of a Sound Wave</summary><details class='sub-topic'><summary><h3>10.6.1 Physical Wave Parameters</h3></summary><ul><li><span class='keyword'>Wavelength:</span> The distance between two consecutive crests or two consecutive troughs, represented by &lambda; and measured in meters (m).</li><li><span class='keyword'>Frequency:</span> The number of density oscillations at a fixed point per unit time, represented by &nu; and measured in Hertz (Hz).</li><li><span class='keyword'>Time period:</span> The time taken for one complete density oscillation at a fixed point, represented by T and measured in seconds (s).</li></ul></details><details class='sub-topic'><summary><h3>10.6.2 Amplitude, Intensity, and Speed</h3></summary><ul><li><span class='keyword'>Amplitude:</span> The maximum change in air density compared to the average density during compression or rarefaction.</li><li><span class='keyword'>Intensity:</span> The amount of sound energy passing through a unit area perpendicular to the direction of propagation in unit time.</li><li><span class='keyword'>Speed of sound:</span> Calculated as the product of wavelength and frequency (v = &lambda;&nu;). It increases with temperature and humidity.</li></ul></details><details class='sub-topic'><summary><h3>10.6.3 Human Perception of Sound</h3></summary><ul><li><span class='keyword'>Pitch:</span> The human brain's perception of frequency; high frequency is perceived as a high-pitch shrill sound.</li><li><span class='keyword'>Loudness:</span> The human brain's perception of amplitude; a wave with larger amplitude carries more energy and sounds louder.</li><li><span class='keyword'>Audible range:</span> The range of frequencies a normal human can hear, typically spanning from 20 Hz to 20,000 Hz.</li><li><span class='keyword'>Timbre:</span> The quality of sound that allows us to distinguish between different musical instruments playing the same note at the same loudness.</li><li><span class='keyword'>Tone:</span> A sound consisting of a single, pure frequency.</li><li><span class='keyword'>Octave:</span> The interval between two frequencies where one has exactly double the frequency of the other.</li></ul></details></details><details class='topic-box'><summary class='topic-title'>10.7 Reflection of Sound</summary><details class='sub-topic'><summary><h3>10.7.1 Reflection Phenomena</h3></summary><ul><li><span class='keyword'>Echo:</span> A distinct reflected sound heard when the reflection off a hard surface arrives at least 0.1 seconds after the original sound (minimum distance is about 17 m).</li><li><span class='keyword'>Reverberation:</span> The persistence of sound in a large hall due to multiple rapid reflections arriving with a time gap less than 0.05 seconds.</li></ul></details></details><details class='topic-box'><summary class='topic-title'>10.8 Ultrasonic and Infrasonic Waves, and their Applications</summary><details class='sub-topic'><summary><h3>10.8.1 Sub-audible and Super-audible Waves</h3></summary><ul><li><span class='keyword'>Infrasonic waves:</span> Sound waves with frequencies below 20 Hz, used by animals like elephants and for detecting earthquakes.</li><li><span class='keyword'>Ultrasonic waves:</span> Sound waves with frequencies above 20 kHz, used in medical imaging (ultrasonography), industrial cleaning, and metal testing.</li></ul></details><details class='sub-topic'><summary><h3>10.8.2 Distance Detection Systems</h3></summary><ul><li><span class='keyword'>Echolocation:</span> A physiological process used by bats, dolphins, and whales to locate obstacles and prey by emitting ultrasonic pulses and hearing their echoes.</li><li><span class='keyword'>Sonar:</span> Sound Navigation and Ranging; an underwater system that transmits ultrasonic waves and analyzes reflected echoes to calculate the depth or location of underwater objects.</li></ul></details></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 10</strong> of the Class 9 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "09-chapter-09-atomic-foundations-of-matter.html";
+      } else {
+        window.location.href = "09-chapter-11-reproduction-how-life-continues.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

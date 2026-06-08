@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Angles as Turns</title>
+  <title>Class 5 — Chapter 3: Angles as Turns</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class="topic-box"><summary class="topic-title">3.1 Introduction to Turns</summary><p>Turns are a fundamental way to understand angles in our daily lives. We observe turns in many real-life situations, such as playing games, watching the hands of a clock, or riding a giant wheel.</p><ul><li><strong>Full Turn:</strong> A complete rotation where an object turns all the way around and returns to its starting position. For example, the minute hand of a clock makes a full turn when it comes back to its initial position.</li><li><strong>Half Turn:</strong> A rotation that is half of a complete circle (e.g., making a half-moon shape).</li><li><strong>Quarter Turn:</strong> A rotation that is one-fourth of a complete circle.</li></ul><details class="sub-topic"><summary><h3>3.1.1 Everyday Examples of Turns</h3></summary><p>Many everyday objects involve turns. Examples include:</p><ul><li>Taps</li><li>Doors with hinges</li><li>Scissors</li><li>Clothes clips</li><li>Tongs</li><li>File covers</li></ul></details></details><details class="topic-box"><summary class="topic-title">3.2 Classifying Angles by Turns</summary><p>Angles arise in situations that involve a turn. We can classify angles based on the fraction of a full turn they represent:</p><ul><li><span class="keyword">Right Angle</span>: Formed by a quarter ($\frac{1}{4}$) of a full turn.</li><li><span class="keyword">Acute Angle</span>: Formed by less than a quarter ($\frac{1}{4}$) turn.</li><li><span class="keyword">Obtuse Angle</span>: Formed by more than a quarter ($\frac{1}{4}$) turn but less than a half ($\frac{1}{2}$) turn.</li><li><span class="keyword">Straight Angle</span>: Formed by two quarter turns, which is equal to a half ($\frac{1}{2}$) turn.</li></ul></details><details class="topic-box"><summary class="topic-title">3.3 Angle Measuring Tools</summary><p>We can create simple tools to measure turns and identify angles by folding circular paper into equal parts.</p><details class="sub-topic"><summary><h3>3.3.1 The 8-Part Measuring Tool</h3></summary><p>By folding a circle into 8 equal parts, we can measure turns in eighths:</p><ul><li>$\frac{1}{8}$ turn: Half of a quarter turn.</li><li>$\frac{2}{8}$ turn: Equivalent to a $\frac{1}{4}$ turn (<span class="keyword">Right Angle</span>).</li><li>$\frac{4}{8}$ turn: Equivalent to a $\frac{1}{2}$ turn (<span class="keyword">Straight Angle</span>).</li></ul></details><details class="sub-topic"><summary><h3>3.3.2 The 12-Part Measuring Tool</h3></summary><p>By folding a circle into 12 equal parts, we can relate turns to the minutes on a clock face:</p><ul><li>$\frac{1}{12}$ of a full turn is equivalent to $5$ minutes of movement by the minute hand.</li><li>$\frac{1}{6}$ of a full turn ($\frac{2}{12}$) is equivalent to $10$ minutes.</li><li>$\frac{1}{4}$ of a full turn ($\frac{3}{12}$) is equivalent to $15$ minutes.</li><li>$\frac{1}{2}$ of a full turn ($\frac{6}{12}$) is equivalent to $30$ minutes.</li><li>A full turn ($\frac{12}{12}$) is equivalent to $60$ minutes.</li></ul></details></details><details class="topic-box"><summary class="topic-title">3.4 Direction and Rotation</summary><p>Turns can be made in two opposite directions:</p><ul><li><span class="keyword">Clockwise</span>: The direction in which the hands of a clock move.</li><li><span class="keyword">Anti-clockwise</span>: The direction opposite to the movement of the hands of a clock.</li></ul><details class="sub-topic"><summary><h3>3.4.1 Turns and Cardinal Directions</h3></summary><p>Using the cardinal directions (North, South, East, West), we can determine the ending direction after making specific turns:</p><ul><li>Starting North, making 2 right angles clockwise leads to <strong>South</strong>.</li><li>Starting South, making 2 right angles anti-clockwise leads to <strong>North</strong>.</li><li>Starting East, making 4 right angles anti-clockwise leads back to <strong>East</strong>.</li><li>Starting North, making 5 right angles clockwise leads to <strong>East</strong> (since 4 right angles make a full turn, and the 5th right angle is a quarter turn clockwise).</li></ul></details></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 3</strong> of the Class 5 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "05-chapter-02-fractions.html";
+      } else {
+        window.location.href = "05-chapter-04-we-the-travellersii.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Food We Eat</title>
+  <title>Class 3 — Chapter 8: Food We Eat</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class="topic-box"><summary class="topic-title">8.1 My Favourite Food</summary><p>We all like to eat and drink different things. Some of these food items are sweet, some are sour, some are spicy, and some are bitter. We eat fruits, vegetables, rice, dal, or roti. We drink milk, lassi, or juice.</p><details class="sub-topic"><summary><h3>Chhappan Bhog</h3></summary><p><span class="keyword">Chhappan bhog</span> is a special food prepared on festivals and auspicious occasions in honour of guests, friends, and family. It contains 56 varieties of food items representing a harmonious blend of six tastes:</p><ul><li>Sweet (meetha)</li><li>Spicy (teekha)</li><li>Astringent (kasaila)</li><li>Sour (khatta)</li><li>Salty (namkeen)</li><li>Bitter (karva)</li></ul></details></details><details class="topic-box"><summary class="topic-title">8.2 Story of Shirin — the Runner</summary><p>Shirin was in Class 3 and used to run very fast. However, she often fell sick. When she asked a champion runner how to run like her and win medals, the champion asked about her diet. Shirin revealed she only liked to eat rice and potatoes.</p><details class="sub-topic"><summary><h3>The Champion's Advice</h3></summary><p>The champion advised Shirin that to have a strong and healthy body, she must eat a variety of foods:</p><ul><li>Eat different kinds of vegetables and fruits.</li><li>Eat things made from different kinds of grains, like <span class="keyword">rice</span>, <span class="keyword">ragi</span>, <span class="keyword">jowar</span>, <span class="keyword">wheat</span>, and <span class="keyword">bajra</span>.</li><li>Eat pulses (dal) and nuts.</li><li>Eat food cooked at home.</li></ul><p>Shirin followed this advice, understood the value of a <span class="keyword">balanced diet</span>, and soon felt energetic, healthy, and won a medal for her school.</p></details></details><details class="topic-box"><summary class="topic-title">8.3 We Eat Different Things</summary><p>Elders in our family cook different foods during summer and winter. We get different fruits and vegetables in different seasons.</p><ul><li><strong>Summer:</strong> We love to eat kulfi or ice-cream, drink tender coconut water, and eat mangoes and melons.</li><li><strong>Winter:</strong> We eat warm food, soups, and stew, enjoy hot drinks, and eat plenty of apples.</li></ul><details class="sub-topic"><summary><h3>Summer Drinks</h3></summary><p>During the summer, the weather is hot and we sweat a lot, losing water from our body. To stay hydrated, we should drink water frequently and consume drinks like:</p><ul><li>Tender Coconut Water</li><li>Mango Juice</li><li>Aam Panna</li><li>Orange Juice</li><li>Lime Water (nimbu pani)</li><li>Sugarcane juice</li><li>Buttermilk</li></ul><p>Our body needs a lot of water. We cannot live without water, which is why we say, <span class="keyword">'water is life'</span>.</p></details></details><details class="topic-box"><summary class="topic-title">8.4 Where Does Food Come From?</summary><p>We get our food from both plants and animals.</p><details class="sub-topic"><summary><h3>Parts of Plants We Eat</h3></summary><ul><li><strong>Leaves:</strong> Spinach (Palak), Fenugreek (Methi), Cabbage, Mustard, Coriander (Dhaniya).</li><li><strong>Fruits:</strong> Guava, Sapota, Apple, Mango.</li><li><strong>Roots:</strong> Carrot, Radish, Beetroot.</li><li><strong>Stems:</strong> Potatoes, Bamboo shoots, Ginger, Onion.</li><li><strong>Seeds:</strong> Grains, Pulses, Dry fruits.</li></ul></details><details class="sub-topic"><summary><h3>Food from Animals</h3></summary><p>Some people eat things that are taken from animals, such as milk, curd, ghee, cheese, paneer, honey, eggs, and meat.</p></details><details class="sub-topic"><summary><h3>Puzzle Time</h3></summary><p>Two of our most commonly used ingredients are neither obtained from plants nor from animals. These are <span class="keyword">Salt</span> and <span class="keyword">Water</span>.</p></details></details><details class="topic-box"><summary class="topic-title">8.5 Let Us Reflect</summary><p>Review and reflection exercises based on the chapter:</p><ul><li><strong>Discuss:</strong> Why do we need different kinds of food? Why do we eat seasonal foods? How can you tell if a food is healthy or unhealthy? How can we reduce food waste at home?</li><li><strong>Write:</strong> List the fruits and vegetables eaten in your family. Write the recipe of your favourite dish. Name a food item that includes both plant and animal-based ingredients (e.g., lassi).</li><li><strong>Draw:</strong> Draw three plates or thalis with food items you eat in the morning, afternoon, and at night.</li><li><strong>Think:</strong> Imagine you suddenly have a guest visiting your home. What kind of food would you serve them and why?</li></ul></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 8</strong> of the Class 3 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "03-chapter-07-water-a-precious-gift.html";
+      } else {
+        window.location.href = "03-chapter-09-staying-healthy-and-happy.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>
