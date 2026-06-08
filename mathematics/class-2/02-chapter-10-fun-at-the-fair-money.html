@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Fun at the Fair</title>
+  <title>Class 2 — Chapter 10: Fun at the Fair</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class="topic-box"><summary class="topic-title">10.1 Introduction: Rupal at the Fair</summary><p>Rupal loves going to the fair. She visits the local fair with her friends. Her mother gave her <span class="keyword">₹50</span>. She spent most of it on her favourite rides.</p><p><strong>Discussion Topic:</strong> Talk about the things that children enjoy in fairs, whom they go with, what they buy, and how much money they spend there.</p></details><details class="topic-box"><summary class="topic-title">10.2 How Much Rupal Spent?</summary><p>Let's calculate the money spent by Rupal on different rides:</p><ul><li>Merry-go-round: $\text{₹}10$</li><li>Toy Train: $\text{₹}20$</li><li>Giant Wheel: $\text{₹}15$</li></ul><p><strong>Total money spent on rides:</strong> $\text{₹}10 + \text{₹}20 + \text{₹}15 = \text{₹}45$</p><details class="sub-topic"><summary><h3>Calculating Money Left</h3></summary><p>Using the formula:</p><p>$$\text{Money given by mother} - \text{Money spent} = \text{Money left}$$</p><p>$$\text{₹}50 - \text{₹}45 = \text{₹}5$$</p></details><details class="sub-topic"><summary><h3>Alternative Way of Finding Money Spent</h3></summary><p>A friend of Rupal has $\text{₹}8$ left out of $\text{₹}50$. She wants to know how much money she spent. Her method of counting up:</p><ul><li>$\text{₹}8 + \text{₹}20 = \text{₹}28$ (spent on rides)</li><li>$\text{₹}28 + \text{₹}20 = \text{₹}48$ (spent on snacks)</li><li>$\text{₹}48 + \text{₹}2 = \text{₹}50$ (spent on candies)</li><li>Total spent: $\text{₹}20 + \text{₹}20 + \text{₹}2 = \text{₹}42$</li></ul></details><details class="sub-topic"><summary><h3>Practice Problem</h3></summary><p>If you had $\text{₹}3$ left when your father gave you $\text{₹}40$ for the fair, how many rupees did you spend?</p><p>$$\text{₹}40 - \text{₹}3 = \text{₹}37$$</p></details></details><details class="topic-box"><summary class="topic-title">10.3 Let us Do: Ride Tickets and Indian Currency</summary><details class="sub-topic"><summary><h3>A. How much money will be needed to buy?</h3></summary><ul><li><strong>Toy Train Ride:</strong> $\text{₹}20$ per ticket. For $2$ tickets: $2 \times \text{₹}20 = \text{₹}40$</li><li><strong>Merry-go-round:</strong> $\text{₹}10$ per ticket. If total money is $\text{₹}30$, number of tickets: $\frac{\text{₹}30}{\text{₹}10} = 3$ tickets</li><li><strong>Giant Wheel:</strong> $\text{₹}15$ per ticket. For $2$ tickets: $2 \times \text{₹}15 = \text{₹}30$</li></ul></details><details class="sub-topic"><summary><h3>B. Indian Currency Notes</h3></summary><p>Commonly used Indian currency notes include:</p><ul><li><span class="keyword">₹100</span> note</li><li><span class="keyword">₹200</span> note</li><li><span class="keyword">₹500</span> note</li></ul></details><details class="sub-topic"><summary><h3>C. Observing a ₹500 Note</h3></summary><ul><li><strong>Words:</strong> "Five hundred rupees" is written in words on the note.</li><li><strong>Numbers:</strong> "500" is written in numbers multiple times on both sides.</li><li><strong>Monument:</strong> The picture of the <span class="keyword">Red Fort</span> (Lal Qila) is printed on the back of the $\text{₹}500$ note.</li></ul></details></details><details class="topic-box"><summary class="topic-title">10.4 Old Coins and Paise</summary><p>In the past, smaller denominations of currency called <span class="keyword">Paise</span> were used in India:</p><ul><li>$10\text{ Paise}$</li><li>$20\text{ Paise}$</li><li>$25\text{ Paise}$</li><li>$50\text{ Paise}$</li></ul><p><strong>Conversion Rate:</strong></p><p>$$100\text{ Paise} = 1\text{ Rupee } (\text{₹}1)$$</p><p>$$50\text{ Paise} + 50\text{ Paise} = 100\text{ Paise} = \text{₹}1$$</p><details class="sub-topic"><summary><h3>Practice Questions</h3></summary><ul><li><strong>How many 25 paise coins make ₹1?</strong><br>Four $25\text{ paise}$ coins make $\text{₹}1$ ($4 \times 25 = 100\text{ paise}$).</li><li><strong>How many 20 paise coins make ₹1?</strong><br>Five $20\text{ paise}$ coins make $\text{₹}1$ ($5 \times 20 = 100\text{ paise}$).</li></ul></details></details><details class="topic-box"><summary class="topic-title">10.5 Pop the Balloon Game</summary><p>Matru comes across a 'Pop the balloon' game. He gets $3$ chances for $\text{₹}10$. The prize money for popping different colored balloons is:</p><ul><li>Pink Balloon: $\text{₹}1$</li><li>Red Balloon: $\text{₹}2$</li><li>Blue Balloon: $\text{₹}5$</li><li>Yellow Balloon: $\text{₹}10$</li><li>Green Balloon: $\text{₹}20$</li></ul><details class="sub-topic"><summary><h3>A. Calculating Prize Money</h3></summary><ul><li>Red + Pink: $\text{₹}2 + \text{₹}1 = \text{₹}3$</li><li>Red + Green + Red: $\text{₹}2 + \text{₹}20 + \text{₹}2 = \text{₹}24$</li><li>Blue + Blue + Pink: $\text{₹}5 + \text{₹}5 + \text{₹}1 = \text{₹}11$</li><li>Green + Yellow: $\text{₹}20 + \text{₹}10 = \text{₹}30$</li></ul></details><details class="sub-topic"><summary><h3>B. Target Amounts</h3></summary><p>Which balloons to pop to get the following amounts?</p><ul><li><strong>₹17:</strong> Yellow ($\text{₹}10$) + Blue ($\text{₹}5$) + Red ($\text{₹}2$)</li><li><strong>₹22:</strong> Green ($\text{₹}20$) + Red ($\text{₹}2$)</li><li><strong>₹31:</strong> Green ($\text{₹}20$) + Yellow ($\text{₹}10$) + Pink ($\text{₹}1$)</li></ul></details><details class="sub-topic"><summary><h3>C. Highest Amount with 3 Balloons</h3></summary><p>To get the highest amount with 3 differently coloured balloons, target:</p><ul><li>Green ($\text{₹}20$) + Yellow ($\text{₹}10$) + Blue ($\text{₹}5$)</li><li><strong>Total amount won:</strong> $\text{₹}20 + \text{₹}10 + \text{₹}5 = \text{₹}35$</li></ul></details><details class="sub-topic"><summary><h3>D. Highest Amount with 4 Balloons</h3></summary><p>To get the highest amount with 4 differently coloured balloons, target:</p><ul><li>Green ($\text{₹}20$) + Yellow ($\text{₹}10$) + Blue ($\text{₹}5$) + Red ($\text{₹}2$)</li><li><strong>Total amount won:</strong> $\text{₹}20 + \text{₹}10 + \text{₹}5 + \text{₹}2 = \text{₹}37$</li></ul></details></details><details class="topic-box"><summary class="topic-title">10.6 Combinations of Money</summary><p>We can pay a specific amount using different combinations of notes and coins. For example, $\text{₹}66$ can be paid in multiple ways using $\text{₹}50$, $\text{₹}20$, $\text{₹}10$, $\text{₹}5$, $\text{₹}2$, and $\text{₹}1$ denominations.</p><details class="sub-topic"><summary><h3>Making Combinations for ₹54</h3></summary><ul><li><strong>Combination 1:</strong> One $\text{₹}50$ note + Two $\text{₹}2$ coins</li><li><strong>Combination 2:</strong> Two $\text{₹}20$ notes + One $\text{₹}10$ note + Two $\text{₹}2$ coins</li><li><strong>Combination 3:</strong> Five $\text{₹}10$ notes + Four $\text{₹}1$ coins</li></ul></details><details class="sub-topic"><summary><h3>Making Combinations for ₹85</h3></summary><ul><li><strong>Combination 1:</strong> One $\text{₹}50$ note + One $\text{₹}20$ note + One $\text{₹}10$ note + One $\text{₹}5$ coin</li><li><strong>Combination 2:</strong> Four $\text{₹}20$ notes + One $\text{₹}5$ coin</li><li><strong>Combination 3:</strong> Eight $\text{₹}10$ notes + One $\text{₹}5$ coin</li></ul></details></details><details class="topic-box"><summary class="topic-title">10.7 Let us Buy: Shopping Calculations</summary><p>Calculate the total cost of items, compare with the money you have, and find the money left or more money needed:</p><ul><li><strong>Item 1: Notebook ($\text{₹}15$) + Curd ($\text{₹}28$)</strong><ul><li>Money needed: $\text{₹}15 + \text{₹}28 = \text{₹}43$</li><li>Money you have: One $\text{₹}20$ note + One $\text{₹}2$ coin = $\text{₹}22$</li><li>More money needed: $\text{₹}43 - \text{₹}22 = \text{₹}21$</li></ul></li><li><strong>Item 2: Oranges ($\text{₹}30$) + Mug ($\text{₹}10$)</strong><ul><li>Money needed: $\text{₹}30 + \text{₹}10 = \text{₹}40$</li><li>Money you have: One $\text{₹}50$ note + One $\text{₹}5$ coin = $\text{₹}55$</li><li>Money left: $\text{₹}55 - \text{₹}40 = \text{₹}15$</li></ul></li><li><strong>Item 3: Crayons ($\text{₹}20$) + Water Bottle ($\text{₹}55$) + Ball ($\text{₹}20$)</strong><ul><li>Money needed: $\text{₹}20 + \text{₹}55 + \text{₹}20 = \text{₹}95$</li><li>Money you have: One $\text{₹}20$ note + Two $\text{₹}2$ coins = $\text{₹}24$</li><li>More money needed: $\text{₹}95 - \text{₹}24 = \text{₹}71$</li></ul></li></ul></details><details class="topic-box"><summary class="topic-title">10.8 Let us Do: Addition and Subtraction Word Problems</summary><details class="sub-topic"><summary><h3>Basic Addition Practice</h3></summary><ul><li>$\text{₹}18 + \text{₹}32 = \text{₹}50$</li><li>$\text{₹}15 + \text{₹}27 = \text{₹}42$</li><li>$\text{₹}47 + \text{₹}50 = \text{₹}97$</li><li>$\text{₹}22 + \text{₹}35 = \text{₹}57$</li></ul></details><details class="sub-topic"><summary><h3>Word Problems</h3></summary><ul><li><strong>Problem A:</strong> Jayant spent $\text{₹}25$ on pens and $\text{₹}40$ on notebooks. How much money did he spend in total?<br>$$\text{₹}25 + \text{₹}40 = \text{₹}65$$</li><li><strong>Problem B:</strong> Meera has $\text{₹}43$ with her. Kanika has $\text{₹}14$ more than Meera. How much money does Kanika have?<br>$$\text{₹}43 + \text{₹}14 = \text{₹}57$$</li><li><strong>Problem C:</strong> A packet of bread costs $\text{₹}30$ and a chocolate costs $\text{₹}60$. How much money does Vivek need to buy these items?<br>$$\text{₹}30 + \text{₹}60 = \text{₹}90$$</li><li><strong>Problem D:</strong> Ajay has $\text{₹}58$ with him. He spent $\text{₹}48$ in the market. How much money is left with him now?<br>$$\text{₹}58 - \text{₹}48 = \text{₹}10$$</li></ul></details></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 10</strong> of the Class 2 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "02-chapter-09-which-season-is-it-measurement-of.html";
+      } else {
+        window.location.href = "02-chapter-11-data-handling.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

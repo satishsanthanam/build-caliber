@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Data Handling</title>
+  <title>Class 4 — Chapter 14: Data Handling</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class="topic-box"><summary class="topic-title">14.1 Collecting and Recording Data</summary><p>Data handling begins with asking the right questions to collect information systematically. When we want to find out preferences (like the 'most liked subject'), the question must be clear and specific.</p><details class="sub-topic"><summary><h3>14.1.1 Asking the Right Question</h3></summary><p>Consider the questions asked by Rohan and Anjali to find the most liked subject in their class:</p><ul><li><strong>Rohan's Question:</strong> <span class="keyword">"Which subjects do you like?"</span> (This can lead to multiple answers per child, making it harder to find a single 'most liked' subject).</li><li><strong>Anjali's Question:</strong> <span class="keyword">"Which subject do you like the most?"</span> (This limits each child to one favorite choice, which is more appropriate for finding the 'most liked' subject).</li></ul></details><details class="sub-topic"><summary><h3>14.1.2 Recording Responses</h3></summary><p>To record responses efficiently, we can use short codes or abbreviations for each category:</p><ul><li><strong>M</strong> for Mathematics</li><li><strong>L</strong> for Languages</li><li><strong>T</strong> for The World Around Us</li><li><strong>A</strong> for Arts</li><li><strong>P.E.</strong> for Physical Education</li></ul><p>Example of recorded raw data for $45$ children:</p><p>T, A, P.E., A, M, P.E., L, L, P.E., A, T, M, A, P.E., P.E., T, P.E., M, L, P.E., P.E., A, M, A, L, P.E., M, T, A, T, M, M, P.E., A, L, M, L, P.E., A, T, L, M, M, T, L</p></details></details><details class="topic-box"><summary class="topic-title">14.2 Organizing and Displaying Data</summary><p>Raw data can be difficult to read and interpret. Organizing it into tables makes it much easier to understand and analyze.</p><details class="sub-topic"><summary><h3>14.2.1 Frequency Tables</h3></summary><p>By counting the occurrences of each abbreviation in our recorded data, we can fill out a structured table to find the number of children who prefer each subject:</p><ul><li><strong>Mathematics (M)</strong></li><li><strong>Languages (L)</strong></li><li><strong>The World Around Us (T)</strong></li><li><strong>Physical Education (P.E.)</strong></li><li><strong>Arts (A)</strong></li></ul></details><details class="sub-topic"><summary><h3>14.2.2 Comparing Methods of Display</h3></summary><p>There are two main ways to display this information:</p><ol><li><strong>Raw List:</strong> Listing every individual response sequentially.</li><li><strong>Organized Table:</strong> Grouping the responses by category and showing the total count (<span class="keyword">frequency</span>) for each.</li></ol><p>An organized table is much easier to understand because it allows us to quickly identify the most common and least common favorites without counting the entire list manually.</p></details></details><details class="topic-box"><summary class="topic-title">14.3 Pictorial Representation (Pictographs)</summary><p>A <span class="keyword">Pictograph</span> is a way of representing data using pictures or symbols to represent quantities.</p><details class="sub-topic"><summary><h3>14.3.1 Colourful Golas Example</h3></summary><p>Rohan and Anjali recorded the ice golas eaten by different children during lunch break to find the most popular color:</p><ul><li><strong>Rohan's Method:</strong> Used stick figures next to each gola color to represent the number of children.</li><li><strong>Anjali's Method:</strong> Drew the corresponding number of colored golas directly in a row.</li></ul><p>Both methods help us easily visualize which color gola is eaten the most and which is eaten the least.</p></details><details class="sub-topic"><summary><h3>14.3.2 Bal Mela (Analyzing Sales over Days)</h3></summary><p>Anjali and Rohan recorded the sales of Fruit Chaats and Sandwiches over three days using pictographs:</p><ul><li><strong>Fruit Chaat Sales:</strong> Represented by drawings of fruit chaat bowls for Day 1, Day 2, and Day 3.</li><li><strong>Sandwich Sales:</strong> Represented by drawings of sandwich slices for Day 1, Day 2, and Day 3.</li></ul><p>By counting the symbols, we can answer questions such as which day had the highest sales and which item was more popular.</p></details></details><details class="topic-box"><summary class="topic-title">14.4 Two-Way Classification Tables</summary><p>Sometimes we need to organize data based on more than one category at the same time (e.g., gender and game preference).</p><details class="sub-topic"><summary><h3>14.4.1 Chess or Cricket Activity</h3></summary><p>To find out how many boys and girls play chess, cricket, both, or neither, we can organize the data into a two-way table with columns for both girls and boys across different game categories.</p></details></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 14</strong> of the Class 4 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "04-chapter-13-the-transport-museum.html";
+      } else {
+        window.location.href = "../../index.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

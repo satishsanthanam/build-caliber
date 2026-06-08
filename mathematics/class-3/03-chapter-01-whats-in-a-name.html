@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>What's in a Name?</title>
+  <title>Class 3 — Chapter 1: What's in a Name?</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class="topic-box"><summary class="topic-title">1.1 Keeping Track Without Counting</summary><p>Before learning formal counting, people used creative methods to keep track of quantities. This story introduces the concept of <span class="keyword">one-to-one correspondence</span>.</p><details class="sub-topic"><summary><h3>The Story of Deba and Deep</h3></summary><p>Deba and Deep were cowherds who did not know how to count. To ensure they did not lose any cows, they used a simple marking system:</p><ul><li><strong>Leaving for grazing:</strong> For each cow that left the gate, they made a vertical mark ($|$) on the wall.</li><li><strong>Returning home:</strong> As each cow re-entered, they struck out one mark from the wall.</li><li><strong>Result:</strong> If all marks were struck out, all cows had returned safely. If any marks remained unstruck, it indicated missing cows.</li></ul></details><details class="sub-topic"><summary><h3>Tracking Large Numbers</h3></summary><p>As their herd grew, they had many more marks on the wall. When two marks were left unstruck, they knew exactly two cows were missing and quickly found them in a nearby field.</p><p><strong>Activity:</strong> Help Hemant keep track of his $36$ cows and $23$ sheep by making similar tracking marks.</p></details></details><details class="topic-box"><summary class="topic-title">1.2 Letter Counts in Names (Data Handling)</summary><p>Analyzing the length of names by counting their letters is an introductory step toward data collection and comparison.</p><details class="sub-topic"><summary><h3>The Animal Game: Finding Captains</h3></summary><p>Some animals decided to form two teams based on the length of their names:</p><ul><li><strong>First Team Captain (Longest Name):</strong> <span class="keyword">Elephant</span> ($8$ letters)</li><li><strong>Second Team Captain (Shortest Name):</strong> <span class="keyword">Ox</span> ($2$ letters)</li></ul><p>Other animal name lengths for comparison:</p><ul><li>$3$ letters: Rat, Dog</li><li>$4$ letters: Deer, Goat, Lion</li><li>$5$ letters: Tiger, Snake</li><li>$6$ letters: Monkey</li></ul></details><details class="sub-topic"><summary><h3>Analyzing Friends' Names</h3></summary><p>Students can collect names of their friends and analyze them using the following criteria:</p><ul><li>Identifying the longest and shortest names.</li><li>Counting names that start with the same letter.</li><li>Finding the most common starting and ending letters.</li><li>Identifying letters of the alphabet that are not used as starting letters in any friend's name.</li></ul></details></details><details class="topic-box"><summary class="topic-title">1.3 Number Names and Word Puzzles</summary><p>Numbers can be represented as words, and we can analyze these number names by their letter counts.</p><details class="sub-topic"><summary><h3>Letter Counts of Number Names</h3></summary><ul><li><strong>Forty-Three:</strong> $10$ letters ($5$ in "Forty" + $5$ in "Three")</li><li><strong>Seventeen:</strong> $9$ letters</li><li><strong>Fifty-Six:</strong> $8$ letters ($5$ in "Fifty" + $3$ in "Six")</li><li><strong>Forty-Two:</strong> $8$ letters ($5$ in "Forty" + $3$ in "Two")</li></ul></details><details class="sub-topic"><summary><h3>Number Name Puzzles</h3></summary><ul><li><strong>Puzzle 1:</strong> "My number name has two words. The first word has $6$ letters, the second word has $5$ letters. I am very near to $100$. Who am I?" <br><strong>Answer:</strong> <span class="keyword">93</span> (Ninety-three: "Ninety" has $6$ letters, "three" has $5$ letters).</li><li><strong>Puzzle 2:</strong> "My friends and I are the numbers from $63$ to $78$. My number name is the smallest (fewest letters) among all my friends. Who am I?" <br><strong>Answer:</strong> <span class="keyword">70</span> (Seventy: $7$ letters).</li></ul></details><details class="sub-topic"><summary><h3>Fun Facts: Longest and Shortest Place Names</h3></summary><ul><li><strong>Longest Place Name in India:</strong> <span class="keyword">Venkatanarasimharajuvaripeta</span> (located in Andhra Pradesh, near the Tamil Nadu border).</li><li><strong>Shortest Place Names in India:</strong> <span class="keyword">Ib</span> (in Odisha) and <span class="keyword">Od</span> (in Gujarat).</li></ul></details></details><details class="topic-box"><summary class="topic-title">1.4 Classification and Grouping</summary><p>Objects can be sorted and grouped in multiple ways based on different common characteristics.</p><details class="sub-topic"><summary><h3>Methods of Grouping</h3></summary><p>Teji and Jojo grouped the same set of picture cards differently:</p><ul><li><strong>Teji's Grouping:</strong> "Those that eat food" (living things like birds, insects, mice, fish) vs "Those that don't eat food" (non-living things like kites, airplanes, phones, drones).</li><li><strong>Jojo's Grouping:</strong> Grouped by other attributes (e.g., things that fly vs things that do not fly, or electronic devices vs non-electronic items).</li></ul></details><details class="sub-topic"><summary><h3>Household Objects Classification</h3></summary><p>Sorting household items based on their power source:</p><ul><li><strong>Things that need electricity:</strong> TV, Lamp, Fan, Clock.</li><li><strong>Things that don't need electricity:</strong> Chair, Bed, Pillow, Blanket.</li></ul></details><details class="sub-topic"><summary><h3>Data Collection: Hair Styles</h3></summary><p>An activity to observe, classify, and record the number of children in a class with different hairstyles (e.g., one ponytail, two ponytails, short hair, curly hair).</p></details></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 1</strong> of the Class 3 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "../../index.html";
+      } else {
+        window.location.href = "03-chapter-02-toy-joy.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

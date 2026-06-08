@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>The Gupta Era: An Age of Tireless Creativity</title>
+  <title>Class 7 — Chapter 7: The Gupta Era: An Age of Tireless Creativity</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class="topic-box"><summary class="topic-title">7.1 Introduction & The Big Questions</summary><p>The Gupta Era is often characterized as a period of tireless creativity, wisdom, and knowledge in Indian history. Key questions explored in this chapter include:</p><ul><li>Who were the Guptas, and why is their period called the <span class="keyword">classical age</span> of India?</li><li>What was happening in the rest of the subcontinent during this time?</li><li>Who were the great figures of this period, and why do their stories matter today?</li></ul></details><details class="topic-box"><summary class="topic-title">7.2 A New Power Emerges</summary><p>By the $3\text{rd}$ century CE, the <span class="keyword">Kushana Empire</span> in the north and northwest began to weaken, paving the way for the rise of the <span class="keyword">Gupta Dynasty</span> near present-day Uttar Pradesh.</p><details class="sub-topic"><summary><h3>7.2.1 Rulers of the Gupta Dynasty</h3></summary><ul><li><strong>Chandragupta I:</strong> Played a crucial role in the early expansion of the empire; remembered for his strategic alliances and gold coins featuring him with his queen, <span class="keyword">Kumaradevi</span>.</li><li><strong>Chandragupta II (Vikramaditya):</strong> Grandson of Chandragupta I, a renowned ruler and devotee of Vishnu. His reign is marked by significant developments in art, literature, and science.</li></ul></details><details class="sub-topic"><summary><h3>7.2.2 The Iron Pillar of Mehrauli</h3></summary><p>Located in Delhi, this $6\text{-tonne}$ iron pillar is over $1,600$ years old and stands without rusting. It was erected during the reign of Chandragupta II, originally in front of the Udayagiri caves. Its rust-resistance is due to a unique thin protective passive layer formed by the specific iron composition and oxygen.</p></details></details><details class="topic-box"><summary class="topic-title">7.3 The Warrior King: Samudragupta</summary><p>Samudragupta, father of Chandragupta II, was a powerful conqueror whose achievements are recorded in the <span class="keyword">Prayaga Prashasti</span> (Allahabad Pillar Inscription).</p><ul><li><strong>The Court Poet:</strong> Written by <span class="keyword">Harisena</span>, the inscription praises Samudragupta's ambition to be <span class="keyword">dharani-bandha</span> ("unifier of the Earth").</li><li><strong>Military Campaigns:</strong> He defeated many kings, reinstating some as tributaries, and expanded the empire's influence.</li><li><strong>Cultural Patronage:</strong> Samudragupta supported art and learning; he is depicted on gold coins playing the <span class="keyword">veena</span>.</li><li><strong>Ashvamedha Yajna:</strong> He performed the sacrificial horse ritual to commemorate his imperial conquests.</li></ul></details><details class="topic-box"><summary class="topic-title">7.4 Society, Governance & Administration</summary><details class="sub-topic"><summary><h3>7.4.1 Account of Faxian</h3></summary><p>The Chinese Buddhist pilgrim <span class="keyword">Faxian</span> visited India in the early $5\text{th}$ century CE. His travelogue, <em>A Record of Buddhistic Kingdoms</em>, describes:</p><ul><li>A happy, numerous population with minimal bureaucratic interference.</li><li>Wealthy cities in the Middle Kingdom (Gangetic plains) where charity houses, hospitals, and free medicine were provided by Vaishya families.</li><li>The harsh social reality of <span class="keyword">chandalas</span>, who were treated as <span class="keyword">outcastes</span> and forced to live outside city limits.</li></ul></details><details class="sub-topic"><summary><h3>7.4.2 Governance and Imperial Titles</h3></summary><p>Gupta rulers adopted grand titles to project supreme authority, such as <span class="keyword">maharajadhiraja</span>, <span class="keyword">samrat</span>, and <span class="keyword">chakravartin</span>.</p><ul><li><strong>Decentralized Administration:</strong> The empire was divided into provinces. Land grants were given to local rulers, priests, and chieftains, recorded on <span class="keyword">copper plates</span>.</li><li><strong>Prabhavati Gupta:</strong> Daughter of Chandragupta II, married into the southern <span class="keyword">Vakataka dynasty</span>. After her husband's early death, she ruled as a powerful <span class="keyword">regent ruler</span>, maintaining strong ties with the Guptas and constructing temples dedicated to Vishnu.</li></ul></details></details><details class="topic-box"><summary class="topic-title">7.5 Economy & Thriving Trade</summary><ul><li><strong>Revenue Sources:</strong> Land tax was the primary source of revenue, supplemented by fines, taxes on mines, irrigation, trade, and crafts.</li><li><strong>International Trade:</strong> India traded with the Mediterranean world, Southeast Asia, and China, exporting textiles, spices, ivory, and gemstones.</li><li><strong>Socotra Island:</strong> Located strategically in the Arabian Sea, archaeological evidence (Brahmi inscriptions, pottery, Buddhist stupa designs) proves the long-term presence of Indian traders here.</li></ul></details><details class="topic-box"><summary class="topic-title">7.6 Science, Literature & Medicine (The Classical Age)</summary><p>The stability of the Gupta period fostered a golden age of intellectual achievements.</p><details class="sub-topic"><summary><h3>7.6.1 Great Scholars and Scientists</h3></summary><ul><li><strong>Aryabhata:</strong> Lived in Kusumapura (near Patna) around $500\text{ CE}$ and wrote the <span class="keyword">Aryabhatiya</span>. He proposed that the Earth rotates on its axis, explained eclipses, and calculated the length of a year as $365\text{ days}, 6\text{ hours}, 12\text{ minutes}, \text{and } 30\text{ seconds}$.</li><li><strong>Varahamihira:</strong> A pioneer scientist from Ujjayini who wrote the encyclopedic <span class="keyword">Brihat Samhita</span>, covering astronomy, astrology, weather forecasting, architecture, and agriculture.</li><li><strong>Kalidasa:</strong> Renowned Sanskrit poet and dramatist, famous for works like <span class="keyword">Meghadutam</span> ("The Cloud Messenger") and <span class="keyword">Raghuvansham</span>.</li></ul></details><details class="sub-topic"><summary><h3>7.6.2 Codification of Ayurveda</h3></summary><p>Traditional Indian medicine was codified during this era. Texts like the <span class="keyword">Charaka Samhita</span> and <span class="keyword">Sushruta Samhita</span> were compiled into their final forms, detailing disease diagnosis, diet, surgery, and holistic healing.</p></details><details class="sub-topic"><summary><h3>7.6.3 Nalanda University</h3></summary><p>The Guptas patronized Buddhist institutions, including the world-renowned <span class="keyword">Nalanda University</span>, which served as a major hub of higher learning.</p></details></details><details class="topic-box"><summary class="topic-title">7.7 Art & Architecture (The Quest for Beauty)</summary><p>Gupta art set high aesthetic standards that influenced subsequent generations across Asia.</p><ul><li><strong>Key Centers:</strong> Sarnath (famous for Buddha sculptures), Ajanta Caves (renowned for murals/paintings of Bodhisattva Padmapani), and Udayagiri (rock-cut caves).</li><li><strong>Deogarh Temple:</strong> The Dashavatara temple in Uttar Pradesh features exquisite carvings, including Vishnu reclining on the serpent Sheshnag.</li><li><strong>River Deities:</strong> Terracotta sculptures of Ganga (standing on a <span class="keyword">makara</span>) and Yamuna (standing on a tortoise) from Ahichchhatra represent the sacred rivers of India.</li></ul></details><details class="topic-box"><summary class="topic-title">7.8 Decline & Contemporary Kingdoms</summary><details class="sub-topic"><summary><h3>7.8.1 Decline of the Guptas</h3></summary><p>By the $6\text{th}$ century CE, the empire declined due to repeated invasions by the fierce <span class="keyword">Huna tribe</span> from Central Asia and the rise of independent regional rulers.</p></details><details class="sub-topic"><summary><h3>7.8.2 The Pallavas of Kanchipuram</h3></summary><p>In the south, the Pallavas consolidated power in Tamil Nadu, Karnataka, Telangana, and Andhra Pradesh. Their capital, <span class="keyword">Kanchipuram</span>, became a "city of a thousand temples" and a major center of learning with institutions called <span class="keyword">ghatikas</span>.</p></details><details class="sub-topic"><summary><h3>7.8.3 The Kamarupa Kingdom</h3></summary><p>In the northeast, the Kamarupa kingdom (ruled by the Varman dynasty) flourished in the Brahmaputra valley (Assam). Historically known as <span class="keyword">Pragjyotisha</span>, it was a prominent cultural and political center mentioned in the epics and the Prayaga Prashasti.</p></details></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 7</strong> of the Class 7 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "07-chapter-06-the-age-of-reorganisation.html";
+      } else {
+        window.location.href = "07-chapter-08-how-the-land-becomes-sacred.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Measurement of Length and Motion</title>
+  <title>Class 6 — Chapter 5: Measurement of Length and Motion</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class='topic-box' open> <summary class='topic-title'>5.1 How do we Measure?</summary> <ul> <li><span class='keyword'>Measurement:</span> The comparison of an unknown quantity with a known fixed quantity of the same kind. It consists of a <strong>number</strong> and a <strong>unit</strong>.</li> <li><span class='keyword'>Non-Standard Units:</span> Traditional units based on body parts, such as <span class='keyword'>handspan</span> (balisht), <span class='keyword'>angula</span> (finger width), cubit (arm length), and strides.</li> <li><span class='keyword'>Limitations:</span> These units vary from person to person, creating a need for standardized, uniform units of measurement.</li> </ul> </details> <details class='topic-box'> <summary class='topic-title'>5.2 Standard Units</summary> <ul> <li><span class='keyword'>SI Units:</span> The International System of Units, adopted globally for uniformity in measurements.</li> <li><span class='keyword'>Metre (m):</span> The SI unit of length.</li> <li><span class='keyword'>Unit Conversions:</span> <ul> <li>1 kilometre (km) = 1000 metres (m)</li> <li>1 metre (m) = 100 centimetres (cm)</li> <li>1 centimetre (cm) = 10 millimetres (mm)</li> <li>1 inch = 2.54 cm</li> </ul> </li> </ul> </details> <details class='topic-box'> <summary class='topic-title'>5.3 Correct Way of Measuring Length</summary> <ul> <li><span class='keyword'>Scale Placement:</span> Place the scale in direct contact with the object along its entire length.</li> <li><span class='keyword'>Eye Position:</span> The eye must be positioned directly above the point being measured to avoid parallax errors.</li> <li><span class='keyword'>Broken Scales:</span> If the zero mark is broken, align the object with another full mark (e.g., 1.0 cm) and subtract this value from the final reading.</li> <li><span class='keyword'>Visually Challenged Students:</span> Use specialized scales with raised markings that can be read by touch.</li> </ul> </details> <details class='topic-box'> <summary class='topic-title'>5.4 Measuring the Length of a Curved Line</summary> <ul> <li>Curved lines cannot be measured directly with a straight ruler.</li> <li><span class='keyword'>Thread Method:</span> Use a flexible thread to trace along the curved path, mark the start and end points on the thread, and then measure the straightened thread length using a standard scale.</li> </ul> </details> <details class='topic-box'> <summary class='topic-title'>5.5 Describing Position</summary> <ul> <li><span class='keyword'>Reference Point:</span> A fixed point or object used to describe the position or distance of another object. Position changes depending on the chosen reference point.</li> </ul> </details> <details class='topic-box'> <summary class='topic-title'>5.6 Moving Things</summary> <ul> <li><span class='keyword'>Motion:</span> An object is in motion if its position changes with respect to a reference point over time.</li> <li><span class='keyword'>Rest:</span> An object is at rest if its position remains unchanged relative to a reference point over time.</li> <li><span class='keyword'>Relativity of Motion:</span> Motion is relative. A passenger inside a moving bus is at rest relative to other passengers, but in motion relative to objects outside the bus.</li> </ul> </details> <details class='topic-box'> <summary class='topic-title'>5.7 Types of Motion</summary> <ul> <li><span class='keyword'>Linear Motion:</span> Motion along a straight line (e.g., a falling apple, marching soldiers).</li> <li><span class='keyword'>Circular Motion:</span> Motion along a circular path where the distance from a central point remains constant (e.g., a stone whirled on a string, a ceiling fan).</li> <li><span class='keyword'>Oscillatory Motion:</span> To-and-fro motion of an object about a fixed central position (e.g., a swing, a vibrating metal strip).</li> <li><span class='keyword'>Periodic Motion:</span> Any motion that repeats itself at regular intervals of time (e.g., circular and oscillatory motions).</li> </ul> </details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 5</strong> of the Class 6 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "06-chapter-04-exploring-magnets.html";
+      } else {
+        window.location.href = "06-chapter-06-materials-around-us.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

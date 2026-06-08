@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Maps And Locations</title>
+  <title>Class 5 — Chapter 14: Maps And Locations</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class="topic-box"><summary class="topic-title">14.1 Finding Directions</summary><p>Understanding directions is essential for navigating and reading maps. The four cardinal directions are <span class="keyword">North</span>, <span class="keyword">South</span>, <span class="keyword">East</span>, and <span class="keyword">West</span>.</p><details class="sub-topic"><summary><h3>14.1.1 Finding Directions using the Sun</h3></summary><p>One of the traditional ways to figure out directions is by facing the rising Sun:</p><ul><li>Facing the rising Sun points to the <span class="keyword">East</span>.</li><li>Behind you is the <span class="keyword">West</span>.</li><li>Your left hand points to the <span class="keyword">North</span>.</li><li>Your right hand points to the <span class="keyword">South</span>.</li></ul></details><details class="sub-topic"><summary><h3>14.1.2 Poem: Four Little Chicks</h3></summary><p>A short poem illustrating movement across directions:</p><blockquote>"Four Little Chicks of a bird set out to fly,<br>Spreading their wings they all flew high.<br>They flew away from East to West,<br>flew North to South, without any rest..."</blockquote></details></details><details class="topic-box"><summary class="topic-title">14.2 Map Reading Activities</summary><details class="sub-topic"><summary><h3>14.2.1 Bird Watching Camp</h3></summary><p>Using clues to identify locations on a map relative to cardinal directions:</p><ul><li>The tent to the west of the road is <strong>blue</strong>.</li><li>The tent closest to the lake is <strong>green</strong>.</li><li>The tent north of the green tent is <strong>purple</strong>.</li><li>The tent south of the lake is <strong>yellow</strong>.</li></ul></details><details class="sub-topic"><summary><h3>14.2.2 Map of a Room</h3></summary><p>Determining directions of objects in a room in relation to a person standing at the center:</p><ul><li>Identify the positions of the <strong>Window</strong>, <strong>Bed</strong>, <strong>Cupboard</strong>, and <strong>Bedside table</strong> relative to the girl.</li><li>Activity: Draw your own room, locate directions, and list objects placed in the <span class="keyword">East</span>, <span class="keyword">West</span>, <span class="keyword">North</span>, and <span class="keyword">South</span>.</li></ul></details></details><details class="topic-box"><summary class="topic-title">14.3 Bus Route and Street Maps</summary><p>Analyzing a street map to trace routes and determine directions of travel.</p><details class="sub-topic"><summary><h3>14.3.1 Navigating the Bus Route</h3></summary><p>Following directions on a street map from a starting point (Parking) to various stops:</p><ul><li>The bus starts from the parking area, goes north, and turns right onto <strong>Market Road</strong> driving in the <strong>East</strong> direction to reach Stop 1 ($S_1$).</li><li>To reach Stop 2 ($S_2$), it turns left onto <strong>Park Road</strong> driving in the <strong>North</strong> direction.</li></ul></details><details class="sub-topic"><summary><h3>14.3.2 Map Analysis Questions</h3></summary><ul><li>Identify whose houses are situated to the east of Jaideep's house.</li><li>Trace routes between different locations (e.g., from Ravi's house to the children's park).</li><li>Determine proximity of bus stops to specific houses.</li></ul></details></details><details class="topic-box"><summary class="topic-title">14.4 Delhi Metro Train Stations</summary><p>Reading and navigating a complex transit map using keys and color-coded lines.</p><details class="sub-topic"><summary><h3>14.4.1 Metro Map Key and Symbols</h3></summary><p>Metro lines are represented by different colors to make navigation easier:</p><ul><li><span class="keyword">Red Line</span></li><li><span class="keyword">Yellow Line</span></li><li><span class="keyword">Blue Line</span></li><li><span class="keyword">Green Line</span></li><li><span class="keyword">Violet Line</span></li><li><span class="keyword">Pink Line</span></li><li><span class="keyword">Magenta Line</span></li><li><span class="keyword">Airport Express Line</span></li></ul><p>Symbols indicate <span class="keyword">Metro Stations</span> and <span class="keyword">Interchange Lines</span>.</p></details><details class="sub-topic"><summary><h3>14.4.2 Route Planning Exercises</h3></summary><ul><li>Trace routes from <strong>Qutb Minar</strong> metro station to <strong>Supreme Court</strong> metro station.</li><li>Determine interchange stations when switching lines (e.g., changing at Hauz Khas to the Magenta Line).</li><li>Identify the route with the least number of stations.</li></ul></details></details><details class="topic-box"><summary class="topic-title">14.5 Grid Navigation and Coordinates</summary><details class="sub-topic"><summary><h3>14.5.1 Anthill in the Zoo (Grid Movement)</h3></summary><p>Moving along a grid with specified distances and directions:</p><ul><li>To get to the laddoos, the ant crawls $2\text{ cm}$ towards the east.</li><li>To get to the sugar, the ant crawls $4\text{ cm}$ in the north direction.</li><li>To get to the bread, the ant crawls $2\text{ cm}$ in the west direction, then $2\text{ cm}$ in the south direction.</li></ul></details><details class="sub-topic"><summary><h3>14.5.2 Locating Animals on a Grid (Coordinate System)</h3></summary><p>Using a coordinate grid where the horizontal axis represents columns and the vertical axis represents rows. The meeting point is written as $(x, y)$, where $x$ is the horizontal distance (column) and $y$ is the vertical distance (row) from the origin $(0,0)$.</p><ul><li><strong>Panda:</strong> Located at $(1,1)$ (first column, first row).</li><li><strong>Tortoise:</strong> Located at $(4,1)$ (move $4$ steps east to the $4^{\text{th}}$ column, then $1$ step north to the $1^{\text{st}}$ row).</li></ul><h4>Grid Coordinates Exercises:</h4><ol><li>Locate animals at specific coordinates:<ul><li>$(11,11)$</li><li>$(2,6)$</li><li>$(6,4)$</li><li>$(3,10)$</li><li>$(11,3)$</li><li>$(10,9)$</li></ul></li><li>Write coordinates for specific animals:<ul><li>Lion</li><li>Elephant</li><li>Tortoise</li><li>Deer</li><li>Panda</li><li>Crocodile</li></ul></li></ol></details></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 14</strong> of the Class 5 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "05-chapter-13-animal-jumps.html";
+      } else {
+        window.location.href = "05-chapter-15-data-through-pictures.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

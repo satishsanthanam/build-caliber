@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Diversity in the Living World</title>
+  <title>Class 6 — Chapter 2: Diversity in the Living World</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class="topic-box" open>    <summary class="topic-title">2.1 Diversity in Plants and Animals Around Us</summary>    <ul>      <li><span class="keyword">Biodiversity</span>: The variety of plants and animals found in a particular region.</li>      <li>Nature walks and direct observations help identify the vast array of living organisms, their unique sounds, smells, and physical features.</li>    </ul>  </details>  <details class="topic-box">    <summary class="topic-title">2.2 How to Group Plants and Animals?</summary>    <p>Grouping makes it easier to understand and study organisms based on their similarities and differences.</p>    <details class="sub-topic">      <summary><h3>2.2.1 How to Group Plants?</h3></summary>      <ul>        <li><strong>Based on Height and Stem Nature:</strong>          <ul>            <li><span class="keyword">Herbs</span>: Small plants with soft, green, and tender stems (e.g., Tomato).</li>            <li><span class="keyword">Shrubs</span>: Medium-sized plants with hard but thin woody stems branching close to the ground (e.g., Rose).</li>            <li><span class="keyword">Trees</span>: Tall plants with hard, thick, brown, and woody stems (trunks) branching higher up (e.g., Mango).</li>            <li><span class="keyword">Climbers</span>: Plants with weak stems that require external support to grow upwards (e.g., Money plant).</li>            <li><span class="keyword">Creepers</span>: Weak-stemmed plants that spread and creep along the ground (e.g., Pumpkin).</li>          </ul>        </li>        <li><strong>Based on Leaf Venation:</strong>          <ul>            <li><span class="keyword">Veins</span>: Thin lines running across a leaf.</li>            <li><span class="keyword">Venation</span>: The pattern of veins on a leaf.</li>            <li><span class="keyword">Reticulate Venation</span>: A net-like pattern of veins on both sides of a central midrib (e.g., Hibiscus, Sadabahar).</li>            <li><span class="keyword">Parallel Venation</span>: Veins running parallel to each other from base to tip (e.g., Grass, Banana, Lemongrass).</li>          </ul>        </li>        <li><strong>Based on Root Systems:</strong>          <ul>            <li><span class="keyword">Taproot</span>: A single main primary root with smaller lateral side roots (e.g., Mustard, Radish).</li>            <li><span class="keyword">Fibrous Roots</span>: A cluster of thin, similar-sized roots arising directly from the base of the stem (e.g., Grass, Wheat).</li>          </ul>        </li>        <li><strong>Based on Seed Structure (Cotyledons):</strong>          <ul>            <li><span class="keyword">Cotyledon</span>: The seed leaf or embryonic leaf within a seed.</li>            <li><span class="keyword">Dicotyledons (Dicots)</span>: Seeds that easily split into two cotyledons. They typically feature <strong>reticulate venation</strong> and a <strong>taproot system</strong> (e.g., Chickpea, Kidney beans).</li>            <li><span class="keyword">Monocotyledons (Monocots)</span>: Seeds containing a single cotyledon. They typically feature <strong>parallel venation</strong> and a <strong>fibrous root system</strong> (e.g., Maize, Wheat).</li>          </ul>        </li>      </ul>    </details>    <details class="sub-topic">      <summary><h3>2.2.2 How to Group Animals?</h3></summary>      <ul>        <li>Animals can be grouped based on their <strong>habitats</strong>, <strong>food habits</strong>, and <strong>modes of movement</strong> (e.g., flying, walking, crawling, swimming).</li>        <li><span class="keyword">Janaki Ammal</span> (1897–1984): A pioneering Indian botanist who documented India's rich plant biodiversity and played a key role in the <em>Save Silent Valley</em> movement.</li>      </ul>    </details>  </details>  <details class="topic-box">    <summary class="topic-title">2.3 Plants and Animals in Different Surroundings</summary>    <ul>      <li><span class="keyword">Habitat</span>: The natural place where an organism lives, providing food, water, air, and shelter.        <ul>          <li><span class="keyword">Terrestrial Habitats</span>: Land-based environments (e.g., forests, deserts, grasslands, mountains).</li>          <li><span class="keyword">Aquatic Habitats</span>: Water-based environments (e.g., ponds, lakes, rivers, oceans).</li>          <li><span class="keyword">Amphibians</span>: Organisms capable of living both on land and in water (e.g., Frogs).</li>        </ul>      </li>      <li><span class="keyword">Adaptations</span>: Special physical features or behaviors that enable an organism to survive in its specific environment.        <ul>          <li><em>Desert Plants (Cactus):</em> Thick, fleshy stems to store water.</li>          <li><em>Mountain Trees (Deodar):</em> Conical shape and sloping branches to let snow slide off easily.</li>          <li><em>Hot Desert Camels:</em> Long legs and wide hooves to walk on sand; single hump to store fat; minimal water loss (dry dung, little urine, no sweat).</li>          <li><em>Cold Desert Camels (Ladakh):</em> Shorter legs for rocky terrain; two humps; long hair for warmth.</li>        </ul>      </li>      <li><span class="keyword">Salim Ali</span> (1896–1987): Known as the 'Birdman of India', he was an influential ornithologist who documented bird diversity and helped establish key sanctuaries.</li>      <li><span class="keyword">Sacred Groves</span>: Traditionally protected, undisturbed forest patches conserved by local communities, acting as vital sanctuaries for biodiversity.</li>      <li><strong>Conservation Initiatives:</strong> Human activities cause habitat loss, leading to biodiversity decline. Key Indian conservation projects include <em>Project Tiger</em> (1973) and the <em>Cheetah Reintroduction Project</em> (2022).</li>    </ul>  </details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 2</strong> of the Class 6 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "06-chapter-01-the-wonderful-world-of-science.html";
+      } else {
+        window.location.href = "06-chapter-03-mindful-eating-a-path-to-a-healthy.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

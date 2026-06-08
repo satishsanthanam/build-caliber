@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Fractions</title>
+  <title>Class 6 — Chapter 7: Fractions</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class="topic-box"><summary class="topic-title">Introduction to Fractions</summary><p>When a whole number of things are shared equally among a certain number of people, fractions tell us how much each share is.</p><ul><li>Sharing 1 roti between 2 children: Each gets half, written as $\frac{1}{2}$ (read as "one half" or "one upon two").</li><li>Sharing 1 roti among 4 children: Each gets a quarter, written as $\frac{1}{4}$.</li><li>Since more children share the same roti in the second case, each gets a smaller share: $\frac{1}{2} > \frac{1}{4}$.</li></ul></details><details class="topic-box"><summary class="topic-title">7.1 Fractional Units and Equal Shares</summary><p>When one unit is divided into several equal parts, each part is called a <span class="keyword">fractional unit</span> or <span class="keyword">unit fraction</span>. Examples include $\frac{1}{2}, \frac{1}{3}, \frac{1}{4}, \frac{1}{5}, \dots$</p><details class="sub-topic"><summary><h3>Comparing Unit Fractions</h3></summary><p>As the denominator increases, the value of the unit fraction decreases because the same whole is shared among more parts:</p><ul><li>$\frac{1}{5} > \frac{1}{9}$</li><li>$\frac{1}{100} > \frac{1}{200}$</li></ul></details></details><details class="topic-box"><summary class="topic-title">7.2 Fractional Units as Parts of a Whole</summary><p>We can measure parts of a whole using fractional units. For example, if a whole <span class="keyword">chikki</span> is divided into 4 equal parts, each part is $\frac{1}{4}$. A piece consisting of 3 such parts is measured as $\frac{3}{4}$ of the chikki.</p></details><details class="topic-box"><summary class="topic-title">7.3 Measuring Using Fractional Units</summary><p>By folding paper strips, we can visualize and collect fractional units to measure quantities:</p><ul><li>$2 \text{ times } \frac{1}{4} = \frac{2}{4}$</li><li>$3 \text{ times } \frac{1}{4} = \frac{3}{4}$</li><li>$4 \text{ times } \frac{1}{4} = \frac{4}{4} = 1$</li></ul><p>In any fraction $\frac{a}{b}$:</p><ul><li>The top number $a$ is the <span class="keyword">numerator</span> (representing how many fractional units are collected).</li><li>The bottom number $b$ is the <span class="keyword">denominator</span> (representing the fractional unit $\frac{1}{b}$).</li></ul></details><details class="topic-box"><summary class="topic-title">7.4 Marking Fraction Lengths on the Number Line</summary><p>Fractions can be represented as points on a number line by dividing the unit distance between integers into equal parts.</p><ul><li>To mark $\frac{1}{3}$, divide the interval from $0$ to $1$ into 3 equal parts. The first mark represents $\frac{1}{3}$, the second represents $\frac{2}{3}$.</li><li>There are an <span class="keyword">uncountable number of fractions</span> lying between $0$ and $1$.</li></ul></details><details class="topic-box"><summary class="topic-title">7.5 Mixed Fractions</summary><p>Fractions can be classified based on their relationship to 1 unit:</p><ul><li><strong>Fractions less than 1:</strong> The numerator is smaller than the denominator (e.g., $\frac{1}{2}, \frac{2}{3}$).</li><li><strong>Fractions greater than 1:</strong> The numerator is larger than the denominator (e.g., $\frac{3}{2}, \frac{5}{2}$).</li></ul><details class="sub-topic"><summary><h3>Mixed Numbers</h3></summary><p>A <span class="keyword">mixed number</span> (or mixed fraction) contains a whole number part and a fractional part less than 1.</p><ul><li>Example: $\frac{8}{3} = 2 + \frac{2}{3} = 2\frac{2}{3}$ (read as "two and two thirds").</li><li>Converting mixed numbers to regular fractions: $3\frac{1}{4} = 3 + \frac{1}{4} = \frac{12}{4} + \frac{1}{4} = \frac{15}{4}$.</li></ul></details></details><details class="topic-box"><summary class="topic-title">7.6 Equivalent Fractions</summary><p>Fractions that represent the same value, length, or share are called <span class="keyword">equivalent fractions</span>.</p><ul><li>Example: $\frac{1}{2} = \frac{2}{4} = \frac{4}{8}$</li></ul><details class="sub-topic"><summary><h3>Simplest Form (Lowest Terms)</h3></summary><p>A fraction is in its <span class="keyword">lowest terms</span> or <span class="keyword">simplest form</span> if its numerator and denominator have no common factor other than 1.</p><ul><li>To simplify a fraction, divide both the numerator and denominator by their highest common factor (HCF).</li><li>Example: $\frac{16}{20} = \frac{16 \div 4}{20 \div 4} = \frac{4}{5}$.</li></ul></details></details><details class="topic-box"><summary class="topic-title">7.7 Comparing Fractions</summary><p>To compare fractions with different denominators, convert them into equivalent fractions with a common denominator:</p><ol><li>Find a common multiple of the denominators.</li><li>Convert each fraction to an equivalent fraction with this common denominator.</li><li>Compare the numerators.</li></ol><p>Example: To compare $\frac{4}{5}$ and $\frac{7}{9}$, use the common denominator $45$:</p><ul><li>$\frac{4}{5} = \frac{4 \times 9}{5 \times 9} = \frac{36}{45}$</li><li>$\frac{7}{9} = \frac{7 \times 5}{9 \times 5} = \frac{35}{45}$</li><li>Since $36 > 35$, we have $\frac{4}{5} > \frac{7}{9}$.</li></ul></details><details class="topic-box"><summary class="topic-title">7.8 Addition and Subtraction of Fractions</summary><details class="sub-topic"><summary><h3>With the Same Denominator</h3></summary><p>Just add or subtract the numerators while keeping the denominator the same:</p><ul><li>$\frac{2}{5} + \frac{1}{5} = \frac{2+1}{5} = \frac{3}{5}$</li><li>$\frac{6}{7} - \frac{4}{7} = \frac{6-4}{7} = \frac{2}{7}$</li></ul></details><details class="sub-topic"><summary><h3>With Different Denominators (Brahmagupta's Method)</h3></summary><p>To add or subtract fractions with different denominators:</p><ol><li>Find equivalent fractions with a common denominator.</li><li>Add or subtract the numerators.</li><li>Simplify the result to lowest terms if needed.</li></ol><p>Example: $\frac{1}{4} + \frac{1}{3} = \frac{3}{12} + \frac{4}{12} = \frac{7}{12}$.</p></details></details><details class="topic-box"><summary class="topic-title">7.9 A Pinch of History</summary><p>Fractions have a rich history originating in ancient India:</p><ul><li>In Sanskrit, a fraction was called <span class="keyword">bhinna</span> (meaning 'broken'), <span class="keyword">bhaga</span>, or <span class="keyword">ansha</span> (meaning 'part' or 'piece').</li><li>The modern notation of writing fractions (numerator over denominator) originated in Indian texts like the <em>Bakshali manuscript</em> (c. 300 CE).</li><li>The formal rules for adding and subtracting fractions were codified by <span class="keyword">Brahmagupta</span> in his treatise <em>Brahmasphuṭasiddhānta</em> (628 CE).</li></ul></details><details class="topic-box"><summary class="topic-title">Fraction Puzzles</summary><p><strong>Egyptian Fractions:</strong> Ancient Egyptians expressed general fractions as sums of unique unit fractions.</p><ul><li>Writing 1 as the sum of three different unit fractions: $\frac{1}{2} + \frac{1}{3} + \frac{1}{6} = 1$.</li></ul></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 7</strong> of the Class 6 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "06-chapter-06-perimeter-and-area.html";
+      } else {
+        window.location.href = "06-chapter-08-playing-with-constructions.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

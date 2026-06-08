@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>So Many Toys</title>
+  <title>Class 1 — Chapter 13: So Many Toys</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class="topic-box"><summary class="topic-title">13.1 So Many Toys</summary><p>In this section, students practice counting objects in a visual scene and comparing their quantities using comparison vocabulary.</p><details class="sub-topic"><summary><h3>Counting Toys in the Shop</h3></summary><p>Look at the toy shop picture and find the total count for each type of toy:</p><ul><li><strong>Elephants:</strong> Count the blue elephant toys on the bottom shelf.</li><li><strong>Teddy Bears:</strong> Count the brown teddy bears on the top shelf.</li><li><strong>Cars:</strong> Count the red toy cars on the top shelf.</li><li><strong>Dolls:</strong> Count the dolls on the bottom shelf.</li></ul></details><details class="sub-topic"><summary><h3>Comparing Quantities</h3></summary><p>Complete the sentences by comparing the quantities using the terms <span class="keyword">more than</span>, <span class="keyword">less than</span>, or <span class="keyword">equal to</span>:</p><ul><li>A. The number of dolls is ________ the number of cars.</li><li>B. The number of elephants is ________ the number of dolls.</li><li>C. The number of teddy bears is ________ the number of elephants.</li><li>D. The number of cars is ________ the number of teddy bears.</li></ul></details></details><details class="topic-box"><summary class="topic-title">13.2 Colourful Flowers</summary><p>This section focuses on counting flowers of different colours and identifying the least and most frequent items in a set.</p><details class="sub-topic"><summary><h3>Flower Counting Activity</h3></summary><p>Count the flowers shown in the garden border and write down the numbers:</p><ul><li><strong>Blue flowers:</strong> Count the blue-coloured flowers.</li><li><strong>Orange flowers:</strong> Count the orange-coloured flowers.</li><li><strong>Red flowers:</strong> Count the red-coloured flowers.</li><li><strong>Purple flowers:</strong> Count the purple-coloured flowers.</li></ul></details><details class="sub-topic"><summary><h3>Analyzing the Data</h3></summary><ul><li>A. Name the colour of flowers which are <strong>least</strong> in number.</li><li>B. Name the colour of the flowers which are <strong>most</strong> in number.</li></ul></details><details class="sub-topic"><summary><h3>True or False Statements</h3></summary><ul><li>A. Number of red flowers is more than the blue flowers. (True/False)</li><li>B. Number of orange flowers is less than the purple flowers. (True/False)</li></ul></details><details class="sub-topic"><summary><h3>Project Work</h3></summary><ul><li>A. Make a card with a border of colourful flowers.</li><li>B. Find out in your class how many children have $3$ letters in their names, how many have $4$ letters, and how many have more than $4$ letters in their names.</li></ul></details></details><details class="topic-box"><summary class="topic-title">13.3 Puzzles and Brain Teasers</summary><p>A collection of mathematical puzzles, pattern extensions, and logical reasoning activities.</p><details class="sub-topic"><summary><h3>Puzzles A to F: Numbers and Logic</h3></summary><ul><li><strong>A. Hidden Numbers:</strong> Identify the numbers on the cards that are partially hidden under the blue bowls.</li><li><strong>B. Log Counting Illusion:</strong> Count the logs shown in the drawing. Is it $3$ logs or $4$ logs? Observe how perspective changes the count.</li><li><strong>C. Glass Patterns:</strong> Zarina set glasses in a growing triangular pattern ($1$ glass, $3$ glasses, $6$ glasses). Extend the arrangement for the next two steps.</li><li><strong>D. Number Word Search:</strong> Find the number names from $1$ to $10$ hidden in the letter grid.</li><li><strong>E. Equal Sum Balance:</strong> Fill the numbers from $1$ to $5$ in the given connected circles so that the sum of the numbers on both linear sides is equal.</li><li><strong>F. Gillu's Favorite Number:</strong> Gillu's favorite number is $8$. Ask mathematical questions (e.g., $5 + 3$, $10 - 2$) that result in an answer of exactly $8$.</li></ul></details><details class="sub-topic"><summary><h3>Puzzles G to L: Shapes, Grids, and Riddles</h3></summary><ul><li><strong>G. Shape Sudoku:</strong> Fill the triangle, square, and circle in the $3 \times 3$ grid so that each shape occurs only once in each row (horizontal) and column (vertical).</li><li><strong>H. Object Grid Placement:</strong> Take $4$ different types of objects (with $4$ copies of each). Place them in a $4 \times 4$ grid so that every object occurs only once in each row and column.</li><li><strong>I. Mirror Images:</strong> Use a mirror to read the reflected numbers and identify what numbers they represent (e.g., reflected $25$, $73$, $52$, $39$).</li><li><strong>J. Who Am I? (Number Riddles):</strong><ol><li>I am between $5$ and $10$. I become three more when read upside down. (Answer: $6$, which becomes $9$)</li><li>I am $3$ more than $8$ and $3$ less than $14$. (Answer: $11$)</li><li>I am after $50$ and before $54$. Sum of my digits is $7$. (Answer: $52$)</li><li>I am just before $40$. (Answer: $39$)</li><li>Add $5$ to me and you will get $24$. (Answer: $19$)</li><li>I am just after $35$. (Answer: $36$)</li><li>Reduce $8$ from me and $14$ will be left. (Answer: $22$)</li></ol></li><li><strong>K. Matchstick Puzzle:</strong> Six matchsticks are used to make a zero. Can you make another number by shifting a single matchstick?</li><li><strong>L. Broken Pot Puzzle:</strong> Find the missing piece from the scattered shards to complete the broken ceramic pot.</li></ul></details><details class="sub-topic"><summary><h3>Puzzles M to U: Arithmetic and Combinations</h3></summary><ul><li><strong>M. Repeated Subtraction:</strong> How many times can you subtract $5$ from $25$?</li><li><strong>N. Seed Sum Puzzle:</strong> Place $3$ seeds on different numbers in the grid to get a sum of $17$. Find multiple ways to do this. If you have only $2$ seeds, which numbers will sum to $17$?</li><li><strong>O. Shadow Matching:</strong> Identify and encircle the identical shadow image of the monkey from the four options.</li><li><strong>P. Cross Grid Sums:</strong> Write numbers from $5$ to $9$ in the cross-shaped card so that the horizontal row and vertical column have the same total.</li><li><strong>Q. Target Center Number:</strong> Use addition or subtraction on the outer numbers of the hexagon to obtain the center numbers ($6$, $11$, and $15$).</li><li><strong>R. Radiating Equations:</strong> Fill in the blank circles with correct numbers to satisfy the equations radiating from the center value of $15$.</li><li><strong>S. Coin Combination:</strong> Sarita has coins of values $10$, $5$, $2$, and $1$. What is the minimum number of coins needed to spend exactly $₹49$?</li><li><strong>T. Fruit Algebra:</strong> Find the value of the orange:<br>$\text{Watermelon} + \text{Watermelon} = 8$<br>$\text{Orange} + \text{Watermelon} = 10$<br>$\text{Orange} = \text{?}$</li><li><strong>U. Ball Game:</strong> Choose $3$ balls from the set ($2$, $4$, $6$, $8$) to satisfy the conditions. <em>Hint: Try rotating the balls (e.g., rotating $6$ makes it $9$).</em><ol><li>Choose $3$ balls so their sum is $15$.</li><li>Choose $3$ balls to get a maximum score.</li><li>Choose $3$ balls to get a minimum score.</li></ol></li></ul></details></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 13</strong> of the Class 1 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "01-chapter-12-how-much-can-we-spend.html";
+      } else {
+        window.location.href = "../../index.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

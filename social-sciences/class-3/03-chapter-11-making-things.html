@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Making Things</title>
+  <title>Class 3 — Chapter 11: Making Things</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class='topic-box'><summary class='topic-title'>11.1 Introduction to Making Things</summary><p>We see and use many objects made of clay in our daily lives, such as:</p><ul><li><span class='keyword'>Gullak</span> (piggy bank) used for saving money.</li><li><span class='keyword'>Kulhad</span> (clay cup) used for drinking.</li><li>Birdbaths and pots for storing water.</li></ul><p>Have you ever wondered what these things are made of, and who makes them?</p></details><details class='topic-box'><summary class='topic-title'>11.2 A Potter's Family & The Pottery Process</summary><p>Pottery is a traditional craft of making vessels and objects from clay.</p><details class='sub-topic'><summary><h3>11.2.1 The Step-by-Step Process of Pot Making</h3></summary><ul><li><strong>Preparing the Clay:</strong> The potter takes clay, adds water to get the right consistency, pounds it well, and kneads it like dough.</li><li><strong>Shaping:</strong> The kneaded clay is placed on a spinning stone wheel (potter's wheel) and shaped by hand.</li><li><strong>Drying:</strong> The shaped pots are left to dry.</li><li><strong>Baking:</strong> Once dry, the pots are baked in a very hot fire inside a big oven called a <span class='keyword'>kiln</span>. Baking makes the pots strong and ready for use.</li><li><strong>Decorating:</strong> Potters and their family members paint beautiful patterns on the pots to make them look attractive.</li></ul></details><details class='sub-topic'><summary><h3>11.2.2 Activity: Make Your Own Clay</h3></summary><p>You can make clay at home with the help of elders:</p><ol><li>Collect soil from wet or muddy places.</li><li>Remove big pebbles, stones, sand, or leaves using a sieve.</li><li>Put the soil in a flat vessel filled with water.</li><li>After a few days, pour away the water that stays on top.</li><li>Knead the remaining soil into a smooth dough to shape into objects.</li></ol></details></details><details class='topic-box'><summary class='topic-title'>11.3 Patterns in Nature and Pottery</summary><p>Patterns are repeating shapes, lines, and colors. Artists often get inspiration for their pottery designs from nature.</p><details class='sub-topic'><summary><h3>11.3.1 Patterns in Nature</h3></summary><p>Patterns can be found everywhere in the natural world:</p><ul><li><strong>Animals:</strong> Spots on a leopard, stripes on a zebra or squirrel, and patterns on peacocks, tigers, butterflies, and fish.</li><li><strong>Plants:</strong> The symmetrical arrangement of leaves on branches, such as on a neem tree.</li></ul></details><details class='sub-topic'><summary><h3>11.3.2 Patterns in Indian Pottery</h3></summary><p>Different parts of India have unique and beautiful traditional forms of pottery, often decorated with distinct geometric or nature-inspired patterns.</p></details></details><details class='topic-box'><summary class='topic-title'>11.4 Brick by Brick</summary><p>Just like pots, bricks are essential building blocks made from mud and clay.</p><details class='sub-topic'><summary><h3>11.4.1 How Bricks are Made</h3></summary><ul><li><strong>Moulding:</strong> Wet mud is pressed into rectangular boxes called <span class='keyword'>moulds</span> to give them their shape.</li><li><strong>Baking:</strong> The shaped mud bricks are baked in a <span class='keyword'>kiln</span> to make them hard and strong.</li><li><strong>Use:</strong> Bricks are used to construct strong buildings like houses, schools, and hospitals.</li></ul></details></details><details class='topic-box'><summary class='topic-title'>11.5 Types of Houses</summary><p>Houses are built using different materials depending on the climate, availability of resources, and location.</p><details class='sub-topic'><summary><h3>11.5.1 Traditional Mud Houses</h3></summary><p>In warm areas, people build traditional mud houses to keep the interiors cool.</p><ul><li><strong>Materials:</strong> Built using natural materials like mud, grass, and wood.</li><li><strong>Cow Dung:</strong> Often used to coat walls and floors to make them smooth, keep the heat out, and prevent insects from entering.</li></ul></details><details class='sub-topic'><summary><h3>11.5.2 Other Types of Houses</h3></summary><ul><li><strong>Tents:</strong> Temporary shelters made of canvas or plastic.</li><li><strong>Skyscrapers / Apartments:</strong> Tall buildings in cities made of concrete, steel, and glass.</li><li><strong>Stone Houses:</strong> Built in hilly or rocky areas using stones.</li><li><strong>Houseboats:</strong> Floating houses found on water bodies (like in Kashmir or Kerala).</li></ul></details></details><details class='topic-box'><summary class='topic-title'>11.6 Safety First</summary><p>Construction sites can be dangerous. Workers must follow strict safety rules to protect themselves.</p><ul><li><strong>Safety Gear:</strong> Wearing a helmet with a strap, a high-visibility safety vest, safety goggles, gloves, and sturdy footwear (boots).</li></ul></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 11</strong> of the Class 3 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "03-chapter-10-this-world-of-things.html";
+      } else {
+        window.location.href = "03-chapter-12-taking-charge-of-waste.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

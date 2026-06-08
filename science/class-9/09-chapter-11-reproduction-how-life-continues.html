@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Reproduction: How Life Continues</title>
+  <title>Class 9 — Chapter 11: Reproduction: How Life Continues</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class="topic-box"><summary class="topic-title">11.1 Asexual Reproduction</summary><details class="sub-topic"><summary><h3>11.1.1 Vegetative Propagation in Plants</h3></summary><ul><li><span class="keyword">Asexual Reproduction:</span> A biological mode where a single parent produces offspring that are genetically identical to itself without involving gametic fusion.</li><li><span class="keyword">Vegetative Propagation:</span> A form of asexual reproduction where new plants grow from vegetative structures such as roots, stems, or leaves (e.g., <span class="keyword">Bryophyllum</span>, potato, ginger).</li><li><span class="keyword">Cutting:</span> An agricultural propagation method where a portion of a stem with nodes is planted in soil to grow a new root and shoot system.</li><li><span class="keyword">Grafting:</span> A horticultural technique where the stem cutting of one plant (<span class="keyword">scion</span>) is joined onto the rooted system of another (<span class="keyword">stock</span>) so they grow together as a single plant.</li><li><span class="keyword">Layering:</span> A method where a branch of a plant is bent down, covered with soil, and allowed to sprout roots before being separated from the parent.</li><li><span class="keyword">Tissue Culture:</span> A modern micropropagation technique using cells from growing shoot tips on artificial nutrient media to yield disease-free clone plantlets.</li><li><span class="keyword">Clones:</span> Offspring that are genetically identical to their parent, resulting from mitotic cellular division in asexual pathways.</li></ul></details><details class="sub-topic"><summary><h3>11.1.2 Budding and Spore Formation</h3></summary><ul><li><span class="keyword">Budding:</span> A type of asexual reproduction (found in <span class="keyword">Yeast</span> and <span class="keyword">Hydra</span>) where continuous localized cell division produces a small outgrowth, or bud, which matures and detaches.</li><li><span class="keyword">Spore Formation:</span> Reproduction via microscopic, light-weight, single-celled survival units called spores inside a specialized sac (<span class="keyword">sporangium</span>), common in fungi like <span class="keyword">Rhizopus</span>.</li><li><span class="keyword">Mitosis:</span> The process of cell division producing two genetically identical diploid daughter cells, acting as the cellular baseline for asexual propagation.</li></ul></details></details><details class="topic-box"><summary class="topic-title">11.2 Sexual Reproduction</summary><details class="sub-topic"><summary><h3>11.2.1 Chromosomes, Meiosis, and Variation</h3></summary><ul><li><span class="keyword">Meiosis:</span> A specialized cell division that halves the chromosome count to produce haploid reproductive cells.</li><li><span class="keyword">Gametes:</span> Haploid sex cells (<span class="keyword">sperm</span> in males, <span class="keyword">egg</span> or ovum in females) that contain half the physical set of chromosomes.</li><li><span class="keyword">Chromosomes:</span> Thread-like structures of genetic material in the cell nucleus; humans carry 23 pairs (46 total).</li><li><span class="keyword">Variation:</span> Genetic diversity among offspring caused by random mixing of parental chromosomes during meiosis, serving as a driving force of adaptation and evolution.</li></ul></details><details class="sub-topic"><summary><h3>11.2.2 Sexual Reproduction in Flowering Plants</h3></summary><ul><li><span class="keyword">Angiosperms:</span> Flowering plants where flowers act as the site for sexual reproductive systems.</li><li><span class="keyword">Sepals:</span> Green outer coverings protecting a flower bud.</li><li><span class="keyword">Petals:</span> Colorful, fragrant structures designed to attract insect and animal pollinators.</li><li><span class="keyword">Stamen:</span> The male reproductive organ containing an <span class="keyword">anther</span> (which forms pollen grains) and a supporting <span class="keyword">filament</span>.</li><li><span class="keyword">Pistil:</span> The female reproductive structure made of the sticky <span class="keyword">stigma</span>, tubular <span class="keyword">style</span>, and an <span class="keyword">ovary</span> holding ovules.</li></ul></details><details class="sub-topic"><summary><h3>11.2.3 Pollination, Fertilisation, and Seed Formation</h3></summary><ul><li><span class="keyword">Pollination:</span> The mechanical transfer of pollen from the male anther to the female stigma, split into <span class="keyword">self-pollination</span> (same flower/plant) and <span class="keyword">cross-pollination</span> (different plant of the same species).</li><li><span class="keyword">Fertilisation:</span> The cellular union of a male gamete with a female egg cell inside the ovule to produce a diploid <span class="keyword">zygote</span>.</li><li><span class="keyword">Pollen Tube:</span> A structural channel growing from a pollen grain down the style, delivering male gametes into the ovary.</li><li><span class="keyword">Embryo:</span> The developmental phase resulting from repeated division of the zygote, housed within the seed.</li><li><span class="keyword">Fruit and Seed Development:</span> Post-fertilisation transformation where the ovary matures into a fruit, and the protected ovules turn into seeds.</li></ul></details></details><details class="topic-box"><summary class="topic-title">11.3 Sexual Reproduction in Animals</summary><details class="sub-topic"><summary><h3>11.3.1 Animal Reproductive Strategies</h3></summary><ul><li><span class="keyword">External Fertilisation:</span> Fertilisation occurring outside the body (e.g., frogs, fish) in aquatic media, demanding high egg production to offset environmental dangers.</li><li><span class="keyword">Internal Fertilisation:</span> Fertilisation occurring inside the female body (e.g., reptiles, birds, mammals), affording greater embryo protection and survival rates.</li><li><span class="keyword">Yolk:</span> The nutrient reserve stored within eggs that feeds developing embryos.</li><li><span class="keyword">Larva:</span> An active, feeding intermediate developmental form in animals undergoing metamorphosis (e.g., butterflies, frogs).</li></ul></details></details><details class="topic-box"><summary class="topic-title">11.4 Human Reproduction & Health</summary><details class="sub-topic"><summary><h3>11.4.1 Male & Female Reproductive Systems</h3></summary><ul><li><span class="keyword">Testes:</span> Male gonads held inside the cool <span class="keyword">scrotum</span> that produce sperm and regulatory hormones.</li><li><span class="keyword">Vas Deferens:</span> The long muscular tube transferring sperm from the testes to the common urethral passage.</li><li><span class="keyword">Ovaries:</span> Female gonads that release mature eggs and produce female hormones to manage sexual changes.</li><li><span class="keyword">Uterus:</span> A muscular, hollow organ in females where a zygote implants and develops during pregnancy.</li><li><span class="keyword">Gametogenesis:</span> The biological formation of gametes, showing clear cellular asymmetry between tiny motile sperm and large non-motile eggs.</li></ul></details><details class="sub-topic"><summary><h3>11.4.2 The Menstrual Cycle and Pregnancy</h3></summary><ul><li><span class="keyword">Ovulation:</span> The monthly release of a mature egg from an ovary, typically happening around the 14th day of a 28-day menstrual cycle.</li><li><span class="keyword">Menstruation:</span> The periodic shedding of the blood-rich uterine lining through the vagina if fertilisation does not occur.</li><li><span class="keyword">Implantation:</span> The embedding of the dividing zygote into the thick uterine lining, marking the formal start of pregnancy.</li><li><span class="keyword">Trimesters:</span> Three stages of human pregnancy spanning nine months, leading to childbirth via muscular uterine contractions.</li><li><span class="keyword">Post-partum Depression:</span> Anxiety and severe fatigue that can affect mothers following childbirth, requiring medical and communal care.</li></ul></details><details class="sub-topic"><summary><h3>11.4.3 Contraception & Reproductive Health</h3></summary><ul><li><span class="keyword">Sexually Transmitted Infections (STIs):</span> Infections (e.g., HIV/AIDS, syphilis, gonorrhoea) spread through close sexual contact.</li><li><span class="keyword">Condoms:</span> Barrier devices that limit physical contact to prevent STI transmission and unplanned pregnancy.</li><li><span class="keyword">Oral Pills:</span> Chemical contraceptives that temporarily alter female hormone levels to block ovulation.</li><li><span class="keyword">IUDs (Copper-T):</span> Devices inserted inside the uterus to prevent zygote implantation.</li><li><span class="keyword">Abortion:</span> The medical or surgical termination of an early pregnancy.</li><li><span class="keyword">Sex Ratio:</span> The numeric proportion of males to females in a population, protected in India via strict legal bans on prenatal sex selection.</li></ul></details></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 11</strong> of the Class 9 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "09-chapter-10-sound-waves-characteristics-and-ap.html";
+      } else {
+        window.location.href = "09-chapter-12-patterns-in-life-diversity-and-cla.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

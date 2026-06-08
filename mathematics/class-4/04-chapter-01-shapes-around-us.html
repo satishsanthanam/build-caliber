@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Shapes Around Us</title>
+  <title>Class 4 — Chapter 1: Shapes Around Us</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class="topic-box"><summary class="topic-title">1.1 Introduction to Shapes and Building Models</summary><p>Exploring shapes through real-world monuments and building models using blocks.</p><ul><li><strong>Monuments of Delhi:</strong> India Gate, Qutub Minar, Safdarjung Tomb, Akshardham, National Museum, Jantar Mantar, and Sansad Bhawan.</li><li><strong>Building Components:</strong> Analyzing parts of a building such as the <span class="keyword">roof</span>, <span class="keyword">pillars</span>, and <span class="keyword">base</span>, and identifying which 3D shapes represent them best.</li></ul><details class="sub-topic"><summary><h3>Qutub Minar Facts</h3></summary><p>The Qutub Minar is a UNESCO World Heritage site and the tallest building made of bricks. It features:</p><ul><li><strong>Storeys:</strong> 5 storeys</li><li><strong>Stairs:</strong> 379 stairs</li><li><strong>Building Materials:</strong> Historically made with clay bricks, stone blocks, or wood. Modern construction also uses concrete blocks and hollow blocks.</li></ul></details></details><details class="topic-box"><summary class="topic-title">1.2 Prisms, Pyramids, and Nets</summary><p>Understanding 3D shapes by unfolding them into 2D layouts called nets.</p><ul><li><span class="keyword">Net of a Box</span>: A folded open and flattened box. Folding along the dotted lines of a net reconstructs the 3D box.</li></ul><details class="sub-topic"><summary><h3>Prisms</h3></summary><p>A <span class="keyword">Prism</span> is a 3D solid with identical polygon ends (bases) and flat rectangular sides.</p><ul><li><strong>Triangular Prism:</strong> Has triangular bases and rectangular lateral faces.</li><li><strong>Square Prism (Cube):</strong> All faces are squares.</li><li><strong>Hexagonal Prism:</strong> Has hexagonal bases and rectangular lateral faces.</li></ul></details><details class="sub-topic"><summary><h3>Pyramids</h3></summary><p>A <span class="keyword">Pyramid</span> is a 3D solid with a polygon base and triangular lateral faces that meet at a single point called the apex.</p><ul><li><strong>Triangular Pyramid (Tetrahedron):</strong> Base and all faces are triangles.</li><li><strong>Square Pyramid:</strong> Square base with four triangular faces.</li><li><strong>Pentagonal Pyramid:</strong> Pentagonal base with five triangular faces.</li></ul></details></details><details class="topic-box"><summary class="topic-title">1.3 Properties of 3D Shapes</summary><p>Analyzing 3D shapes based on their faces, corners (vertices), and edges.</p><ul><li><span class="keyword">Face (F)</span>: A flat or curved surface of a 3D shape.</li><li><span class="keyword">Corner / Vertex (V)</span>: A point where two or more edges meet.</li><li><span class="keyword">Edge (E)</span>: A line segment where two faces meet.</li></ul><details class="sub-topic"><summary><h3>Shape Properties Table</h3></summary><p>Properties of common 3D shapes:</p><ul><li><strong>Cube / Square Prism:</strong> $F = 6$, $V = 8$, $E = 12$</li><li><strong>Cuboid / Rectangular Prism:</strong> $F = 6$, $V = 8$, $E = 12$</li><li><strong>Triangular Pyramid:</strong> $F = 4$, $V = 4$, $E = 6$</li><li><strong>Square Pyramid:</strong> $F = 5$, $V = 5$, $E = 8$</li><li><strong>Triangular Prism:</strong> $F = 5$, $V = 6$, $E = 9$</li></ul><p><strong>Euler's Formula Relationship:</strong> For these polyhedra, the relationship between faces, vertices, and edges is given by: $$F + V - E = 2$$</p></details></details><details class="topic-box"><summary class="topic-title">1.4 Angles: When Lines Meet</summary><p>An <span class="keyword">Angle</span> is formed when two lines or surfaces meet at a common point.</p><details class="sub-topic"><summary><h3>Types of Angles</h3></summary><ul><li><span class="keyword">Right Angle</span>: An angle of exactly $90^\circ$, forming a perfect L-shape (like the corner of a book or window).</li><li><span class="keyword">Acute Angle</span>: An angle that is less than a right angle ($< 90^\circ$).</li><li><span class="keyword">Obtuse Angle</span>: An angle that is greater than a right angle ($> 90^\circ$).</li></ul></details><details class="sub-topic"><summary><h3>Rigidity of Shapes</h3></summary><ul><li><strong>Triangle:</strong> The most rigid shape. Pushing on its sides does not change its angles or shape.</li><li><strong>Rectangle / Square:</strong> Not rigid. Pushing on their sides changes their angles (turning right angles into acute and obtuse angles) and alters the shape.</li></ul></details></details><details class="topic-box"><summary class="topic-title">1.5 Circles and their Properties</summary><p>A circle is a round 2D shape where all points on the boundary are at an equal distance from a fixed point.</p><details class="sub-topic"><summary><h3>Key Components of a Circle</h3></summary><ul><li><span class="keyword">Center</span>: The central point inside the circle from which all points on the boundary are equidistant.</li><li><span class="keyword">Radius (r)</span>: The distance or line segment from the center of the circle to any point on its boundary.</li><li><span class="keyword">Diameter (d)</span>: A straight line segment that passes through the center of the circle and connects two points on the boundary.</li><li><strong>Relationship:</strong> The diameter is twice the length of the radius: $$d = 2r$$</li></ul></details></details><details class="topic-box"><summary class="topic-title">1.6 Puzzles and Classification</summary><p>Applying geometric concepts to solve puzzles and classify shapes.</p><ul><li><strong>Matchstick Puzzles:</strong> Creating and transforming triangles by moving or removing a specific number of matchsticks.</li><li><strong>Shape Classification:</strong> Classifying 2D shapes based on their number of sides and angles (e.g., 3 angles, 4 angles, 5 angles). The number of sides in a polygon is always equal to its number of angles.</li></ul></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 1</strong> of the Class 4 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "../../index.html";
+      } else {
+        window.location.href = "04-chapter-02-hide-and-seek.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

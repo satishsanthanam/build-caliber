@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Water—The Essence of Life</title>
+  <title>Class 5 — Chapter 1: Water—The Essence of Life</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class="topic-box"><summary class="topic-title">1.1 Introduction: Water on Earth</summary><p>Although most of the Earth's surface is covered with water, the majority of it is salty. Only a very small fraction is <span class="keyword">freshwater</span>. All living beings—people, animals, birds, and plants—depend on freshwater to survive. It is essential for drinking, growing crops, and carrying out daily activities.</p><details class="sub-topic"><summary><h3>The Freshwater Ratio</h3></summary><p>To understand the distribution of water on Earth, imagine if all the water on Earth were in a single glass ($200\text{ ml}$), then the available freshwater would only be as much as in a single teaspoon ($5\text{ ml}$)!</p></details><details class="sub-topic"><summary><h3>Traditional Water Conservation</h3></summary><p><span class="keyword">Johads</span> in Rajasthan are traditional small earthen dams built to collect rainwater and recharge groundwater.</p></details></details><details class="topic-box"><summary class="topic-title">1.2 Different Forms of Water</summary><p>Water exists in three distinct forms in nature:</p><ul><li><strong>Liquid:</strong> As seen in rain, rivers, and oceans.</li><li><strong>Solid:</strong> As seen in ice, snow, and glaciers.</li><li><strong>Vapour:</strong> As seen in steam and moisture in the air.</li></ul><details class="sub-topic"><summary><h3>Observing Changes in States of Water</h3></summary><p>Water changes its form depending on temperature:</p><ul><li><span class="keyword">Melting</span>: Solid ice turns into liquid water when left at room temperature.</li><li><span class="keyword">Boiling</span>: Liquid water turns into water vapour (steam) when heated.</li><li><span class="keyword">Evaporation</span>: Water left in sunlight slowly turns into vapour and disappears into the air.</li></ul></details></details><details class="topic-box"><summary class="topic-title">1.3 The Water Cycle</summary><p>The constant circular movement of water in nature is called the <span class="keyword">water cycle</span>.</p><ul><li>The Sun's heat causes water from oceans, rivers, and lakes to evaporate into water vapour.</li><li>As water vapour rises, it cools down and condenses to form clouds.</li><li>Eventually, these water droplets in the clouds fall back to the Earth as rain, snow, or hail.</li><li>This water flows back into rivers, lakes, and oceans, repeating the cycle continuously.</li></ul></details><details class="topic-box"><summary class="topic-title">1.4 Groundwater and Recharge</summary><p>When it rains, some water is soaked up by the soil and sinks through the layers of soil and rocks. This water stored deep underground is called <span class="keyword">groundwater</span>.</p><ul><li>We access groundwater by digging wells, borewells, tube wells, and using handpumps.</li><li>In cities, cemented and concrete surfaces prevent rainwater from seeping into the ground, stopping groundwater recharge.</li><li>Open, uncovered areas, green lawns, soak pits, ponds, and planting trees help rainwater return underground.</li></ul></details><details class="topic-box"><summary class="topic-title">1.5 Surface Water and River Flows</summary><p>Surface water includes rivers, ponds, and lakes. Rivers typically begin their journey high up in the mountains from melting glaciers and flow down across the land.</p><ul><li>Water flows, stops, or curves according to the shape of the land formations in its path.</li><li>The flow of water can also actively shape and change the landforms over time.</li><li><strong>The Luni River:</strong> Originating in the Aravalli Range in Rajasthan, it is the only major Indian river that does not drain into a sea. Instead, it ends in the marshy lands of the Rann of Kutch in Gujarat.</li></ul></details><details class="topic-box"><summary class="topic-title">1.6 Life in Water (Aquatic Ecosystems)</summary><p>Freshwater habitats support a rich variety of plants and animals, each with unique adaptations to survive in water.</p><details class="sub-topic"><summary><h3>Aquatic Animals and Plants</h3></summary><ul><li><strong>Dragonfly:</strong> Flies fast and lays eggs near water; eats mosquitoes.</li><li><strong>Water Scorpion:</strong> An insect with pincers that lives underwater and breathes using a tail tube.</li><li><strong>Pond Heron:</strong> A bird with long legs that stands still to catch fish.</li><li><strong>Freshwater Turtle:</strong> A soft-shelled turtle that lives in ponds and rivers.</li><li><strong>Water Snake:</strong> A harmless water snake that eats fish and frogs.</li><li><strong>Lotus and Water Lily:</strong> Rooted floating plants whose flowers float on water while roots stay in the pond bed. Their leaves have a <span class="keyword">waxy coating</span> that makes them waterproof, preventing damage from excess water.</li><li><strong>Water Hyacinth:</strong> A fast-growing, free-floating plant that spreads rapidly on the water surface.</li></ul></details><details class="sub-topic"><summary class="topic-title">The River Food Chain</summary><p>Organisms in aquatic ecosystems depend on each other for food, forming a <span class="keyword">food chain</span> (e.g., plants are eaten by small fish, which are eaten by big fish, which are then eaten by birds or crocodiles).</p></details></details><details class="topic-box"><summary class="topic-title">1.7 Let Us Reflect</summary><ul><li><strong>Matching Concepts:</strong> Ocean water is not fit for drinking; Snow is the solid form of water; Steam is the vapour form of water; Rainwater is a source of freshwater.</li><li><strong>Water Conservation:</strong> Designing houses and schools with rainwater harvesting systems helps conserve water wisely.</li></ul></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 1</strong> of the Class 5 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "../../index.html";
+      } else {
+        window.location.href = "05-chapter-02-journey-of-a-river.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

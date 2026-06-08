@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Print Culture and the Modern World</title>
+  <title>Class 10 (Part 3) — Chapter 5: Print Culture and the Modern World</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class="topic-box"><summary class="topic-title">1. The First Printed Books</summary><p>The earliest print technology was developed in China, Japan, and Korea as a system of hand printing.</p><ul><li><strong>Woodblock Printing:</strong> From AD 594 onwards, books in China were printed by rubbing paper against the inked surface of woodblocks.</li><li><span class="keyword">Accordion Book</span>: The traditional Chinese book folded and stitched at the side because both sides of the thin, porous sheet could not be printed.</li><li><span class="keyword">Calligraphy</span>: The art of beautiful and stylised writing, duplicated by superbly skilled craftsmen.</li><li><strong>Imperial State as Producer:</strong> The huge bureaucratic system in China recruited personnel through civil service examinations, sponsoring the printing of textbooks in vast numbers.</li><li><strong>Urban Culture & Diversification:</strong> By the seventeenth century, print was used by merchants, scholars, and for leisure reading (fiction, poetry, drama). Rich women, wives of scholar-officials, and courtesans also published their works.</li><li><strong>Shift to Mechanical Printing:</strong> In the late nineteenth century, Western printing techniques and mechanical presses were imported, with Shanghai becoming the hub of the new print culture.</li></ul><details class="sub-topic"><summary><h3>1.1 Print in Japan</h3></summary><p>Buddhist missionaries from China introduced hand-printing technology into Japan around AD 768-770.</p><ul><li>The oldest Japanese book is the Buddhist <span class="keyword">Diamond Sutra</span> (AD 868), containing six sheets of text and woodcut illustrations.</li><li>In medieval Japan, poets and prose writers were regularly published, and books were cheap and abundant.</li><li><span class="keyword">Ukiyo</span>: An art form meaning 'pictures of the floating world', depicting ordinary human experiences, especially urban ones (e.g., works by <span class="keyword">Kitagawa Utamaro</span>).</li><li>Libraries and bookstores were packed with hand-printed material on diverse topics like women, musical instruments, tea ceremonies, and cooking.</li></ul></details></details><details class="topic-box"><summary class="topic-title">2. Print Comes to Europe</summary><p>For centuries, silk and spices from China flowed into Europe through the silk route. In the eleventh century, Chinese paper reached Europe via the same route, enabling manuscript production by scribes.</p><ul><li>In 1295, <span class="keyword">Marco Polo</span> returned to Italy from China and brought the knowledge of woodblock printing with him.</li><li><span class="keyword">Vellum</span>: A highly expensive parchment made from the skin of animals, used for luxury editions meant for aristocrats and rich monastic libraries.</li><li><strong>Demand and Scribes:</strong> As demand rose, booksellers exported books and employed scribes. However, handwritten manuscripts could not satisfy the ever-increasing demand as they were expensive, fragile, and laborious to produce.</li><li><span class="keyword">Jikji</span>: The Jikji of Korea is among the world's oldest existing books printed with movable metal type (late 14th century).</li></ul><details class="sub-topic"><summary><h3>2.1 Gutenberg and the Printing Press</h3></summary><p><span class="keyword">Johann Gutenberg</span> developed the first-known printing press in Strasbourg, Germany, in the 1430s.</p><ul><li>Gutenberg adapted existing technology (olive and wine presses, lead moulds for trinkets) to design his innovation.</li><li>The first book printed was the Bible; about 180 copies were printed over three years.</li><li><span class="keyword">Platen</span>: In letterpress printing, a board pressed onto the back of the paper to get the impression from the type.</li><li><strong>Boom in Production:</strong> Between 1450 and 1550, printing presses were set up across Europe, leading to a transition from hand printing to mechanical printing, known as the print revolution.</li></ul></details></details><details class="topic-box"><summary class="topic-title">3. The Print Revolution and Its Impact</summary><p>The print revolution transformed the lives of people, changing their relationship to information, knowledge, and authority.</p><details class="sub-topic"><summary><h3>3.1 A New Reading Public</h3></summary><p>Printing reduced the cost of books, creating a new, wider reading public.</p><ul><li><strong>Oral to Reading Culture:</strong> Earlier, common people heard sacred texts read out or listened to <span class="keyword">ballads</span> and folktales in <span class="keyword">taverns</span>. Print blurred the line between oral and reading cultures as illustrated books were read aloud to the illiterate.</li></ul></details><details class="sub-topic"><summary><h3>3.2 Religious Debates and the Fear of Print</h3></summary><p>Print introduced a new world of debate and discussion, allowing the circulation of ideas that could challenge established authorities.</p><ul><li>In 1517, the religious reformer <span class="keyword">Martin Luther</span> wrote 'Ninety Five Theses' criticising the Roman Catholic Church, leading to the <span class="keyword">Protestant Reformation</span>.</li><li>Luther praised print as "the ultimate gift of God and the greatest one."</li></ul></details><details class="sub-topic"><summary><h3>3.3 Print and Dissent</h3></summary><p>Individual interpretations of faith grew among common people, challenging orthodoxies.</p><ul><li><span class="keyword">Menocchio</span>, a miller in Italy, reinterpreted the Bible and was executed by the Roman Church during the <span class="keyword">Inquisition</span>.</li><li>The Roman Church began maintaining an <span class="keyword">Index of Prohibited Books</span> from 1558 to control heretical and dissenting publications.</li></ul></details></details><details class="topic-box"><summary class="topic-title">4. The Reading Mania</summary><p>Through the seventeenth and eighteenth centuries, literacy rates went up in most parts of Europe, creating a virtual reading mania.</p><ul><li><span class="keyword">Almanacs</span>: Ritual calendars containing astronomical data and general information.</li><li><span class="keyword">Chapbooks</span>: Pocket-size books sold by travelling pedlars (chapmen) for a penny in England.</li><li><span class="keyword">Biliotheque Bleue</span>: Low-priced small books printed on poor quality paper with cheap blue covers in France.</li><li><strong>Spread of Ideas:</strong> Ideas of scientists (like Isaac Newton) and philosophers (like Thomas Paine, Voltaire, and Rousseau) became widely accessible to the common people.</li></ul><details class="sub-topic"><summary><h3>4.1 'Tremble, therefore, tyrants of the world!'</h3></summary><p>By the mid-eighteenth century, there was a conviction that books were a means of spreading progress and enlightenment, capable of liberating society from <span class="keyword">despotism</span>.</p></details><details class="sub-topic"><summary><h3>4.2 Print Culture and the French Revolution</h3></summary><p>Historians argue that print culture created the conditions for the French Revolution by:</p><ul><li>Popularising the critical, rationalist ideas of Enlightenment thinkers.</li><li>Creating a new culture of dialogue, debate, and public evaluation of institutions.</li><li>Mocking the royalty and criticising their morality through cartoons and caricatures.</li></ul></details></details><details class="topic-box"><summary class="topic-title">5. The Nineteenth Century</summary><p>Mass literacy in Europe brought large numbers of new readers, especially children, women, and workers.</p><details class="sub-topic"><summary><h3>5.1 Children, Women and Workers</h3></summary><ul><li><strong>Children:</strong> Primary education became compulsory. A children's press was set up in France (1857). The <span class="keyword">Grimm Brothers</span> in Germany compiled and edited traditional folk tales.</li><li><strong>Women:</strong> Became important readers and writers. Penny magazines carried manuals on behaviour and housekeeping. Prominent novelists included Jane Austen, the Bronte sisters, and George Eliot.</li><li><strong>Workers:</strong> Lending libraries in England became instruments for educating white-collar workers and artisans.</li></ul></details><details class="sub-topic"><summary><h3>5.2 Further Innovations</h3></summary><ul><li>Richard M. Hoe of New York perfected the power-driven cylindrical press, capable of printing 8,000 sheets per hour.</li><li>The offset press was developed to print up to six colours at a time.</li><li>In the 1920s, popular works were sold in cheap series called the <span class="keyword">Shilling Series</span>, followed by cheap paperback editions during the Great Depression.</li></ul></details></details><details class="topic-box"><summary class="topic-title">6. India and the World of Print</summary><details class="sub-topic"><summary><h3>6.1 Manuscripts Before the Age of Print</h3></summary><p>India had a rich tradition of handwritten manuscripts in Sanskrit, Arabic, Persian, and vernacular languages, written on palm leaves or handmade paper.</p><ul><li>Manuscripts were highly expensive, fragile, and difficult to read due to different script styles.</li></ul></details><details class="sub-topic"><summary><h3>6.2 Print Comes to India</h3></summary><ul><li>The printing press first came to Goa with Portuguese missionaries in the mid-sixteenth century.</li><li>The first Tamil book was printed in 1579 at Cochin, and the first Malayalam book in 1713.</li><li>In 1780, <span class="keyword">James Augustus Hickey</span> began editing the <span class="keyword">Bengal Gazette</span>, a private weekly English magazine.</li><li>The first Indian-published newspaper was the weekly Bengal Gazette, brought out by Gangadhar Bhattacharya.</li></ul></details></details><details class="topic-box"><summary class="topic-title">7. Religious Reform and Public Debates</summary><p>From the early nineteenth century, intense debates around religious and social issues were carried out in print.</p><ul><li>Rammohun Roy published the <span class="keyword">Sambad Kaumudi</span> (1821) to campaign for reforms, while Hindu orthodoxy commissioned the <span class="keyword">Samachar Chandrika</span> to oppose him.</li><li>In north India, the <span class="keyword">ulama</span> used cheap lithographic presses to publish Urdu translations of holy scriptures and <span class="keyword">fatwas</span> to counter colonial influence and conversions.</li><li>The first printed edition of Tulsidas's <span class="keyword">Ramcharitmanas</span> came out from Calcutta in 1810.</li></ul></details><details class="topic-box"><summary class="topic-title">8. New Forms of Publication</summary><p>Printing created an appetite for new kinds of writing, such as novels, lyrics, short stories, and essays on social and political matters.</p><ul><li><strong>Visual Culture:</strong> Painters like <span class="keyword">Raja Ravi Varma</span> produced images for mass circulation.</li><li><strong>Caricatures and Cartoons:</strong> By the 1870s, cartoons commented on social and political issues, ridiculing Westernised Indians and criticising imperial rule.</li></ul><details class="sub-topic"><summary><h3>8.1 Women and Print</h3></summary><ul><li>Women's reading increased enormously. Conservative families, however, feared that education would lead to rebellion or corruption.</li><li><span class="keyword">Rashsundari Debi</span> secretly learnt to read and wrote <span class="keyword">Amar Jiban</span> (1876), the first full-length autobiography in Bengali.</li><li>In Maharashtra, Tarabai Shinde and Pandita Ramabai wrote with passionate anger about the miserable lives of upper-caste Hindu women.</li></ul></details><details class="sub-topic"><summary><h3>8.2 Print and the Poor People</h3></summary><ul><li>Very cheap small books were sold at crossroads in nineteenth-century Madras.</li><li>Issues of caste discrimination were highlighted in works like <span class="keyword">Jyotiba Phule</span>'s <span class="keyword">Gulamgiri</span> (1871).</li><li>Kanpur millworker Kashibaba wrote <span class="keyword">Chhote Aur Bade Ka Sawal</span> (1938) to show links between caste and class exploitation.</li></ul></details></details><details class="topic-box"><summary class="topic-title">9. Print and Censorship</summary><p>Censorship measures evolved from targeting critical Englishmen to suppressing nationalist publications.</p><ul><li>In 1878, the <span class="keyword">Vernacular Press Act</span> was passed, modelled on the Irish Press Laws, giving the government extensive rights to censor reports and editorials in the vernacular press.</li><li>Despite repression, nationalist newspapers grew, reporting on colonial misrule and encouraging nationalist activities (e.g., Balgangadhar Tilak's <span class="keyword">Kesari</span>).</li></ul></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 5</strong> of the Class 10 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "10-chapter-04-the-age-of-industrialisation.html";
+      } else {
+        window.location.href = "../../index.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>A Square and A Cube</title>
+  <title>Class 8 (Part 1) — Chapter 1: A Square and A Cube</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class="topic-box" open><summary class="topic-title">1.1 Square Numbers</summary><details class="sub-topic"><summary><h3>Properties of Square Numbers</h3></summary><ul><li>A <span class="keyword">square number</span> (or perfect square) is a number that can be expressed as the product of a number with itself (n &times; n = n&sup2;).</li><li><span class="keyword">Ending Digits:</span> Perfect squares only end with <span class="keyword">0, 1, 4, 5, 6, or 9</span> in their units place. They never end with 2, 3, 7, or 8.</li><li><span class="keyword">Unit Digit Rules:</span><ul><li>If a number ends in 1 or 9, its square ends in 1.</li><li>If a number ends in 4 or 6, its square ends in 6.</li><li>If a number ends in 5, its square ends in 5.</li></ul></li><li><span class="keyword">Number of Zeros:</span> If a number ends with k zeros, its square ends with 2k zeros (always an even number of zeros).</li><li><span class="keyword">Parity:</span> The square of an even number is always <span class="keyword">even</span>, and the square of an odd number is always <span class="keyword">odd</span>.</li></ul></details><details class="sub-topic"><summary><h3>Interesting Patterns</h3></summary><ul><li><span class="keyword">Sum of Consecutive Odd Numbers:</span> The sum of the first n consecutive odd natural numbers starting from 1 is equal to n&sup2;. <br><em>Example:</em> 1 + 3 + 5 + 7 + 9 = 25 = 5&sup2;.</li><li><span class="keyword">Numbers Between Consecutive Squares:</span> There are 2n non-perfect square numbers lying between the squares of consecutive numbers n&sup2; and (n+1)&sup2;.</li><li><span class="keyword">Triangular Numbers:</span> Numbers whose dot patterns can be arranged as triangles (1, 3, 6, 10, 15...). The sum of two consecutive triangular numbers is a square number. <br><em>Example:</em> 3 + 6 = 9 = 3&sup2;.</li></ul></details></details><details class="topic-box"><summary class="topic-title">1.2 Square Roots</summary><details class="sub-topic"><summary><h3>Finding Square Roots</h3></summary><ul><li>The <span class="keyword">square root</span> is the inverse operation of squaring. If y = x&sup2;, then x = &radic;y.</li><li><span class="keyword">Methods to Find Square Roots:</span><ol><li><span class="keyword">Successive Subtraction:</span> Subtract consecutive odd numbers starting from 1. If you reach 0 at the n-th step, the square root is n.</li><li><span class="keyword">Prime Factorisation:</span> Resolve the number into prime factors. Group them into identical pairs and take one factor from each pair.</li><li><span class="keyword">Estimation:</span> Estimate by finding the nearest known perfect squares and narrowing down the units digit.</li></ol></li></ul></details></details><details class="topic-box"><summary class="topic-title">1.3 Cubic Numbers & Cube Roots</summary><details class="sub-topic"><summary><h3>Perfect Cubes</h3></summary><ul><li>A <span class="keyword">perfect cube</span> is obtained by multiplying a number by itself three times (n &times; n &times; n = n&sup3;).</li><li><span class="keyword">Properties of Cubes:</span><ul><li>Cubes can end in any digit (0-9).</li><li>If a number ends in k zeros, its cube ends in 3k zeros (always a multiple of 3). A perfect cube cannot end in exactly two zeros.</li></ul></li><li><span class="keyword">Taxicab Numbers:</span> Numbers that can be expressed as the sum of two cubes in two different ways. The smallest is <span class="keyword">1729</span> (Hardy-Ramanujan Number): <br>1729 = 1&sup3; + 12&sup3; = 9&sup3; + 10&sup3;.</li><li><span class="keyword">Consecutive Odd Numbers Pattern:</span> Cubes can be expressed as sums of consecutive odd numbers. <br><em>Example:</em> 1&sup3; = 1, 2&sup3; = 3 + 5, 3&sup3; = 7 + 9 + 11.</li></ul></details><details class="sub-topic"><summary><h3>Cube Roots</h3></summary><ul><li>The <span class="keyword">cube root</span> is the inverse of cubing, denoted by &sup3;&radic;y.</li><li><span class="keyword">Prime Factorisation Method:</span> Group prime factors into triplets. Take one factor from each triplet to find the cube root.</li></ul></details></details><details class="topic-box"><summary class="topic-title">1.4 Historical Notes & Summary</summary><ul><li><span class="keyword">Babylonians (1700 BCE):</span> Compiled the first known lists of perfect squares and cubes on clay tablets.</li><li><span class="keyword">Sanskrit Terminology:</span><ul><li><em>Varga</em> = Square / Square power</li><li><em>Ghana</em> = Solid cube / Cube power</li><li><em>Mula</em> = Root (origin of "square root")</li></ul></li></ul></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 1</strong> of the Class 8 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "../../index.html";
+      } else {
+        window.location.href = "08-chapter-02-power-play.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

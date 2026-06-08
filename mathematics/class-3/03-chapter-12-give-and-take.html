@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Give and Take</title>
+  <title>Class 3 — Chapter 12: Give and Take</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class='topic-box'><summary class='topic-title'>12.1 Addition and Subtraction Patterns</summary><p>Exploring basic addition and subtraction patterns using number sequences and grids.</p><ul><li><strong>Adding and Subtracting Small Numbers:</strong> Practice mental math by adding or subtracting 2, 5, 6, or 9 to various numbers.</li><li><strong>Grid Calculations:</strong> Use a number grid (from 451 to 530) to solve addition and subtraction problems quickly by moving along rows (tens) and columns (ones). For example, $456 + 10 = 466$.</li></ul></details><details class='topic-box'><summary class='topic-title'>12.2 Addition of 3-Digit Numbers</summary><p>Learn how to add three-digit numbers using different visual and systematic methods.</p><details class='sub-topic'><summary><h3>12.2.1 Box Diagrams and HTO Blocks</h3></summary><p>To solve $364 + 52$:</p><ul><li>Represent $364$ as 3 Hundreds, 6 Tens, and 4 Ones.</li><li>Represent $52$ as 5 Tens and 2 Ones.</li><li>Combine the blocks: <span class='keyword'>Regrouping</span> 10 Tens to form 1 Hundred.</li><li>This leaves us with 4 Hundreds, 1 Ten, and 6 Ones, which equals $416$.</li></ul></details><details class='sub-topic'><summary><h3>12.2.2 Number Line Method</h3></summary><p>Start at $364$ and make jumps of $+10$ and $+1$ to add $52$:</p><ul><li>Five jumps of $+10$: $364 \rightarrow 374 \rightarrow 384 \rightarrow 394 \rightarrow 404 \rightarrow 414$</li><li>Two jumps of $+1$: $414 \rightarrow 415 \rightarrow 416$</li></ul></details></details><details class='topic-box'><summary class='topic-title'>12.3 Subtraction of 3-Digit Numbers with Regrouping</summary><p>Learn how to subtract numbers by regrouping hundreds, tens, and ones.</p><details class='sub-topic'><summary><h3>12.3.1 Regrouping Tens to Ones</h3></summary><p>To subtract $75$ from $230$:</p><ul><li>Since we cannot take away 5 ones from 0 ones, we regroup <span class='keyword'>1 Ten into 10 Ones</span>.</li><li>Now we have 2 Hundreds, 2 Tens, and 10 Ones.</li><li>Subtract 5 ones from 10 ones to get 5 ones.</li></ul></details><details class='sub-topic'><summary><h3>12.3.2 Regrouping Hundreds to Tens</h3></summary><p>Next, we need to subtract 7 tens from 2 tens:</p><ul><li>Since we cannot subtract 7 tens from 2 tens, we regroup <span class='keyword'>1 Hundred into 10 Tens</span>.</li><li>Now we have 1 Hundred, 12 Tens, and 5 Ones.</li><li>Subtract 7 tens from 12 tens to get 5 tens.</li><li>We are left with 1 Hundred, 5 Tens, and 5 Ones, which equals $155$.</li></ul></details></details><details class='topic-box'><summary class='topic-title'>12.4 Money and Transactions</summary><p>Understanding the concept of exchange, from historical barter systems to modern currency.</p><details class='sub-topic'><summary><h3>12.4.1 The Barter System</h3></summary><p>Before money existed, people used the <span class='keyword'>Barter System</span> to exchange goods based on mutual needs (e.g., exchanging 5 sacks of rice for 10 sacks of vegetables).</p></details><details class='sub-topic'><summary><h3>12.4.2 Modern Currency</h3></summary><p>Today, we use coins and notes of different denominations (₹10, ₹20, ₹50, ₹100, ₹500) to buy goods.</p><ul><li><strong>Equivalent Values:</strong> Different combinations of notes and coins can represent the same value (e.g., five ₹100 notes are equal to one ₹500 note).</li><li><strong>Making Payments:</strong> Finding multiple ways to pay for an item (e.g., paying ₹55 using one ₹50 note and one ₹5 coin, or two ₹20 notes, one ₹10 note, and one ₹5 coin).</li></ul></details></details><details class='topic-box'><summary class='topic-title'>12.5 Estimation and Mental Math</summary><p>Developing strategies for quick calculations and estimation.</p><details class='sub-topic'><summary><h3>12.5.1 Estimation to the Nearest Hundred</h3></summary><p>Estimate sums and differences by rounding to the nearest hundred:</p><ul><li>$156 + 34 \approx 200$</li><li>$505 + 405 \approx 900$</li><li>$500 - 395 \approx 100$</li></ul></details><details class='sub-topic'><summary><h3>12.5.2 Comparing Expressions Without Calculating</h3></summary><p>Compare mathematical expressions by analyzing their components:</p><ul><li>$373 + 40 > 373 + 23$ (since $40 > 23$)</li><li>$345 - 45 > 345 - 54$ (subtracting a smaller number leaves a larger result)</li></ul></details></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 12</strong> of the Class 3 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "03-chapter-11-filling-and-lifting.html";
+      } else {
+        window.location.href = "03-chapter-13-time-goes-on.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

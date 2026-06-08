@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Nature Trail</title>
+  <title>Class 4 — Chapter 3: Nature Trail</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class="topic-box"><summary class="topic-title">3.1 The Adventure Begins</summary><p>The students, along with their teacher, embark on a nature trail at <span class="keyword">Pachmarhi</span> in Madhya Pradesh. Guided by Abha Didi, a nature scientist, they explore the forest while learning to observe wildlife without causing harm.</p><details class="sub-topic"><summary><h3>Safety Rules: DOs and DON'Ts in a Forest</h3></summary><ul><li><strong>Be careful</strong> in a new place.</li><li><strong>Do not tease</strong> or <strong>feed</strong> animals.</li><li><strong>Do not damage</strong> trees and flowers.</li><li><strong>Do not bring</strong> pets, firearms, weapons, or polythene bags.</li><li><strong>Do not damage</strong> public utilities.</li><li><strong>Do not throw garbage</strong> in the forest.</li></ul></details></details><details class="topic-box"><summary class="topic-title">3.2 Animals of the Forest</summary><p>Forests are home to a diverse range of land animals, birds, and insects, each possessing unique physical features and adaptations.</p><details class="sub-topic"><summary><h3>Unique Forest Animals</h3></summary><ul><li><span class="keyword">Indian Giant Squirrel</span>: A large, red-coloured squirrel native to Pachmarhi and select other regions.</li><li><span class="keyword">Spectacled Monkey</span>: The state animal of Tripura, recognized by the white patches around its eyes that resemble spectacles.</li><li><span class="keyword">Gaur</span>: Also known as the Indian Bison, they resemble strong buffaloes but have shorter horns.</li></ul></details><details class="sub-topic"><summary><h3>Animal Footprints</h3></summary><p>Footprints in the mud help identify which animals visit water bodies to drink. Observing and drawing footprints is a key method used by nature scientists to track wildlife.</p></details></details><details class="topic-box"><summary class="topic-title">3.3 Birds, Beaks, and Claws</summary><p>Birds exhibit distinct physical adaptations based on their habitats and feeding habits.</p><details class="sub-topic"><summary><h3>Key Bird Features</h3></summary><ul><li><span class="keyword">Hornbill</span>: Characterized by a unique horn-like headgear growing out of its forehead.</li><li><span class="keyword">Peacock</span>: Known for its colorful plumage.</li><li><span class="keyword">Owl</span>: Equipped with sharp night vision to hunt in the dark.</li></ul></details><details class="sub-topic"><summary><h3>Beak and Claw Adaptations</h3></summary><ul><li><strong>Eagle</strong>: Has a sharp, curved beak and strong, sharp claws to catch and tear prey.</li><li><strong>Sunbird</strong>: Features a long, slender beak designed to drink nectar from flowers.</li><li><strong>Sparrow</strong>: Possesses a short, strong beak ideal for cracking seeds.</li></ul></details></details><details class="topic-box"><summary class="topic-title">3.4 Water Animals</summary><p>Animals living in and around water bodies have specialized features that facilitate survival and movement.</p><ul><li><strong>Fish</strong>: Use fins to swim.</li><li><span class="keyword">Gharial</span>: A type of crocodile with a long, narrow, and pointed snout adapted for catching fish.</li><li><strong>Turtles</strong>: Protected by strong shells and equipped with webbed feet for swimming.</li><li><strong>Frogs</strong>: Adapted to live both on land and in water.</li></ul></details><details class="topic-box"><summary class="topic-title">3.5 Tiny Animals (Insects)</summary><p>Insects represent a highly diverse group of tiny animals found throughout forest ecosystems.</p><details class="sub-topic"><summary><h3>Characteristics of Insects</h3></summary><ul><li>Possess <strong>three pairs of legs</strong> (six legs in total).</li><li>Have <strong>one pair of antennae</strong> to sense their surroundings.</li><li>Often have <strong>two pairs of wings</strong> (e.g., flies, grasshoppers, butterflies).</li><li>Common examples include ants, beetles, bees, flies, praying mantises, and butterflies.</li></ul></details></details><details class="topic-box"><summary class="topic-title">3.6 Plants and Leaves</summary><p>Plants can be identified by the unique characteristics of their leaves, including color, shape, texture, and venation.</p><details class="sub-topic"><summary><h3>Leaf Veins</h3></summary><p>The lines visible on a leaf are called <span class="keyword">veins</span>. Different plants exhibit distinct patterns of vein arrangement, which can be studied using the "Leaf Autograph" crayon-rubbing technique.</p></details></details><details class="topic-box"><summary class="topic-title">3.7 The Web of Life</summary><p>All living beings and natural elements are interconnected in an ecosystem.</p><details class="sub-topic"><summary><h3>Interdependence</h3></summary><p>Plants, animals, water, soil, and the Sun rely on one another. The <span class="keyword">Web of Life</span> game demonstrates that if one element of nature disappears (such as plants or a specific animal), the entire ecological web weakens or collapses, highlighting the critical need for conservation.</p></details></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 3</strong> of the Class 4 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "04-chapter-02-exploring-our-neighbourhood.html";
+      } else {
+        window.location.href = "04-chapter-04-growing-up-with-nature.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

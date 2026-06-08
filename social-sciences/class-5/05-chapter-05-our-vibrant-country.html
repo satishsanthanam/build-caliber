@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Our Vibrant Country</title>
+  <title>Class 5 — Chapter 5: Our Vibrant Country</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class="topic-box"><summary class="topic-title">5.1 A Special Day in School</summary><p>The chapter begins with a description of <span class="keyword">Republic Day</span> celebrations in school on <strong>26 January</strong>. The national flag is unfurled, and students sing the National Anthem with pride and unity.</p><details class="sub-topic"><summary><h3>5.1.1 The National Flag (Tricolour)</h3></summary><p>The Indian National Flag consists of three horizontal bands, each representing distinct values:</p><ul><li><span class="keyword">Saffron</span>: Stands for strength and courage.</li><li><span class="keyword">White</span>: Stands for peace and truth, with the blue <span class="keyword">Ashoka Chakra</span> at the centre representing duty (<span class="keyword">dharma</span>).</li><li><span class="keyword">Green</span>: Stands for growth and prosperity.</li></ul></details></details><details class="topic-box"><summary class="topic-title">5.2 Republic Day and Independence Day</summary><p>India celebrates two major national days that mark its journey as a free and self-governing nation:</p><ul><li><strong>Independence Day (15 August 1947)</strong>: Marks the day India became free from British rule after a long struggle by many brave freedom fighters.</li><li><strong>Republic Day (26 January 1950)</strong>: Marks the day India adopted its own set of rules and laws, known as the <span class="keyword">Constitution</span>.</li></ul><details class="sub-topic"><summary><h3>5.2.1 The Republic Day Parade in New Delhi</h3></summary><p>The grand parade in New Delhi showcases India's diverse culture and strength:</p><ul><li><strong>Fighter Jets</strong> flying in the sky.</li><li><strong>State Tableaux</strong> representing the unique culture and heritage of different states.</li><li><strong>Indian Defence Forces</strong>: The Army, Navy, Air Force, and paramilitary forces.</li></ul></details></details><details class="topic-box"><summary class="topic-title">5.3 Finding India in Currency Notes</summary><p>Indian currency notes contain rich information about the country's heritage, diversity, and values.</p><details class="sub-topic"><summary><h3>5.3.1 Key Features of Currency Notes</h3></summary><ul><li><strong>Mahatma Gandhi's Image</strong>: There are actually two images of Mahatma Gandhi on each note (one main image and a smaller watermark image visible when held up to the light).</li><li><strong>Swachh Bharat Abhiyan Symbol</strong>: The tiny round spectacles of Gandhi ji on the note represent the nationwide <span class="keyword">Swachh Bharat Abhiyan</span> (Clean India Mission), reflecting his emphasis on cleanliness.</li><li><strong>Languages</strong>: Multiple languages are printed on the note, showcasing India's multilingual nature.</li><li><strong>Accessibility Features</strong>: Currency notes have raised prints and symbols to help visually impaired people identify them. The <span class="keyword">MANI app</span> also helps identify notes by listening to and feeling their vibrations.</li></ul></details></details><details class="topic-box"><summary class="topic-title">5.4 Symbols that Speak</summary><p>National symbols remind citizens of their identity and shared heritage.</p><details class="sub-topic"><summary><h3>5.4.1 The National Emblem of India</h3></summary><p>The <span class="keyword">National Emblem</span> features three visible lions standing on a circular platform, representing strength, courage, and confidence. Below the lions is the <span class="keyword">Ashoka Chakra</span>. It is found on official documents, currency, and Aadhaar cards.</p><p><em>Note:</em> Asiatic lions, once widespread, are now found in the wild only in the <span class="keyword">Gir forests of Gujarat</span>.</p></details><details class="sub-topic"><summary><h3>5.4.2 National Animal and Bird</h3></summary><ul><li><strong>National Animal</strong>: The <span class="keyword">Bengal Tiger</span> (described as having orange and black stripes, ruling the forest with a mighty roar).</li><li><strong>National Bird</strong>: The <span class="keyword">Peacock</span> (described as dancing in the rain with bright green and blue feathers and a crown on its head).</li></ul></details></details><details class="topic-box"><summary class="topic-title">5.5 Our Vibrant Culture and Languages</summary><p>India is home to more than a thousand languages, each rich with its own history, songs, and stories.</p><ul><li><strong>Multilingualism</strong>: People speak different languages, eat different foods, wear unique clothes, and enjoy regional songs and dances.</li><li><strong>Language Translation</strong>: Mobile applications can translate languages, helping people learn and understand different regional tongues.</li></ul></details><details class="topic-box"><summary class="topic-title">5.6 Diversity Everywhere</summary><p>The textbook uses the analogy of a garden versus a forest to explain the value of diversity:</p><ul><li>A <strong>garden</strong> has fewer varieties of plants and requires constant care.</li><li>A <strong>forest</strong> has a rich diversity of plants, trees, animals, birds, and insects. This diversity helps the forest look after itself, making it stronger and more beautiful.</li><li>Similarly, <span class="keyword">diversity</span> makes India stronger and more self-sufficient.</li></ul><details class="sub-topic"><summary><h3>5.6.1 Traditional Headgear</h3></summary><p>Headgear is a significant symbol of tradition, honour, and cultural heritage in India:</p><ul><li>In Rajasthan, men wear a colourful <span class="keyword">saafa</span> or <span class="keyword">pagri</span>.</li><li>In Himachal Pradesh, people wear a <span class="keyword">topi</span>.</li><li>Headgear can indicate a person's region, beliefs, or profession.</li><li><strong>Protective Headgear</strong>: Helmets are worn for safety by soldiers, construction workers, miners, and two-wheeler riders.</li></ul></details></details><details class="topic-box"><summary class="topic-title">5.7 Art Forms: Music and Dance</summary><p>Music and dance are ways of celebrating, praying, sharing stories, and bringing people together.</p><details class="sub-topic"><summary><h3>5.7.1 Indian Drums</h3></summary><p>Even a simple instrument like a drum has diverse forms across India, each shaped by local culture, traditions, and materials:</p><ul><li>Pakhawaj</li><li>Dhama</li><li>Khanjira</li><li>Dhol</li><li>Mridangam</li><li>Dholak</li><li>Thvil</li><li>Idakka</li><li>Khol</li><li>Nagara</li><li>Tabla</li></ul></details><details class="sub-topic"><summary><h3>5.7.2 Classical and Traditional Instruments</h3></summary><ul><li><strong>Carnatic Music</strong>: Uses instruments like the <span class="keyword">mridangam</span>.</li><li><strong>Hindustani Music</strong>: Uses instruments like the <span class="keyword">sitar</span> and <span class="keyword">shehnai</span>.</li></ul></details></details><details class="topic-box"><summary class="topic-title">5.8 Spirit of Togetherness</summary><p>India is a shining example of the spirit of togetherness, where diverse threads of languages, religions, clothing, and traditions are woven into one strong, vibrant fabric.</p><ul><li><strong>Rich Heritage</strong>: Ancient practices like <span class="keyword">Ayurveda</span>, <span class="keyword">yoga</span>, and <span class="keyword">meditation</span>.</li><li><strong>Modern Progress</strong>: Launching rockets, using technology in agriculture, digital payments (like <span class="keyword">UPI</span>, the world's largest digital payment system), and high-speed trains.</li><li><strong>Shared Responsibility</strong>: As proud citizens, everyone must care for and protect the country's rich heritage.</li></ul></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 5</strong> of the Class 5 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "05-chapter-04-our-schoola-happy-place.html";
+      } else {
+        window.location.href = "05-chapter-06-some-unique-places.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

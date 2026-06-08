@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Playing with Lines</title>
+  <title>Class 2 — Chapter 5: Playing with Lines</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class="topic-box"><summary class="topic-title">5.1 Introduction to Lines through Yoga (Aasanas)</summary><p>Yoga poses (<span class="keyword">aasanas</span>) can help us understand different types of lines formed by our body postures.</p><details class="sub-topic"><summary><h3>Let us Do: Identifying Lines in Aasanas</h3></summary><ul><li><strong>Vertical / Standing Lines:</strong> Look for straight upright postures.</li><li><strong>Slanting Lines:</strong> Look for postures where arms or legs are tilted.</li><li><strong>Curved Lines:</strong> Look for postures where the back or limbs are bent in a curve.</li><li><strong>Horizontal / Sleeping Lines:</strong> Look for postures parallel to the ground.</li></ul><p class="teacher-note"><em>Teacher's Note:</em> Facilitate children in practicing yoga poses. Give instructions like keeping the back straight, arms straight, curving the back, or slanting the arms and legs. Introduce them to <span class="keyword">Ashtanga Yoga</span> as described in the ancient <em>Yoga Sutras of Patanjali</em>.</p></details></details><details class="topic-box"><summary class="topic-title">5.2 What is Straight?</summary><p>We can understand different types of lines by holding a piece of thread in our hands:</p><ul><li><span class="keyword">Sleeping / Horizontal Line</span>: Formed when holding a thread straight and tight horizontally.</li><li><span class="keyword">Slanting Line</span>: Formed when holding a thread tight at an angle.</li><li><span class="keyword">Standing / Vertical Line</span>: Formed when holding a thread tight vertically.</li><li><span class="keyword">Curved Line</span>: Formed when bringing hands closer, letting the thread loose and curved.</li></ul><details class="sub-topic"><summary><h3>Let us Do: Tracing Lines</h3></summary><p>Practice tracing missing vertical, horizontal, slanting, and curved lines in everyday pictures like playground equipment, swings, slides, and ladders.</p></details></details><details class="topic-box"><summary class="topic-title">5.3 Let us Play with Dots</summary><p>Using grids of dots, we can create various geometric shapes and artistic figures.</p><details class="sub-topic"><summary><h3>A. Making Shapes with Straight Lines</h3></summary><p>Connect dots using only straight lines (<span class="keyword">vertical</span>, <span class="keyword">horizontal</span>, and <span class="keyword">slanting</span>) to make shapes like squares, rectangles, triangles, and 3D boxes.</p></details><details class="sub-topic"><summary><h3>B. Drawing Figures with Curved Lines</h3></summary><p>Connect dots using <span class="keyword">curved lines</span> to draw organic shapes like flowers, clouds, rainbows, and waves.</p></details></details><details class="topic-box"><summary class="topic-title">5.4 Creative Drawing with Lines</summary><p>Combine different types of lines to create beautiful designs and patterns.</p><ul><li><strong>Design with two types of lines:</strong> e.g., combining only horizontal and vertical lines.</li><li><strong>Design with three types of lines:</strong> e.g., combining horizontal, vertical, and slanting lines.</li><li><strong>Design using all types of lines:</strong> Combining horizontal, vertical, slanting, and curved lines.</li></ul></details><details class="topic-box"><summary class="topic-title">5.5 Project Work: Fun with Folding</summary><p>Paper folding is an excellent way to explore lines and creases.</p><ul><li>Folding a paper in half creates a straight crease in the center.</li><li>Repeated folding creates multiple creases representing different types of lines.</li><li><strong>Activity A:</strong> Fold a paper with a friend to see who can get the maximum number of creases. Trace straight lines with a red crayon and slanting lines with a blue crayon.</li><li><strong>Activity B:</strong> Try to make curved lines by paper folding.</li></ul><p class="teacher-note"><em>Art Integration:</em> Discuss traditional Indian art forms like <span class="keyword">Madhubani</span>, <span class="keyword">Kalamkari</span>, and <span class="keyword">Warli</span>, which extensively use basic lines and shapes.</p></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 5</strong> of the Class 2 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "02-chapter-04-shadow-story-togalu-2d-shapes.html";
+      } else {
+        window.location.href = "02-chapter-06-decoration-for-festival-addition-a.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

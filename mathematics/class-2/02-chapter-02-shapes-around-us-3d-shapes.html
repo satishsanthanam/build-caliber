@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Shapes Around Us</title>
+  <title>Class 2 — Chapter 2: Shapes Around Us</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class="topic-box"><summary class="topic-title">2.1 Introduction to Shapes Around Us</summary><p>We observe various shapes in our daily lives. During festivals, celebrations, and daily activities, different objects around us exhibit distinct geometric characteristics.</p><details class="sub-topic"><summary><h3>Identifying Shapes in Musical Instruments</h3></summary><p>In a musical gathering, we can identify shapes based on common instruments:</p><ul><li><span class="keyword">Cylinder</span>: Similar in shape to a drum (<span class="keyword">dholak</span> or <span class="keyword">tabla</span>).</li><li><span class="keyword">Sphere</span>: Similar in shape to a <span class="keyword">matka</span> (clay pot) or round sweets like <span class="keyword">laddu</span>.</li><li><span class="keyword">Cone</span>: Similar in shape to a <span class="keyword">shehnai</span> or a party hat.</li><li><span class="keyword">Cuboid</span>: Similar in shape to a <span class="keyword">harmonium</span> or a gift box.</li></ul></details></details><details class="topic-box"><summary class="topic-title">2.2 Solid Shapes and Their Properties</summary><p>Solid objects have three-dimensional structures characterized by faces, edges, and corners.</p><details class="sub-topic"><summary><h3>Faces, Edges, and Corners</h3></summary><p>Using a standard rectangular gift box as an example, we can define these core components:</p><ul><li><strong><span class="keyword">Faces</span></strong>: The flat surfaces of the solid object. A standard box or cube has $6$ faces.</li><li><strong><span class="keyword">Edges (Sides)</span></strong>: The line segments where two faces meet. A standard box or cube has $12$ edges.</li><li><strong><span class="keyword">Corners (Vertices)</span></strong>: The points where three or more edges meet. A standard box or cube has $8$ corners.</li></ul></details><details class="sub-topic"><summary><h3>Properties of Common 3D Shapes</h3></summary><p>Different solid shapes have varying numbers of faces, edges, and corners:</p><ul><li><strong>Cube</strong> (e.g., playing dice): $6$ flat faces, $12$ straight edges, $8$ corners.</li><li><strong>Cuboid</strong> (e.g., eraser, brick, crayon box): $6$ flat faces, $12$ straight edges, $8$ corners.</li><li><strong>Cone</strong> (e.g., ice cream cone, carrot): $2$ faces ($1$ flat circular face and $1$ curved face), $1$ curved edge, $1$ corner (apex).</li><li><strong>Cylinder</strong> (e.g., pipe, water bottle, marker): $3$ faces ($2$ flat circular faces and $1$ curved face), $2$ curved edges, $0$ corners.</li><li><strong>Sphere</strong> (e.g., ball, globe, orange): $1$ curved face, $0$ edges, $0$ corners.</li></ul></details></details><details class="topic-box"><summary class="topic-title">2.3 Interactive Activities and Games</summary><p>Practical exercises help in understanding the tactile and visual properties of shapes.</p><details class="sub-topic"><summary><h3>Touch and Tell Game</h3></summary><p>A game where a blindfolded child picks an object from a collection and identifies it based on descriptions of its faces, edges, and corners (e.g., "Find an object with no corners" or "Find an object with only one corner").</p></details><details class="sub-topic"><summary><h3>Classifying Objects by Corners</h3></summary><ul><li><strong>No Corners</strong>: Spherical and cylindrical objects like balls, marbles, pipes, and bottles.</li><li><strong>One Corner</strong>: Conical objects like funnels, conical tents, and ice cream cones.</li><li><strong>Multiple Corners</strong>: Cubes and cuboids like books, wooden blocks, and boxes.</li></ul></details><details class="sub-topic"><summary><h3>Project Work</h3></summary><p>Try creating physical models using cardboard sheets, clay, or dough:</p><ul><li>Make an object with four faces (such as a triangular pyramid).</li><li>Make an object with only one face (such as a sphere).</li></ul></details></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 2</strong> of the Class 2 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "02-chapter-01-a-day-at-the-beach-counting-in-gro.html";
+      } else {
+        window.location.href = "02-chapter-03-fun-with-numbers-numbers-1-to-100.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

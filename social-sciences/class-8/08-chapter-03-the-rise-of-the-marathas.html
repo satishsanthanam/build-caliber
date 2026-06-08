@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>The Rise of the Marathas</title>
+  <title>Class 8 — Chapter 3: The Rise of the Marathas</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class="topic-box"><summary class="topic-title">3.1 Who are the Marathas?</summary><p>The Marathas are a group of people native to the Deccan plateau, specifically present-day Maharashtra, identified by the Marathi language which has a rich literary history since the 12th century.</p><details class="sub-topic"><summary><h3>Historical & Cultural Background</h3></summary><ul><li>During the 13th century, Maharashtra was ruled by the <span class="keyword">Yadava dynasty</span> with Devagiri (Daulatabad) as its capital.</li><li>In the early 14th century, the Yadava dynasty was overcome by the <span class="keyword">Khilji Sultanate</span> from Delhi.</li><li>Amidst political changes, cultural traditions of <span class="keyword">bhakti</span> (devotion) flourished between the 7th and 17th centuries.</li><li>Saints like <span class="keyword">Dnyaneshwar</span>, <span class="keyword">Namdev</span>, <span class="keyword">Tukaram</span>, and <span class="keyword">Ramdas</span> made philosophy accessible by translating texts like the Upanishads and Bhagavad Gita into Marathi, creating a solid cultural foundation.</li></ul></details></details><details class="topic-box"><summary class="topic-title">3.2 Foundation of Maratha Power & Chhatrapati Shivaji</summary><p>Chhatrapati Shivaji Maharaj consolidated Maratha power and established a sovereign kingdom based on the ideal of Swarajya.</p><details class="sub-topic"><summary><h3>Early Life & Swarajya</h3></summary><ul><li>Born in 1630 in the Bhonsle clan to <span class="keyword">Shahji</span> and <span class="keyword">Jijabai</span>.</li><li>Grew up in his <span class="keyword">jāgīr</span> (land grant) at Pune under Jijabai's guidance.</li><li>At age 16, launched military campaigns, capturing neglected forts to build <span class="keyword">Swarājya</span> (self-rule).</li></ul></details><details class="sub-topic"><summary><h3>Military Campaigns & Tactics</h3></summary><ul><li><span class="keyword">Guerrilla Warfare</span>: Used speed, surprise, and terrain knowledge to defeat larger armies.</li><li><strong>Afzal Khan Incident</strong>: Shivaji killed the Bijapur general Afzal Khan at Pratapgad using a <span class="keyword">wāgh nakh</span> (tiger's claw weapon).</li><li><strong>Shaista Khan Raid</strong>: Conducted a daring night raid on the Mughal nobleman Shaista Khan's camp in Pune.</li><li><strong>Sacking of Surat</strong>: Sacked the wealthy Mughal port city of Surat to obtain resources, carefully sparing religious places and charitable homes.</li><li><strong>Treaty of Purandar</strong>: Conceded defeat to Rajput general Jai Singh, surrendered forts, and sent his son Sambhaji to Mughal service.</li><li><strong>Escape from Agra</strong>: Imprisoned by Aurangzeb in Agra, Shivaji and Sambhaji escaped hidden in large sweet baskets.</li></ul></details><details class="sub-topic"><summary><h3>Coronation & Southern Conquest</h3></summary><ul><li>In 1674, coronated at Raigad with Vedic rites, taking the title <span class="keyword">Shri Raja Shiva Chhatrapati</span> and starting the <span class="keyword">Rājyābhiṣheka shaka</span> era.</li><li>Embarked on <span class="keyword">dakṣhiṇa-digvijaya</span> (conquest of the South) into Tamil Nadu and Karnataka, providing strategic depth against Mughals.</li></ul></details></details><details class="topic-box"><summary class="topic-title">3.3 The Marathas after Chhatrapati Shivaji</summary><p>Following Shivaji's death in 1680, the Marathas transitioned into a decentralized confederacy that expanded across India.</p><details class="sub-topic"><summary><h3>Successors & Mughal Conflict</h3></summary><ul><li><span class="keyword">Sambhaji</span> succeeded Shivaji, resisting Aurangzeb's invasion until his capture and execution.</li><li><span class="keyword">Rajaram</span> became Chhatrapati and fled to Gingee, spreading the conflict to South India.</li><li><span class="keyword">Tarabai</span> (Rajaram's queen) led the Marathas, launching counter-offensives into Mughal territories.</li></ul></details><details class="sub-topic"><summary><h3>The Peshwas & Pan-Indian Expansion</h3></summary><ul><li>The administration shifted to a decentralized structure centered around the <span class="keyword">Peshwa</span> (prime minister).</li><li><span class="keyword">Peshwa Bajirao I</span> and <span class="keyword">Nanasaheb Peshwa</span> led the pan-Indian expansion.</li><li>The Marathas briefly controlled northern areas like Lahore, Attock, and Peshawar.</li><li>Despite a major defeat at the <span class="keyword">Battle of Panipat</span> (1761) against the Afghans, they recovered under <span class="keyword">Peshwa Madhavrao I</span> and recaptured Delhi in 1771 under <span class="keyword">Mahadji Shinde</span>.</li></ul></details><details class="sub-topic"><summary><h3>Decline & Anglo-Maratha Wars</h3></summary><ul><li>The British emerged as the chief rivals of the Marathas in the late 18th century.</li><li>Three <span class="keyword">Anglo-Maratha Wars</span> (1775–1818) ended Maratha power due to internal disunity and superior British technology.</li></ul></details></details><details class="topic-box"><summary class="topic-title">3.4 Maratha Administration</summary><p>The Marathas developed highly organized civilian, military, and maritime administrative systems.</p><details class="sub-topic"><summary><h3>Civilian Administration</h3></summary><ul><li>Shivaji instituted a centralized administration, abolishing hereditary posts and paying salaries from the treasury.</li><li><span class="keyword">Aṣhṭa Pradhāna Manḍala</span>: A council of eight ministers assisting the king:</li><ul><li><em>Pradhān</em>: Prime Minister</li><li><em>Amātya</em>: Finance Minister</li><li><em>Sachiv</em>: Land Revenue Minister</li><li><em>Mantrī</em>: Intelligence Minister</li><li><em>Senāpatī</em>: Commander-in-chief</li><li><em>Sumant</em>: Foreign Affairs Minister</li><li><em>Nyāyādhīsh</em>: Chief Justice</li><li><em>Panḍitrāo</em>: Head of Religious Affairs</li></ul><li><strong>Taxation</strong>: Levied <span class="keyword">chauth</span> ($25\%$) and <span class="keyword">sardeshmukhi</span> (additional $10\%$) from non-annexed provinces in exchange for protection.</li></ul></details><details class="sub-topic"><summary><h3>Military & Maritime Supremacy</h3></summary><ul><li><strong>Cavalry</strong>: Divided into <span class="keyword">bārgīrs</span> (state-equipped) and <span class="keyword">shiledārs</span> (self-equipped).</li><li><strong>Forts</strong>: Described as the "core of the state" by Ramachandrapant Amatya in <span class="keyword">Ādnyāpatra</span>.</li><li><strong>Navy</strong>: Established by Shivaji to secure the west coast. Under <span class="keyword">Kanhoji Angre</span>, the navy successfully challenged European maritime dominance and their trade passes (<span class="keyword">cartaz</span>).</li></ul></details><details class="sub-topic"><summary><h3>Judicial System & Trade</h3></summary><ul><li><strong>Judicial System</strong>: Moderated capital punishment; local justice was delivered by the <span class="keyword">panchāyat</span>, with cities policed by a <span class="keyword">kotwāl</span>.</li><li><strong>Trade Networks</strong>: Shivaji actively participated in maritime trade, sending ships to Mocha, Muscat, and Malacca.</li></ul></details></details><details class="topic-box"><summary class="topic-title">3.5 Cultural Revival & Legacy</summary><p>The Maratha Empire fostered a significant revival of indigenous culture, language, and traditions.</p><details class="sub-topic"><summary><h3>Cultural Contributions</h3></summary><ul><li>Shivaji's royal seal carried a Sanskrit inscription instead of Persian.</li><li>Commissioned the <span class="keyword">Rājya-Vyavahāra-Koṣha</span>, a treatise providing Sanskrit equivalents for Persian diplomatic terms.</li><li>Rebuilt desecrated temples and promoted Marathi and Sanskrit literature.</li><li>Used the <span class="keyword">Moḍī script</span> for official correspondence.</li></ul></details><details class="sub-topic"><summary><h3>Mighty Maratha Women</h3></summary><ul><li><strong>Tarabai</strong>: Fearless warrior queen who outsmarted the Mughals and preserved Maratha independence.</li><li><strong>Ahilyabai Holkar</strong>: Governed Indore for 30 years, rebuilt major temples (Kashi Vishwanath, Somnath), and promoted the Maheshwar weaving industry.</li></ul></details><details class="sub-topic"><summary><h3>Thanjavur Marathas</h3></summary><ul><li>Established by Shivaji's half-brother <span class="keyword">Ekoji</span> in Tamil Nadu.</li><li><span class="keyword">Serfoji II</span>: Notable ruler who wrote the play <em>Devendra Kuravanji</em>, patronized Carnatic music and Bharatanatyam, established the Dhanwantari Mahal medical center, and set up a printing press.</li></ul></details><details class="sub-topic"><summary><h3>The Maratha Legacy</h3></summary><ul><li>Challenged Mughal dominance to establish the largest pre-British Indian empire.</li><li>Revived local traditions without religious discrimination.</li><li>The ideal of Swarajya inspired future generations, planting the seeds of India's freedom movement.</li></ul></details></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 3</strong> of the Class 8 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "08-chapter-02-reshaping-indias-political-map.html";
+      } else {
+        window.location.href = "08-chapter-04-the-colonial-era-in-india.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

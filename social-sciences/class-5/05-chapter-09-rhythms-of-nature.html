@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Rhythms of Nature</title>
+  <title>Class 5 — Chapter 9: Rhythms of Nature</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class='topic-box'><summary class='topic-title'>9.1 Introduction: Understanding Change</summary><p>Changes are constantly occurring in ourselves and the world around us. Some changes happen over years, while others occur in days, minutes, or even seconds.</p><ul><li><strong>Long-term changes:</strong> Growing taller, trees growing, and changes in our environment over years.</li><li><strong>Short-term changes:</strong> Leaves falling and growing back, flowers blooming and drying, the sky changing color, and the daily cycle of the sun.</li></ul></details><details class='topic-box'><summary class='topic-title'>9.2 Changes Around Us in a Day (Day and Night)</summary><p>The daily transition from day to night and back to day is one of the most prominent natural rhythms.</p><details class='sub-topic'><summary><h3>What Causes Day and Night?</h3></summary><p>Although the Sun appears to rise in the east, move across the sky, and set in the west, it is actually the Earth that is moving, not the Sun.</p><ul><li><span class='keyword'>Rotation</span>: The Earth slowly turns around (rotates) in place.</li><li>As the Earth rotates, the side facing the Sun experiences <strong>day</strong>, while the side facing away from the Sun experiences <strong>night</strong>.</li></ul></details><details class='sub-topic'><summary><h3>The Globe as a Model of Earth</h3></summary><p>A <span class='keyword'>globe</span> is a spherical model that represents our Earth.</p><ul><li>The blue parts of the globe represent seas and oceans, which cover about $\frac{3}{4}$ of the Earth's surface.</li><li>Seas are smaller water bodies partly enclosed by land, whereas oceans are vast, open water bodies.</li><li>The remaining parts of the globe represent landmasses where countries are located.</li></ul></details></details><details class='topic-box'><summary class='topic-title'>9.3 Changes Around Us in a Year (Seasons)</summary><p>Nature changes slowly over the course of a year in a repeating pattern called <span class='keyword'>seasons</span>.</p><details class='sub-topic'><summary><h3>The Six Seasons of India</h3></summary><p>In India, nature's cycle is traditionally divided into six distinct seasons based on climatic changes every few months:</p><ol><li><strong>Vasanta</strong> (Spring)</li><li><strong>Grishma</strong> (Summer)</li><li><strong>Varsha</strong> (Monsoon)</li><li><strong>Sharad</strong> (Autumn)</li><li><strong>Hemant</strong> (Pre-winter)</li><li><strong>Shishir</strong> (Winter)</li></ol></details><details class='sub-topic'><summary><h3>Agricultural Cycles and Seasons</h3></summary><p>Farmers align their crop cultivation with seasonal patterns because different crops require different conditions to grow:</p><ul><li><strong>Summer Crops:</strong> Crops that grow best in the heat of summer.</li><li><strong>Winter Crops:</strong> Crops that grow best in the cooler winter months.</li><li><strong>Rainy Season Crops:</strong> Crops planted during the monsoon because they require abundant water to grow.</li></ul></details><details class='sub-topic'><summary><h3>Festivals and Seasons</h3></summary><p>Many cultural festivals in India are closely linked to seasonal changes and harvest cycles:</p><ul><li><strong>Pongal & Makar Sankranti:</strong> Celebrated in Winter (Harvest festival).</li><li><strong>Holi:</strong> Celebrated in Spring (When flowers bloom).</li><li><strong>Diwali:</strong> Celebrated in Autumn (After crops are harvested).</li><li><strong>Baisakhi, Gudi Padwa, Vishu, & Rongali Bihu:</strong> Springtime New Year and harvest festivals.</li></ul></details></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 9</strong> of the Class 5 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "05-chapter-08-clothes-how-things-are-made.html";
+      } else {
+        window.location.href = "05-chapter-10-earthour-shared-home.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

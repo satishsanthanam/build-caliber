@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Data Handling</title>
+  <title>Class 2 — Chapter 11: Data Handling</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class="topic-box"><summary class="topic-title">11.1 Favourite Colours</summary><p>In this section, we learn how to collect, organize, and represent data about children's favorite colours using a simple table.</p><details class="sub-topic"><summary><h3>Activity: Collecting Colour Data</h3></summary><p>Look at the picture of children in the park and count how many children prefer each colour to complete the table:</p><ul><li><strong>Red:</strong> Count the children wearing red.</li><li><strong>Green:</strong> Count the children wearing green.</li><li><strong>Blue:</strong> Count the children wearing blue.</li><li><strong>Yellow:</strong> Count the children wearing yellow.</li></ul></details><details class="sub-topic"><summary><h3>Data Analysis Questions</h3></summary><p>Answer the following questions based on the collected data:</p><ul><li>The <span class="keyword">most liked</span> colour is the one with the highest count.</li><li>The <span class="keyword">least liked</span> colour is the one with the lowest count.</li><li>Comparing preferences: "Yellow colour is liked more than [Colour]" and "[Colour] is liked less than [Colour]".</li></ul></details></details><details class="topic-box"><summary class="topic-title">11.2 Picnic Day (Fruit Party)</summary><p>Children are having a fruit party and eating their favourite fruits. We represent this information in a table to analyze preferences.</p><details class="sub-topic"><summary><h3>Activity: Fruit Count Table</h3></summary><p>Count the number of children eating each of the following fruits:</p><ul><li><span class="keyword">Banana</span></li><li><span class="keyword">Orange</span></li><li><span class="keyword">Apple</span></li><li><span class="keyword">Kiwi</span></li><li><span class="keyword">Guava</span></li></ul></details><details class="sub-topic"><summary><h3>Analysis and Comparison</h3></summary><p>Use the table to answer questions using comparison terms like <strong>more than</strong>, <strong>less than</strong>, or <strong>equal to</strong>:</p><ul><li>Total number of children in the picture.</li><li>Most liked and least liked fruits.</li><li>Comparing the number of children who like guava vs. apple, apple vs. banana, and orange vs. kiwi.</li></ul></details></details><details class="topic-box"><summary class="topic-title">11.3 Mode of Coming to School</summary><p>This section introduces representing data using simple pictographs (drawing faces to represent students).</p><details class="sub-topic"><summary><h3>Activity: Mode of Transport Table</h3></summary><p>Count the students using different modes of transport to reach school from the picture:</p><ul><li><strong>On-foot:</strong> $8$ students</li><li><strong>Autorickshaw:</strong> Count from picture</li><li><strong>Bicycle:</strong> Count from picture</li><li><strong>Bike:</strong> Count from picture</li><li><strong>School Bus:</strong> Count from picture</li></ul></details><details class="sub-topic"><summary><h3>Drawing a Pictograph</h3></summary><p>Draw faces ($\odot$) in the chart where <span class="keyword">$\odot = 1$ student</span> to represent the data visually.</p><ul><li>Analyze which mode is used by the most and least number of students.</li><li>Compare transport modes using "more than" or "less than".</li></ul></details></details><details class="topic-box"><summary class="topic-title">11.4 Games We Play</summary><p>Representing and analyzing data about outdoor games played by children.</p><details class="sub-topic"><summary><h3>Activity: Games Count</h3></summary><p>Count the number of students playing each game in the picture:</p><ul><li><strong>Cricket</strong></li><li><strong>Football</strong></li><li><strong>Pithu</strong></li><li><strong>Gilli-danda</strong></li><li><strong>Kabaddi</strong></li></ul></details><details class="sub-topic"><summary><h3>Pictorial Representation &amp; Questions</h3></summary><p>Draw faces ($\odot$) to represent the players for each game and answer:</p><ul><li>Which is the most liked and least liked game?</li><li>Compare preferences between <em>Pithu</em>, <em>Football</em>, and other games.</li></ul></details></details><details class="topic-box"><summary class="topic-title">11.5 Survey and Project Work</summary><p>Practical application of data handling through surveys and real-world data collection.</p><details class="sub-topic"><summary><h3>Class Survey: Favourite Vegetables</h3></summary><p>Ask classmates about their favourite vegetables, record the counts in a table, and identify the most and least liked vegetables.</p></details><details class="sub-topic"><summary><h3>Family Size Survey</h3></summary><p>Collect data on the number of family members living in your friends' homes:</p><ul><li>Count families with $1$, $2$, $3$, $4$, $5$, or more people.</li><li>Identify the most common family size.</li></ul></details><details class="sub-topic"><summary><h3>Project Work: Grandparents</h3></summary><p>Visit nearby families to find out how many live with:</p><ul><li>Both grandparents</li><li>Only female grandparent</li><li>Only male grandparent</li><li>No grandparents</li></ul></details></details><details class="topic-box"><summary class="topic-title">11.6 Puzzles and Brain Teasers</summary><p>A collection of logical, mathematical, and visual puzzles to develop critical thinking.</p><details class="sub-topic"><summary><h3>Visual and Path Puzzles</h3></summary><ul><li><strong>Shape Connection:</strong> Connect pairs of similar shapes without crossing lines or using diagonals.</li><li><strong>Ant's Path:</strong> Find different ways for an ant to return to its anthill.</li><li><strong>Cat's Path:</strong> Determine the number of different paths a cat can take to reach its house.</li><li><strong>Giraffe's Maze:</strong> Draw a path for a hungry giraffe to reach the tree, noting which animals it meets first and last.</li></ul></details><details class="sub-topic"><summary><h3>Mathematical and Number Puzzles</h3></summary><ul><li><strong>Pattern Completion:</strong> Complete the intersecting addition equations:<ul><li>$2 + \text{blank} = 4$</li><li>$\text{blank} + 1 = \text{blank}$</li><li>$1 + 3 = \text{blank}$</li></ul></li><li><strong>Math Magic Trick:</strong><ol><li>Think of a number ($x$).</li><li>Double it ($2x$).</li><li>Add eight ($2x + 8$).</li><li>Minus half of that number ($(2x + 8) - (x + 4) = x + 4$).</li><li>Minus the number you started with ($(x + 4) - x = 4$).</li><li>The result is always $4$!</li></ol></li><li><strong>Number Search:</strong> Find the number names from $11$ to $20$ in the word grid.</li><li><strong>Ball Selection:</strong> Select three balls from $\{1, 3, 5, 7, 9, 11, 13, 15\}$ to make a total of $30$.</li><li><strong>Two-Digit Number:</strong> Make two different two-digit numbers using only one digit (e.g., $11$, $22$, etc.).</li><li><strong>Double Number Puzzle:</strong> "I think of a number and double it. If my answer is $18$, then what was the number?" (Solve: $2x = 18 \implies x = 9$).</li><li><strong>Calculator Challenge:</strong> Press exactly $10$ keys on a calculator to make the display show $28$.</li></ul></details><details class="sub-topic"><summary><h3>Logical and Spatial Puzzles</h3></summary><ul><li><strong>Shadow Matching:</strong> Identify the correct shadow image for the multi-armed bug.</li><li><strong>Matchstick Puzzle:</strong> Remove exactly two matchsticks from a grid of four squares to leave exactly two squares.</li><li><strong>Riddle:</strong> "I am in a bicycle, and in a car and a bus, I make all vehicles run, they can't move if I am flat. What is my shape?" (Answer: <span class="keyword">Circle / Wheel</span>).</li><li><strong>Rectangle Counting:</strong> Find how many rectangles (including squares) can be made by joining a $3 \times 3$ grid of dots.</li><li><strong>Hexagon Math:</strong> Complete the hexagon patterns using addition or subtraction to reach the center numbers ($9$, $13$, $19$).</li><li><strong>Shepherd's Garden:</strong> Divide a circular garden containing $4$ sheep, $4$ dogs, and $4$ trees into $4$ equal areas such that each area contains exactly one tree, one sheep, and one dog.</li><li><strong>Mirror Images:</strong> Use a mirror to read the reversed numbers (e.g., $42$, $38$, $e9$, etc.).</li><li><strong>Arm Sum Puzzle:</strong> Arrange numbers $1$ to $7$ in a three-armed diagram so that all three arms have the same sum.</li><li><strong>Cloth Cutting:</strong> "Let us divide a $6$ meter long cloth into pieces. If one meter is cut every time, how many times should we cut it?" (Answer: $5$ cuts).</li></ul></details></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 11</strong> of the Class 2 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "02-chapter-10-fun-at-the-fair-money.html";
+      } else {
+        window.location.href = "../../index.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

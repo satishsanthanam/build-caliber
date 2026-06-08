@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Light</title>
+  <title>Class 7 — Chapter 11: Light</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class="topic-box"><summary class="topic-title">11.1 Light Travels Along a Straight Line</summary><details class="sub-topic"><summary><h3>Rectilinear Propagation of Light</h3></summary><ul><li>Light always travels along straight lines.</li><li>This can be demonstrated by attempting to view a candle flame through a straight pipe versus a bent pipe; the flame is only visible through the straight pipe.</li></ul></details></details><details class="topic-box"><summary class="topic-title">11.2 Reflection of Light</summary><details class="sub-topic"><summary><h3>The Phenomenon of Reflection</h3></summary><ul><li><span class="keyword">Reflection of light</span> is the change in direction of light when it falls on a shiny or polished surface (like a mirror, stainless steel plate, or water).</li><li>An <span class="keyword">object</span> is the source of light or body placed in front of the mirror, while the <span class="keyword">image</span> is the likeness formed by reflection.</li></ul></details><details class="sub-topic"><summary><h3>Characteristics of Image in a Plane Mirror</h3></summary><ul><li>The image is <span class="keyword">erect</span> (upright) and of the same size as the object.</li><li>The image is formed at the same distance behind the mirror as the object is in front of it.</li><li>The image is a <span class="keyword">virtual image</span> because it cannot be obtained on a screen.</li></ul></details></details><details class="topic-box"><summary class="topic-title">11.3 Right or Left!</summary><details class="sub-topic"><summary><h3>Lateral Inversion</h3></summary><ul><li>In a plane mirror, the left side of the object appears on the right side of the image, and the right side of the object appears on the left side of the image.</li><li><span class="keyword">Ambulance Writing:</span> The word "AMBULANCE" is written in reverse on the front of the vehicle so that drivers ahead can read it correctly in their rear-view mirrors.</li></ul></details></details><details class="topic-box"><summary class="topic-title">11.4 Playing with Spherical Mirrors</summary><details class="sub-topic"><summary><h3>Types of Spherical Mirrors</h3></summary><ul><li>A <span class="keyword">spherical mirror</span> is a mirror with a curved reflecting surface, which can be imagined as a part of a cut rubber ball.</li><li><span class="keyword">Concave mirror:</span> The reflecting surface is curved inwards (like the inner side of a spoon).</li><li><span class="keyword">Convex mirror:</span> The reflecting surface is curved outwards (like the outer side of a spoon).</li></ul></details><details class="sub-topic"><summary><h3>Images Formed by Spherical Mirrors</h3></summary><ul><li><span class="keyword">Real image:</span> An image that can be formed and obtained on a screen.</li><li><span class="keyword">Virtual image:</span> An image that cannot be obtained on a screen.</li><li><span class="keyword">Concave Mirror Images:</span> Can form both real and virtual images. The image can be smaller, larger, or of the same size as the object, and can be erect or inverted depending on the distance.</li><li><span class="keyword">Convex Mirror Images:</span> Always forms a virtual, erect, and smaller image than the object.</li></ul></details><details class="sub-topic"><summary><h3>Applications of Spherical Mirrors</h3></summary><ul><li><span class="keyword">Concave mirrors</span> are used by dentists to see enlarged images of teeth, by doctors to examine eyes, ears, nose, and throat, and as reflectors in torches and car headlights.</li><li><span class="keyword">Convex mirrors</span> are used as side/rear-view mirrors in vehicles because they can form images of objects spread over a large area, helping drivers see traffic behind them.</li></ul></details></details><details class="topic-box"><summary class="topic-title">11.5 Images Formed by Lenses</summary><details class="sub-topic"><summary><h3>Types of Lenses</h3></summary><ul><li>Lenses are transparent materials through which light can pass, widely used in spectacles, telescopes, and microscopes.</li><li><span class="keyword">Convex lens:</span> Thicker in the middle than at the edges. It acts as a <span class="keyword">converging lens</span> because it bends light rays inwards.</li><li><span class="keyword">Concave lens:</span> Thinner in the middle than at the edges. It acts as a <span class="keyword">diverging lens</span> because it bends light rays outwards.</li></ul></details><details class="sub-topic"><summary><h3>Images Formed by Lenses</h3></summary><ul><li><span class="keyword">Convex Lens Images:</span> Can form real and inverted images. However, when the object is placed very close to the lens, it forms a virtual, erect, and magnified image. This is why it is used as a <span class="keyword">magnifying glass</span>.</li><li><span class="keyword">Concave Lens Images:</span> Always forms a virtual, erect, and smaller image than the object.</li></ul></details></details><details class="topic-box"><summary class="topic-title">11.6 Sunlight — White or Coloured?</summary><details class="sub-topic"><summary><h3>Dispersion of Light</h3></summary><ul><li>Sunlight, often called white light, is actually a mixture of seven colors: Red, Orange, Yellow, Green, Blue, Indigo, and Violet.</li><li>A <span class="keyword">prism</span> can split a beam of sunlight into its constituent seven colors.</li><li>This phenomenon is also seen in rainbows, soap bubbles, and light reflected from the surface of a Compact Disk (CD).</li><li><span class="keyword">Newton's disc:</span> A circular cardboard disc painted with the seven rainbow colors appears whitish when rotated rapidly, demonstrating that white light is composed of these seven colors.</li></ul></details></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 11</strong> of the Class 7 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "../../index.html";
+      } else {
+        window.location.href = "07-chapter-12-earth-moon-and-the-sun.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

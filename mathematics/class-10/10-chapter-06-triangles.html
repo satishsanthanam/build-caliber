@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Triangles</title>
+  <title>Class 10 — Chapter 6: Triangles</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class="topic-box" open><summary class="topic-title">6.1 & 6.2 Introduction to Similarity</summary><details class="sub-topic"><summary><h3>Congruence vs. Similarity</h3></summary><ul><li><span class="keyword">Congruent Figures</span>: Geometric figures that have the exact same shape and the same size.</li><li><span class="keyword">Similar Figures</span>: Geometric figures that have the same shape but not necessarily the same size.</li><li><span class="keyword">Key Principle</span>: All congruent figures are similar, but similar figures need not be congruent.</li><li><span class="keyword">Examples of Always Similar Figures</span>: All circles, all squares, and all equilateral triangles.</li></ul></details><details class="sub-topic"><summary><h3>Similarity of Polygons</h3></summary><ul><li>Two polygons with the same number of sides are similar if:<ol><li>Their <span class="keyword">corresponding angles</span> are equal.</li><li>Their <span class="keyword">corresponding sides</span> are in the same ratio (proportional).</li></ol></li><li><span class="keyword">Scale Factor</span>: The ratio of the corresponding sides of similar polygons (also called Representative Fraction).</li></ul></details></details><details class="topic-box"><summary class="topic-title">6.3 Similarity of Triangles & Fundamental Theorems</summary><details class="sub-topic"><summary><h3>Similarity Conditions for Triangles</h3></summary><ul><li>Two triangles are similar if their corresponding angles are equal and their corresponding sides are proportional.</li><li><span class="keyword">Equiangular Triangles</span>: Triangles that have equal corresponding angles. The ratio of any two corresponding sides in equiangular triangles is always the same (Thales' Principle).</li></ul></details><details class="sub-topic"><summary><h3>Theorem 6.1: Basic Proportionality Theorem (BPT)</h3></summary><ul><li><span class="keyword">Statement</span>: If a line is drawn parallel to one side of a triangle to intersect the other two sides in distinct points, the other two sides are divided in the same ratio.</li><li><span class="keyword">Mathematical Form</span>: In ΔABC, if DE || BC, then <span class="keyword">AD/DB = AE/EC</span>.</li></ul></details><details class="sub-topic"><summary><h3>Theorem 6.2: Converse of BPT</h3></summary><ul><li><span class="keyword">Statement</span>: If a line divides any two sides of a triangle in the same ratio, then the line is parallel to the third side.</li><li><span class="keyword">Mathematical Form</span>: In ΔABC, if AD/DB = AE/EC, then <span class="keyword">DE || BC</span>.</li></ul></details></details><details class="topic-box"><summary class="topic-title">6.4 Criteria for Similarity of Triangles</summary><details class="sub-topic"><summary><h3>AAA and AA Similarity Criteria</h3></summary><ul><li><span class="keyword">AAA Similarity Criterion (Theorem 6.3)</span>: If in two triangles, corresponding angles are equal, then their corresponding sides are in the same ratio, and hence the triangles are similar.</li><li><span class="keyword">AA Similarity Criterion</span>: If two angles of one triangle are respectively equal to two angles of another triangle, then the two triangles are similar.</li></ul></details><details class="sub-topic"><summary><h3>SSS Similarity Criterion</h3></summary><ul><li><span class="keyword">SSS Similarity Criterion (Theorem 6.4)</span>: If in two triangles, sides of one triangle are proportional to the sides of the other triangle, then their corresponding angles are equal, and hence the triangles are similar.</li></ul></details><details class="sub-topic"><summary><h3>SAS Similarity Criterion</h3></summary><ul><li><span class="keyword">SAS Similarity Criterion (Theorem 6.5)</span>: If one angle of a triangle is equal to one angle of another triangle and the sides including these angles are proportional, then the two triangles are similar.</li></ul></details><details class="sub-topic"><summary><h3>RHS Similarity Criterion</h3></summary><ul><li><span class="keyword">RHS Similarity Criterion</span>: If in two right triangles, the hypotenuse and one side of one triangle are proportional to the hypotenuse and one side of the other triangle, then the two triangles are similar.</li></ul></details></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 6</strong> of the Class 10 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "10-chapter-05-arithmetic-progressions.html";
+      } else {
+        window.location.href = "10-chapter-07-coordinate-geometry.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Prime Time</title>
+  <title>Class 6 — Chapter 5: Prime Time</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class='topic-box'><summary class='topic-title'>5.1 Common Multiples and Common Factors</summary><details class='sub-topic'><summary><h3>Idli-Vada Game &amp; Common Multiples</h3></summary><p>The <span class='keyword'>Idli-Vada Game</span> is a circle game of numbers where players say:</p><ul><li>'idli' for <span class='keyword'>multiples</span> of 3 ($3, 6, 9, 12, \dots$)</li><li>'vada' for multiples of 5 ($5, 10, 15, 20, \dots$)</li><li>'idli-vada' for numbers that are multiples of both 3 and 5 ($15, 30, 45, \dots$)</li></ul><p>Numbers that are multiples of both 3 and 5 are called <span class='keyword'>common multiples</span>. The first common multiple of 3 and 5 is $15$.</p></details><details class='sub-topic'><summary><h3>Jump Jackpot &amp; Factors</h3></summary><p>In the Jump Jackpot game, jumping on a grid helps identify factors. For example, jump sizes of 1, 2, 3, 4, 6, 8, 12, and 24 will land exactly on 24. These numbers are called <span class='keyword'>factors</span> or <span class='keyword'>divisors</span> of 24.</p><p>The jump sizes that can reach two different numbers are their <span class='keyword'>common factors</span>. For example, the common factors of 14 and 36 are 1 and 2.</p><p>A <span class='keyword'>perfect number</span> is a number for which the sum of all its factors is equal to twice the number. For example, 28 is a perfect number because its factors are 1, 2, 4, 7, 14, and 28, and their sum is $56 = 2 \times 28$. The only perfect number between 1 and 10 is 6.</p></details></details><details class='topic-box'><summary class='topic-title'>5.2 Prime Numbers</summary><p>Numbers can be classified based on their factors:</p><ul><li><span class='keyword'>Prime Numbers</span>: Numbers that have only two factors—1 and the number itself. Examples include $2, 3, 5, 7, 11, 13, 17, 19, \dots$</li><li><span class='keyword'>Composite Numbers</span>: Numbers that have more than two factors. Examples include $4, 6, 8, 9, 10, 12, 14, 15, \dots$</li><li>The number <strong>1</strong> has only one factor and is <span class='keyword'>neither prime nor composite</span>.</li></ul><details class='sub-topic'><summary><h3>Sieve of Eratosthenes</h3></summary><p>The <span class='keyword'>Sieve of Eratosthenes</span> is a systematic method developed by the Greek mathematician Eratosthenes to find all prime numbers up to 100 by crossing out multiples of prime numbers starting from 2.</p></details><details class='sub-topic'><summary><h3>Twin Primes</h3></summary><p><span class='keyword'>Twin primes</span> are pairs of prime numbers that have a difference of 2. Examples include $(3, 5)$, $(5, 7)$, $(11, 13)$, $(17, 19)$, $(29, 31)$, $(41, 43)$, $(59, 61)$, and $(71, 73)$.</p></details></details><details class='topic-box'><summary class='topic-title'>5.3 Co-prime Numbers</summary><p>Two numbers are said to be <span class='keyword'>co-prime</span> to each other if they have no common factor other than 1. For example, 4 and 9 are co-prime because their only common factor is 1, whereas 15 and 39 are not co-prime because they share a common factor of 3.</p></details><details class='topic-box'><summary class='topic-title'>5.4 Prime Factorisation</summary><p>Every composite number greater than 1 can be expressed uniquely as a product of prime numbers. This is called <span class='keyword'>prime factorisation</span>.</p><details class='sub-topic'><summary><h3>Methods and Uniqueness</h3></summary><p>For any number, there is only one unique prime factorisation, regardless of the order of the factors. For example, the prime factorisation of 36 is always $2 \times 2 \times 3 \times 3$, which can be written as $2^2 \times 3^2$.</p></details><details class='sub-topic'><summary><h3>Applications of Prime Factorisation</h3></summary><ul><li><strong>Checking Co-primality:</strong> Two numbers are co-prime if they share no common prime factors in their prime factorisations. For example, $40 = 2 \times 2 \times 2 \times 5$ and $231 = 3 \times 7 \times 11$ share no common prime factors, so they are co-prime.</li><li><strong>Checking Divisibility:</strong> A number is divisible by another if the prime factorisation of the second number is completely included in the prime factorisation of the first number. For example, 168 ($2 \times 2 \times 2 \times 3 \times 7$) is divisible by 12 ($2 \times 2 \times 3$).</li></ul></details></details><details class='topic-box'><summary class='topic-title'>5.5 Divisibility Tests</summary><p>Divisibility tests allow us to check if a large number is divisible by another without performing long division:</p><ul><li><span class='keyword'>Divisibility by 10</span>: A number is divisible by 10 if its last digit is 0.</li><li><span class='keyword'>Divisibility by 5</span>: A number is divisible by 5 if its last digit is either 0 or 5.</li><li><span class='keyword'>Divisibility by 2</span>: A number is divisible by 2 if its last digit is even ($0, 2, 4, 6, 8$).</li><li><span class='keyword'>Divisibility by 4</span>: A number is divisible by 4 if the number formed by its last two digits is divisible by 4.</li><li><span class='keyword'>Divisibility by 8</span>: A number is divisible by 8 if the number formed by its last three digits is divisible by 8.</li></ul></details><details class='topic-box'><summary class='topic-title'>5.6 Fun with Numbers &amp; Summary</summary><details class='sub-topic'><summary><h3>Special Numbers &amp; Prime Puzzles</h3></summary><p>Numbers can have unique properties (e.g., 9 is the only single-digit square in a set, 43 is the only prime). Prime puzzles involve filling grids with prime numbers such that the product of each row and column matches the given target numbers.</p></details><details class='sub-topic'><summary><h3>Chapter Summary</h3></summary><ul><li>A number is a <span class='keyword'>factor</span> of another if it divides it exactly.</li><li><span class='keyword'>Prime numbers</span> have exactly two factors; <span class='keyword'>composite numbers</span> have more than two.</li><li><span class='keyword'>Co-prime numbers</span> share no common factors other than 1.</li><li><span class='keyword'>Prime factorisation</span> represents a number uniquely as a product of primes.</li></ul></details></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 5</strong> of the Class 6 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "06-chapter-04-data-handling-and-presentation.html";
+      } else {
+        window.location.href = "06-chapter-06-perimeter-and-area.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

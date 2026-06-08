@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Toy Joy</title>
+  <title>Class 3 — Chapter 2: Toy Joy</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class="topic-box"><summary class="topic-title">2.1 Introduction to 3D Shapes</summary><p>In this chapter, we explore various three-dimensional (3D) shapes found in everyday objects, toys, and crafts.</p><h3>Key 3D Shapes</h3><ul><li><span class="keyword">Cube</span>: A box-like shape with six equal square faces (e.g., a die, building blocks).</li><li><span class="keyword">Cuboid</span>: A box-like shape with rectangular faces (e.g., a matchbox, textbook). Note that a cube is a special type of cuboid.</li><li><span class="keyword">Cylinder</span>: A round, tube-like shape with flat circular ends (e.g., bottles, cans, markers).</li><li><span class="keyword">Cone</span>: A shape with a circular base that tapers to a point (e.g., ice cream cone, funnel, party hat).</li><li><span class="keyword">Sphere</span>: A perfectly round ball-like shape (e.g., football, globe, orange).</li></ul><h3>Parts of a 3D Shape</h3><ul><li><strong>Face</strong>: The flat or curved surface of the shape.</li><li><strong>Edge</strong>: The line segment where two faces meet.</li><li><strong>Corner (Vertex)</strong>: The point where three or more edges meet.</li></ul></details><details class="topic-box"><summary class="topic-title">2.2 Properties and Classification of Shapes</summary><p>Shapes can be classified by analyzing their faces, edges, and corners:</p><ul><li><strong>With no edges:</strong> <span class="keyword">Sphere</span></li><li><strong>With only flat faces:</strong> <span class="keyword">Cube</span> and <span class="keyword">Cuboid</span></li><li><strong>With only curved faces:</strong> <span class="keyword">Sphere</span></li><li><strong>With both straight and curved edges:</strong> None (Standard cylinders and cones have only curved edges, while cubes and cuboids have only straight edges).</li><li><strong>With both flat and curved faces:</strong> <span class="keyword">Cylinder</span> (two flat faces, one curved face) and <span class="keyword">Cone</span> (one flat face, one curved face).</li></ul></details><details class="topic-box"><summary class="topic-title">2.3 Building and Combining Shapes</summary><details class="sub-topic"><summary><h3>Building with Clay and Sticks</h3></summary><p>We can build 3D shape frames using clay balls (to represent corners/vertices) and sticks (to represent edges). For example, a cube frame requires $8$ clay balls and $12$ sticks.</p></details><details class="sub-topic"><summary><h3>Joining Cubes</h3></summary><p>When we join multiple cubes together, we can form new shapes:</p><ul><li>Joining a cube and a cuboid results in a larger <span class="keyword">Cuboid</span>.</li><li>Three cubes can be joined in different configurations to form various L-shaped or straight-line 3D structures.</li></ul></details></details><details class="topic-box"><summary class="topic-title">2.4 Fun with Dice</summary><p>A standard die is a cube with faces numbered from $1$ to $6$ dots. The opposite faces of a standard die always follow a specific mathematical pattern:</p><ul><li>The sum of the dots on opposite faces is always equal to $7$.</li><li>Opposite to $1$ is $6$ ($1 + 6 = 7$)</li><li>Opposite to $2$ is $5$ ($2 + 5 = 7$)</li><li>Opposite to $3$ is $4$ ($3 + 4 = 7$)</li></ul></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 2</strong> of the Class 3 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "03-chapter-01-whats-in-a-name.html";
+      } else {
+        window.location.href = "03-chapter-03-double-century.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

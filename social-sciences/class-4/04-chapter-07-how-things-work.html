@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>How Things Work</title>
+  <title>Class 4 — Chapter 7: How Things Work</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class="topic-box"><summary class="topic-title">Chapter 7: How Things Work</summary><p>Every day, we see and use different things around us, like books, toys, pencils, and bags. This chapter explores how these different things work, how they spin, and why they float or sink.</p><details class="sub-topic"><summary><h3>7.1 Spinning Objects</h3></summary><p>Some objects spin easily, while others do not. We can observe and test different objects to understand how they spin.</p><ul><li><strong>Objects that spin:</strong> Coins, bangles, and wooden spinners (tops) can spin.</li><li><strong>Objects that do not spin properly:</strong> Erasers, pencils, and flat pieces of stone.</li></ul><p>The position of the center of rotation is critical. A spinner with a hole exactly at the <span class="keyword">centre</span> remains upright and spins well, whereas a spinner with a hole away from the centre wobbles and fails to spin properly.</p><p><strong>Historical & Cultural Examples:</strong></p><ul><li><span class="keyword">Charkha</span>: A traditional spinning wheel used to twist cotton fibre into thread, famously used by Mahatma Gandhi to make handmade clothes.</li><li><span class="keyword">Lattu</span>: A popular traditional Indian spinning top, historically made of clay and commonly made of wood today.</li></ul></details><details class="sub-topic"><summary><h3>7.2 Floating and Sinking</h3></summary><p>Whether an object floats or sinks in water depends on multiple factors, not just its weight.</p><ul><li><strong>Common Observations:</strong> Lighter objects like leaves float, while heavier objects like iron nails sink.</li><li><strong>Exceptions:</strong> An empty steel bowl (which is relatively heavy) floats, while a tiny iron pin (which is light) sinks.</li></ul><p><strong>The Role of Shape:</strong></p><p>By changing the shape of an object, we can change whether it floats or sinks. This is demonstrated using aluminium foil:</p><ul><li><strong>Spread out foil:</strong> Floats</li><li><strong>Pressed tightly into a ball:</strong> Sinks (trapping as little air as possible increases its density)</li><li><strong>Cup-like shape:</strong> Floats</li></ul></details><details class="sub-topic"><summary><h3>7.3 Designing and Creating Boats</h3></summary><p>Different materials can be used to construct toy boats, each with unique strengths and challenges:</p><ul><li><strong>Ice-cream stick boat:</strong> Strong but requires adhesive.</li><li><strong>Coconut shell boat:</strong> Naturally hollow and floats well, but can be heavy.</li><li><strong>Walnut shell boat:</strong> Small, lightweight, and easy to float.</li></ul></details><details class="sub-topic"><summary><h3>7.4 Let's Reflect & Activities</h3></summary><p><strong>Classification Exercise:</strong> Classify the following objects based on whether they float or sink in water:</p><ul><li><strong>Things that float:</strong> Wax, Thermocol, Candle, Cork, Leaf, Ice-cube, Pumpkin.</li><li><strong>Things that sink:</strong> Marble, Coin, Eraser, Spoon, Potato, Tomato, Lemon.</li></ul></details></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 7</strong> of the Class 4 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "04-chapter-06-happy-and-healthy-living.html";
+      } else {
+        window.location.href = "04-chapter-08-how-things-are-made.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>

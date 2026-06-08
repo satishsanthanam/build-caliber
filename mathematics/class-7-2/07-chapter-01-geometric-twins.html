@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Geometric Twins</title>
+  <title>Class 7 (Part 2) — Chapter 1: Geometric Twins</title>
   <link rel="stylesheet" href="../../style.css">
   <script>
     window.MathJax = {
@@ -18,12 +18,30 @@
     };
   </script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
+    .modal-overlay.active { display: flex; }
+    .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
+    .close-modal { position: absolute; top: 12px; right: 16px; font-size: 28px; font-weight: bold; color: #666; cursor: pointer; }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; background: #f0f4f8; color: #1a202c; text-decoration: none; border-radius: 6px; font-weight: 500; border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer; }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
 </head>
 <body>
   <div class="chapter-container">
     
     <div class="nav-bar">
       <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
@@ -31,6 +49,64 @@
 
     <details class="topic-box"><summary class="topic-title">1.1 Geometric Twins</summary><p>The symbol on a signboard needs to be recreated on another board. One way is to trace the outline, but this is difficult for big symbols.</p><p>To recreate a figure exactly, specific measurements are needed. For a symbol with corner points A, B, and C, the arm lengths AB and BC alone are not sufficient.</p><p>If $AB = 4$ cm and $BC = 8$ cm, several different symbols can be constructed. To get an exact replica, the measure of $\angle ABC$ along with the two arm lengths AB and BC, fix the shape and size of the figure.</p><p>Figures that are exact copies of each other or have the same shape and size are said to be <span class="keyword">congruent</span>. Congruent figures can be superimposed exactly, one over the other. When checking for congruence, a figure can be rotated or flipped before superimposing.</p><details class="sub-topic"><summary><h3>Figure it Out</h3></summary><ol><li>Check if the two figures are congruent.</li><li>Circle the pairs that appear congruent.</li><li>What measurements would you take to create a figure congruent to a given: (a) Circle (b) Rectangle?</li><li>How would we check if two figures like the one shown are congruent? Use this to identify whether each of the following pairs are congruent.</li></ol></details></details><details class="topic-box"><summary class="topic-title">1.2 Congruence of Triangles</summary><p>Meera and Rabia need to make a cardboard cutout identical to a triangular frame. The frame is too big to trace.</p><details class="sub-topic"><summary><h3>Measuring the Sidelengths</h3></summary><p>The girls measure the sides of the triangle to be $40$ cm, $60$ cm, and $80$ cm. Meera states that the angles are not required; the side lengths are sufficient to create a congruent triangle.</p><p>If the sidelengths were $4$ cm, $6$ cm, $8$ cm, Rabia suggests drawing a line segment (e.g., $6$ cm), then drawing circles from its endpoints with radii $4$ cm and $8$ cm. These circles intersect at two points, forming two triangles: $\triangle ABE$ and $\triangle ABF$.</p><p>These two triangles, $\triangle ABE$ and $\triangle ABF$, are congruent. This can be verified by tracing, cutting out, or observing that AB acts as a line of symmetry. This shows that all triangles with the same sidelengths are congruent.</p><p>Thus, if two triangles have the same sidelengths, then they are <span class="keyword">congruent</span>. This is called the <span class="keyword">SSS (Side Side Side) condition</span> for congruence.</p></details><details class="sub-topic"><summary><h3>Conventions to Express Congruence</h3></summary><p>When two triangles are congruent, they can be superimposed so that equal sides overlap. For $\triangle ABC$ and $\triangle XYZ$ to be congruent, the corresponding vertices must align:</p><ul><li>Corresponding Vertices: A and X, B and Y, C and Z</li><li>Corresponding Sides: AB and XY, BC and YZ, AC and XZ</li><li>Corresponding Angles: $\angle A$ and $\angle X$, $\angle B$ and $\angle Y$, $\angle C$ and $\angle Z$</li></ul><p>This relation is written as $\triangle ABC \cong \triangle XYZ$. This notation implies that the first vertex in $\triangle ABC$ corresponds to the first in $\triangle XYZ$, and similarly for the second and third vertices. For example, it is incorrect to write $\triangle ACB \cong \triangle XYZ$, but $\triangle ACB \cong \triangle XZY$ is correct.</p><p>Consider $\triangle ABD$ and $\triangle CDB$ in a rectangle ABCD. Since ABCD is a rectangle, $AB = CD$ and $AD = CB$. The remaining side BD is common. Thus, the SSS condition is satisfied, confirming the congruence of the two triangles.</p><details class="sub-topic"><summary><h3>Figure it Out</h3></summary><ol><li>Verify by superimposing paper cutouts of triangles obtained from rectangle ABCD.</li><li>Identify the correct correspondence of vertices and express the congruence between the two triangles.</li><li>Suppose $\triangle HEN \cong \triangle BIG$. List all other correct ways of expressing this congruence.</li><li>Determine whether the triangles shown are congruent. If yes, express the congruence.</li></ol></details></details><details class="sub-topic"><summary><h3>Measuring the Angles</h3></summary><p>If Meera and Rabia measure only the three angles of the triangular frame (e.g., $30^\circ$, $70^\circ$, and $80^\circ$), they cannot recreate an exact copy. Many triangles can be drawn with these measurements that are not congruent, as they can have the same shape but different sizes.</p></details><details class="sub-topic"><summary><h3>Measuring Two Sides and the Included Angle</h3></summary><p>Consider $\triangle ABC$ and $\triangle XYZ$ such that $AB = XY = 6$ cm, $AC = XZ = 5$ cm, and $\angle A = \angle X = 30^\circ$. These measurements correspond to two sides and the <span class="keyword">included angle</span>. When two sides and the included angle of two triangles are equal, the two triangles are <span class="keyword">congruent</span>. This is referred to as the <span class="keyword">SAS (Side Angle Side) condition</span> for congruence.</p></details><details class="sub-topic"><summary><h3>Measuring Two Sides and a Non-included Angle</h3></summary><p>What if two sides and a <span class="keyword">non-included angle</span> are equal? For $\triangle ABC$ and $\triangle XYZ$ with $AB = XY = 6$ cm, $AC = XZ = 4$ cm, and $\angle B = \angle Y = 30^\circ$, there can exist non-congruent triangles. This is called the <span class="keyword">SSA (Side Side Angle) condition</span>, which does not guarantee congruence.</p><p>Construction example: Draw base PQ ($6$ cm). Draw a line $l$ from P at $30^\circ$ to PQ. Draw an arc from Q with radius $4$ cm. The arc intersects line $l$ at two different points, R and S, forming two triangles ($\triangle PQR$ and $\triangle PQS$) that satisfy the given measurements but are not congruent.</p></details><details class="sub-topic"><summary><h3>Two Angles and the Included Side</h3></summary><p>Consider $\triangle ABC$ and $\triangle XYZ$ with $BC = YZ = 5$ cm, $\angle B = \angle Y = 50^\circ$, and $\angle C = \angle Z = 30^\circ$. This is the case of two angles and the <span class="keyword">included side</span>. This construction makes it clear that all triangles with these measurements must be <span class="keyword">congruent</span>. This is referred to as the <span class="keyword">ASA (Angle Side Angle) condition</span> for congruence.</p><p>In a figure where Point O is the midpoint of AD and BC, we have $AO = OD$ and $BO = OC$. Also, $\angle AOB = \angle DOC$ (vertically opposite angles). By SAS condition, $\triangle AOB \cong \triangle DOC$. Thus, $AB = DC$ (corresponding sides).</p><details class="sub-topic"><summary><h3>Figure it Out</h3></summary><ol><li>Identify whether the triangles shown are congruent. What conditions were used? Express the congruence.</li><li>Given that CD and AB are parallel, and $AB = CD$, what are the other equal parts? Are the two resulting triangles congruent? If so, express the congruence.</li></ol></details></details><details class="sub-topic"><summary><h3>Measuring Two Angles and a Non-Included Side</h3></summary><p>Consider $\triangle ABC$ and $\triangle XYZ$ such that $\angle A = \angle X = 35^\circ$, $\angle C = \angle Z = 75^\circ$, and $BC = YZ = 4$ cm. This involves two angles and a <span class="keyword">non-included side</span>.</p><p>Using the angle sum property of a triangle ($180^\circ$), we find $\angle B = 180^\circ - (35^\circ + 75^\circ) = 70^\circ$. Similarly, $\angle Y = 70^\circ$. Now, we have $\angle B = \angle Y$, $BC = YZ$, and $\angle C = \angle Z$. This satisfies the ASA condition, so the triangles are congruent.</p><p>This condition is referred to as the <span class="keyword">AAS (Angle Angle Side) condition</span>. AAS condition guarantees congruence.</p></details><details class="sub-topic"><summary><h3>Measuring Two Sides in a Right Triangle</h3></summary><p>Consider right-angled triangles $\triangle ABC$ and $\triangle XYZ$ such that $BC = YZ = 4$ cm, $\angle B = \angle Y = 90^\circ$, and $AC = XZ = 5$ cm. This is a special case of SSA. The side opposite the right angle is called the <span class="keyword">hypotenuse</span>.</p><p>When a side and a hypotenuse of a right-angled triangle are equal to a side and the hypotenuse of another right-angled triangle, the triangles are <span class="keyword">congruent</span>. This is called the <span class="keyword">RHS (Right Hypotenuse Side) condition</span> for congruence.</p><p>The <span class="keyword">RHS condition</span> is one more condition that guarantees congruence.</p></details><details class="sub-topic"><summary><h3>Conditions that are sufficient to guarantee congruence</h3></summary><p>From the discussions, two triangles are congruent if any of the following conditions are satisfied:</p><ul><li><span class="keyword">SSS condition</span></li><li><span class="keyword">SAS condition</span></li><li><span class="keyword">ASA condition</span></li><li><span class="keyword">AAS condition</span></li><li><span class="keyword">RHS condition</span></li></ul><p>Note that the SSA condition does not always guarantee congruence.</p></details></details><details class="topic-box"><summary class="topic-title">1.3 Angles of Isosceles and Equilateral Triangles</summary><p>Congruence is a powerful tool for studying properties of geometric figures.</p><p>Consider an <span class="keyword">isosceles triangle</span> $\triangle ABC$ with $AB = AC$ and $\angle A = 80^\circ$. Construct the altitude from A to BC. This forms two right-angled triangles, $\triangle ADB$ and $\triangle ADC$.</p><p>We have: $AB = AC$ (given), $\angle ADB = \angle ADC = 90^\circ$ (from construction), and AD is a common side. Thus, by RHS condition, $\triangle ADB \cong \triangle ADC$. This shows that $\angle B = \angle C$, as they are corresponding parts of congruent triangles. Therefore, the angles opposite to equal sides are equal.</p><p>For an <span class="keyword">equilateral triangle</span>, all sides have equal lengths. Since $AB = AC$, then $\angle B = \angle C$. Since $AB = BC$, then $\angle A = \angle C$. Therefore, all three angles are equal. As the sum of angles in a triangle is $180^\circ$, each angle in an equilateral triangle is $180^\circ / 3 = 60^\circ$.</p><p>Congruent triangles are seen in various constructions and designs in real life, such as the Louvre Museum, Egyptian Pyramids, dome designs, and Rangoli designs.</p></details><details class="topic-box"><summary class="topic-title">Figure it Out</summary><ol><li>If $\triangle AIR \cong \triangle FLY$, identify the corresponding vertices, sides, and angles.</li><li>For each of the following cases, identify pairs of triangles that are congruent and express the congruence:<ul><li>(a) $AB = DE$, $BC = EF$, $CA = DF$</li><li>(b) $AB = EF$, $\angle A = \angle E$, $AC = ED$</li><li>(c) $AB = DF$, $\angle B = \angle D = 90^\circ$, $AC = FE$</li><li>(d) $\angle A = \angle D$, $\angle B = \angle E$, $AC = DF$</li><li>(e) $AB = DF$, $\angle B = \angle F$, $AC = DE$</li></ul></li><li>Given that $OB = OC$ and $OA = OD$, show that AB is parallel to CD.</li><li>ABCD is a square. Show that $\triangle ABC \cong \triangle ADC$. Is $\triangle ABC$ also congruent to $\triangle CDA$?</li><li>Find $\angle B$ and $\angle C$, if A is the centre of the circle and $\angle BAC = 120^\circ$.</li><li>Find the missing angles in the given figure, where line segments marked with a single '|' are equal, and those with a double '||' are equal.</li></ol></details><details class="topic-box"><summary class="topic-title">SUMMARY</summary><ul><li>Figures that have the same shape and size are said to be <span class="keyword">congruent</span>. They can be superimposed exactly.</li><li>Congruence can be verified by rotating or flipping a figure.</li><li>The <span class="keyword">SSS (Side Side Side) condition</span> guarantees congruence when two triangles have the same sidelengths.</li><li>The <span class="keyword">SAS (Side Angle Side) condition</span> guarantees congruence when two sides and the included angle of one triangle are equal to those of another.</li><li>The <span class="keyword">ASA (Angle Side Angle) condition</span> guarantees congruence when two angles and the included side of one triangle are equal to those of another.</li><li>The <span class="keyword">AAS (Angle Angle Side) condition</span> also guarantees congruence.</li><li>In a right-angled triangle, the side opposite the right angle is called the <span class="keyword">hypotenuse</span>.</li><li>The <span class="keyword">RHS (Right Hypotenuse Side) condition</span> guarantees congruence when a side and a hypotenuse of a right-angled triangle are equal to those of another.</li><li>Two triangles need not be congruent if two sides and a non-included angle are equal (SSA does not guarantee congruence).</li><li>In a triangle, angles opposite to equal sides are equal.</li><li>The angles in an equilateral triangle are all $60^\circ$.</li></ul></details>
 
+      <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 1</strong> of the Class 7 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Modernized Sequential Navigation Routing
+    function navigateChapterSequence(direction) {
+      toggleModal(false);
+      if (direction === -1) {
+        //history.back();
+        window.location.href = "../../index.html";
+      } else {
+        window.location.href = "07-chapter-02-operations-with-integers.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
 </body>
 </html>
