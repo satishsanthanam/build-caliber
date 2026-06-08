@@ -209,3 +209,27 @@ mjx-container:not([display="true"]) {
   border-radius: 4px;
   font-size: 14px;
 }
+
+/* =====================================================================
+   🎯 UNIFORM DETAILS COMPONENT LIST ALIGNMENT PATCH (V2)
+   ===================================================================== */
+.topic-box ul, 
+.sub-topic ul {
+  margin-left: 30px !important;  /* Pushes the bullets completely inside the blue box */
+  padding-left: 0 !important;    /* Resets default browser behavior */
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.topic-box li, 
+.sub-topic li {
+  margin-bottom: 10px;           /* Adds clean breathing room between items */
+  line-height: 1.6;              /* Optimizes textbook tracking readability */
+}
+
+/* Fallback protection if nested lists are generated */
+.topic-box ul ul, 
+.sub-topic ul ul {
+  margin-left: 20px !important;
+  margin-top: 6px;
+}
