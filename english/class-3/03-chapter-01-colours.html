@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 3 — Chapter 1: Colours</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 3 — Chapter 1: Colours</h1>
+
+    <details class='topic-box'><summary class='topic-title'>Picture Reading: Fun with Friends</summary><p>A delightful picture story introducing the themes of friendship, cooperation, and mutual help between a duck and a hen.</p><details class='sub-topic'><summary><h3>Story Summary</h3></summary><p>A duck invites her friend, the hen, to visit the village fair. The hen agrees and brings her chicks, while the duck brings her ducklings. On their way, they encounter a stream. Since the hen and her chicks cannot swim, they are worried about how to cross. The clever duck comes up with a plan: the hen and chicks ride on the backs of the duck and ducklings to safely cross the stream together.</p></details><details class='sub-topic'><summary><h3>Animals and Their Young Ones</h3></summary><p>The story introduces various animals and the specific names of their offspring:</p><ul><li><strong>Duck</strong>: <span class='keyword'>Duckling</span></li><li><strong>Hen</strong>: <span class='keyword'>Chick</span></li><li><strong>Cow</strong>: <span class='keyword'>Calf</span></li><li><strong>Cat</strong>: <span class='keyword'>Kitten</span></li><li><strong>Dog</strong>: <span class='keyword'>Puppy</span></li></ul></details></details><details class='topic-box'><summary class='topic-title'>Chapter 1: Colours (Poem)</summary><p>A cheerful poem that highlights the joy of sharing and cooperation through the simple act of sharing crayons.</p><details class='sub-topic'><summary><h3>Poem Text</h3></summary><p>You have a few crayons,<br>Red, yellow and blue.<br>Green, purple and black,<br>I have some too.</p><p>I need the red<br>and you need the black.<br>If we share our crayons,<br>we have a full pack!</p></details><details class='sub-topic'><summary><h3>Key Themes</h3></summary><ul><li><strong>Sharing</strong>: Sharing resources (crayons) allows everyone to have a complete set and create better art.</li><li><strong>Friendship</strong>: Working together brings joy and completeness.</li></ul></details></details><details class='topic-box'><summary class='topic-title'>Vocabulary & Phonics</summary><details class='sub-topic'><summary><h3>Color Word Anagrams</h3></summary><p>Rearranging letters to find hidden colors:</p><ul><li>LEBU &rarr; <span class='keyword'>BLUE</span></li><li>LYLEWO &rarr; <span class='keyword'>YELLOW</span></li><li>RENEG &rarr; <span class='keyword'>GREEN</span></li><li>RUPPEL &rarr; <span class='keyword'>PURPLE</span></li><li>NROBW &rarr; <span class='keyword'>BROWN</span></li></ul></details><details class='sub-topic'><summary><h3>Phonics: Consonant Blends</h3></summary><p>Practice pronouncing words starting with common consonant blends:</p><ul><li><strong>gr</strong>: green, grey, grass, grapes, grandmother</li><li><strong>cr</strong>: crayon, crab, crane, crow, cradle</li><li><strong>dr</strong>: draw, drum, dress, drop, dragon</li><li><strong>pr</strong>: prince, princess, prize, pray, present</li></ul></details></details><details class='topic-box'><summary class='topic-title'>Grammar: Action Words</summary><p>An introduction to verbs, which describe actions performed by people, animals, or things.</p><details class='sub-topic'><summary><h3>Identifying Action Words</h3></summary><p><span class='keyword'>Action words</span> (verbs) tell us what someone or something is doing. Examples from the exercises include:</p><ul><li>laugh, dance, eat, cry, swim, sleep, play, dig, jump, run, write, smile, push</li><li>walk, yawn, pour, cough, give, see, open, help</li></ul></details></details><details class='topic-box'><summary class='topic-title'>Alphabet & Alphabetical Order</summary><details class='sub-topic'><summary><h3>Alliterative Alphabet Sentences</h3></summary><p>Sentences designed to practice each letter of the alphabet with repetition:</p><ul><li><strong>A</strong>: Anu eats an apple.</li><li><strong>B</strong>: Basu has a bat and a ball.</li><li><strong>C</strong>: Chandu likes cabbage and carrots.</li><li><strong>D</strong>: Dinesh dances day and night.</li><li><strong>E</strong>: Esha enjoys an elephant ride.</li><li><strong>F</strong>: Faiz feeds a fish.</li><li><strong>G</strong>: Govind goes to get guavas.</li><li><strong>H</strong>: Hari helps Hemant.</li><li><strong>I</strong>: I like ice-cream.</li><li><strong>J</strong>: Jack just jumps down.</li><li><strong>K</strong>: Kavita keeps the kittens on her knees.</li><li><strong>L</strong>: Lata loves lemonade.</li><li><strong>M</strong>: Madhav mixes milk and mango pulp.</li><li><strong>N</strong>: Navneet writes his name on new notebooks.</li><li><strong>O</strong>: Om opens a box of oranges.</li><li><strong>P</strong>: Prema puts a pencil in her pocket.</li><li><strong>Q</strong>: Queue up quietly.</li><li><strong>R</strong>: Radha rolls the red ribbon.</li><li><strong>S</strong>: Six sparrows sit on a sack.</li><li><strong>T</strong>: The teacher tells a tale.</li><li><strong>U</strong>: Usha uses an umbrella.</li><li><strong>V</strong>: Vishnu visits a village in a van.</li><li><strong>W</strong>: We see a watchman near the white wall.</li><li><strong>X</strong>: X is the last letter in ox, fox and box.</li><li><strong>Y</strong>: Yasmeen and Yana are friends.</li><li><strong>Z</strong>: Zebras graze in the zoo.</li></ul></details><details class='sub-topic'><summary><h3>Alphabetical Ordering</h3></summary><p>Arranging words based on the order of the alphabet (A to Z):</p><ul><li><strong>Fruits Example</strong>: CHERRY, APPLE, GRAPES, BANANA, ORANGE &rarr; <span class='keyword'>APPLE</span>, <span class='keyword'>BANANA</span>, <span class='keyword'>CHERRY</span>, <span class='keyword'>GRAPES</span>, <span class='keyword'>ORANGE</span></li><li><strong>Colours Exercise</strong>: YELLOW, BLUE, PURPLE, GREEN, RED &rarr; <span class='keyword'>BLUE</span>, <span class='keyword'>GREEN</span>, <span class='keyword'>RED</span>, <span class='keyword'>PURPLE</span>, <span class='keyword'>YELLOW</span></li></ul></details></details><details class='topic-box'><summary class='topic-title'>Word Friends (Compound Words)</summary><p>Some words can be joined together to form new, meaningful words, just like friends coming together.</p><details class='sub-topic'><summary><h3>Compound Word Matching</h3></summary><ul><li>rain + bow = <span class='keyword'>rainbow</span></li><li>blue + berry = <span class='keyword'>blueberry</span></li><li>news + paper = <span class='keyword'>newspaper</span></li><li>basket + ball = <span class='keyword'>basketball</span></li><li>earth + worm = <span class='keyword'>earthworm</span></li></ul></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 1</strong> of the Class 3 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "../../index.html";
+      } else {
+        window.location.href = "03-chapter-02-badal-and-moti.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
