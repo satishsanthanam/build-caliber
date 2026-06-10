@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 6 — Chapter 2: Unit 2: Friendship</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 6 — Chapter 2: Unit 2: Friendship</h1>
+
+    <details class='topic-box'><summary class='topic-title'>Unit Overview: Friendship</summary><p>This unit explores the theme of friendship through diverse narratives, poetry, and language exercises. It highlights how true companionship transcends species, social status, and superficial popularity, emphasizing empathy, loyalty, and mutual support.</p></details><details class='topic-box'><summary class='topic-title'>Story 1: The Unlikely Best Friends</summary><details class='sub-topic'><summary><h3>Plot Summary</h3></summary><p>Gajaraj, a majestic royal elephant, lives in comfort but suffers from deep loneliness. His life changes when a stray dog wanders into his stable. Gajaraj shares his food with the hungry animal, and they quickly form an inseparable bond, playing together during bath times and sharing daily routines. Their friendship is tested when a local farmer recognizes the dog as his lost pet, Buntee, and takes him away. Separated, both Gajaraj and Buntee fall into deep grief and refuse to eat. Recognizing their profound connection, the farmer releases the dog, leading to a joyful reunion and establishing a new bond of friendship between the farmer and the elephant's caretaker.</p></details><details class='sub-topic'><summary><h3>Key Vocabulary</h3></summary><ul><li><span class='keyword'>stables</span>: Living spaces designated for animals.</li><li><span class='keyword'>strayed</span>: Wandered or came by mistake.</li><li><span class='keyword'>munching</span>: Chewing steadily on food.</li><li><span class='keyword'>convey</span>: To communicate or express a feeling.</li><li><span class='keyword'>plunging</span>: Jumping or diving into water.</li><li><span class='keyword'>winced</span>: Shrank back in distress or pain.</li><li><span class='keyword'>chores</span>: Routine daily tasks or duties.</li><li><span class='keyword'>indigestion</span>: Difficulty in digesting food.</li></ul></details></details><details class='topic-box'><summary class='topic-title'>Poem: A Friend's Prayer</summary><details class='sub-topic'><summary><h3>Poetic Analysis</h3></summary><p>Written by Jill Wolf, this poem is a heartfelt reflection on the value of true friendship. The speaker expresses a desire to prioritize their friends, support their hopes and dreams, and offer unconditional love without judgment. It emphasizes seeing others with the heart and accepting them exactly as they are.</p></details><details class='sub-topic'><summary><h3>Themes & Key Concepts</h3></summary><ul><li><strong>Unconditional Love:</strong> Accepting friends with all their unique qualities and avoiding superficial judgments.</li><li><strong>Support and Empathy:</strong> Actively working to help friends realize their wishes and sharing in their life plans.</li><li><span class='keyword'>blessed</span>: Feeling deeply grateful and fortunate for having special companions.</li></ul></details></details><details class='topic-box'><summary class='topic-title'>Story 2: The Chair</summary><details class='sub-topic'><summary><h3>Plot Summary</h3></summary><p>Mario is a boastful boy who prides himself on having a vast circle of friends. To teach him a lesson, his grandfather challenges him to a bet and presents him with an invisible chair from the attic, claiming it has the magic power to reveal true friends. At school, Mario attempts to sit on the invisible chair, repeatedly falling and drawing ridicule from his classmates. However, when he finally succeeds in staying suspended in mid-air, he realizes that three of his classmates are quietly holding him up. This clever test helps Mario distinguish between fair-weather companions who laugh at his misfortune and genuine friends who support him in times of need.</p></details><details class='sub-topic'><summary><h3>Key Vocabulary</h3></summary><ul><li><span class='keyword'>showed off</span>: Boasted or bragged about achievements or popularity.</li><li><span class='keyword'>readily</span>: Without hesitation or difficulty.</li><li><span class='keyword'>attic</span>: A storage space directly under the roof of a house.</li><li><span class='keyword'>invisible</span>: Impossible to see with the naked eye.</li><li><span class='keyword'>determined</span>: Firm in one's decision and resolve.</li></ul></details></details><details class='topic-box'><summary class='topic-title'>Grammar & Language Study</summary><details class='sub-topic'><summary><h3>Past Tense Forms</h3></summary><p>The unit introduces three distinct forms of the past tense to describe historical or completed events:</p><ul><li><span class='keyword'>Simple Past Tense</span>: Used for actions completed in the past (e.g., <em>looked</em>, <em>gave</em>, <em>joined</em>).</li><li><span class='keyword'>Past Progressive Tense</span>: Used for ongoing actions in the past (e.g., <em>was looking</em>, <em>was munching</em>).</li><li><span class='keyword'>Past Perfect Tense</span>: Used for actions completed before another past action (e.g., <em>had ordered</em>, <em>had followed</em>).</li></ul></details><details class='sub-topic'><summary><h3>Conjunctions: Correlative Pairs</h3></summary><p>Students learn to connect ideas using paired conjunctions:</p><ul><li><span class='keyword'>neither...nor</span>: Connects two negative choices (e.g., <em>Neither the farmer nor the mahout noticed.</em>).</li><li><span class='keyword'>either...or</span>: Connects two positive alternatives (e.g., <em>He wants to play either cricket or football.</em>).</li></ul></details><details class='sub-topic'><summary><h3>Word Formation: Prefixes, Suffixes, and Adjectives</h3></summary><ul><li><strong>Opposites with Prefixes:</strong> Creating antonyms by adding prefixes like <span class='keyword'>un-</span> (unhappy), <span class='keyword'>in-</span> (incorrect), <span class='keyword'>dis-</span> (disconnect), and <span class='keyword'>mis-</span> (misuse).</li><li><strong>Suffixes:</strong> Identifying root words and adding endings to change their form (e.g., <em>friend</em> + <em>ly</em> = <em>friendly</em>; <em>sudden</em> + <em>ly</em> = <em>suddenly</em>).</li><li><span class='keyword'>Adjectives</span>: Descriptive words that modify nouns to show qualities (e.g., <em>brave</em> soldier, <em>heavy</em> rain, <em>true</em> friend).</li></ul></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 2</strong> of the Class 6 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "06-chapter-01-fables-and-folk-tales.html";
+      } else {
+        window.location.href = "06-chapter-03-nurturing-nature.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
