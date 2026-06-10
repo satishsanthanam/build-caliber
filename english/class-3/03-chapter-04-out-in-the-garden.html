@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 3 — Chapter 4: Out in the Garden</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 3 — Chapter 4: Out in the Garden</h1>
+
+    <details class="topic-box"><summary class="topic-title">Unit 2: Toys and Games (Picture Reading)</summary><p>This introductory section focuses on visual literacy and encourages children to observe and talk about various outdoor games and activities shown in the picture.</p><details class="sub-topic"><summary><h3>Key Activities and Games Identified</h3></summary><ul><li>Playing with <span class="keyword">marbles</span></li><li>Playing <span class="keyword">hopscotch</span></li><li>Spinning <span class="keyword">tops</span></li><li>Playing <span class="keyword">blindfolded</span> (Blind man's buff)</li><li>Flying or holding a <span class="keyword">kite</span></li></ul></details><details class="sub-topic"><summary><h3>Observation Questions</h3></summary><ul><li>Counting children, girls, boys, women, and animals in the picture.</li><li>Identifying what games are being played and where children usually play.</li><li>Observing non-playing characters (e.g., reading a newspaper, making garlands, etc.).</li></ul></details></details><details class="topic-box"><summary class="topic-title">Chapter 4: Out in the Garden (Poem)</summary><p>A delightful poem celebrating the joy of playing outdoors with toys like balls and kites, as well as playing together with friends.</p><details class="sub-topic"><summary><h3>Poem Recitation</h3></summary><p><strong>Stanza 1:</strong><br>Out in the garden,<br>Each fine day.<br>With my ball,<br>I like to play.</p><p><strong>Stanza 2:</strong><br>I bounce my ball,<br>I throw my ball.<br>I catch my ball,<br>On each fine day.</p><p><strong>Stanza 3:</strong><br>Out in the garden,<br>Each fine day.<br>With my kite,<br>I like to play.</p><p><strong>Stanza 4:</strong><br>I tug my kite,<br>I pull my kite.<br>I fly my kite,<br>On each fine day.</p><p><strong>Stanza 5:</strong><br>Out in the garden,<br>Each fine day.<br>With my friends,<br>I like to play.</p><p><strong>Stanza 6:</strong><br>We run and skip,<br>We jump and sway.<br>We slide and swing,<br>On each fine day.</p></details><details class="sub-topic"><summary><h3>Thematic Analysis</h3></summary><ul><li><strong>Outdoor Play:</strong> Emphasizes the physical and mental benefits of playing in open spaces like gardens.</li><li><strong>Action Verbs:</strong> Highlights various physical actions associated with play, such as <span class="keyword">bounce</span>, <span class="keyword">throw</span>, <span class="keyword">catch</span>, <span class="keyword">tug</span>, <span class="keyword">pull</span>, <span class="keyword">fly</span>, <span class="keyword">run</span>, <span class="keyword">skip</span>, <span class="keyword">jump</span>, <span class="keyword">sway</span>, <span class="keyword">slide</span>, and <span class="keyword">swing</span>.</li><li><strong>Social Interaction:</strong> Celebrates playing with friends and sharing joyful moments.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Vocabulary &amp; New Words</summary><ul><li><span class="keyword">bounce</span>: To spring back or cause to spring back after hitting a surface.</li><li><span class="keyword">throw</span>: To propel something through the air with force using one's hand and arm.</li><li><span class="keyword">slide</span>: To move smoothly along a surface.</li><li><span class="keyword">sway</span>: To move slowly or rhythmically backward and forward or from side to side.</li><li><span class="keyword">tug</span>: To pull something hard or suddenly.</li></ul></details><details class="topic-box"><summary class="topic-title">Exercises &amp; Activities</summary><details class="sub-topic"><summary><h3>Let us think (Comprehension)</h3></summary><ol><li><strong>What are the children doing with the ball?</strong> They bounce, throw, and catch the ball.</li><li><strong>How are children playing with the kite?</strong> They tug, pull, and fly the kite.</li><li><strong>Where are the children playing?</strong> They are playing out in the garden.</li></ol></details><details class="sub-topic"><summary><h3>Let us speak (Discussion)</h3></summary><p>Students discuss other traditional and outdoor games such as:</p><ul><li>Tug of war</li><li>Paper cup telephone game</li><li>Spinning disc / Yo-yo</li><li>Skipping rope</li><li>Ring games</li></ul></details><details class="sub-topic"><summary><h3>Let us learn (Grammar: Conjunctions)</h3></summary><p>The poem introduces the use of the conjunction <span class="keyword">and</span> to link two words together.</p><p><strong>Examples from the poem:</strong></p><ul><li>run <span class="keyword">and</span> skip</li><li>jump <span class="keyword">and</span> sway</li><li>slide <span class="keyword">and</span> swing</li></ul><p><strong>Exercise - Combining word pairs:</strong></p><ul><li>give, take &rarr; <strong>give and take</strong></li><li>sing, dance &rarr; <strong>sing and dance</strong></li><li>eat, drink &rarr; <strong>eat and drink</strong></li><li>catch, throw &rarr; <strong>catch and throw</strong></li><li>run, catch &rarr; <strong>run and catch</strong></li></ul></details><details class="sub-topic"><summary><h3>Let us do (Paper Bag Puppet)</h3></summary><p>A creative craft activity to make a talking puppet using simple materials.</p><ul><li><strong>Materials required:</strong> Paper bags, a pencil, colour pencils or sketch pens, woollen threads, and gum.</li><li><strong>Process:</strong><ol><li>Take a used paper bag with a base.</li><li>Fold the base upward.</li><li>Hold it upside down with the handle downwards.</li><li>Draw the upper lip on the line of the flap of the base.</li><li>Draw the lower lip right below the upper lip.</li><li>Draw the face, colour it, and decorate it with woollen threads.</li><li>Slide your hand into the bag and bend your fingers inside to make the puppet talk.</li></ol></li></ul></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 4</strong> of the Class 3 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "03-chapter-03-best-friends.html";
+      } else {
+        window.location.href = "03-chapter-05-talking-toys.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
