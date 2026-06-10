@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 4 — Chapter 9: Hekko</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 4 — Chapter 9: Hekko</h1>
+
+    <details class="topic-box"><summary class="topic-title">Chapter Overview &amp; Origin</summary><p>The chapter introduces <span class="keyword">Hekko</span>, a traditional game and folk story from Nagaland, India.</p><details class="sub-topic"><summary><h3>Etymology and Legend</h3></summary><ul><li><strong>Hek:</strong> Means <span class="keyword">to challenge</span>.</li><li><strong>Ko:</strong> Means <span class="keyword">tiger</span>.</li><li><strong>Hekko:</strong> Translates to <span class="keyword">Challenging the tiger</span>.</li><li><strong>The Folk Story:</strong> Originates from Nagaland, depicting a disagreement over superiority between <span class="keyword">Aami</span> (The Man) and <span class="keyword">Aakho</span> (The Tiger). Humans challenged the tiger, and this challenge became known as Hekko.</li></ul></details></details><details class="topic-box"><summary class="topic-title">The Game of Hekko</summary><p>Today, Hekko is a well-known team sport played in the Mokokchung district of Nagaland to identify the strongest people in the village.</p><details class="sub-topic"><summary><h3>Game Setup &amp; Players</h3></summary><ul><li><strong>Teams:</strong> Two teams named <span class="keyword">Aami</span> (Humans) and <span class="keyword">Aakho</span> (Tigers).</li><li><strong>Players:</strong> 11 players in each team.</li><li><strong>The Toss:</strong> Decides which team plays as Aami and which plays as Aakho.</li></ul></details><details class="sub-topic"><summary><h3>Rules of Play</h3></summary><ul><li>A circle is drawn on the ground.</li><li>The <strong>Aami team</strong> must stay inside the circle, forming a human chain.</li><li>The <strong>Aakho team</strong> starts outside the circle.</li><li>Two players from the Aakho team enter the circle to push Aami players out. Pushed-out players are eliminated.</li><li>The Aami team tries to surround and catch the Aakho players. A caught Aakho player is only released when they say <span class="keyword">Joko</span> (surrender).</li><li>Points are gained whenever a team gets an opponent out.</li></ul></details><details class="sub-topic"><summary><h3>End of the Game &amp; Titles</h3></summary><p>The game ends when one of the following occurs:</p><ul><li>All members of the Aakho team are caught.</li><li>All members of the Aami team are pushed out of the circle.</li><li>Time runs out (the team with the maximum points wins).</li></ul><p>Special titles are awarded to outstanding players:</p><ul><li><span class="keyword">Khozuba</span>: Title given to the fastest player of the Aami team.</li><li><span class="keyword">Khotiba</span>: Title given to the strongest player of the Aakho team.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Vocabulary &amp; Grammar</summary><details class="sub-topic"><summary><h3>New Words</h3></summary><ul><li><span class="keyword">declared</span>: Announced formally or officially.</li><li><span class="keyword">superiority</span>: The state of being superior or better than others.</li><li><span class="keyword">disagreement</span>: A lack of consensus or approval; a dispute.</li><li><span class="keyword">surrender</span>: To stop resisting and submit to an opponent.</li></ul></details><details class="sub-topic"><summary><h3>Homophones</h3></summary><p>Words that sound the same but have different spellings and meanings:</p><ul><li><strong>their / there:</strong> "<em>There</em> is a beautiful park..." / "They completed <em>their</em> work..."</li><li><strong>two / too:</strong> "<em>Two</em> of my friends..." / "I was <em>too</em> tired..."</li><li><strong>through / threw:</strong> "The bowler <em>threw</em> the ball..." / "I can see the clouds <em>through</em> my window..."</li><li><strong>caught / cot:</strong> "My mother <em>caught</em> me..." / "I sleep on a <em>cot</em>..."</li><li><strong>right / write:</strong> "Look to your <em>right</em>..." / "<em>Write</em> in a neat handwriting..."</li></ul></details><details class="sub-topic"><summary><h3>Animal Sounds</h3></summary><ul><li><strong>Tiger:</strong> <span class="keyword">roars</span></li><li><strong>Horse:</strong> <span class="keyword">neighs</span></li><li><strong>Elephant:</strong> <span class="keyword">trumpets</span></li><li><strong>Dove:</strong> <span class="keyword">coos</span></li><li><strong>Goat:</strong> <span class="keyword">bleats</span></li><li><strong>Monkey:</strong> <span class="keyword">whoops</span></li></ul></details><details class="sub-topic"><summary><h3>Grammar: Past Simple Tense</h3></summary><p>Used to describe events that happened in the past.</p><ul><li><strong>Regular Verbs:</strong> Formed by adding <span class="keyword">-ed</span> (e.g., live &rarr; lived, challenge &rarr; challenged, visit &rarr; visited, point &rarr; pointed, jump &rarr; jumped, enjoy &rarr; enjoyed).</li><li><strong>Irregular Verbs:</strong> Do not follow the -ed rule (e.g., come &rarr; came, drink &rarr; drank, drive &rarr; drove, see &rarr; saw).</li></ul></details></details><details class="topic-box"><summary class="topic-title">Traditional Games of India</summary><p>The chapter highlights several traditional Indian games:</p><ul><li><strong>Lagori / Seven Stones:</strong> Players knock down a stack of seven stones with a ball and try to rebuild it before being hit by the opponent's ball.</li><li><strong>Kabaddi:</strong> A team game where a raider crosses into the opponent's half chanting "kabaddi" without taking a breath, tagging opponents and returning safely.</li><li><strong>Gilli-danda:</strong> Played with two wooden sticks (a short one and a long one) where the short stick is struck into the air and hit far away.</li><li><strong>London Bridge / Arch Game:</strong> Two children form an arch with their arms while others walk under it singing a song; the caught player joins the arch.</li><li><strong>Kancha / Marbles:</strong> Children use a marble to hit and knock other marbles out of a circle.</li></ul></details><details class="topic-box"><summary class="topic-title">Let us Explore</summary><ul><li><strong>Hornbill Festival:</strong> A famous festival in Nagaland held to promote and showcase the rich culture and heritage of the state.</li></ul></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 9</strong> of the Class 4 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "04-chapter-08-the-lagori-champions.html";
+      } else {
+        window.location.href = "04-chapter-10-the-swing.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
