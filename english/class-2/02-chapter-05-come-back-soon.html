@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 2 — Chapter 5: Come Back Soon</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 2 — Chapter 5: Come Back Soon</h1>
+
+    <details class="topic-box"><summary class="topic-title">Poem: Come Back Soon</summary><details class="sub-topic"><summary><h3>Poem Recitation</h3></summary><p>Take a bus<br>Or take a train,<br>Take a boat<br>Or take a plane,</p><p>Take a taxi,<br>Take a car,<br>Maybe near<br>Or maybe far,</p><p>Take a rocket<br>To the moon,<br>But be sure<br>To come back soon.</p></details></details><details class="topic-box"><summary class="topic-title">Vocabulary &amp; Sight Words</summary><details class="sub-topic"><summary><h3>Sight Words</h3></summary><p>Practice reading these common words:</p><ul><li><span class="keyword">take</span></li><li><span class="keyword">is</span></li><li><span class="keyword">the</span></li><li><span class="keyword">or</span></li><li><span class="keyword">two</span></li><li><span class="keyword">may be</span></li></ul></details><details class="sub-topic"><summary><h3>New Words</h3></summary><p>Learn these new vocabulary words related to transport:</p><ul><li><span class="keyword">train</span></li><li><span class="keyword">boat</span></li><li><span class="keyword">plane</span></li><li><span class="keyword">taxi</span></li><li><span class="keyword">near</span></li><li><span class="keyword">rocket</span></li></ul></details></details><details class="topic-box"><summary class="topic-title">Let us Speak</summary><details class="sub-topic"><summary><h3>Discussion Questions</h3></summary><p>Answer and discuss the following questions with your classmates:</p><ol><li>Have you ever travelled by a bus or a train?</li><li>Where did you go?</li><li>What did you eat on the way?</li><li>What did you see from the window?</li><li>Who else went with you?</li><li>Did you have fun? Share it with the class.</li></ol></details></details><details class="topic-box"><summary class="topic-title">Let us Listen</summary><details class="sub-topic"><summary><h3>Action Poem</h3></summary><p>Listen to your teacher and read out this action poem:</p><p>Everybody stop,<br>Everybody stand,<br>Everybody sit,<br>and raise your hand.</p><p>Everybody jump,<br>Everybody run,<br>Everybody stop,<br>Oh! What fun.</p></details></details><details class="topic-box"><summary class="topic-title">Let us Write</summary><details class="sub-topic"><summary><h3>Make a List: Means of Transport</h3></summary><p>Sort the different means of transport depending on the surface they move on:</p><ul><li><strong>Land:</strong> <span class="keyword">bus</span>, <span class="keyword">car</span>, <span class="keyword">train</span>, <span class="keyword">jeep</span>, <span class="keyword">bicycle</span>, <span class="keyword">truck</span>, <span class="keyword">cart</span>, <span class="keyword">taxi</span>, <span class="keyword">tractor</span></li><li><strong>Air:</strong> <span class="keyword">aeroplane</span>, <span class="keyword">helicopter</span></li><li><strong>Water:</strong> <span class="keyword">ship</span>, <span class="keyword">boat</span>, <span class="keyword">yacht</span>, <span class="keyword">raft</span></li></ul></details></details><details class="topic-box"><summary class="topic-title">Phonics: Vowel Sound &apos;u&apos;</summary><details class="sub-topic"><summary><h3>Vowel Sound &apos;u&apos; Words</h3></summary><p>Read the words below each category to practice the short vowel sound <span class="keyword">u</span> (as in &apos;hut&apos;):</p><ul><li><strong>Group 1:</strong> an <span class="keyword">umbrella</span>, a <span class="keyword">truck</span>, a <span class="keyword">duck</span></li><li><strong>Group 2:</strong> a <span class="keyword">jug</span>, a <span class="keyword">mug</span>, a <span class="keyword">cup</span></li><li><strong>Group 3:</strong> a <span class="keyword">bus</span>, a <span class="keyword">rug</span>, a <span class="keyword">hut</span></li></ul></details><details class="sub-topic"><summary><h3>Grammar Note</h3></summary><p>Notice that the word <span class="keyword">an</span> occurs before words beginning with the vowel letter &apos;u&apos; (e.g., <em>an umbrella</em>), while <span class="keyword">a</span> is used before consonant sounds.</p></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 5</strong> of the Class 2 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "02-chapter-04-seeing-without-seeing.html";
+      } else {
+        window.location.href = "02-chapter-06-between-home-and-school.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
