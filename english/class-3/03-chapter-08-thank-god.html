@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 3 — Chapter 8: Thank God!</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 3 — Chapter 8: Thank God!</h1>
+
+    <details class="topic-box"><summary class="topic-title">Story: Thank God!</summary><p>This story is a Jataka tale about a wise farmer who learns to find reasons to be grateful to God, even in seemingly unpleasant situations.</p><details class="sub-topic"><summary><h3>Plot Summary</h3></summary><p>A hardworking farmer grows a variety of fruits, taking special care of grapes and watermelons. When they ripen, he decides to gift the best fruit to the king. His wife suggests watermelons or grapes. Since the journey to the palace is long, the farmer chooses grapes because watermelons are too heavy. At the palace, the king, in a playful mood, throws a grape at the farmer's forehead. Instead of getting angry, the farmer says, "Thank God! I am blessed!" When the puzzled king asks why, the wise farmer explains that if he had brought watermelons instead of grapes, the king's playful throws would have caused him severe pain. Thus, he thanks God for his wise decision.</p></details><details class="sub-topic"><summary><h3>Characters</h3></summary><ul><li><strong>The Farmer:</strong> Hardworking, practical, and highly optimistic. He shows wisdom by looking at the positive side of a painful situation.</li><li><strong>The King:</strong> Playful and curious. He is surprised by the farmer's gratitude and learns a lesson in perspective.</li><li><strong>The Farmer's Wife:</strong> Supportive and helpful in making decisions on the farm.</li></ul></details><details class="sub-topic"><summary><h3>Key Themes</h3></summary><ul><li><strong>Gratitude:</strong> Finding reasons to thank God in every situation.</li><li><strong>Optimism:</strong> Looking at the brighter side of life's events.</li><li><strong>Wisdom:</strong> Making practical choices (like choosing lighter grapes for a long journey) that turn out to be beneficial in unexpected ways.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Vocabulary & Word Study</summary><details class="sub-topic"><summary><h3>New Words</h3></summary><ul><li><span class="keyword">journey</span>: An act of traveling from one place to another.</li><li><span class="keyword">guard</span>: A person who keeps watch or protects a place.</li><li><span class="keyword">royal</span>: Having the status of a king or queen or belonging to their family.</li><li><span class="keyword">popped</span>: Put something quickly or suddenly into a place (e.g., popping a grape into the mouth).</li><li><span class="keyword">wise</span>: Having or showing experience, knowledge, and good judgment.</li></ul></details><details class="sub-topic"><summary><h3>Sight Words</h3></summary><p>Words to recognize instantly: <span class="keyword">grow</span>, <span class="keyword">kept</span>, <span class="keyword">front</span>, <span class="keyword">again</span>.</p></details><details class="sub-topic"><summary><h3>Opposites (Antonyms)</h3></summary><ul><li><span class="keyword">heavy</span> &times; <span class="keyword">light</span> (e.g., watermelon is heavy, grapes are light)</li><li><span class="keyword">thick</span> &times; <span class="keyword">thin</span> (e.g., thick book &times; thin book)</li><li><span class="keyword">long</span> &times; <span class="keyword">short</span> (e.g., long journey &times; short journey)</li><li><span class="keyword">soft</span> &times; <span class="keyword">hard</span> (e.g., soft cotton &times; hard rock)</li><li><span class="keyword">slow</span> &times; <span class="keyword">fast</span> (e.g., slow tortoise &times; fast rabbit)</li></ul></details></details><details class="topic-box"><summary class="topic-title">Grammar & Language Study</summary><details class="sub-topic"><summary><h3>Use of 'Is' and 'Are'</h3></summary><p>We use <span class="keyword">is</span> with singular nouns (one person, place, animal, or thing) and <span class="keyword">are</span> with plural nouns (more than one).</p><ul><li><strong>Singular Example:</strong> The ball <span class="keyword">is</span> round.</li><li><strong>Plural Example:</strong> The tables <span class="keyword">are</span> brown.</li></ul></details><details class="sub-topic"><summary><h3>Practice Exercises</h3></summary><ol><li>There <span class="keyword">are</span> animals in the jungle.</li><li>The table <span class="keyword">is</span> made of wood.</li><li>These mangoes <span class="keyword">are</span> sweet.</li><li>Raghuram <span class="keyword">is</span> a tall boy.</li><li>The toys <span class="keyword">are</span> on the shelf.</li><li>The book <span class="keyword">is</span> on the table.</li><li>The girls <span class="keyword">are</span> at the shop.</li><li>The car <span class="keyword">is</span> on the road.</li></ol></details></details><details class="topic-box"><summary class="topic-title">Poem: Aachoo!</summary><p>A humorous poem about a mighty elephant who catches a cold and needs a very large handkerchief.</p><details class="sub-topic"><summary><h3>Poem Text</h3></summary><p>Once a mighty elephant,<br>Got a mighty cold.<br>It went to buy a handkerchief,<br>Where handkerchiefs were sold.</p><p>“A hanky for an elephant?”<br>The sales girl was surprised,<br>“Sorry sir but we don’t have<br>A handkerchief that size.”</p><p>“AACHOO!” said the elephant.<br>And shook its mighty head,<br>“Forget about the handkerchief<br>Give me a sheet instead.”</p></details></details><details class="topic-box"><summary class="topic-title">Activities & Creative Writing</summary><details class="sub-topic"><summary><h3>Chandu's Fruit Salad (Sequencing Steps)</h3></summary><p>The correct order of steps to prepare a fruit salad:</p><ol><li>Mother cuts some fruits for me.</li><li>First I take some banana slices.</li><li>Then I add the apple slices.</li><li>Next, I put in papaya cubes.</li><li>After that I add some grapes from a bunch.</li><li>Then I mix them all.</li><li>Finally, I squeeze a lemon on it, adding a pinch of salt.</li></ol></details><details class="sub-topic"><summary><h3>Fruit Word Search</h3></summary><p>Hidden fruits in the grid: <span class="keyword">MANGO</span>, <span class="keyword">PAPAYA</span>, <span class="keyword">GRAPES</span>, <span class="keyword">BANANA</span>, <span class="keyword">GUAVA</span>, <span class="keyword">PLUM</span>, <span class="keyword">PEACH</span>, <span class="keyword">PEAR</span>.</p></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 8</strong> of the Class 3 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "03-chapter-07-the-big-laddoo.html";
+      } else {
+        window.location.href = "03-chapter-09-madhus-wish.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
