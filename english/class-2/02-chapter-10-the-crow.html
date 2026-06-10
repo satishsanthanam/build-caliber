@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 2 — Chapter 10: The Crow</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 2 — Chapter 10: The Crow</h1>
+
+    <details class="topic-box"><summary class="topic-title">Poem: The Crow</summary><p>A delightful poem about a black crow who wanted to be colorful and beautiful like a peacock, but eventually learns to appreciate his own natural beauty.</p><details class="sub-topic"><summary><h3>Stanza Breakdown</h3></summary><p><strong>Stanza 1:</strong></p><p><em>There once was a crow.<br>He was black, as you know.<br>How to be beautiful,<br>he wanted to know.<br>Colourful feathers,<br>he wanted to grow.</em></p><p><strong>Stanza 2:</strong></p><p><em>He found one peacock feather.<br>He stuck it in his tail.<br>Then he found another,<br>He picked up all without fail.</em></p><p><strong>Stanza 3:</strong></p><p><em>He stuck them in his wings,<br>Put one on his head.<br>I am now beautiful,<br>He danced and said.</em></p><p><strong>Stanza 4:</strong></p><p><em>The other crows laughed at him.<br>“Oh, what a fool you are!<br>You are beautiful in black.<br>We love you for what you are.”</em></p></details><details class="sub-topic"><summary><h3>Key Themes</h3></summary><ul><li><strong>Self-Acceptance:</strong> Learning to love oneself and appreciate one's natural appearance.</li><li><strong>True Beauty:</strong> Real beauty lies in inner qualities and being comfortable in one's own skin, rather than imitating others.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Vocabulary &amp; Word Study</summary><details class="sub-topic"><summary><h3>New Words</h3></summary><ul><li><span class="keyword">colourful</span>: Having bright or many colours.</li><li><span class="keyword">feather</span>: One of the soft, light things that grow on a bird's skin and cover its body.</li><li><span class="keyword">wings</span>: The parts of a bird's body used for flying.</li><li><span class="keyword">picked</span>: Gathered or took up something.</li><li><span class="keyword">fool</span>: A person who acts unwisely.</li><li><span class="keyword">love</span>: To like or care for someone very much.</li><li><span class="keyword">beautiful</span>: Very pleasing to look at.</li><li><span class="keyword">peacock</span>: A large bird known for its colorful tail feathers.</li><li><span class="keyword">another</span>: One more; an extra one.</li></ul></details><details class="sub-topic"><summary><h3>Sight Words</h3></summary><p>Practice reading these common words quickly:</p><ul><li><span class="keyword">once</span></li><li><span class="keyword">as</span></li><li><span class="keyword">how</span></li><li><span class="keyword">to</span></li><li><span class="keyword">one</span></li><li><span class="keyword">be</span></li><li><span class="keyword">now</span></li><li><span class="keyword">at</span></li><li><span class="keyword">all</span></li><li><span class="keyword">it</span></li></ul></details></details><details class="topic-box"><summary class="topic-title">Activities &amp; Exercises</summary><details class="sub-topic"><summary><h3>Let us speak</h3></summary><ul><li><strong>Question A:</strong> Which birds do you see around your house or near your school?</li><li><strong>Question B:</strong> What do you like about the crow?</li></ul></details><details class="sub-topic"><summary><h3>Let us write: Bird Identification</h3></summary><p>Identify the birds shown in the textbook and write their names:</p><ul><li>Swan</li><li>Parrot</li><li>Sparrow</li><li>Duck</li><li>Rooster</li><li>Peacock</li></ul></details><details class="sub-topic"><summary><h3>Let us draw</h3></summary><p>Draw your favourite bird in the space provided in your textbook and complete the sentence:</p><p><em>My favourite bird is __________________</em></p></details><details class="sub-topic"><summary><h3>Let us listen: Syllable Clapping</h3></summary><p>Practice breaking words into smaller parts (syllables) and clap for each syllable:</p><ul><li><span class="keyword">pea-cock</span> &rarr; peacock</li><li><span class="keyword">fea-ther</span> &rarr; feather</li><li><span class="keyword">beau-ti-ful</span> &rarr; beautiful</li><li><span class="keyword">co-lour-ful</span> &rarr; colourful</li><li><span class="keyword">a-no-ther</span> &rarr; another</li></ul></details><details class="sub-topic"><summary><h3>Rhyming Words (Bird Names)</h3></summary><p>Complete the words in Column B that rhyme with Column A to form bird names:</p><ul><li><strong>grow</strong> &rarr; <span class="keyword">crow</span></li><li><strong>pen</strong> &rarr; <span class="keyword">hen</span></li><li><strong>block</strong> &rarr; <span class="keyword">cock</span></li><li><strong>carrot</strong> &rarr; <span class="keyword">parrot</span></li><li><strong>arrow</strong> &rarr; <span class="keyword">sparrow</span></li></ul></details><details class="sub-topic"><summary><h3>Sentence Making</h3></summary><p>Make sentences using one word from each box in the table:</p><p><strong>Structure:</strong> Today + [Subject] + will go + to a + [Place]</p><p><em>Examples:</em></p><ul><li>Today <span class="keyword">I</span> will go to a <span class="keyword">school</span>.</li><li>Today <span class="keyword">we</span> will go to a <span class="keyword">park</span>.</li><li>Today <span class="keyword">Rajni</span> will go to a <span class="keyword">village</span>.</li><li>Today <span class="keyword">She</span> will go to a <span class="keyword">farm</span>.</li><li>Today <span class="keyword">Harish</span> will go to a <span class="keyword">theatre</span>.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Note to the Teacher</summary><ul><li>Use the poem to sensitise children that there are many skin tones in India. It is not the fair or dark complexion that matters; real beauty lies in good qualities.</li><li>Help children talk about the qualities of a crow and discuss the uniqueness of different animals and birds.</li><li>Ask children to speak about one good quality of their friend.</li></ul></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 10</strong> of the Class 2 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "02-chapter-09-my-name.html";
+      } else {
+        window.location.href = "02-chapter-11-the-smart-monkey.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
