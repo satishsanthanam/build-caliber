@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 6 — Chapter 3: Nurturing Nature</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 6 — Chapter 3: Nurturing Nature</h1>
+
+    <details class="topic-box"><summary class="topic-title">Unit Overview: Nurturing Nature</summary><p>This unit explores the deep connection between humans and nature, highlighting the medicinal, ecological, and nurturing aspects of trees, birds, and spices through three distinct sections: <strong>Neem Baba</strong>, <strong>What a Bird Thought</strong>, and <strong>Spices that Heal Us</strong>.</p></details><details class="topic-box"><summary class="topic-title">Section 1: Neem Baba</summary><details class="sub-topic"><summary><h3>Story Summary &amp; Dialogue</h3></summary><p>A young girl named <strong>Amber</strong> talks to an ancient neem tree in her courtyard, whom she addresses as <span class="keyword">Neem Baba</span>. Through their conversation, Amber learns about the history, global presence, and immense medicinal value of the neem tree.</p><ul><li><strong>Origin:</strong> Born millions of years ago in North India or Myanmar.</li><li><strong>Global Presence:</strong> Found in many Asian and African countries, and parts of America.</li><li><strong>Sanskrit Names:</strong> <span class="keyword">Arishta</span> (meaning "the one who cures diseases"), <span class="keyword">Nimba</span>, and <span class="keyword">Nimbaca</span>.</li><li><strong>Other Names:</strong> Given the name 'Neem' by Iranians. In India, it is also known as <em>Nim</em>, <em>Leemba</em>, <em>Nimori</em>, <em>Nimbamond</em>, <em>Nimbe</em>, and <em>Nimo</em>.</li><li><strong>Scientific Names/Titles:</strong> Scientists call it the <span class="keyword">bitter grace of God</span>, <span class="keyword">nature's gift to man</span>, <span class="keyword">cleanliness-parting tree</span>, <span class="keyword">magic tree</span>, and <span class="keyword">the tree of the twentieth century</span>. In Latin, its scientific name is <span class="keyword">Azadirachta indica</span> (derived from the Persian name <em>Azad Darakhte Hindi</em>).</li></ul></details><details class="sub-topic"><summary><h3>Medicinal &amp; Practical Uses of Neem</h3></summary><ul><li><strong>Leaves:</strong> Have chemical properties that destroy germs. Used to treat measles, soothe <span class="keyword">itching</span>, and prevent germs from breeding. Also used to protect stored clothes.</li><li><strong>Twigs:</strong> Used as natural toothbrushes to clean teeth.</li><li><strong>Bark:</strong> Used to make medicines for coughs and breathing difficulties.</li><li><strong>Flowers:</strong> Used to prepare <em>kajal</em> to cure eye itching.</li><li><strong>Seeds:</strong> Powdered and mixed with water to spray on plants to repel <span class="keyword">locusts</span>, stop mosquito breeding in stagnant water, and protect crops from <span class="keyword">termites</span>.</li><li><strong>Wood:</strong> Termite-resistant, making it excellent for furniture.</li><li><strong>Oil:</strong> Used in making soaps and toothpaste.</li><li><strong>Air Purification:</strong> Neem trees naturally purify the surrounding air.</li></ul></details><details class="sub-topic"><summary><h3>Vocabulary &amp; Key Terms</h3></summary><ul><li><span class="keyword">thought-provoking</span>: interesting, making you think seriously.</li><li><span class="keyword">grace</span>: blessing.</li><li><span class="keyword">twigs</span>: small, thin branches of a tree.</li><li><span class="keyword">measles</span>: an infectious disease causing fever and red spots on the skin.</li><li><span class="keyword">itching</span>: an uncomfortable feeling on the skin that makes you want to scratch.</li><li><span class="keyword">breed</span>: to produce offspring or grow in number (e.g., germs or insects).</li><li><span class="keyword">locusts</span>: large, flying insects that travel in swarms and destroy crops.</li><li><span class="keyword">termites</span>: small insects that eat and damage wood and buildings.</li><li><span class="keyword">stagnant</span>: water that is not flowing or moving, often becoming dirty.</li><li><span class="keyword">cost-effective</span>: producing good results without spending a lot of money or resources.</li><li><span class="keyword">purifies</span>: removes harmful substances or contaminants.</li><li><span class="keyword">personification</span>: a figure of speech where non-human things are given human qualities (e.g., "The leaves whispered in the wind").</li></ul></details></details><details class="topic-box"><summary class="topic-title">Section 2: What a Bird Thought (Poem)</summary><details class="sub-topic"><summary><h3>Poem Text</h3></summary><p><em>I lived first in a little house,<br>And lived there very well,<br>I thought the world was small and round,<br>And made of pale, blue shell.</em></p><p><em>I lived next in a little nest,<br>Nor needed any other,<br>I thought the world was made of straw,<br>And nestled by my mother.</em></p><p><em>One day, I fluttered from my nest,<br>To see what I could find,<br>I said the world is made of leaves,<br>I have been very blind.</em></p><p><em>At length I flew beyond the tree,<br>Quite fit for grown-up labours,<br>I don’t know how the world is made,<br>And neither do my neighbours.</em></p><p><strong>— Anonymous</strong></p></details><details class="sub-topic"><summary><h3>Stanza-by-Stanza Analysis</h3></summary><ul><li><strong>Stanza 1 (The Egg):</strong> The bird's first home is a small, round, pale blue eggshell. To the unborn baby bird, this shell is the entire world.</li><li><strong>Stanza 2 (The Nest):</strong> After hatching, the bird lives in a cozy nest made of straw, cared for by its mother. It believes the world is made entirely of straw.</li><li><strong>Stanza 3 (The Tree):</strong> As it grows, the bird flutters out of the nest onto the branches of the tree. Seeing the green canopy, it concludes that the world is made of leaves.</li><li><strong>Stanza 4 (The Open Sky):</strong> Finally, the fully grown bird flies beyond the tree into the vast sky. It realizes the world is far larger and more mysterious than it ever imagined, and admits that neither it nor its neighbours truly know how the world is made.</li></ul></details><details class="sub-topic"><summary><h3>Vocabulary &amp; Literary Devices</h3></summary><ul><li><span class="keyword">pale</span>: light in color.</li><li><span class="keyword">nestled</span>: settled comfortably and warmly close to someone.</li><li><span class="keyword">fluttered</span>: flew unsteadily or moved wings quickly and lightly.</li><li><span class="keyword">at length</span>: after a long time; finally.</li><li><span class="keyword">labours</span>: hard work or tasks.</li><li><strong>Rhyme Scheme:</strong> The poem follows an AABB rhyme scheme in each stanza (e.g., well/shell, other/mother, find/blind, labours/neighbours).</li></ul></details></details><details class="topic-box"><summary class="topic-title">Section 3: Spices that Heal Us</summary><details class="sub-topic"><summary><h3>Summary of the Letter</h3></summary><p>A letter written by <span class="keyword">Daadi</span> to her grandchildren, <strong>Vikram</strong> and <strong>Vaibhavi</strong>, explaining the healing and medicinal properties of common kitchen spices used in traditional home remedies.</p></details><details class="sub-topic"><summary><h3>Healing Properties of Spices</h3></summary><ul><li><strong>Haldi (Turmeric):</strong> Improves energy levels, aids digestion, and reduces body pain.</li><li><strong>Methi (Fenugreek):</strong> Helps control blood sugar levels and body weight when soaked overnight and consumed with water in the morning.</li><li><strong>Jeera (Cumin):</strong> Soaked overnight to improve digestion and cure sleeplessness.</li><li><strong>Heeng (Asafoetida):</strong> Applied with water on the tummy to relieve gas in babies; also helps control coughs and colds.</li><li><strong>Dalchini (Cinnamon) &amp; Laung (Clove):</strong> Provide temporary relief from toothaches.</li><li><strong>Adrak (Ginger):</strong> Used for over 4000 years; cures coughs, colds, and provides pain relief.</li><li><strong>Kali Mirch (Black Pepper):</strong> Aids digestion and relieves body pain.</li><li><strong>Saunf (Fennel seeds) &amp; Ajwain (Carom seeds):</strong> Served at the end of meals to assist in digestion.</li><li><strong>Elaichi (Cardamom):</strong> Helps with digestion, respiratory issues, and cures bad breath.</li></ul></details><details class="sub-topic"><summary><h3>Grammar Focus: Modal Verbs</h3></summary><p>The text introduces <span class="keyword">modal verbs</span> (helping verbs) and their specific functions:</p><ul><li><strong>May:</strong> Used for permission or possibility (e.g., <em>"You may share them with your friends."</em>).</li><li><strong>Should:</strong> Used for advice or suggestion (e.g., <em>"You should try to remember these cures."</em>).</li><li><strong>Can:</strong> Used to express ability or possibility (e.g., <em>"It can help control cough and cold."</em>).</li><li><strong>Must:</strong> Used to express strong obligation or compulsion (e.g., <em>"You must consult an elder before you use them."</em>).</li><li><strong>Need to:</strong> Expresses necessity (e.g., <em>"I need to soak the methi seeds overnight."</em>).</li><li><strong>Used to:</strong> Expresses a past habit (e.g., <em>"I used to put heeng water on your tummy."</em>).</li></ul></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 3</strong> of the Class 6 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "06-chapter-02-friendship.html";
+      } else {
+        window.location.href = "06-chapter-04-sports-and-wellness.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
