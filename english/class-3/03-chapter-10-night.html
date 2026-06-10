@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 3 — Chapter 10: Night</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 3 — Chapter 10: Night</h1>
+
+    <details class="topic-box"><summary class="topic-title">Unit 4: The Sky - Picture Reading</summary><p>Before starting the poem, the unit begins with an interactive picture reading activity based on a busy street scene to foster observation skills.</p><details class="sub-topic"><summary><h3>Observation Questions</h3></summary><ul><li>What can you see on both sides of the street?</li><li>Why are there two dustbins? Do you know why one is blue and the other is green in colour?</li><li>Why is the man in dark glasses holding a white stick?</li><li>Do you know which toy the boys are playing with?</li><li>How many bullock-carts are there in the picture?</li><li>Name the different animals in the picture.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Poem: Night</summary><p>A gentle poem exploring a child's wonder about where the sun goes at night and the transition from day to night.</p><details class="sub-topic"><summary><h3>Poem Recitation</h3></summary><p><strong>Stanza 1:</strong><br/>The sun that shines all day so bright,<br/>I wonder where it goes at night.<br/>It sinks behind a distant hill<br/>And all the world grows dark and still.</p><p><strong>Stanza 2:</strong><br/>And then I go to bed and sleep<br/>Until the day begins to peep.<br/>And when my eyes open,<br/>I see the Sun is<br/>shining down on me.</p></details><details class="sub-topic"><summary><h3>New Words & Meanings</h3></summary><ul><li><span class="keyword">wonder</span>: To feel curious or want to know something.</li><li><span class="keyword">distant</span>: Far away in space or time.</li><li><span class="keyword">peep</span>: To look quickly or peer through a small opening; here, it refers to the early appearance of daylight.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Exercises & Activities</summary><details class="sub-topic"><summary><h3>Let us think (Comprehension)</h3></summary><p><strong>A. Answer the following:</strong></p><ol><li>Where does the Sun go after the end of the day?</li><li>Which among the following needs the Sun? Why? (Options: <span class="keyword">sunflower</span>, <span class="keyword">toys</span>, <span class="keyword">plants</span>, <span class="keyword">table</span>, <span class="keyword">children</span>)</li><li>The poem talks about the Sun in the sky. What else do you see when you look up at the sky?</li></ol><p><strong>B. Think and answer:</strong></p><ol><li>What different colours do we get to see during sunrise and sunset?</li><li>What do you see when you look at the sky at night?</li><li>How do you feel when you open your eyes in the morning?</li><li>Imagine a day when the Sun doesn’t come out. Talk about how the day would be.</li></ol></details><details class="sub-topic"><summary><h3>Let us do & Let us speak (Language Games & Phonics)</h3></summary><p><strong>Game: "I Spy"</strong></p><p>A fun classroom game where a 'Spy' secretly chooses an object in the room and gives a clue starting with: <em>"I spy with my little eye something that is..."</em>. Other students guess the object, and the correct guesser becomes the next Spy.</p><p><strong>Phonics & Pronunciation:</strong></p><p>Practice pronouncing words starting with consonant blends:</p><ul><li><span class="keyword">sp</span> blend: <span class="keyword">spy</span>, <span class="keyword">spin</span>, <span class="keyword">spoon</span>, <span class="keyword">splash</span></li><li><span class="keyword">st</span> blend: <span class="keyword">stars</span>, <span class="keyword">star</span>, <span class="keyword">storm</span>, <span class="keyword">store</span>, <span class="keyword">stain</span>, <span class="keyword">stick</span>, <span class="keyword">stair</span></li><li><span class="keyword">sk</span> blend: <span class="keyword">sky</span>, <span class="keyword">skin</span>, <span class="keyword">skate</span></li></ul></details><details class="sub-topic"><summary><h3>Let us learn (Vocabulary & Word Building)</h3></summary><p><strong>A. Sky Vocabulary:</strong> Identify and circle words associated with the sky from the list below:</p><ul><li><span class="keyword">Stars</span>, <span class="keyword">Storm</span>, <span class="keyword">Sun</span>, <span class="keyword">Moon</span>, <span class="keyword">Rain</span>, <span class="keyword">Clouds</span>, <span class="keyword">Rainbow</span></li></ul><p><strong>B. Compound Words with 'Sun':</strong> Combine 'Sun' with other words to create new compound words:</p><ul><li>Sun + light = <span class="keyword">Sunlight</span></li><li>Sun + flower = <span class="keyword">Sunflower</span></li><li>Sun + rays = <span class="keyword">Sunrays</span></li><li>Sun + set = <span class="keyword">Sunset</span></li><li>Sun + rise = <span class="keyword">Sunrise</span></li><li>Sun + glasses = <span class="keyword">Sunglasses</span></li><li>Sun + day = <span class="keyword">Sunday</span></li></ul></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 10</strong> of the Class 3 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "03-chapter-09-madhus-wish.html";
+      } else {
+        window.location.href = "03-chapter-11-chanda-mama-counts-the-stars.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
