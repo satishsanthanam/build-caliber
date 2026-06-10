@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 4 — Chapter 12: Maheshwar</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 4 — Chapter 12: Maheshwar</h1>
+
+    <details class="topic-box"><summary class="topic-title">Chapter Summary & Reading Passage</summary><p>The chapter is written in the form of a dialogue between two children, Aarav and Ananya, and their Chachi (paternal aunt). They discuss the majestic Maheshwar Fort after seeing its picture in a newspaper.</p><details class="sub-topic"><summary><h3>The History of Maheshwar Fort</h3></summary><ul><li><strong>Builder:</strong> The fort was built long ago by <span class="keyword">Queen Ahilya Bai</span> of the great Holkar family.</li><li><strong>Location:</strong> It is situated on a hill on the banks of the <span class="keyword">Narmada River</span>, about 95 kilometres away from Indore in Madhya Pradesh.</li><li><strong>Purpose:</strong> Built as a fortress on a hill, it allowed the Queen to see her entire kingdom of Maheshwar. It is also known as <span class="keyword">Ahilya Fort</span>.</li></ul></details><details class="sub-topic"><summary><h3>Architectural Features</h3></summary><ul><li><strong>Overhanging Balconies:</strong> The fort is famous for its unique overhanging balconies that seem to float in the air.</li><li><strong>Construction Materials:</strong> It was constructed using special red stones brought from Gujarat and Rajasthan.</li><li><strong>Grand Staircases:</strong> The fort features a unique style of construction with grand staircases and beautifully designed temples nearby.</li><li><strong>The Queen's Statue:</strong> A 13-feet tall statue of Queen Ahilya Bai stands in front of the palace, acting like a guardian watching over her land.</li></ul></details><details class="sub-topic"><summary><h3>Maheshwari Sarees</h3></summary><p>Maheshwar is also famous for its handloom weaving tradition:</p><ul><li><strong>Materials:</strong> Originally made of pure silk, cotton yarn was later introduced. Today, they showcase a blend of cotton and silk threads.</li><li><strong>Features:</strong> Known for their unique reversible borders and <span class="keyword">pallus</span>.</li><li><strong>Traditional Colours:</strong> Woven in vibrant colours like peacock blue, bright yellow, forest green, and an Indian red dye called <span class="keyword">Aal</span>.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Vocabulary & Word Meanings</summary><details class="sub-topic"><summary><h3>New Words</h3></summary><ul><li><span class="keyword">fort</span>: A strong fortified building.</li><li><span class="keyword">majestic</span>: Having or showing impressive beauty or scale.</li><li><span class="keyword">overhanging</span>: Hanging or extending over something.</li><li><span class="keyword">balconies</span>: Platforms projecting from the wall of a building.</li><li><span class="keyword">ruler</span>: A person who rules a territory or state.</li><li><span class="keyword">unique</span>: Being the only one of its kind.</li><li><span class="keyword">Chachi</span>: Paternal aunt.</li></ul></details><details class="sub-topic"><summary><h3>Synonyms & Word Groups</h3></summary><p>Words with similar meanings grouped together:</p><ul><li><strong>Smiling, grinning, laughing</strong> (expressions of happiness)</li><li><strong>Happy, joyful, cheerful</strong> (states of joy)</li><li><strong>Brave, bold, fearless</strong> (states of courage)</li></ul></details></details><details class="topic-box"><summary class="topic-title">Grammar & Language Study</summary><details class="sub-topic"><summary><h3>Silent Letters (Silent 'g')</h3></summary><p>In some English words, the letter <strong>'g'</strong> is silent and not pronounced:</p><ul><li><span class="keyword">design</span> (the 'g' is silent)</li><li><span class="keyword">sign</span> (the 'g' is silent)</li><li><span class="keyword">high</span> (the 'g' is silent)</li><li><span class="keyword">light</span> (the 'g' is silent)</li><li><span class="keyword">night</span> (the 'g' is silent)</li></ul></details><details class="sub-topic"><summary><h3>Matching Adjectives to Meanings</h3></summary><ul><li><strong>Kindness:</strong> Being kind</li><li><strong>Bravery:</strong> Being brave</li><li><strong>Wisdom:</strong> Being wise</li><li><strong>Majestic:</strong> Being royal</li><li><strong>Unique:</strong> Being special</li><li><strong>Fierce:</strong> Being strong</li><li><strong>Dedicated:</strong> Being devoted</li></ul></details><details class="sub-topic"><summary><h3>Articles (a, an, the)</h3></summary><p>Articles are used to point out nouns:</p><ul><li><strong>'a' / 'an':</strong> Used for non-specific singular nouns (e.g., <em>a monkey</em>, <em>an oak tree</em>).</li><li><strong>'the':</strong> Used when referring to something specific or already mentioned (e.g., <em>the naughty monkey</em>, <em>the bag</em>).</li></ul></details></details><details class="topic-box"><summary class="topic-title">Exercises & Activities</summary><details class="sub-topic"><summary><h3>Comprehension Questions</h3></summary><ol><li>Who was Ahilya Bai?</li><li>Where is Maheshwar Fort located? What makes its location special?</li><li>What materials were used to build Maheshwar Fort, and where did they come from?</li><li>What does the statue of Queen Ahilya Bai in front of the palace represent?</li></ol></details><details class="sub-topic"><summary><h3>Creative Writing & Speaking</h3></summary><ul><li><strong>Speaking Project:</strong> Research and present a historical monument in your town or nearby, including its name, history, special features, and emotional connection to the people.</li><li><strong>Writing Prompt A:</strong> Imagine visiting Maheshwar Fort with your family. Describe what you see and feel as you explore the balconies and temples.</li><li><strong>Writing Prompt B:</strong> Write a short factual paragraph about Maheshwar Fort based on the lesson.</li></ul></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 12</strong> of the Class 4 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "04-chapter-11-a-journey-to-the-magical-mountains.html";
+      } else {
+        window.location.href = "../../index.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
