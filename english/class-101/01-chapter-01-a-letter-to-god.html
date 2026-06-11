@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 101 — Chapter 1: A Letter to God</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 101 — Chapter 1: A Letter to God</h1>
+
+    <details class='topic-box'><summary class='topic-title'>Chapter Overview & Plot Summary</summary><details class='sub-topic'><summary><h3>Introduction & Characters</h3></summary><p>This story, written by G.L. Fuentes, explores the power of extreme, unquestioning faith in God and the irony of human nature. The main characters are:</p><ul><li><strong>Lencho:</strong> A hard-working farmer whose entire livelihood depends on his corn harvest. He has absolute, simple faith in God.</li><li><strong>The Postmaster:</strong> A fat, <span class='keyword'>amiable</span>, and kind-hearted man who is deeply moved by Lencho's faith and decides to help him.</li></ul></details><details class='sub-topic'><summary><h3>Detailed Plot Summary</h3></summary><p>Lencho's house sat on the <span class='keyword'>crest</span> of a low hill, overlooking his fields of ripe corn. The fields desperately needed rain. Soon, a downpour began, which Lencho joyfully compared to 'new coins'. However, the rain quickly turned into a devastating hailstorm, with large hailstones resembling frozen pearls. The storm lasted for an hour, leaving the fields completely white, as if covered with salt. The corn was totally destroyed, and a plague of <span class='keyword'>locusts</span> would have left more than what remained.</p><p>Faced with starvation, Lencho's only hope was help from God. Having a strong <span class='keyword'>conscience</span> and knowing how to write, he wrote a letter addressed 'To God', asking for a hundred <span class='keyword'>pesos</span> to sow his field again and support his family. He dropped the letter into the mailbox in town.</p><p>A postman found the letter and showed it to the postmaster. Though they initially laughed, the postmaster soon became serious, admiring Lencho's immense faith. To keep this faith alive, the postmaster collected money from his employees, gave a part of his own salary, and gathered contributions from friends as an 'act of charity'. He managed to collect seventy pesos, put them in an envelope signed 'God', and sent it to Lencho.</p><p>The following Sunday, Lencho received the letter. He showed no surprise but became extremely angry upon counting the money, realizing there were only seventy pesos instead of a hundred. Believing God could not make a mistake, he immediately wrote another letter. He licked and affixed a stamp with a blow of his fist and mailed it. The postmaster opened it to find Lencho asking God to send the remaining thirty pesos, but not through the mail, because the post office employees were a 'bunch of crooks'.</p></details></details><details class='topic-box'><summary class='topic-title'>Themes & Literary Devices</summary><details class='sub-topic'><summary><h3>Key Themes</h3></summary><ul><li><strong>Unquestioning Faith:</strong> Lencho's faith is so pure that he directly writes to God and expects a physical response.</li><li><strong>Irony:</strong> The central irony is that the post office employees, who performed a selfless act of charity to help Lencho, are accused by him of being thieves ('a bunch of crooks').</li><li><strong>Conflict between Man and Nature:</strong> Illustrated by the hailstorm destroying Lencho's hard work.</li><li><strong>Conflict between Humans:</strong> Illustrated by Lencho's lack of trust in his fellow human beings despite their kindness.</li></ul></details></details><details class='topic-box'><summary class='topic-title'>Language & Grammar Study</summary><details class='sub-topic'><summary><h3>Non-Defining Relative Clauses</h3></summary><p><span class='keyword'>Non-defining relative clauses</span> provide extra, non-essential information about a noun and are separated by commas or dashes.</p><ul><li><em>Example:</em> 'Lencho — who knew his fields intimately — had done nothing else but see the sky...'</li><li><em>Example:</em> 'The woman, who was preparing supper, replied, "Yes, God willing."'</li></ul></details><details class='sub-topic'><summary><h3>Using Negatives for Emphasis</h3></summary><p>Negative words like 'no', 'not', or 'nothing' can be used to strongly emphasize an idea rather than just showing absence.</p><ul><li><em>Example:</em> 'Lencho showed not the slightest surprise on seeing the money.' (Emphasizes his absolute confidence)</li><li><em>Example:</em> 'The hail has left nothing.' (Emphasizes total destruction)</li></ul></details><details class='sub-topic'><summary><h3>Metaphors</h3></summary><p>A <span class='keyword'>metaphor</span> compares two unlike things by transferring the qualities of one to another.</p><ul><li><strong>Huge mountains of clouds:</strong> Compares the massive size of clouds to mountains.</li><li><strong>New coins:</strong> Compares raindrops to coins because they promise a prosperous harvest.</li><li><strong>Frozen pearls:</strong> Compares hailstones to pearls due to their shiny, round appearance.</li><li><strong>An ox of a man:</strong> Compares Lencho's hard-working nature to a strong, working animal.</li></ul></details></details><details class='topic-box'><summary class='topic-title'>Poem 1: Dust of Snow (Robert Frost)</summary><details class='sub-topic'><summary><h3>Poem Text & Summary</h3></summary><p><em>The way a crow<br>Shook down on me<br>The dust of snow<br>From a hemlock tree<br><br>Has given my heart<br>A change of mood<br>And saved some part<br>Of a day I had rued.</em></p><p><strong>Summary:</strong> The poet is in a depressive, sorrowful mood on a winter day. As he passes under a poisonous <span class='keyword'>hemlock</span> tree, a crow shakes down a fine spray of snow ('dust of snow') onto him. This simple, natural event instantly uplifts his spirit, saving the rest of his day from being wasted in regret (<span class='keyword'>rued</span>).</p></details><details class='sub-topic'><summary><h3>Themes & Symbols</h3></summary><ul><li><strong>Nature as a Healer:</strong> Even ordinary, often disliked elements of nature (like a crow and a poisonous hemlock tree) can bring joy and mental healing.</li><li><strong>Significance of Small Moments:</strong> Small, seemingly insignificant events can have a profound impact on our state of mind.</li></ul></details></details><details class='topic-box'><summary class='topic-title'>Poem 2: Fire and Ice (Robert Frost)</summary><details class='sub-topic'><summary><h3>Poem Text & Summary</h3></summary><p><em>Some say the world will end in fire<br>Some say in ice.<br>From what I’ve tasted of desire<br>I hold with those who favour fire.<br><br>But if it had to perish twice,<br>I think I know enough of hate<br>To say that for destruction ice<br>Is also great<br>And would suffice.</em></p><p><strong>Summary:</strong> The poet debates the two common predictions for the end of the world: fire and ice. He equates fire with human passion, desire, and lust, while equating ice with hatred, coldness, and indifference. He concludes that both forces are equally capable of bringing about the complete destruction of humanity.</p></details><details class='sub-topic'><summary><h3>Symbolism</h3></summary><ul><li><strong>Fire:</strong> Symbolizes uncontrolled desire, greed, passion, and lust.</li><li><strong>Ice:</strong> Symbolizes hatred, coldness, rigidity, indifference, and insensitivity.</li><li><strong>Perish:</strong> To die or be destroyed.</li><li><strong>Suffice:</strong> To be sufficient or enough.</li></ul></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 1</strong> of the Class 101 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "../../index.html";
+      } else {
+        window.location.href = "01-chapter-02-nelson-mandela-long-walk-to-freedo.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
