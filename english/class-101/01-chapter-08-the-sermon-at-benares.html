@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 101 — Chapter 8: The Sermon at Benares</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 101 — Chapter 8: The Sermon at Benares</h1>
+
+    <details class="topic-box"><summary class="topic-title">Introduction to Gautama Buddha</summary><details class="sub-topic"><summary><h3>Early Life and Renunciation</h3></summary><p>Born as Prince <span class="keyword">Siddhartha Gautama</span> (563 B.C. – 483 B.C.) in northern India, he was shielded from the world's sufferings. At twelve, he was sent for schooling in Hindu sacred scriptures, returning four years later to marry a princess. They lived in royal comfort for ten years and had a son.</p></details><details class="sub-topic"><summary><h3>The Four Sights</h3></summary><p>At age twenty-five, while out hunting, the Prince <span class="keyword">chanced upon</span> four sights that changed his life: a sick man, an aged man, a funeral procession, and a monk begging for alms. Deeply moved by these sights of suffering, he renounced his royal life to seek <span class="keyword">enlightenment</span> concerning the world's sorrows.</p></details><details class="sub-topic"><summary><h3>Attaining Enlightenment</h3></summary><p>He wandered for seven years and finally sat under a peepal tree, vowing to stay until he found truth. After seven days, he attained enlightenment and renamed the tree the <span class="keyword">Bodhi Tree</span> (Tree of Wisdom). He became known as the <span class="keyword">Buddha</span> (the Awakened or the Enlightened) and preached his first <span class="keyword">sermon</span> at <span class="keyword">Benares</span>, a holy city on the River Ganges.</p></details></details><details class="topic-box"><summary class="topic-title">The Story of Kisa Gotami</summary><details class="sub-topic"><summary><h3>The Loss of her Son</h3></summary><p>Kisa Gotami's only son died. In her extreme grief, she carried the dead child to her neighbors, begging for medicine to bring him back to life. The neighbors pitied her but realized she had lost her senses, as the boy was dead.</p></details><details class="sub-topic"><summary><h3>The Mustard Seed Trial</h3></summary><p>A man directed her to the Buddha. She went to him crying, "Lord and Master, give me the medicine that will cure my boy." The Buddha agreed, asking for a handful of mustard seed, but with one condition: it must be procured from a house where no one has lost a child, husband, parent, or friend.</p></details><details class="sub-topic"><summary><h3>The Realization</h3></summary><p>Kisa Gotami went from house to house. People were willing to give her mustard seeds, but whenever she asked if anyone had died in their family, they replied, "Alas! the living are few, but the dead are many." Unable to find a single household untouched by death, she sat weary by the wayside, watching the city lights flicker and extinguish. She realized that death is common to all, and she had been selfish in her grief.</p></details></details><details class="topic-box"><summary class="topic-title">The Buddha's Sermon on Mortality</summary><details class="sub-topic"><summary><h3>The Nature of Mortal Life</h3></summary><p>The Buddha taught that the life of <span class="keyword">mortals</span> in this world is troubled, brief, and combined with pain. There is no way to avoid death. He used two powerful analogies:</p><ul><li><strong>Ripe Fruits:</strong> Just as ripe fruits are in early danger of falling, mortals are always in danger of death.</li><li><strong>Earthen Vessels:</strong> Just as all earthen vessels made by a potter end in being broken, so is the life of mortals.</li></ul></p></details><details class="sub-topic"><summary><h3>Overcoming Grief</h3></summary><p>The Buddha explained that neither weeping nor grieving can bring peace of mind; instead, it increases pain and damages the body. The dead cannot be saved by <span class="keyword">lamentation</span>. To obtain peace of mind, one must draw out the arrow of lamentation, complaint, and grief, and become composed to overcome all sorrow.</p></details></details><details class="topic-box"><summary class="topic-title">Supplementary Readings on Grief</summary><details class="sub-topic"><summary><h3>Feelings of Grief</h3></summary><p>Grief is a natural response to loss, characterized by various emotions:</p><ul><li><strong>Sadness:</strong> The most common emotion, not always shown through crying.</li><li><strong>Anger:</strong> Frustration over being unable to prevent death.</li><li><strong>Guilt and Self-reproach:</strong> Regret over past actions or perceived shortcomings.</li><li><strong>Anxiety:</strong> Fear of the future and self-care.</li><li><strong>Loneliness:</strong> Constant reminders of the missing loved one.</li></ul></p></details><details class="sub-topic"><summary><h3>Good Grief by Amitai Etzioni</h3></summary><p>The author shares his personal experience of losing his wife and son. He emphasizes that there is no "right" or systematic way to grieve, and that focusing on what survivors can do for one another is the ultimate source of consolation.</p></details></details><details class="topic-box"><summary class="topic-title">Poem: For Anne Gregory</summary><details class="sub-topic"><summary><h3>Poem Text</h3></summary><p><strong>Stanza 1:</strong><br/>"Never shall a young man,<br/>Thrown into despair<br/>By those great honey-coloured<br/>Ramparts at your ear,<br/>Love you for yourself alone<br/>And not your yellow hair."</p><p><strong>Stanza 2:</strong><br/>"But I can get a hair-dye<br/>And set such colour there,<br/>Brown, or black, or carrot,<br/>That young men in despair<br/>May love me for myself alone<br/>And not my yellow hair."</p><p><strong>Stanza 3:</strong><br/>"I heard an old religious man<br/>But yesternight declare<br/>That he had found a text to prove<br/>That only God, my dear,<br/>Could love you for yourself alone<br/>And not your yellow hair."</p></details><details class="sub-topic"><summary><h3>Themes and Analysis</h3></summary><ul><li><strong>Physical vs. Inner Beauty:</strong> The poem explores the idea that humans are easily attracted to external physical traits (like Anne's beautiful yellow hair, compared to <span class="keyword">ramparts</span>), making it difficult to love someone purely for who they are inside.</li><li><strong>Divine Love:</strong> The final stanza suggests that only God is capable of loving a person unconditionally for their true self, free from physical biases.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Glossary & Key Terms</summary><ul><li><span class="keyword">Chanced upon</span>: Came across by chance.</li><li><span class="keyword">Enlightenment</span>: A state of high spiritual knowledge.</li><li><span class="keyword">Sermon</span>: A religious or moral talk.</li><li><span class="keyword">Dipping places</span>: Bathing places (specifically on the River Ganges).</li><li><span class="keyword">Inscrutable</span>: Something which cannot be understood.</li><li><span class="keyword">Repaired</span>: Went to (stylistic/archaic use).</li><li><span class="keyword">Valley of desolation</span>: An area filled with deep sorrow.</li><li><span class="keyword">Mortals</span>: Those bound to die.</li><li><span class="keyword">Afflicted with</span>: Affected by suffering, disease, or pain.</li><li><span class="keyword">Lamentation</span>: Expression of sorrow.</li><li><span class="keyword">Ramparts</span>: High, wide walls around a castle or fort (used metaphorically for hair framing the ear).</li></ul></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 8</strong> of the Class 101 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "01-chapter-07-madam-rides-the-bus.html";
+      } else {
+        window.location.href = "01-chapter-09-the-proposal.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
