@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 9 — Chapter 3: Winds of Change</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 9 — Chapter 3: Winds of Change</h1>
+
+    <details class="topic-box"><summary class="topic-title">Introduction &amp; History of Pankhas</summary><p>The chapter explores the rich cultural heritage, history, and craftsmanship of traditional Indian hand fans, known as <span class="keyword">pankhas</span>.</p><details class="sub-topic"><summary><h3>Etymology and Ancient Origins</h3></summary><ul><li>The word <span class="keyword">punkha</span> or <span class="keyword">pankha</span> originates from the Sanskrit word <span class="keyword">pankh</span>, which means a bird's feather.</li><li>The term <span class="keyword">pankhi</span> refers specifically to a small plumed fan used in ancient India.</li><li>Historical evidence of the <span class="keyword">pankhi</span> dates back to the 2nd century CE, depicted in the Buddhist wall paintings of the Ajanta Caves.</li><li>Pankhas were historically used in temples to fan deities and in royal courts to fan kings, ranging from tiny two-inch fans to massive ones requiring full arm strength to operate.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Regional Variations of Pankhas</summary><p>Different regions across India developed unique styles of hand fans using locally available materials and distinct artistic techniques.</p><details class="sub-topic"><summary><h3>Rajasthan</h3></summary><ul><li><strong>Appliqué Hand Fan:</strong> An antique style made of fabric pieces in various shapes and patterns sewn onto another cloth using ornamental needlework.</li><li><strong>Zardozi Hand Fan:</strong> Characterized by glittering, ornate, and <span class="keyword">encrusted</span> gold threadwork.</li><li><strong>Temple Hand Fan:</strong> Made by engraving brass, featuring a long handle.</li><li><strong>Painted Hand Fan:</strong> A cardboard fan featuring various images, traditionally offered to deities.</li></ul></details><details class="sub-topic"><summary><h3>Gujarat</h3></summary><ul><li><strong>Mirror Work Fans:</strong> Elegant pure cotton-based fans embellished with intricate mirror work.</li><li><strong>Beads Hand Fan:</strong> Covered with colorful beads and finished with a silver handle, reflecting Gujarat's famous bead craft.</li><li><strong>Kutch Leather Fans:</strong> Hand-stitched leather fans decorated with thread and wool at the seams, crafted by industrious home-based women workers.</li></ul></details><details class="sub-topic"><summary><h3>Bengal</h3></summary><ul><li><strong>Sola Hand Fan:</strong> Made from the delicate, milky-white spongy centre of the <span class="keyword">sola</span> (a type of water grass).</li><li><strong>Tal Patar Pankha:</strong> Traditional palm leaf hand fans that are lightweight and commonly kept in Bengali households.</li></ul></details><details class="sub-topic"><summary><h3>Other States &amp; Tribal Variations</h3></summary><ul><li><strong>Uttar Pradesh:</strong> Known for <span class="keyword">Phadh</span> hand fans adorned with pure gold, silver zari, silk, and satin frills.</li><li><strong>Odisha &amp; Bihar:</strong> Large palm leaf fans in Odisha and colorful, sturdy bamboo hand fans in Bihar are highly valued for their antiquity and rarity.</li><li><strong>Tribal Fans:</strong> Various tribes embed grass, metal, bamboo sticks, cane, and palm leaves into geometric patterns, often using white ink on red backgrounds.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Preservation &amp; Modern Significance</summary><p>With the advent of modern technology, the traditional craft of making pankhas faces the risk of extinction, prompting efforts towards preservation.</p><details class="sub-topic"><summary><h3>From Utility to Art</h3></summary><ul><li>In modern times, the utility of pankhas has shifted from cooling to decorative and ceremonial purposes.</li><li>The craft has transformed into a commercial business, providing sustainable livelihoods to rural artisans.</li><li>Initiatives such as pankha-making workshops, exhibitions, and cultural celebrations help raise awareness and preserve this traditional art form.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Grammar &amp; Vocabulary</summary><details class="sub-topic"><summary><h3>Collocations</h3></summary><p><span class="keyword">Collocations</span> are conventional word combinations that naturally go together.</p><ul><li><em>Take/give</em> an exam</li><li><em>Take</em> a seat</li><li><em>Run into</em> a car</li><li><em>Take</em> responsibility</li><li><em>Improve</em> grammar</li></ul></details><details class="sub-topic"><summary><h3>Present Perfect Tense</h3></summary><p>Used to describe actions that happened in the past but have direct relevance to the present time.</p><ul><li><em>Example:</em> Puppets <strong>have long fascinated</strong> audiences worldwide.</li><li><em>Example:</em> Many tribes in India <strong>have adopted</strong> this handicraft.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Supplementary Story: "The Last Leaf" by O. Henry</summary><p>An abridged version of the classic story highlighting the healing power of art and selflessness.</p><details class="sub-topic"><summary><h3>Plot Summary</h3></summary><p>Sue and Johnsy are two young artists living in Greenwich Village. Johnsy falls severely ill with pneumonia and loses her will to live, associating her survival with the falling leaves of an ivy creeper outside her window. An old, unsuccessful painter named Behrman lives downstairs. Upon learning of Johnsy's fancy, Behrman braves a freezing, stormy night to paint a realistic leaf on the wall after the last real leaf falls. Johnsy, seeing the leaf survive the storm, regains her will to live and recovers. However, Behrman contracts pneumonia from the exposure and passes away, leaving behind his ultimate masterpiece.</p></details></details><details class="topic-box"><summary class="topic-title">Poetry Section: "Canvas of Soil" by Maya Anthony</summary><p>A poem celebrating the artistic connection between gardening and painting.</p><details class="sub-topic"><summary><h3>Poem Text</h3></summary><p>Palette of earth, rich and deep,<br>Where dreams of gardeners seep.<br>Brushstrokes of seeds, planted true,<br>Awaiting spring’s vibrant hue.<br><br>Blossoms bloom, a painted sight,<br>Dancing in the morning light.<br>Shades of green, red, and blue,<br>Nature’s artwork, ever new.<br><br>Each plot, a canvas wide,<br>Where art and life coincide.<br>In the hands of those who till,<br>Gardens become paintings still.</p></details><details class="sub-topic"><summary><h3>Literary Devices</h3></summary><ul><li><span class="keyword">Metaphor</span>: Comparing seeds to "brushstrokes" and the earth to a "palette" or "canvas".</li><li><span class="keyword">Imagery</span>: Visual descriptions of colors ("vibrant hue", "shades of green, red, and blue") and movement ("dancing in the morning light").</li><li><span class="keyword">Rhyme Scheme</span>: AABB (deep/seep, true/hue).</li><li><span class="keyword">Allegory</span>: The garden represents life's journey, growth, harmony, and diversity.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Supplementary Poem: "A Sea of Foliage Girds Our Garden Round"</summary><p>A nature poem by Toru Dutt celebrating the vivid colors and beauty of an Indian garden.</p><details class="sub-topic"><summary><h3>Poem Text</h3></summary><p>A sea of foliage girds our garden round,<br>But not a sea of dull unvaried green,<br>Sharp contrasts of all colours here are seen;<br>The light-green graceful tamarinds abound<br>Amid the mango clumps of green profound,<br>And palms arise, like pillars gray, between;<br>And o’er the quiet pools the seemuls lean,<br>Red-red, and startling like a trumpet’s sound.<br>But nothing can be lovelier than the ranges<br>Of bamboos to the eastward, when the moon<br>Looks through their gaps, and the white lotus changes<br>Into a cup of silver. One might swoon<br>Drunken with beauty then, or gaze and gaze<br>On a primeval Eden, in amaze.</p></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 3</strong> of the Class 9 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "09-chapter-02-the-pot-maker.html";
+      } else {
+        window.location.href = "09-chapter-04-vitamin-m.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
