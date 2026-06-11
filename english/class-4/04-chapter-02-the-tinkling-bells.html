@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 4 — Chapter 2: The Tinkling Bells</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 4 — Chapter 2: The Tinkling Bells</h1>
+
+    <details class='topic-box'><summary class='topic-title'>Story Summary</summary><p><strong>The Tinkling Bells</strong> is a heartwarming story about a young boy named <span class='keyword'>Chinna</span> who lives in a village and studies in grade 4. He loves playing with his five-month-old pet kid (baby goat) named <span class='keyword'>Tara</span>.</p><details class='sub-topic'><summary><h3>The Missing Money</h3></summary><p>On his way home from school, Chinna sees a pair of beautiful, shiny tinkling bells at Chacha's shop. They cost ten rupees. When he reaches into his pocket, he realizes the money his grandfather (Dadaji) gave him is missing. Feeling sad, he returns the bells and goes home empty-handed.</p></details><details class='sub-topic'><summary><h3>A Mother's Comfort</h3></summary><p>Chinna's mother, <span class='keyword'>Kamala</span>, comforts him and promises to give him money for the bells, advising him to be more careful in the future. She then takes him to the market to buy fruits and vegetables.</p></details><details class='sub-topic'><summary><h3>The Test of Honesty</h3></summary><p>At a pineapple stall, Kamala buys two pineapples for 45 rupees each (totaling 90 rupees) and hands the seller a 100-rupee note. She asks Chinna to collect the change. By mistake, the fruit seller gives Chinna two ten-rupee notes (20 rupees change instead of 10). Chinna is tempted to keep the extra money to buy the bells and chocolates. However, his mother explains that keeping it is <span class='keyword'>stealing</span> and asks him to reflect on how he felt when he lost his own money. Realizing his mistake, Chinna returns the extra money, earning praise from the fruit seller for his <span class='keyword'>honesty</span>.</p></details><details class='sub-topic'><summary><h3>A Happy Ending</h3></summary><p>Pleased with his honesty, Kamala takes Chinna to Chacha's shop to buy the tinkling bells. Chinna happily ties the bells around his pet goat Tara's neck.</p></details></details><details class='topic-box'><summary class='topic-title'>Key Themes & Moral Lessons</summary><ul><li><strong>Honesty:</strong> The story highlights that honesty is always rewarded with peace of mind and respect from others.</li><li><strong>Empathy:</strong> Chinna learns to put himself in the fruit seller's shoes, understanding how his actions affect others.</li><li><strong>Responsibility:</strong> Learning to take care of money and personal belongings.</li></ul></details><details class='topic-box'><summary class='topic-title'>Grammar & Vocabulary</summary><details class='sub-topic'><summary><h3>Degrees of Comparison (Adjectives)</h3></summary><p>Adjectives change form to compare qualities of people or things:</p><ul><li><strong>Comparative Degree (-er):</strong> Used to compare two people or objects. Always followed by 'than'. <br><em>Example:</em> Charu is <span class='keyword'>taller</span> than Chinna.</li><li><strong>Superlative Degree (-est):</strong> Used when comparing a person or object within a whole group. <br><em>Example:</em> Jasmine is the <span class='keyword'>tallest</span> person in the group.</li></ul></details><details class='sub-topic'><summary><h3>Opposites (Antonyms)</h3></summary><ul><li><span class='keyword'>Beautiful</span> &times; <span class='keyword'>Ugly</span></li><li><span class='keyword'>Reward</span> &times; <span class='keyword'>Punishment</span></li><li><span class='keyword'>Buy</span> &times; <span class='keyword'>Sell</span></li><li><span class='keyword'>Whispered</span> &times; <span class='keyword'>Shouted</span></li></ul></details></details><details class='topic-box'><summary class='topic-title'>Activities & Exercises</summary><details class='sub-topic'><summary><h3>Let us Think (Comprehension)</h3></summary><ul><li><strong>Why was Chinna upset?</strong> He lost the ten rupees given by his grandfather and couldn't buy the bells.</li><li><strong>How did Kamala help Chinna feel better?</strong> She comforted him, wiped his tears, and promised to give him money for the bells.</li><li><strong>What did the fruit seller do by mistake?</strong> He gave Chinna ten rupees extra in change.</li><li><strong>How did Chinna manage to buy the bells in the end?</strong> After returning the extra money, his mother happily bought the bells for him.</li></ul></details><details class='sub-topic'><summary><h3>Let us Do (Bell Craft)</h3></summary><p>Students can create their own bell craft using recyclable items like metal bottle caps or tin cans, string, cardboard, pebbles/beads, aluminum foil, and glue.</p></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 2</strong> of the Class 4 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "04-chapter-01-together-we-can.html";
+      } else {
+        window.location.href = "04-chapter-03-be-smart-be-safe.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>

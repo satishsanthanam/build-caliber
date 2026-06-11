@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 1 — Chapter 6: Fun with Pictures</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 1 — Chapter 6: Fun with Pictures</h1>
+
+    <details class="topic-box"><summary class="topic-title">Chapter Overview & Picture Talk</summary><p>This chapter introduces young learners to the names of various fruits and vegetables through interactive pictures, a poem, and a short story. It encourages speaking, reading, and basic writing skills.</p><details class="sub-topic"><summary><h3>Let us speak: Picture Discussion</h3></summary><ul><li>Students observe a vibrant illustration of mixed fruits and vegetables and identify them.</li><li>Key discussion questions include identifying colors (e.g., red fruits, green vegetables) and sharing personal preferences.</li><li>Promotes the importance of eating fruits and vegetables for good health.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Poem: Fruits for All</summary><p>An interactive, rhythmic poem that teaches counting, sharing, and the names of fruits.</p><details class="sub-topic"><summary><h3>Stanza 1: Yellow Mangoes</h3></summary><p>Five yellow mangoes hanging on the tree,<br>One for the traveller who rests under the tree.<br>One for the bird who nests on the tree.<br>One for the squirrel who runs up the tree.<br>One for the rabbit who lives under the tree.<br>One for you to share with me.</p></details><details class="sub-topic"><summary><h3>Stanza 2: Red Apples</h3></summary><p>Five red apples hanging on the tree,<br>One for the traveller who rests under the tree.<br>One for the bird who nests on the tree.<br>One for the squirrel who runs up the tree.<br>One less for the rabbit who lives under the tree.<br>One for you to share with me.</p></details><details class="sub-topic"><summary><h3>Key Themes & Activities</h3></summary><ul><li><strong>Sharing:</strong> The tree shares its fruits with humans and animals alike.</li><li><strong>Activity:</strong> Students are encouraged to bring a fruit to class, wash it, and prepare a <span class="keyword">fruit chaat</span> to enjoy together.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Story: A Visit to the Market</summary><p>Mini, a young girl, visits the local market with her father, who is a farmer.</p><details class="sub-topic"><summary><h3>Market Discoveries</h3></summary><ul><li><strong>Flowers:</strong> Mini and her father identify colorful flowers like <span class="keyword">roses</span>, <span class="keyword">marigolds</span>, and <span class="keyword">jasmine</span>.</li><li><strong>Fruits:</strong> They observe apples, oranges, and large fruits like <span class="keyword">pineapples</span> and <span class="keyword">watermelons</span>.</li><li><strong>Vegetables:</strong> Mini's father grows vegetables on his farm and sells them at the market.</li></ul></details><details class="sub-topic"><summary><h3>Sight Words</h3></summary><p>Key sight words introduced in this story: <span class="keyword">his</span>, <span class="keyword">he</span>, <span class="keyword">them</span>, <span class="keyword">her</span>, <span class="keyword">around</span>, <span class="keyword">there</span>, <span class="keyword">those</span>, <span class="keyword">behind</span>, <span class="keyword">with</span>, <span class="keyword">these</span>.</p></details></details><details class="topic-box"><summary class="topic-title">Vocabulary & Language Practice</summary><details class="sub-topic"><summary><h3>Fruits and Vegetables Vocabulary</h3></summary><ul><li><strong>Fruits:</strong> <span class="keyword">mangoes</span>, <span class="keyword">apples</span>, <span class="keyword">oranges</span>, <span class="keyword">pineapples</span>, <span class="keyword">guava</span>, <span class="keyword">jackfruit</span>.</li><li><strong>Vegetables:</strong> <span class="keyword">tomatoes</span>, <span class="keyword">potatoes</span>, <span class="keyword">onions</span>, <span class="keyword">brinjals</span>, <span class="keyword">cauliflowers</span>, <span class="keyword">radish</span>, <span class="keyword">carrots</span>, <span class="keyword">cabbages</span>, <span class="keyword">peas</span>.</li></ul></details><details class="sub-topic"><summary><h3>Color & Object Association</h3></summary><ul><li><span class="keyword">yellow mango</span></li><li><span class="keyword">red apple</span></li><li><span class="keyword">yellow banana</span></li><li><span class="keyword">green guava</span></li><li><span class="keyword">purple brinjal</span></li><li><span class="keyword">brown potato</span></li><li><span class="keyword">orange carrot</span></li><li><span class="keyword">white radish</span></li></ul></details><details class="sub-topic"><summary><h3>Grammar: Yes/No Questions</h3></summary><p>Practice asking and answering questions using plural nouns:</p><ul><li><strong>Example 1:</strong> "Are these onions? Yes, they are. These are onions."</li><li><strong>Example 2:</strong> "Are these tomatoes? No, they are not. These are brinjals."</li><li><strong>Example 3:</strong> "Are these pumpkins? No, they are not. These are potatoes."</li></ul></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 6</strong> of the Class 1 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "01-chapter-05-a-farm.html";
+      } else {
+        window.location.href = "01-chapter-07-the-food-we-eat.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>

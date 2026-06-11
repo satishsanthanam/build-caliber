@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 8 — Chapter 3: Mystery and Magic</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 8 — Chapter 3: Mystery and Magic</h1>
+
+    <details class="topic-box"><summary class="topic-title">Unit Overview: Mystery and Magic</summary><p>This unit explores the themes of mystery, clever problem-solving, magical folklore, and the awe-inspiring, unexplained wonders of the natural world through three distinct sections: a detective story, a narrative poem, and an informational travelogue.</p></details><details class="topic-box"><summary class="topic-title">Section 1: Prose – The Case of the Fifth Word</summary><details class="sub-topic"><summary><h3>Plot Summary</h3></summary><p>Leroy <span class="keyword">"Encyclopedia" Brown</span> is an exceptionally intelligent eighth-grader living in Idaville, USA. He secretly assists his father, Chief of Police Brown, in solving cases that baffle the police department. During dinner, Chief Brown shares a mystery involving <span class="keyword">Tim Nolan</span>, a suspect in a million-dollar jewelry heist from five years ago who recently passed away from a stroke. Before dying, Nolan left a will leaving his palm-tree nursery to his suspected accomplice, <span class="keyword">Daniel Davenport</span>. Clipped to the will was a calendar sheet containing Davenport's address and a cryptic four-word code: <strong>"Nom Utes Sweden Hurts"</strong>.</p></details><details class="sub-topic"><summary><h3>The Code and Solution</h3></summary><p>Encyclopedia Brown solves the mystery by decoding the four words as anagrams of weekdays with the suffix "-day" removed:</p><ul><li><strong>Nom</strong> = Mon (Monday)</li><li><strong>Utes</strong> = Tues (Tuesday)</li><li><strong>Sweden</strong> = Wednes (Wednesday)</li><li><strong>Hurts</strong> = Thurs (Thursday)</li></ul><p>The unwritten fifth word in the sequence is Friday, which corresponds to the anagram <span class="keyword">Fir</span>. Encyclopedia deduces that the stolen jewelry is hidden under the young <span class="keyword">fir tree</span> located on the south side of Nolan's palm-tree nursery, buried inside a twenty-gallon jug of earth.</p></details><details class="sub-topic"><summary><h3>Key Vocabulary</h3></summary><ul><li><span class="keyword">testify</span>: To make a formal statement in court to prove something is true.</li><li><span class="keyword">hunch</span>: A strong intuitive feeling about something.</li><li><span class="keyword">loot</span>: Stolen goods or treasures.</li><li><span class="keyword">stroke</span>: A sudden, serious medical condition causing temporary or permanent inability to move.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Section 2: Poetry – The Magic Brush of Dreams</summary><details class="sub-topic"><summary><h3>Poem Summary</h3></summary><p>Adapted from a traditional folk tale, this narrative poem tells the story of <span class="keyword">Gopi</span>, a poor girl who is gifted a magic paintbrush by an old man. The man gives her one strict condition: she must only paint for the poor and needy, never for the wealthy. Gopi uses the brush to bring painted items to life, providing food (<span class="keyword">khichdi</span>) and essential tools (ploughs, shawls, mufflers) to her fellow villagers.</p><p>When the greedy local landlord (<span class="keyword">Zamindar</span>) hears of her magic, he demands she paint treasures and a grand fortress for him. Gopi bravely refuses, declaring she swore to help only the needy. The angry Zamindar imprisons her, but Gopi escapes by painting a winding road and a swift horse. When pursued, she paints a wide, deep river to block the soldiers and threatens to paint a wild beast to devour them, forcing the Zamindar to flee forever. Gopi returns to celebrate victory with her village.</p></details><details class="sub-topic"><summary><h3>Thematic Analysis</h3></summary><ul><li><strong>Art as Empowerment:</strong> Gopi's art is a tool for social justice, transforming the lives of the impoverished.</li><li><strong>Greed vs. Generosity:</strong> The contrast between Gopi's selfless community service and the Zamindar's selfish demands drives the moral of the story.</li><li><strong>Courage:</strong> Gopi's refusal to bow to tyrannical authority highlights her strong moral character.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Section 3: Informational – Spectacular Wonders of India</summary><details class="sub-topic"><summary><h3>Natural Wonders and Locations</h3></summary><ol><li><strong>The Valley of Flowers (Uttarakhand):</strong> A stunning national park and UNESCO World Heritage Site featuring over 600 species of exotic flowers and rare wildlife like the snow leopard.</li><li><strong>The Living Root Bridges (Meghalaya):</strong> Incredible feats of bio-engineering built by the indigenous Khasi and Jaintia people using the intertwined, living roots of rubber trees to cross monsoon-swollen rivers.</li><li><strong>The Lonar Crater Lake (Maharashtra):</strong> A unique saline lake formed inside a basaltic impact crater created by a colossal meteorite crash thousands of years ago.</li><li><strong>Magnetic Hills (Ladakh):</strong> A fascinating road where an optical illusion caused by the surrounding slopes makes stationary vehicles appear to roll uphill against gravity.</li><li><strong>Glowing Waters of Kerala (Kumbalangi):</strong> Serene backwaters that glow magically at night due to <span class="keyword">bioluminescence</span> caused by high concentrations of micro-planktons.</li><li><strong>The Sundarbans (West Bengal):</strong> The world's largest mangrove forest ecosystem, acting as a natural barrier against coastal erosion and home to the Royal Bengal Tiger.</li><li><strong>The Invisible Chandipur Beach (Odisha):</strong> A unique beach where the sea retreats by 2 to 5 kilometers during ebb tide, allowing visitors to walk on the dry sea bed before returning during high tide.</li></ol></details></details><details class="topic-box"><summary class="topic-title">Section 4: Grammar and Vocabulary Guide</summary><details class="sub-topic"><summary><h3>Phrasal Verbs and Spoonerisms</h3></summary><p><strong>Phrasal Verbs:</strong> Idiomatic phrases combining a verb and a preposition/adverb (e.g., <span class="keyword">put on</span>, <span class="keyword">cooled down</span>, <span class="keyword">turned up</span>, <span class="keyword">figure out</span>, <span class="keyword">got away with</span>).</p><p><strong>Spoonerisms:</strong> A humorous play on words where the initial sounds of two words are accidentally or intentionally swapped (e.g., saying "wrong load" instead of "long road", or "blarm wanket" instead of "warm blanket").</p></details><details class="sub-topic"><summary><h3>Reported Speech (Interrogatives)</h3></summary><p>Rules for converting direct questions into indirect speech:</p><ul><li>Replace the reporting verb 'said' with <span class="keyword">asked</span>, <span class="keyword">inquired</span>, or <span class="keyword">questioned</span>.</li><li>Convert the interrogative sentence structure into a declarative one (subject before verb).</li><li>Apply appropriate tense shifts (e.g., Present Simple to Past Simple, Past Simple to Past Perfect).</li><li>For <strong>Wh- questions</strong>, place the Wh- word directly after the reporting verb.</li><li>For <strong>Yes/No questions</strong>, use the conjunctions <span class="keyword">if</span> or <span class="keyword">whether</span>.</li></ul></details><details class="sub-topic"><summary><h3>Participles vs. Gerunds</h3></summary><p><strong>Participles:</strong> Verb forms that function as adjectives to describe nouns.</p><ul><li><em>Present Participles (-ing):</em> Describe ongoing actions (e.g., "The <span class="keyword">living</span> root bridges").</li><li><em>Past Participles (-ed, -en, -t):</em> Describe completed actions (e.g., "The <span class="keyword">carved</span> stone wheels").</li></ul><p><strong>Gerunds:</strong> Verb forms ending in -ing that function strictly as nouns (e.g., "<span class="keyword">Swimming</span> is my favorite hobby", "She enjoys <span class="keyword">cooking</span>").</p></details><details class="sub-topic"><summary><h3>Binomials</h3></summary><p>Fixed pairs of words joined by 'and' or 'or' that function as a single unit of meaning:</p><ul><li><span class="keyword">odds and ends</span>: Small, unimportant things.</li><li><span class="keyword">part and parcel</span>: An essential or unavoidable component.</li><li><span class="keyword">leaps and bounds</span>: Rapid progress or growth.</li><li><span class="keyword">on and off</span>: Intermittently; occasionally.</li></ul></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 3</strong> of the Class 8 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "08-chapter-02-values-and-dispositions.html";
+      } else {
+        window.location.href = "08-chapter-04-environment.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>

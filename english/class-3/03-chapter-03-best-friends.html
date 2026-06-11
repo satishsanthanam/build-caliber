@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 3 — Chapter 3: Best Friends</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 3 — Chapter 3: Best Friends</h1>
+
+    <details class="topic-box"><summary class="topic-title">Story Summary</summary><p>The story <strong>"Best Friends"</strong> is about four shape friends: <span class="keyword">Circle</span>, <span class="keyword">Square</span>, <span class="keyword">Triangle</span>, and <span class="keyword">Rectangle</span>. One day, they start arguing about who among them is the best. Each shape boasts about its unique features and how children use them to draw or eat things in their shape.</p><p>Unable to decide, they ask a wise <span class="keyword">Star</span> they meet. The Star explains that instead of fighting, they should realize that together they can create beautiful pictures, patterns, and designs. The friends understand their mistake, promise never to fight again, and remain best friends forever.</p></details><details class="topic-box"><summary class="topic-title">Character Analysis & Shape Features</summary><details class="sub-topic"><summary><h3>Circle</h3></summary><ul><li><strong>Features:</strong> Round, beautiful, and has no sharp edges.</li><li><strong>Uses:</strong> Used by children to draw smiling faces.</li><li><strong>Examples:</strong> Wheels, clock, ball, wool ball, flower.</li></ul></details><details class="sub-topic"><summary><h3>Square</h3></summary><ul><li><strong>Features:</strong> Has four sides, and all of them are equal in size.</li><li><strong>Uses:</strong> Many sweets and gifts are square in shape.</li><li><strong>Examples:</strong> Gift boxes, window panes, tiles.</li></ul></details><details class="sub-topic"><summary><h3>Triangle</h3></summary><ul><li><strong>Features:</strong> Has three sides.</li><li><strong>Uses:</strong> Used to draw mountains; many yummy snacks are in this shape.</li><li><strong>Examples:</strong> Watermelon slice, cake slice, umbrella, paper boat.</li></ul></details><details class="sub-topic"><summary><h3>Rectangle</h3></summary><ul><li><strong>Features:</strong> Has four sides—two are equally long and two are equally short.</li><li><strong>Uses:</strong> Biscuits, chocolates, and many everyday objects are rectangular.</li><li><strong>Examples:</strong> Books, envelopes, erasers, pencils.</li></ul></details><details class="sub-topic"><summary><h3>The Star</h3></summary><ul><li><strong>Role:</strong> The wise mediator.</li><li><strong>Lesson:</strong> Teaches the shapes the power of unity and collaboration. Together, they can create wonders and beautiful patterns.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Grammar & Language Study: Articles 'a' and 'an'</summary><p>The chapter introduces the basic rules for using the indefinite articles <span class="keyword">a</span> and <span class="keyword">an</span>.</p><details class="sub-topic"><summary><h3>Rules of Usage</h3></summary><ul><li>Use <span class="keyword">a</span> before singular nouns that begin with consonant sounds (e.g., <em>a pigeon</em>, <em>a dog</em>, <em>a cow</em>, <em>a sparrow</em>).</li><li>Use <span class="keyword">an</span> before singular nouns that begin with vowel sounds (a, e, i, o, u) (e.g., <em>an ant</em>, <em>an eagle</em>, <em>an umbrella</em>, <em>an ice-cream</em>).</li></ul></details><details class="sub-topic"><summary><h3>Practice Exercises</h3></summary><ul><li><strong>Using 'a':</strong><ul><li><u>A</u> dog is barking at the postman.</li><li>My mother gives chapattis to <u>a</u> cow everyday.</li><li>In summers, <u>a</u> sparrow builds its nest on the mango tree near our house.</li></ul></li><li><strong>Using 'an':</strong><ul><li>I saw <u>an</u> eagle yesterday.</li><li>Maya bought <u>an</u> umbrella for the monsoon.</li><li><u>An</u> ice-cream man brings his cart in the evenings.</li></ul></li><li><strong>Mixed Practice ('a' or 'an'):</strong><ul><li><u>A</u> brown hen laid <u>an</u> egg.</li><li><u>An</u> eagle sat on <u>a</u> building.</li><li>Mary ate <u>an</u> apricot, <u>a</u> chikoo and <u>an</u> orange.</li></ul></li></ul></details></details><details class="topic-box"><summary class="topic-title">Poem: What do You do?</summary><p>A fun poem highlighting different animals and their characteristic action words (verbs).</p><details class="sub-topic"><summary><h3>Poem Verses</h3></summary><p><strong>Birds:</strong><br>Who are you?<br>And what do you do?<br>We are birds.<br>We <span class="keyword">chirp</span> and <span class="keyword">sing</span>.</p><p><strong>Monkeys:</strong><br>Who are you?<br>And what do you do?<br>We are monkeys.<br>We <span class="keyword">jump</span> and <span class="keyword">swing</span>.</p><p><strong>Dogs:</strong><br>Who are you?<br>And what do you do?<br>We are dogs.<br>We <span class="keyword">run</span> and <span class="keyword">bark</span>.</p><p><strong>Cats:</strong><br>Who are you?<br>And what do you do?<br>We are cats.<br>We <span class="keyword">mew</span> in the dark.</p><p><strong>Elephants:</strong><br>Who are you?<br>And what do you do?<br>We are elephants.<br>We <span class="keyword">raise</span> our trunks.</p><p><strong>Lions:</strong><br>Who are you?<br>And what do you do?<br>We are lions.<br>We <span class="keyword">roar</span> and <span class="keyword">hunt</span>.</p></details></details><details class="topic-box"><summary class="topic-title">Comprehension & Activities</summary><details class="sub-topic"><summary><h3>Questions & Answers</h3></summary><ol><li><strong>Who were the four friends?</strong><br>Circle, Square, Triangle, and Rectangle.</li><li><strong>Why were they fighting?</strong><br>Each of them claimed to be the best.</li><li><strong>Who helped them to end their fight?</strong><br>A wise Star helped them end their fight.</li><li><strong>What lesson did the friends learn in the end?</strong><br>They learned that together they can create wonders and beautiful patterns, and that they are all important.</li></ol></details><details class="sub-topic"><summary><h3>True or False</h3></summary><ul><li>a) The circle does not have sharp edges. <strong>(True)</strong></li><li>b) A square has four sides but not all of them are equal in size. <strong>(False)</strong></li><li>c) The triangle has two sides. <strong>(False)</strong></li><li>d) The friends could decide who was the best among them. <strong>(False)</strong></li></ul></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 3</strong> of the Class 3 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "03-chapter-02-badal-and-moti.html";
+      } else {
+        window.location.href = "03-chapter-04-out-in-the-garden.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>

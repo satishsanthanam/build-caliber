@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 10 (First Flight) — Chapter 9: The Proposal</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 10 (First Flight) — Chapter 9: The Proposal</h1>
+
+    <details class="topic-box"><summary class="topic-title">Introduction & Background</summary><details class="sub-topic"><summary><h3>Before You Read: A Russian Wedding</h3></summary><p>The play is preceded by an article describing the customs of a traditional <span class="keyword">Russian Wedding</span>:</p><ul><li><strong>Preparations:</strong> Simple arrangements including rings, bride's dress, cars, and a shared-expense reception.</li><li><strong>The Procession:</strong> A parade of cars organized by the best friends of the couple.</li><li><strong>The Groom's Challenge:</strong> The groom must "fight" to reach the bride's apartment, answering difficult questions or riddles at each landing, or paying cash if he guesses wrong.</li><li><strong>The Reception & Toasts:</strong> Guests raise toasts, and the groom is asked to kiss the bride.</li><li><strong>Stealing the Bride & Shoe:</strong> Playful customs where the bride or her shoe is "stolen" by friends, and the groom must pay a fee to retrieve them.</li></ul></details><details class="sub-topic"><summary><h3>About the Play</h3></summary><p><strong>"The Proposal"</strong> (originally titled <em>"A Marriage Proposal"</em>) is a one-act farce written by the famous Russian dramatist <span class="keyword">Anton Chekhov</span> in 1888–89.</p><p>The play satirizes the tendency of wealthy families to encourage marriages that make good economic sense rather than romantic sense, focusing on how petty arguments can overshadow major life decisions.</p></details></details><details class="topic-box"><summary class="topic-title">Character Profiles</summary><details class="sub-topic"><summary><h3>Stepan Stepanovitch Chubukov</h3></summary><ul><li><strong>Role:</strong> A wealthy landowner and father of Natalya.</li><li><strong>Traits:</strong> Hypocritical, overly polite initially but quickly turns abusive during arguments, highly concerned with social status and wealth.</li></ul></details><details class="sub-topic"><summary><h3>Natalya Stepanovna</h3></summary><ul><li><strong>Role:</strong> Chubukov's 25-year-old daughter.</li><li><strong>Traits:</strong> An excellent housekeeper, well-educated, but extremely quarrelsome, stubborn, and possessive about property and family pride.</li></ul></details><details class="sub-topic"><summary><h3>Ivan Vassilevitch Lomov</h3></summary><ul><li><strong>Role:</strong> A long-time wealthy neighbor of Chubukov.</li><li><strong>Traits:</strong> A large, hearty, but highly suspicious and hypochondriac landowner. He suffers from palpitations, twitching, and sleep disturbances. He seeks marriage for stability and economic benefit rather than love.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Plot Summary & Key Disputes</summary><details class="sub-topic"><summary><h3>1. The Arrival and Proposal Intent</h3></summary><p>Lomov arrives at Chubukov's house dressed formally in evening clothes. Chubukov initially suspects Lomov has come to borrow money. However, Lomov reveals he has come to ask for Natalya's hand in marriage. Chubukov is overjoyed, embraces Lomov, and goes to call Natalya.</p></details><details class="sub-topic"><summary><h3>2. The First Dispute: Oxen Meadows</h3></summary><p>When Natalya enters, she and Lomov begin a polite conversation. However, while explaining his family's historical ties, Lomov mentions "my Oxen Meadows." Natalya immediately disputes this, claiming the meadows belong to her family. This sparks a fierce argument:</p><ul><li><strong>Lomov's Claim:</strong> His aunt's grandmother gave the free use of the Meadows to the peasants of Natalya's grandfather in exchange for making bricks.</li><li><strong>Natalya's Claim:</strong> Her family has owned the land for nearly three hundred years, extending all the way to Burnt Marsh.</li><li><strong>Outcome:</strong> Chubukov joins the argument, insulting Lomov. Lomov's palpitations worsen, and he storms out of the house.</li></ul></details><details class="sub-topic"><summary><h3>3. The Hysterical Realization</h3></summary><p>After Lomov leaves, Chubukov mentions that Lomov had come to propose marriage. Upon hearing this, Natalya goes into hysterics, wailing for her father to bring Lomov back immediately. Chubukov laments the burden of being the father of a grown-up daughter.</p></details><details class="sub-topic"><summary><h3>4. The Second Dispute: Guess vs. Squeezer</h3></summary><p>Lomov returns, exhausted and physically weak. Natalya tries to steer the conversation away from the meadows, conceding that they belong to him. However, the peace is short-lived as they begin arguing over their hunting dogs:</p><ul><li><strong>Lomov's Dog (Guess):</strong> Lomov bought him for 125 roubles and claims he is first-rate.</li><li><strong>Natalya's Dog (Squeezer):</strong> Bought for 85 roubles, Natalya claims he is far superior in pedigree and youth.</li><li><strong>The Argument:</strong> Lomov points out that Squeezer is "overshot" (lower jaw shorter than the upper), making him a bad hunter. Natalya defends Squeezer and calls Guess old and ugly. Chubukov joins in, escalating the shouting match.</li></ul></details><details class="sub-topic"><summary><h3>5. The Climax and Resolution</h3></summary><p>Overwhelmed by excitement, anger, and his physical ailments, Lomov collapses into an armchair and loses consciousness. Natalya and Chubukov panic, thinking he is dead. When Lomov finally stirs and asks where he is, Chubukov quickly forces them to kiss and declares them married. Even as they celebrate with champagne, Natalya and Lomov immediately resume their argument about whose dog is better.</p></details></details><details class="topic-box"><summary class="topic-title">Thematic Analysis</summary><details class="sub-topic"><summary><h3>Satire on Aristocratic Marriages</h3></summary><p>Chekhov exposes the superficiality of upper-class marriages of the 19th century, which were treated as business transactions to merge estates rather than unions of love. Despite their mutual dislike and constant bickering, both families eagerly agree to the marriage for economic gain.</p></details><details class="sub-topic"><summary><h3>Absurdity of Human Pride</h3></summary><p>The characters are willing to sacrifice their long-term happiness and health over trivial matters like a small patch of disputed land (Oxen Meadows) or the superiority of their hunting dogs. Their pride and stubbornness repeatedly derail the very proposal they both desire.</p></details></details><details class="topic-box"><summary class="topic-title">Grammar & Language: Reported Speech</summary><details class="sub-topic"><summary><h3>Direct vs. Indirect Speech</h3></summary><p>A sentence in <span class="keyword">reported speech</span> consists of a <em>reporting clause</em> (containing the reporting verb) and a <em>reported clause</em>.</p><ul><li><strong>Direct Speech:</strong> "I went to visit my grandma last week," said Mamta.</li><li><strong>Indirect Speech:</strong> Mamta said that she had gone to visit her grandma the previous week.</li></ul></details><details class="sub-topic"><summary><h3>Rules for Changing Direct to Indirect Speech</h3></summary><ul><li><strong>Reporting Questions:</strong> Use reporting verbs like <span class="keyword">asked</span> or <span class="keyword">enquired</span>.</li><li><strong>Reporting Statements:</strong> Use reporting verbs like <span class="keyword">said</span>, <span class="keyword">declared</span>, or <span class="keyword">told</span>.</li><li><strong>Adverbs of Place:</strong> <span class="keyword">here</span> changes to <span class="keyword">there</span>.</li><li><strong>Tense Changes:</strong><ul><li>Present Simple changes to <strong>Past Simple</strong>.</li><li>Present Continuous changes to <strong>Past Continuous</strong> (e.g., <em>is getting</em> becomes <em>was getting</em>).</li></ul></li><li><strong>Pronoun Changes:</strong> First-person pronouns (<em>I, me, our, mine</em>) change according to the subject or object of the reporting verb (e.g., <em>he, him, his, their</em>).</li></ul></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 9</strong> of the Class 10 (First Flight) curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "01-chapter-08-the-sermon-at-benares.html";
+      } else {
+        window.location.href = "../../index.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>

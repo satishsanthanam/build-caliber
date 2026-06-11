@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 2 — Chapter 1: My Bicycle</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 2 — Chapter 1: My Bicycle</h1>
+
+    <details class="topic-box"><summary class="topic-title">Poem: My Bicycle</summary><details class="sub-topic"><summary><h3>Poem Recitation</h3></summary><p><strong>Stanza 1:</strong><br>I have a red bicycle.<br>I pedal and I ride.<br>Trin… trin… trin… goes the bell.<br>Makes my friends move aside.</p><p><strong>Stanza 2:</strong><br>The seat is blue in colour,<br>The tyres and pedals are black.<br>Sometimes fast, sometimes slow,<br>But my bicycle is always on track.</p><p><strong>Stanza 3:</strong><br>To keep my bicycle moving,<br>All I need is some air.<br>I put on my little helmet,<br>And go happily everywhere.</p></details><details class="sub-topic"><summary><h3>Theme & Summary</h3></summary><p>The poem describes a child's joy in riding their red bicycle. It highlights the features of the bicycle (red body, blue seat, black tyres and pedals, and a ringing bell) and emphasizes safety by mentioning wearing a <span class="keyword">helmet</span>.</p></details></details><details class="topic-box"><summary class="topic-title">Vocabulary & Sight Words</summary><details class="sub-topic"><summary><h3>New Words</h3></summary><ul><li><span class="keyword">pedal</span>: A foot-operated lever used to power a bicycle.</li><li><span class="keyword">aside</span>: To one side; out of the way.</li><li><span class="keyword">sometimes</span>: Occasionally; now and then.</li><li><span class="keyword">track</span>: A path or course.</li><li><span class="keyword">helmet</span>: A protective hat worn to prevent head injury.</li><li><span class="keyword">everywhere</span>: In or to all places.</li></ul></details><details class="sub-topic"><summary><h3>Sight Words</h3></summary><p>Practice reading these common words: <span class="keyword">I</span>, <span class="keyword">and</span>, <span class="keyword">is</span>, <span class="keyword">in</span>, <span class="keyword">my</span>.</p></details></details><details class="topic-box"><summary class="topic-title">Let us Speak & Phonics</summary><details class="sub-topic"><summary><h3>Discussion Questions</h3></summary><ul><li>Have you seen a bicycle? Where have you seen it?</li><li>What colour is it? Who generally rides it?</li><li>Have you seen a tricycle? Have you seen a wheelchair?</li></ul></details><details class="sub-topic"><summary><h3>Phonics: Vowel Sound 'a'</h3></summary><p>This section introduces the short vowel sound <span class="keyword">'a'</span> (as in 'pan'). Notice the use of <span class="keyword">an</span> before words starting with 'a':</p><ul><li><strong>Group 1 (starts with 'a'):</strong> <span class="keyword">an ant</span>, <span class="keyword">an axe</span>, <span class="keyword">an apple</span></li><li><strong>Group 2:</strong> <span class="keyword">a rat</span>, <span class="keyword">a cat</span>, <span class="keyword">a mat</span></li><li><strong>Group 3:</strong> <span class="keyword">a pan</span>, <span class="keyword">a man</span>, <span class="keyword">a cap</span></li></ul></details></details><details class="topic-box"><summary class="topic-title">Let us Write & Exercises</summary><details class="sub-topic"><summary><h3>Parts of a Bicycle</h3></summary><p>Identify and label the parts of a bicycle using these words:</p><ul><li><span class="keyword">seat</span></li><li><span class="keyword">pedal</span></li><li><span class="keyword">wheel</span></li><li><span class="keyword">bell</span></li><li><span class="keyword">handle</span></li><li><span class="keyword">carrier</span></li><li><span class="keyword">brake</span></li></ul></details><details class="sub-topic"><summary><h3>Sentence Completion</h3></summary><ol><li>The child in the poem has a <strong>red</strong> bicycle.</li><li>The sound of the <strong>bell</strong> makes people move aside.</li><li>The <strong>tyres</strong> and <strong>pedals</strong> are black.</li></ol></details><details class="sub-topic"><summary><h3>True or False</h3></summary><ol><li>The child has a blue bicycle. <strong>(False / ✗)</strong></li><li>The bell goes trin... trin... trin. <strong>(True / ✓)</strong></li><li>The child’s bicycle is always fast. <strong>(False / ✗)</strong></li><li>The child needs some water to keep the bicycle moving. <strong>(False / ✗)</strong></li><li>The child puts on a little helmet while riding the bicycle. <strong>(True / ✓)</strong></li></ol></details></details><details class="topic-box"><summary class="topic-title">Let us Think</summary><details class="sub-topic"><summary><h3>Magic Bicycle Activity</h3></summary><p>Imagine you have a magic bicycle! Draw it and think about:</p><ul><li>Where would you go?</li><li>What would you do there?</li><li>What would you see there?</li></ul></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 1</strong> of the Class 2 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "../../index.html";
+      } else {
+        window.location.href = "02-chapter-02-picture-reading.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>

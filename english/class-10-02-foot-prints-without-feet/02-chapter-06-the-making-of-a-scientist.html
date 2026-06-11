@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 10 (footprints without feet) — Chapter 6: The Making of a Scientist</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 10 (footprints without feet) — Chapter 6: The Making of a Scientist</h1>
+
+    <details class="topic-box"><summary class="topic-title">Overview & Introduction</summary><p><strong>The Making of a Scientist</strong> by Robert W. Peterson provides an inspiring account of <span class="keyword">Richard H. Ebright</span>, a renowned scientist who revolutionized the field of biochemistry and molecular biology. The narrative details his journey from a curious child collecting butterflies in Pennsylvania to a groundbreaking researcher who discovered how cells read the blueprint of DNA.</p></details><details class="topic-box"><summary class="topic-title">Early Life & Influences</summary><details class="sub-topic"><summary><h3>The Role of His Mother</h3></summary><p>Ebright was an only child who grew up in Reading, Pennsylvania. After his father died when Richie was in third grade, his mother became his primary companion and greatest supporter. She encouraged his curiosity by:</p><ul><li>Taking him on trips and buying him scientific equipment like <span class="keyword">telescopes</span>, <span class="keyword">microscopes</span>, and cameras.</li><li>Finding learning tasks for him at the dining table to keep his active mind engaged.</li><li>Gifting him a life-changing children's book titled <em>The Travels of Monarch X</em>.</li></ul></details><details class="sub-topic"><summary><h3>Early Collections & Turning Point</h3></summary><p>By the second grade, Ebright had collected all twenty-five species of butterflies found around his hometown. The book <em>The Travels of Monarch X</em>, which explained how monarch butterflies migrate to Central America, opened the world of science to him. At the end of the book, readers were invited to help study butterfly migrations by tagging them for <span class="keyword">Dr. Frederick A. Urquhart</span> of the University of Toronto.</p></details></details><details class="topic-box"><summary class="topic-title">The Journey of Science Fairs</summary><details class="sub-topic"><summary><h3>7th Grade: The Lesson of Real Experiments</h3></summary><p>Ebright entered a county science fair with slides of frog tissues under a microscope and lost. He realized that real science is not about making a neat display, but about conducting <span class="keyword">real experiments</span>.</p></details><details class="sub-topic"><summary><h3>8th Grade: Viral Disease Experiment</h3></summary><p>He investigated the cause of a viral disease that kills nearly all monarch caterpillars every few years. Suspecting a beetle might carry the disease, he raised caterpillars in the presence of beetles. Although the results were not definitive, showing that he tried the experiment won him a prize.</p></details><details class="sub-topic"><summary><h3>High School: Viceroy Copying Theory</h3></summary><p>Ebright tested the theory that viceroy butterflies copy monarchs to avoid being eaten by birds (since monarchs do not taste good to birds). He discovered that a starling would indeed eat monarchs if available. This project won first place in the zoology division and third overall at the county science fair.</p></details></details><details class="topic-box"><summary class="topic-title">Major Scientific Breakthroughs</summary><details class="sub-topic"><summary><h3>The Mystery of the Twelve Gold Spots</h3></summary><p>In his second year of high school, Ebright investigated the purpose of the twelve tiny gold spots on a monarch pupa. While others assumed they were merely ornamental, Ebright and another student built a device proving that the spots produced a <span class="keyword">hormone</span> essential for the butterfly's full development. This project won first place at the county fair and third place at the International Science and Engineering Fair.</p></details><details class="sub-topic"><summary><h3>Cell Culture & DNA Blueprint Theory</h3></summary><p>During his senior year, Ebright grew cells from a monarch's wing in a culture, proving they would divide and develop into normal scales only if fed the hormone from the gold spots. Later, at Harvard, using sophisticated instruments, he identified the chemical structure of the hormone. Looking at X-ray photos of this structure, he formulated his groundbreaking theory: <span class="keyword">DNA</span> is the substance in the nucleus of a cell that controls heredity and acts as the blueprint for life.</p></details></details><details class="topic-box"><summary class="topic-title">Multifaceted Personality</summary><p>Richard Ebright was not just a scientist; he was a well-rounded individual with diverse interests:</p><ul><li>He was a straight-A student, a champion debater, and an eloquent public speaker.</li><li>He was an expert photographer, specializing in nature and scientific exhibits.</li><li>He was an active canoeist and outdoors-person.</li><li>He highly admired his social studies teacher, <span class="keyword">Richard A. Weiherer</span>, who opened his mind to new ideas and praised his competitive spirit driven by the desire to do his best.</li></ul></details><details class="topic-box"><summary class="topic-title">Glossary & Key Terms</summary><ul><li><span class="keyword">leagues</span>: groups of sports clubs or teams playing matches among themselves</li><li><span class="keyword">county</span>: region</li><li><span class="keyword">starling</span>: common European bird with black, brown-spotted plumage</li><li><span class="keyword">entomology</span>: the study of insects</li><li><span class="keyword">eureka</span>: a cry of triumph at a discovery</li><li><span class="keyword">canoeist</span>: a person who paddles a canoe</li></ul></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 6</strong> of the Class 10 (footprints without feet) curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "02-chapter-05-footprints-without-feet.html";
+      } else {
+        window.location.href = "02-chapter-07-the-necklace.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 1 — Chapter 5: A Farm</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 1 — Chapter 5: A Farm</h1>
+
+    <details class="topic-box"><summary class="topic-title">Poem: A Farm</summary><p>A cheerful introductory poem about a grandfather's farm and the sounds made by different animals.</p><details class="sub-topic"><summary><h3>Stanza 1: The Cow</h3></summary><p>My dear grandpa had a farm<br>E-I-E-I-O<br>And on that farm,<br>He had a <span class="keyword">cow</span><br>E-I-E-I-O<br>With a moo-moo here<br>And a moo-moo there<br>Here a moo, there a moo<br>Everywhere a moo-moo<br>My dear grandpa had a farm<br>E-I-E-I-O</p></details><details class="sub-topic"><summary><h3>Stanza 2: The Hen</h3></summary><p>My dear grandpa had a farm<br>E-I-E-I-O<br>And on that farm,<br>He had a <span class="keyword">hen</span><br>E-I-E-I-O<br>With a cluck-cluck here<br>And a cluck-cluck there<br>Here a cluck, there a cluck<br>Everywhere a cluck-cluck<br>My dear grandpa had a farm<br>E-I-E-I-O</p></details><details class="sub-topic"><summary><h3>Activity: Animal Sounds</h3></summary><p>Continue the rhyme by replacing the animals with other farm animals and their sounds from your language (e.g., <span class="keyword">cat</span> - miaon-miaon).</p></details></details><details class="topic-box"><summary class="topic-title">Let us read: Animals and Birds</summary><p>A short story about a boy named <span class="keyword">Jaggu</span> who lives in <span class="keyword">Nagpur</span> and introduces the animals and birds living near his house.</p><details class="sub-topic"><summary><h3>Animals Near Jaggu's House</h3></summary><ul><li><strong>Dog:</strong> Lives near the gate.</li><li><strong>Cats:</strong> Jump up and down in the <span class="keyword">verandah</span>.</li><li><strong>Cow:</strong> Eats grass.</li><li><strong>Rat:</strong> Very small; chased by the cat.</li><li><strong>Monkeys:</strong> Swing and jump in the trees.</li><li><strong>Snakes:</strong> Live in the <span class="keyword">fields</span> beside the house; one must walk carefully.</li></ul></details><details class="sub-topic"><summary><h3>Birds Near Jaggu's House</h3></summary><ul><li><strong>Crow:</strong> Black in colour.</li><li><strong>Pigeon:</strong> Grey in colour.</li><li><strong>Sparrow:</strong> A small bird.</li><li><strong>Parrot:</strong> Green with a red <span class="keyword">beak</span>.</li><li><strong>Peacock:</strong> Has many beautiful colours.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Vocabulary & Phonetics</summary><details class="sub-topic"><summary><h3>New Words</h3></summary><ul><li><span class="keyword">verandah</span> - an open, roofed porch or portico</li><li><span class="keyword">cow</span> - a fully grown female animal of a domesticated breed of ox</li><li><span class="keyword">rat</span> - a rodent resembling a large mouse</li><li><span class="keyword">sparrow</span> - a small brown and grey bird</li><li><span class="keyword">crow</span> - a large black bird with a harsh cry</li><li><span class="keyword">pigeon</span> - a stout-bodied bird with a small head</li><li><span class="keyword">snake</span> - a long limbless reptile</li><li><span class="keyword">fields</span> - areas of open land</li><li><span class="keyword">peacock</span> - a large male bird with brilliant blue and green plumage and a long tail</li><li><span class="keyword">beak</span> - a bird's horny projecting jaws</li></ul></details><details class="sub-topic"><summary><h3>Phonetics: Ending Sounds</h3></summary><p>Focus on identifying the final sound of words:</p><ul><li>The last sound of the word <strong>rat</strong> is <span class="keyword">t</span>.</li><li>The last sound of the word <strong>cap</strong> is <span class="keyword">p</span>.</li><li>The last sound of the word <strong>jam</strong> is <span class="keyword">m</span>.</li><li>The last sound of the word <strong>pen</strong> is <span class="keyword">n</span>.</li><li>The last sound of the word <strong>bell</strong> is <span class="keyword">l</span>.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Activities & Speaking Exercises</summary><details class="sub-topic"><summary><h3>Wild Animals</h3></summary><p>Some animals live in the jungle. Examples include:</p><ul><li><span class="keyword">Tiger</span></li><li><span class="keyword">Lion</span></li><li><span class="keyword">Elephant</span></li></ul></details><details class="sub-topic"><summary><h3>Talking in Pairs</h3></summary><p>Practice conversations about animal colours:</p><ul><li><strong>Parrot:</strong> Green</li><li><strong>Crow:</strong> Black</li><li><strong>Rat:</strong> Grey/Brown</li><li><strong>Peacock:</strong> Many colours</li></ul></details><details class="sub-topic"><summary><h3>Fun Time: Prepositions</h3></summary><p>Locate the elephants in the picture using prepositions such as <span class="keyword">in</span>, <span class="keyword">on</span>, and <span class="keyword">behind</span>.</p></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 5</strong> of the Class 1 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "01-chapter-04-the-cap-seller-and-the-monkeys.html";
+      } else {
+        window.location.href = "01-chapter-06-fun-with-pictures.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>

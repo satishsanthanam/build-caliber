@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 2 — Chapter 13: We are all Indians</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 2 — Chapter 13: We are all Indians</h1>
+
+    <details class='topic-box'>
+  <summary class='topic-title'>Chapter Overview: Diversity of India</summary>
+  <p>This chapter introduces children from different states of India, highlighting the rich cultural diversity, languages, festivals, and unique lifestyles that unite them as Indians.</p>
+  
+  <details class='sub-topic'>
+    <summary><h3>Profiles of Children from Different States</h3></summary>
+    <ul>
+      <li><strong>Meenakshi:</strong> Comes from <span class='keyword'>Tamil Nadu</span>, speaks <span class='keyword'>Tamil</span>, and her favourite festival is <span class='keyword'>Pongal</span>.</li>
+      <li><strong>Ramu:</strong> Comes from <span class='keyword'>Gujarat</span>, speaks <span class='keyword'>Gujarati</span>, is seven years old, and likes to dance the <span class='keyword'>Garba</span>.</li>
+      <li><strong>Gulabo:</strong> Comes from <span class='keyword'>Rajasthan</span>, likes wearing colourful clothes, enjoys <span class='keyword'>puppet shows</span>, and travels by camel.</li>
+      <li><strong>Badal:</strong> Comes from <span class='keyword'>Bengal</span>, speaks <span class='keyword'>Bengali</span>, likes painting and music, and studies at <span class='keyword'>Santiniketan</span>.</li>
+      <li><strong>Surinder:</strong> Comes from <span class='keyword'>Punjab</span>, speaks <span class='keyword'>Punjabi</span>, and mentions his neighbour Mallika who likes to do <span class='keyword'>Bhangra</span>.</li>
+      <li><strong>Vibha:</strong> Comes from <span class='keyword'>Maharashtra</span>, speaks <span class='keyword'>Marathi</span>, and has visited the famous <span class='keyword'>Ellora and Ajanta caves</span>.</li>
+      <li><strong>Neerja:</strong> Comes from <span class='keyword'>Uttar Pradesh</span> and has seen the <span class='keyword'>Taj Mahal</span>.</li>
+      <li><strong>Nonglik:</strong> Comes from <span class='keyword'>Manipur</span> and speaks <span class='keyword'>Manipuri</span>.</li>
+      <li><strong>Kamala:</strong> Comes from <span class='keyword'>Karnataka</span>, speaks <span class='keyword'>Kannada</span>, and plays the <span class='keyword'>Mridang</span> (a musical instrument).</li>
+      <li><strong>Bharti:</strong> Comes from <span class='keyword'>Andhra Pradesh</span>, speaks <span class='keyword'>Telugu</span>, and travels to <span class='keyword'>Kashmir</span> during summer holidays to stay with friends Salma and Suresh.</li>
+      <li><strong>Two Sisters:</strong> Belong to <span class='keyword'>Odisha</span>, speak <span class='keyword'>Odia</span>, and love to decorate their walls and floors.</li>
+      <li><strong>Unni:</strong> Comes from <span class='keyword'>Kerala</span>, speaks <span class='keyword'>Malayalam</span>, and his favourite tree is the <span class='keyword'>coconut tree</span>.</li>
+    </ul>
+  </details>
+
+  <details class='sub-topic'>
+    <summary><h3>Core Message</h3></summary>
+    <p>Despite the differences in language, clothing, food, and festivals, the chapter emphasizes: <strong>"But we are all Indians. Each of us is unique."</strong></p>
+  </details>
+</details>
+
+<details class='topic-box'>
+  <summary class='topic-title'>New Vocabulary</summary>
+  <ul>
+    <li><span class='keyword'>festival</span>: A day or period of celebration, typically for religious or cultural reasons.</li>
+    <li><span class='keyword'>puppet</span>: A model of a person or animal moved by strings or hands, used in entertainment.</li>
+    <li><span class='keyword'>travel</span>: To make a journey, typically of some length.</li>
+    <li><span class='keyword'>painting</span>: The action or skill of using paint to create pictures.</li>
+    <li><span class='keyword'>neighbour</span>: A person living next door to or very near to the speaker.</li>
+    <li><span class='keyword'>fingerprints</span>: An impression or mark made on a surface by a person's fingertip.</li>
+  </ul>
+</details>
+
+<details class='topic-box'>
+  <summary class='topic-title'>Grammar & Language Activities</summary>
+  
+  <details class='sub-topic'>
+    <summary><h3>Jumbled Letters (Languages)</h3></summary>
+    <p>Rearrange the letters to find the names of Indian languages:</p>
+    <ul>
+      <li><strong>INHDI</strong> &rarr; <span class='keyword'>HINDI</span></li>
+      <li><strong>GNIELHS</strong> &rarr; <span class='keyword'>ENGLISH</span></li>
+      <li><strong>RUUD</strong> &rarr; <span class='keyword'>URDU</span></li>
+      <li><strong>ELUTGU</strong> &rarr; <span class='keyword'>TELUGU</span></li>
+    </ul>
+  </details>
+
+  <details class='sub-topic'>
+    <summary><h3>Joining Sentences with 'but'</h3></summary>
+    <p>The conjunction <span class='keyword'>but</span> is used to join two sentences that show contrasting ideas.</p>
+    <ul>
+      <li><strong>Example:</strong>
+        <ul>
+          <li>Sentence 1: I like to eat mangoes.</li>
+          <li>Sentence 2: I don't like to eat apples.</li>
+          <li><em>Joined:</em> I like to eat mangoes <strong>but</strong> I don't like to eat apples.</li>
+        </ul>
+      </li>
+      <li><strong>Practice Exercises:</strong>
+        <ul>
+          <li>Sentence 1: I like milk. / Sentence 2: I don't like tea.<br/><em>Answer:</em> I like milk <strong>but</strong> I don't like tea.</li>
+          <li>Sentence 1: My grandfather is old. / Sentence 2: He is strong.<br/><em>Answer:</em> My grandfather is old <strong>but</strong> he is strong.</li>
+          <li>Sentence 1: I wanted to go out. / Sentence 2: I was too tired.<br/><em>Answer:</em> I wanted to go out <strong>but</strong> I was too tired.</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+
+  <details class='sub-topic'>
+    <summary><h3>Phonics & Pronunciation</h3></summary>
+    <p>Practice speaking and framing sentences with words starting with consonant blends:</p>
+    <ul>
+      <li><strong>'br' blend:</strong> <span class='keyword'>bread</span>, <span class='keyword'>bridge</span>, <span class='keyword'>brown</span></li>
+      <li><strong>'fr' blend:</strong> <span class='keyword'>frock</span>, <span class='keyword'>frame</span>, <span class='keyword'>frog</span></li>
+      <li><strong>Example Sentence:</strong> "It was a bright sunny day. My brother went to buy bread. He crossed the bridge to reach the shop."</li>
+    </ul>
+  </details>
+</details>
+
+<details class='topic-box'>
+  <summary class='topic-title'>Something New: The Charkha</summary>
+  <p>A short classroom drama where students discover an unfamiliar object on the teacher's table.</p>
+  
+  <details class='sub-topic'>
+    <summary><h3>The Discovery</h3></summary>
+    <p>Students notice a wooden object with one wheel, no handle, no pedals, and a thread on it. They learn from their teacher that it is a <span class='keyword'>Charkha</span> (or spinning wheel).</p>
+  </details>
+
+  <details class='sub-topic'>
+    <summary><h3>Significance of the Charkha</h3></summary>
+    <ul>
+      <li>It was very dear to <span class='keyword'>Mahatma Gandhi</span> (the Father of the Nation).</li>
+      <li>Gandhiji used it to spin thread to make cloth (like khadi).</li>
+      <li>The Charkha was used as a symbol for <strong>self-reliance</strong> and <strong>independence</strong> during the Indian Freedom movement, promoting local handicrafts.</li>
+    </ul>
+  </details>
+</details>
+
+<details class='topic-box'>
+  <summary class='topic-title'>Cultural Insights: Festivals of India</summary>
+  
+  <details class='sub-topic'>
+    <summary><h3>Phool Dei Festival</h3></summary>
+    <ul>
+      <li>A festival of flowers that marks the beginning of <span class='keyword'>Spring</span>.</li>
+      <li>Children collect different kinds of flowers and offer them to elders or place them on doorsteps.</li>
+      <li>Elders give children rice and jaggery in return.</li>
+    </ul>
+  </details>
+
+  <details class='sub-topic'>
+    <summary><h3>Sharad Poornima</h3></summary>
+    <ul>
+      <li>Celebrated on a full moon night in the month of <span class='keyword'>Ashvin</span> (September-October).</li>
+      <li>Marks the ending of the monsoon season.</li>
+    </ul>
+  </details>
+
+  <details class='sub-topic'>
+    <summary><h3>Aadi Perukku</h3></summary>
+    <ul>
+      <li>A Tamil monsoon festival celebrated in the Aadi month (July-August).</li>
+      <li>People worship the river <span class='keyword'>Cauvery</span>, and farmers pray for a good harvest.</li>
+    </ul>
+  </details>
+
+  <details class='sub-topic'>
+    <summary><h3>Pang Lhabsol</h3></summary>
+    <ul>
+      <li>A festival of <span class='keyword'>Sikkim</span> celebrated in August or September.</li>
+      <li>Mount <span class='keyword'>Kanchenjunga</span> is worshipped as a protector.</li>
+    </ul>
+  </details>
+</details>
+
+<details class='topic-box'>
+  <summary class='topic-title'>Interactive Activities</summary>
+  
+  <details class='sub-topic'>
+    <summary><h3>Matching Fruits to Trees</h3></summary>
+    <ul>
+      <li><strong>banana</strong> &rarr; banana tree</li>
+      <li><strong>coconut</strong> &rarr; coconut tree</li>
+      <li><strong>apple</strong> &rarr; apple tree</li>
+      <li><strong>grapes</strong> &rarr; grapevine</li>
+      <li><strong>mango</strong> &rarr; mango tree</li>
+    </ul>
+  </details>
+
+  <details class='sub-topic'>
+    <summary><h3>Let us speak: Classroom Phrases</h3></summary>
+    <p>What do you say when:</p>
+    <ol>
+      <li>You want to enter the classroom? &rarr; <em>"May I come in, please?"</em></li>
+      <li>You want to visit the washroom? &rarr; <em>"May I go to the washroom, please?"</em></li>
+      <li>You want to borrow a book from your friend? &rarr; <em>"Can I please borrow your book?"</em></li>
+      <li>You hurt someone by mistake? &rarr; <em>"I am sorry."</em></li>
+      <li>You need a pencil and your friend gives you a pencil? &rarr; <em>"Thank you."</em></li>
+    </ol>
+  </details>
+</details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 13</strong> of the Class 2 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "02-chapter-12-little-drops-of-water.html";
+      } else {
+        window.location.href = "../../index.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>

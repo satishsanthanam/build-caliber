@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 6 — Chapter 1: Fables and Folk Tales</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 6 — Chapter 1: Fables and Folk Tales</h1>
+
+    <details class="topic-box"><summary class="topic-title">Unit Overview: Fables and Folk Tales</summary><p>Unit 1 introduces students to the rich tradition of fables and folk tales. Through three distinct narratives—a prose story, a classic poem, and a comic strip—students explore themes of hard work, the dangers of flattery, and clever problem-solving, alongside foundational grammar and vocabulary exercises.</p></details><details class="topic-box"><summary class="topic-title">Story 1: A Bottle of Dew</summary><p>Written by <span class="keyword">Sudha Murty</span>, this story highlights the value of hard work over the pursuit of quick wealth through magic.</p><details class="sub-topic"><summary><h3>Character Analysis</h3></summary><ul><li><strong>Rama Natha:</strong> The lazy son of a rich landlord who wastes his time and wealth searching for a magic potion to turn objects into gold.</li><li><strong>Madhumati:</strong> Rama Natha's hardworking and wise wife who worries about their dwindling finances.</li><li><strong>Sage Mahipati:</strong> A wise sage who cleverly channels Rama Natha's obsession into productive agricultural labor.</li></ul></details><details class="sub-topic"><summary><h3>Plot Summary</h3></summary><p>Rama Natha is obsessed with finding a magic potion. Sage Mahipati tells him that to create it, he must plant banana trees and collect five litres of winter dew with his own hands. Rama Natha spends six years working tirelessly on his fields to collect the dew. Meanwhile, Madhumati harvests and sells the bananas, accumulating a fortune. When the dew fails to turn copper to gold, the sage reveals that Rama Natha's hard work, which created the plantation and the wealth, is the true magic potion.</p></details><details class="sub-topic"><summary><h3>Vocabulary & Key Terms</h3></summary><ul><li><span class="keyword">large tracts of land</span>: Large areas of land.</li><li><span class="keyword">potion</span>: A liquid with magical properties.</li><li><span class="keyword">give up</span>: To stop trying.</li><li><span class="keyword">dew</span>: Small drops of water that form on leaves overnight.</li><li><span class="keyword">chant</span>: To repeat or sing a word or phrase.</li><li><span class="keyword">tended</span>: Looked after or cared for.</li><li><span class="keyword">muttered</span>: Spoke in a low, quiet voice.</li><li><span class="keyword">precious</span>: Highly valuable.</li><li><span class="keyword">wisdom</span>: Deep understanding and good judgment.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Poem: The Raven and the Fox</summary><p>A classic poem by <span class="keyword">Jean de La Fontaine</span> that warns against the dangers of vanity and flattery.</p><details class="sub-topic"><summary><h3>Stanza Breakdown & Plot</h3></summary><ul><li><strong>Stanza 1:</strong> Mr. Raven sits on a tree branch holding a piece of food (<span class="keyword">morsel</span>) in his beak. Reynard the Fox spots him and wants the food.</li><li><strong>Stanza 2:</strong> The Fox flatters the Raven, praising his beauty and feathers, and suggests that if his voice is as beautiful as his looks, he would be the King of the woods.</li><li><strong>Stanza 3:</strong> Overcome with foolish pride, the Raven opens his beak to sing, forgetting his voice is just a croak. The food falls down.</li><li><strong>Stanza 4:</strong> The Fox laughs, eats the food, and advises the Raven to ignore sweet words of flattery, noting that pride is unwise.</li></ul></details><details class="sub-topic"><summary><h3>Literary Devices</h3></summary><ul><li><span class="keyword">Alliteration</span>: The repetition of consonant sounds at the beginning of words (e.g., "big beak", "song of sweet").</li><li><strong>Rhyme Scheme & Rhyming Pairs:</strong> limb-him, beak-seek, word-bird, sing-King, joke-croak, pride-eyed, know-glow, unwise-surprise.</li></ul></details><details class="sub-topic"><summary><h3>Vocabulary</h3></summary><ul><li><span class="keyword">perched</span>: Sat on a branch.</li><li><span class="keyword">morsel</span>: A small piece of food.</li><li><span class="keyword">seek</span>: To look for something.</li><li><span class="keyword">pride</span>: A feeling of being better than others.</li><li><span class="keyword">eyed</span>: Looked at with interest.</li><li><span class="keyword">limb</span>: A branch of a tree.</li><li><span class="keyword">woods</span>: A small forest area.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Story 2: Rama to the Rescue</summary><p>An entertaining folktale from Tamil Nadu presented in a comic strip format by <span class="keyword">Amar Chitra Katha</span>.</p><details class="sub-topic"><summary><h3>Plot & Clever Strategy</h3></summary><p>Rama, the village <span class="keyword">kotwal</span> (policeman), and his wife realize a thief is trying to break into their house. Instead of panicking, they play a clever game. They talk loudly about naming their future child "Rama" and how they will call out his name softly, loudly, or very loudly depending on where he is (house, yard, or street). The thief waits outside, listening to their chatter. When they scream "Rama! Rama!" very loudly, the actual village kotwal (who is also named Rama) hears his name, runs to the house, and arrests the thief.</p></details><details class="sub-topic"><summary><h3>Vocabulary</h3></summary><ul><li><span class="keyword">kotwal</span>: A village policeman (also called thaanedar).</li><li><span class="keyword">rescue</span>: To save someone from danger.</li><li><span class="keyword">wonder</span>: A feeling of surprise.</li><li><span class="keyword">yard</span>: An area outside a building.</li><li><span class="keyword">chatter</span>: Talking for a long time about unimportant things.</li><li><span class="keyword">instead</span>: In place of someone or something.</li><li><span class="keyword">closely</span>: Carefully.</li><li><span class="keyword">perhaps</span>: Maybe.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Grammar & Language Study</summary><details class="sub-topic"><summary><h3>Homophones</h3></summary><p><span class="keyword">Homophones</span> are words that sound the same but have different spellings and meanings.</p><ul><li><strong>I / eye</strong></li><li><strong>your / you're</strong> (short form of 'you are')</li><li><strong>dew / due</strong> (happening in the future)</li><li><strong>son / sun</strong></li><li><strong>one / won</strong> (past tense of win)</li><li><strong>ate / eight</strong></li><li><strong>see / sea</strong></li></ul></details><details class="sub-topic"><summary><h3>Present Progressive Tense</h3></summary><p>Used to describe actions happening at the exact moment of speaking. Structure: <strong>[am/is/are + verb + -ing]</strong>.</p><ul><li><em>Example:</em> "I <strong>am feeling</strong> so sleepy."</li><li><em>Example:</em> "Somebody <strong>is trying</strong> to get in."</li><li><em>Example:</em> "They <strong>are saying</strong> something."</li></ul></details><details class="sub-topic"><summary><h3>Adverbs</h3></summary><p><span class="keyword">Adverbs</span> provide more information about a verb, such as how, when, or where an action is performed.</p><ul><li><em>How does he listen?</em> He listens <strong>closely</strong>.</li><li><em>How does she call out?</em> She calls out <strong>softly</strong> / <strong>loudly</strong>.</li><li><em>Other examples:</em> warmly, gracefully, smoothly, beautifully, funnily, quickly, hurriedly, tirelessly, slowly, peacefully.</li></ul></details><details class="sub-topic"><summary><h3>Contractions & Apostrophes</h3></summary><p>An apostrophe (’) is used to show missing letters in contracted words, which are common in spoken English.</p><ul><li><strong>I'm</strong> (I am)</li><li><strong>It's</strong> (It is)</li><li><strong>They're</strong> (They are)</li><li><strong>What's</strong> (What is)</li><li><strong>I'll</strong> (I will)</li><li><strong>Don't</strong> (Do not)</li><li><strong>Must've</strong> (Must have)</li></ul></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 1</strong> of the Class 6 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "../../index.html";
+      } else {
+        window.location.href = "06-chapter-02-friendship.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>

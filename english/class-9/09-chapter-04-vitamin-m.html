@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 9 — Chapter 4: Vitamin-M</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 9 — Chapter 4: Vitamin-M</h1>
+
+    <details class="topic-box"><summary class="topic-title">Prose: Vitamin-M by Asha Nehemiah</summary><details class="sub-topic"><summary><h3>Plot Summary</h3></summary><p>The story revolves around <strong class="keyword">Ravi</strong>, his mother <strong class="keyword">Vidya</strong>, and his elderly grandfather (<strong class="keyword">Grandpa</strong>). Grandpa has recently moved from his quiet town house to live with them in a crowded city flat because of his failing health and a recent fall. Vidya is highly anxious and overprotective, treating Grandpa like a baby and forbidding him from going out alone. Ravi is left in charge of Grandpa during his holidays.</p><p>Grandpa, a proud former lawyer, resents this loss of independence. He tricks Ravi into letting him go out alone to get a newspaper. Feeling guilty and worried, Ravi secretly follows Grandpa at a safe distance. Ravi witnesses Grandpa enjoying forbidden pleasures: drinking sugary tea, eating bananas, and having ice cream. Grandpa then enters a barber shop. To Ravi's shock, a man wearing Grandpa's signature yellow cap boards a bus, but upon confronting him, Ravi discovers it is a stranger whom Grandpa generously gave his cap to. Ravi loses track of Grandpa and becomes frantic with worry.</p><p>Upon returning home, Ravi is relieved to find Grandpa safely asleep. Later, Grandpa playfully teases Vidya about her own memory, suggesting she needs <span class="keyword">Vitamin-M</span> (a fictional memory vitamin). He then presents Ravi with a birthday gift: a book titled <em>The Best Detective Stories</em>, with a mischievous tip on how to avoid getting fooled when trailing a suspect, revealing that he was aware of Ravi's pursuit all along.</p></details><details class="sub-topic"><summary><h3>Character Analysis</h3></summary><ul><li><strong>Grandpa:</strong> A retired lawyer who values his independence. Despite minor physical frailties, he is sharp-witted, a cunning chess player, and highly observant.</li><li><strong>Ravi:</strong> A dutiful and caring grandson. He is caught in a dilemma between obeying his mother and respecting his grandfather's dignity.</li><li><strong>Vidya (Mother):</strong> Loving but overly anxious. Her protective nature borders on patronizing, which frustrates her father.</li></ul></details><details class="sub-topic"><summary><h3>Key Vocabulary</h3></summary><ul><li><span class="keyword">frail</span>: weak and delicate.</li><li><span class="keyword">shuddered</span>: trembled with fear or disgust.</li><li><span class="keyword">poky</span>: small and cramped.</li><li><span class="keyword">forbid</span>: refuse to allow.</li><li><span class="keyword">pottering</span>: occupying oneself in a desultory but pleasant way.</li><li><span class="keyword">winced</span>: gave a slight involuntary grimace out of pain or embarrassment.</li><li><span class="keyword">jauntily</span>: in a light, self-confident, and cheerful manner.</li><li><span class="keyword">crouch</span>: adopt a position where the knees are bent and the upper body is brought forward and down.</li><li><span class="keyword">ducking</span>: lowering the head or body quickly to avoid detection.</li><li><span class="keyword">deterred</span>: discouraged or prevented from acting.</li><li><span class="keyword">confront</span>: face up to or deal with a problem or difficult situation.</li><li><span class="keyword">frantic</span>: wild or distraught with fear, anxiety, or other emotion.</li><li><span class="keyword">creases</span>: lines or wrinkles on the skin.</li><li><span class="keyword">darted</span>: cast a rapid look.</li><li><span class="keyword">trailing</span>: following or tracking someone.</li><li><span class="keyword">solemnly</span>: in a formal and dignified manner.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Poetry: I Cannot Remember My Mother by Rabindranath Tagore</summary><details class="sub-topic"><summary><h3>Poem Analysis & Stanza Breakdown</h3></summary><p>This deeply emotional poem explores a child's faint, sensory memories of his deceased mother. Rather than concrete visual images, the poet remembers his mother through sensory associations.</p><ul><li><strong>Stanza 1 (Auditory Association):</strong> While playing with his toys, a tune seems to hover over them—the melody of a lullaby his mother used to hum while rocking his cradle.</li><li><strong>Stanza 2 (Olfactory Association):</strong> In the early autumn morning, the scent of <span class="keyword">shiuli</span> flowers and the morning temple service brings back the comforting scent of his mother.</li><li><strong>Stanza 3 (Visual Association):</strong> Looking out into the vast blue sky from his bedroom window, the poet feels the peaceful, silent gaze of his mother spreading across the heavens.</li></ul></details><details class="sub-topic"><summary><h3>Literary Devices</h3></summary><ul><li><span class="keyword">Refrain</span>: The repetition of the line 
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 4</strong> of the Class 9 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "09-chapter-03-winds-of-change.html";
+      } else {
+        window.location.href = "09-chapter-05-the-world-of-limitless-possibiliti.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>

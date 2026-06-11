@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 4 — Chapter 1: Together We Can</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 4 — Chapter 1: Together We Can</h1>
+
+    <details class="topic-box"><summary class="topic-title">Poem: Together We Can</summary><p>This poem highlights the power of teamwork, unity, and mutual support. It teaches us that when we work together, we can overcome any obstacle and share both joy and success.</p><details class="sub-topic"><summary><h3>Stanza Breakdown & Key Themes</h3></summary><ul><li><strong>Unity & Strength:</strong> Standing together makes us strong and prevents us from falling.</li><li><strong>Teamwork:</strong> Working as a team helps us overcome any challenge (<span class="keyword">Teamwork can overcome anything</span>).</li><li><strong>Trust & Sharing:</strong> Win or lose, a team shares everything, built on a strong bond of trust.</li><li><strong>Shared Joy:</strong> When we work with team spirit, our hearts shine as one, bringing true joy.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Let us Think & Speak</summary><details class="sub-topic"><summary><h3>Discussion & Comprehension</h3></summary><ul><li><strong>Joining Hands:</strong> Working together brings us closer to our goals.</li><li><strong>Importance of Helping:</strong> Supporting each other ensures collective success and builds trust.</li><li><strong>Conflict Resolution:</strong> A team leader must listen to disagreeing teammates and find common ground to unite the team.</li></ul></details><details class="sub-topic"><summary><h3>Unity in Diversity</h3></summary><p>Through the conversation of Bokali and Darsana, we learn that India has diverse traditions, food, festivals, and languages, yet we stand united (<span class="keyword">Unity in Diversity</span>).</p></details></details><details class="topic-box"><summary class="topic-title">Let us Learn: Grammar & Vocabulary</summary><details class="sub-topic"><summary><h3>Collective Nouns</h3></summary><p>Words used to describe a group of people, animals, or things are called <span class="keyword">collective nouns</span>.</p><ul><li>A <span class="keyword">bundle</span> of sticks</li><li>A <span class="keyword">herd</span> of sheep</li><li>A <span class="keyword">pack</span> of wolves</li><li>A <span class="keyword">bouquet</span> of flowers</li><li>A <span class="keyword">grove</span> of trees</li><li>A <span class="keyword">swarm</span> of bees</li><li>A <span class="keyword">choir</span> of boys</li><li>A <span class="keyword">bunch</span> of keys</li></ul></details><details class="sub-topic"><summary><h3>Prepositions of Place</h3></summary><p>Words that show the position or location of something in relation to another object are called <span class="keyword">prepositions</span>.</p><ul><li><strong>Behind:</strong> The post office is <span class="keyword">behind</span> the hospital.</li><li><strong>In front of:</strong> There is a bookstore <span class="keyword">in front of</span> the Children's Park.</li><li><strong>Near:</strong> The bank is <span class="keyword">near</span> the school.</li><li><strong>Between:</strong> There is an ambulance <span class="keyword">between</span> the post office and the hospital.</li></ul></details><details class="sub-topic"><summary><h3>Teamwork in Nature</h3></summary><ul><li><strong>Honeybees:</strong> Use a <span class="keyword">waggle dance</span> to communicate the exact location of food and water sources to their hive members.</li><li><strong>Ants:</strong> Work as a team using signals to find food, defend their colony, and build complex nests.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Let us Write: Future Tense</summary><details class="sub-topic"><summary><h3>Using 'Will' for Future Events</h3></summary><p>We use the helper verb <span class="keyword">will</span> to talk about actions or events that will take place in the future.</p><ul><li><strong>Example 1:</strong> What is Lubang doing to help his friend, and what <span class="keyword">will</span> they do next?</li><li><strong>Example 2:</strong> What are the students doing, and what <span class="keyword">will</span> the teacher do next?</li></ul></details></details><details class="topic-box"><summary class="topic-title">Let us Do: Togetherness Activity</summary><details class="sub-topic"><summary><h3>Creating a Symbol of Togetherness</h3></summary><p>An activity to create a paper chain of human figures holding hands, symbolizing unity.</p><ol><li>Fold a sheet of paper multiple times.</li><li>Draw one half of a human figure (head, neck, hand, dress, leg, shoe) on the folded edge.</li><li>Cut along the drawing with scissors.</li><li>Unfold the paper gently to reveal a chain of figures holding hands.</li><li>Colour and decorate the chain.</li></ol></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 1</strong> of the Class 4 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "../../index.html";
+      } else {
+        window.location.href = "04-chapter-02-the-tinkling-bells.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>

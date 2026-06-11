@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 1 — Chapter 7: The Food we Eat</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 1 — Chapter 7: The Food we Eat</h1>
+
+    <details class="topic-box"><summary class="topic-title">Let us read: Sharing Food</summary><details class="sub-topic"><summary><h3>The Lunchbox Dialogue</h3></summary><p>During lunch break, a group of children sit together to share their food. They have brought different kinds of dishes in their lunchboxes:</p><ul><li><strong>Poori with aloo sabzi</strong></li><li><strong>Roti with sabzi</strong></li><li><strong>Fruits</strong></li><li><strong>Godok</strong></li><li><strong>Idli with chutney</strong></li><li><strong>Gobhi paratha</strong></li><li><strong>Chilla</strong></li></ul><p>When one child shares that her mother is sick and she has no lunch, her friends kindly offer to share their food with her, saying, <span class="keyword">"Have my Paratha"</span> and <span class="keyword">"Take my chilla"</span>.</p></details><details class="sub-topic"><summary><h3>Vocabulary & Sight Words</h3></summary><p><strong>New Words:</strong></p><ul><li><span class="keyword">have</span></li><li><span class="keyword">thank you</span></li><li><span class="keyword">share</span></li><li><span class="keyword">lunch</span></li><li><span class="keyword">sick</span></li><li><span class="keyword">fruits</span></li><li><span class="keyword">today</span></li><li><span class="keyword">smiling</span></li></ul><p><strong>Sight Words:</strong></p><ul><li>from</li><li>for</li><li>them</li><li>their</li><li>they</li><li>has</li><li>she</li><li>have</li></ul></details></details><details class="topic-box"><summary class="topic-title">Where Our Food Comes From</summary><details class="sub-topic"><summary><h3>Farmers and Animals</h3></summary><p>We get our food from different sources in nature, and we should be grateful to those who provide it:</p><ul><li>We eat <strong>fruits</strong> and <strong>vegetables</strong> which <span class="keyword">farmers</span> grow.</li><li>Some farmers keep <span class="keyword">beehives</span>. We get <strong>honey</strong> from <span class="keyword">bees</span>.</li><li>Some farmers keep <span class="keyword">cows</span>. We get <strong>milk</strong> from cows, which is used to make <strong>curds</strong> and <strong>butter</strong>.</li><li>We should say <span class="keyword">'thank you'</span> to farmers for their hard work.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Let us speak & Let us do</summary><details class="sub-topic"><summary><h3>Discussion Questions</h3></summary><ul><li>Where do you sit when you have lunch at school?</li><li>How do you share your food with your friends?</li><li>When you were hungry, did anyone share food with you?</li><li>Who cooks food at home?</li><li>Do you pick up your plate after a meal?</li></ul></details><details class="sub-topic"><summary><h3>Shapes of Food Items</h3></summary><p>Matching food items to their geometric shapes:</p><ul><li><strong>Roti / Chapati</strong> matches with a <span class="keyword">Circle</span>.</li><li><strong>Slice of Bread</strong> matches with a <span class="keyword">Square</span>.</li><li><strong>Samosa</strong> matches with a <span class="keyword">Triangle</span>.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Fun with Words: Syllables</summary><details class="sub-topic"><summary><h3>One-Syllable Words</h3></summary><p>These words are spoken with a single clap:</p><ul><li>man</li><li>hut</li><li>go</li><li>food</li><li>eat</li><li>come</li><li>cat</li><li>mat</li><li>sit</li></ul></details><details class="sub-topic"><summary><h3>Two-Syllable Words</h3></summary><p>These words are divided into two parts (syllables):</p><ul><li><strong>farmer</strong>: far - mer</li><li><strong>carrot</strong>: car - rot</li><li><strong>market</strong>: mar - ket</li><li><strong>brinjal</strong>: brin - jal</li><li><strong>mango</strong>: man - go</li><li><strong>breakfast</strong>: break - fast</li><li><strong>dinner</strong>: din - ner</li></ul></details></details><details class="topic-box"><summary class="topic-title">Riddles</summary><details class="sub-topic"><summary><h3>Food Riddles</h3></summary><ol><li><strong>Riddle:</strong> I am a fruit. My name is my colour. Who am I?<br/><strong>Answer:</strong> <span class="keyword">Orange</span></li><li><strong>Riddle:</strong> I am hard and brown on the outside. Soft and white inside. Who am I?<br/><strong>Answer:</strong> <span class="keyword">Coconut</span></li><li><strong>Riddle:</strong> I am a vegetable. I am pink in colour. I may also be white in colour. If you cut me, I make you cry. Who am I?<br/><strong>Answer:</strong> <span class="keyword">Onion</span></li><li><strong>Riddle:</strong> I am a fruit. I come in green or purple. I come in a bunch. Who am I?<br/><strong>Answer:</strong> <span class="keyword">Grapes</span></li></ol></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 7</strong> of the Class 1 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "01-chapter-06-fun-with-pictures.html";
+      } else {
+        window.location.href = "01-chapter-08-the-four-seasons.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>

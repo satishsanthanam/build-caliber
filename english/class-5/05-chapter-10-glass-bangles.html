@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 5 — Chapter 10: Glass Bangles</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 5 — Chapter 10: Glass Bangles</h1>
+
+    <details class="topic-box"><summary class="topic-title">Story Summary</summary><p>The story is set in the busy district of <span class="keyword">Firozabad</span> in Uttar Pradesh, famous for its rich tradition of glassware and beautiful glass bangles. <span class="keyword">Ravi</span>, a skilled glass artisan, and his family have been crafting these bangles for generations. The process of making glass bangles is highly skilled and difficult, involving heating glass in a <span class="keyword">furnace</span>, carefully shaping it, adding vibrant colors, and cooling it to perfection.</p><details class="sub-topic"><summary><h3>Ananya's Innovation</h3></summary><p>Ravi's daughter, <span class="keyword">Ananya</span>, joins him after completing her schooling. She brings a fresh perspective, wanting to blend modern design elements with traditional craftsmanship. She introduces delicate <span class="keyword">floral patterns</span> and geometric shapes. Though initially hesitant, Ravi supports her, and together they create a special collection for <span class="keyword">Diwali</span>.</p></details><details class="sub-topic"><summary><h3>Community Impact</h3></summary><p>The new collection is a massive success. The increased demand for these innovative bangles not only brings prosperity to Ravi's workshop but also generates more employment for local artisans, packers, and transporters, positively impacting the entire community.</p></details></details><details class="topic-box"><summary class="topic-title">Vocabulary & New Words</summary><ul><li><span class="keyword">clinking</span>: A sharp, ringing sound made by glass or metal objects hitting each other.</li><li><span class="keyword">artisans</span>: Skilled workers who make things by hand.</li><li><span class="keyword">furnace</span>: An enclosed chamber in which heat is produced to melt glass or metal.</li><li><span class="keyword">floral patterns</span>: Designs featuring flowers and leaves.</li><li><span class="keyword">elements</span>: Parts or features of a design or style.</li></ul></details><details class="topic-box"><summary class="topic-title">Grammar & Language Study</summary><details class="sub-topic"><summary><h3>Past Perfect Tense</h3></summary><p>The past perfect tense is used to talk about an action that took place and was completed before another action in the past.</p><p><strong>Rule:</strong> Subject + <span class="keyword">had</span> + Past Participle (Verb 3) [for the first action] ... Simple Past [for the second action].</p><ul><li><em>Example:</em> Ananya <span class="keyword">had completed</span> her schooling (First Action) before she <span class="keyword">joined</span> the factory (Second Action).</li><li><em>Example:</em> The crowd <span class="keyword">had dispersed</span> (First Action) when we <span class="keyword">reached</span> the market (Second Action).</li></ul></details><details class="sub-topic"><summary><h3>Punctuation & Capitalization</h3></summary><p>Sentences must begin with capital letters, use proper nouns (like names of people and festivals) with capital letters, and end with appropriate punctuation marks like full stops (.) or question marks (?).</p><ul><li><strong>Incorrect:</strong> did ravi like ananya's new designs at first</li><li><strong>Correct:</strong> Did Ravi like Ananya's new designs at first?</li></ul></details></details><details class="topic-box"><summary class="topic-title">Activities & Crafts of India</summary><details class="sub-topic"><summary><h3>Famous Indian Crafts</h3></summary><ul><li><span class="keyword">Madhubani painting</span>: Famous in Bihar.</li><li><span class="keyword">Paithani Saree</span>: Famous in Maharashtra.</li><li><span class="keyword">Blue pottery</span>: Famous in Jaipur, Rajasthan.</li><li><span class="keyword">Phulkari embroidery</span>: Famous in Punjab.</li></ul></details><details class="sub-topic"><summary><h3>Financial Literacy: Savings Account</h3></summary><p>A <span class="keyword">Savings Account</span> is a safe place in a bank to keep money, similar to a traditional <span class="keyword">gullak</span> (piggy bank). It offers several benefits:</p><ul><li>Meant for saving money securely.</li><li>Allows you to add or withdraw money at any time.</li><li>Earns <span class="keyword">interest</span> as a reward for keeping your savings in the bank.</li></ul></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 10</strong> of the Class 5 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "05-chapter-09-vocation.html";
+      } else {
+        window.location.href = "../../index.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>

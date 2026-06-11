@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 6 — Chapter 4: Sports and Wellness</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 6 — Chapter 4: Sports and Wellness</h1>
+
+    <details class="topic-box"><summary class="topic-title">Unit Overview: Sports and Wellness</summary><p>Unit 4 of Grade 6 English (Poorvi) focuses on the themes of sportsmanship, physical and mental well-being, and the true spirit of play. It comprises three main parts: a story about learning to enjoy games beyond winning, a poem capturing the joy of outdoor play, and an informative text on the benefits of yoga.</p></details><details class="topic-box"><summary class="topic-title">Section I: Change of Heart (Prose)</summary><details class="sub-topic"><summary><h3>Plot Summary</h3></summary><p><strong>Prabhat</strong> is a highly competitive boy who is obsessed with winning and cannot tolerate losing, even in simple games like marbles. He avoids playing any game unless he is absolutely certain of victory. However, he is genuinely good at badminton.</p><p>A new student named <strong>Surya</strong>, who is an exceptional badminton player, joins the school. During the monthly friendly matches organized by the coach, Prabhat and Surya are scheduled to play against each other, and Prabhat is made the scorekeeper. While Prabhat prepares with intense seriousness, Surya remains completely relaxed, joking and smiling.</p><p>During the match, Surya plays brilliantly but pays so little attention to the score that Prabhat secretly changes the scoreboard to cheat his way to victory. Although Prabhat wins and celebrates, he is plagued by guilt and cannot sleep. He is surprised to see that Surya is not upset about losing and happily plays basketball the next day, despite being unskilled at it.</p><p>By observing Surya, Prabhat realizes that the true purpose of playing games is enjoyment and self-improvement, not scoreboards or winning. He undergoes a profound <span class="keyword">change of heart</span>, starts playing games like hide-and-seek for fun, and earns the respect of his peers for his newfound <span class="keyword">sporting spirit</span>.</p></details><details class="sub-topic"><summary><h3>Character Analysis</h3></summary><ul><li><strong>Prabhat:</strong> Initially self-centered, insecure about losing, and willing to cheat to maintain his winning streak. He is reflective enough to feel guilty about his actions and undergoes positive character development.</li><li><strong>Surya:</strong> Joyful, highly skilled yet humble, plays for the sheer love of the game, and embodies true sportsmanship. He serves as a role model for Prabhat.</li></ul></details><details class="sub-topic"><summary><h3>Vocabulary &amp; Word Meanings</h3></summary><ul><li><span class="keyword">defeat</span>: Loss in a game or contest.</li><li><span class="keyword">on the contrary</span>: Just the opposite of what has been stated.</li><li><span class="keyword">terrible</span>: Extremely unhappy or uncomfortable.</li><li><span class="keyword">sensed</span>: Had known or felt intuitively.</li><li><span class="keyword">significant</span>: Important or noteworthy.</li><li><span class="keyword">conducted</span>: Organised and carried out.</li><li><span class="keyword">phenomenon</span>: Someone or something with remarkable or special qualities.</li><li><span class="keyword">hopeless</span>: Having absolutely no skill in a particular activity.</li><li><span class="keyword">kept a close watch on</span>: Observed someone or something very carefully.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Section II: The Winner (Poem)</summary><details class="sub-topic"><summary><h3>Poem Text &amp; Structure</h3></summary><p><em>By Georgia Heard</em></p><p>Evenings,<br>we play ball<br>next to the creek<br>in our neighbour’s field.</p><p>We run so fast<br>I<br>can’t<br>even<br>catch<br>my<br>breath.</p><p>When blue dark turns to black,<br>cold grass aches our feet,<br>trees creep close—<br>game’s over.<br>Night wins!</p></details><details class="sub-topic"><summary><h3>Thematic Analysis &amp; Literary Devices</h3></summary><ul><li><strong>Theme of Play:</strong> The poem captures the pure, unadulterated joy of children playing outdoors until the very last moment of daylight.</li><li><strong>Visual Structure:</strong> The vertical arrangement of the words <em>"I can't even catch my breath"</em> visually represents the physical sensation of panting and breathlessness.</li><li><strong>Personification:</strong><ul><li><em>"trees creep close"</em>: Gives trees the human quality of moving closer as darkness falls and shadows lengthen.</li><li><em>"Night wins!"</em>: Personifies night as an opponent in a game who ultimately ends the play, making it the "winner".</li></ul></li></ul></details></details><details class="topic-box"><summary class="topic-title">Section III: Yoga – A Way of Life</summary><details class="sub-topic"><summary><h3>Origin and Philosophy</h3></summary><p>Yoga is an ancient physical, mental, and spiritual practice that originated in India. The word is derived from the Sanskrit root <span class="keyword">yuj</span>, which means "to join" or "to unite," symbolizing the unity of mind and body, thought and action, and harmony between humans and nature.</p><p>The ancient sage <strong>Patanjali</strong> systematized these traditions in the <span class="keyword">Yoga Sutras of Patanjali</span>, describing yoga as a means to quiet the mind and free it from all <span class="keyword">distractions</span>.</p></details><details class="sub-topic"><summary><h3>Key Benefits of Yoga</h3></summary><ul><li><strong>Asanas (Postures):</strong> Help stretch and strengthen muscles, increase flexibility, <span class="keyword">endurance</span>, and balance, improving overall physical fitness.</li><li><strong>Breathing &amp; Meditation:</strong> Calm the mind, reduce stress and <span class="keyword">anxiety</span>, improve sleep quality, and enhance concentration.</li><li><strong>Immune &amp; Heart Health:</strong> Boosts the immune system, lowers blood pressure, and improves blood circulation.</li><li><strong>Weight Management:</strong> Aids in weight loss by burning calories and maintaining overall health.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Grammar &amp; Language Study</summary><details class="sub-topic"><summary><h3>Noun vs. Verb Spellings (Practice vs. Practise)</h3></summary><p>Some words have spelling variations depending on whether they are used as a noun or a verb:</p><ul><li><strong>Practice (Noun):</strong> The actual application or exercise of a skill.<br><em>Example:</em> "It is important to have a regular <strong>practice</strong> of stretching."</li><li><strong>Practise (Verb):</strong> To perform or exercise repeatedly to improve.<br><em>Example:</em> "I <strong>practise</strong> Yoga every day."</li><li><strong>Advice (Noun) vs. Advise (Verb):</strong><br><em>Noun:</em> "She gave me good <strong>advice</strong>."<br><em>Verb:</em> "The doctor <strong>advised</strong> him to rest."</li></ul></details><details class="sub-topic"><summary><h3>Past Perfect Tense</h3></summary><p>The <span class="keyword">Past Perfect Tense</span> is used to refer to an action that was completed before another action in the past (the "older" past action).</p><ul><li><strong>Structure:</strong> Had + Past Participle of the verb.</li><li><strong>Example:</strong> "Prabhat <strong>had finished</strong> his homework before going to the badminton match." (Action 1: finishing homework [Past Perfect]; Action 2: going to the match [Simple Past]).</li></ul></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 4</strong> of the Class 6 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "06-chapter-03-nurturing-nature.html";
+      } else {
+        window.location.href = "06-chapter-05-culture-and-tradition.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>

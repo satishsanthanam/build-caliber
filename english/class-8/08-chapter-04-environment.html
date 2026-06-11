@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 8 — Chapter 4: Unit 4: Environment</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 8 — Chapter 4: Unit 4: Environment</h1>
+
+    <details class="topic-box"><summary class="topic-title">Unit Overview: Environment</summary><p>Unit 4 of the Class 8 English textbook "Poorvi" focuses on the theme of <strong>Environment</strong>. Through two prose pieces and one poem, it explores humanity's deep connection with nature, the resilience of life, the cycle of agriculture, and the importance of letting the Earth rest.</p></details><details class="topic-box"><summary class="topic-title">1. The Cherry Tree (Prose) - Ruskin Bond</summary><details class="sub-topic"><summary><h3>Plot Summary</h3></summary><p>Six-year-old Rakesh lives with his grandfather on the outskirts of Mussoorie. One day, he buys cherries and plants the last seed in a soft corner of the garden. Over the years, the seed sprouts and faces numerous threats: a goat eats its leaves, a grass-cutter cuts it in half, and heavy winter snow bends it. Despite these challenges, the cherry tree survives and grows. By the time Rakesh is nine, the tree blossoms and bears its first cherries. The story highlights the resilience of nature and the joy of nurturing life.</p></details><details class="sub-topic"><summary><h3>Characters</h3></summary><ul><li><strong>Rakesh:</strong> A young, caring boy who plants the cherry seed and watches it grow with dedication and patience.</li><li><strong>Grandfather:</strong> A wise old man who guides Rakesh, telling him stories and teaching him how to care for the plant.</li></ul></details><details class="sub-topic"><summary><h3>Vocabulary & Word Meanings</h3></summary><ul><li><span class="keyword">stunted</span>: Stopped from growing to the usual size.</li><li><span class="keyword">outskirts</span>: The outer parts of a town or city.</li><li><span class="keyword">tang</span>: A strong, sharp taste.</li><li><span class="keyword">yielding</span>: Soft and giving way under pressure.</li><li><span class="keyword">haunches</span>: Sitting on the feet with legs bent.</li><li><span class="keyword">peered down</span>: Looked carefully or with difficulty.</li><li><span class="keyword">plodded</span>: Walked slowly with heavy steps.</li><li><span class="keyword">scrambled</span>: Moved quickly and with difficulty.</li><li><span class="keyword">scythe</span>: A tool with a long, curved blade for cutting grass.</li><li><span class="keyword">foliage</span>: Green leaves of a plant or tree.</li><li><span class="keyword">grumpy</span>: Bad-tempered or irritable.</li><li><span class="keyword">gazed</span>: Looked steadily with admiration or wonder.</li><li><span class="keyword">flitted</span>: Flew or moved quickly and lightly.</li><li><span class="keyword">reclining</span>: Leaning or lying back in a relaxed position.</li></ul></details></details><details class="topic-box"><summary class="topic-title">2. Harvest Hymn (Poem) - Sarojini Naidu</summary><details class="sub-topic"><summary><h3>Poem Structure & Voices</h3></summary><ul><li><strong>Men's Voices:</strong> Praise <span class="keyword">Surya</span> (the Sun God) for providing warmth and light, and <span class="keyword">Varuna</span> (the Rain God) for providing water and nourishment to the crops.</li><li><strong>Women's Voices:</strong> Praise <span class="keyword">Prithvi</span> (Mother Earth) for her fertile soil and plentiful bosom that feeds humanity.</li><li><strong>All Voices (Chorus):</strong> Praise <span class="keyword">Brahma</span> (the Creator/Lord of the Universe) as the ultimate source of life, the seed, and the harvest.</li></ul></details><details class="sub-topic"><summary><h3>Archaic Words & Meanings</h3></summary><ul><li><span class="keyword">thou</span>: You (subject)</li><li><span class="keyword">thee</span>: You (object)</li><li><span class="keyword">thy</span>: Your</li><li><span class="keyword">thine</span>: Yours</li><li><span class="keyword">art</span>: Are</li></ul></details><details class="sub-topic"><summary><h3>Poetic Devices & Symbolism</h3></summary><ul><li><span class="keyword">Imagery</span>: "The gold of our fields and the gold of our fruit" (visual imagery of a rich harvest).</li><li><span class="keyword">Alliteration</span>: "We bring thee our lives and our labours for tribute" (repetition of the 'l' sound).</li><li><span class="keyword">Metaphor</span>: "Thou art the Seed and the Scythe of our harvests" (comparing the divine to the beginning and end of life).</li><li><span class="keyword">Personification</span>: "Sweet and omnipotent mother, O Earth!" (treating the Earth as a mother).</li></ul></details></details><details class="topic-box"><summary class="topic-title">3. Waiting for the Rain (Prose) - Kamakshi Balasubramanian</summary><details class="sub-topic"><summary><h3>Plot Summary</h3></summary><p>Velu, a hardworking farmer, is devastated by a severe drought that leaves his fields dry, cracked, and barren. Frustrated and dejected, he seeks answers from the weather office but finds no hope. While resting under a large tree, he meets an old woman. She gently explains that the drought is Nature's way of letting the Earth rest after years of continuous cultivation. Velu realizes the wisdom in her words. Soon after, a cool breeze blows, clouds gather, and it begins to rain, bringing joy back to Velu.</p></details><details class="sub-topic"><summary><h3>Key Concept: Fallowing</h3></summary><p><span class="keyword">Fallowing</span> is a sustainable land management practice where agricultural land is left unsown for one or more vegetative cycles. This allows the soil to recover its nutrients, retain moisture, and control pests naturally.</p></details><details class="sub-topic"><summary><h3>Vocabulary & Word Meanings</h3></summary><ul><li><span class="keyword">crimson</span>: Deep red colour.</li><li><span class="keyword">crusted</span>: Formed a hard outer layer.</li><li><span class="keyword">forlorn</span>: Sad and neglected.</li><li><span class="keyword">consultations</span>: Discussions or meetings for advice.</li><li><span class="keyword">dejected</span>: Sad and disappointed.</li><li><span class="keyword">bitterly</span>: Hurtfully or with anger.</li><li><span class="keyword">ceaseless</span>: Continuous and non-stopping.</li></ul></details></details><details class="topic-box"><summary class="topic-title">4. Grammar & Language Skills</summary><details class="sub-topic"><summary><h3>Tenses (Past Forms)</h3></summary><ul><li><strong>Simple Past Tense:</strong> Used for completed actions in the past. <em>Example:</em> "Rakesh bought a bunch of cherries."</li><li><strong>Past Progressive Tense:</strong> Used for ongoing actions in the past. <em>Example:</em> "Rakesh was looking for Grandfather."</li><li><strong>Past Perfect Tense:</strong> Used for an action completed before another action in the past. <em>Example:</em> "The tree had grown another foot before he returned."</li></ul></details><details class="sub-topic"><summary><h3>Determiners</h3></summary><p>Determiners are words placed before nouns to clarify what the noun refers to.</p><ul><li><strong>Articles:</strong> a, an, the</li><li><strong>Demonstrative:</strong> this, that, these, those</li><li><strong>Possessive:</strong> my, our, your, his, her, its, their</li><li><strong>Definite Numeral:</strong> one, two, three, etc.</li><li><strong>Indefinite Numeral:</strong> some, any, no, all, much, many, few, several, little</li><li><strong>Distributive:</strong> each, every, either, neither</li></ul></details><details class="sub-topic"><summary><h3>Homophones</h3></summary><p>Words that sound the same but have different spellings and meanings.</p><ul><li><span class="keyword">weather</span> (atmospheric conditions) vs. <span class="keyword">whether</span> (expressing a doubt or choice)</li><li><span class="keyword">piece</span> (a portion) vs. <span class="keyword">peace</span> (tranquility)</li><li><span class="keyword">plain</span> (flat land) vs. <span class="keyword">plane</span> (airplane/flat surface)</li><li><span class="keyword">rain</span> (precipitation) vs. <span class="keyword">reign</span> (rule of a monarch)</li></ul></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 4</strong> of the Class 8 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "08-chapter-03-mystery-and-magic.html";
+      } else {
+        window.location.href = "08-chapter-05-science-and-curiosity.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>

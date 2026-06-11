@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 3 — Chapter 7: The Big Laddoo</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 3 — Chapter 7: The Big Laddoo</h1>
+
+    <details class="topic-box"><summary class="topic-title">Unit 3: Good Food (Picture Reading)</summary><p>This introductory section uses a sequence of pictures to illustrate the journey of food from the field to our plates.</p><details class="sub-topic"><summary><h3>The Journey of Wheat</h3></summary><ul><li><strong>Picture 1 (Harvesting):</strong> Farmers harvesting wheat in the field and loading it onto a truck.</li><li><strong>Picture 2 (Milling):</strong> The wheat is taken to a flour mill where it is ground into <span class="keyword">fresh atta</span> (wheat flour) and packed into sacks.</li><li><strong>Picture 3 (Selling):</strong> Sacks of wheat flour are delivered to a <span class="keyword">grocery store</span> where customers buy them.</li><li><strong>Picture 4 (Cooking):</strong> Family members working together in the kitchen to knead dough and roll out <span class="keyword">chapattis</span>.</li><li><strong>Picture 5 (Eating):</strong> A young girl happily eating fresh chapattis with her meal.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Chapter 7: The Big Laddoo (Poem)</summary><details class="sub-topic"><summary><h3>Poem Recitation</h3></summary><p>If all the laddoos were one Laddoo<br>Oh! What a BIG Laddoo it would be!<br>If all the children were one child<br>Oh! What a BIG child that would be!<br>If all the seas were one sea<br>Oh! What a BIG sea it would be!<br>Then if the BIG child<br>picked the BIG Laddoo<br>And threw it into the BIG sea<br>Oh! What a BIG SPLISH-SPLASH it would be!</p></details><details class="sub-topic"><summary><h3>New Vocabulary</h3></summary><ul><li><span class="keyword">sea</span>: A large body of saltwater.</li><li><span class="keyword">splish-splash</span>: The sound made by something striking or falling into water.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Let us Think & Speak</summary><details class="sub-topic"><summary><h3>Comprehension & Discussion</h3></summary><ul><li>Reflecting on the size of laddoos and sharing experiences of eating them.</li><li>Categorizing round objects into <strong>"That can be eaten"</strong> (e.g., laddoo, orange, apple) and <strong>"That cannot be eaten"</strong> (e.g., ball, marble, plate).</li></ul></details><details class="sub-topic"><summary><h3>Sensory Story: Jithu and Meena</h3></summary><p>Meena, who cannot see properly, is gifted a box of mixed sweets by her friend Jithu for her birthday. She is able to identify the <span class="keyword">laddoo</span> instantly by using her sense of touch and feel, showcasing how our other senses help us perceive the world.</p></details></details><details class="topic-box"><summary class="topic-title">Language & Grammar Exercises</summary><details class="sub-topic"><summary><h3>Phonics & Blends</h3></summary><p>Practice framing sentences with words containing consonant blends:</p><ul><li><strong>'pl' blend:</strong> <span class="keyword">play</span>, <span class="keyword">plum</span></li><li><strong>'cl' blend:</strong> <span class="keyword">cloud</span>, <span class="keyword">clock</span></li><li><strong>'bl' blend:</strong> <span class="keyword">blue</span>, <span class="keyword">blanket</span></li></ul></details><details class="sub-topic"><summary><h3>Gender Matching (Animals)</h3></summary><p>Matching male animals to their female counterparts:</p><ul><li><span class="keyword">cock</span> - <span class="keyword">hen</span></li><li><span class="keyword">lion</span> - <span class="keyword">lioness</span></li><li><span class="keyword">peacock</span> - <span class="keyword">peahen</span></li><li><span class="keyword">horse</span> - <span class="keyword">mare</span></li><li><span class="keyword">bull</span> - <span class="keyword">cow</span></li><li><span class="keyword">drake</span> - <span class="keyword">duck</span></li></ul></details></details><details class="topic-box"><summary class="topic-title">Let us Explore: Float or Sink</summary><p>An interactive science experiment to understand the concepts of <span class="keyword">light</span> and <span class="keyword">heavy</span> objects by placing them in water:</p><ul><li><strong>Objects that float:</strong> A piece of paper, a green leaf, a feather, a pencil.</li><li><strong>Objects that sink:</strong> A small stone, an eraser, a spoon.</li></ul></details><details class="topic-box"><summary class="topic-title">Festivals & Traditional Dishes</summary><details class="sub-topic"><summary><h3>The Significance of Khichdi</h3></summary><p><span class="keyword">Khichdi</span> is a wholesome, traditional dish cooked with rice and lentils. It is prepared during festivals to keep us connected with nature and culture, bringing families together in joy.</p></details><details class="sub-topic"><summary><h3>The Harvest Festival</h3></summary><p>Celebrated to thank the Sun God for a bountiful harvest, this festival is known by various regional names across India:</p><ul><li><strong>Sankranti / Makara Sankranti</strong></li><li><strong>Pongal</strong> (Tamil Nadu)</li><li><strong>Lohri</strong> (Punjab)</li><li><strong>Bihu</strong> (Assam)</li><li><strong>Maghi Sankrant</strong></li><li><strong>Sakraat</strong></li><li><strong>Magha Saaji</strong></li></ul></details><details class="sub-topic"><summary><h3>Regional Variations of Khichdi</h3></summary><ul><li><strong>Gujarat:</strong> Gujarati khichdi</li><li><strong>Tamil Nadu:</strong> Pongal</li><li><strong>Bihar:</strong> Bihari khichdi</li><li><strong>Rajasthan:</strong> Bajra khichdi</li><li><strong>West Bengal:</strong> Kichuri</li><li><strong>Karnataka:</strong> Bisi bele bhat</li><li><strong>Kashmir:</strong> Moong khetchir</li></ul></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 7</strong> of the Class 3 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "03-chapter-06-paper-boats.html";
+      } else {
+        window.location.href = "03-chapter-08-thank-god.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>

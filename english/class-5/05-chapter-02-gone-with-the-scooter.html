@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 5 — Chapter 2: Gone with the Scooter</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 5 — Chapter 2: Gone with the Scooter</h1>
+
+    <details class="topic-box"><summary class="topic-title">Story Summary</summary><p><strong>Gone with the Scooter</strong> is a cheerful story about a young boy named Gopi and his friends. On a hot summer afternoon, Gopi hears a rustling sound and a thud in his garden. Upon searching, he finds a white hockey ball hidden under a heap of dry leaves. Determined to find its rightful owner, Gopi takes the ball to the local playground in the evening where his friends gather to play hockey.</p><details class="sub-topic"><summary><h3>Key Events</h3></summary><ul><li><strong>The Discovery:</strong> Gopi finds a white hockey ball in his garden and decides not to keep it for himself.</li><li><strong>The Inquiry:</strong> At the playground, Gopi asks his friends if anyone lost a ball. Manoj mentions losing one four months ago, and Ramani tries to claim it without knowing its color.</li><li><strong>The Game:</strong> The children begin playing hockey. Gopi passes to Deepak, who drives it to Ramani. Ramani dribbles and passes to Jay.</li><li><strong>The Climax:</strong> Jay hits the ball so hard that it flies over the gate and lands directly into the basket of a passing scooter. The unaware scooterist drives away with the ball, leaving the children laughing at the unexpected turn of events.</li></ul></details><details class="sub-topic"><summary><h3>Characters</h3></summary><ul><li><strong>Gopi:</strong> An honest and active boy who finds the ball and seeks its owner.</li><li><strong>Manoj:</strong> Gopi's friend who plays as the goalkeeper.</li><li><strong>Ramani:</strong> A playful friend who tries to claim the ball.</li><li><strong>Deepak:</strong> A friend who boasts about his new football.</li><li><strong>Jay:</strong> The powerful hitter who accidentally sends the ball into the scooter's basket.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Vocabulary & Word Meanings</summary><p>Learn the key vocabulary words introduced in this chapter:</p><ul><li><span class="keyword">Dribble</span>: Moving a ball with small taps while playing hockey or football.</li><li><span class="keyword">Rustling</span>: A soft crackling sound, like leaves moving in the wind.</li><li><span class="keyword">Grab</span>: To take something with a sudden, quick movement.</li><li><span class="keyword">Boast</span>: To speak too proudly about oneself or one's possessions.</li><li><span class="keyword">Unaware</span>: Not knowing or realizing something.</li><li><span class="keyword">Thud</span>: A dull, heavy sound made by a heavy object falling.</li></ul></details><details class="topic-box"><summary class="topic-title">Grammar & Language Study</summary><details class="sub-topic"><summary><h3>Conjunctions</h3></summary><p>Conjunctions are linking words used to connect sentences or clauses. Use the following words to complete stories or sentences:</p><ul><li><span class="keyword">since</span></li><li><span class="keyword">however</span></li><li><span class="keyword">because</span></li><li><span class="keyword">when</span></li></ul></details><details class="sub-topic"><summary><h3>Adverbs of Frequency vs. Adverbs of Time</h3></summary><p>Adverbs modify verbs by telling us how often or when an action happens.</p><ul><li><strong>Adverbs of Frequency (How many times):</strong> Words like <span class="keyword">usually</span>, <span class="keyword">often</span>, <span class="keyword">regularly</span>, <span class="keyword">always</span>, and <span class="keyword">never</span>.</li><li><strong>Adverbs of Time (When):</strong> Words like <span class="keyword">today</span>, <span class="keyword">immediately</span>, <span class="keyword">yesterday</span>, and <span class="keyword">now</span>.</li></ul></details><details class="sub-topic"><summary><h3>Compound Words</h3></summary><p>Compound words are formed by joining two distinct words together to create a new meaning:</p><ul><li><strong>sun</strong> + <strong>rise</strong> = <span class="keyword">sunrise</span></li><li><strong>sun</strong> + <strong>set</strong> = <span class="keyword">sunset</span></li><li><strong>sun</strong> + <strong>shine</strong> = <span class="keyword">sunshine</span></li><li><strong>sun</strong> + <strong>flower</strong> = <span class="keyword">sunflower</span></li><li><strong>foot</strong> + <strong>ball</strong> = <span class="keyword">football</span></li><li><strong>base</strong> + <strong>ball</strong> = <span class="keyword">baseball</span></li><li><strong>volley</strong> + <strong>ball</strong> = <span class="keyword">volleyball</span></li><li><strong>basket</strong> + <strong>ball</strong> = <span class="keyword">basketball</span></li></ul></details><details class="sub-topic"><summary><h3>Phonics: Long vs. Short 'oo' Sounds</h3></summary><p>Though words may contain the double 'o' spelling, their pronunciation can differ:</p><ul><li><strong>Short 'oo' Sound:</strong> Hood, Foot, Shook, Look, Book, Took.</li><li><strong>Long 'oo' Sound:</strong> School, Maroon, Scooter, Bloom, Food, Moon.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Activities & Exercises</summary><details class="sub-topic"><summary><h3>Let us Think (Comprehension)</h3></summary><ol><li>What was Gopi doing on the veranda? (Reading a book)</li><li>What sound did Gopi hear before going to the garden? (A rustling sound and a thud)</li><li>Describe Gopi's search: He searched the thick grass near the fence, looked among the bushes, and finally found the ball on a heap of dry leaves.</li></ol></details><details class="sub-topic"><summary><h3>Let us Do: Tigers and Goats Board Game</h3></summary><p>A traditional strategy board game played with pebbles on a drawn grid:</p><ul><li>Requires at least two players: one representing 'Tigers' (3 big pebbles) and one representing 'Goats' (13 smaller pebbles).</li><li>The Tiger's objective is to 'capture' (jump over) 5 goats.</li><li>The Goat's objective is to surround and trap all 3 tigers so they cannot move.</li></ul></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 2</strong> of the Class 5 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "05-chapter-01-papas-spectacles.html";
+      } else {
+        window.location.href = "05-chapter-03-the-rainbow.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>

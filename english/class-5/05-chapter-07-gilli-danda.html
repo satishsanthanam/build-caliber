@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 5 — Chapter 7: Gilli Danda</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 5 — Chapter 7: Gilli Danda</h1>
+
+    <details class="topic-box">
+  <summary class="topic-title">Poem: Gilli Danda</summary>
+  <p>A joyful poem celebrating the traditional outdoor game of <span class="keyword">Gilli Danda</span>, played with a long stick (danda) and a small wooden peg (gilli).</p>
+  <details class="sub-topic">
+    <summary><h3>Poem Recitation</h3></summary>
+    <p>
+      In the playground, we gather around,<br>
+      With a stick and a small <em>gilli</em> to throw,<br>
+      <em>Gilli Danda</em>, our game is so sound!<br>
+      We play with joy, watch it go!<br>
+    </p>
+    <p>
+      One, two, three, swing and hit,<br>
+      With our friends, we never quit!<br>
+      With every swing, we feel so free,<br>
+      Oh, what fun it is, you see!<br>
+    </p>
+    <p>
+      The small <em>gilli</em>, up high it flies,<br>
+      Underneath the bright blue skies.<br>
+      Laughing, playing, having fun,<br>
+      Under the golden rays of the sun!<br>
+    </p>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>New Vocabulary</h3></summary>
+    <ul>
+      <li><span class="keyword">gather</span>: To come together in one place.</li>
+      <li><span class="keyword">gilli</span>: A small, tapered wooden peg used in the game of Gilli Danda.</li>
+      <li><span class="keyword">quit</span>: To stop doing something; to give up.</li>
+      <li><span class="keyword">underneath</span>: Directly below or beneath something.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Let us Think: Comprehension & Discussion</summary>
+  <details class="sub-topic">
+    <summary><h3>A. Answer the following questions</h3></summary>
+    <ol>
+      <li>Which game does the poem mention? What are the things needed to play this game?</li>
+      <li>According to the poem, how do the players feel while playing <em>Gilli Danda</em>?</li>
+      <li>What happens to the tiny <em>gilli</em> when the stick strikes it?</li>
+      <li>Which lines tell us that the children are playing the game outside?</li>
+      <li>What is the meaning of the line &ldquo;our game is so sound&rdquo;?</li>
+      <li>Which word in the poem shows &lsquo;happiness&rsquo;?</li>
+    </ol>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>B. Think and discuss</h3></summary>
+    <ol>
+      <li>Do you enjoy playing outdoors? Why or why not?</li>
+      <li>Name five outdoor games that you enjoy playing with your friends.</li>
+      <li>Imagine you are the small <em>gilli</em>. What would you see while flying up in the sky?</li>
+    </ol>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Let us Learn: Grammar & Vocabulary</summary>
+  <details class="sub-topic">
+    <summary><h3>Prefixes: un- and re-</h3></summary>
+    <p>A <span class="keyword">prefix</span> is a letter or group of letters added to the beginning of a word to change its meaning.</p>
+    <ul>
+      <li><strong>Un-</strong> means <em>not</em> (e.g., Un + happy = <span class="keyword">unhappy</span>).</li>
+      <li><strong>Re-</strong> means <em>again</em> (e.g., Re + draw = <span class="keyword">redraw</span>).</li>
+    </ul>
+    <p><strong>Exercise:</strong> Add correct prefixes to create new words and write their meanings:</p>
+    <ul>
+      <li>common &rarr; <span class="keyword">uncommon</span> (Something that is not easily found)</li>
+      <li>write &rarr; <span class="keyword">rewrite</span> (To write again)</li>
+      <li>aware &rarr; <span class="keyword">unaware</span> (Not aware)</li>
+      <li>comfortable &rarr; <span class="keyword">uncomfortable</span> (Not comfortable)</li>
+      <li>arrange &rarr; <span class="keyword">rearrange</span> (To arrange again)</li>
+      <li>think &rarr; <span class="keyword">rethink</span> (To think again)</li>
+    </ul>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>Abstract Nouns</h3></summary>
+    <p>An <span class="keyword">abstract noun</span> refers to something that has no physical shape and cannot be seen, touched, tasted, heard, or smelt. They represent feelings, thoughts, or ideas.</p>
+    <ul>
+      <li><strong>Concrete Nouns (Can touch/see):</strong> leaf, sun, shirt, toffee, rose, ice cube, sugar, hat, chessboard, football, deer, tree, cat, spoon, river, cup, tiger.</li>
+      <li><strong>Abstract Nouns (Cannot touch/see):</strong> <span class="keyword">joy</span>, <span class="keyword">anger</span>, <span class="keyword">truth</span>, <span class="keyword">lie</span>, <span class="keyword">happiness</span>, <span class="keyword">fear</span>.</li>
+    </ul>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>Possessive Pronouns</h3></summary>
+    <p><span class="keyword">Possessive pronouns</span> indicate ownership or relationship between people and things. Examples include: <em>theirs, mine, yours, his, hers, ours</em>.</p>
+    <ol>
+      <li>These crayons belong to me. These are <span class="keyword">mine</span>.</li>
+      <li>The toy train belongs to Mudit. The toy train is <span class="keyword">his</span>.</li>
+      <li>The house with the red roof belongs to my cousins. The house is <span class="keyword">theirs</span>.</li>
+      <li>The little girl has bought a set of bowls to play <em>Jal Tarang</em>. The bowls belong to her. The bowls are <span class="keyword">hers</span>.</li>
+      <li>We have a cow with large brown eyes. The cow is <span class="keyword">ours</span>.</li>
+      <li>You should take better care of your things. After all, they belong to you. The things are <span class="keyword">yours</span>.</li>
+    </ol>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Let us Speak & Listen</summary>
+  <details class="sub-topic">
+    <summary><h3>Speaking: How to Play Gilli Danda</h3></summary>
+    <ul>
+      <li>It is played with two sticks&mdash;one short (<span class="keyword">gilli</span>) and one long (<span class="keyword">danda</span>).</li>
+      <li>One of the players hits the <em>gilli</em> with the <em>danda</em> to make it fly in the air.</li>
+      <li>Other players try to catch the <em>gilli</em>.</li>
+    </ul>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>Listening Actions</h3></summary>
+    <ul>
+      <li>&ldquo;Swing and hit&rdquo;: Pretend to swing an invisible danda.</li>
+      <li>&ldquo;Watch it go!&rdquo;: Raise your arms as if watching the gilli fly.</li>
+      <li>&ldquo;Laughing, playing&rdquo;: Giggle or clap hands.</li>
+      <li>&ldquo;Shade your eyes from the sun&rdquo;: Keep your hands above your eyebrows.</li>
+    </ul>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Let us Write: Exercises</summary>
+  <details class="sub-topic">
+    <summary><h3>A. Rearranging Questions</h3></summary>
+    <p>Rearrange the words to form proper questions starting with a capital letter and ending with a question mark:</p>
+    <ul>
+      <li>are cows where the &rarr; <strong>Where are the cows?</strong></li>
+      <li>is your house which &rarr; <strong>Which is your house?</strong></li>
+      <li>it time is what &rarr; <strong>What time is it?</strong></li>
+      <li>the blue why sky is &rarr; <strong>Why is the sky blue?</strong></li>
+      <li>the many are how birds on tree &rarr; <strong>How many birds are on the tree?</strong></li>
+      <li>you my when return will book &rarr; <strong>When will you return my book?</strong></li>
+      <li>walk you to do school &rarr; <strong>Do you walk to school?</strong></li>
+      <li>a can fly kite you &rarr; <strong>Can you fly a kite?</strong></li>
+    </ul>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>B. Double Letters</h3></summary>
+    <p>Identify words containing double letters:</p>
+    <ul>
+      <li><strong>tt:</strong> kitten, button, butter</li>
+      <li><strong>pp:</strong> apple, happy, puppy</li>
+      <li><strong>ee:</strong> green, feet, tree</li>
+      <li><strong>mm:</strong> summer, hammer, mummy</li>
+      <li><strong>bb:</strong> bubble, rabbit, cabbage</li>
+      <li><strong>rr:</strong> parrot, cherry, worry</li>
+      <li><strong>nn:</strong> funny, dinner, runner</li>
+      <li><strong>dd:</strong> ladder, puddle, sudden</li>
+      <li><strong>ss:</strong> glass, grass, class</li>
+      <li><strong>gg:</strong> egg, giggle, struggle</li>
+    </ul>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>C. Odd Word Out (Antonyms/Synonyms)</h3></summary>
+    <p>Identify the word that is different in meaning from the underlined word:</p>
+    <ol>
+      <li>Miibi went to the market and bought an <u>expensive</u> toy. (precious, costly, <strong>cheap</strong>)</li>
+      <li>Anju and Farida <u>forgot</u> to buy popcorn and juice for the picnic. (<strong>remembered</strong>, revised, ignored)</li>
+      <li>The moon <u>continued</u> to count the stars night after night. (<strong>stopped</strong>, began, started)</li>
+      <li>I <u>always</u> complete my homework on time. (often, <strong>never</strong>, sometimes)</li>
+      <li>There was <u>excitement</u> in the shop among the toys. (interest, enjoyment, <strong>boredom</strong>)</li>
+      <li>Badal <u>nervously</u> told his mother about the dog he found on his way home. (sadly, joyfully, <strong>confidently</strong>)</li>
+      <li>Everyone liked the <u>vibrant</u> colours of the bangles. (<strong>dull</strong>, bright, shiny)</li>
+      <li>The fort is known for its <u>unique</u> style of construction. (different, unusual, <strong>common</strong>)</li>
+    </ol>
+  </details>
+</details>
+
+<details class="topic-box">
+  <summary class="topic-title">Let us Do: Craft & Fun</summary>
+  <details class="sub-topic">
+    <summary><h3>Making a Gilli Danda from Waste Material</h3></summary>
+    <p><strong>Things required:</strong> A thick firm twig (for danda), a small thick twig (for gilli), a rough stone, and colors/paper for decoration.</p>
+    <p><strong>Steps:</strong></p>
+    <ol>
+      <li>Find a thick, firm twig for the <em>danda</em>.</li>
+      <li>Use a rough stone to smoothen the surface of the stick.</li>
+      <li>Find a small twig (3-4 inches long) and sharpen both ends using a rough stone to shape the <em>gilli</em>.</li>
+      <li>Decorate both pieces with paint or colored paper.</li>
+    </ol>
+  </details>
+  <details class="sub-topic">
+    <summary><h3>Just for Fun: Riddle</h3></summary>
+    <p><strong>Riddle:</strong> It belongs to you. But, your friends use it more than you. What is it?</p>
+    <p><strong>Answer:</strong> Your name!</p>
+  </details>
+</details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 7</strong> of the Class 5 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "05-chapter-06-what-a-tank.html";
+      } else {
+        window.location.href = "05-chapter-08-the-decision-of-the-panchayat.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>

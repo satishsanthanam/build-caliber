@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 4 — Chapter 7: Fit Body, Fit Mind, Fit Nation</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 4 — Chapter 7: Fit Body, Fit Mind, Fit Nation</h1>
+
+    <details class="topic-box"><summary class="topic-title">Poem: Fit Body, Fit Mind, Fit Nation</summary><p>This cheerful poem highlights the joy of physical activities, sports, music, and play among children, emphasizing how these activities keep both the body and mind fit.</p><details class="sub-topic"><summary><h3>Stanza Breakdown</h3></summary><ul><li><strong>Active boy Anant:</strong> Plays hockey even on rocky ground.</li><li><strong>Graceful girl Geeta:</strong> Practices skating and learns daily from her mistakes.</li><li><strong>Little boy Lhamo:</strong> Proudly plays the guitar while his friend joins with a sitar.</li><li><strong>Swift girl Shabana:</strong> Celebrates her fastest pace after winning a cycle race.</li><li><strong>Musical Meena:</strong> Sings in rhythm.</li><li><strong>Cheerful Children:</strong> Playing is a joy for every girl and boy everywhere.</li></ul></details><details class="sub-topic"><summary><h3>New Words & Vocabulary</h3></summary><ul><li><span class="keyword">mistakes</span>: Errors or things done incorrectly.</li><li><span class="keyword">proudly</span>: Feeling happy and satisfied about something you did well.</li><li><span class="keyword">pace</span>: Speed of movement or activity.</li><li><span class="keyword">rhythm</span>: A strong, regular, repeated pattern of movement or sound.</li><li><span class="keyword">cheerful</span>: Happy and optimistic.</li><li><span class="keyword">swift</span>: Moving or capable of moving with great speed; fast.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Let us Think (Comprehension & Discussion)</summary><details class="sub-topic"><summary><h3>A. Character Descriptions</h3></summary><p>Observe how children are described with adjectives starting with the same letter as their names:</p><ul><li><span class="keyword">Active</span> Boy Anant</li><li><span class="keyword">Graceful</span> Girl Geeta</li><li><em>Activity:</em> Write one quality (adjective) that starts with the same letter as your own name.</li></ul></details><details class="sub-topic"><summary><h3>B. Answer the Following</h3></summary><ol><li>Which game does Anant play? <br><strong>Answer:</strong> Hockey.</li><li>Which musical instruments are mentioned in the poem? <br><strong>Answer:</strong> Guitar and Sitar.</li><li>Who among the children mentioned in the poem likes moving in rhythm? <br><strong>Answer:</strong> Musical Meena (singing in rhythm).</li><li>Who learns every day from the mistakes done during skating? <br><strong>Answer:</strong> Graceful girl Geeta.</li></ol></details><details class="sub-topic"><summary><h3>C. Think and Discuss</h3></summary><ul><li>Which game do you generally play in school?</li><li>What do you enjoy more—playing an indoor game or an outdoor game?</li><li>Which musical instrument do you like to play?</li><li>Have you seen musical instruments? If yes, name them.</li><li>Which dance form do you like the most? Name a famous dance from your region/district.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Let us Learn (Grammar: Adjectives)</summary><details class="sub-topic"><summary><h3>What is an Adjective?</h3></summary><p>A word that tells you more about a noun is known as an <span class="keyword">adjective</span> (or describing word).</p><p><em>Examples:</em> Blue sky, hardworking children, green leaves, pebbled road, healthy vegetables.</p></details><details class="sub-topic"><summary><h3>A. Matching Adjectives with Nouns</h3></summary><ul><li><strong>blue</strong> &rarr; sky</li><li><strong>hardworking</strong> &rarr; children</li><li><strong>green</strong> &rarr; leaves</li><li><strong>pebbled</strong> &rarr; road</li><li><strong>healthy</strong> &rarr; vegetables</li></ul></details><details class="sub-topic"><summary><h3>B. Grammar Exercises</h3></summary><p><strong>1. Fill in the blanks with naming words (nouns) that suit the describing word:</strong></p><ul><li>happy [child / family]</li><li>red [apple / rose]</li><li>fierce [lion / tiger]</li><li>beautiful [flower / painting]</li></ul><p><strong>2. Add describing words (adjectives) for the following:</strong></p><ul><li>[sweet / ripe] mangoes</li><li>[cute / crying] baby</li><li>[great / strong] nation</li><li>[proud / happy] winner</li></ul></details></details><details class="topic-box"><summary class="topic-title">Let us Do & Write (Activities & Exercises)</summary><details class="sub-topic"><summary><h3>Let us Do: Cooking Activity</h3></summary><p>Organise a <strong>"Preparing a Dish Without Fire"</strong> activity in your class with the assistance of your teacher.</p></details><details class="sub-topic"><summary><h3>A. Double Letters Exercise</h3></summary><p>Fill in the blanks with words containing double letters based on the picture of a parrot:</p><ul><li>This is my pet <span class="keyword">parrot</span>.</li><li>It loves to eat <span class="keyword">chillies</span>,</li><li>which are <span class="keyword">green</span> in colour.</li></ul><p><em>Kitchen Search Activity:</em> Find five things in your kitchen with double letters in their spelling (e.g., spoon, butter, pepper, apple, coffee).</p></details><details class="sub-topic"><summary><h3>C. Rhyming Words</h3></summary><p>Find and write the rhyming words from the poem:</p><ul><li><strong>Hockey</strong> &rarr; Rocky</li><li><strong>Skates</strong> &rarr; Mistakes</li><li><strong>Guitar</strong> &rarr; Sitar</li><li><strong>Race</strong> &rarr; Pace</li><li><strong>Joy</strong> &rarr; Boy</li></ul></details><details class="sub-topic"><summary><h3>D. Vocabulary Matching</h3></summary><p>Match the words with their meanings:</p><ul><li>Feeling happy about something you did well &rarr; <span class="keyword">Proudly</span></li><li>Courageous and bold &rarr; <span class="keyword">Brave</span></li><li>Uneven or full of difficulties &rarr; <span class="keyword">Rocky</span></li><li>Very pleasing or enjoyable &rarr; <span class="keyword">Delightful</span></li><li>Errors or things done incorrectly &rarr; <span class="keyword">Mistakes</span></li></ul></details></details><details class="topic-box"><summary class="topic-title">Let us Explore</summary><details class="sub-topic"><summary><h3>The Paralympic Games</h3></summary><p>Find out about the <strong>"Paralympic Games"</strong>. Share your points with the class, focusing on how athletes with disabilities showcase incredible determination, strength, and sportsmanship.</p></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 7</strong> of the Class 4 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "04-chapter-06-braille.html";
+      } else {
+        window.location.href = "04-chapter-08-the-lagori-champions.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>

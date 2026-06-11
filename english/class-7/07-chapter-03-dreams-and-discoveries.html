@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 7 — Chapter 3: Dreams and Discoveries</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 7 — Chapter 3: Dreams and Discoveries</h1>
+
+    <details class="topic-box"><summary class="topic-title">Unit Overview &amp; Pre-reading Activities</summary><p>Unit 3, titled <strong>Dreams and Discoveries</strong>, explores the themes of imagination, scientific curiosity, travel, and the spirit of invention through prose, poetry, and travelogues.</p><details class="sub-topic"><summary><h3>Pre-reading Riddles &amp; Word Grid</h3></summary><ul><li><span class="keyword">Zero</span>: A concept invented by ancient Indian mathematicians that adds value to numbers and is essential for modern digital calculations.</li><li><span class="keyword">Yoga</span>: An ancient Indian practice focused on physical and mental well-being, now popular globally.</li><li><span class="keyword">Inventor Qualities</span>: The introductory word grid highlights key traits of an inventor: <span class="keyword">Creativity</span>, <span class="keyword">Curiosity</span>, <span class="keyword">Risk-taking</span>, <span class="keyword">Determination</span>, and <span class="keyword">Imagination</span>.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Prose: My Brother’s Great Invention</summary><p>Written by <strong>Anita Rau Badami</strong>, this humorous story follows the antics of a young, aspiring inventor named Anand and his sister Anita.</p><details class="sub-topic"><summary><h3>Character Analysis</h3></summary><ul><li><strong>Anand</strong>: A thirteen-year-old boy who thinks he is a scientist. He is creative, curious, and confident, but his inventions often cause chaos.</li><li><strong>Anita</strong>: Anand's fourteen-year-old sister who acts as the sensible, skeptical narrator. She tries to avoid responsibility for Anand's chaotic experiments.</li><li><strong>Papa &amp; Ma</strong>: Supportive yet exasperated parents. Papa tries to curb Anand's destructive tinkering by locking up his tools.</li><li><strong>Boppa</strong>: The local compound sweeper who turns out to be a burglar.</li></ul></details><details class="sub-topic"><summary><h3>Plot Summary</h3></summary><p>Anand's first invention, a burglar alarm designed to drop a water bag on intruders, accidentally soaks his father. Undeterred, and inspired by the movie <em>Back to the Future</em>, Anand spends a fortnight building a "time machine" in his room using parts from household gadgets. When their parents leave for a wedding in Kharagpur, Anita and Anand are left home alone. That night, Boppa the thief breaks in and threatens them with a cudgel. Showing immense presence of mind, Anand misleads Boppa into entering his room (where the time machine is kept) instead of their father's room. Suddenly, loud noises, thumps, and an eerie whine emerge from the room. When neighbors arrive and unlock the house, Boppa is nowhere to be found; only his green scarf remains near the time machine's switch panel. Anand is convinced his time machine successfully sent Boppa into the past.</p></details><details class="sub-topic"><summary><h3>Vocabulary</h3></summary><ul><li><span class="keyword">racket</span>: A loud and disturbing noise.</li><li><span class="keyword">sopping</span>: Soaking wet.</li><li><span class="keyword">scowling</span>: Having an angry or frowning expression.</li><li><span class="keyword">rigged up</span>: Assembled something temporarily.</li><li><span class="keyword">tinkering</span>: Experimenting or fiddling with gadgets.</li><li><span class="keyword">dynamos</span>: Electric generators.</li><li><span class="keyword">stealthily</span>: Quietly or carefully to avoid being seen or heard.</li><li><span class="keyword">sceptical</span>: Doubtful.</li><li><span class="keyword">crestfallen</span>: Sad and disappointed.</li><li><span class="keyword">ruffianly</span>: Rough or violent-looking.</li><li><span class="keyword">cudgel</span>: A short, thick stick used as a weapon.</li><li><span class="keyword">dismantled</span>: Taken apart.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Poem: Paper Boats</summary><p>A beautiful poem by <strong>Rabindranath Tagore</strong> that captures the innocent playfulness and boundless imagination of childhood.</p><details class="sub-topic"><summary><h3>Stanza Breakdown &amp; Themes</h3></summary><ul><li><strong>Floating Dreams</strong>: Day by day, a child floats paper boats down a running stream, writing their name and village on them in big black letters, hoping someone in a far-off land will find them.</li><li><strong>Offerings of Purity</strong>: The child loads the boats with <span class="keyword">shiuli flowers</span> from their garden, hoping these "blooms of the dawn" will land safely at night.</li><li><strong>Sky Playmates</strong>: Looking up, the child sees clouds shaped like bulging sails and imagines a playmate in the sky sending them down to race the boats.</li><li><strong>Fairies of Sleep</strong>: At night, the child dreams that their paper boats are floating under the stars, steered by the fairies of sleep carrying baskets full of dreams.</li></ul></details><details class="sub-topic"><summary><h3>Symbolism</h3></summary><ul><li><strong>Paper Boats</strong>: Symbolize the child's innocence, hopes, and messages sent out into the vast world.</li><li><strong>Shiuli Flowers</strong>: Represent purity, beauty, and the fresh start of a new day.</li><li><strong>Midnight Stars</strong>: Represent the vast, mysterious universe through which the child's dreams travel.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Travelogue: North, South, East, West</summary><p>Written by <strong>C.G. Salamander</strong>, this section consists of postcards written by a young girl named Shaana to her classmates as she travels across India with her parents.</p><details class="sub-topic"><summary><h3>Shaana's Travel Log</h3></summary><ul><li><strong>Kashmir (30 April)</strong>: Visited the Thajiwas glacier; experienced freezing cold, blue-white glaciers, and snowball fights.</li><li><strong>Himachal Pradesh (10 May)</strong>: Enjoyed quiet mountains and colorful birds chirping.</li><li><strong>Arunachal Pradesh (17 May)</strong>: Stayed in a treehouse surrounded by forests so thick one could get lost instantly.</li><li><strong>Sundarbans, West Bengal (24 May)</strong>: Explored wetlands and mangrove forests growing in seawater; spotted crocodiles and snakes.</li><li><strong>Gujarat (30 May)</strong>: Visited the hot, dry desert with vast stretches of sand and colorful local attire.</li><li><strong>Narmada River (7 June)</strong>: Went river rafting in the fast, wild waters of central India.</li><li><strong>Goa (12 June)</strong>: Admired the scenic plateaus, hills, beaches, and train tunnels.</li><li><strong>Chennai &amp; Puducherry (17 June)</strong>: Learned to surf on rough, brown waves.</li><li><strong>Pamban Bridge (22 June)</strong>: Crossed the ocean on a train.</li><li><strong>Olaikaadu Beach (24 June)</strong>: Floated in the water, watched fish, and collected smooth pebbles.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Grammar &amp; Language Study</summary><details class="sub-topic"><summary><h3>1. Onomatopoeia</h3></summary><p><span class="keyword">Onomatopoeia</span> is the use of words that imitate the actual sounds they describe.</p><ul><li><strong>Crash</strong>: A sudden loud sound of breaking.</li><li><strong>Humming</strong>: A continuous low and soothing sound.</li><li><strong>Hissed</strong>: Whispered angrily.</li><li><strong>Hammering, sawing, clattering</strong>: Constant and loud construction/working noises.</li></ul></details><details class="sub-topic"><summary><h3>2. Binomials</h3></summary><p><span class="keyword">Binomials</span> are expressions consisting of two words linked by a conjunction (usually 'and' or 'or') in a fixed order.</p><ul><li><strong>Safe and sound</strong>: Out of danger and unharmed.</li><li><strong>Odds and ends</strong>: Miscellaneous small items.</li><li><strong>Make or break</strong>: Resulting in either total success or total failure.</li><li><strong>Pros and cons</strong>: Advantages and disadvantages.</li><li><strong>Now or never</strong>: The absolute last opportunity to take action.</li><li><strong>Give and take</strong>: Mutual compromise.</li></ul></details><details class="sub-topic"><summary><h3>3. Past Perfect vs. Simple Past</h3></summary><p>When talking about two completed actions in the past, we use the <span class="keyword">Past Perfect Tense</span> (had + past participle) for the older action, and the <span class="keyword">Simple Past Tense</span> for the more recent action.</p><ul><li><em>Example</em>: Rohan <strong>had packed</strong> (older action) his suitcase before he <strong>left</strong> (recent action) for the airport.</li></ul></details><details class="sub-topic"><summary><h3>4. Subject-Verb Agreement Rules</h3></summary><ul><li><strong>Compound Subjects</strong>: Subjects joined by 'and' take a plural verb (e.g., <em>Amma and Appa <strong>are</strong> asleep</em>).</li><li><strong>Indefinite Pronouns</strong>: Words like 'each', 'every', 'neither' take singular verbs (e.g., <em>Each of the children <strong>was</strong> given a gift</em>).</li><li><strong>Collective Nouns</strong>: Take a singular verb when acting as a single unit (e.g., <em>The committee <strong>decides</strong> on the policy</em>).</li><li><strong>Plural-Looking Nouns</strong>: Nouns ending in 's' but representing a single subject take a singular verb (e.g., <em>Mathematics <strong>is</strong> interesting</em>).</li><li><strong>'Pair of' Nouns</strong>: Plural items preceded by 'a pair of' take a singular verb (e.g., <em>A pair of sunglasses <strong>is</strong> essential</em>).</li><li><strong>Proximity Rule ('or'/'nor')</strong>: The verb matches the subject closest to it (e.g., <em>Neither the students nor the teacher <strong>wants</strong> to cancel the trip</em>).</li></ul></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 3</strong> of the Class 7 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "07-chapter-02-wit-and-humour.html";
+      } else {
+        window.location.href = "07-chapter-04-travel-and-adventure.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>

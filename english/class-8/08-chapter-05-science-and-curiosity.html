@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 8 — Chapter 5: Science and Curiosity</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 8 — Chapter 5: Science and Curiosity</h1>
+
+    <details class="topic-box"><summary class="topic-title">Unit Overview: Science and Curiosity</summary><p>This unit explores the intersection of scientific exploration, curiosity, and the human spirit through three distinct literary pieces: a science fiction story, a reflective poem, and a biographical account of a pioneering Indian scientist.</p></details><details class="topic-box"><summary class="topic-title">Prose: Feathered Friend (Arthur C. Clarke)</summary><details class="sub-topic"><summary><h3>Plot Summary</h3></summary><p>Set on a space station, the story follows the crew who adopts <span class="keyword">Claribel</span>, a small yellow canary smuggled aboard by construction worker Sven Olsen. Claribel quickly adapts to zero gravity, performing effortless loops. One morning, the narrator wakes up with a sluggish headache and finds Claribel unconscious. Realizing that miners historically used canaries to detect toxic gas, the crew checks the air systems. They discover that a rare eclipse caused the air purifier to freeze, and the primary alarm circuit failed because the backup was not yet connected. Claribel's fainting saves the crew from asphyxiation, proving that simple nature can sometimes safeguard advanced technology.</p></details><details class="sub-topic"><summary><h3>Character Analysis</h3></summary><ul><li><strong>Sven Olsen:</strong> A wiry, highly skilled construction worker who excels in zero-gravity girder assembly. His curiosity and love for pets lead him to smuggle Claribel.</li><li><strong>Claribel:</strong> The small yellow canary who becomes the space station's beloved pet. She is highly resourceful, learning to fly efficiently without gravity, and serves as a literal lifesaver.</li><li><strong>The Narrator:</strong> An observant office worker on the station whose quick thinking and memory of mining history save the crew.</li></ul></details><details class="sub-topic"><summary><h3>Key Vocabulary & Expressions</h3></summary><ul><li><span class="keyword">wiry</span>: Thin but strong.</li><li><span class="keyword">girders</span>: Long, thick pieces of steel supporting a structure.</li><li><span class="keyword">dovetailed</span>: Fitted together precisely.</li><li><span class="keyword">cubbyhole</span>: A small enclosed space or room.</li><li><span class="keyword">keeled</span>: Collapsed or fainted.</li><li><span class="keyword">sheepish</span>: Embarrassed or self-conscious.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Poetry: Magnifying Glass (Walter de la Mare)</summary><details class="sub-topic"><summary><h3>Stanza Breakdown</h3></summary><ul><li><strong>Stanza 1:</strong> The speaker describes the magical power of a simple magnifying glass, which reveals intricate details like myriad shells in a scrap of chalk, a forest in an inch of moss, and a drop of water resembling a busy hive of bees.</li><li><strong>Stanza 2:</strong> The lens allows the speaker to watch a deft spider spinning web-silk from its spinnerets, highlighting its tigerish claws and the multi-eyed flies that stumble into its net.</li><li><strong>Stanza 3:</strong> The speaker reflects on how the glass makes even the tiniest, most ordinary things look marvellous and surpass their natural appearance.</li><li><strong>Stanza 4:</strong> The poem concludes with the idea that powerful lenses can bring celestial bodies like the moon so close that it feels as if one could walk there in an afternoon.</li></ul></details><details class="sub-topic"><summary><h3>Literary Devices</h3></summary><ul><li><span class="keyword">Simile</span>: "Like hive of bees" (comparing a drop of water full of microscopic life to a beehive).</li><li><span class="keyword">Metaphor</span>: "A forest—flowers and trees" (comparing an inch of moss to a vast forest).</li><li><span class="keyword">Personification</span>: "Magic talk" (giving the magnifying glass the human ability to speak).</li><li><span class="keyword">Alliteration</span>: "woven web-silk" (repetition of the 'w' sound).</li><li><span class="keyword">Rhyme Scheme</span>: ABCB pattern in quatrains.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Biography: Bibha Chowdhuri</summary><details class="sub-topic"><summary><h3>Life and Achievements</h3></summary><p>Bibha Chowdhuri (1913–1991) was India's first woman physicist, pioneering research in high-energy particle physics and cosmic rays during an era when women faced immense barriers in STEM fields.</p><ul><li><strong>Academic Journey:</strong> Born in Kolkata, she later joined the University of Manchester in 1945, earning her Ph.D. under Nobel Laureate Patrick M.S. Blackett.</li><li><strong>Scientific Contributions:</strong> She co-discovered the <span class="keyword">pi-meson</span> (a subatomic particle) with D.M. Bose. Her remarkable work led to a Nobel Prize nomination in 1950 by Erwin Schr&ouml;dinger.</li><li><strong>Institutional Pioneer:</strong> She was the first woman faculty member at the Tata Institute of Fundamental Research (TIFR), handpicked by Homi J. Bhabha, and later worked at the Physical Research Laboratory (PRL) under Vikram Sarabhai.</li><li><strong>Legacy:</strong> In 2019, the International Astronomical Union (IAU) honored her by renaming the star HD 86081 as <span class="keyword">Bibha</span> (meaning "beam of light").</li></ul></details><details class="sub-topic"><summary><h3>Key Vocabulary</h3></summary><ul><li><span class="keyword">trailblazers</span>: Pioneers who pave the way for others.</li><li><span class="keyword">persistence</span>: The determination to keep doing something difficult.</li><li><span class="keyword">sceptical</span>: Doubtful or disbelieving.</li><li><span class="keyword">tenacity</span>: Gripping or holding fast; persistent determination.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Grammar & Language Study</summary><details class="sub-topic"><summary><h3>Merged Words (Portmanteaus)</h3></summary><p>Words formed by combining parts of two distinct words:</p><ul><li><span class="keyword">intercom</span>: internal + communication</li><li><span class="keyword">brunch</span>: breakfast + lunch</li><li><span class="keyword">motel</span>: motor + hotel</li><li><span class="keyword">smog</span>: smoke + fog</li><li><span class="keyword">sitcom</span>: situation + comedy</li><li><span class="keyword">vlog</span>: video + log</li><li><span class="keyword">spork</span>: spoon + fork</li><li><span class="keyword">webinar</span>: web + seminar</li></ul></details><details class="sub-topic"><summary><h3>Future Time References</h3></summary><ul><li><strong>Will:</strong> Used for future occurrences, offers, or certainty (e.g., "I think our team will win.").</li><li><strong>Simple Present:</strong> Used for regular schedules or planned future actions (e.g., "Our flight leaves at 10:00 a.m. tomorrow.").</li><li><strong>Present Progressive:</strong> Used for personal arrangements and fixed plans (e.g., "We are moving into our new house next month.").</li><li><strong>Going to:</strong> Used for intentions or predictions based on evidence (e.g., "The weather forecast says it is going to rain later today.").</li></ul></details><details class="sub-topic"><summary><h3>Active vs Passive Voice</h3></summary><p>Passive voice is preferred when the action is more important than the doer, the doer is obvious, or the doer is unknown.</p><ul><li><strong>Active:</strong> "Early pioneers laid the foundation."</li><li><strong>Passive:</strong> "The foundation was laid by early pioneers."</li></ul></details><details class="sub-topic"><summary><h3>Word Clipping Methods</h3></summary><ul><li><strong>Back Clipping:</strong> Removing the end of a word (e.g., <span class="keyword">exam</span> from examination, <span class="keyword">gym</span> from gymnasium).</li><li><strong>Front Clipping:</strong> Removing the front of a word (e.g., <span class="keyword">phone</span> from telephone, <span class="keyword">net</span> from internet).</li><li><strong>Middle Clipping:</strong> Removing both front and end (e.g., <span class="keyword">flu</span> from influenza, <span class="keyword">fridge</span> from refrigerator).</li></ul></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 5</strong> of the Class 8 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "08-chapter-04-environment.html";
+      } else {
+        window.location.href = "../../index.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>

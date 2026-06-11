@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 9 — Chapter 2: The Pot Maker</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 9 — Chapter 2: The Pot Maker</h1>
+
+    <details class="topic-box"><summary class="topic-title">Prose Analysis: "The Pot Maker" by Temsula Ao</summary><details class="sub-topic"><summary><h3>Plot Summary</h3></summary><p>The story follows <strong class="keyword">Sentila</strong>, a young girl who dreams of becoming a pot maker like her mother, <strong class="keyword">Arenla</strong>, and grandmother. However, her mother strongly discourages her, preferring that she learn weaving instead, due to the physical hardships, long hours, and low financial returns of pottery. Despite this, Sentila secretly observes local potters to learn the craft.</p><p>When the village council questions Sentila's father, <strong class="keyword">Mesoba</strong>, about why the family tradition is not being passed down, he promises she will learn. Arenla reluctantly takes Sentila to gather clay but offers little guidance during the shaping process, leading to frustration. Sentila eventually finds mentorship and confidence through <strong class="keyword">Onula</strong>, a kind widow at the girls' dormitory. Under Onula's gentle guidance, Sentila masters the basic techniques.</p><p>Later, when Arenla falls ill during a pottery session, Sentila takes over and successfully creates a large batch of perfect pots. Tragically, she finds her mother deceased shortly after. Onula discovers the two identical rows of pots in the shed, symbolizing the seamless transition of the ancestral craft to a new generation.</p></details><details class="sub-topic"><summary><h3>Character Profiles</h3></summary><ul><li><strong>Sentila:</strong> Determined, observant, and passionate about preserving her family's artistic heritage despite initial discouragement.</li><li><strong>Arenla:</strong> Sentila's mother; a skilled but weary potter who wishes to shield her daughter from the economic hardships of her trade.</li><li><strong>Mesoba:</strong> Sentila's father; respects community traditions and acts as a mediator between the village council and his family.</li><li><strong>Onula:</strong> A supportive, perceptive mentor who recognizes Sentila's potential and provides the encouraging environment she needs to succeed.</li></ul></details><details class="sub-topic"><summary><h3>Key Themes</h3></summary><ul><li><strong>Tradition and Heritage:</strong> The communal obligation to preserve and pass down ancestral skills across generations.</li><li><strong>Perseverance:</strong> Overcoming personal frustration, lack of support, and physical challenges to master a craft.</li><li><strong>The Role of Mentorship:</strong> How constructive guidance and encouragement can unlock a learner's latent potential.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Prose Analysis: "Quality" by John Galsworthy</summary><details class="sub-topic"><summary><h3>Plot Summary</h3></summary><p>This classic story depicts the lives of the <strong class="keyword">Gessler Brothers</strong>, German bootmakers operating a small shop in London. They are deeply dedicated to their craft, creating custom-made boots of unparalleled quality and durability. However, they face severe competition from large, commercial firms that prioritize mass production and aggressive advertising over genuine craftsmanship.</p><p>As industrialization takes over, the brothers lose customers and struggle to pay rent. Despite their declining fortunes, they refuse to compromise on the quality of their leather or workmanship. The elder brother passes away, and eventually, the younger Mr. Gessler dies of slow starvation, having spent all his remaining resources on rent and premium leather while working day and night. The narrator laments the loss of a true artist whose dedication to quality was absolute.</p></details><details class="sub-topic"><summary><h3>Key Themes</h3></summary><ul><li><strong>Artistry vs. Industrialization:</strong> The tragic displacement of traditional, soul-infused craftsmanship by mass-produced, commercial goods.</li><li><strong>Uncompromising Integrity:</strong> The Gessler brothers' refusal to lower their standards, choosing starvation over producing inferior work.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Poetry Analysis: "Gifts of Grace: Honouring Our Vocations"</summary><details class="sub-topic"><summary><h3>Overview and Themes</h3></summary><p>This anonymous poem celebrates the diverse, skilled vocations that form the backbone of society in <span class="keyword">Bharat</span> (India). It pays tribute to various working-class professionals, highlighting how their daily labor brings beauty, utility, and light to our lives.</p><ul><li><strong>Dignity of Labor:</strong> Every profession, from carpentry to cooking, is portrayed with respect and artistic value.</li><li><strong>Identity through Vocation:</strong> The poem emphasizes that a person's work is a vital expression of their identity and cultural contribution.</li></ul></details><details class="sub-topic"><summary><h3>Vocations Celebrated</h3></summary><ul><li><strong>Craftspersons & Artisans:</strong> Weaving colors and expressing deep emotions through music and art.</li><li><strong>Carpenters:</strong> Creating wooden structures with mathematical precision.</li><li><strong>Electricians:</strong> Working with cables and wires to brighten homes.</li><li><strong>Boatmen:</strong> Sailing, fishing, and sharing tales of the sea.</li><li><strong>Shoemakers:</strong> Crafting quality footwear to support life's journeys.</li><li><strong>Cooks, Masons, & Designers:</strong> Adding flavor, structure, and beauty to daily life.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Grammar and Language Structures</summary><details class="sub-topic"><summary><h3>Noun Clauses</h3></summary><p>A <span class="keyword">Noun Clause</span> is a subordinate clause that functions as a noun within a sentence, acting as either a subject or an object.</p><ul><li><strong>Example 1:</strong> She realized <em>that the pot was ready</em>. (Acts as the object of the verb "realized")</li><li><strong>Example 2:</strong> She intuitively sensed <em>that something momentous had happened</em>.</li></ul></details><details class="sub-topic"><summary><h3>Adjectival / Relative Clauses</h3></summary><p>An <span class="keyword">Adjectival Clause</span> (or relative clause) is a subordinate clause that modifies a noun or pronoun in the main clause, acting like an adjective.</p><ul><li><strong>Example 1:</strong> Arenla took Sentila to the riverbank <em>where the grey and red clay was found</em>. (Modifies "riverbank")</li><li><strong>Example 2:</strong> She started on the next one, like a sprinter <em>who had suddenly found momentum</em>. (Modifies "sprinter")</li></ul></details><details class="sub-topic"><summary><h3>Determiners</h3></summary><p><span class="keyword">Determiners</span> are words placed before nouns to clarify their quantity, definiteness, or ownership.</p><ul><li><strong>Articles:</strong> a, an, the</li><li><strong>Demonstratives:</strong> this, that, these, those</li><li><strong>Possessives:</strong> my, our, your, his, her, its, their</li><li><strong>Definite Numerals:</strong> one, two, three, etc.</li><li><strong>Indefinite Numerals:</strong> some, any, no, all, both, much, many, few, several, little</li><li><strong>Distributives:</strong> each, every, either, neither</li></ul></details></details><details class="topic-box"><summary class="topic-title">Vocabulary & Cultural Insights</summary><details class="sub-topic"><summary><h3>Key Vocabulary</h3></summary><ul><li><span class="keyword">Outgrow</span>: To lose interest in something as one grows older.</li><li><span class="keyword">Indifference</span>: Lack of interest or concern.</li><li><span class="keyword">Pittance</span>: A very small amount of money received as income.</li><li><span class="keyword">Tedious</span>: Tiresome, monotonous, or slow.</li><li><span class="keyword">Deftly</span>: Skillfully and quickly in movement.</li><li><span class="keyword">Malleable</span>: Able to be hammered or pressed into shape without breaking.</li><li><span class="keyword">Dexterity</span>: Skill and grace in physical movement, especially with the hands.</li></ul></details><details class="sub-topic"><summary><h3>Traditional Indian Pottery Styles</h3></summary><ul><li><strong>Khurja Pottery:</strong> Famous ceramic work from Uttar Pradesh.</li><li><strong>Blue Pottery:</strong> Traditional glazed pottery from Jaipur, Rajasthan.</li><li><strong>Terracotta:</strong> Clay-based unglazed or glazed ceramic art from West Bengal.</li><li><strong>Andretta Pottery:</strong> Artistic clay work from Himachal Pradesh.</li><li><strong>Karigari Pottery:</strong> Distinctive clay craftsmanship from Tamil Nadu.</li><li><strong>Longpi Black Pottery:</strong> Unique stone and clay pottery from Manipur.</li></ul></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 2</strong> of the Class 9 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "09-chapter-01-how-i-taught-my-grandmother-to-rea.html";
+      } else {
+        window.location.href = "09-chapter-03-winds-of-change.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>

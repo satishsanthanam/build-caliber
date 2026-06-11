@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 6 — Chapter 5: Culture and Tradition</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 6 — Chapter 5: Culture and Tradition</h1>
+
+    <details class="topic-box"><summary class="topic-title">Unit 5: Culture and Tradition</summary><p>This unit explores the rich cultural heritage, traditional art forms, inspiring personalities, and national monuments of Bharat, highlighting the theme of unity in diversity.</p><details class="sub-topic"><summary><h3>1. Hamara Bharat — Incredible India!</h3></summary><p>Bharat is known worldwide as a land of wise and heroic individuals. Its rich and diverse culture has attracted travellers since ancient times. The people live in unison, presenting <strong>unity in diversity</strong> to the world. The land is rich with rivers, lakes, high mountains, and green forests that are home to diverse flora and fauna.</p></details><details class="sub-topic"><summary><h3>2. Kalakritiyon ka Bharat (Art Forms of India)</h3></summary><p>An exploration of traditional crafts and folk arts from different states of India, presented through the <em>Ek Bharat, Shreshtha Bharat</em> programme:</p><ul><li><strong>Aipan (Uttarakhand):</strong> A traditional folk art drawn by women on floors and walls of puja rooms and main doors during festivals. It is made using white rice flour paste on brick-red walls coloured with <span class="keyword">geru</span> (red clay). The designs are beautiful, mathematical, and inspired by nature.</li><li><strong>Dhokra (Odisha):</strong> A 4000-year-old metal craft. A clay figure is made, dried, and covered with wax. Fine details are <span class="keyword">carved</span> on the wax before covering it with clay again and heating it. The wax melts out, and molten brass <span class="keyword">scrap</span> is poured into the empty space to take the shape.</li><li><strong>Coconut Shell Craft (Kerala):</strong> A <span class="keyword">biodegradable</span> craft where brown coconut shells are cleaned, smoothed with sandpaper, shaped, made <span class="keyword">stable</span> with a base, and polished to create household items like bowls and jewellery.</li><li><strong>Kondapalli Toys (Andhra Pradesh):</strong> A 400-year-old toy-making art using soft wood from nearby hills. Parts are carved separately and joined using <span class="keyword">makku</span> (a paste of <span class="keyword">tamarind</span> seed powder and <span class="keyword">sawdust</span>). They are painted using vegetable <span class="keyword">dyes</span> and <span class="keyword">enamel</span> paints.</li></ul></details><details class="sub-topic"><summary><h3>3. Poem: The Kites</h3></summary><p>Written by <strong>Daphne Lister</strong>, this poem captures a child's imaginative desire to fly high in the sky like a kite.</p><h4>Stanza Breakdown:</h4><ul><li><strong>Stanza 1:</strong> Kites fly high in the "wind-whipped sky" like coloured birds.</li><li><strong>Stanza 2:</strong> The child wishes to be small and light as air to climb on a kite and sail up.</li><li><strong>Stanza 3:</strong> The child imagines drifting on paper wings and hearing the songs of the wild wind.</li><li><strong>Stanza 4:</strong> The child looks forward to the fun of looking down over parks and rooftops.</li><li><strong>Stanza 5:</strong> People below would stand, stare, and wish they were high up in the air too.</li></ul><h4>Literary Devices:</h4><ul><li><span class="keyword">Simile</span>: Comparison using 'like' or 'as' (e.g., "Like coloured birds", "light as air").</li><li><span class="keyword">Alliteration</span>: Repetition of consonant sounds (e.g., "wind-whipped", "stand and stare").</li></ul><h4>Parts of a Kite:</h4><p>The key parts of a kite include the <span class="keyword">Nose</span>, <span class="keyword">Spine</span>, <span class="keyword">Cover</span>, <span class="keyword">Kite line</span>, <span class="keyword">Tail</span>, and <span class="keyword">Reel</span>.</p></details><details class="sub-topic"><summary><h3>4. Ila Sachani: Embroidering Dreams with her Feet</h3></summary><p>The inspiring story of Ila Sachani, a resilient woman from Gujarat who overcame physical challenges to become a celebrated embroidery artist.</p><ul><li><strong>Early Life:</strong> Born in Amreli, Gujarat, with non-functional hands hanging loose by her sides. She could not perform regular tasks like other children.</li><li><strong>Determination & Support:</strong> Encouraged by her mother and grandmother, who were <span class="keyword">single-minded</span> in helping her. They taught her the traditional art of <span class="keyword">Kathiawar embroidery</span> using her feet.</li><li><strong>Success:</strong> She mastered various styles including Kachhi, Kashmiri, and Lucknawi. Her work was exhibited at a state exhibition in Surat, leading to national fame, financial independence, and the prestigious President's Medal.</li></ul><h4>Vocabulary:</h4><ul><li><span class="keyword">challenges</span>: difficulties</li><li><span class="keyword">single-minded</span>: focused</li><li><span class="keyword">determination</span>: will power</li><li><span class="keyword">awestruck</span>: amazed</li><li><span class="keyword">popularity</span>: fame</li></ul></details><details class="sub-topic"><summary><h3>5. National War Memorial</h3></summary><p>Located in New Delhi and established in February 2019, this national monument was built by the Government of India to honour brave soldiers who sacrificed their lives for the nation.</p><ul><li><strong>The Eternal Flame:</strong> Known as the <span class="keyword">Amar Jawan Jyoti</span>, it glows in silence, paying homage to the courage of the soldiers.</li><li><strong>Significance:</strong> It stands with pride, keeping the memories and stories of the soldiers etched in stone and forever in our minds.</li></ul></details><details class="sub-topic"><summary><h3>6. Grammar and Language Study</h3></summary><ul><li><strong>Present Tense:</strong> Used to describe regular actions. With singular pronouns (he, she, it), verbs take <span class="keyword">-s/-es</span> (e.g., "He speaks very loudly").</li><li><strong>Ordering Words:</strong> Words used to show sequence: <span class="keyword">to begin</span>, <span class="keyword">first</span>, <span class="keyword">then</span>, <span class="keyword">after that</span>, <span class="keyword">next</span>, <span class="keyword">finally</span>, <span class="keyword">at last</span>.</li><li><strong>Words of Quantity:</strong> Words like <em>many</em> and <em>lots of</em> indicate large, unmentioned quantities.</li></ul></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 5</strong> of the Class 6 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "06-chapter-04-sports-and-wellness.html";
+      } else {
+        window.location.href = "../../index.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
