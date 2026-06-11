@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 9 — Chapter 6: Twin Melodies</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 9 — Chapter 6: Twin Melodies</h1>
+
+    <details class="topic-box"><summary class="topic-title">Play Overview & Characters</summary><details class="sub-topic"><summary><h3>Play Overview</h3></summary><p><strong>"Twin Melodies"</strong> is a three-act play written by <span class="keyword">Mitra Phukan</span>. It explores the conflict between traditional classical music and modern fusion music, highlighting the generational gap, parental expectations, and the ultimate reconciliation of artistic expressions.</p></details><details class="sub-topic"><summary><h3>Character Profiles</h3></summary><ul><li><strong>Shruti Sharma:</strong> A young, talented, and aspiring violinist who is torn between her respect for her father's classical traditions and her passion for exploring Western fusion music.</li><li><strong>Guru Nabin Sharma:</strong> Shruti's father, a master violinist, and the Principal of Sangeetika Music School. He is highly traditional, strict, and initially views fusion music as a desecration of classical art.</li><li><strong>Leela Devi:</strong> Shruti's mother, who acts as a mediator. She helps Nabin realize his own past struggles against tradition, leading to his acceptance of Shruti's choices.</li><li><strong>Iqbal:</strong> The flutist of the fusion group, in whose room the rehearsals take place.</li><li><strong>Avinash:</strong> The tabla player of the fusion group.</li><li><strong>Peter:</strong> The keyboard player of the fusion group.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Act-by-Act Summary</summary><details class="sub-topic"><summary><h3>Act I: The Dilemma</h3></summary><p>The play opens in Iqbal's room where the four friends (Shruti, Iqbal, Avinash, and Peter) are wrapping up a rehearsal of an Indo-Western fusion piece. While the boys are excited about a positive newspaper review of Shruti's classical performance with her father, Shruti is visibly distressed. She confesses that she has not told her father about the upcoming fusion concert. She fears his reaction, as he believes classical Hindustani music with its <span class="keyword">ragas and aalaaps</span> is the only worthy form of music, and playing Western tunes on the violin is a <span class="keyword">desecration</span>. Her friends encourage her to <span class="keyword">bite the bullet</span> and speak to him at dinner.</p></details><details class="sub-topic"><summary><h3>Act II: The Confrontation</h3></summary><p>At the dinner table, Shruti is <span class="keyword">absent-minded</span> and lost in thought. She gathers the courage to tell her father about the upcoming Indo-Western fusion concert. Nabin reacts with strong <span class="keyword">disapproval</span>, firmly refusing permission. He argues that playing in an orchestra drowns individual style in a <span class="keyword">hubbub</span> and reiterates his disdain for fusion music, mockingly calling it "phoo" music. Shruti's mother, Leela, scolds her for keeping secrets. Shruti is left disheartened, fearing her group won't be able to perform.</p></details><details class="sub-topic"><summary><h3>Act III: Reconciliation & Acceptance</h3></summary><p>The scene shifts back to Iqbal's house. Shruti decides to practice with her friends one last time before telling them she must withdraw. During their practice, Nabin and Leela quietly enter and listen. Nabin is deeply moved by the performance, noticing that Shruti beautifully maintained the notes of the raga. He praises the group, offers them his own music room for future practices, and supports their concert. Leela reveals to Shruti that Nabin himself had once gone against his family of traditional vocalists to play the violin—a Western instrument at the time—working <span class="keyword">his fingers to the bone</span> to succeed. Realizing his own past, Nabin embraces his daughter's musical journey.</p></details></details><details class="topic-box"><summary class="topic-title">Key Themes & Literary Analysis</summary><details class="sub-topic"><summary><h3>Tradition vs. Modernity</h3></summary><p>The play contrasts the rigid boundaries of classical Hindustani music with the creative freedom of Indo-Western fusion. It shows that modernity does not necessarily destroy tradition but can build upon it, creating a harmonious blend of "twin melodies."</p></details><details class="sub-topic"><summary><h3>Generational Gap & Parental Expectations</h3></summary><p>Nabin's initial refusal reflects the common generational conflict where parents impose their values and fears on their children. The resolution highlights the importance of open communication and parental empathy, as Nabin remembers his own youthful rebellion.</p></details></details><details class="topic-box"><summary class="topic-title">Vocabulary & Key Terms</summary><details class="sub-topic"><summary><h3>Dramatic & Musical Vocabulary</h3></summary><ul><li><span class="keyword">crescendo</span>: A gradual increase in the volume or intensity of sound.</li><li><span class="keyword">desecration</span>: Disrespect towards something sacred.</li><li><span class="keyword">ragas and aalaaps</span>: Core elements and melodic frameworks of Hindustani classical music.</li><li><span class="keyword">contempt</span>: A strong feeling of dislike and disrespect.</li><li><span class="keyword">hubbub</span>: A loud, confused noise or disturbance.</li><li><span class="keyword">iterated</span>: Repeated or stated repeatedly.</li><li><span class="keyword">painstakingly</span>: Done with great care and effort.</li></ul></details><details class="sub-topic"><summary><h3>Idiomatic Expressions</h3></summary><ul><li><span class="keyword">bite the bullet</span>: To face a difficult or unpleasant situation with courage and determination.</li><li><span class="keyword">worked his fingers to the bone</span>: Worked extremely hard.</li><li><span class="keyword">root for</span>: To show support or cheer for someone.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Poetry Appreciation</summary><details class="sub-topic"><summary><h3>"A Friend Found in Music" by Bryanna T. Perkins</h3></summary><p>This poem explores the therapeutic and comforting nature of music in a person's life.</p><h4>Stanza Breakdown & Key Lines:</h4><ul><li><strong>Music as an Ocean:</strong> <em>"Music is the ocean / That pulls me to the shore."</em> (Metaphor representing music as a powerful, guiding force).</li><li><strong>Music as Therapy:</strong> <em>"Music is the therapy / I need when I feel blue."</em> (Highlights music's healing power during sadness).</li><li><strong>Music as a Friend:</strong> <em>"Music is the needed friend / When no one seems to care."</em> (Emphasizes companionship and emotional support).</li></ul></details><details class="sub-topic"><summary><h3>"Music" by Walter de la Mare</h3></summary><p>A lyrical poem depicting the magical, transcendent power of music to transform reality and evoke mystical imagery.</p><h4>Key Imagery:</h4><ul><li><strong>Transformation of Nature:</strong> Flowers flame in vision, and forest trees lift their branches in ecstasy when music sounds.</li><li><strong>Mythical Elements:</strong> <span class="keyword">Naiads</span> (water nymphs) rise from the water, enchanted by the melody.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Grammar & Language Study</summary><details class="sub-topic"><summary><h3>Dramatic Devices: The Aside</h3></summary><p>An <span class="keyword">aside</span> is a theatrical technique where a character speaks directly to the audience or thinks aloud, unheard by the other characters on stage. It is used to reveal a character's inner thoughts, feelings, or secret plans.</p><p><em>Example from the play:</em> <strong>SHRUTI (Aside):</strong> "Oh, how much I enjoy performing this piece. Perhaps I can practise one last time..."</p></details><details class="sub-topic"><summary><h3>Non-Lexical Fillers</h3></summary><p><span class="keyword">Non-lexical fillers</span> are sounds or words (like 'uh', 'um', 'err', 'ahem') used in speech to fill pauses while a speaker gathers their thoughts or transitions between ideas.</p><ul><li><strong>whew:</strong> Expresses relief.</li><li><strong>err:</strong> Expresses hesitation or uncertainty.</li><li><strong>arrgh:</strong> Expresses frustration or anger.</li><li><strong>hmmm:</strong> Expresses thoughtfulness or contemplation.</li><li><strong>ahem-ahem:</strong> Used to clear the throat or draw attention.</li></ul></details><details class="sub-topic"><summary><h3>Phrasal Verbs with "Move"</h3></summary><ul><li><strong>move out:</strong> To leave a place where one has been living.</li><li><strong>moved in:</strong> To begin living in a new home or place.</li><li><strong>moved on:</strong> To start doing or discussing something new.</li><li><strong>move over:</strong> To shift position to make space for someone or something.</li><li><strong>move along:</strong> To start moving; to leave.</li><li><strong>moved off:</strong> To go to a new position, especially to make room.</li></ul></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 6</strong> of the Class 9 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "09-chapter-05-the-world-of-limitless-possibiliti.html";
+      } else {
+        window.location.href = "09-chapter-07-carrier-of-words.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
