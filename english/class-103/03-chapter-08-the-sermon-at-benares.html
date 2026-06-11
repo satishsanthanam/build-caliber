@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 103 — Chapter 8: The Sermon at Benaras</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 103 — Chapter 8: The Sermon at Benaras</h1>
+
+    <details class="topic-box"><summary class="topic-title">Let’s Begin &amp; Introductory Poem</summary><p>This unit explores the theme of mortality, grief, and spiritual wisdom, starting with the concept of a <span class="keyword">sermon</span> and a comforting perspective on death.</p><details class="sub-topic"><summary><h3>Defining 'Sermon'</h3></summary><ul><li><strong>Context 1:</strong> A talk on a religious or moral subject.</li><li><strong>Context 2:</strong> A long or monotonous piece of admonition, caution, warning, or a lecture.</li></ul></details><details class="sub-topic"><summary><h3>Poem: 'Death Is Nothing At All' by Canon Henry Scott Holland</h3></summary><p>Delivered as part of a sermon in 1910, this poem presents a comforting philosophy of death as a mere transition rather than an end.</p><ul><li><strong>Core Philosophy:</strong> Death is described as a "negligible accident" and a state of "absolute and unbroken continuity."</li><li><strong>Key Message:</strong> The speaker has "only slipped away into the next room" and remains unchanged, waiting for loved ones just around the corner.</li><li><strong>Vocabulary:</strong> <span class="keyword">familiar</span>, <span class="keyword">fondly</span>, <span class="keyword">negligible</span>, <span class="keyword">parting</span>, <span class="keyword">solemnity</span>.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Reading Comprehension - Text I (The Dalai Lama)</summary><p>An excerpt from <em>The Transformed Mind</em> by His Holiness the Dalai Lama, focusing on the root causes of human happiness and the importance of compassion.</p><details class="sub-topic"><summary><h3>Key Concepts</h3></summary><ul><li><strong>The Root of Happiness:</strong> While economy and political power are factors, the ultimate cause of a happy world lies within the human mind.</li><li><strong>Human Feeling:</strong> Intelligence must be accompanied by human affection and compassion to be truly useful.</li><li><strong>Spiritual Development:</strong> Defined not in a religious sense, but simply as having a "good and compassionate heart."</li><li><strong>Benefits of Compassion:</strong> Brings inner strength, reduces fear and doubt, and makes one happier and more open-minded.</li><li><strong>Vocabulary:</strong> <span class="keyword">humanity</span>, <span class="keyword">motivation</span>, <span class="keyword">correlation</span>, <span class="keyword">spiritual</span>, <span class="keyword">compassionate</span>.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Reading Comprehension - Text II (The Ballad of Father Gilligan)</summary><p>A narrative poem by W.B. Yeats depicting divine intervention and mercy for an overworked priest.</p><details class="sub-topic"><summary><h3>Plot Summary</h3></summary><p>Father Peter Gilligan is exhausted from ministering to his dying parishioners. When called to another deathbed, he laments his lack of rest but immediately begs for God's forgiveness. He falls asleep, and while he sleeps, God sends an angel to perform his priestly duties for the dying man. Upon waking, Gilligan rides in a panic to the sick man's house, only to find the man died peacefully, and realizes God's immense compassion.</p></details><details class="sub-topic"><summary><h3>Key Vocabulary &amp; Imagery</h3></summary><ul><li><strong>Moth-hour:</strong> Refers to twilight/evening and dawn, symbolizing the passage of time.</li><li><strong>Vocabulary:</strong> <span class="keyword">flock</span>, <span class="keyword">grieve</span>, <span class="keyword">parishioners</span>, <span class="keyword">spake</span>, <span class="keyword">peep</span>, <span class="keyword">pity</span>, <span class="keyword">roused</span>, <span class="keyword">swayed</span>.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Vocabulary &amp; Word Study</summary><details class="sub-topic"><summary><h3>Antonyms (from 'The Sermon at Benaras')</h3></summary><ul><li><strong>unfit:</strong> fit / suitable</li><li><strong>joy:</strong> sorrow / grief</li><li><strong>contentment:</strong> discontentment / dissatisfaction</li><li><strong>found:</strong> lost</li><li><strong>cheered:</strong> grieved / lamented</li><li><strong>lively:</strong> dull / lifeless</li><li><strong>calm:</strong> agitated / wild</li></ul></details><details class="sub-topic"><summary><h3>Dictionary Search &amp; Synonyms</h3></summary><ul><li><strong>vow:</strong> pledge, promise, oath, swear</li><li><strong>preach:</strong> sermonize, advocate, teach, lecture</li><li><strong>preserve:</strong> protect, maintain, conserve, save</li><li><strong>awaken:</strong> rouse, wake, stimulate, activate</li><li><strong>enlighten:</strong> inform, educate, guide, illuminate</li><li><strong>reign:</strong> rule, govern, dominate, prevail</li></ul></details></details><details class="topic-box"><summary class="topic-title">Grammar - Reported Speech</summary><p>Rules and structures for converting direct speech into indirect (reported) speech.</p><details class="sub-topic"><summary><h3>Key Rules</h3></summary><ul><li><strong>Reporting Verbs:</strong> Use appropriate verbs such as <span class="keyword">tell</span>, <span class="keyword">ask</span>, <span class="keyword">reply</span>, <span class="keyword">warn</span>, <span class="keyword">say</span>, <span class="keyword">report</span>, <span class="keyword">explain</span>, <span class="keyword">suggest</span>, or <span class="keyword">order</span>.</li><li><strong>Pronominal Changes:</strong> Change pronouns to match the reporter's perspective (e.g., "I" becomes "he/she").</li><li><strong>Tense &amp; Time Shifts:</strong> Change words denoting nearness in time and place to words suggesting remoteness (e.g., "this" to "that", "now" to "then").</li></ul></details></details><details class="topic-box"><summary class="topic-title">Listening - Sanchi Stupa</summary><p>A historical narrative about the world-famous Sanchi Stupa located in Madhya Pradesh, India.</p><details class="sub-topic"><summary><h3>Key Facts</h3></summary><ul><li><strong>Origin:</strong> Commissioned in the 3rd century BCE by Emperor Ashoka during the Mauryan period.</li><li><strong>Significance:</strong> It is the oldest stone structure in India and houses the relics of Lord Buddha.</li><li><strong>Architectural Features:</strong> Includes a central hemispherical dome, a surrounding balustrade, and four ornamental gateways called <span class="keyword">toranas</span> added in the 1st century BCE.</li><li><strong>Symbolism:</strong> Lord Buddha is depicted symbolically through figures like thrones, wheels, footprints, and trees.</li><li><strong>Status:</strong> Enlisted as a UNESCO World Heritage Site since 1989.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Speaking, Writing &amp; Project</summary><details class="sub-topic"><summary><h3>Dealing with Grief</h3></summary><p>Guidelines on how to support individuals experiencing intense sorrow or loss:</p><ul><li>Observe and understand different expressions of grief.</li><li>Be patient and offer silent support if they do not wish to share.</li><li>Listen actively when they want to talk.</li><li>Focus on small comforting actions (e.g., holding hands).</li></ul></details><details class="sub-topic"><summary><h3>Project Work</h3></summary><ul><li>Collect and rewrite <span class="keyword">Jataka tales</span> concerning the previous births of Gautama Buddha in human and animal forms.</li></ul></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 8</strong> of the Class 103 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "03-chapter-07-madam-rides-the-bus.html";
+      } else {
+        window.location.href = "03-chapter-09-the-proposal.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
