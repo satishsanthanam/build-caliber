@@ -3,133 +3,88 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>Class 5 — Chapter 5: The Frog</title>
+  <title>Class 5 English Chapter 1: Papa's Spectacles - Build Calibre</title>
   <link rel="stylesheet" href="../../style.css">
   <style>
-    .modal-overlay {
-      display: none;
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(4px);
-      z-index: 9999;
-      justify-content: center;
-      align-items: center;
-    }
-    .modal-overlay.active { display: flex; }
-    .modal-content {
-      background: #ffffff;
-      padding: 24px;
-      border-radius: 12px;
-      max-width: 400px;
-      width: 90%;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-      position: relative;
-      font-family: system-ui, -apple-system, sans-serif;
-    }
-    .close-modal {
-      position: absolute;
-      top: 12px; right: 16px;
-      font-size: 28px; font-weight: bold; color: #666;
-      cursor: pointer;
-    }
-    .close-modal:hover { color: #000; }
-    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
-    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
-    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
-    .modal-btn {
-      display: flex; align-items: center; justify-content: center; gap: 8px;
-      padding: 12px; background: #f0f4f8; color: #1a202c;
-      text-decoration: none; border-radius: 6px; font-weight: 500;
-      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
-    }
-    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
-    .modal-btn.primary { background: #3182ce; color: white; border: none; }
-    .modal-btn.primary:hover { background: #2b6cb0; }
-    .accessibility-ctrl {
-      display: flex; justify-content: space-between; align-items: center;
-      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
-    }
-    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
-    .btn-scale:hover { background: #f7fafc; }
+    body { font-family: sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
+    .nav-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; border-bottom: 2px solid #eee; padding-bottom: 15px; }
+    .nav-links { display: flex; gap: 15px; }
+    .nav-links a { color: #007bff; text-decoration: none; font-weight: 600; }
+    .poem-box { background: #f4f9ff; border-left: 4px solid #007bff; padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+    .stanza { margin-bottom: 15px; }
+    .clean-list { list-style-type: none; padding-left: 10px; border-left: 2px solid #eee; margin-left: 10px; margin-bottom: 10px; }
+    .keyword { background-color: rgba(0, 123, 255, 0.08); padding: 2px 6px; border-radius: 4px; font-weight: 600; color: #0056b3; }
+    .topic-box { margin-bottom: 15px; border: 1px solid #ddd; padding: 15px; border-radius: 8px; background-color: #fafafa; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+    .topic-title { font-size: 1.2em; font-weight: bold; color: #2c3e50; cursor: pointer; }
+    .info-badge { background-color: #e67e22; color: white; padding: 3px 8px; border-radius: 4px; font-size: 0.85em; font-weight: bold; display: inline-block; margin-bottom: 10px; }
+    
+    details > summary { list-style: none !important; outline: none !important; position: relative !important; padding: 6px 10px 6px 45px !important; display: block !important; cursor: pointer; box-sizing: border-box; }
+    details > summary::-webkit-details-marker { display: none !important; }
+    details > summary::marker { display: none !important; content: ""; }
+    details > summary:hover { color: #0056b3; }
+    details > summary::before { content: '[+]'; position: absolute !important; left: 12px !important; top: 50% !important; transform: translateY(-50%) !important; font-weight: bold !important; color: #0056b3 !important; font-size: 1em !important; font-family: monospace !important; }
+    details[open] > summary::before { content: '[-]'; color: #e67e22 !important; }
   </style>
-  <script>
-    window.MathJax = {
-      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
-      chtml: { displayAlign: 'left', displayIndent: '1em' }
-    };
-  </script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
 <body>
-  <div class="chapter-container">
-    
-    <div class="nav-bar">
-      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
-      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
-      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+
+  <div class="nav-bar">
+    <div class="nav-links">
+      <a href="../../index.html">🏠 Home</a>
     </div>
-
-    <h1>Class 5 — Chapter 5: The Frog</h1>
-
-    <details class="topic-box"><summary class="topic-title">Poem: The Frog</summary><details class="sub-topic"><summary><h3>Poem Recitation &amp; Text</h3></summary><p>The poem describes the life, habits, and characteristics of a frog in a playful, first-person narrative.</p><p><strong>Stanza 1 &amp; 2 (Habitat &amp; Origin):</strong><br/>I sit in ponds and in the rain,<br/>Or hop about in a muddy drain.<br/>As a <span class="keyword">tadpole</span>, I swim with cheer,<br/>A tiny fish-like thing, so clear!</p><p><strong>Stanza 3 &amp; 4 (Feeding &amp; Adaptation):</strong><br/>I <span class="keyword">flick</span> my tongue to catch my food,<br/>It works so fast—now that’s quite good!<br/>I live on land and water too,<br/>In places <span class="keyword">damp</span> with drops of <span class="keyword">dew</span>.</p><p><strong>Stanza 5 &amp; 6 (Camouflage &amp; Predators):</strong><br/>My colours match the plants and trees,<br/>I hide so well in grass and leaves!<br/>But snakes are near, I must <span class="keyword">beware</span>,<br/>Or else they’ll catch me unaware!</p><p><strong>Stanza 7 &amp; 8 (Sounds &amp; Movement):</strong><br/>I <span class="keyword">croak</span> my songs, they sound so loud,<br/>Yet in my pond, I feel so proud.<br/>I hop around, I jump so high,<br/>Up I go into the sky!<br/>With <span class="keyword">webbed</span> feet, I swim with ease,<br/>And leap so high in joyful breeze!</p></details><details class="sub-topic"><summary><h3>Key Themes</h3></summary><ul><li><strong>Amphibious Life:</strong> The frog lives both on land and in water, adapting to both environments.</li><li><strong>Metamorphosis:</strong> Reference to its early life stage as a fish-like <span class="keyword">tadpole</span>.</li><li><strong>Survival &amp; Camouflage:</strong> Using color-matching to hide from predators like snakes.</li><li><strong>Physical Adaptations:</strong> Fast-flicking tongue for catching prey and <span class="keyword">webbed</span> feet for swimming.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Vocabulary &amp; Word Meanings</summary><ul><li><span class="keyword">hop</span>: To move by jumping on one or all feet.</li><li><span class="keyword">muddy</span>: Covered in or full of mud.</li><li><span class="keyword">flick</span>: A sudden quick movement (especially of the tongue).</li><li><span class="keyword">damp</span>: Slightly wet or moist.</li><li><span class="keyword">dew</span>: Tiny drops of water that form on cool surfaces at night.</li><li><span class="keyword">beware</span>: To be careful or alert to danger.</li><li><span class="keyword">croak</span>: The deep, hoarse sound made by a frog.</li><li><span class="keyword">webbed</span>: Having skin connecting the toes (helps in swimming).</li></ul></details><details class="topic-box"><summary class="topic-title">Let us Think (Comprehension &amp; Discussion)</summary><details class="sub-topic"><summary><h3>A. Answer the following questions</h3></summary><ol><li><strong>Where does the frog like to sit or spend time?</strong> The frog likes to sit in ponds, in the rain, in muddy drains, and in damp places with drops of dew.</li><li><strong>How does the frog catch its food?</strong> The frog catches its food by quickly flicking its fast-working tongue.</li><li><strong>How does the frog move in water and on land?</strong> The frog swims easily in water using its webbed feet, and hops or jumps high on land.</li><li><strong>What helps the frog hide in its surroundings?</strong> Its colors match the plants and trees, allowing it to hide well in grass and leaves.</li></ol></details><details class="sub-topic"><summary><h3>B. Think and discuss</h3></summary><ul><li><strong>Living on land and water:</strong> Discussing the unique lifestyle of amphibians.</li><li><strong>Hopping high:</strong> Creative imagination of what students would do if they could jump like frogs.</li><li><strong>Frog vs. Fish:</strong> Comparing a frog's dual-life (amphibian) with a fish's purely aquatic life.</li><li><strong>Webbed feet vs. Flippers:</strong> Understanding how human scuba divers mimic nature's design (biomimicry) using flippers.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Let us Learn (Grammar &amp; Language)</summary><details class="sub-topic"><summary><h3>A. Conjunctions (Linking Words)</h3></summary><p>Conjunctions are words used to connect clauses or sentences.</p><ul><li><strong>and:</strong> Used to join similar ideas. (e.g., "My colours match the plants <strong>and</strong> trees.")</li><li><strong>or:</strong> Used to show choices. (e.g., "Would you like to learn about frogs <strong>or</strong> tadpoles?")</li><li><strong>but:</strong> Used to show contrast or unexpected turns. (e.g., "I hop around happily, <strong>but</strong> I must watch out for snakes!")</li><li><strong>because:</strong> Used to show reason. (e.g., "Frogs swim easily <strong>because</strong> they have webbed feet.")</li></ul></details><details class="sub-topic"><summary><h3>B. Sentence Rearrangement</h3></summary><p>Rearranging jumbled words into meaningful sentences:</p><ul><li>hunts/night/the/silently/tiger/at &rarr; <strong>The tiger hunts silently at night.</strong></li><li>elephants/in/forests/live/large/groups/in &rarr; <strong>Elephants live in large groups in forests.</strong></li><li>web/a/spider/carefully/its/weaves &rarr; <strong>A spider carefully weaves its web.</strong></li><li>crocodile/waits/the/silently/riverbank/the/near &rarr; <strong>The crocodile waits silently near the riverbank.</strong></li><li>a/swims/turtle/slowly/in/ocean/the &rarr; <strong>A turtle swims slowly in the ocean.</strong></li></ul></details></details><details class="topic-box"><summary class="topic-title">Let us Speak &amp; Listen</summary><details class="sub-topic"><summary><h3>A. Tongue Twisters</h3></summary><p>Practice speaking these quickly to improve pronunciation and fluency:</p><ol><li>Four fierce frogs fight for flies.</li><li>Fast frogs flip-flop across fluffy fields.</li><li>Funny frogs flap floppy feet.</li></ol></details><details class="sub-topic"><summary><h3>B. Phonics: Vowel Contrast (/e/ vs /a/)</h3></summary><p>Listen and repeat pairs to distinguish short vowel sounds:</p><ul><li><strong>bet</strong> vs <strong>bat</strong></li><li><strong>set</strong> vs <strong>sat</strong></li><li><strong>men</strong> vs <strong>man</strong></li><li><strong>leg</strong> vs <strong>lag</strong></li><li><strong>met</strong> vs <strong>mat</strong></li></ul></details><details class="sub-topic"><summary><h3>C. Listening Activity: My Frog's World</h3></summary><p>Instructions to draw and describe a personalized frog habitat:</p><ol><li>Draw a happy setting (pond, forest, or rainy area).</li><li>Draw a frog with specific features (webbed feet, colors).</li><li>Decorate with descriptive words from the poem.</li><li>Color the drawing creatively.</li></ol></details></details><details class="topic-box"><summary class="topic-title">Let us Write &amp; Explore</summary><details class="sub-topic"><summary><h3>A. Message Writing</h3></summary><p><strong>Message from Hopper the Frog:</strong> Hopper writes about living on a lily pad, splashing in the rain, sitting in puddles, croaking, and eating mosquitoes.</p><p><strong>Writing Task:</strong> Write a friendly reply to Hopper sharing your own favorite hobbies and activities.</p></details><details class="sub-topic"><summary><h3>B. Did You Know? (Fun Facts)</h3></summary><ul><li><strong>Frog vs. Toad:</strong> <span class="keyword">Frogs</span> have smooth, moist skin and long legs for hopping. <span class="keyword">Toads</span> have dry, rough, bumpy skin and shorter legs for walking or hopping.</li><li><strong>National Aquatic Animal of India:</strong> The <span class="keyword">Ganges river dolphin</span>. It is blind/cannot see well and uses echolocation (sounds) to navigate in water.</li></ul></details><details class="sub-topic"><summary><h3>C. Let us Explore: Aquatic Animals</h3></summary><p>Research and find facts about these fascinating aquatic creatures:</p><ul><li><strong>Puffer fish:</strong> Can inflate into a ball and some are highly poisonous.</li><li><strong>Jellyfish:</strong> Gelatinous, brainless creatures that have been around for millions of years.</li><li><strong>Seahorse:</strong> A type of fish where the male carries the eggs.</li><li><strong>Starfish:</strong> Marine invertebrates typically with five arms and the ability to regenerate lost limbs.</li><li><strong>Octopus:</strong> Highly intelligent eight-armed mollusks with camouflage abilities.</li><li><strong>Catfish:</strong> Named for their prominent barbels, which resemble a cat's whiskers.</li></ul></details></details>
-
-    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
-      <div class="modal-content" onclick="event.stopPropagation()">
-        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
-        <h3 class="modal-title">🧭 Navigation Assistant</h3>
-        <p class="modal-desc">You are currently viewing <strong>Chapter 5</strong> of the Class 5 curriculum modules.</p>
-        
-        <div class="modal-grid">
-          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
-          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
-          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
-        </div>
-
-        <div class="accessibility-ctrl">
-          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
-          <div style="display: flex; gap: 6px;">
-            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
-            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
-          </div>
-        </div>
-      </div>
+    <div class="nav-links">
+      <a href="05-chapter-02-values-and-dispositions.html">Next Chapter ➡️</a>
     </div>
-
   </div>
 
-  <script>
-    function toggleModal(show) {
-      const modal = document.getElementById('navModal');
-      if (show) {
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      } else {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-    }
+  <main data-pagefind-body>
+    <header>
+      <span class="info-badge">Santoor Grade 5 — Unit 1</span>
+      <h1 style="color: #2c3e50; margin-top: 5px;">Chapter 1: Papa's Spectacles</h1>
+    </header>
 
-    function navigateChapterSequence(direction) {
-      toggleModal(false); // Force instant visual collapse on execution
-      if (direction === -1) {
-        window.location.href = "05-chapter-04-the-wise-parrot.html";
-      } else {
-        window.location.href = "05-chapter-06-what-a-tank.html";
-      }
-    }
+    <section class="topic-box">
+      <h3 style="margin-top: 0; color: #34495e;">Poem Overview</h3>
+      <p>
+        A lighthearted and humorous narrative poem about a father who loses his only pair of spectacles. He conducts a frantic and frantic search all over the house, turning rooms upside down, only to realize that they were resting safely on top of his own head the entire time.
+      </p>
+    </section>
 
-    let currentScale = 1.0;
-    function adjustTextSize(delta) {
-      currentScale += delta;
-      if (currentScale < 0.8) currentScale = 0.8;
-      if (currentScale > 1.4) currentScale = 1.4;
-      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
-    }
+    <section class="topic-box">
+      <h3 style="margin-top: 0; color: #34495e;">Core Vocabulary & Literary Devices</h3>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px;">
+        <span class="keyword">spectacles</span>
+        <span class="keyword">search</span>
+        <span class="keyword">humorous</span>
+        <span class="keyword">frantic</span>
+        <span class="keyword">realize</span>
+        <span class="keyword">irony</span>
+      </div>
+    </section>
 
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') toggleModal(false);
-    });
-  </script>
+    <section class="topic-box">
+      <details>
+        <summary class="topic-title">Let us Think: Comprehension Q&A</summary>
+        <div style="margin-left: 20px; margin-top: 10px;">
+          <h4>Textual Analysis & Discussion Points</h4>
+          <ol class="clean-list" style="padding-left: 20px; list-style-type: decimal;">
+            <li style="margin-bottom: 12px;">
+              <strong>What is the central conflict in the poem?</strong><br>
+              <em>Answer:</em> The central conflict stems from Papa losing his spectacles and searching everywhere for them, unaware that they are on his head.
+            </li>
+            <li style="margin-bottom: 12px;">
+              <strong>Why is the ending considered humorous or ironic?</strong><br>
+              <em>Answer:</em> It is ironic because after searching high and low throughout the entire house, the object of his search was physically attached to him the entire time.
+            </li>
+          </ol>
+        </div>
+      </details>
+    </section>
+  </main>
+
+  <footer style="margin-top: 30px; text-align: center; font-size: 0.85em; color: #777; border-top: 1px solid #eee; padding-top: 15px;">
+    Build Calibre Content Aggregator Framework • Database Sync Complete
+  </footer>
+
 </body>
 </html>
