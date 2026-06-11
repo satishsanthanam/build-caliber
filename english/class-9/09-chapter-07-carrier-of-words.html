@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 9 — Chapter 7: Carrier of Words</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 9 — Chapter 7: Carrier of Words</h1>
+
+    <details class="topic-box"><summary class="topic-title">Prose Summary: Khetaram, the Gramin Dak Sewak</summary><p>This section explores the life of Khetaram, a dedicated <span class="keyword">Gramin Dak Sewak</span> (GDS) serving the remote village of Somarad in the Thar Desert of Rajasthan, near the Indo-Pakistan border.</p><details class="sub-topic"><summary><h3>The Life and Struggles of Khetaram</h3></summary><ul><li><strong>Extreme Conditions:</strong> Khetaram walks 20 km daily across soft sand dunes in scorching summer temperatures reaching up to 50°C.</li><li><strong>Physical Toll:</strong> His left shoulder is slumped from years of carrying a heavy mailbag that can weigh up to 28 kg.</li><li><strong>Sole Connection:</strong> He serves as the only link between the far-flung <span class="keyword">hamlets</span> (dhaanis) and the rest of the world, where mobile networks are virtually non-existent.</li></ul></details><details class="sub-topic"><summary><h3>The Role of Gramin Dak Sewaks (GDS)</h3></summary><ul><li><strong>Workforce:</strong> GDS make up more than 50% of India Post's total workforce, serving inaccessible terrains like the frozen deserts of Ladakh, the islands of Lakshadweep, and riverine communities in the Northeast.</li><li><strong>Financial Trust:</strong> Beyond delivering mail, GDS help rural depositors manage their monthly savings, reflecting deep-rooted public trust in the postal system.</li></ul></details><details class="sub-topic"><summary><h3>Social Significance and Cultural Customs</h3></summary><ul><li><strong>Bearer of News:</strong> Khetaram reads letters and drafts replies for illiterate villagers.</li><li><strong>Good News:</strong> News of births or weddings is celebrated, and villagers offer him a piece of jaggery.</li><li><strong>Bad News:</strong> Letters bearing news of death have a torn right corner. Khetaram dreads these <span class="keyword">missives</span>; he reads them outside the house and tears them to bits to symbolically destroy the bad news.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Poetry Analysis: "Words" by Charles Swain</summary><p>A reflective poem exploring the limitations of spoken words and the supreme value of sincere, heartfelt communication.</p><details class="sub-topic"><summary><h3>Stanza Breakdown & Meaning</h3></summary><ul><li><strong>Stanza 1:</strong> Words alone cannot satisfy the heart; they are fleeting like "summer birds" and leave behind empty air.</li><li><strong>Stanza 2:</strong> To a weary heart (a pilgrim on earth), empty words are as worthless as common weeds.</li><li><strong>Stanza 3:</strong> A few sincere words spoken truly bring deeper joy than a host of meaningless words that reach only the head but never touch the heart.</li><li><strong>Stanza 4:</strong> A cheerful voice that brightens a lonely home often uses the fewest words.</li><li><strong>Stanza 5 & 6:</strong> Empty words may make a "gaudy show" like fruitless plants, but they fail when put to the test.</li></ul></details><details class="sub-topic"><summary><h3>Literary Devices in "Words"</h3></summary><ul><li><span class="keyword">Simile</span>: "words, like summer birds, depart" (comparing fleeting words to migratory birds); "words are of as little worth / As just so many weeds".</li><li><span class="keyword">Metaphor</span>: "The heart, a pilgrim upon earth" (comparing the heart to a traveler); "walking sandman" (from the prose section).</li><li><span class="keyword">Hyperbole</span>: "The world might hold a feast" (exaggerating the impact if words could truly satisfy).</li></ul></details></details><details class="topic-box"><summary class="topic-title">Poetry Analysis: "Weigh Your Words" by E. F. Hayward</summary><p>A didactic poem emphasizing the moral responsibility of speech and the lasting impact of our utterances.</p><details class="sub-topic"><summary><h3>Key Themes</h3></summary><ul><li><strong>Mindful Speech:</strong> We must "weigh" what we say and only speak what we truly mean to save unnecessary talk and keep our conscience clean.</li><li><strong>The Danger of Idle Words:</strong> Careless words and empty promises can cause deep heartache to those who believe them.</li><li><strong>Permanence of Words:</strong> Once a hurtful word is written on someone's heart, it can never be erased.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Vocabulary & Word Meanings</summary><details class="sub-topic"><summary><h3>Prose Vocabulary</h3></summary><ul><li><span class="keyword">Sole</span>: Only</li><li><span class="keyword">Hamlets</span>: Small settlements</li><li><span class="keyword">Ply</span>: Move or travel regularly</li><li><span class="keyword">Hefted</span>: Lifted or carried something heavy</li><li><span class="keyword">Stipulate</span>: Specify a requirement or demand</li><li><span class="keyword">Mojri</span>: Traditional footwear of Rajasthan</li><li><span class="keyword">Riverine</span>: Situated on a river bank</li><li><span class="keyword">Inaccessible</span>: Unreachable</li><li><span class="keyword">Ambit</span>: Range or scope</li><li><span class="keyword">Remitted</span>: Sent as a payment or gift</li><li><span class="keyword">Scrap</span>: Discard or remove</li><li><span class="keyword">Dwell</span>: To stay or remain for some time</li><li><span class="keyword">Threshold</span>: Entrance to a home</li><li><span class="keyword">Missive</span>: A letter, especially a long or official one</li></ul></details><details class="sub-topic"><summary><h3>Poetry Vocabulary</h3></summary><ul><li><span class="keyword">Gaudy</span>: Brilliantly or excessively showy</li><li><span class="keyword">Credence</span>: Belief in or acceptance of something as true</li><li><span class="keyword">Oft</span>: Often</li></ul></details></details><details class="topic-box"><summary class="topic-title">Grammar & Language Structures</summary><details class="sub-topic"><summary><h3>Present Perfect Tense</h3></summary><p>Used to describe actions completed in the past that have a direct impact on or connection to the present.</p><ul><li><strong>Structure:</strong> Subject + has/have + Past Participle (V3)</li><li><strong>Examples of Functions:</strong><ul><li><em>Recently completed action:</em> "I <strong>have just eaten</strong> a mango."</li><li><em>Life experiences:</em> "<strong>Have</strong> you ever <strong>seen</strong> a play before?"</li><li><em>Action completed in the past with present impact:</em> "I <strong>have studied</strong> in this school for six years."</li></ul></li></ul></details><details class="sub-topic"><summary><h3>Active and Passive Voice</h3></summary><ul><li><strong>Active Voice:</strong> The subject performs the action. <br><em>Example:</em> "GDS delivers the mail at the border."</li><li><strong>Passive Voice:</strong> The subject receives the action. <br><em>Example:</em> "The mail is delivered by the GDS at the border."</li></ul></details></details><details class="topic-box"><summary class="topic-title">Writing & Communication Tasks</summary><details class="sub-topic"><summary><h3>Condolence Messages</h3></summary><p>A formal expression of sympathy sent to someone experiencing grief due to the death of a loved one.</p><ul><li><strong>Key Elements:</strong> Expressing deep sadness, offering condolences, extending sympathy to the family, and praying for strength/peace for the departed soul.</li></ul></details><details class="sub-topic"><summary><h3>The Study of Philately</h3></summary><p><span class="keyword">Philately</span> is the study of postage stamps and postal history. It serves as a medium to preserve and celebrate national heritage, historical figures, monuments, and festivals.</p></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 7</strong> of the Class 9 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "09-chapter-06-twin-melodies.html";
+      } else {
+        window.location.href = "09-chapter-08-follow-that-dream.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
