@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 103 — Chapter 5: Glimpses of India</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 103 — Chapter 5: Glimpses of India</h1>
+
+    <details class="topic-box"><summary class="topic-title">Introduction &amp; Let's Begin</summary><p>This unit explores the rich diversity of India in terms of culture, language, food, and traditions. It encourages students to research regional cuisines, dance forms, music, and art forms across different Indian states, mapping them to highlight interesting cultural facts.</p></details><details class="topic-box"><summary class="topic-title">Reading Comprehension: Text I (The Parsi Community &amp; Cuisine)</summary><details class="sub-topic"><summary><h3>The Story of Nowrosji Kapadia</h3></summary><p>An excerpt from <em>'Down Memory Lane with the Parsis of New Delhi'</em> by Shernaz Italia. It describes the warm hospitality of <span class="keyword">Nowrosji Kapadia</span>, who welcomed Parsi visitors arriving at the Old Delhi railway station on the Frontier Mail, inviting them to his home for meals and stays, which marked the beginning of the Parsi community in Delhi.</p></details><details class="sub-topic"><summary><h3>Parsi Culinary Traditions</h3></summary><p>Parsi festivals featured elaborate home-cooked meals, where outside catering was unheard of. Key traditional delicacies include:</p><ul><li><span class="keyword">Dar ni pori</span>: Rich pastry stuffed with sweetened lentils.</li><li><span class="keyword">Malido</span>: A Parsi-style halwa requiring intense physical effort to prepare.</li><li><span class="keyword">Sev</span>: Brown vermicelli cooked in milk and served with fresh cream.</li><li><span class="keyword">Ravo</span>: Semolina pudding.</li><li><span class="keyword">Mithu dahi</span>: Sweetened curd made with full cream milk.</li><li><span class="keyword">Bafellaeeda</span>: Hard-boiled eggs.</li><li><span class="keyword">Kheemo kaleji</span>: Mutton mince with liver.</li><li><span class="keyword">Smori dal chawal</span> &amp; <span class="keyword">Macchi no patio</span>: White boiled rice with yellow dal and a tart, tangy fish curry.</li><li><span class="keyword">Teatime Treats</span>: Parsi biscuits (<span class="keyword">batasa</span>, <span class="keyword">nan khatai</span>, <span class="keyword">khari</span>), <span class="keyword">patrel</span> (steamed arbi leaves with besan), <span class="keyword">kumas</span> (rich cake), and <span class="keyword">bhakra</span> (sweet deep-fried doughnuts).</li></ul></details><details class="sub-topic"><summary><h3>Vocabulary &amp; Expressions</h3></summary><ul><li><span class="keyword">cajole</span>: Persuade someone to do something by sustained coaxing or flattery.</li><li><span class="keyword">dainty</span>: Delicately small and pretty.</li><li><span class="keyword">extensive</span>: Covering or affecting a large area; detailed and far-reaching.</li><li><span class="keyword">overruled</span>: Reject or disallow an argument or decision.</li><li><span class="keyword">vouch</span>: Assert or confirm as a result of one's own experience.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Reading Comprehension: Text II (Araku Valley Coffee)</summary><details class="sub-topic"><summary><h3>Geography &amp; History of Araku Valley</h3></summary><p>Located 1,200m above sea level in the north-eastern corner of Andhra Pradesh, bordering Odisha. Coffee was first introduced to these hill tracts in 1898 by British civil servant <span class="keyword">N.S. Brodie</span>. The Naandi Foundation later transformed it from a livelihood initiative into a globally appreciated brand managed by Adivasi farmers.</p></details><details class="sub-topic"><summary><h3>Bio-Dynamic Farming Practices</h3></summary><p>Araku coffee is produced using <span class="keyword">bio-dynamic farming</span>, creating an interconnected, symbiotic ecosystem. The soil is enriched through composting, and shade trees like mango and jackfruit are planted. Standard operating procedures are maintained from <span class="keyword">"sapling to savouring"</span> to ensure high-quality aroma and flavor.</p></details><details class="sub-topic"><summary><h3>Vocabulary &amp; Key Terms</h3></summary><ul><li><span class="keyword">bio-dynamic</span>: A system of farming that views the farm as a cohesive, interconnected living system.</li><li><span class="keyword">terroirs</span>: The environmental factors (soil, climate) that affect a crop's character.</li><li><span class="keyword">traverses</span>: Travels across or through.</li><li><span class="keyword">mandals</span>: Administrative divisions in some Indian states.</li><li><span class="keyword">tucked</span>: Hidden or situated in a safe, quiet place.</li></ul></details></details><details class="topic-box"><summary class="topic-title">Vocabulary &amp; Grammar</summary><details class="sub-topic"><summary><h3>Sound Associations</h3></summary><p>Matching actions/objects with their characteristic sounds:</p><ul><li><span class="keyword">shuffling</span> of feet</li><li><span class="keyword">striking</span> of a match</li><li><span class="keyword">puffing</span> of an engine</li><li><span class="keyword">clanking</span> of chains</li><li><span class="keyword">sighing</span> of the wind</li><li><span class="keyword">rustling</span> of leaves</li><li><span class="keyword">banging</span> of the door</li><li><span class="keyword">gurgling</span> of water</li><li><span class="keyword">howling</span> of hyenas</li></ul></details><details class="sub-topic"><summary><h3>Participles as Adjectives</h3></summary><p>Verbs ending in <span class="keyword">-ing</span> (present participles) and <span class="keyword">-ed</span> (past participles) can function as adjectives:</p><ul><li><strong>Present Participle (-ing):</strong> Describes the characteristic of a person, thing, or situation (e.g., <em>welcoming</em> cup, <em>pleasing</em> performance).</li><li><strong>Past Participle (-ed):</strong> Describes a feeling or emotion (e.g., <em>delighted</em> with the gift, <em>bored</em> students).</li></ul></details></details><details class="topic-box"><summary class="topic-title">Writing &amp; Projects</summary><details class="sub-topic"><summary><h3>Kashmiri Breads (The Kandur Tradition)</h3></summary><p>In Kashmir, the local baker (<span class="keyword">Kandur</span>) shop is a social hub. Traditional Kashmiri breads include:</p><ul><li><span class="keyword">Tsot-Girda</span>: Medium-sized round everyday breakfast bread.</li><li><span class="keyword">Lavasa</span>: Puffy flatbread made from maida.</li><li><span class="keyword">Tsochwor / Tilvor</span>: Bagel-shaped hard bread with sesame seeds, eaten with afternoon tea.</li><li><span class="keyword">Kulcha</span>: Crispy palm-sized breads (sweet or savory) sprinkled with poppy seeds.</li><li><span class="keyword">Sheermal</span>: Mildly sweet bread.</li><li><span class="keyword">Roath</span>: Sweet, cake-like bread baked in a tandoor, topped with dry fruits for special occasions.</li></ul></details><details class="sub-topic"><summary><h3>The Frontier Mail</h3></summary><p>Flagged off in 1928, the <span class="keyword">Frontier Mail</span> was a prestigious, luxurious, and highly punctual train running from Bombay to Peshawar (2,335 km in 72 hours). It departed from Ballard Pier Mall Station to carry passengers and mail arriving from Europe by ship.</p></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 5</strong> of the Class 103 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "../../index.html";
+      } else {
+        window.location.href = "03-chapter-06-mijbil-the-otter.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
