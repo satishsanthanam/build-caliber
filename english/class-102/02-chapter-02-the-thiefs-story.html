@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Class 102 — Chapter 2: The Thief's Story</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-content {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      position: relative;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 28px; font-weight: bold; color: #666;
+      cursor: pointer;
+    }
+    .close-modal:hover { color: #000; }
+    .modal-title { margin-top: 0; color: #111; font-size: 1.3rem; display: flex; align-items: center; gap: 8px; }
+    .modal-desc { color: #555; font-size: 0.95rem; line-height: 1.4; margin-bottom: 20px; }
+    .modal-grid { display: flex; flex-direction: column; gap: 10px; }
+    .modal-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px; background: #f0f4f8; color: #1a202c;
+      text-decoration: none; border-radius: 6px; font-weight: 500;
+      border: 1px solid #cbd5e1; transition: all 0.2s ease; cursor: pointer;
+    }
+    .modal-btn:hover { background: #e2e8f0; border-color: #94a3b8; }
+    .modal-btn.primary { background: #3182ce; color: white; border: none; }
+    .modal-btn.primary:hover { background: #2b6cb0; }
+    .accessibility-ctrl {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;
+    }
+    .btn-scale { padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 4px; background: white; cursor: pointer; }
+    .btn-scale:hover { background: #f7fafc; }
+  </style>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] },
+      chtml: { displayAlign: 'left', displayIndent: '1em' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="chapter-container">
+    
+    <div class="nav-bar">
+      <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>
+      <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; cursor: pointer;">📖 Quick Menu</button>
+      <a href="../../index.html" class="btn-nav">🏠 Home</a>
+    </div>
+
+    <h1>Class 102 — Chapter 2: The Thief's Story</h1>
+
+    <details class='topic-box'><summary class='topic-title'>Overview & Characters</summary><p><strong>The Thief's Story</strong> by <span class='keyword'>Ruskin Bond</span> is a touching narrative about a young thief's transformation through trust, love, and the promise of education.</p><details class='sub-topic'><summary><h3>Character Profiles</h3></summary><ul><li><strong>Hari Singh (The Narrator):</strong> A 15-year-old experienced and fairly successful thief. He changes his name every month to evade the police and former employers. He is cunning but ultimately redeemable.</li><li><strong>Anil:</strong> A 25-year-old tall, lean, and easy-going writer. He is extremely trusting, kind, and simple, making him an unconventional employer.</li></ul></details></details><details class='topic-box'><summary class='topic-title'>Plot Summary</summary><details class='sub-topic'><summary><h3>1. The Meeting and Deception</h3></summary><p>Hari Singh approaches Anil during a wrestling match, using <span class='keyword'>flattery</span> to win his confidence. He asks for work. Anil cannot pay him but agrees to feed him if Hari can cook. Hari lies that he can cook, but the first meal is so terrible that Anil gives it to a stray dog. Instead of throwing him out, Anil kindly teaches him to cook and write.</p></details><details class='sub-topic'><summary><h3>2. Life with Anil</h3></summary><p>Hari finds working for Anil pleasant. He makes tea in the morning and buys daily supplies, keeping a profit of about one rupee a day. Anil is aware of this minor theft but chooses to ignore it. Anil's income is irregular; he makes money by <span class='keyword'>fits and starts</span>, writing for magazines.</p></details><details class='sub-topic'><summary><h3>3. The Theft</h3></summary><p>One evening, Anil returns with a bundle of notes (600 rupees in fifties) from selling a book. He tucks the money under his mattress. Tempted by the large sum, Hari decides to steal it. He creeps up to the sleeping Anil, slides his hand under the mattress, and takes the money, planning to catch the 10.30 Express to Lucknow.</p></details><details class='sub-topic'><summary><h3>4. The Turning Point</h3></summary><p>At the railway station, Hari hesitates to board the train for an inexplicable reason and misses it. Standing alone on a deserted platform in a chilly rain, he reflects on his life. He realizes that while greedy men show fear and rich men show anger when robbed, a trusting man like Anil would only show sadness for the loss of trust. He also realizes that learning to read and write whole sentences is worth far more than a few hundred rupees.</p></details><details class='sub-topic'><summary><h3>5. Redemption</h3></summary><p>Hari returns to Anil's room and carefully slips the damp notes back under the mattress. The next morning, Anil wakes up early, makes tea, and hands Hari a wet fifty-rupee note. Anil announces that he made some money and will now pay Hari regularly, adding, 'Today we'll start writing sentences.' Anil clearly knows about the theft but chooses forgiveness over punishment, prompting a genuine, effortless smile from Hari.</p></details></details><details class='topic-box'><summary class='topic-title'>Thematic Analysis</summary><details class='sub-topic'><summary><h3>The Power of Trust and Kindness</h3></summary><p>Anil's unconditional trust and compassion act as a catalyst for Hari's reformation. Unlike the law or physical punishment, Anil's quiet forgiveness appeals to Hari's conscience, proving that love and trust can reform even a seasoned criminal.</p></details><details class='sub-topic'><summary><h3>The Value of Education</h3></summary><p>Hari realizes that physical wealth from stealing is temporary and risky, whereas <span class='keyword'>education</span> offers respect, status, and limitless opportunities. The desire to learn to read and write is what ultimately drives him back to Anil.</p></details></details><details class='topic-box'><summary class='topic-title'>Glossary & Key Vocabulary</summary><ul><li><span class='keyword'>flattery</span>: Insincere praise to win favor.</li><li><span class='keyword'>modestly</span>: Without boasting; in a humble manner.</li><li><span class='keyword'>grunting</span>: Making low, guttural sounds.</li><li><span class='keyword'>appealing</span>: Attractive, inviting, or pleasing.</li><li><span class='keyword'>unlined</span>: Showing no signs of worry, anxiety, or age.</li><li><span class='keyword'>fits and starts</span>: Irregularly; not continuously.</li></ul></details><details class='topic-box'><summary class='topic-title'>Study Questions</summary><details class='sub-topic'><summary><h3>Think About It</h3></summary><ol><li>What are Hari Singh's reactions to the prospect of receiving an education? Do they change over time?</li><li>Why does Anil not hand the thief over to the police? In what ways is Anil different from other employers?</li></ol></details><details class='sub-topic'><summary><h3>Talk About It</h3></summary><ol><li>Do you think people like Anil and Hari Singh are found only in fiction, or are there such people in real life?</li><li>Does Anil's career as a struggling writer explain his behavior in any way?</li></ol></details></details>
+
+    <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-modal" onclick="toggleModal(false)">&times;</span>
+        <h3 class="modal-title">🧭 Navigation Assistant</h3>
+        <p class="modal-desc">You are currently viewing <strong>Chapter 2</strong> of the Class 102 curriculum modules.</p>
+        
+        <div class="modal-grid">
+          <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
+          <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
+          <a href="../../index.html" class="modal-btn primary">🏠 Dashboard Main Menu</a>
+        </div>
+
+        <div class="accessibility-ctrl">
+          <span style="font-size: 0.9rem; color: #4a5568;">Text Size:</span>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn-scale" onclick="adjustTextSize(-0.1)">A-</button>
+            <button class="btn-scale" onclick="adjustTextSize(0.1)">A+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleModal(show) {
+      const modal = document.getElementById('navModal');
+      if (show) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function navigateChapterSequence(direction) {
+      toggleModal(false); // Force instant visual collapse on execution
+      if (direction === -1) {
+        window.location.href = "02-chapter-01-a-triumph-of-surgery.html";
+      } else {
+        window.location.href = "02-chapter-03-the-midnight-visitor.html";
+      }
+    }
+
+    let currentScale = 1.0;
+    function adjustTextSize(delta) {
+      currentScale += delta;
+      if (currentScale < 0.8) currentScale = 0.8;
+      if (currentScale > 1.4) currentScale = 1.4;
+      document.querySelector('.chapter-container').style.fontSize = currentScale + 'em';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') toggleModal(false);
+    });
+  </script>
+</body>
+</html>
