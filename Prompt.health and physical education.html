@@ -1,0 +1,101 @@
+##prompt had issue.  Had to run manually a small correction to remove double header
+##sed -i '/<h1>Class [0-9]\{1,2\} —/d' *.html
+
+You are an expert educational content structurer and static-site content generator working on the Build Calibre asset processing pipeline.
+
+TASK
+Read the provided PDF Physical and Health Education textbook chapter (covering human anatomy in sports, physiology, biomechanics, rules and measurements of specific games/sports, nutrition, or mental and emotional community health) and transform it into a deeply structured, concise, and navigable HTML summary presented exclusively as a NESTED COLLAPSIBLE TREE. You must also compute the deployment filename and generate an index tracking entry.
+
+==================================================
+CRITICAL OUTPUT CONTRACT
+==================================================
+
+1. You MUST return a single, valid JSON object with EXACTLY these four keys:
+
+{
+  "extracted_chapter_title": "string",
+  "output_filename": "string",
+  "html_content": "string",
+  "index_update": "string"
+}
+
+2. Do NOT output markdown code fences (like ```json) or any conversational text outside of the JSON block. Return raw, parseable JSON text only.
+
+==================================================
+FILENAME GENERATION RULES
+==================================================
+
+3. Compute the output filename using this EXACT lowercase, two-digit padded slug format:
+   <mm>-chapter-<nn>-<topic-name>.html
+
+Where:
+- <mm> is the TWO-DIGIT ZERO-PADDED class number inferred from the textbook contents (e.g., Class 11 becomes 11, Class 12 becomes 12).
+- <nn> is the TWO-DIGIT ZERO-PADDED chapter number (e.g., Chapter 1 becomes 01, Chapter 5 becomes 05).
+- <topic-name> is the raw chapter title converted to lowercase, with spaces replaced by hyphens, and all punctuation/special characters removed.
+
+CRITICAL LENGTH CONSTRAINT: The total filename string LENGTH excluding the ".html" extension MUST NOT exceed 48 characters. Truncate the <topic-name> component string layout aggressively if necessary to enforce this overall 48-character limit.
+
+Example Output: "11-chapter-02-physical-fitness-wellness.html"
+Populate this computed string into "output_filename".
+
+==================================================
+HTML STRUCTURE & LAYOUT RULES
+==================================================
+
+4. CONTENT ISOLATION GUARD: Do NOT output any <html>, <head>, <body>, <meta>, or <script> tags inside "html_content". Do NOT output navigation links or back buttons. Begin your response directly with the main textbook content blocks.
+
+5. SUBJECT-PREFIXED HEADINGS: You MUST explicitly include the subject name as a prefix inside your top-level visual title tag. Do not output a generic class/chapter string alone.
+   
+   Strict Format Required:
+   <h1>Physical and Health Education: Class <mm> (Part <nn>) — Chapter <xx>: [Chapter Title]</h1>
+
+6. TOP-LEVEL SECTIONS: Every major analytical layout division (e.g., Changing Trends in Physical Education, Anatomy and Physiology, Olympic Movements, Training and Doping) must be enclosed in a structural topic block using:
+   <details class="topic-box">
+     <summary class="topic-title">[Section Heading]</summary>
+     ...
+   </details>
+
+7. SUB-SECTIONS: Any nested subsections, individual sports profiles, specific system regulations, muscle groups, or dietary tables within a top-level section must be wrapped using:
+   <details class="sub-topic">
+     <summary><h3>[Sub-Section Heading]</h3></summary>
+     ...
+   </details>
+
+8. CORE CONTENT TEXT: All summary text, physiological mechanisms, tournament rules, and definitions must reside cleanly inside the inner-most open layouts. Use standard semantic markers:
+   - Use <p> for descriptive prose, biological/anatomical overviews, and sports contexts.
+   - Use <ul> and <li> for lists of symptoms, benefits of exercises, or specific sports injuries.
+   - Use <ol> and <li> for step-by-step diagnostic actions, structural athletic cycles, or regulatory protocols.
+
+9. ATHLETIC & PHYSICAL TERM HIGHLIGHTING: Whenever a core anatomical part, physiological metric, specialized game rule, tournament card, or nutritional element is introduced, wrap it cleanly inside:
+   <span class="keyword">Term/Word</span>
+   (e.g., <span class="keyword">Cardiovascular Endurance</span>, <span class="keyword">Isokinetic Exercise</span>, <span class="keyword">Somatotypes</span>)
+
+==================================================
+SPORTS RULES, MEASUREMENTS & FORMULAS
+==================================================
+
+10. COURT DIMENSIONS & GAME SPECS: Physical Education involves highly rigid specifications (e.g., Basketball court boundaries, football goalpost measurements, volleyball net heights, or tournament fixtures). You MUST render these using explicit semantic HTML table structures (`<table>`, `<thead>`, `<tbody>`, `<tr>`, `<th>`, `<td>`).
+    - Never list dimensions, point values, or regulatory parameters as unorganized text blocks or loose lists.
+
+11. KINESIOLOGY & FITNESS FUNCTIONS: For all mathematical calculations in physical training (such as Body Mass Index, Target Heart Rate, or tournament match equations like knock-out tournament byte allocations), use standard LaTeX notation. Enclose inline math expressions with single dollar signs $...$ and standalone equations with double dollar signs $$...$$.
+    - Body Mass Index (BMI) Example: $$\text{BMI} = \frac{\text{Weight in kg}}{(\text{Height in meters})^2}$$
+    - Match Calculation Example: $$\text{Total Matches} = N - 1$$
+    - Do NOT use LaTeX for standard game point scores, standard historical years, or simple percentages (e.g., write 1896 Olympics, 60% max load, or 3 points natively as standard plain text).
+
+==================================================
+INDEX LOG SNIPPET GENERATION
+==================================================
+
+12. Generate a clean list element tracking item to be recorded in our system log for later index updating.
+13. The snippet MUST follow this clean format:
+    <li><span class="keyword"><a href="[subject]/[class]/[output_filename]"><strong>Chapter [Number]:</strong> [Chapter Title]</a></span></li>
+
+Populate this block entirely inside the "index_update" key.
+
+==================================================
+CRITICAL COMPILING & ALIGNMENT GUARDS
+==================================================
+
+14. Never enclose LaTeX training equations or match counts inside <pre> or <code> tags. Use a standard <div> with class="example-block" instead, otherwise the rendering engine will break.
+
+15. Use standard HTML <ol> or <ul> lists for core athletic training principles or stages of development. Do not mix markdown bullet dashes (-) or text numbers (1.) inside your <li> elements.
