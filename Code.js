@@ -1,5 +1,5 @@
 // =====================================================================
-// 🔮 THE BUILD CALIBRE UNIFIED SUITE: MASTER FACTORY ENGINE (V14.0)
+// 🔮 THE BUILD CALIBRE UNIFIED SUITE: MASTER FACTORY ENGINE (V16.0)
 // =====================================================================
 
 let logBuffer = [];
@@ -10,8 +10,6 @@ function log(msg) {
 
 /**
  * TOOL 1: THE NCERT DISCOVERY & SHEET PREP ENGINE
- * Run this function first to crawl Google Drive, translate Hindi titles,
- * handle multi-book partitions (e.g., 11-1), and clear/populate Sheet1.
  */
 function autoMapDriveFolderLinks() {
   Logger.log("🏁 Discovery Engine Ignition: Commencing dynamic link generation crawl...");
@@ -148,8 +146,6 @@ function autoMapDriveFolderLinks() {
 
 /**
  * TOOL 2: MAIN EXECUTION ENGINE
- * Run this function second. It loops through the "Pending" items created by Tool 1,
- * runs them through Gemini, structures the custom layouts, and deploys directly to GitHub.
  */
 function runBuildCaliberFactory() {
   log("🏁 Factory Ignition: Checking workspace structural boundaries...");
@@ -330,6 +326,31 @@ function runBuildCaliberFactory() {
     details.topic-box ol, details.sub-topic ol { list-style-type: decimal !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
     details.topic-box ul, details.sub-topic ul { list-style-type: disc !important; padding-left: 32px !important; margin-left: 10px !important; display: block !important; }
     details.topic-box li, details.sub-topic li { margin-bottom: 6px !important; display: list-item !important; }
+    
+    /* 🚨 FIXED: EMBEDDED DEFENSIVE CONTAINER PATCh FOR MOBILE OVerFLOW SCROLLBARS */
+    table { 
+      width: 100% !important; 
+      border-collapse: collapse !important; 
+      margin: 16px 0 !important; 
+      display: block !important;  
+      overflow-x: auto !important;
+      -webkit-overflow-scrolling: touch;
+      box-sizing: border-box !important; 
+    }
+    th, td { 
+      padding: 10px 12px !important; 
+      text-align: left !important; 
+      border: 1px solid #94a3b8 !important; 
+      min-width: 140px !important;
+    }
+    th { 
+      background-color: #f1f5f9 !important; 
+      font-weight: 600 !important; 
+      border-bottom: 2px solid #475569 !important;
+      white-space: nowrap !important;
+    }
+    blockquote.example-block { width: 100% !important; box-sizing: border-box !important; margin: 16px 0 !important; padding: 16px !important; background: #f8fafc !important; border-left: 4px solid #3182ce !important; }
+    
     .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 9999; justify-content: center; align-items: center; }
     .modal-overlay.active { display: flex; }
     .modal-content { background: #ffffff; padding: 24px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 25px rgba(0,0,0,0.25); position: relative; font-family: system-ui, -apple-system, sans-serif; }
@@ -359,14 +380,14 @@ function runBuildCaliberFactory() {
       <a href="../../index.html" class="btn-nav">🏠 Home</a>
     </div>
 
-    <h1>${masterSearchHeaderTitle}</h1>
-    ${parsedJson.html_content}
+    <h1>\${masterSearchHeaderTitle}</h1>
+    \${parsedJson.html_content}
 
     <div id="navModal" class="modal-overlay" onclick="toggleModal(false)">
       <div class="modal-content" onclick="event.stopPropagation()">
         <span class="close-modal" onclick="toggleModal(false)">&times;</span>
         <h3 class="modal-title">🧭 Navigation Assistant</h3>
-        <p class="modal-desc">You are currently viewing <strong>Chapter ${cleanDisplayChapter}</strong> of the Class ${baseClassNum} curriculum modules.</p>
+        <p class="modal-desc">You are currently viewing <strong>Chapter \${cleanDisplayChapter}</strong> of the Class \${baseClassNum} curriculum modules.</p>
         <div class="modal-grid">
           <button onclick="navigateChapterSequence(-1)" class="modal-btn">← Previous Chapter</button>
           <button onclick="navigateChapterSequence(1)" class="modal-btn">Next Chapter →</button>
@@ -384,7 +405,7 @@ function runBuildCaliberFactory() {
   </div>
   <script>
     function toggleModal(show) { const modal = document.getElementById('navModal'); if (show) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; } else { modal.classList.remove('active'); document.body.style.overflow = ''; } }
-    function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "${prevFileName}"; } else { window.location.href = "${nextFileName}"; } }
+    function navigateChapterSequence(direction) { toggleModal(false); if (direction === -1) { window.location.href = "\${prevFileName}"; } else { window.location.href = "\${nextFileName}"; } }
     let currentScale = 1.0;
     function adjustTextSize(delta) { currentScale += delta; if (currentScale < 0.8) currentScale = 0.8; if (currentScale > 1.4) currentScale = 1.4; document.querySelector('.chapter-container').style.fontSize = currentScale + 'em'; }
     document.addEventListener('keydown', function(e) { if (e.key === 'Escape') toggleModal(false); });
@@ -392,6 +413,7 @@ function runBuildCaliberFactory() {
 </body>
 </html>`;
 
+    // Rest of your GitHub payload handling code follows cleanly...
     const stagingBranchName = "develop";
     const commitSuccess = pushFileToGitHub(finalPath, completeWebPageContent, stagingBranchName);
 
@@ -412,7 +434,6 @@ function runBuildCaliberFactory() {
 
 /**
  * SHARED COMPONENT: AUTOMATED PATH RESOLUTION ENGINE
- * Dynamically strips, handles part divisions, translates Devanagari Unicode titles, and handles ASCII web slugs.
  */
 function generateDeterministicFileName(classLevel, chapterNo, chapterTitle) {
   let cleanClassStr = classLevel.toString().trim();
@@ -532,7 +553,8 @@ function callGeminiAPI(pdfBlob, promptText, modelName, apiKey) {
       "maxOutputTokens": 32768
     }
   };
-  const response = UrlFetchApp.fetch(url, { "method": "post", "contentType": "application/json", "payload": JSON.stringify(payload), "muteHttpExceptions": true });
+  const options = { "method": "post", "contentType": "application/json", "payload": JSON.stringify(payload), "muteHttpExceptions": true };
+  const response = UrlFetchApp.fetch(url, options);
   const json = JSON.parse(response.getContentText());
   if (response.getResponseCode() !== 200) throw new Error("HTTP " + response.getResponseCode() + ": " + (json.error ? json.error.message : "API Error"));
   return json.candidates[0].content.parts[0].text;
@@ -547,13 +569,15 @@ function pushFileToGitHub(filePath, fileContent, branchName) {
   
   const url = "https://api.github.com/repos/" + username + "/" + repo + "/contents/" + filePath;
   let fileSha = null;
-  const checkResponse = UrlFetchApp.fetch(url, { "method": "get", "headers": { "Authorization": "token " + token, "Accept": "application/vnd.github.v3+json" }, "muteHttpExceptions": true });
+  const checkOptions = { "method": "get", "headers": { "Authorization": "token " + token, "Accept": "application/vnd.github.v3+json" }, "muteHttpExceptions": true };
+  const checkResponse = UrlFetchApp.fetch(url, checkOptions);
   if (checkResponse.getResponseCode() === 200) fileSha = JSON.parse(checkResponse.getContentText()).sha;
   
   const commitPayload = { "message": "pipeline automation: compile layout structure for " + filePath, "content": Utilities.base64Encode(Utilities.newBlob(fileContent).getBytes()), "branch": branchName };
   if (fileSha) commitPayload["sha"] = fileSha; 
   
-  const pushResponse = UrlFetchApp.fetch(url, { "method": "put", "contentType": "application/json", "headers": { "Authorization": "token " + token, "Accept": "application/vnd.github.v3+json" }, "payload": JSON.stringify(commitPayload), "muteHttpExceptions": true });
+  const pushOptions = { "method": "put", "contentType": "application/json", "headers": { "Authorization": "token " + token, "Accept": "application/vnd.github.v3+json" }, "payload": JSON.stringify(commitPayload), "muteHttpExceptions": true };
+  const pushResponse = UrlFetchApp.fetch(url, pushOptions);
   return pushResponse.getResponseCode() === 200 || pushResponse.getResponseCode() === 201;
 }
 
