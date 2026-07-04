@@ -393,7 +393,14 @@ function runBuildCaliberFactory() {
 </html>`;
 
     const stagingBranchName = "develop";
-    const commitSuccess = pushFileToGitHub(finalPath, completeWebPageContent, stagingBranchName);
+    // 1. Clear any latent LaTeX string syntax typos
+    var cleanHTML = sanitizeLaTeXForHTML(completeWebPageContent);
+
+    // 2. Format the layout code blocks cleanly across multiple lines for GitHub
+    var beautifulHTML = formatHTMLForGitDiff(cleanHTML);
+
+    // 3. Push the readable file down your Git pipeline branch safely
+    const commitSuccess = pushFileToGitHub(finalPath, beautifulHTML, stagingBranchName);
 
     if (commitSuccess) {
       log("🚀 PIPELINE SUCCESS: File safely deployed straight to GitHub -> " + finalPath);
@@ -582,6 +589,77 @@ function flushLogsToDrive() {
     file.setContent(file.getBlob().getDataAsString() + logBuffer.join("\n") + "\n");
     logBuffer = [];
   } catch (e) { }
+}
+
+/**
+ * Sanitizes and preserves LaTeX backslashes before writing to HTML files.
+ * Prevents escaping pipelines from converting \x0c or \x09 artifacts.
+ */
+function sanitizeLaTeXForHTML(rawText) {
+  if (!rawText) return "";
+  
+  let cleanText = rawText;
+  
+  // 1. Catch known layout engine output corruptions safely
+  cleanText = cleanText.replace(/Holdsymbol/g, '\\boldsymbol');
+  cleanText = cleanText.replace(/ightarrow/g, '\\rightarrow');
+  
+  // 2. Fix malformed text percent signs inside inline math blocks
+  cleanText = cleanText.replace(/\\text\{%\}/g, '\\%');
+  cleanText = cleanText.replace(/\\text\{\\ \%\}/g, '\\%');
+  
+  // 3. Ensure Greek letters or common math macros retain a valid single backslash
+  // This looks for common words missing their backslash when right inside math boundaries
+  const commonKeywords = ['frac', 'text', 'times', 'alpha', 'beta', 'theta', 'mu', 'nu', 'pi', 'approx', 'implies'];
+  commonKeywords.forEach(function(kw) {
+    // Regex matches the keyword if it isn't already preceded by a backslash
+    var regex = new RegExp('(?<!\\\\)\\b' + kw + '\\b', 'g');
+    cleanText = cleanText.replace(regex, '\\' + kw);
+  });
+
+  return cleanText;
+}
+
+/**
+ * Formats a raw HTML string into clean, readable, indented rows.
+ * Breaks up single-line payloads to preserve highly scannable Git commit diffs.
+ */
+function formatHTMLForGitDiff(htmlString) {
+  if (!htmlString) return "";
+
+  var indent = 0;
+  var formatted = "";
+  var padding = "  "; // 2 Spaces per indentation tier
+
+  // Split tags cleanly onto separate lines
+  var reg = /(<[^>]+>)/g;
+  var lines = htmlString.replace(reg, '\n$1\n').split('\n');
+
+  for (var i = 0; i < lines.length; i++) {
+    var line = lines[i].trim();
+    if (!line) continue;
+
+    // Opening tag pattern
+    if (line.match(/^<[^\/!?\s>]+[^>]*>/) && !line.match(/^<(meta|link|br|hr|input|img|span|strong|em|i|b)[^>]*>/)) {
+      // If the next tag closes this one instantly on the same line, don't indent deeper
+      var isInlineBlock = (i + 2 < lines.length) && lines[i + 2].trim() === line.replace(/^</, '</').replace(/\s.*$/, '>');
+      
+      formatted += padding.repeat(indent) + line + "\n";
+      if (!isInlineBlock) indent++;
+    } 
+    // Closing tag pattern
+    else if (line.match(/^<\/[^>]+>/)) {
+      indent--;
+      if (indent < 0) indent = 0;
+      formatted += padding.repeat(indent) + line + "\n";
+    } 
+    // Text content or void elements (br, hr, span)
+    else {
+      formatted += padding.repeat(indent) + line + "\n";
+    }
+  }
+
+  return formatted.trim();
 }
 
 function fuzzyFindColumnIndex(headers, targetName) {
