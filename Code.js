@@ -396,8 +396,11 @@ function runBuildCaliberFactory() {
     // 1. Clear any latent LaTeX string syntax typos
     var cleanHTML = sanitizeLaTeXForHTML(completeWebPageContent);
 
+    // Right before writing the content to your GitHub file or static container:
+    let cleanHtml_mod1 = cleanHTML.replace(/ imes/g, " \\times");
+
     // 2. Format the layout code blocks cleanly across multiple lines for GitHub
-    var beautifulHTML = formatHTMLForGitDiff(cleanHTML);
+    var beautifulHTML = formatHTMLForGitDiff(cleanHtml_mod1);
 
     // 3. Push the readable file down your Git pipeline branch safely
     const commitSuccess = pushFileToGitHub(finalPath, beautifulHTML, stagingBranchName);
