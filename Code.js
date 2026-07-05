@@ -824,7 +824,78 @@ function runLocalFirewallUnitTests() {
 }
 
 /**
- * MASTER CLEANING FIREWALL ENGINE (V17.7)
+ * LOCAL PHYSICS INTEGRITY TEST SUITE
+ * Run this function directly inside the Google Apps Script editor console
+ * to verify the V18.2 engine parameters before running the next PDF chapter.
+ */
+function runPhysicsFirewallUnitTests() {
+  Logger.log("🧪 [UNIT TEST SUITE] Initializing Multi-Scenario Physics Test Harness...");
+  let passCount = 0;
+  let totalTests = 5;
+
+  // --- SCENARIO 01: JavaScript Condition Line-Break Split ---
+  Logger.log("⏳ Running SCENARIO_01 -> JavaScript Condition Line-Break Split...");
+  const mockScenario1 = `let currentScale = 1.0;\nfunction adjustTextSize(delta) { currentScale += delta; if (currentScale\n  < 0.8) currentScale = 0.8; if (currentScale >\n  1.4) currentScale = 1.4; }`;
+  let out1 = sanitizeMathHtmlMaster(mockScenario1);
+  if (out1.includes("if (currentScale < 0.8)") && out1.includes("if (currentScale > 1.4)")) {
+    Logger.log("✅ [PASS] [SCENARIO_01] -> Multi-line conditional spacing syntax successfully bound.");
+    passCount++;
+  } else {
+    Logger.log("❌ [FAIL] [SCENARIO_01] -> Syntax layout error remained split across rows.");
+  }
+
+  // --- SCENARIO 02: Double-Escaped Greek Constants (e.g., \\epsilon_0) ---
+  Logger.log("⏳ Running SCENARIO_02 -> Double-Escaped Greek Constant Recovery...");
+  const mockScenario2 = `The electric field allocation equation features \\\\epsilon_0 and \\\\mu_0 parameters.`;
+  let out2 = sanitizeMathHtmlMaster(mockScenario2);
+  if (out2.includes("\\epsilon_0") && out2.includes("\\mu_0") && !out2.includes("\\\\epsilon_0")) {
+    Logger.log("✅ [PASS] [SCENARIO_02] -> Double-escaped physics constants normalized smoothly.");
+    passCount++;
+  } else {
+    Logger.log("❌ [FAIL] [SCENARIO_02] -> JSON escape sequence leaked raw double backslashes.");
+  }
+
+  // --- SCENARIO 03: Programmatic Close Button HTML Entity (&times;) ---
+  Logger.log("⏳ Running SCENARIO_03 -> Close-Modal Multiplier Escape Leak...");
+  const mockScenario3 = `<span class="close-modal">\\&times;</span>`;
+  let out3 = sanitizeMathHtmlMaster(mockScenario3);
+  if (out3.includes('<span class="close-modal">&times;</span>')) {
+    Logger.log("✅ [PASS] [SCENARIO_03] -> Escaped close button character sequence completely flattened.");
+    passCount++;
+  } else {
+    Logger.log("❌ [FAIL] [SCENARIO_03] -> Multiplier backslash residue leaked into layout.");
+  }
+
+  // --- SCENARIO 04: Truncated Outermost Layout Wrapper Append ---
+  Logger.log("⏳ Running SCENARIO_04 -> HTML Outermost Template Truncation...");
+  const mockScenario4 = `<!DOCTYPE html><html lang="en"><head></head><body><div class="chapter-container">Physics Content Trunk`;
+  let out4 = sanitizeMathHtmlMaster(mockScenario4);
+  if (out4.includes("</html>") && out4.includes("</body>")) {
+    Logger.log("✅ [PASS] [SCENARIO_04] -> Stream truncation safety net appended structural closing tags.");
+    passCount++;
+  } else {
+    Logger.log("❌ [FAIL] [SCENARIO_04] -> Layout elements remained open and raw.");
+  }
+
+  // --- SCENARIO 05: Raw Markdown Bold Marker Leak to HTML Strong ---
+  Logger.log("⏳ Running SCENARIO_05 -> Raw Markdown Bold Marker Leak...");
+  const mockScenario5 = `<p>Identify significant figures: Mass = **4.237 g** and Volume = **2.51 cm³**.</p>`;
+  let out5 = sanitizeMathHtmlMaster(mockScenario5);
+  if (out5.includes("<strong>4.237 g</strong>") && out5.includes("<strong>2.51 cm³</strong>") && !out5.includes("**")) {
+    Logger.log("✅ [PASS] [SCENARIO_05] -> Raw Markdown bold asterisks successfully transformed to semantic HTML strong tags.");
+    passCount++;
+  } else {
+    Logger.log("❌ [FAIL] [SCENARIO_05] -> Asterisks leaked into the final HTML string.");
+  }
+
+  // --- TEST SUMMARY GRID ---
+  Logger.log("--------------------------------------------------------------------------------");
+  Logger.log("📊 [TEST HARNESS SUMMARY] Physics verification completed: " + passCount + " / " + totalTests + " Scenarios Cleared.");
+  Logger.log("--------------------------------------------------------------------------------");
+}
+
+/**
+ * MASTER CLEANING FIREWALL ENGINE (V18.3)
  * One consolidated, highly optimized multi-pass sanitizer function.
  * Squashes spacing traps, JSON double-escapes, and strips parsing artifacts.
  */
@@ -842,9 +913,15 @@ function sanitizeMathHtmlMaster(htmlString) {
     cleanString = cleanString.replace("</head>", '  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>\n</head>');
   }
 
-  // --- PASS 2: STREAM-TRUNCATION SHIELD ---
+  // --- PASS 2: STRUCTURAL STREAM-TRUNCATION RECOVERY SHIELD (V18.3) ---
+  // Upgraded: Detects dropped streams and forcefully closes open structural layouts cleanly
   if (cleanString.includes("</html>")) {
     cleanString = cleanString.split("</html>")[0] + "</html>";
+  } else {
+    // Reconstruct trailing closure fragments step-by-step
+    if (!cleanString.includes("</div>")) cleanString += "\n</div>";
+    if (!cleanString.includes("</body>")) cleanString += "\n</body>";
+    cleanString += "\n</html>";
   }
   
   cleanString = cleanString
@@ -873,21 +950,27 @@ function sanitizeMathHtmlMaster(htmlString) {
     .replace(/\\text-left:/g, "text-left:")
     
     // --- PASS 7: PROGRAMMATIC ARTIFACT & MULTIPLIER PROTECTION RESET ---
-    // Upgraded: Re-engineered with non-capturing block logic to reliably clear all multi-escaped close-icon strings
     .replace(/(?:\\+)?&?times;/g, "&times;")
     .replace(/&nbsp;/g, " ")
     .replace(/\bs\(A\)\s*=\s*p/g, "n(A) = p")
     .replace(/\]+\]/g, "")
     .replace(/\]+\]/g, "")
-    .replace(/\]+\]/g, "");
+    .replace(/\]+\]/g, "")
+
+    // --- PASS 7b: INTEGRATED GLOBAL ACTINIDE & GREEK CORE DEPLOYMENT EXTENSIONS ---
+    .replace(/\\\\(alpha|beta|gamma|delta|Delta|epsilon|mu|rho|phi|omega|pi)/g, "\\$1")
+    .replace(/\\\\(sigma|tau|lambda|theta|psi|xi|zeta|eta|omega)/g, "\\$1")
+
+    // Add this line inside PASS 7 of sanitizeMathHtmlMaster to replace Markdown bold globally:
+    .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
 
   // --- PASS 8: SAFE TEXT-BASED RE-INJECTION (IMMUNE TO REGEX TRAPS) ---
   cleanString = cleanString.split("__INLINE_M__").join("[['$', '$']]");
   cleanString = cleanString.split("__DISPLAY_M__").join("[['$$', '$$']]");
 
-  // --- PASS 9: JAVASCRIPT CONDITION LINE-BREAK REPAIR SHIELD ---
-  cleanString = cleanString.replace(/if\s*\(currentScale\s*\n\s*<\s*0\.8\)/g, "if (currentScale < 0.8)");
-  cleanString = cleanString.replace(/if\s*\(currentScale\s*>\s*\n\s*1\.4\)/g, "if (currentScale > 1.4)");
+  // --- PASS 9: UPGRADED JAVASCRIPT CONDITION LINE-BREAK REPAIR SHIELD ---
+  cleanString = cleanString.replace(/if\s*\(\s*currentScale\s*[\r\n]\s*<\s*0\.8\s*\)/g, "if (currentScale < 0.8)");
+  cleanString = cleanString.replace(/if\s*\(\s*currentScale\s*>\s*[\r\n]\s*1\.4\s*\)/g, "if (currentScale > 1.4)");
 
   return cleanString;
 }
