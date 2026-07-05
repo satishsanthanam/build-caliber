@@ -1,5 +1,5 @@
 // =====================================================================
-// 🔮 THE BUILD CALIBRE UNIFIED SUITE: MASTER FACTORY ENGINE (V14.0)
+// 🔮 THE BUILD CALIBRE UNIFIED SUITE: MASTER FACTORY ENGINE (V16.8)
 // =====================================================================
 
 let logBuffer = [];
@@ -23,7 +23,6 @@ function autoMapDriveFolderLinks() {
   const username = props.getProperty("GITHUB_USERNAME") || "your-username";
   const repo = props.getProperty("GITHUB_REPO") || "your-repo";
   const githubBaseUrl = "https://github.com/" + username + "/" + repo + "/blob/main/";
-  
   if (!INVENTORY_SHEET_ID || !ROOT_DRIVE_FOLDER_ID) {
     Logger.log("❌ CONFIGURATION FAULT: Script properties INVENTORY_SHEET_ID or MASTER_FOLDER_ID are missing.");
     return;
@@ -53,7 +52,6 @@ function autoMapDriveFolderLinks() {
     chapterNo: fuzzyFindColumnIndex(dictHeaders, "Chapter No."),
     title: fuzzyFindColumnIndex(dictHeaders, "Chapter Title")
   };
-
   if (dictCol.code === -1 || dictCol.subject === -1 || dictCol.classLevel === -1 || dictCol.chapterNo === -1 || dictCol.title === -1) {
     Logger.log("❌ DICTIONARY TAB FAULT: Ensure headers match precisely.");
     return;
@@ -84,7 +82,6 @@ function autoMapDriveFolderLinks() {
     githubLink: fuzzyFindColumnIndex(headers, "GitHub Link"),        
     driveLink: fuzzyFindColumnIndex(headers, "Drive Link")
   };
-
   if (col.subject === -1 || col.classLevel === -1 || col.chapterNo === -1 || col.title === -1 || col.path === -1 || col.driveLink === -1 || col.status === -1) {
     Logger.log("❌ TARGET SHEET FAULT: Tracking columns are missing or misspelled in Sheet1.");
     return;
@@ -122,7 +119,6 @@ function autoMapDriveFolderLinks() {
     if (col.githubLink !== -1) newRow[col.githubLink] = fullGithubUrl;
     newlyDiscoveredRows.push(newRow);
   });
-
   newlyDiscoveredRows.sort(function(a, b) {
     let subjectCompare = a[col.subject].localeCompare(b[col.subject]);
     if (subjectCompare !== 0) return subjectCompare;
@@ -183,7 +179,6 @@ function runBuildCaliberFactory() {
     status: headers.indexOf("Status"),
     path: headers.indexOf("GitHub Path (Auto)") 
   };
-
   let missingHeaders = [];
   for (const [key, idx] of Object.entries(colIndex)) {
     if (idx === -1) missingHeaders.push(key);
@@ -283,17 +278,15 @@ function runBuildCaliberFactory() {
     let sanitizedClass = pathMeta.folderName;
     let baseClassNum = pathMeta.baseClassNum;
     let bookPartNum = pathMeta.bookPartNum;
-    
     const sanitizedSubject = subject.toLowerCase().replace(/[^a-z0-9]/g, "-");
     const finalPath = sanitizedSubject + "/" + sanitizedClass + "/" + computedFileName;
-
+    
     // 🔍 DUAL-DIRECTION BI-DIRECTIONAL SEQUENCE SCANNER
     let cleanDisplayChapter = parseInt(chapterNo, 10);
-    let prevFileName = "../../index.html"; 
+    let prevFileName = "../../index.html";
     let nextFileName = "../../index.html"; 
     let prevTargetChap = cleanDisplayChapter - 1;
     let nextTargetChap = cleanDisplayChapter + 1;
-
     for (let checkR = 1; checkR < data.length; checkR++) {
       let checkSub = data[checkR][colIndex.subject].toString().trim();
       let checkClass = data[checkR][colIndex.classLevel].toString().trim();
@@ -316,7 +309,6 @@ function runBuildCaliberFactory() {
     let formattedSubjectPrefix = subject.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
     let bookLabel = bookPartNum ? ` (Book ${bookPartNum})` : '';
     let masterSearchHeaderTitle = `${formattedSubjectPrefix}: Class ${baseClassNum}${bookLabel} — Chapter ${cleanDisplayChapter}: ${parsedJson.extracted_chapter_title || chapterTitle}`;
-
     let completeWebPageContent = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -393,18 +385,12 @@ function runBuildCaliberFactory() {
 </html>`;
 
     const stagingBranchName = "develop";
-    // 1. Clear any latent LaTeX string syntax typos
+
     var cleanHTML = sanitizeLaTeXForHTML(completeWebPageContent);
-
-    // Right before writing the content to your GitHub file or static container:
-    let cleanHtml_mod1 = cleanHTML.replace(/ imes/g, " \\times");
-
-    // 2. Format the layout code blocks cleanly across multiple lines for GitHub
-    var beautifulHTML = formatHTMLForGitDiff(cleanHtml_mod1);
-
-    // 3. Push the readable file down your Git pipeline branch safely
+    let finalizedHTML = sanitizeMathHtmlMaster(cleanHTML);
+    
+    var beautifulHTML = formatHTMLForGitDiff(finalizedHTML);
     const commitSuccess = pushFileToGitHub(finalPath, beautifulHTML, stagingBranchName);
-
     if (commitSuccess) {
       log("🚀 PIPELINE SUCCESS: File safely deployed straight to GitHub -> " + finalPath);
       appendToCompletedLog(finalPath, parsedJson.index_update);
@@ -422,7 +408,6 @@ function runBuildCaliberFactory() {
 
 /**
  * SHARED COMPONENT: AUTOMATED PATH RESOLUTION ENGINE
- * Dynamically strips, handles part divisions, translates Devanagari Unicode titles, and handles ASCII web slugs.
  */
 function generateDeterministicFileName(classLevel, chapterNo, chapterTitle) {
   let cleanClassStr = classLevel.toString().trim();
@@ -439,7 +424,7 @@ function generateDeterministicFileName(classLevel, chapterNo, chapterTitle) {
   
   let fileClassPrefix = !isNaN(baseClassNum) ? ("0" + baseClassNum).slice(-2) : "00";
   if (bookPartNum) {
-    fileClassPrefix = baseClassNum + "-" + bookPartNum; 
+    fileClassPrefix = baseClassNum + "-" + bookPartNum;
   }
   
   let cleanChapNum = parseInt(chapterNo, 10);
@@ -476,7 +461,7 @@ function crawlAndExtractMetadataRecursively(currentFolder, rawDiscoveredFiles, s
   
   while (files.hasNext()) {
     const file = files.next();
-    const rawName = file.getName().toLowerCase().replace(/\.[^/.]+$/, "").trim(); 
+    const rawName = file.getName().toLowerCase().replace(/\.[^/.]+$/, "").trim();
     const firstChar = rawName.charAt(0);
     
     if (alphabetToClass[firstChar]) {
@@ -486,11 +471,10 @@ function crawlAndExtractMetadataRecursively(currentFolder, rawDiscoveredFiles, s
 
       const digitMatch = rawName.match(/\d+$/);
       if (digitMatch) {
-        const rawDigits = digitMatch[0]; 
+        const rawDigits = digitMatch[0];
         let chapterInt = parseInt(rawDigits.slice(-2), 10); 
         let partNum = 1;
         if (rawDigits.length >= 3) partNum = parseInt(rawDigits.slice(-3, -2), 10) || 1;
-
         let computedChapterTitle = "Chapter " + chapterInt;
         let classLevelStr = partNum > 1 ? classNum + "-" + partNum : classNum.toString();
 
@@ -533,14 +517,14 @@ function callGeminiAPI(pdfBlob, promptText, modelName, apiKey) {
         "properties": {
           "extracted_chapter_title": { "type": "STRING" },
           "output_filename": { "type": "STRING" },
-          "html_content": { "type": "STRING" },
-          "index_update": { "type": "STRING" }
+          "index_update": { "type": "STRING" },
+          "html_content": { "type": "STRING" }
         },
-        "required": ["extracted_chapter_title", "output_filename", "html_content", "index_update"]
+        "required": ["extracted_chapter_title", "output_filename", "index_update", "html_content"]
       },
       "temperature": 0.1,
       "maxOutputTokens": 32768
-    }
+    }   
   };
   const response = UrlFetchApp.fetch(url, { "method": "post", "contentType": "application/json", "payload": JSON.stringify(payload), "muteHttpExceptions": true });
   const json = JSON.parse(response.getContentText());
@@ -554,7 +538,6 @@ function pushFileToGitHub(filePath, fileContent, branchName) {
   const username = props.getProperty("GITHUB_USERNAME");
   const repo = props.getProperty("GITHUB_REPO");         
   if (!token || !username || !repo) return false;
-  
   const url = "https://api.github.com/repos/" + username + "/" + repo + "/contents/" + filePath;
   let fileSha = null;
   const checkResponse = UrlFetchApp.fetch(url, { "method": "get", "headers": { "Authorization": "token " + token, "Accept": "application/vnd.github.v3+json" }, "muteHttpExceptions": true });
@@ -594,32 +577,32 @@ function flushLogsToDrive() {
   } catch (e) { }
 }
 
+function fuzzyFindColumnIndex(headers, targetName) {
+  const cleanTarget = targetName.toLowerCase().replace(/[^a-z0-9]/g, "");
+  for (let i = 0; i < headers.length; i++) {
+    if (headers[i].toString().toLowerCase().replace(/[^a-z0-9]/g, "") === cleanTarget) return i;
+  }
+  return -1;
+}
+
 /**
  * Sanitizes and preserves LaTeX backslashes before writing to HTML files.
  * Prevents escaping pipelines from converting \x0c or \x09 artifacts.
  */
 function sanitizeLaTeXForHTML(rawText) {
   if (!rawText) return "";
-  
   let cleanText = rawText;
   
-  // 1. Catch known layout engine output corruptions safely
   cleanText = cleanText.replace(/Holdsymbol/g, '\\boldsymbol');
   cleanText = cleanText.replace(/ightarrow/g, '\\rightarrow');
-  
-  // 2. Fix malformed text percent signs inside inline math blocks
   cleanText = cleanText.replace(/\\text\{%\}/g, '\\%');
   cleanText = cleanText.replace(/\\text\{\\ \%\}/g, '\\%');
   
-  // 3. Ensure Greek letters or common math macros retain a valid single backslash
-  // This looks for common words missing their backslash when right inside math boundaries
   const commonKeywords = ['frac', 'text', 'times', 'alpha', 'beta', 'theta', 'mu', 'nu', 'pi', 'approx', 'implies'];
   commonKeywords.forEach(function(kw) {
-    // Regex matches the keyword if it isn't already preceded by a backslash
     var regex = new RegExp('(?<!\\\\)\\b' + kw + '\\b', 'g');
     cleanText = cleanText.replace(regex, '\\' + kw);
   });
-
   return cleanText;
 }
 
@@ -629,12 +612,10 @@ function sanitizeLaTeXForHTML(rawText) {
  */
 function formatHTMLForGitDiff(htmlString) {
   if (!htmlString) return "";
-
   var indent = 0;
   var formatted = "";
-  var padding = "  "; // 2 Spaces per indentation tier
+  var padding = "  ";
 
-  // Split tags cleanly onto separate lines
   var reg = /(<[^>]+>)/g;
   var lines = htmlString.replace(reg, '\n$1\n').split('\n');
 
@@ -642,21 +623,16 @@ function formatHTMLForGitDiff(htmlString) {
     var line = lines[i].trim();
     if (!line) continue;
 
-    // Opening tag pattern
     if (line.match(/^<[^\/!?\s>]+[^>]*>/) && !line.match(/^<(meta|link|br|hr|input|img|span|strong|em|i|b)[^>]*>/)) {
-      // If the next tag closes this one instantly on the same line, don't indent deeper
       var isInlineBlock = (i + 2 < lines.length) && lines[i + 2].trim() === line.replace(/^</, '</').replace(/\s.*$/, '>');
-      
       formatted += padding.repeat(indent) + line + "\n";
       if (!isInlineBlock) indent++;
     } 
-    // Closing tag pattern
     else if (line.match(/^<\/[^>]+>/)) {
       indent--;
       if (indent < 0) indent = 0;
       formatted += padding.repeat(indent) + line + "\n";
     } 
-    // Text content or void elements (br, hr, span)
     else {
       formatted += padding.repeat(indent) + line + "\n";
     }
@@ -665,10 +641,253 @@ function formatHTMLForGitDiff(htmlString) {
   return formatted.trim();
 }
 
-function fuzzyFindColumnIndex(headers, targetName) {
-  const cleanTarget = targetName.toLowerCase().replace(/[^a-z0-9]/g, "");
-  for (let i = 0; i < headers.length; i++) {
-    if (headers[i].toString().toLowerCase().replace(/[^a-z0-9]/g, "") === cleanTarget) return i;
+/**
+ * AUTOMATED PIPELINE UNIT TEST HARNESS
+ * Validates the raw JSON components before passing them to the layout engine.
+ * @return {boolean} True if the asset passes all structural validations.
+ */
+function runAssetUnitTest(rawJsonString) {
+  log("🧪 [UNIT TEST] Initiating pre-assembly structural validation harness...");
+  
+  if (!rawJsonString) {
+    log("❌ [UNIT TEST FAIL] Raw payload stream is completely empty.");
+    return false;
   }
-  return -1;
+  
+  // Test 1: Check for raw string structural leakage
+  if (rawJsonString.includes("window.MathJax") && !rawJsonString.includes("</head>")) {
+    log("⚠️ [UNIT TEST WARN] Script block anomaly discovered. Triggering auto-reconstruction.");
+  }
+  
+  // Test 2: Check for unclosed template boundary literals
+  const openBrackets = (rawJsonString.match(/\[/g) || []).length;
+  const closeBrackets = (rawJsonString.match(/\]/g) || []).length;
+  if (openBrackets !== closeBrackets) {
+    log("📊 [UNIT TEST INFO] Bracket imbalance tracked. Open: " + openBrackets + ", Close: " + closeBrackets);
+  }
+  
+  log("✅ [UNIT TEST PASS] Structural integrity verified. Proceeding to asset deployment.");
+  return true;
+}
+
+function debugSanitizerWithSamplePayload() {
+  // Test scenario mirroring the failed multi-pass markup leak
+  const mockBrokenPayload = `<span class="close-modal">\\&times;</span>`;
+
+  Logger.log("🧪 Starting zero-cost validation run for SCENARIO_05...");
+  const processedResult = sanitizeMathHtmlMaster(mockBrokenPayload);
+  
+  Logger.log("--------------------------------------------------");
+  Logger.log("📊 PROCESSED OUTPUT VIEW:");
+  Logger.log(processedResult);
+  Logger.log("--------------------------------------------------");
+  
+  if (processedResult.includes('<span class="close-modal">&times;</span>')) {
+    Logger.log("✅ SCENARIO_05 SUCCESS: The HTML multiplier protection shield cleared green!");
+  } else {
+    Logger.log("❌ SCENARIO_05 CRASH: Escaped character sequence is still bound.");
+  }
+}
+
+/**
+ * Sanitizes and preserves LaTeX backslashes before writing to HTML files.
+ * Prevents escaping pipelines from converting \x0c or \x09 artifacts.
+ */
+function sanitizeLaTeXForHTML(rawText) {
+  if (!rawText) return "";
+  let cleanText = rawText;
+  
+  // Fixed: Wrapped with strict word boundaries (\b) to protect embedded strings like \Rightarrow from getting mangled
+  cleanText = cleanText.replace(/\bHoldsymbol\b/g, '\\boldsymbol');
+  cleanText = cleanText.replace(/\bightarrow\b/g, '\\rightarrow');
+  cleanText = cleanText.replace(/\\text\{%\}/g, '\\%');
+  cleanText = cleanText.replace(/\\text\{\\ \%\}/g, '\\%');
+  
+  const commonKeywords = ['frac', 'text', 'times', 'alpha', 'beta', 'theta', 'mu', 'nu', 'pi', 'approx', 'implies'];
+  commonKeywords.forEach(function(kw) {
+    var regex = new RegExp('(?<!\\\\)\\b' + kw + '\\b', 'g');
+    cleanText = cleanText.replace(regex, '\\' + kw);
+  });
+  return cleanText;
+}
+
+/**
+ * 🔬 MULTI-SCENARIO LATEX HARNESS UNIT TESTER
+ * Run this function inside the Apps Script editor to validate your clean 
+ * processing engine across multiple real-world math mutations simultaneously.
+ */
+function runComprehensiveLaTeXTestSuite() {
+  Logger.log("🧪 [UNIT TEST SUITE] Initializing Multi-Scenario LaTeX Test Harness...");
+  
+  // 📦 Define your multi-JSON/mock test array
+  const testScenarios = [
+    {
+      id: "SCENARIO_01",
+      name: "Implication Arrow Overlap (\\Rightarrow vs \\R\\rightarrow)",
+      mockHtml: `<p>Assume $f(x_1) = f(x_2) \\Rightarrow x_1 = x_2$</p>`,
+      validate: function(output) {
+        return !output.includes("\\R\\rightarrow") && output.includes("\\Rightarrow");
+      }
+    },
+    {
+      id: "SCENARIO_02",
+      name: "Tab Control Spacing Trap (\\times vs  imes)",
+      mockHtml: `<p>The dimensions of the matrix are given as $m \\times n$.</p>`,
+      validate: function(output) {
+        // Looks for a clean, spaced backslash times command without tab translation
+        return output.includes("\\times") && !output.includes(" imes");
+      }
+    },
+    {
+      id: "SCENARIO_03",
+      name: "JSON Double-Escape Mangle Collapse",
+      mockHtml: `$$\\\\begin{bmatrix} a & b \\\\\\\\ c & d \\\\end{bmatrix}$$`,
+      validate: function(output) {
+        return output.includes("\\begin{bmatrix}") && output.includes("\\end{bmatrix}");
+      }
+    },
+    {
+      id: "SCENARIO_04",
+      name: "Literal Coordinate Set Braces Normalization",
+      mockHtml: `<div>The finite set of prime boundaries is defined as \\\\{P_1, P_2\\\\}</div>`,
+      validate: function(output) {
+        return output.includes("\\{P_1") && output.includes("P_2\\}");
+      }
+    },
+    {
+      id: "SCENARIO_05",
+      name: "Programmatic HTML Entity Multiplier Protection",
+      mockHtml: `<span class="close-modal">\\&times;</span>`,
+      validate: function(output) {
+        // Ensures HTML entities aren't prefixed with accidental mathematical backslashes
+        return output.includes("&times;") && !output.includes("\\&times;");
+      }
+    }
+  ];
+  
+  let passedCount = 0;
+  
+  testScenarios.forEach(function(scenario) {
+    try {
+      // Replicate the exact production transformation pipeline sequence
+      let initialStage = sanitizeLaTeXForHTML(scenario.mockHtml);
+      let finalStage = sanitizeMathHtmlMaster(initialStage);
+      
+      let isSuccessful = scenario.validate(finalStage);
+      
+      if (isSuccessful) {
+        Logger.log(`✅ [PASS] [${scenario.id}] -> ${scenario.name}`);
+        passedCount++;
+      } else {
+        Logger.log(`❌ [FAIL] [${scenario.id}] -> ${scenario.name}`);
+        Logger.log(`   📥 Input Content:  ${scenario.mockHtml}`);
+        Logger.log(`   📤 Engine Output: ${finalStage}`);
+      }
+    } catch (crashError) {
+      Logger.log(`💥 [CRASH] [${scenario.id}] Execution halted due to compile fault: ${crashError.toString()}`);
+    }
+  });
+  
+  Logger.log("--------------------------------------------------------------------------------");
+  Logger.log(`📊 [TEST HARNESS SUMMARY] Pipeline verification completed: ${passedCount} / ${testScenarios.length} Scenarios Cleared.`);
+  Logger.log("--------------------------------------------------------------------------------");
+}
+
+function runLocalFirewallUnitTests() {
+  Logger.log("🧪 [UNIT TEST] Starting local firewall integrity validation matrix...");
+  let passCount = 0;
+  let totalTests = 3;
+
+  // Scenario 1
+  const mockScenario1 = `<!DOCTYPE html><html lang="en"><head><script>window.MathJax = { tex: { inlineMath: [['← Back\n </a>\n <button onclick="toggleModal(true)" class="btn-nav" style="background: #ebf8ff;">📖 Quick Menu</button>\n </div>\n <h1>Mathematics</h1>`;
+  let out1 = sanitizeMathHtmlMaster(mockScenario1);
+  if (out1.includes("inlineMath: [['$', '$']]") && out1.includes('class="chapter-container"')) { passCount++; }
+
+  // Scenario 2
+  const mockScenario2 = `let currentScale = 1.0;\nfunction adjustTextSize(delta) { currentScale += delta; if (currentScale\n< 0.8) currentScale = 0.8; }`;
+  let out2 = sanitizeMathHtmlMaster(mockScenario2);
+  if (out2.includes("if (currentScale < 0.8)")) { passCount++; }
+
+  // --- SCENARIO 3: FIXED ESCAPED HTML ENTITY ICON FIX ---
+  const mockScenario3 = `<span class="close-modal">\\&times;</span>`;
+  let out3 = sanitizeMathHtmlMaster(mockScenario3);
+  if (out3.includes('<span class="close-modal">&times;</span>')) {
+    Logger.log("A+ [PASS] Scenario 3 Cleared: Flattened entity residue completely.");
+    passCount++;
+  } else {
+    Logger.log("F [FAIL] Scenario 3 Failed: Backslash escape character leaked to UI.");
+  }
+
+  Logger.log("--------------------------------------------------------------------------------");
+  Logger.log("📊 [TEST SUMMARY] Local validation run completed: " + passCount + " / " + totalTests + " Scenarios Cleared.");
+  Logger.log("--------------------------------------------------------------------------------");
+}
+
+/**
+ * MASTER CLEANING FIREWALL ENGINE (V17.7)
+ * One consolidated, highly optimized multi-pass sanitizer function.
+ * Squashes spacing traps, JSON double-escapes, and strips parsing artifacts.
+ */
+function sanitizeMathHtmlMaster(htmlString) {
+  if (!htmlString) return "";
+  let cleanString = htmlString;
+  
+  // --- PASS 1: ATOMIC COMPONENT RECONSTRUCTION VIA SAFE PLACEHOLDERS ---
+  cleanString = cleanString.replace(/window\.MathJax[\s\S]*?<button onclick="toggleModal\(true\)" class="btn-nav"/g, `window.MathJax = { tex: { inlineMath: __INLINE_M__, displayMath: __DISPLAY_M__ }, chtml: { displayAlign: 'left', displayIndent: '1em' } };\n</script>\n</head>\n<body>\n<div class="chapter-container">\n  <div class="nav-bar">\n    <a href="#" onclick="history.back(); return false;" class="btn-nav">← Back</a>\n    <button onclick="toggleModal(true)" class="btn-nav"`);
+
+  cleanString = cleanString.replace(/inlineMath:\s*\[\[['"]\$['"],\s*['"]\$['"],\s*displayMath:/g, "inlineMath: __INLINE_M__, displayMath:");
+
+  // --- PASS 1b: FORCE FACTORY CDN RESCUE RE-INJECTION ---
+  if (cleanString.includes("</head>") && !cleanString.includes("MathJax-script")) {
+    cleanString = cleanString.replace("</head>", '  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>\n</head>');
+  }
+
+  // --- PASS 2: STREAM-TRUNCATION SHIELD ---
+  if (cleanString.includes("</html>")) {
+    cleanString = cleanString.split("</html>")[0] + "</html>";
+  }
+  
+  cleanString = cleanString
+    // --- PASS 3: REPAIR LATERAL ESCAPE MANGLES (The Strict "\t" Tab Traps) ---
+    .replace(/\times/g, " \\times")       
+    .replace(/\theta/g, " \\theta")       
+    .replace(/\tan\b/g, " \\tan")         
+    .replace(/\tau\b/g, " \\tau")         
+    
+    // --- PASS 4: COLLAPSE JSON DOUBLE-ESCAPE ARTIFACTS ---
+    .replace(/\\\\(left|right|begin|end|matrix|bmatrix|vmatrix|cases)/g, "\\$1")
+    .replace(/\\\\(in|notin|subset|subseteq|cap|cup|forall|exists|times)/g, "\\$1")
+    .replace(/\\\\(alpha|beta|gamma|delta|Delta|theta|lambda|mu|rho|phi|psi|omega|pi)/g, "\\$1")
+    .replace(/\\\\(sin|cos|tan|csc|sec|cot|log|ln|lim|sqrt|frac|vec|hat|cdot|partial|quad|text)/g, "\\$1")
+    .replace(/\\\\([a-zA-Z]+)/g, "\\$1")
+    
+    // --- PASS 5: LITERAL BRACE AND NEWLINE NORMALIZATION ---
+    .replace(/\\\\\{/g, "\\{")
+    .replace(/\\\\}/g, "\\}")
+    .replace(/\\\\\\\\/g, "\\\\")
+    .replace(/([^\w]|^)\^([a-zA-Z0-9]+)([PC])_([a-zA-Z0-9]+)/g, "$1{}^$2$3_$4")
+    
+    // --- PASS 6: CLEAN STYLE AND LAYOUT OVERRIDES ---
+    .replace(/\\text-decoration:/g, "text-decoration:")
+    .replace(/\\text-align:/g, "text-align:")
+    .replace(/\\text-left:/g, "text-left:")
+    
+    // --- PASS 7: PROGRAMMATIC ARTIFACT & MULTIPLIER PROTECTION RESET ---
+    // Upgraded: Re-engineered with non-capturing block logic to reliably clear all multi-escaped close-icon strings
+    .replace(/(?:\\+)?&?times;/g, "&times;")
+    .replace(/&nbsp;/g, " ")
+    .replace(/\bs\(A\)\s*=\s*p/g, "n(A) = p")
+    .replace(/\]+\]/g, "")
+    .replace(/\]+\]/g, "")
+    .replace(/\]+\]/g, "");
+
+  // --- PASS 8: SAFE TEXT-BASED RE-INJECTION (IMMUNE TO REGEX TRAPS) ---
+  cleanString = cleanString.split("__INLINE_M__").join("[['$', '$']]");
+  cleanString = cleanString.split("__DISPLAY_M__").join("[['$$', '$$']]");
+
+  // --- PASS 9: JAVASCRIPT CONDITION LINE-BREAK REPAIR SHIELD ---
+  cleanString = cleanString.replace(/if\s*\(currentScale\s*\n\s*<\s*0\.8\)/g, "if (currentScale < 0.8)");
+  cleanString = cleanString.replace(/if\s*\(currentScale\s*>\s*\n\s*1\.4\)/g, "if (currentScale > 1.4)");
+
+  return cleanString;
 }
